@@ -1,6 +1,19 @@
 @forward 'layouts';
+:host {
+  all: inherit;
+  display: block;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+main {
+  flex: 1 0 auto;
 }
