@@ -1,0 +1,25 @@
+{
+  "name": "skep-website",
+  "version": "1.0.0",
+  "description": "My site uses the usual three, but using the CSS pre-processor SCSS. And it's a complete abomination lol",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/skep-main.html",
+    "build": "parcel build src/skep-main.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skepfusky/skep-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skepfusky/skep-website/issues"
+  },
+  "homepage": "https://github.com/skepfusky/skep-website#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.43.5"
+  }
+}
