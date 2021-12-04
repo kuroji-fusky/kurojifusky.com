@@ -1,18 +1,24 @@
 <template>
-  <skepTopHeader></skepTopHeader>
+<div id="app">
+  <skepHeader></skepHeader>
+  something something fridges
+  <skepFooter></skepFooter>
+</div>
 </template>
 
 <script>
-import skepTopHeader from './layouts/SkepHeader.vue'
+import skepHeader from './layouts/SkepHeader.vue'
+import skepFooter from './layouts/SkepFooter.vue'
 
 export default {
-  name: 'Fat boi',
+  name: 'skep-portfolio',
   components: {
-    skepTopHeader
+    skepHeader,
+    skepFooter
   }
 }
 </script>
 
 <style lang="scss">
-
+@use 'assets/scss/styles.scss';
 </style>
