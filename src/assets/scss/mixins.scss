@@ -1,0 +1,24 @@
+@mixin flexParams($hcent: center, $vcent: center, $dir: row) {
+  display: flex;
+  justify-content: $hcent;
+  align-items: $vcent;
+  flex-direction: $dir;
+}
+@mixin noPseudo {
+  *::before, *::after {
+    display: none !important;
+  }
+}
+@mixin liSpacing($width: 15px) {
+  li {
+    margin-left: $width;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+@mixin transition($property: all, $time: 300ms) {
+  -webkit-transition: $property $time ease;
+          transition: $property $time ease;
+}

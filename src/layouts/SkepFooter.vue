@@ -22,7 +22,45 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import '../assets/scss/styles.scss';
-@import '../assets/scss/footer.scss';
+<style lang="scss" scoped>
+@import '../assets/scss/mixins.scss';
+@include noPseudo;
+
+footer {
+  margin: 0 auto;
+}
+
+#wrapper {
+  @include flexParams(unset, center, column);
+  min-width: 1280px;
+  padding: 1rem;
+  background: royalblue;
+}
+
+#social-row {
+  @include flexParams(center, center, column);
+  &::before {
+    display: block !important;
+    width: 3em;
+    height: 3px;
+    background: cyan;
+    margin-block: 10px;
+  }
+  @include liSpacing(30px);
+  font-size: 88%;
+  ul {
+    @include flexParams(unset, unset, row);
+  }
+
+  li {
+    @include transition();
+    filter: opacity(70%);
+    opacity: .7;
+
+    &:hover {
+      filter: opacity(100%);
+      opacity: 1;
+    }
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <skepHeader></skepHeader>
-  something something fridges
+  BRUHHH
   <skepFooter></skepFooter>
 </div>
 </template>
@@ -20,5 +20,50 @@ export default {
 </script>
 
 <style lang="scss">
-@use 'assets/scss/styles.scss';
+@use 'assets/scss/mixins.scss';
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before, *::after {
+  content:'';
+  display: block;
+}
+
+#app {
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Header footer stuff
+.text-spacing {
+  padding-left: 5px;
+  position: relative;
+  top: -1px;
+}
+
+$colors: white;
+$font-big-screen: 125%;
+
+header {
+  nav {
+    color: $colors;
+    font-size: $font-big-screen;
+  }
+}
+footer {
+  #wrapper {
+    color: $colors;
+    font-size: $font-big-screen;
+  }
+}
 </style>
