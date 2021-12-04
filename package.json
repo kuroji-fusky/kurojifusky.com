@@ -1,25 +1,25 @@
 {
-  "name": "skep-vue",
-  "version": "0.1.0",
-  "private": true,
+  "name": "skep-website",
+  "version": "1.0.0",
+  "description": "My site uses the usual three, but using the CSS pre-processor SCSS. And it's a complete abomination lol",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "parcel src/skep-main.html",
+    "build": "parcel build src/skep-main.html"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skepfusky/skep-website.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skepfusky/skep-website/issues"
+  },
+  "homepage": "https://github.com/skepfusky/skep-website#readme",
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.43.5"
+  }
 }
