@@ -21,6 +21,8 @@ export default {
 
 <style lang="scss">
 @use 'assets/scss/mixins.scss';
+@use 'assets/scss/palette.scss';
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;

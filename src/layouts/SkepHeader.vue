@@ -1,28 +1,39 @@
 <template>
   <header>
+    <span id="logo"><img src="" alt="skeperoonis"></span>
     <nav>
       <ul>
-        <li><a href="#">Home</a><span class="menu-line"></span></li>
-        <li><a href="#">Projects</a><span class="menu-line"></span></li>
-        <li>
-          <a href="#">My Shitty Portfolio</a><span class="menu-line"></span>
-        </li>
-        <li><a href="#">About meh :3</a><span class="menu-line"></span></li>
+        <li><a href="#">Home</a><span class="menu-line blue"></span></li>
+        <li><a href="#">Projects</a><span class="menu-line blue"></span></li>
+        <li><a href="#">My Shitty Portfolio</a><span class="menu-line blue"></span></li>
+        <li><a href="#">About meh</a><span class="menu-line borahae"></span></li>
       </ul>
     </nav>
+    <span id="theme"><a href="#"><i class="fas fa-adjust"></i></a></span>
   </header>
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/scss/mixins.scss";
+@import '../assets/scss/palette.scss';
 
 header {
+  @include liSpacing(20px);
+  @include flexParams(space-between, unset, row);
+  background: rgba(lighten(gray, 8%), 75%);
+  padding: 0 1.5rem;
+  font-size: 1.15rem;
+
+  #logo,
+  #theme {
+    @include flexParams(center, center, row);
+  }
+
   nav {
-    @include flexParams(center, unset, row);
+    @include flexParams(center, center, row);
     width: 100%;
     padding: 0.55rem;
     padding-top: 0.75em !important;
-    background: royalblue;
     color: white;
     font-family: "Lato", Arial, Helvetica, sans-serif;
   }
@@ -31,16 +42,16 @@ header {
     @include flexParams(unset, unset, row);
   }
 
-  @include liSpacing(20px);
-
   li {
     @include flexParams(center, center, column);
+    @include noPseudo();
 
+    position: relative;
     font-weight: bold;
     padding: 0 10px;
     filter: opacity(75%);
     opacity: 0.75;
-    @include transition(all, 150ms);
+    @include transition(all, 200ms);
 
     a {
       min-width: 4rem;
@@ -58,12 +69,21 @@ header {
   }
 
   .menu-line {
-    @include transition(width, 250ms);
+    @include transition(width, 350ms);
     margin-top: 5px;
-    background: cyan;
-    box-shadow: 0 0 12px cyan;
     height: 3px;
     width: 0%;
+    
+    &.blue {
+      background: $skep-lightblue;
+      box-shadow: 0 0 12px $skep-lightblue;
+    }
+    
+    &.borahae {
+      background: lighten($skep-borahae, 15%);
+      box-shadow: 0 0 12px lighten($skep-borahae, 15%);
+    }
   }
 }
+
 </style>
