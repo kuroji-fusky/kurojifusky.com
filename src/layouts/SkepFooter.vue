@@ -18,13 +18,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/mixins.scss";
-@import '../assets/scss/palette.scss';
 @include noPseudo();
-
-footer {
-  margin: 0 auto;
-}
 
 #wrapper {
   @include flexParams(unset, center, column);

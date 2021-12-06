@@ -3,10 +3,10 @@
     <span id="logo"><img src="" alt="skeperoonis"></span>
     <nav>
       <ul>
-        <li><a href="#">Home</a><span class="menu-line blue"></span></li>
-        <li><a href="#">Projects</a><span class="menu-line blue"></span></li>
-        <li><a href="#">My Shitty Portfolio</a><span class="menu-line blue"></span></li>
-        <li><a href="#">About meh</a><span class="menu-line borahae"></span></li>
+        <li><a target="__blank" href="#">Home</a><span class="menu-line blue"></span></li>
+        <li><a target="__blank" href="#">Projects</a><span class="menu-line blue"></span></li>
+        <li><a target="__blank" href="#">My Shitty Portfolio</a><span class="menu-line blue"></span></li>
+        <li><a target="__blank" href="#">About meh</a><span class="menu-line borahae"></span></li>
       </ul>
     </nav>
     <span id="theme"><a href="#"><i class="fas fa-adjust"></i></a></span>
@@ -14,9 +14,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/scss/mixins.scss";
-@import '../assets/scss/palette.scss';
-
 header {
   @include liSpacing(20px);
   @include flexParams(space-between, unset, row);
@@ -85,5 +82,4 @@ header {
     }
   }
 }
-
 </style>
