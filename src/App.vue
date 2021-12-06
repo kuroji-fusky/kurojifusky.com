@@ -1,7 +1,7 @@
 <template>
-  <skepHeader></skepHeader>
+  <skepHeader/>
   BRUHHH
-  <skepFooter></skepFooter>
+  <skepFooter/>
 </template>
 
 <script>
