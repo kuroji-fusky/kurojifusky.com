@@ -1,8 +1,10 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <header>
+    <ul>
+      <li><router-link to="/">Home</router-link></li>
+      <li><router-link to="/about">About</router-link></li>
+    </ul>
+  </header>
   <router-view/>
   <skep-footer/>
 </template>
@@ -19,15 +21,31 @@ export default {
 
 <style lang="scss">
 
-#nav {
-  padding: 30px;
+header {
+  // padding: 30px;
+  padding: 1rem 2rem;
+  @include flex_params(center, center, row);
+  @include list_spacing(30px);
+  background: gray;
+  font-size: 110%;
+
+  ul {
+    @include flex_params(unset, unset, row);
+  }
+  
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: white;
+    @include prop_transition(color);
+
+    &:hover {
+      color: lighten($skep-lightblue, 27%);
+    }
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $skep-lightblue;
+      cursor: default;
     }
   }
 }

@@ -1,64 +1,131 @@
 <template>
   <footer>
-    <div id="wrapper">
-      <div id="about">
-        <p>Skep is stupid basically lol</p>
-      </div>
-      <div id="social-row">
-        <ul>
-          <li><a target="_blank" href="https://www.youtube.com/kokorohuskyproductions"><i class="fab fa-youtube"></i></a></li>
-          <li><a target="_blank" href="https://www.github.com/skepfusky"><i class="fab fa-github"></i></a></li>
-          <li><a target="_blank" href="https://www.twitter.com/skepfusky"><i class="fab fa-twitter"></i></a></li>
-          <li><a target="_blank" href="https://www.instagram.com/skepfusky"><i class="fab fa-instagram"></i></a></li>
-        </ul>
-      </div>
-      <div id="copyright">Site built using Vue.js<br>Copyright &copy; {{ new Date().getFullYear() }} Skepfusky. All rights reserved.</div>
+    <div id="about">
+      <p>Skep is a broke ass developer lol</p>
+    </div>
+    <div id="social-row">
+      <ul>
+        <li>
+          <a target="_blank" href="https://youtube.com/kokorohuskyproductions">
+            <i class="fab fa-youtube"></i>
+            <div class="tooltip">
+              <span>skepfusky</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://github.com/skepfusky">
+            <i class="fab fa-github"></i>
+            <div class="tooltip">
+              <span>skepfusky</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://twitter.com/skepfusky">
+            <i class="fab fa-twitter"></i>
+            <div class="tooltip">
+              <span>@skepfusky</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://instagram.com/skepfusky">
+            <i class="fab fa-instagram"></i>
+            <div class="tooltip">
+              <span>@skepfusky</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="copyright">
+      <p>Site built using Vue.js</p>
+      <p>Copyright &copy; {{ new Date().getFullYear() }} Skepfusky. All rights reserved.</p>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
-@include noPseudo();
+@include list_spacing(25px);
 
-#wrapper {
-  @include flexParams(unset, center, column);
-  min-width: 1280px;
-  padding: 1rem;
-  background: darken($skep-blue, 15%)  ;
+footer {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: darken($skep-blue, 15%);
+  padding: 1rem 2.5rem;
+  color: white;
+}
+
+:is(#about, #copyright) {
+  text-align: center;
 }
 
 #social-row {
-  @include flexParams(center, center, column);
+  @include flex_params(center, center, column);
+  font-size: 130%;
+
   &::before {
-    display: block !important;
+    content: "";
+    display: block;
     width: 3em;
     height: 3px;
     background: $skep-lightblue;
     margin-block: 10px;
   }
 
-  @include liSpacing(25px);
-  font-size: 115%;
-
-  ul {
-    @include flexParams(unset, unset, row);
+  a {
+    position: relative;
   }
+}
 
-  li {
-    @include transition();
-    filter: opacity(70%);
-    opacity: 0.7;
-
-    &:hover {
+a {
+  &:hover {
+    .tooltip {
       filter: opacity(100%);
       opacity: 1;
     }
   }
 }
+.tooltip {
+  $tt-w: 300px;
+  @include flex_params(center, center, unset);
+  width: $tt-w;
+  position: absolute;
+  top: -35px;
+  font-size: 69%;
+  left: calc($tt-w / 2 - ($tt-w - 10px)); // wow math
+  pointer-events: none;
+  filter: opacity(0%);
+  opacity: 0;
+  transition: all 300ms ease;
+
+  span {
+    padding: 0.55rem 0.95rem;
+    background-color: rgba(black, 50%);
+    border-radius: 5px;
+  }
+}
+
+ul {
+  @include flex_params(unset, unset, row);
+}
+
+li {
+  filter: opacity(70%);
+  opacity: 0.7;
+  transform: translateY(0px);
+  @include prop_transition();
+
+  &:hover {
+    filter: opacity(100%);
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+}
 
 #copyright {
-  text-align: center;
-  margin-top: .55rem;
-  font-size: 75%;
+  margin-top: 0.55rem;
+  font-size: 80%;
 }
 </style>

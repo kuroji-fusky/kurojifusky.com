@@ -11,3 +11,7 @@ export default {
   }
 }
 </script>
+
+<script lang="scss" scoped>
+
+</script>

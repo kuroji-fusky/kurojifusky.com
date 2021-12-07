@@ -1,3 +1,7 @@
 <template>
-ABOUT YOUR MOM
+About stuff
 </template>
+
+<style lang="scss" scoped>
+
+</style>

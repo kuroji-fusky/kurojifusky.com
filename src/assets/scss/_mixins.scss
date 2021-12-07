@@ -1,4 +1,4 @@
-@mixin flexParams($hcent: center, $vcent: center, $dir: row) {
+@mixin flex_params($hcent: center, $vcent: center, $dir: row) {
   display: -webkit-flex;
   display: flex;
   justify-content: $hcent;
@@ -6,13 +6,7 @@
   flex-direction: $dir;
 }
 
-@mixin noPseudo {
-  *::before, *::after {
-    display: none !important;
-  }
-}
-
-@mixin liSpacing($width: 15px) {
+@mixin list_spacing($width: 15px) {
   li {
     margin-left: $width;
     &:first-child {
@@ -21,7 +15,36 @@
   }
 }
 
-@mixin transition($property: all, $time: 300ms) {
+@mixin prop_transition($property: all, $time: 300ms) {
   -webkit-transition: $property $time ease;
           transition: $property $time ease;
+}
+
+@mixin tooltips_top($prop,$width: 300px,$bg_color: rgba(black, 50%),$hpos: -35px,$font: 15px) {
+  #{$prop}:hover {
+    .tt-wrapper {     
+      &:hover {
+        filter: opacity(100%);
+        opacity: 1;
+      }
+    }
+  }
+  .tt-wrapper {
+    @include flex_params(center, center, unset);
+    width: $width;
+    position: absolute;
+    top: $hpos;
+    font-size: $font;
+    left: calc($width / 2 - ($width - 10px)); // wow math
+    pointer-events: none;
+    filter: opacity(0%);
+    opacity: 0;
+    transition: all 300ms ease;
+
+    span {
+      padding: .45rem .85rem;
+      background-color: $bg_color;
+      border-radius: 5px;
+    }
+  }
 }
