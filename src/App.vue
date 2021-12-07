@@ -1,26 +1,37 @@
 <template>
-  <skepHeader/>
-  BRUHHH
-  <skepFooter/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
+  <skep-footer/>
 </template>
 
 <script>
-import skepHeader from './layouts/SkepHeader.vue'
-import skepFooter from './layouts/SkepFooter.vue'
+import SkepFooter from './components/SkepFooter.vue'
 
 export default {
-  name: 'skep-portfolio',
   components: {
-    skepHeader,
-    skepFooter
+    SkepFooter  
   }
 }
 </script>
 
 <style lang="scss">
 
+#nav {
+  padding: 30px;
 
-// Header footer stuff
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+
 .text-spacing {
   padding-left: 5px;
   position: relative;
