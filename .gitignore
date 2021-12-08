@@ -2,6 +2,7 @@
 node_modules
 /dist
 
+src/assets/img/jwa
 
 # local env files
 .env.local

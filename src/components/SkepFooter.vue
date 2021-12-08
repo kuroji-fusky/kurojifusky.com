@@ -1,60 +1,77 @@
 <template>
   <footer>
-    <div id="about">
-      <p>Skep is a broke ass developer lol</p>
-    </div>
-    <div id="social-row">
-      <ul>
-        <li>
-          <a target="_blank" href="https://youtube.com/kokorohuskyproductions">
-            <i class="fab fa-youtube"></i>
-            <div class="tooltip">
-              <span>skepfusky</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://github.com/skepfusky">
-            <i class="fab fa-github"></i>
-            <div class="tooltip">
-              <span>skepfusky</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://twitter.com/skepfusky">
-            <i class="fab fa-twitter"></i>
-            <div class="tooltip">
-              <span>@skepfusky</span>
-            </div>
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://instagram.com/skepfusky">
-            <i class="fab fa-instagram"></i>
-            <div class="tooltip">
-              <span>@skepfusky</span>
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div id="copyright">
-      <p>Site built using Vue.js</p>
-      <p>Copyright &copy; {{ new Date().getFullYear() }} Skepfusky. All rights reserved.</p>
+    <div id="wrapper">
+      <div id="about">
+        <p>Skep is a broke ass developer lol</p>
+      </div>
+      <div id="social-row">
+        <ul>
+          <li>
+            <a target="_blank" href="https://youtube.com/kokorohuskyproductions">
+              <i class="fab fa-youtube"></i>
+              <div class="tooltip">
+                <span>{{social_handle}}</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/skepfusky">
+              <i class="fab fa-github"></i>
+              <div class="tooltip">
+                <span>{{social_handle}}</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://twitter.com/skepfusky">
+              <i class="fab fa-twitter"></i>
+              <div class="tooltip">
+                <span>@{{social_handle}}</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://instagram.com/skepfusky">
+              <i class="fab fa-instagram"></i>
+              <div class="tooltip">
+                <span>@{{social_handle}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="copyright">
+        <p>Site built using Vue.js</p>
+        <p>Copyright &copy; {{ new Date().getFullYear() }} Skepfusky. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  name: 'skepFooter',
+  data() {
+    return {
+      social_handle: 'skepfusky',
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @include list_spacing(25px);
 
 footer {
+  background: darken($skep-blue, 15%);
+  color: white;
+}
+
+#wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  background: darken($skep-blue, 15%);
   padding: 1rem 2.5rem;
-  color: white;
+
 }
 
 :is(#about, #copyright) {

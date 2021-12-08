@@ -55,20 +55,4 @@ header {
   position: relative;
   top: -1px;
 }
-
-$colors: white;
-$font-big-screen: 125%;
-
-header {
-  nav {
-    color: $colors;
-    font-size: $font-big-screen;
-  }
-}
-footer {
-  #wrapper {
-    color: $colors;
-    font-size: $font-big-screen;
-  }
-}
 </style>
