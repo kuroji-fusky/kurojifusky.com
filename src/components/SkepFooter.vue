@@ -77,7 +77,6 @@ footer {
   }
 }
 
-
 a {
   @include tooltip_comp();
 }

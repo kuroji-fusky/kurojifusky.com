@@ -1,10 +1,8 @@
 <template>
-HAI
+Welcome to my shitty website
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Home',
   components: {

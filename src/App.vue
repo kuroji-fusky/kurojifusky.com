@@ -2,8 +2,8 @@
   <header>
     <ul>
       <li><router-link to="/">Home<span class="header-line"></span></router-link></li>
-      <li><a href="#">Browse My Garbage<span class="header-line"></span></a></li>
-      <li><router-link to="/about">About Meh<span class="header-line"></span></router-link></li>
+      <!-- <li><a href="#">Browse My Garbage<span class="header-line"></span></a></li> -->
+      <li><router-link :to="{ name: 'About' }">About<span class="header-line"></span></router-link></li>
     </ul>
   </header>
   <router-view/>
@@ -15,7 +15,7 @@ import SkepFooter from './components/SkepFooter.vue'
 
 export default {
   components: {
-    'skep-footer': SkepFooter
+    'skep-footer': SkepFooter,
   }
 }
 </script>
