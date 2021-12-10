@@ -1,60 +1,54 @@
 <template>
   <footer>
     <div id="wrapper">
-      <div id="about">
-        <p>Skep is a broke ass developer lol</p>
-      </div>
       <div id="social-row">
         <ul>
           <li>
             <a target="_blank" href="https://youtube.com/kokorohuskyproductions">
               <i class="fab fa-youtube"></i>
-              <div class="tooltip">
-                <span>{{social_handle}}</span>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://github.com/skepfusky">
-              <i class="fab fa-github"></i>
-              <div class="tooltip">
-                <span>{{social_handle}}</span>
-              </div>
+              <social-tooltip content="hot garbage"/>
             </a>
           </li>
           <li>
             <a target="_blank" href="https://twitter.com/skepfusky">
               <i class="fab fa-twitter"></i>
-              <div class="tooltip">
-                <span>@{{social_handle}}</span>
-              </div>
+              <social-tooltip content="unfunny code"/>
             </a>
           </li>
           <li>
             <a target="_blank" href="https://instagram.com/skepfusky">
               <i class="fab fa-instagram"></i>
-              <div class="tooltip">
-                <span>@{{social_handle}}</span>
-              </div>
+              <social-tooltip content="narcissist lol"/>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/skepfusky">
+              <i class="fab fa-github"></i>
+              <social-tooltip content="terrible code"/>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="#">
+              <i class="fab fa-deviantart"></i>
+              <social-tooltip content="horrible drawings"/>
             </a>
           </li>
         </ul>
       </div>
       <div id="copyright">
-        <p>Site built using Vue.js</p>
-        <p>Copyright &copy; {{ new Date().getFullYear() }} Skepfusky. All rights reserved.</p>
+        <p>Site built using <a href="https://vuejs.org" target="_blank"><img src="../assets/img/vue-logo.png" alt="Vue logo" style="width: 20px; margin: 0 4px;"><strong style="color: #41b883">Vue.js</strong></a></p>
+        <p>&copy; 2021 Skepfusky. All rights reserved.</p>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
+import Tooltip from "./Tooltip.vue"
 export default {
-  name: 'skepFooter',
-  data() {
-    return {
-      social_handle: 'skepfusky',
-    }
+  name: "skepFooter",
+  components: { 
+    'social-tooltip': Tooltip
   }
 }
 </script>
@@ -63,65 +57,29 @@ export default {
 @include list_spacing(25px);
 
 footer {
-  background: darken($skep-blue, 15%);
-  color: white;
+  background: mix(royalblue, black, 25%);
+  color: whitesmoke;
 }
 
 #wrapper {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem 2.5rem;
-
-}
-
-:is(#about, #copyright) {
-  text-align: center;
+  padding: 1.5rem 2.5rem;
+  @include flex_params(space-between, center, row);
 }
 
 #social-row {
-  @include flex_params(center, center, column);
+  @include flex_params(center, center, row);
   font-size: 130%;
-
-  &::before {
-    content: "";
-    display: block;
-    width: 3em;
-    height: 3px;
-    background: $skep-lightblue;
-    margin-block: 10px;
-  }
 
   a {
     position: relative;
   }
 }
 
-a {
-  &:hover {
-    .tooltip {
-      filter: opacity(100%);
-      opacity: 1;
-    }
-  }
-}
-.tooltip {
-  $tt-w: 300px;
-  @include flex_params(center, center, unset);
-  width: $tt-w;
-  position: absolute;
-  top: -35px;
-  font-size: 69%;
-  left: calc($tt-w / 2 - ($tt-w - 10px)); // wow math
-  pointer-events: none;
-  filter: opacity(0%);
-  opacity: 0;
-  transition: all 300ms ease;
 
-  span {
-    padding: 0.55rem 0.95rem;
-    background-color: rgba(black, 50%);
-    border-radius: 5px;
-  }
+a {
+  @include tooltip_comp();
 }
 
 ul {
@@ -142,7 +100,17 @@ li {
 }
 
 #copyright {
-  margin-top: 0.55rem;
+  $margin-seperator: 15px;
   font-size: 80%;
+  text-align: right;
+  @include flex_params(unset, center, row);
+  p {
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+  :is(p,a) {
+    @include flex_params(unset, center, row);
+  }
 }
 </style>

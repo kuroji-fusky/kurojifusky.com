@@ -20,31 +20,11 @@
           transition: $property $time ease;
 }
 
-@mixin tooltips_top($prop,$width: 300px,$bg_color: rgba(black, 50%),$hpos: -35px,$font: 15px) {
-  #{$prop}:hover {
-    .tt-wrapper {     
-      &:hover {
-        filter: opacity(100%);
-        opacity: 1;
-      }
-    }
-  }
-  .tt-wrapper {
-    @include flex_params(center, center, unset);
-    width: $width;
-    position: absolute;
-    top: $hpos;
-    font-size: $font;
-    left: calc($width / 2 - ($width - 10px)); // wow math
-    pointer-events: none;
-    filter: opacity(0%);
-    opacity: 0;
-    transition: all 300ms ease;
-
-    span {
-      padding: .45rem .85rem;
-      background-color: $bg_color;
-      border-radius: 5px;
+@mixin tooltip_comp {
+  &:hover {
+    .tooltip {
+      filter: opacity(100%);
+      opacity: 1;
     }
   }
 }
