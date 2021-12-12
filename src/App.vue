@@ -1,7 +1,7 @@
 <template>
   <header>
     <ul>
-      <li><router-link to="/">Home<span class="header-line"></span></router-link></li>
+      <li><router-link to="/home">Home<span class="header-line"></span></router-link></li>
       <!-- <li><a href="#">Browse My Garbage<span class="header-line"></span></a></li> -->
       <li><router-link :to="{ name: 'About' }">About<span class="header-line"></span></router-link></li>
     </ul>
