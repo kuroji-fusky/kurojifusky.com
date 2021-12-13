@@ -26,7 +26,7 @@ header {
   @include flex_params(center, center, row);
   @include list_spacing(30px);
   background: mix(gray, black, 20%);
-  font-size: 110%;
+  font-size: 1.25rem;
 
   ul {
     @include flex_params(unset, unset, row);
@@ -37,27 +37,28 @@ header {
   }
 
   a {
-    font-weight: bold;
-    color: white;
     @include prop_transition(color);
     @include flex_params(center, center, column);
+    font-weight: bold;
+    color: white;
+
     &:hover {
       .header-line {
-        width: 90%;
+        width: 100%;
       }
     }
 
     &:hover {
-      color: lighten($skep-lightblue, 27%);
+      color: lighten($skep-blue, 27%);
     }
 
     &.router-link-exact-active {
-      color: $skep-lightblue;
+      color: $skep-blue;
       cursor: default;
 
       .header-line {
         width: 100%;
-        background: $skep-lightblue;
+        background: $skep-blue;
       }
     }
   }
@@ -72,10 +73,9 @@ header {
 .header-line {
   transform: translateY(5px);
   width: 0%;
-  height: 3px;
+  height: 2px;
   background: white;
-  box-shadow: 0 0 12px white;
-  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(white, 50%);
   display: block;
   @include prop_transition();
 }

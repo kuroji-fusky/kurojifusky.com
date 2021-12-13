@@ -5,7 +5,7 @@
 <script>
 export default {
   props: {
-    content: {type: String, default: "内容"}
+    content: String
   }
 }
 </script>

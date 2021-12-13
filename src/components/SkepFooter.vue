@@ -6,37 +6,47 @@
           <li>
             <a target="_blank" href="https://youtube.com/kokorohuskyproductions">
               <i class="fab fa-youtube"></i>
-              <social-tooltip content="hot garbage"/>
+              <social-tooltip content="hot garbage" />
             </a>
           </li>
           <li>
             <a target="_blank" href="https://twitter.com/skepfusky">
               <i class="fab fa-twitter"></i>
-              <social-tooltip content="unfunny code"/>
+              <social-tooltip content="unfunny code" />
             </a>
           </li>
           <li>
             <a target="_blank" href="https://instagram.com/skepfusky">
               <i class="fab fa-instagram"></i>
-              <social-tooltip content="narcissist lol"/>
+              <social-tooltip content="narcissist lol" />
             </a>
           </li>
           <li>
             <a target="_blank" href="https://github.com/skepfusky">
               <i class="fab fa-github"></i>
-              <social-tooltip content="terrible code"/>
+              <social-tooltip content="terrible code" />
             </a>
           </li>
           <li>
             <a target="_blank" href="#">
               <i class="fab fa-deviantart"></i>
-              <social-tooltip content="horrible drawings"/>
+              <social-tooltip content="horrible drawings" />
             </a>
           </li>
         </ul>
       </div>
       <div id="copyright">
-        <p>Site built using <a href="https://vuejs.org" target="_blank"><img src="../assets/img/vue-logo.png" alt="Vue logo" style="width: 20px; margin: 0 4px;"><strong style="color: #41b883">Vue.js</strong></a></p>
+        <p>
+          Site built using
+          <a href="https://vuejs.org" target="_blank">
+            <img
+              src="../assets/img/vue-logo.png"
+              alt="Vue logo"
+              style="width: 20px; margin: 0 4px;"
+            />
+            <strong style="color: #41b883">Vue.js</strong>
+          </a>
+        </p>
         <p>&copy; 2021 Skepfusky. All rights reserved.</p>
       </div>
     </div>
@@ -45,9 +55,10 @@
 
 <script>
 import Tooltip from "./Tooltip.vue"
+
 export default {
   name: "skepFooter",
-  components: { 
+  components: {
     'social-tooltip': Tooltip
   }
 }
@@ -57,7 +68,7 @@ export default {
 @include list_spacing(25px);
 
 footer {
-  background: mix(royalblue, black, 25%);
+  background: linear-gradient(mix($skep-blue, black, 50%), mix($skep-lightblue,black, 40%));
   color: whitesmoke;
 }
 
@@ -86,10 +97,10 @@ ul {
 }
 
 li {
+  @include prop_transition();
   filter: opacity(70%);
   opacity: 0.7;
   transform: translateY(0px);
-  @include prop_transition();
 
   &:hover {
     filter: opacity(100%);
@@ -99,16 +110,19 @@ li {
 }
 
 #copyright {
-  $margin-seperator: 15px;
+  @include disable_drag();
+  @include flex_params(unset, center, row);
   font-size: 80%;
   text-align: right;
-  @include flex_params(unset, center, row);
+
   p {
     &:first-child {
       margin-right: 15px;
     }
   }
-  :is(p,a) {
+
+  p,
+  a {
     @include flex_params(unset, center, row);
   }
 }

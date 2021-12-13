@@ -6,7 +6,7 @@ $skep-lightblue: rgb(72, 221, 247);
 $skep-yellow: rgb(248, 216, 23);
 $skep-borahae: rgb(187, 62, 237);
 $skep-peach: rgb(252, 232, 164);
-$skep-brown: rgb(111, 58, 15);
+$skep-brown:rgb(111, 58, 15);
 
 // Mixins
 @mixin flex_params($hcent: center, $vcent: center, $dir: row) {
@@ -40,6 +40,15 @@ $skep-brown: rgb(111, 58, 15);
   }
 }
 
+@mixin disable_drag {
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+  }
+}
+
 // main content
 *, *::before, *::after {
   margin: 0;
@@ -63,6 +72,10 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h2 {
+  margin-block: .5rem;
 }
 
 .laptop-wrapper {
