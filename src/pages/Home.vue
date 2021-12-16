@@ -1,15 +1,3 @@
 <template>
-Welcome to my shitty website
+  <h2>BRUH MOMENT</h2>
 </template>
-
-<script>
-export default {
-  name: 'Home',
-  components: {
-  }
-}
-</script>
-
-<script lang="scss" scoped>
-
-</script>

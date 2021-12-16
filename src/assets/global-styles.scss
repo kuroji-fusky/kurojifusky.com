@@ -1,0 +1,59 @@
+@import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100;300;500;700&family=Poppins:ital,wght@0,500;0,700;1,500;1,700&display=swap';
+
+// #region mixins
+@mixin flexy($h: center, $v: center, $d: row) {
+  display: flex;
+  justify-content: $h;
+  align-items: $v;
+  flex-direction: $d;
+}
+
+@mixin pos-a($t:0, $b:unset, $l:0, $r:unset) {
+  position: absolute;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
+@mixin prop-transition($p: all, $t: 300ms) {
+  transition: $p $t ease;
+  -webkit-transition: $p $t ease;
+}
+
+@mixin md-phone-devices {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin md-tablet-devices {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin md-laptop-devices {
+  @media only screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin md-desktop-devices {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+// #endregion
+
+// #region variables
+$desktop-fs: 1.15rem;
+$laptop-fs: 1rem;
+
+$skep-blue: rgb(32, 118, 200);
+$skep-lightblue: rgb(72, 221, 247);
+$skep-yellow: rgb(248, 216, 23);
+$skep-borahae: rgb(187, 62, 237);
+$skep-peach: rgb(252, 232, 164);
+$skep-brown:rgb(111, 58, 15);
+// #endregion

@@ -1,82 +1,60 @@
 <template>
-  <header>
-    <ul>
-      <li><router-link to="/home">Home<span class="header-line"></span></router-link></li>
-      <!-- <li><a href="#">Browse My Garbage<span class="header-line"></span></a></li> -->
-      <li><router-link :to="{ name: 'About' }">About<span class="header-line"></span></router-link></li>
-    </ul>
-  </header>
-  <router-view/>
-  <skep-footer/>
+  <skep-navbar />
+  <router-view></router-view>
+  <skep-footer />
 </template>
 
 <script>
-import SkepFooter from './components/SkepFooter.vue'
+import SkepNavbar from "./components/SkepNavbar.vue"
+import SkepFooter from "./components/SkepFooter.vue"
 
 export default {
-  components: {
-    'skep-footer': SkepFooter,
-  }
+  components: { SkepNavbar, SkepFooter }
 }
 </script>
 
 <style lang="scss">
-header {
-  padding: 1rem 2rem;
-  @include flex_params(center, center, row);
-  @include list_spacing(30px);
-  background: mix(gray, black, 20%);
-  font-size: 1.25rem;
-
-  ul {
-    @include flex_params(unset, unset, row);
-  }
-
-  li {
-    @include flex_params(center, center, column);
-  }
-
-  a {
-    @include prop_transition(color);
-    @include flex_params(center, center, column);
-    font-weight: bold;
-    color: white;
-
-    &:hover {
-      .header-line {
-        width: 100%;
-      }
-    }
-
-    &:hover {
-      color: lighten($skep-blue, 27%);
-    }
-
-    &.router-link-exact-active {
-      color: $skep-blue;
-      cursor: default;
-
-      .header-line {
-        width: 100%;
-        background: $skep-blue;
-      }
-    }
-  }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.text-spacing {
-  padding-left: 5px;
-  position: relative;
-  top: -1px;
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.header-line {
-  transform: translateY(5px);
-  width: 0%;
-  height: 2px;
-  background: white;
-  box-shadow: 0 0 12px rgba(white, 50%);
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+  Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: mix(black, gray, 45%);
+  overflow-x: hidden;
+}
+
+div,
+span {
   display: block;
-  @include prop_transition();
+}
+
+header {
+  @include flexy(space-between, center, row);
+  padding: 0 2rem;
+}
+
+footer {
+  @include flexy(center, unset, row);
+  background: mix($skep-blue, black, 25%);
+  color: whitesmoke;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+  font-size: 90%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
