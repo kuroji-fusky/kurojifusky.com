@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div id="wrapper">
-      <div id="social-row">
+      <div id="social">
         <button>o</button>
         <button>o</button>
         <button>o</button>
@@ -16,12 +16,12 @@
 <style lang="scss" scoped>
 #wrapper {
   @include flexy(space-between, center, row);
-  max-width: 1280px;
+  max-width: $desktop-w;
   width: 100%;
   padding: .65rem 1.25rem;
 }
 
-#social-row {
+#social {
   display: flex;
   column-gap: 1rem;
 

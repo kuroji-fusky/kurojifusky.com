@@ -3,3 +3,6 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Bruh I'll have to convert raw camera imgs in this folder, so yeah I'll add this to the .gitignore index
+public/img/skep-irl

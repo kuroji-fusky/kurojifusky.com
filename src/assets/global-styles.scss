@@ -47,6 +47,9 @@
 // #endregion
 
 // #region variables
+$x-desktop-w: 1600px;
+$desktop-w: 1280px;
+
 $desktop-fs: 1.15rem;
 $laptop-fs: 1rem;
 
@@ -57,3 +60,13 @@ $skep-borahae: rgb(187, 62, 237);
 $skep-peach: rgb(252, 232, 164);
 $skep-brown:rgb(111, 58, 15);
 // #endregion
+
+$width-squish: 
+  "large-desktop" $x-desktop-w,
+  "desktop" $desktop-w;
+
+@each $desktop, $width in $width-squish {
+  .width-#{$desktop} {
+    max-width: $width;
+  }
+}

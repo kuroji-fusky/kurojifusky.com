@@ -1,86 +1,132 @@
 <template>
   <header>
-    <router-link to="/"><img src="" alt="Stupid logo"></router-link>
+    <router-link to="/">
+      <!-- <img src alt="Stupid logo" /> -->
+    </router-link>
     <nav>
       <ul>
         <li>
-          <router-link to="/portfolio">Portfolio</router-link><hr>
-          <div class="dd-portfolo">
-            <!-- put some content dropdown cringe in here bro -->
-          </div> 
+          <router-link to="/portfolio">
+            <span>Portfolio</span>
+            <hr />
+          </router-link>
+          <div class="dd-portfolio">portfolio content</div>
         </li>
         <li>
-          <router-link to="/discography">Discography</router-link><hr>
-          <div class="dd-discography">
-            <!-- put some content dropdown cringe in here bro -->
-          </div>
-        </li>
-        <li>
-          <router-link to="/about">About</router-link><hr>
-          <div class="dd-about">
-            <!-- put some content dropdown cringe in here bro -->
-          </div>
+          <router-link to="/about">
+            <span>About</span>
+            <hr />
+          </router-link>
+          <div class="dd-about">about content</div>
         </li>
       </ul>
     </nav>
+    <div>
+      <div id="theme-toggle">
+        <!-- TODO: Make a light/dark switch thingy component here you lazy piece of shit -->
+      </div>
+    </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
+$menus_uwu: "discography", "portfolio", "about";
+// #region main navbar
 nav {
   ul {
     list-style: none;
     display: flex;
-      
+    @include prop-transition(column-gap);
+
     @include md-desktop-devices {
       column-gap: 3rem;
     }
 
     column-gap: 1rem;
-    font-family: 'Noto Sans KR', Arial, Helvetica, sans-serif;
+    font-family: "Noto Sans KR", Arial, Helvetica, sans-serif;
+  }
+}
+
+hr {
+  width: 0%;
+  height: 3px;
+  background: $skep-lightblue;
+  border: none;
+  @include prop-transition(width);
+  position: relative;
+  bottom: -3px;
+}
+
+a {
+  @include flexy(center, center, column);
+  padding: 0.75rem 0;
+
+  @include md-desktop-devices {
+    font-size: $desktop-fs;
   }
 
-  li {
-    @include flexy(unset, center, column);
+  font-size: $laptop-fs;
+  @include prop-transition(color);
 
-    color: mix($skep-yellow, black, 15%);
-  }
-
-  a {
-    padding: .75rem 0;
-
-    @include md-desktop-devices {
-      font-size: $desktop-fs;
+  &:hover {
+    span {
+      color: $skep-lightblue;
     }
 
-    font-size: $laptop-fs;
-    @include prop-transition(color);
-
-    &:hover {
-      color: $skep-yellow;
-    }
-  }
-
-  hr {
-    width: 0%;
-    height: 3px;
-    background: $skep-yellow;
-    border: none;
-    @include prop-transition(width);
-    position: relative;
-    bottom: 6px;
-  }
-
-  @at-root li {
-    &:hover {
-      hr {
-        width: 100%;
-      }
+    hr {
+      width: 100%;
     }
   }
 }
 
 .router-link-exact-active {
-  color: $skep-yellow;
+  span {
+    color: $skep-lightblue;
+  }
+
+  hr {
+    width: 100%;
+  }
 }
+// #endregion
+
+// #region dropdown
+li {
+  position: relative;
+
+  @each $menu in $menus_uwu {
+    .dd-#{$menu} {
+      @include pos-a(3rem, unset, -3px);
+      z-index: 5;
+      font-size: 0.97rem;
+      padding: 0.75rem;
+      box-shadow: 0 0 12px rgba(black, 25%);
+      border-radius: 6px;
+      background: mix(black, gray, 60%);
+      opacity: 0;
+      transform: translateY(0px);
+      pointer-events: none;
+      transition: opacity 300ms ease, transform 300ms ease;
+    }
+  }
+
+  &:hover {
+    @each $menu in $menus_uwu {
+      .dd-#{$menu} {
+        transform: translateY(6px);
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    span {
+      color: $skep-lightblue;
+    }
+
+    hr {
+      width: 100%;
+    }
+  }
+}
+// #endregion
 </style>
