@@ -1,28 +1,12 @@
 <template>
   <header>
     <router-link to="/">
-      <!-- <img src alt="Stupid logo" /> -->
+      <img alt="Stupid logo" />
     </router-link>
-    <nav>
-      <ul>
-        <li>
-          <router-link to="/portfolio">
-            <span>Portfolio</span>
-            <hr />
-          </router-link>
-          <div class="dd-portfolio">portfolio content</div>
-        </li>
-        <li>
-          <router-link to="/about">
-            <span>About</span>
-            <hr />
-          </router-link>
-          <div class="dd-about">about content</div>
-        </li>
-      </ul>
-    </nav>
+    
     <div>
       <div id="theme-toggle">
+        toggle theme
         <!-- TODO: Make a light/dark switch thingy component here you lazy piece of shit -->
       </div>
     </div>
@@ -50,7 +34,7 @@ nav {
 hr {
   width: 0%;
   height: 3px;
-  background: $skep-lightblue;
+  background: var(--skep-lightblue);
   border: none;
   @include prop-transition(width);
   position: relative;
@@ -70,7 +54,7 @@ a {
 
   &:hover {
     span {
-      color: $skep-lightblue;
+      color: var(--skep-lightblue);
     }
 
     hr {
@@ -81,7 +65,7 @@ a {
 
 .router-link-exact-active {
   span {
-    color: $skep-lightblue;
+    color: var(--skep-lightblue);
   }
 
   hr {
@@ -120,7 +104,7 @@ li {
     }
 
     span {
-      color: $skep-lightblue;
+      color: var(--skep-lightblue);
     }
 
     hr {

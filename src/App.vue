@@ -50,7 +50,7 @@ header {
 
 footer {
   @include flexy(center, unset, row);
-  background: mix($skep-blue, black, 25%);
+  background: var(--sf-blue-dark-700);
   color: whitesmoke;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 90%;
@@ -74,7 +74,7 @@ figcaption {
 }
 
 * {
-  scrollbar-color: $skep-lightblue $skep-blue;
+  scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
 
   @media only screen and (min-width: $x-desktop-w) {
     // font-size: 1.15rem;

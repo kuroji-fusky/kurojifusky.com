@@ -27,7 +27,7 @@
 
   button {
     $btn-off: whitesmoke;
-    $btn-on: $skep-lightblue;
+    $btn-on: var(--sf-cyan-light-100);
     border: 1px solid $btn-off;
     color: $btn-off;
     padding: .40rem;
