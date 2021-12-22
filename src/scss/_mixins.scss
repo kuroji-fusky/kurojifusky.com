@@ -41,3 +41,9 @@
     @content;
   }
 }
+
+@mixin md-l-desktop-devices {
+  @media only screen and (min-width: 1600px) {
+    @content;
+  }
+}
