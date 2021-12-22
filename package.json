@@ -1,6 +1,6 @@
 {
-  "name": "skep-veet-lol",
-  "version": "0.0.0",
+  "name": "skep-portfolio-vue",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

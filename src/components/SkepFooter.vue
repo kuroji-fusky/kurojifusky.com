@@ -9,7 +9,7 @@
         <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
         <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
-      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky. Site made in <img id="vue-logo" src="@!/assets/vue-logo.svg"> Vue.js.</div>
+      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky. Site made in <img id="vue-logo" src="@/assets/img/vue-logo.svg"> Vue.js.</div>
     </div>
   </footer>
 </template>

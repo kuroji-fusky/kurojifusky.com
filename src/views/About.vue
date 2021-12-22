@@ -7,7 +7,7 @@
       </article>
       <div class="info-responsive">
         <figure>
-          <img src="../../public/img/skep-vars/SkepFormalTransparent.png" alt="Ew" aria-label="Ew" />
+          <img src="@/assets/img/skep-vars/SkepFormalTransparent.png" alt="Ew" aria-label="Ew" />
           <figcaption>This is your fursona? That is cringe bro.</figcaption>
         </figure>
       </div>
