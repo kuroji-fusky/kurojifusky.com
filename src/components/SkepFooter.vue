@@ -2,13 +2,14 @@
   <footer>
     <div id="wrapper">
       <div id="social">
-        <button>o</button>
-        <button>o</button>
-        <button>o</button>
-        <button>o</button>
-        <button>o</button>
+        <button><i class="fab fa-youtube"></i></button>
+        <button><i class="fab fa-github"></i></button>
+        <button><i class="fab fa-twitter"></i></button>
+        <button><i class="fab fa-instagram"></i></button>
+        <button><i class="fab fa-soundcloud"></i></button>
+        <button><i class="fab fa-spotify"></i></button>
       </div>
-      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky, made in Vue.js.</div>
+      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky, made in <img src="../public/assets/vue-logo.svg"> Vue.js.</div>
     </div>
   </footer>
 </template>

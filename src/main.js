@@ -13,8 +13,8 @@ library.add(far);
 import { dom } from "@fortawesome/fontawesome-svg-core";
 dom.watch();
 
-const app = createApp(App);
-app.component("font-awesome-icon", FontAwesomeIcon);
+// const app = createApp(App);
+// app.component("font-awesome-icon", FontAwesomeIcon);
 
 import Home from "@/pages/Home.vue"
 import About from "@/pages/About.vue"
@@ -31,4 +31,7 @@ const router = createRouter({
   ],
 })
 
-createApp(App).use(router).mount("#app")
+createApp(App)
+  .component("font-awesome-icon", FontAwesomeIcon)
+  .use(router)
+  .mount("#app");
