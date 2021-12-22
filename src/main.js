@@ -16,10 +16,10 @@ dom.watch();
 // const app = createApp(App);
 // app.component("font-awesome-icon", FontAwesomeIcon);
 
-import Home from "@/pages/Home.vue"
-import About from "@/pages/About.vue"
-import Discography from "@/pages/Discography.vue"
-import Portfolio from "@/pages/Portfolio.vue"
+import Home from "@/views/Home.vue"
+import About from "@/views/About.vue"
+import Discography from "@/views/Discography.vue"
+import Portfolio from "@/views/Portfolio.vue"
 
 const router = createRouter({
   history: createWebHistory(),

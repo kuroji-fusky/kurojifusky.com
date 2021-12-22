@@ -1,55 +1,10 @@
-// #region mixins
-@mixin flexy($h: center, $v: center, $d: row) {
-  display: flex;
-  justify-content: $h;
-  align-items: $v;
-  flex-direction: $d;
-}
-
-@mixin pos-a($t:0, $b:unset, $l:0, $r:unset) {
-  position: absolute;
-  top: $t;
-  bottom: $b;
-  left: $l;
-  right: $r;
-}
-
-@mixin prop-transition($p: all, $t: 300ms) {
-  transition: $p $t ease;
-  -webkit-transition: $p $t ease;
-}
-
-@mixin md-phone-devices {
-  @media only screen and (max-width: 576px) {
-    @content;
-  }
-}
-
-@mixin md-tablet-devices {
-  @media only screen and (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin md-laptop-devices {
-  @media only screen and (max-width: 992px) {
-    @content;
-  }
-}
-
-@mixin md-desktop-devices {
-  @media only screen and (min-width: 1024px) {
-    @content;
-  }
-}
-// #endregion
-
-// #region variables
 $x-desktop-w: 1600px;
 $desktop-w: 1280px;
 
 $desktop-fs: 1.15rem;
 $laptop-fs: 1rem;
+
+$menus_uwu: "discography", "portfolio", "about";
 
 $sf: (
   "blue": (
@@ -183,11 +138,8 @@ $sf: (
     }
   }
 }
-// #endregion
 
-$width-squish: 
-  "large-desktop" $x-desktop-w,
-  "desktop" $desktop-w;
+$width-squish: "large-desktop" $x-desktop-w, "desktop" $desktop-w;
 
 @each $desktop, $width in $width-squish {
   .width-#{$desktop} {

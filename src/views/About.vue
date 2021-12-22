@@ -35,7 +35,7 @@
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container-info {
   @include flexy();
 

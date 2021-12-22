@@ -5,11 +5,12 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   alias: {
     "@": resolve(__dirname, "./src"),
+    "@!": resolve(__dirname, "./public"),
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import '@/assets/global-styles.scss';`,
+        additionalData: `@import '@/global.scss';`,
       },
     },
   },

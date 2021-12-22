@@ -3,18 +3,21 @@
     <router-link to="/">
       <img alt="Stupid logo" />
     </router-link>
-    
-    <div>
-      <div id="theme-toggle">
-        toggle theme
-        <!-- TODO: Make a light/dark switch thingy component here you lazy piece of shit -->
-      </div>
-    </div>
+    <theme-toggle />
   </header>
 </template>
 
-<style lang="scss" scoped>
-$menus_uwu: "discography", "portfolio", "about";
+<script>
+import ThemeToggle from "./ThemeToggle.vue";
+
+export default {
+  components: {
+    ThemeToggle,
+  },
+};
+</script>
+
+<style lang="scss">
 // #region main navbar
 nav {
   ul {
