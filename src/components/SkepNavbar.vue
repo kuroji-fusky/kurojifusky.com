@@ -1,8 +1,13 @@
 <template>
   <header>
-    <router-link to="/">
-      <img alt="Stupid logo" />
-    </router-link>
+    <div class="hero-brand">
+      <div class="hero-brand_burgir">
+        <i class="fas fa-bars"></i>
+      </div>
+      <router-link to="/">
+        <img alt="Stupid logo" />
+      </router-link>
+    </div>
     <theme-toggle />
   </header>
 </template>
@@ -18,7 +23,15 @@ export default {
 </script>
 
 <style lang="scss">
-// #region main navbar
+.hero-brand {
+  @include flexy();
+
+  &_burgir {
+    margin-right: 1rem;
+    font-size: 22px;
+  }
+}
+
 nav {
   ul {
     list-style: none;

@@ -12,7 +12,9 @@ export default {
 
 <style lang="scss">
 #theme-toggle {
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid white;
+  height: 25px;
+  width: 3rem;
 }
 </style>

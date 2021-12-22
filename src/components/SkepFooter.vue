@@ -2,19 +2,19 @@
   <footer>
     <div id="wrapper">
       <div id="social">
-        <button><i class="fab fa-youtube"></i></button>
-        <button><i class="fab fa-github"></i></button>
-        <button><i class="fab fa-twitter"></i></button>
-        <button><i class="fab fa-instagram"></i></button>
-        <button><i class="fab fa-soundcloud"></i></button>
-        <button><i class="fab fa-spotify"></i></button>
+        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
-      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky, made in <img src="../public/assets/vue-logo.svg"> Vue.js.</div>
+      <div id="footer-info">&copy; {{ new Date().getFullYear() }} Skepfusky. Site made in <img id="vue-logo" src="@!/assets/vue-logo.svg"> Vue.js.</div>
     </div>
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #wrapper {
   @include flexy(space-between, center, row);
   max-width: $desktop-w;
@@ -26,13 +26,13 @@
   display: flex;
   column-gap: 1rem;
 
-  button {
+  a {
     $btn-off: whitesmoke;
     $btn-on: var(--sf-cyan-light-100);
-    border: 1px solid $btn-off;
     color: $btn-off;
     padding: .40rem;
     background: none;
+    font-size: 125%;
     border-radius: 3px;
 
     &:hover {
@@ -40,5 +40,14 @@
       color: $btn-on
     }
   }
+}
+
+#vue-logo {
+  $size: 17px;
+  position: relative;
+  top: 3px;
+  margin: 0 3px;
+  width: $size;
+  height: $size;
 }
 </style>
