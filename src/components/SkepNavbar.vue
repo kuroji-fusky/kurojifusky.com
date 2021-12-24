@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="hero-brand">
-      <div class="hero-brand_burgir">
+      <div class="hero-brand__burgir">
         <i class="fas fa-bars"></i>
       </div>
       <router-link to="/">
@@ -10,6 +10,7 @@
     </div>
     <theme-toggle />
   </header>
+  <div id="mobile-padding"></div>
 </template>
 
 <script>
@@ -23,12 +24,41 @@ export default {
 </script>
 
 <style lang="scss">
+$hd-padding: 2.25rem;
+
+header {
+  @include flexy(space-between, center, row);
+  @include prop-transition();
+  width: 100%;
+  padding: .45rem 1.5rem;
+  background: transparent;
+  position: static;
+
+  @include md-tablet-devices {
+    padding: .55rem $hd-padding;
+    background: black;
+    position: absolute;
+  }
+}
+
+#mobile-padding {
+  display: none;
+  @include md-tablet-devices {
+    display: block;
+    padding: $hd-padding;
+  }
+}
+
 .hero-brand {
   @include flexy();
 
-  &_burgir {
+  &__burgir {
     margin-right: 1rem;
     font-size: 22px;
+
+    @include md-tablet-devices {
+    margin-right: 2rem;
+    }
   }
 }
 
@@ -94,7 +124,7 @@ a {
 li {
   position: relative;
 
-  @each $menu in $menus_uwu {
+  @each $menu in $menus {
     .dd-#{$menu} {
       @include pos-a(3rem, unset, -3px);
       z-index: 5;
@@ -111,7 +141,7 @@ li {
   }
 
   &:hover {
-    @each $menu in $menus_uwu {
+    @each $menu in $menus {
       .dd-#{$menu} {
         transform: translateY(6px);
         opacity: 1;

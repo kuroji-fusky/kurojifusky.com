@@ -1,5 +1,5 @@
 <template>
-  <main id="center-wrapper">
+  <main class="center-wrapper">
     <section class="width-large-desktop container-info">
       <article>
         <h2>Lorem ipsum</h2>

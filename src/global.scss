@@ -1,11 +1,12 @@
-@import 'scss/mixins';
-@import 'scss/variables';
+@import "assets/scss/mixins";
+@import "assets/scss/variables";
 
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
@@ -21,6 +22,10 @@ body {
   background: mix(black, gray, 75%);
   color: whitesmoke;
   overflow-x: hidden;
+
+  @include md-tablet-devices {
+    overflow-y: scroll !important;
+  }
 }
 
 div,
@@ -30,17 +35,17 @@ figcaption {
   display: block;
 }
 
-header {
-  @include flexy(space-between, center, row);
-  padding: 0 2rem;
-}
-
 footer {
   @include flexy(center, unset, row);
   background: var(--sf-blue-dark-700);
   color: whitesmoke;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 90%;
+  background: linear-gradient(
+    75deg,
+    var(--sf-cyan-dark-600),
+    var(--sf-blue-dark-200)
+  );
 }
 
 a {
@@ -52,8 +57,16 @@ img {
   pointer-events: none;
 }
 
-#center-wrapper {
-  @include flexy(center, center, column);
+.center-wrapper {
+  margin: 0 auto;
+  max-width: $large-desktop-w;
+}
+
+.width-responsive {
+  @include md-desktop-devices {
+    max-width: $large-desktop-w;
+  }
+  max-width: $desktop-w;
 }
 
 figcaption {
@@ -63,13 +76,16 @@ figcaption {
 * {
   scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
 
-  @media only screen and (min-width: $x-desktop-w) {
+  @media only screen and (min-width: $large-desktop-w) {
     // font-size: 1.15rem;
   }
 
   // font-size: 1.1rem;
 
   @include md-tablet-devices {
+    h2 {
+      font-size: 1.85rem;
+    }
     font-size: 1.05rem;
   }
 }

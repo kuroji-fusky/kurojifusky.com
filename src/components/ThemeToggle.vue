@@ -1,6 +1,6 @@
 <template>
-  <div id="theme-toggle">
-
+  <div id="theme-toggle-btn">
+    <i class="fas fa-adjust"></i>
   </div>
 </template>
 
@@ -11,10 +11,9 @@ export default {
 </script>
 
 <style lang="scss">
-#theme-toggle {
-  border-radius: 20px;
-  border: 1px solid white;
-  height: 25px;
-  width: 3rem;
+#theme-toggle-btn {
+  padding: .45rem .85rem;
+  background: var(--sf-blue-dark-400);
+  border-radius: 6px;
 }
 </style>
