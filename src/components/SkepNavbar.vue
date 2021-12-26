@@ -37,7 +37,7 @@ header {
   @include md-tablet-devices {
     padding: .55rem $hd-padding;
     background: black;
-    position: absolute;
+    @include pos-a;
   }
 }
 
