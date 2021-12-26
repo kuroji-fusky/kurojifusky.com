@@ -1,39 +1,38 @@
 <template>
-  <div class="home-card-container">
-    <div class="home-card-container__bg" style="background-image: url('./src/assets/img/skep-vars/SkepFormalBrand.png')"></div>
+  <a class="home-card-container" :class="[isNew ? 'home-card-new':'']" :href="`https://${link}`">
+      <div class="home-card-container__bg">
+        <img src="@img/skep-vars/SkepFormalBrand.png" :alt="`Cover of ${title}`" :width="imgSize" >
+      </div>
+    <div class="home-card-container__sub"></div>
     <article class="home-card-container__info">
-      <h2>Fakeu Love</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero illum in delectus, architecto, nemo at magni exercitationem consequuntur, est maxime similique!</p>
+      <h2 :class="[isNew ? 'append-new' : '']">{{ title }}</h2>
+      <p>{{ desc }}</p>
     </article>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
-
-}
+  props: {
+    isNew: {
+      type: Boolean
+    },
+    imgSize: {
+      type: Number,
+      default: 600
+    },
+    link: { 
+      type: String,
+      default: "youtube.com"
+    },
+    title: { 
+      type: String,
+      default: "Title unspecified"
+    },
+    desc: {
+      type: String,
+      default: "You didn't specify a description you stupid",
+    },
+  },
+};
 </script>
-
-<style lang="scss">
-.home-card-container {
-  border-radius: 6px;
-  padding: 1rem;
-  background: linear-gradient(165deg, var(--sf-borahae-dark-500), var(--sf-blue-dark-400));
-  box-shadow: 0 0 16px rgba(gray, 45%);
-  width: 100%;
-
-  &__bg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 16rem;
-    border-radius: 6px;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-    margin: 12px 0;
-  }
-}
-</style>

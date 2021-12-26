@@ -1,5 +1,5 @@
 <template>
-  <main class="center-wrapper">
+  <main class="w-large-desktop">
     <section class="width-large-desktop container-info">
       <article>
         <h2>Lorem ipsum</h2>
@@ -7,7 +7,7 @@
       </article>
       <div class="info-responsive">
         <figure>
-          <img src="@/assets/img/skep-vars/SkepFormalTransparent.png" alt="Ew" aria-label="Ew" />
+          <img src="@img/skep-vars/SkepFormalTransparent.png" alt="Ew" aria-label="Ew" />
           <figcaption>This is your fursona? That is cringe bro.</figcaption>
         </figure>
       </div>

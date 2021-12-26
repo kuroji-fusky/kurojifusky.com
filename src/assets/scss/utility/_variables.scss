@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $large-desktop-w: 1600px;
 $desktop-w: 1280px;
 
@@ -98,7 +100,8 @@ $sf: (
 $width-squish: "large-desktop" $large-desktop-w, "desktop" $desktop-w;
 
 @each $desktop, $width in $width-squish {
-  .width-#{$desktop} {
+  .w-#{$desktop} {
+    margin: 0 auto;
     max-width: $width;
   }
 }

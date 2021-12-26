@@ -1,5 +1,7 @@
-@import "assets/scss/mixins";
-@import "assets/scss/variables";
+@import "assets/scss/utility/mixins";
+@import "assets/scss/utility/variables";
+
+@import "assets/scss/design/homecard";
 
 *,
 *::before,
@@ -7,7 +9,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: border-box;
+  @include vendor-prefix-partial(box-sizing, border-box);
 }
 
 html {
@@ -57,16 +59,17 @@ img {
   pointer-events: none;
 }
 
-.center-wrapper {
-  margin: 0 auto;
-  max-width: $large-desktop-w;
-}
-
 .width-responsive {
   @include md-desktop-devices {
     max-width: $large-desktop-w;
   }
   max-width: $desktop-w;
+}
+
+#top-heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 185%;
 }
 
 figcaption {
@@ -76,15 +79,9 @@ figcaption {
 * {
   scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
 
-  @media only screen and (min-width: $large-desktop-w) {
-    // font-size: 1.15rem;
-  }
-
-  // font-size: 1.1rem;
-
   @include md-tablet-devices {
     h2 {
-      font-size: 1.85rem;
+      font-size: 1.55rem;
     }
     font-size: 1.05rem;
   }

@@ -1,11 +1,9 @@
 <template>
-  <main class="center-wrapper">
-    <h2>BRUH MOMENT</h2>
+  <main class="w-large-desktop">
+    <h2 id="top-heading">Browse some cringe</h2>
     <div id="home-card-grid">
-      <home-card />
-      <home-card />
-      <home-card />
-      <home-card />
+      <home-card :isNew="true" />
+      <home-card title="Yes" />
     </div>
   </main>
 </template>
@@ -19,21 +17,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-#home-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-  gap: 1.25rem;
-  margin: 0 auto;
-  padding: 1.25rem;
-  
-  @media only screen and (min-width: $large-desktop-w) {
-    max-width: $large-desktop-w;
-  }
-
-  max-width: $desktop-w;
-
-}
-</style>
-

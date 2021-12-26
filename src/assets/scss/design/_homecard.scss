@@ -1,0 +1,120 @@
+$new-light-1: darken(gold, 0%);
+$new-light-2: darken(gold, 7%);
+$new-dark-1: darken(gold, 22%);
+$new-dark-2: darken(gold, 32%);
+
+:root {
+  --hc-new-light-100: #{$new-light-1};
+  --hc-new-light-200: #{$new-light-2};
+  --hc-new-dark-100: #{$new-dark-1};
+  --hc-new-dark-200: #{$new-dark-2};
+}
+
+#home-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem;
+
+  @include md-tablet-devices {
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  @include md-phone-devices {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+$hover-time: 300ms;
+
+.home-card-container {
+  border-radius: 6px;
+  padding: 1rem;
+  background: linear-gradient(
+    165deg,
+    var(--sf-borahae-dark-600),
+    var(--sf-blue-dark-400)
+  );
+  box-shadow: 0 0 16px rgba(black, 45%);
+  transform: translateY(0px);
+  cursor: pointer;
+  transition: transform $hover-time ease, filter $hover-time ease;
+
+  > * {
+    width: 100%;
+  }
+
+  &__bg {
+    overflow: hidden;
+    z-index: 2;
+    height: 16rem;
+    border-radius: 6px;
+    @include flexy();
+    
+    img {
+      transform: scale(1);
+      @include prop-transition(transform);
+      width: auto;
+    }
+  }
+
+  &__sub {
+    background-color: black;
+    position: relative;
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.35rem !important;
+    padding: 0 0.75rem;
+    top: -3px;
+    z-index: 1;
+    border-radius: 0 0 6px 6px;
+
+    &::after {
+      content: "Category identifier";
+      font-size: 90%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 0.25rem;
+
+    p {
+      font-size: 88%;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+
+    .home-card-container__bg img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.append-new::after {
+  content: "new";
+  opacity: 0.65;
+  font-size: 50%;
+  position: relative;
+  top: -6px;
+  padding: 0 3px;
+  border: 2px solid white;
+  border-radius: 3px;
+  margin-left: 0.55rem;
+
+  @include md-tablet-devices {
+    margin-left: 0.35rem;
+  }
+}
+
+.home-card-new {
+  background: linear-gradient(
+    95deg,
+    var(--hc-new-dark-100),
+    var(--hc-new-dark-200)
+  ) !important;
+}

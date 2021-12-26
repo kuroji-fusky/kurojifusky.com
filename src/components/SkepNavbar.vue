@@ -45,7 +45,7 @@ header {
   display: none;
   @include md-tablet-devices {
     display: block;
-    padding: $hd-padding;
+    padding: calc($hd-padding + 1rem);
   }
 }
 
