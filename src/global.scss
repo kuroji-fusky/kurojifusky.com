@@ -37,19 +37,6 @@ figcaption {
   display: block;
 }
 
-footer {
-  @include flexy(center, unset, row);
-  background: var(--sf-blue-dark-700);
-  color: whitesmoke;
-  font-family: "Lato", Arial, Helvetica, sans-serif;
-  font-size: 90%;
-  background: linear-gradient(
-    75deg,
-    var(--sf-cyan-dark-600),
-    var(--sf-blue-dark-200)
-  );
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -66,7 +53,7 @@ img {
   max-width: $desktop-w;
 }
 
-#top-heading {
+.top-heading {
   text-align: center;
   text-transform: uppercase;
   font-size: 185%;

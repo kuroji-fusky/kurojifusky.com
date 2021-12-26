@@ -1,7 +1,7 @@
 <template>
   <main class="w-large-desktop">
     <gallery-carousel />
-    <h2 id="top-heading">Browse some cringe</h2>
+    <h2 class="top-heading spacing-tablet">Browse some cringe</h2>
     <div id="home-card-grid">
       <home-card :isNew="true" :idSeries="true" />
       <home-card title="Yes" :idMusic="true"/>

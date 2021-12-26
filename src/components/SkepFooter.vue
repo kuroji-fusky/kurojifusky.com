@@ -1,61 +1,136 @@
 <template>
   <footer>
     <div id="wrapper">
-      <div id="ft-social">
-        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+      <div id="social-wrapper">
+        <div class="ft-container">
+          <strong style="font-size: 115%; opacity: .65; cursor: default;">STALK ME</strong>
+          <div class="ft-container_row">
+            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+          </div>
+        </div>
+        <div class="ft-container">
+          <strong style="font-size: 115%; opacity: .65; cursor: default;">MY CRAPPY MUSIC</strong>
+          <div class="ft-container_row">
+            <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-itunes-note"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-deezer"></i></a>
+          </div>
+        </div>
       </div>
       <div id="ft-text">
         <p>Making non-stop hot garbage since 2014!</p>
-        <strong>Site made in <img id="vue-logo" src="@/assets/img/vue-logo.svg"> Vue.js</strong>
+        <strong>Site made in<img id="vue-logo" src="@img/vue-logo.svg"> Vue.js</strong>
       </div>
     </div>
   </footer>
 </template>
 
 <style lang="scss">
+footer {
+  @include flexy(center, unset, row);
+  background: var(--sf-blue-dark-700);
+  color: whitesmoke;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  font-size: 90%;
+  background: linear-gradient(
+    75deg,
+    var(--sf-cyan-dark-600),
+    var(--sf-blue-dark-200)
+  );
+}
+
 #wrapper {
   @include flexy(space-between, center, row);
   max-width: $desktop-w;
   width: 100%;
-  padding: .65rem 1.25rem;
+  padding: 1.65rem 1.25rem;
+
+  @media only screen and (max-width: 900px) {
+    @include flexy(center, center, column);
+    padding: calc(0.65rem + 0.8rem) 1rem;
+  }
+
+  @include md-tablet-devices {
+    row-gap: 1rem;
+  }
 }
 
-#ft-social {
-  display: flex;
-  column-gap: 2rem;
+#social-wrapper {
+  @include flexy-dir(column);
+  row-gap: .80rem;
+
+  @media only screen and (max-width: 900px) {
+    @include flexy-dir();
+    width: 100%;
+  }
+
+  @include md-tablet-devices {
+    @include flexy-dir(column);
+    row-gap: 1rem;
+  }
+}
+
+.ft-container {
+  @include flexy-dir(column);
+
+  @media only screen and (max-width: 900px) {
+    @include flexy(center, center, column);
+    width: 100%;
+  }
 
   a {
     $btn-off: whitesmoke;
     $btn-on: var(--sf-cyan-light-200);
     color: $btn-off;
-    padding: .70rem 0;
+    padding: 0.45rem 0;
     background: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: 3px;
+
+    @include md-tablet-devices {
+      padding: 1rem 0;
+      font-size: 1.45rem;
+    }
 
     &:hover {
       border-color: $btn-on;
       color: $btn-on;
     }
   }
+
+  &_row {
+    @include flexy-dir();
+    column-gap: 1rem;
+
+    @media only screen and (max-width: 900px) {
+      column-gap: 2rem;
+    }
+  }
 }
 
 #ft-text {
-  @include flexy-dir();
-  column-gap: .5em;
+  @include flexy(center, flex-end, row);
+  text-align: center;
+  column-gap: 0.5em;
   font-size: 110%;
-  opacity: .75;
+  height: 100%;
+  opacity: 0.75;
   filter: opacity(85%);
+
+  @media only screen and (max-width: 900px) {
+  @include flexy(center, center, column);
+
+    row-gap: 1rem;
+  }
 }
 
 #vue-logo {
   --logo-size: 17px;
-  
   position: relative;
   top: 3px;
   margin: 0 3px;

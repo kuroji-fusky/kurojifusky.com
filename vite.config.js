@@ -5,9 +5,10 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   alias: {
     "@": resolve(__dirname, "./src"),
-    "@scss": resolve(__dirname, "./src/assets/scss"),
+    "@scss": resolve(__dirname, "./src/scss"),
     "@components": resolve(__dirname, "./src/components"),
-    "@img": resolve(__dirname, "./src/assets/img"),
+    "@views": resolve(__dirname, "./src/views"),
+    "@img": resolve(__dirname, "./src/img"),
   },
   css: {
     preprocessorOptions: {
