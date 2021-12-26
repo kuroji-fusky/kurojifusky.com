@@ -3,16 +3,28 @@ $new-light-2: darken(gold, 7%);
 $new-dark-1: darken(gold, 22%);
 $new-dark-2: darken(gold, 32%);
 
+$new: (
+  light: (
+    100: darken(gold, 3%),
+    200: darken(gold, 12%),
+  ),
+  dark: (
+    100: darken(gold, 22%),
+    200: darken(gold, 31%)
+  )
+);
+
 :root {
-  --hc-new-light-100: #{$new-light-1};
-  --hc-new-light-200: #{$new-light-2};
-  --hc-new-dark-100: #{$new-dark-1};
-  --hc-new-dark-200: #{$new-dark-2};
+  @each $theme, $value in $new {
+    @each $varient, $output in $value {
+      --hc-new-#{$theme}-#{$varient}: #{$output};
+    }
+  }
 }
 
 #home-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.25rem;
   padding: 1.25rem;
 
@@ -51,11 +63,11 @@ $hover-time: 300ms;
     height: 16rem;
     border-radius: 6px;
     @include flexy();
-    
+
     img {
       transform: scale(1);
       @include prop-transition(transform);
-      width: auto;
+      // width: auto;
     }
   }
 
@@ -68,10 +80,12 @@ $hover-time: 300ms;
     top: -3px;
     z-index: 1;
     border-radius: 0 0 6px 6px;
+    font-size: 75%;
 
-    &::after {
-      content: "Category identifier";
-      font-size: 90%;
+    div {
+      @include flexy(flex-start, center, row);
+      column-gap: .5rem;
+      font-weight: 700;
     }
   }
 
@@ -87,7 +101,7 @@ $hover-time: 300ms;
   }
 
   &:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     .home-card-container__bg img {
       transform: scale(1.05);
@@ -117,4 +131,13 @@ $hover-time: 300ms;
     var(--hc-new-dark-100),
     var(--hc-new-dark-200)
   ) !important;
+}
+
+// sum content
+.id {
+  &-series {background: darken(royalblue, 21%);}
+  &-music {background: darken(orangered, 25%);}
+  &-film {background: darken(hotpink, 35%);}
+  &-project {background: darken(orchid, 25%);}
+  &-misc {background: darken(gray, 25%);}
 }

@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div id="wrapper">
-      <div id="social">
+      <div id="ft-social">
         <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -9,7 +9,10 @@
         <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
         <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
       </div>
-      <strong id="footer-info">Site made in <img id="vue-logo" src="@/assets/img/vue-logo.svg"> Vue.js</strong>
+      <div id="ft-text">
+        <p>Making non-stop hot garbage since 2014!</p>
+        <strong>Site made in <img id="vue-logo" src="@/assets/img/vue-logo.svg"> Vue.js</strong>
+      </div>
     </div>
   </footer>
 </template>
@@ -22,32 +25,41 @@
   padding: .65rem 1.25rem;
 }
 
-#social {
+#ft-social {
   display: flex;
-  column-gap: 1rem;
+  column-gap: 2rem;
 
   a {
     $btn-off: whitesmoke;
-    $btn-on: var(--sf-cyan-light-100);
+    $btn-on: var(--sf-cyan-light-200);
     color: $btn-off;
-    padding: .40rem;
+    padding: .70rem 0;
     background: none;
-    font-size: 125%;
+    font-size: 1.5rem;
     border-radius: 3px;
 
     &:hover {
       border-color: $btn-on;
-      color: $btn-on
+      color: $btn-on;
     }
   }
 }
 
+#ft-text {
+  @include flexy-dir();
+  column-gap: .5em;
+  font-size: 110%;
+  opacity: .75;
+  filter: opacity(85%);
+}
+
 #vue-logo {
-  $size: 17px;
+  --logo-size: 17px;
+  
   position: relative;
   top: 3px;
   margin: 0 3px;
-  width: $size;
-  height: $size;
+  width: var(--logo-size);
+  height: var(--logo-size);
 }
 </style>

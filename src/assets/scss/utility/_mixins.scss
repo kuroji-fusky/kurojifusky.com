@@ -11,9 +11,14 @@
 }
 
 @mixin flexy($h: center, $v: center, $d: row) {
-  display: flex;
+  @include vendor-prefix-partial(display, flex);
   justify-content: $h;
   align-items: $v;
+  flex-direction: $d;
+}
+
+@mixin flexy-dir($d: row) {
+  @include vendor-prefix-partial(display, flex);
   flex-direction: $d;
 }
 

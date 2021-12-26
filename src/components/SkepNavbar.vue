@@ -43,6 +43,7 @@ header {
 
 #mobile-padding {
   display: none;
+  
   @include md-tablet-devices {
     display: block;
     padding: calc($hd-padding + 1rem);
