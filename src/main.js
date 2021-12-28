@@ -16,10 +16,11 @@ dom.watch();
 // const app = createApp(App);
 // app.component("font-awesome-icon", FontAwesomeIcon);
 
-import Home from "@/views/Home.vue"
-import About from "@/views/About.vue"
-import Discography from "@/views/Discography.vue"
-import Portfolio from "@/views/Portfolio.vue"
+import Home from "@views/Home.vue"
+import About from "@views/About.vue"
+import Discography from "@views/Discography.vue"
+import Portfolio from "@views/Portfolio.vue"
+import Quotes from "@views/Quotes.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -27,6 +28,7 @@ const router = createRouter({
     { path: "/", name: "Home", component: Home },
     { path: "/about", name: "About", component: About },
     { path: "/portfolio", name: "Portfolio", component: Portfolio },
+    { path: "/quotes", name: "Quotes", component: Quotes },
     { path: "/discography", name: "Discography", component: Discography },
   ],
 })
