@@ -1,6 +1,6 @@
 <template>
   <main class="w-large-desktop">
-    <gallery-carousel />
+    <!-- <gallery-carousel /> -->
     <h2 class="top-heading spacing-tablet">Browse some cringe</h2>
     <div id="home-card-grid">
       <home-card :isNew="true" :idSeries="true" />

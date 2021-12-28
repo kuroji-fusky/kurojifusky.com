@@ -1,26 +1,19 @@
 <template>
-  <div id="app" :class="[themeToggle ? 'theme-light' : 'thtme-dark']">
-    <skep-navbar :themeToggle="themeToggle"/>
-    <router-view></router-view>
-    <skep-footer />
-  </div>
+  <skep-navbar />
+  <router-view></router-view>
+  <skep-footer />
 </template>
 
 <script>
-import SkepNavbar from "./components/SkepNavbar.vue"
-import SkepFooter from "./components/SkepFooter.vue"
+import SkepNavbar from "./components/SkepNavbar.vue";
+import SkepFooter from "./components/SkepFooter.vue";
 
 export default {
   components: {
     SkepNavbar,
-    SkepFooter 
+    SkepFooter,
   },
-  data() {
-    return {
-      themeToggle: false
-    }
-  }
-}
+};
 </script>
 
 <style lang="scss">
