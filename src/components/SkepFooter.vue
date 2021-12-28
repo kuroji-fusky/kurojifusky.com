@@ -24,7 +24,7 @@
       </div>
       <div id="ft-text">
         <p>Making non-stop hot garbage since 2014!</p>
-        <strong>Site made in<img id="vue-logo" src="@img/vue-logo.svg"> Vue.js</strong>
+        <strong>Made in<img id="vue-logo" src="@img/vue-logo.svg"> Vue.js</strong>
       </div>
     </div>
   </footer>
@@ -39,8 +39,8 @@ footer {
   font-size: 90%;
   background: linear-gradient(
     75deg,
-    var(--sf-cyan-dark-600),
-    var(--sf-blue-dark-200)
+    var(--sf-blue-dark-300),
+    var(--sf-borahae-dark-600)
   );
 }
 
@@ -48,7 +48,7 @@ footer {
   @include flexy(space-between, center, row);
   max-width: $desktop-w;
   width: 100%;
-  padding: 1.65rem 1.25rem;
+  padding: 1.65rem 2rem;
 
   @media only screen and (max-width: 900px) {
     @include flexy(center, center, column);
@@ -105,7 +105,7 @@ footer {
 
   &_row {
     @include flexy-dir();
-    column-gap: 1rem;
+    column-gap: 1.5rem;
 
     @media only screen and (max-width: 900px) {
       column-gap: 2rem;
@@ -114,7 +114,8 @@ footer {
 }
 
 #ft-text {
-  @include flexy(center, flex-end, row);
+  @include flexy(flex-end, flex-end, column);
+  cursor: default;
   text-align: center;
   column-gap: 0.5em;
   font-size: 110%;
@@ -123,14 +124,23 @@ footer {
   filter: opacity(85%);
 
   @media only screen and (max-width: 900px) {
-  @include flexy(center, center, column);
-
+    @include flexy(center, center, column);
     row-gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  @include md-tablet-devices {
+    margin-top: 0;
   }
 }
 
 #vue-logo {
   --logo-size: 17px;
+
+  @include md-phone-devices {
+    --logo-size: 15px;
+  }
+
   position: relative;
   top: 3px;
   margin: 0 3px;
