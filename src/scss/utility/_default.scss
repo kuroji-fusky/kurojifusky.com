@@ -10,7 +10,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 body {
@@ -43,7 +43,7 @@ figcaption {
 }
 
 * {
-  scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
+  
 
   @include md-tablet-devices {
     h2 {

@@ -3,6 +3,7 @@
 @import "@scss/utility/default";
 
 @import "@scss/design/homecard";
+@import "@scss/design/themes";
 
 .width-responsive {
   @include md-desktop-devices {
