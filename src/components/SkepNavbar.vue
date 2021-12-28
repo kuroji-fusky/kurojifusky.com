@@ -1,91 +1,94 @@
 <template>
   <header>
-    <div class="hero-brand">
-      <div class="hero-brand__burgir">
+    <div id="desktop-hero-brand">
+      <a id="desktop-hero-brand_btn">
         <i class="fas fa-bars"></i>
-      </div>
-      <router-link to="/">
-        <img alt="Stupid logo" />
+        <!-- <div class="desktop-dropdown_menu">
+          Put something incredibly dumb in here
+        </div> -->
+      </a>
+      <router-link id="icon-desktop" to="/">
+        <img :alt="logoAlt" :aria-label="logoAlt">
       </router-link>
     </div>
-    <theme-toggle />
+    <router-link id="icon-mobile" to="/">
+      <img :alt="logoAlt" :aria-label="logoAlt">
+    </router-link>
+    <a id="theme-toggle-btn">
+      <i class="fas fa-adjust"></i>
+      <!-- <div class="desktop-dropdown_toggle">
+        <strong>Theme</strong>
+        <strong>Language</strong>
+      </div> -->
+    </a>
   </header>
   <div id="mobile-padding"></div>
 </template>
 
 <script>
-import ThemeToggle from "./ThemeToggle.vue";
-
 export default {
-  components: {
-    ThemeToggle,
-  },
+  data() {
+    return {
+      logo: '',
+      logoAlt: 'Insert stupid logo'
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-$hd-padding: 2.25rem;
+$hd-padding: 2rem;
 
 header {
   @include flexy(space-between, center, row);
   @include prop-transition();
   width: 100%;
-  padding: .45rem 1.5rem;
+  padding: 0.45rem 1.5rem;
   background: transparent;
   position: static;
 
   @include md-tablet-devices {
-    padding: .55rem $hd-padding;
+    padding: 0.55rem $hd-padding;
     background: black;
     @include pos-a;
   }
 }
 
-#mobile-padding {
-  display: none;
-  
-  @include md-tablet-devices {
-    display: block;
-    padding: calc($hd-padding + 1rem);
-  }
-}
-
-.hero-brand {
+#desktop-hero-brand {
   @include flexy();
 
-  &__burgir {
+  &_btn {
     margin-right: 1rem;
-    font-size: 22px;
+  }
+}
+
+#icon {
+  &-desktop {
+    display: block;
 
     @include md-tablet-devices {
-    margin-right: 2rem;
+      display: none;
+    }
+  }
+  &-mobile {
+    display: none;
+
+    @include md-tablet-devices {
+      display: block;
     }
   }
 }
 
-nav {
-  ul {
-    list-style: none;
-    display: flex;
-    @include prop-transition(column-gap);
+:is(#desktop-hero-brand_btn, #theme-toggle-btn) {
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 22px;
+  background: var(--sf-blue-dark-400);
+  cursor: pointer;
 
-    @include md-desktop-devices {
-      column-gap: 3rem;
-    }
-
-    column-gap: 1rem;
-    font-family: "Noto Sans KR", Arial, Helvetica, sans-serif;
+  &:hover {
+    background: var(--sf-blue-dark-100);
   }
-}
-
-hr {
-  width: 0%;
-  height: 3px;
-  background: var(--skep-lightblue);
-  border: none;
-  @include prop-transition(width);
-  position: relative;
-  bottom: -3px;
 }
 
 a {
@@ -98,14 +101,25 @@ a {
 
   font-size: $laptop-fs;
   @include prop-transition(color);
+}
 
-  &:hover {
-    span {
-      color: var(--skep-lightblue);
-    }
+.desktop-dropdown {
+  &_menu {
+    @include pos-a(3.75rem, unset, 1.55rem);
+  }
 
-    hr {
-      width: 100%;
+  &_toggle {
+    @include pos-a(3.75rem, unset, unset, 1.55rem);
+  }
+
+  :is(&_menu, &_toggle) {
+    border: 3px dashed orange;
+    padding: 0.35rem 0.55rem;
+    z-index: 10;
+    border-radius: 6px;
+
+    @include md-tablet-devices {
+      display: none !important;
     }
   }
 }
@@ -119,44 +133,13 @@ a {
     width: 100%;
   }
 }
-// #endregion
 
-// #region dropdown
-li {
-  position: relative;
+#mobile-padding {
+  display: none;
 
-  @each $menu in $menus {
-    .dd-#{$menu} {
-      @include pos-a(3rem, unset, -3px);
-      z-index: 5;
-      font-size: 0.97rem;
-      padding: 0.75rem;
-      box-shadow: 0 0 12px rgba(black, 25%);
-      border-radius: 6px;
-      background: mix(black, gray, 60%);
-      opacity: 0;
-      transform: translateY(0px);
-      pointer-events: none;
-      transition: opacity 300ms ease, transform 300ms ease;
-    }
-  }
-
-  &:hover {
-    @each $menu in $menus {
-      .dd-#{$menu} {
-        transform: translateY(6px);
-        opacity: 1;
-        pointer-events: all;
-      }
-    }
-
-    span {
-      color: var(--skep-lightblue);
-    }
-
-    hr {
-      width: 100%;
-    }
+  @include md-tablet-devices {
+    display: block;
+    padding: calc($hd-padding + 0.9rem);
   }
 }
 // #endregion

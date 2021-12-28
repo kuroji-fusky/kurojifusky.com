@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -18,12 +17,9 @@ body {
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: mix(black, gray, 75%);
+  // background: mix(black, gray, 4%);
   color: whitesmoke;
   overflow-x: hidden;
-
-  @include md-tablet-devices {
-    overflow-y: scroll !important;
-  }
 }
 
 div,
@@ -54,5 +50,13 @@ figcaption {
       font-size: 1.55rem;
     }
     font-size: 1.05rem;
+  }
+
+  @include md-phone-devices {
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    font-size: .90rem;
   }
 }

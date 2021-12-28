@@ -34,12 +34,13 @@ $new: (
   @include md-tablet-devices {
     gap: 2.5rem;
     padding: 2.5rem;
-  }
-
-  @include md-tablet-devices {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 0;
     padding: 0;
+  }
+
+  @include md-phone-devices {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 }
 

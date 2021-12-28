@@ -38,5 +38,14 @@ export default defineConfig({
       allow: [".."],
     },
   },
-  plugins: [vue()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // treat all tags with a dash as custom elements lol
+          // isCustomElement: (tag) => tag.includes("-"),
+        },
+      },
+    }),
+  ],
 });
