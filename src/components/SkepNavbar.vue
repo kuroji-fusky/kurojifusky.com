@@ -1,7 +1,7 @@
 <template>
-  <header>
-    <div id="desktop-hero-brand">
-      <a id="desktop-hero-brand_btn">
+  <header :class="[themeToggle ? 'theme-light' : '']">
+    <div class="desktop-hero-brand">
+      <a class="desktop-hero-brand_btn">
         <i class="fas fa-bars"></i>
         <!-- <div class="desktop-dropdown_menu">
           Put something incredibly dumb in here
@@ -14,7 +14,7 @@
     <router-link id="icon-mobile" to="/">
       <img :alt="logoAlt" :aria-label="logoAlt">
     </router-link>
-    <a id="theme-toggle-btn">
+    <a class="theme-toggle-btn">
       <i class="fas fa-adjust"></i>
       <!-- <div class="desktop-dropdown_toggle">
         <strong>Theme</strong>
@@ -30,8 +30,11 @@ export default {
   data() {
     return {
       logo: '',
-      logoAlt: 'Insert stupid logo'
+      logoAlt: 'Insert stupid logo',
     }
+  },
+  props: {
+    themeToggle: Boolean
   }
 };
 </script>
@@ -54,7 +57,7 @@ header {
   }
 }
 
-#desktop-hero-brand {
+.desktop-hero-brand {
   @include flexy();
 
   &_btn {
@@ -79,7 +82,7 @@ header {
   }
 }
 
-:is(#desktop-hero-brand_btn, #theme-toggle-btn) {
+:is(.desktop-hero-brand_btn, .theme-toggle-btn) {
   padding: 0.65rem 0.85rem;
   border-radius: 6px;
   font-size: 22px;

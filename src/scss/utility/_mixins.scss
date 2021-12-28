@@ -20,6 +20,7 @@
 @mixin flexy-dir($d: row) {
   @include vendor-prefix-partial(display, flex);
   flex-direction: $d;
+  -ms-flex-direction: $d;
 }
 
 @mixin pos-a($t: 0, $b: unset, $l: 0, $r: unset) {

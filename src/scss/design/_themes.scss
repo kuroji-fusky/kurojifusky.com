@@ -1,18 +1,8 @@
-:root {
-  --theme-scrollbar-track: var(--sf-blue-dark-400);
-  --theme-scrollbar-thumb: var(--sf-cyan-dark-400);
+* {
+  scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
 }
 
-html {
-  &.theme {
-    &-light {
-      --theme-scrollbar-track: var(--sf-blue-light-300);
-      --theme-scrollbar-thumb: var(--sf-cyan-light-400);
-      scrollbar-color: var(--theme-scrollbar-thumb) var(--theme-scrollbar-track);
-    }
-
-    &-dark {
-      scrollbar-color: var(--theme-scrollbar-thumb) var(--theme-scrollbar-track);
-    }
-  }
+.theme-light {
+  background: whitesmoke;
+  color: black;
 }

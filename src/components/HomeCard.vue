@@ -1,5 +1,6 @@
 <template>
-  <a class="home-card-container" :class="[isNew ? 'home-card-new':'']" :href="`https://${link}`">
+  <a class="home-card-container"
+    :class="[isNew ? 'home-card-new' : '']" :href="`https://${link}`">
       <div class="home-card-container__bg">
         <img src="@img/skep-vars/SkepFormalBrand.png" :alt="`Cover of ${title}`" :width="imgSize" >
       </div>
@@ -34,6 +35,7 @@ export default {
     idFilm: Boolean,
     idProject: Boolean,
     idMisc: Boolean,
+    // themeToggle: Boolean,
     
     isNew: Boolean,
     imgSize: {
