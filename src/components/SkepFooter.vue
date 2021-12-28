@@ -42,6 +42,7 @@ footer {
     var(--sf-blue-dark-300),
     var(--sf-borahae-dark-600)
   );
+  z-index: 100;
 }
 
 #wrapper {

@@ -19,6 +19,7 @@ export default {
   &-container {
     padding: 1rem;
     border-radius: 6px;
+    border: 2px dashed orange;
   }
 }
 </style>
