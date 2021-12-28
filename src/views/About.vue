@@ -7,8 +7,8 @@
       </article>
       <div class="info-responsive">
         <figure>
-          <img src="@img/skep-vars/SkepFormalTransparent.png" alt="Ew" aria-label="Ew" />
-          <figcaption>This is your fursona? That is cringe bro.</figcaption>
+          <img src="@img/skep-formal.svg" :alt="svgFursona" :aria-label="svgFursona" />
+          <figcaption>{{ svgFursona }}</figcaption>
         </figure>
       </div>
     </section>
@@ -35,6 +35,16 @@
   </main>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      svgFursona: 'This is your fursona? That is cringe bro.'
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 .container-info {
   @include flexy();
@@ -57,6 +67,12 @@
 
     @include md-tablet-devices {
       width: 300px;
+    }
+  }
+
+  figure {
+    @include md-tablet-devices {
+      @include flexy(unset, center, column);
     }
   }
 }

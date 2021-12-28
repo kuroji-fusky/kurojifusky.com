@@ -3,7 +3,7 @@
     <div id="wrapper">
       <div id="social-wrapper">
         <div class="ft-container">
-          <strong style="font-size: 115%; opacity: .65; cursor: default;">STALK ME</strong>
+          <strong style="font-size: 115%; opacity: .65; cursor: default;">PLACES TO STALK ME</strong>
           <div class="ft-container_row">
             <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="#" target="_blank"><i class="fab fa-github"></i></a>
@@ -89,7 +89,7 @@ footer {
     color: $btn-off;
     padding: 0.45rem 0;
     background: none;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     border-radius: 3px;
 
     @include md-tablet-devices {
