@@ -1,16 +1,39 @@
-* {
-  scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
-}
-
-.theme-light {
-  background: whitesmoke;
-  color: black;
-}
-
 $bd-dark: mix(black, gray, 75%);
 $bd-dark-transparent: rgba(mix(black, gray, 75%), 0%);
 
 :root {
   --backdrop: #{$bd-dark};
   --backdrop-trans: #{$bd-dark-transparent};
+}
+
+* {
+  scrollbar-color: var(--sf-cyan-dark-400) var(--sf-blue-dark-400);
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sf-cyan-dark-400);
+  border: 3px solid var(--backdrop);
+  border-radius: 10px;
+
+  &:hover {
+    background: var(--sf-cyan-dark-500);
+  }
+
+  &:active {
+    background: var(--sf-cyan-light-100);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: var(--backdrop);
+}
+
+.theme-light {
+  background: whitesmoke;
+  color: black;
 }

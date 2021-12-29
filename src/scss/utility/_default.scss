@@ -41,9 +41,10 @@ figcaption {
 }
 
 * {
-  
-
   @include md-tablet-devices {
+    h1 {
+      font-size: 1.90rem;
+    }
     h2 {
       font-size: 1.55rem;
     }

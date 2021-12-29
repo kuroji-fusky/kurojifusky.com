@@ -1,8 +1,20 @@
 <template>
   <div class="backdrop">
-    <img src="@img/skep-vars/SkepFormalBrand.png" />
+    <img :src="`./src/img/${imgUrl}`" />
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    imgUrl: {
+      type: String,
+      required: true,
+      default: 'skep-vars/SkepFormalTransparent.png'
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 .backdrop {
