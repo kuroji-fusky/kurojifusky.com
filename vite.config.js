@@ -13,6 +13,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        charset: false,
         additionalData: `@import '@/global.scss';`,
       },
     },
