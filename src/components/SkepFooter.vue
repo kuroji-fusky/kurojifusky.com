@@ -5,25 +5,27 @@
         <div class="ft-container">
           <strong style="font-size: 115%; opacity: .65; cursor: default;">PLACES TO STALK ME</strong>
           <div class="ft-container_row">
-            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+            <a href="#" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Discord Server" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="#" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" title="Twitch" target="_blank"><i class="fab fa-twitch"></i></a>
           </div>
         </div>
         <div class="ft-container">
-          <strong style="font-size: 115%; opacity: .65; cursor: default;">MY CRAPPY MUSIC</strong>
+          <strong style="font-size: 115%; opacity: .65; cursor: default;">HOT GARBAGE MIXTAPES</strong>
           <div class="ft-container_row">
-            <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-itunes-note"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-deezer"></i></a>
+            <a href="#" title="Spotify" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="#" title="Apple Music" target="_blank"><i class="fab fa-itunes-note"></i></a>
+            <a href="#" title="SoundCloud" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="#" title="Bandcamp" target="_blank"><i class="fab fa-bandcamp"></i></a>
+            <a href="#" title="Deezer" target="_blank"><i class="fab fa-deezer"></i></a>
           </div>
         </div>
       </div>
       <div id="ft-text">
-        <p>Making non-stop hot garbage since 2014!</p>
+        <p>Been making non-stop hot garbage since 2014!</p>
         <strong>Made in<img id="vue-logo" src="@img/vue-logo.svg"> Vue.js</strong>
       </div>
     </div>
@@ -86,7 +88,7 @@ footer {
 
   a {
     $btn-off: whitesmoke;
-    $btn-on: var(--sf-cyan-light-200);
+    $btn-on: var(--sf-borahae-light-200);
     color: $btn-off;
     padding: 0.45rem 0;
     background: none;

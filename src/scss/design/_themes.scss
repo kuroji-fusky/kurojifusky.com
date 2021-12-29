@@ -6,3 +6,11 @@
   background: whitesmoke;
   color: black;
 }
+
+$bd-dark: mix(black, gray, 75%);
+$bd-dark-transparent: rgba(mix(black, gray, 75%), 0%);
+
+:root {
+  --backdrop: #{$bd-dark};
+  --backdrop-trans: #{$bd-dark-transparent};
+}
