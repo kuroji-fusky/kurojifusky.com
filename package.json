@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
+    "local": "sh local.sh",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -1,6 +1,6 @@
 <template>
   <a href="#" class="album-item">
-    <img :src="`/src/img/album-covers/${cover}`" :alt="`Album cover for ${title}`" :aria-label="`Album cover for ${title}`">
+    <img :src="`./src/img/album-covers/${cover}`" :alt="`Album cover for ${title}`" :aria-label="`Album cover for ${title}`">
     <div class="album-item_info">
       <h3>{{ title }}</h3>
       <ul>
