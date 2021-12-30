@@ -1,39 +1,19 @@
-import { createApp } from "vue"
-import { createRouter, createWebHistory } from "vue-router"
-import App from "./App.vue"
-
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router.js";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-library.add(fas);
 import { fab } from "@fortawesome/free-brands-svg-icons";
-library.add(fab);
 import { far } from "@fortawesome/free-regular-svg-icons";
-library.add(far);
 import { dom } from "@fortawesome/fontawesome-svg-core";
+
+library.add(fab);
+library.add(fas);
+library.add(far);
 dom.watch();
 
-// const app = createApp(App);
-// app.component("font-awesome-icon", FontAwesomeIcon);
+const app = createApp(App);
+app.component("font-awesome-icon", FontAwesomeIcon);
 
-import Home from "@views/Home.vue"
-import About from "@views/About.vue"
-import Discography from "@views/Discography.vue"
-import Portfolio from "@views/Portfolio.vue"
-import Quotes from "@views/Quotes.vue"
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: "/", name: "Home", component: Home },
-    { path: "/about", name: "About", component: About },
-    { path: "/portfolio", name: "Portfolio", component: Portfolio },
-    { path: "/quotes", name: "Quotes", component: Quotes },
-    { path: "/discography", name: "Discography", component: Discography },
-  ],
-})
-
-createApp(App)
-  .component("font-awesome-icon", FontAwesomeIcon)
-  .use(router)
-  .mount("#app");
+createApp(App).use(router).mount("#app");

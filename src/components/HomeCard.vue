@@ -1,10 +1,13 @@
 <template>
-  <a class="home-card-container"
-    :class="[isNew ? 'home-card-new' : '']" :href="`https://${link}`">
-      <div class="home-card-container__bg">
-        <img src="@img/skep-vars/SkepFormalBrand.png" :alt="`Cover of ${title}`" :width="imgSize" >
-      </div>
-    <div 
+  <a
+    class="home-card-container"
+    :class="[isNew ? 'home-card-new' : '']"
+    :href="`https://${link}`"
+  >
+    <div class="home-card-container__bg">
+      <img :alt="`Cover of ${title}`" :width="imgSize" />
+    </div>
+    <div
       class="home-card-container__sub"
       :class="[
         idSeries ? 'id-series' : '',
@@ -12,10 +15,13 @@
         idProject ? 'id-project' : '',
         idFilm ? 'id-film' : '',
         idMisc ? 'id-misc' : '',
-      ]">
+      ]"
+    >
       <div v-if="idSeries"><i class="fas fa-video"></i>Video series</div>
       <div v-else-if="idMusic"><i class="fas fa-music"></i>Discography</div>
-      <div v-else-if="idProject"><i class="fas fa-project-diagram"></i>Project</div>
+      <div v-else-if="idProject">
+        <i class="fas fa-project-diagram"></i>Project
+      </div>
       <div v-else-if="idFilm"><i class="fas fa-film"></i>Film</div>
       <div v-else-if="idMisc"><i class="fas fa-box"></i>Miscellaneous</div>
       <div v-else><i class="fas fa-question"></i>Undefined tag</div>
@@ -36,19 +42,19 @@ export default {
     idProject: Boolean,
     idMisc: Boolean,
     // themeToggle: Boolean,
-    
+
     isNew: Boolean,
     imgSize: {
       type: Number,
-      default: 780
+      default: 780,
     },
-    link: { 
+    link: {
       type: String,
-      default: "youtube.com"
+      default: "youtube.com",
     },
-    title: { 
+    title: {
       type: String,
-      default: "Title unspecified"
+      default: "Title unspecified",
     },
     desc: {
       type: String,
