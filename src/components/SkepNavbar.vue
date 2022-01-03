@@ -8,11 +8,11 @@
         </div> -->
       </a>
       <router-link id="icon-desktop" to="/">
-        <img :alt="logoAlt" :aria-label="logoAlt">
+        <img :alt="logoAlt" :aria-label="logoAlt" />
       </router-link>
     </div>
     <router-link id="icon-mobile" to="/">
-      <img :alt="logoAlt" :aria-label="logoAlt">
+      <img :alt="logoAlt" :aria-label="logoAlt" />
     </router-link>
     <a class="theme-toggle-btn">
       <i class="fas fa-adjust"></i>
@@ -29,121 +29,12 @@
 export default {
   data() {
     return {
-      logo: '',
-      logoAlt: 'Insert stupid logo',
-    }
+      logo: "",
+      logoAlt: "Insert stupid logo",
+    };
   },
   props: {
-    themeToggle: Boolean
-  }
+    themeToggle: Boolean,
+  },
 };
 </script>
-
-<style lang="scss">
-$hd-padding: 2rem;
-
-header {
-  @include flexy(space-between, center, row);
-  @include prop-transition();
-  width: 100%;
-  padding: 0.45rem 1.5rem;
-  background: transparent;
-  position: static;
-
-  @include md-tablet-devices {
-    padding: 0.55rem $hd-padding;
-    background: black;
-    @include pos-a;
-  }
-}
-
-.desktop-hero-brand {
-  @include flexy();
-
-  &_btn {
-    margin-right: 1rem;
-  }
-}
-
-#icon {
-  &-desktop {
-    display: block;
-
-    @include md-tablet-devices {
-      display: none;
-    }
-  }
-  &-mobile {
-    display: none;
-
-    @include md-tablet-devices {
-      display: block;
-    }
-  }
-}
-
-:is(.desktop-hero-brand_btn, .theme-toggle-btn) {
-  padding: 0.65rem 0.85rem;
-  border-radius: 6px;
-  font-size: 22px;
-  background: var(--sf-blue-dark-400);
-  cursor: pointer;
-
-  &:hover {
-    background: var(--sf-blue-dark-100);
-  }
-}
-
-a {
-  @include flexy(center, center, column);
-  padding: 0.75rem 0;
-
-  @include md-desktop-devices {
-    font-size: $desktop-fs;
-  }
-
-  font-size: $laptop-fs;
-  @include prop-transition(color);
-}
-
-.desktop-dropdown {
-  &_menu {
-    @include pos-a(3.75rem, unset, 1.55rem);
-  }
-
-  &_toggle {
-    @include pos-a(3.75rem, unset, unset, 1.55rem);
-  }
-
-  :is(&_menu, &_toggle) {
-    border: 3px dashed orange;
-    padding: 0.35rem 0.55rem;
-    z-index: 10;
-    border-radius: 6px;
-
-    @include md-tablet-devices {
-      display: none !important;
-    }
-  }
-}
-
-.router-link-exact-active {
-  span {
-    color: var(--skep-lightblue);
-  }
-
-  hr {
-    width: 100%;
-  }
-}
-
-#mobile-padding {
-  display: none;
-
-  @include md-tablet-devices {
-    display: block;
-    padding: calc($hd-padding + 0.9rem);
-  }
-}
-// #endregion
-</style>

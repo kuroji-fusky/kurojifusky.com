@@ -1,0 +1,63 @@
+@use 'mixins' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  @include vendor-prefix-partial(box-sizing, border-box);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--backdrop);
+  // background: mix(black, gray, 4%);
+  color: whitesmoke;
+  overflow-x: hidden;
+}
+
+div,
+span {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  pointer-events: none;
+}
+
+figcaption {
+  text-align: center;
+}
+
+* {
+  @include md-tablet-devices {
+    h1 {
+      font-size: 1.90rem;
+    }
+    h2 {
+      font-size: 1.55rem;
+    }
+    font-size: 1.05rem;
+  }
+
+  @include md-phone-devices {
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    font-size: .90rem;
+  }
+}

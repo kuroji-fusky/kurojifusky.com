@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import QuoteBlock from "@components/QuoteBlock.vue";
+import QuoteBlock from "@/components/QuoteBlock.vue";
 
 export default {
   components: {

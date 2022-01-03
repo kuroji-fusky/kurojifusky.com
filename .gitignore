@@ -1,9 +1,23 @@
-node_modules
 .DS_Store
-dist
-dist-ssr
-*.local
-.vscode
+node_modules
+/dist
 
-# Bruh I'll have to convert raw camera imgs in this folder, so yeah I'll add this to the .gitignore index
-src/img/skep-irl
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

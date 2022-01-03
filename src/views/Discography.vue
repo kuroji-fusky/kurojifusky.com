@@ -1,5 +1,5 @@
 <template>
-  <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
+  <!-- <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/> -->
   <main class="w-large-desktop">
     <h2 class="top-heading spacing-tablet">DISCOGRAPHY</h2>
     <latest-music 
@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import LatestGarbage from '@components/LatestMusic.vue'
-import Backdrop from '@components/Backdrop.vue'
+import LatestGarbage from '@/components/LatestMusic.vue'
+// import Backdrop from '@/components/Backdrop.vue'
 import AlbumItem from '@/components/AlbumItem.vue'
 
 export default {
   components: {
-    Backdrop,
+    // Backdrop,
     "latest-music": LatestGarbage,
     AlbumItem,
 }

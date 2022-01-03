@@ -1,0 +1,21 @@
+.width-responsive {
+  @include md-desktop-devices {
+    max-width: $large-desktop-w;
+  }
+
+  max-width: $desktop-w;
+}
+
+.top-heading {
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+
+  font-size: 185%;
+}
+
+.p-info {
+  @include flexy-dir(column);
+  row-gap: .45rem;
+}

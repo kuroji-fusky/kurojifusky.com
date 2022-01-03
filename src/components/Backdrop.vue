@@ -1,6 +1,6 @@
 <template>
   <div class="backdrop">
-    <img :src="`./src/img/${imgUrl}`" />
+    <img :src="`@/img/${imgUrl}`" />
   </div>
 </template>
 
