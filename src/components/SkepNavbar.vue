@@ -10,6 +10,12 @@
       <router-link id="icon-desktop" to="/">
         <img :alt="logoAlt" :aria-label="logoAlt" />
       </router-link>
+      <ul>
+        <li><router-link to="/discography">Discography<span class="navbar-line"></span></router-link></li>
+        <li><router-link to="/use-of-content">Use of Content<span class="navbar-line"></span></router-link></li>
+        <li><router-link to="/about">About Me<span class="navbar-line"></span></router-link></li>
+        <li><router-link to="/quotes">Quotes<span class="navbar-line"></span></router-link></li>
+      </ul>
     </div>
     <router-link id="icon-mobile" to="/">
       <img :alt="logoAlt" :aria-label="logoAlt" />
@@ -59,9 +65,49 @@ header {
 
 .desktop-hero-brand {
   @include flexy();
+  column-gap: 1rem;
 
-  &_btn {
-    margin-right: 1rem;
+  ul {
+    display: flex;
+    list-style: none;
+    column-gap: 1rem;
+    li {
+      @include flexy-dir(column);
+    }
+    a {
+      font-size: 98% !important;
+      position: relative;
+      top: 1px;
+      opacity: .55;
+      position: relative;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .router-link-active {
+      opacity: 1;
+
+      @at-root .navbar-line {
+        @include prop-transition(width);
+        @include pos-a();
+        transform: translateY(40px);
+        background: white;
+        height: 2px;
+        width: 0%;
+      }
+
+      .navbar-line {
+        width: 100%;
+      }
+
+
+    }
+
+    @include md-laptop-devices {
+      display: none;
+    }
   }
 }
 

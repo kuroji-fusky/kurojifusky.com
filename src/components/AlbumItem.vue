@@ -44,7 +44,9 @@ export default {
   img {
     width: 90%;
     transform: translateX(0px) translateY(0px);
-    transition: transform $hover-time ease, box-shadow $hover-time ease;
+    $hover-anim: cubic-bezier(0,.71,.38,1.01);
+    $hover-time: 500ms;
+    transition: transform $hover-time $hover-anim, box-shadow $hover-time $hover-anim;
   }
 
   &:hover {
