@@ -1,10 +1,10 @@
 <template>
   <main class="w-large-desktop">
     <div id="quote-content-grid">
-      <quote-block />
-      <quote-block />
-      <quote-block />
-      <quote-block />
+      <quote-container />
+      <quote-container />
+      <quote-container />
+      <quote-container />
     </div>
   </main>
 </template>
@@ -14,7 +14,7 @@ import QuoteBlock from "@/components/QuoteBlock.vue";
 
 export default {
   components: {
-    QuoteBlock,
+    'quote-container' :QuoteBlock,
   },
 };
 </script>
@@ -31,9 +31,9 @@ export default {
 .quote-container {
   animation: quotesAnim 700ms ease;
   animation-fill-mode: backwards;
-  -webkit-animation: quotesAnim 700ms ease;
-  -webkit-animation-fill-mode: backwards;
-  z-index: -1;
+  // -webkit-animation: quotesAnim 700ms ease;
+  // -webkit-animation-fill-mode: backwards;
+  // z-index: -1;
 }
 
 @keyframes quotesAnim {
@@ -47,9 +47,9 @@ export default {
   }
 }
 
-//.quote-container {
-//  animation-delay: calc(1*var(--stg));
-//}
+// .quote-container {
+  // animation-delay: calc(1*var(--stg));
+// }
 
 @for $i from 1 through 4 {
   .quote-container:nth-child(#{$i}) {

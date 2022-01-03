@@ -1,4 +1,4 @@
-@use 'mixins' as *;
+@use '../util/mixins' as *;
 
 *,
 *::before,
@@ -47,9 +47,11 @@ figcaption {
     h1 {
       font-size: 1.90rem;
     }
+
     h2 {
       font-size: 1.55rem;
     }
+
     font-size: 1.05rem;
   }
 

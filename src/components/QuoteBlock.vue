@@ -1,10 +1,10 @@
 <template>
-  <blockquote class="quote-container">
+  <div class="quote-container">
     <div class="quote-container_wrapper">
       <q>{{ quote }}</q>
-      <div class="quote-sub"><b>{{ author }}</b> <span class="quote-date">{{ date }}</span></div>
+      <div class="quote-sub"><b>{{ author }}</b><span class="quote-date">{{ date }}</span></div>
     </div>
-  </blockquote>
+  </div>
 </template>
 
 <script>
@@ -24,11 +24,10 @@ export default {
       @include flexy-dir(column);
       padding: 0.7rem 0.85rem;
       border-radius: 6px;
-      background: mix(gray, black, 15%);
-    }
-
-    q {
-      font-size: 120%;
+      background: mix(gray, black, 16%);
+      q {
+        font-size: 120%;
+      }
     }
   }
 

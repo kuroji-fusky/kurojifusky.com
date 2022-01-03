@@ -5,7 +5,7 @@
     :href="`https://${link}`"
   >
     <div class="home-card-container__bg">
-      <img src="@/assets/placeholder.png" :alt="`Cover of ${title}`" :width="imgSize" />
+      <img src="@/img/placeholder.png" :alt="`Cover of ${title}`" :width="imgSize" />
     </div>
     <div
       class="home-card-container__sub"

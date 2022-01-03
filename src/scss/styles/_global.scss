@@ -1,3 +1,5 @@
+@use '../util/' as *;
+
 .width-responsive {
   @include md-desktop-devices {
     max-width: $large-desktop-w;

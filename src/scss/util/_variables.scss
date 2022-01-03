@@ -6,100 +6,15 @@ $laptop-fs: 1rem;
 
 $hover-time: 300ms;
 
-$menus: "discography", "portfolio", "about";
+$menus: "discography",
+"portfolio",
+"about";
 
-$sf-blue: #2076c5;
-$sf-cyan: #48ddf7;
-$sf-yellow: #f8d817;
-$sf-borahae: #bb3eed;
+$width-squish: "large-desktop"$large-desktop-w,
+"desktop"$desktop-w;
 
-$sf: (
-  "blue": (
-    light: (
-      100: lighten($sf-blue, 10%),
-      200: lighten($sf-blue, 15%),
-      300: lighten($sf-blue, 20%),
-      400: lighten($sf-blue, 25%),
-      500: lighten($sf-blue, 30%),
-      600: lighten($sf-blue, 35%),
-    ),
-    dark: (
-      100: darken($sf-blue, 10%),
-      200: darken($sf-blue, 15%),
-      300: darken($sf-blue, 20%),
-      400: darken($sf-blue, 25%),
-      500: darken($sf-blue, 30%),
-      600: darken($sf-blue, 35%),
-    ),
-  ),
-  "cyan": (
-    light: (
-      100: lighten($sf-cyan, 10%),
-      200: lighten($sf-cyan, 15%),
-      300: lighten($sf-cyan, 20%),
-      400: lighten($sf-cyan, 25%),
-      500: lighten($sf-cyan, 30%),
-      600: lighten($sf-cyan, 35%),
-    ),
-    dark: (
-      100: darken($sf-cyan, 10%),
-      200: darken($sf-cyan, 15%),
-      300: darken($sf-cyan, 20%),
-      400: darken($sf-cyan, 25%),
-      500: darken($sf-cyan, 30%),
-      600: darken($sf-cyan, 35%),
-    ),
-  ),
-  "yellow": (
-    light: (
-      100: lighten($sf-yellow, 10%),
-      200: lighten($sf-yellow, 15%),
-      300: lighten($sf-yellow, 20%),
-      400: lighten($sf-yellow, 25%),
-      500: lighten($sf-yellow, 30%),
-      600: lighten($sf-yellow, 35%),
-    ),
-    dark: (
-      100: darken($sf-yellow, 10%),
-      200: darken($sf-yellow, 15%),
-      300: darken($sf-yellow, 20%),
-      400: darken($sf-yellow, 25%),
-      500: darken($sf-yellow, 30%),
-      600: darken($sf-yellow, 35%),
-    ),
-  ),
-  borahae: (
-    light: (
-      100: lighten($sf-borahae, 10%),
-      200: lighten($sf-borahae, 15%),
-      300: lighten($sf-borahae, 20%),
-      400: lighten($sf-borahae, 25%),
-      500: lighten($sf-borahae, 30%),
-      600: lighten($sf-borahae, 35%),
-    ),
-    dark: (
-      100: darken($sf-borahae, 10%),
-      200: darken($sf-borahae, 15%),
-      300: darken($sf-borahae, 20%),
-      400: darken($sf-borahae, 25%),
-      500: darken($sf-borahae, 30%),
-      600: darken($sf-borahae, 35%),
-    ),
-  ),
-);
-
-:root {
-  @each $color, $colors in $sf {
-    @each $theme, $levels in $colors {
-      @each $level, $output in $levels {
-        --sf-#{$color}-#{$theme}-#{$level}: #{$output};
-      }
-    }
-  }
-}
-$width-squish: "large-desktop" $large-desktop-w, "desktop" $desktop-w;
-
-@each $desktop, $width in $width-squish {
+@each $desktop,
+$width in $width-squish {
   .w-#{$desktop} {
     margin: 0 auto;
     max-width: $width;

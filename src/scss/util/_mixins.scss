@@ -81,3 +81,30 @@
     @content;
   }
 }
+
+@mixin dropdown-element($hoverpos) {
+
+  @include prop-transition(transform);
+  transform: translateY(0px);
+
+  &:hover {
+    transform: translateY($hoverpos);
+  }
+}
+
+@mixin soft-corners {
+  border-radius: 6px;
+}
+
+@mixin disable-drag {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
+}
+
+@mixin flex-list {
+  display: flex;
+  list-style: none;
+}
