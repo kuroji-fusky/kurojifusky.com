@@ -5,7 +5,11 @@
     :href="`https://${link}`"
   >
     <div class="home-card-container__bg">
-      <img src="@/img/placeholder.png" :alt="`Cover of ${title}`" :width="imgSize" />
+      <img 
+        src="@/img/placeholder.png"
+        :alt="`Cover of ${title}`"
+        :width="imgSize"
+        >
     </div>
     <div
       class="home-card-container__sub"
@@ -27,7 +31,7 @@
       <div v-else><i class="fas fa-question"></i>Undefined tag</div>
     </div>
     <article class="home-card-container__info">
-      <h2 :class="[isNew ? 'append-new' : '']">{{ title }}</h2>
+      <h2>{{ title }}</h2>
       <p>{{ desc }}</p>
     </article>
   </a>

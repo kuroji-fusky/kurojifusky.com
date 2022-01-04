@@ -29,7 +29,9 @@
             <div v-else></div>
           </div>
         </div>
-        <p style="font-size: 88%; margin-top: 10px; opacity: .65; word-break: break-word; width: 24rem">&copy; &copysr; {{ year }} {{ label }}, all rights reserved.</p>
+        <p style="font-size: 88%; margin-top: 10px; opacity: .65; word-break: break-word; width: 24rem">
+          &copy; &copysr; {{ year }} {{ label }}, all rights reserved.
+        </p>
       </div>
     </div>
   </div>
@@ -120,8 +122,7 @@ $cover-phones: 16rem;
     position: relative;
 
     &::after {
-      content: '';
-      display: block;
+      @include pseudo-block();
       @include pos-a(12px, unset, 12px);
       @media only screen and (min-width: $large-desktop-w) {
         width: $cover-large-desktops;

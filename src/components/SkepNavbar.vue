@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       logo: "",
-      logoAlt: "Insert stupid logo",
+      logoAlt: "skepfusky",
     };
   },
   props: {

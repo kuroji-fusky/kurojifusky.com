@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 .backdrop {
   @include pos-a();
-  z-index: -6969;
+  z-index: -150;
   height: 50rem;
   overflow: hidden;
   pointer-events: none;
@@ -33,8 +33,7 @@ export default {
 
   &::before,
   &::after {
-    content: "";
-    display: block;
+    @include pseudo-block();
     width: 100%;
     z-index: 20;
   }

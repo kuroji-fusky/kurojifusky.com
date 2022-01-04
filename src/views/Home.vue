@@ -2,9 +2,9 @@
   <main class="w-large-desktop">
     <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
     <!-- <gallery-carousel /> -->
-    <h2 class="top-heading spacing-tablet">Browse some cringe</h2>
+    <h2 class="top-heading spacing-tablet">Browse my portfolio of cringe</h2>
     <div id="home-card-grid">
-      <home-card :isNew="true" :idSeries="true" />
+      <home-card :idSeries="true" />
       <home-card title="Yes" :idMusic="true" />
       <home-card title="Hi sisters" :idProject="true" />
       <home-card title="Yes" :idFilm="true" />
