@@ -18,8 +18,4 @@ dom.watch();
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
 
-// some dependencies here
-
-// app.mount("#app");
-
 createApp(App).use(router).mount('#app')
