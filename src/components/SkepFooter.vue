@@ -3,50 +3,24 @@
     <div id="wrapper">
       <div id="social-wrapper">
         <div class="ft-container">
-          <strong style="font-size: 115%; opacity: 0.65; cursor: default"
-            >PLACES TO STALK ME</strong
-          >
+          <strong style="font-size: 115%; opacity: 0.65; cursor: default">PLACES TO STALK ME</strong>
           <div class="ft-container_row">
-            <a href="#" title="YouTube" target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-            <a href="#" title="Twitter" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" title="Instagram" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" title="Discord Server" target="_blank"
-              ><i class="fab fa-discord"></i
-            ></a>
-            <a href="#" title="GitHub" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="#" title="Twitch" target="_blank"
-              ><i class="fab fa-twitch"></i
-            ></a>
+            <a href="#" title="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Discord Server" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="#" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" title="Twitch" target="_blank"><i class="fab fa-twitch"></i></a>
           </div>
         </div>
         <div class="ft-container">
-          <strong style="font-size: 115%; opacity: 0.65; cursor: default"
-            >HOT GARBAGE MIXTAPES</strong
-          >
+          <strong style="font-size: 115%; opacity: 0.65; cursor: default">HOT GARBAGE MIXTAPES</strong>
           <div class="ft-container_row">
-            <a href="#" title="Spotify" target="_blank"
-              ><i class="fab fa-spotify"></i
-            ></a>
-            <a href="#" title="Apple Music" target="_blank"
-              ><i class="fab fa-itunes-note"></i
-            ></a>
-            <a href="#" title="SoundCloud" target="_blank"
-              ><i class="fab fa-soundcloud"></i
-            ></a>
-            <a href="#" title="Bandcamp" target="_blank"
-              ><i class="fab fa-bandcamp"></i
-            ></a>
-            <a href="#" title="Deezer" target="_blank"
-              ><i class="fab fa-deezer"></i
-            ></a>
+            <a href="#" title="Spotify" target="_blank"><i class="fab fa-spotify"></i></a>
+            <a href="#" title="Apple Music" target="_blank"><i class="fab fa-itunes-note"></i></a>
+            <a href="#" title="SoundCloud" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="#" title="Bandcamp" target="_blank"><i class="fab fa-bandcamp"></i></a>
+            <a href="#" title="Deezer" target="_blank"><i class="fab fa-deezer"></i></a>
           </div>
         </div>
       </div>
@@ -72,7 +46,6 @@ footer {
     var(--sf-blue-dark-300),
     var(--sf-borahae-dark-600)
   );
-  z-index: 100;
 }
 
 #wrapper {
@@ -152,6 +125,7 @@ footer {
   font-size: 110%;
   height: 100%;
   opacity: 0.75;
+  font-size: 96.7%;
   filter: opacity(85%);
 
   @media only screen and (max-width: 900px) {

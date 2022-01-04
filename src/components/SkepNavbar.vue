@@ -8,24 +8,34 @@
         </div> -->
       </a>
       <router-link id="icon-desktop" to="/">
-        <img :alt="logoAlt" :aria-label="logoAlt" />
+        <img
+          :alt="logoAlt"
+          :aria-label="logoAlt"
+        >
       </router-link>
       <ul>
         <li><router-link to="/discography">Discography<span class="navbar-line"></span></router-link></li>
         <li><router-link to="/use-of-content">Use of Content<span class="navbar-line"></span></router-link></li>
-        <li><router-link to="/about">About Me<span class="navbar-line"></span></router-link></li>
-        <li><router-link to="/quotes">Quotes<span class="navbar-line"></span></router-link></li>
+        <li id="containsContext">
+          <a href="#">About<span class="navbar-line"></span>
+          <div class="desktop-dropdown">
+            <router-link to="/about">About Me</router-link>
+            <a href="#">Biography</a>
+            <a href="#">My Dying Career lmao</a>
+            <a href="#">My Sona lol</a>
+          </div>
+        </a></li>
+        <!-- <li><router-link to="/quotes">Quotes<span class="navbar-line"></span></router-link></li> -->
       </ul>
     </div>
     <router-link id="icon-mobile" to="/">
-      <img :alt="logoAlt" :aria-label="logoAlt" />
+      <img 
+        :alt="logoAlt"
+        :aria-label="logoAlt"
+      >
     </router-link>
     <a class="theme-toggle-btn">
       <i class="fas fa-adjust"></i>
-      <!-- <div class="desktop-dropdown_toggle">
-        <strong>Theme</strong>
-        <strong>Language</strong>
-      </div> -->
     </a>
   </header>
   <div id="mobile-padding"></div>
@@ -70,10 +80,12 @@ header {
   ul {
     display: flex;
     list-style: none;
-    column-gap: 1rem;
+    column-gap: 1.5rem;
+
     li {
       @include flexy-dir(column);
     }
+
     a {
       font-size: 98% !important;
       position: relative;
@@ -88,6 +100,7 @@ header {
 
     .router-link-active {
       opacity: 1;
+      font-weight: 900;
 
       @at-root .navbar-line {
         @include prop-transition(width);
@@ -101,8 +114,6 @@ header {
       .navbar-line {
         width: 100%;
       }
-
-
     }
 
     @include md-laptop-devices {
@@ -153,33 +164,38 @@ a {
 }
 
 .desktop-dropdown {
-  &_menu {
-    @include pos-a(3.75rem, unset, 1.55rem);
-  }
-
-  &_toggle {
-    @include pos-a(3.75rem, unset, unset, 1.55rem);
-  }
-
-  :is(&_menu, &_toggle) {
-    border: 3px dashed orange;
-    padding: 0.35rem 0.55rem;
-    z-index: 10;
-    border-radius: 6px;
-
-    @include md-tablet-devices {
-      display: none !important;
+  @include pos-a(3rem, unset, -0.55rem);
+  @include flexy-dir(column);
+  background: black;
+  width: max-content;
+  padding: 0.35rem 0.55rem;
+  z-index: 8888;
+  border-radius: 6px;
+  font-weight: normal !important;
+  $hover-time: 250ms;
+  transition: opacity $hover-time ease;
+  pointer-events: none;
+  opacity: 0;
+  
+  @at-root #containsContext {
+    &:hover {
+      .desktop-dropdown {
+        pointer-events: all;
+        opacity: 1;
+      }
     }
   }
-}
 
-.router-link-exact-active {
-  span {
-    color: var(--skep-lightblue);
+  a {
+    @include flexy(flex-start, flex-start, unset);
+    text-align: left;
+    padding: .65rem .55rem;
+    flex-wrap: nowrap;
   }
 
-  hr {
-    width: 100%;
+
+  @include md-tablet-devices {
+    display: none !important;
   }
 }
 

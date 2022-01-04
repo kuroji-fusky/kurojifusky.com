@@ -1,45 +1,51 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from './views/Home.vue'
-import About from './views/About.vue'
-import Discography from './views/Discography.vue'
-import Quotes from './views/Quotes.vue'
-import UOC from './views/UseOfContent.vue'
+import HomePage from './views/Home.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: HomePage,
+    metaTags: {
+      title: 'Home',
+      metaTags: {
+        name: 'description',
+        content: 'YOUR MOM'
+      }
+    }
   },
   {
     path: '/quotes',
     name: 'Quotes',
-    component: Quotes
+    component: () => import('./views/Quotes.vue')
   },
   {
     path: '/discography',
     name: 'Discography',
-    component: Discography
+    component: () => import('./views/Discography.vue')
   },
   {
     path: '/use-of-content',
     name: 'Use of Content',
-    component: UOC
+    component: () => import('./views/UseOfContent.vue')
+    
   },
   {
     path: '/about',
     name: 'About',
-    component: About
-    // // route level code-splitting
-    // // this generates a separate chunk (about.[hash].js) for this route
-    // // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    component: () => import('./views/About.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  let siteTitle = `${to.name} | ${process.env.VUE_APP_TITLE}`
+  document.title = siteTitle
+  next()
 })
 
 export default router
