@@ -1,7 +1,9 @@
 <template>
-  <skep-navbar />
-  <router-view/>
-  <skep-footer />
+  <div :class="(darkMode === true) ? 'theme-dark' : 'theme-light' ">
+    <skep-navbar />
+    <router-view/>
+    <skep-footer />
+  </div>
 </template>
 
 <script>
@@ -11,6 +13,11 @@ import SkepFooter from "./components/SkepFooter.vue";
 export default {
   components: {
     SkepNavbar, SkepFooter
+  },
+  data() {
+    return {
+      darkMode: true,
+    }
   }
 }
 </script>

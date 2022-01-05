@@ -14,11 +14,11 @@
     <div
       class="home-card-container__sub"
       :class="[
-        idSeries ? 'id-series' : '',
-        idMusic ? 'id-music' : '',
-        idProject ? 'id-project' : '',
-        idFilm ? 'id-film' : '',
-        idMisc ? 'id-misc' : '',
+        idSeries ? 'cardprop-id-series' : '',
+        idMusic ? 'cardprop-id-music' : '',
+        idProject ? 'cardprop-id-project' : '',
+        idFilm ? 'cardprop-id-film' : '',
+        idMisc ? 'cardprop-id-misc' : '',
       ]"
     >
       <div v-if="idSeries"><i class="fas fa-video"></i>Video series</div>

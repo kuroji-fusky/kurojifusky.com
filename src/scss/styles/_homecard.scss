@@ -1,18 +1,20 @@
-@use '../util/' as *;
-@use '../styles/palette' as *;
+@use '../util/'as *;
+@use '../styles/palette'as *;
 
 $new: (
-    1: darken($sf-borahae, 22%),
-    2: darken($sf-borahae, 31%),
-  );
-  // dark: (
-    // 1: darken(gold, 3%),
-    // 2: darken(gold, 12%),
-  // ),
+  1: darken($sf-borahae, 22%),
+  2: darken($sf-borahae, 31%),
+);
+// dark: (
+// 1: darken(gold, 3%),
+// 2: darken(gold, 12%),
+// ),
 
 :root {
-  @each $increment, $value in $new {
-      --hc-new-#{$increment}: #{$value};
+
+  @each $increment,
+  $value in $new {
+    --hc-new-#{$increment}: #{$value};
   }
 }
 
@@ -43,11 +45,16 @@ $hover-time: 400ms;
   }
 }
 
+:root {
+  --hc-container-gradient-top: var(--sf-borahae-dark-600);
+  --hc-container-gradient-btm: var(--sf-blue-dark-400);
+}
+
 .home-card-container {
   border-radius: 6px;
   background: linear-gradient(165deg,
-      var(--sf-borahae-dark-600),
-      var(--sf-blue-dark-400));
+      var(--hc-container-gradient-top),
+      var(--hc-container-gradient-btm));
   box-shadow: 0 0 16px rgba(black, 45%);
   transform: translateY(0px);
   cursor: pointer;
@@ -151,7 +158,7 @@ $hover-time: 400ms;
 .home-card-new::before {
   @include pos-a(1rem, unset, 1rem);
   content: 'NEW';
-  display: block;  
+  display: block;
   background: linear-gradient(95deg,
       var(--hc-new-1),
       var(--hc-new-2)) !important;
@@ -163,24 +170,32 @@ $hover-time: 400ms;
 }
 
 // sum content
-.id {
+:root {
+  --prop-id-series: #193a9e;
+  --prop-id-music: #802300;
+  --prop-id-film: #b6005b;
+  --prop-id-project: #a12a9c;
+  --prop-id-misc: #404040;
+}
+
+.cardprop-id {
   &-series {
-    background: darken(royalblue, 21%);
+    background: var(--prop-id-series);
   }
 
   &-music {
-    background: darken(orangered, 25%);
+    background: var(--prop-id-music);
   }
 
   &-film {
-    background: darken(hotpink, 35%);
+    background: var(--prop-id-film);
   }
 
   &-project {
-    background: darken(orchid, 25%);
+    background: var(--prop-id-project);
   }
 
   &-misc {
-    background: darken(gray, 25%);
+    background: var(--prop-id-misc);
   }
 }

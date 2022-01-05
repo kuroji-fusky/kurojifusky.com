@@ -1,6 +1,6 @@
 <template>
   <header :class="[themeToggle ? 'theme-light' : '']">
-    <div class="desktop-hero-brand">
+    <nav class="desktop-hero-brand">
       <a class="desktop-hero-brand_btn">
         <i class="fas fa-bars"></i>
         <!-- <div class="desktop-dropdown_menu">
@@ -27,7 +27,7 @@
         </a></li>
         <!-- <li><router-link to="/quotes">Quotes<span class="navbar-line"></span></router-link></li> -->
       </ul>
-    </div>
+    </nav>
     <router-link id="icon-mobile" to="/">
       <img 
         :alt="logoAlt"
@@ -35,7 +35,9 @@
       >
     </router-link>
     <a class="theme-toggle-btn">
-      <i class="fas fa-adjust"></i>
+      <span class="theme-toggle-icon-rotate">
+        <i class="fas fa-adjust"></i>
+      </span>
     </a>
   </header>
   <div id="mobile-padding"></div>
@@ -50,13 +52,26 @@ export default {
     };
   },
   props: {
-    themeToggle: Boolean,
+    darkMode: Boolean
   },
 };
 </script>
 
 <style lang="scss">
+.theme-toggle-icon-rotate {
+  margin: -3px 0;
+  padding: 0 !important;
+  @include prop-transition(transform);
+  transform: rotate(180deg) translateY(1px);
+}
+
 $hd-padding: 2rem;
+
+:root {
+  --nav-line: white;
+  --nav-buttons: var(--sf-blue-dark-400);
+  --nav-buttons-hover: var(--sf-blue-dark-100);
+}
 
 header {
   @include flexy(space-between, center, row);
@@ -106,7 +121,7 @@ header {
         @include prop-transition(width);
         @include pos-a();
         transform: translateY(40px);
-        background: white;
+        background: var(--nav-line);
         height: 2px;
         width: 0%;
       }
@@ -143,11 +158,11 @@ header {
   padding: 0.65rem 0.85rem;
   border-radius: 6px;
   font-size: 22px;
-  background: var(--sf-blue-dark-400);
+  background: var(--nav-buttons);
   cursor: pointer;
 
   &:hover {
-    background: var(--sf-blue-dark-100);
+    background: var(--nav-buttons-hover);
   }
 }
 
@@ -166,7 +181,8 @@ a {
 .desktop-dropdown {
   @include pos-a(3rem, unset, -0.55rem);
   @include flexy-dir(column);
-  background: black;
+  --dropdown-content: black;
+  background: var(--dropdown-content);
   width: max-content;
   padding: 0.35rem 0.55rem;
   z-index: 8888;

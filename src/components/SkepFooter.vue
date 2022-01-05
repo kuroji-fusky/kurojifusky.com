@@ -35,16 +35,19 @@
 </template>
 
 <style lang="scss">
+:root {
+  --footer-gradient-top: var(--sf-blue-dark-300);
+  --footer-gradient-btm: var(--sf-borahae-dark-600);
+}
+
 footer {
   @include flexy(center, unset, row);
-  background: var(--sf-blue-dark-700);
-  color: whitesmoke;
   font-family: "Lato", Arial, Helvetica, sans-serif;
   font-size: 90%;
   background: linear-gradient(
     75deg,
-    var(--sf-blue-dark-300),
-    var(--sf-borahae-dark-600)
+    var(--footer-gradient-top),
+    var(--footer-gradient-btm)
   );
 }
 
@@ -79,6 +82,11 @@ footer {
   }
 }
 
+:root {
+  --brand-logo: whitesmoke;
+  --brand-logo-hover:  var(--sf-borahae-light-200);
+}
+
 .ft-container {
   @include flexy-dir(column);
 
@@ -88,13 +96,10 @@ footer {
   }
 
   a {
-    $btn-off: whitesmoke;
-    $btn-on: var(--sf-borahae-light-200);
-    color: $btn-off;
+    color: var(--brand-logo);
     padding: 0.45rem 0;
     background: none;
     font-size: 1.35rem;
-    border-radius: 3px;
 
     @include md-tablet-devices {
       padding: 1rem 0;
@@ -102,8 +107,7 @@ footer {
     }
 
     &:hover {
-      border-color: $btn-on;
-      color: $btn-on;
+      color: var(--brand-logo-hover);
     }
   }
 

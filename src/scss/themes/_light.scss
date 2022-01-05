@@ -1,1 +1,74 @@
-// .th-light {}
+@use '../util/'as *;
+@use '../styles/palette'as *;
+
+:root {
+  --font-light-black: #0b0c10;
+}
+
+.theme-light {
+  --backdrop: #ecf5fa;
+  background: var(--backdrop);
+  color: var(--font-light-black);
+
+  // #region NAVBAR
+  .navbar-line {
+    --nav-line: black;
+  }
+
+  .desktop-dropdown {
+    $dd-mix: mix(gainsboro, $sf-cyan, 75%);
+    --dropdown-content: #{$dd-mix};
+  }
+
+  :is(.desktop-hero-brand_btn, .theme-toggle-btn) {
+    --nav-buttons: var(--sf-blue-light-600);
+    --nav-buttons-hover: var(--sf-blue-light-400);
+  }
+
+  .theme-toggle-icon-rotate {
+    transform: rotate(0deg);
+  }
+  // #endregion
+
+  // #region FOOTER
+  footer {
+    --footer-gradient-top: var(--sf-borahae-light-300);
+    --footer-gradient-btm: var(--sf-blue-light-200);
+  }
+
+  .ft-container a {
+    --brand-logo: var(--font-light-black);
+    --brand-logo-hover: var(--sf-blue-dark-300);
+  }
+  // #endregion
+
+  // #region CARD CONTENTS
+  .home-card-container {
+    --hc-container-gradient-top: var(--sf-borahae-light-600);
+    --hc-container-gradient-btm: var(--sf-blue-light-400);
+  }
+
+  .cardprop-id {
+    &-series {
+      --prop-id-series: #9db2f0;
+    }
+
+    &-music {
+      --prop-id-music: #ff885c;
+    }
+
+    &-film {
+      --prop-id-film: #ffb6da;
+    }
+
+    &-project {
+      --prop-id-project: #e7a1e4;
+    }
+
+    &-misc {
+      --prop-id-misc: #efefef;
+    }
+  }
+  // #endregion
+
+}
