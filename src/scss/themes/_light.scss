@@ -1,5 +1,5 @@
-@use '../util/'as *;
-@use '../styles/palette'as *;
+@use '../util/' as *;
+@use '../styles/palette' as *;
 
 :root {
   --font-light-black: #0b0c10;
@@ -43,7 +43,7 @@
   // #endregion
 
   // #region CARD CONTENTS
-  .home-card-container {
+  .showcase-card-container {
     --hc-container-gradient-top: var(--sf-borahae-light-600);
     --hc-container-gradient-btm: var(--sf-blue-light-400);
   }

@@ -26,7 +26,7 @@ $new: (
 
 $hover-time: 400ms;
 
-#home-card-grid {
+#showcase-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
@@ -50,7 +50,7 @@ $hover-time: 400ms;
   --hc-container-gradient-btm: var(--sf-blue-dark-400);
 }
 
-.home-card-container {
+.showcase-card-container {
   border-radius: 6px;
   background: linear-gradient(165deg,
       var(--hc-container-gradient-top),
@@ -145,7 +145,7 @@ $hover-time: 400ms;
       transform: translateY(0);
     }
 
-    .home-card-container__bg img {
+    .showcase-card-container__bg img {
       transform: scale(1.05);
 
       @include md-tablet-devices {
@@ -155,7 +155,7 @@ $hover-time: 400ms;
   }
 }
 
-.home-card-new::before {
+.showcase-card-new::before {
   @include pos-a(1rem, unset, 1rem);
   content: 'NEW';
   display: block;
