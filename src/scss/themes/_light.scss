@@ -3,6 +3,7 @@
 
 :root {
   --font-light-black: #0b0c10;
+  --override-light-theme: #ecf5fa;
 }
 
 .theme-light {
@@ -71,4 +72,16 @@
   }
   // #endregion
 
+  // #region DISCOGRAPHY
+  .lm {
+    &-wrapper {
+      color: var(--font-light-black);
+    }
+
+    &-platforms_row a {
+      --lm-platforms: #efefef;
+      box-shadow: 2px 2px 12px rgba(black, 24%);
+    }
+  }
+  // #endregion
 }

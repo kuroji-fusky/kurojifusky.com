@@ -21,3 +21,10 @@
   @include flexy-dir(column);
   row-gap: .45rem;
 }
+
+.theme {
+  &-light,
+  &-dark {
+    transition: all 400ms ease;
+  }
+}

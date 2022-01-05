@@ -1,5 +1,5 @@
 <template>
-  <header :class="[themeToggle ? 'theme-light' : '']">
+  <header>
     <nav class="desktop-hero-brand">
       <a class="desktop-hero-brand_btn">
         <i class="fas fa-bars"></i>
@@ -34,11 +34,6 @@
         :aria-label="logoAlt"
       >
     </router-link>
-    <a class="theme-toggle-btn">
-      <span class="theme-toggle-icon-rotate">
-        <i class="fas fa-adjust"></i>
-      </span>
-    </a>
   </header>
   <div id="mobile-padding"></div>
 </template>
@@ -50,9 +45,6 @@ export default {
       logo: "",
       logoAlt: "skepfusky",
     };
-  },
-  props: {
-    darkMode: Boolean
   },
 };
 </script>
@@ -164,6 +156,10 @@ header {
   &:hover {
     background: var(--nav-buttons-hover);
   }
+}
+
+.theme-toggle-btn {
+  @include pos-a (0.45rem, unset, unset, 1.5rem);
 }
 
 a {

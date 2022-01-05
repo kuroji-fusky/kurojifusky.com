@@ -1,31 +1,31 @@
 <template>
   <div id="latest-music">
-    <div id="lm-wrapper">
-      <div id="lm-cover">
+    <div class="lm-wrapper">
+      <div class="lm-cover">
         <img
           :src="`./src/img/album-covers/${cover}`"
           :alt="`Album Cover for ${title}`"
           :aria-label="`Album Cover for ${title}`"
         />
       </div>
-      <div id="lm-details">
+      <div class="lm-details">
         <h1>{{ title }}</h1>
-        <span id="mobile-release-label">LATEST RELEASE</span>
+        <span class="mobile-release-label">LATEST RELEASE</span>
         <p>Release date: <span>{{ date }}</span></p>
         <p>Total length: <span>{{ length }}</span></p>
         <p>Genre: <span>{{ genre }}</span></p>
-        <div id="lm-platforms">
+        <div class="lm-platforms">
           <strong style="font-size: 88%; margin-top: -6px; opacity: 0.65;">AVAILABLE ON</strong>
-          <div id="lm-platforms_row">
-            <a href="#" id="lm-spotify" v-if="onSpotify"><i class="fab fa-spotify"></i><small>Spotify</small></a>
+          <div class="lm-platforms_row">
+            <a v-if="onSpotify" href="#" class="lm-spotify"><i class="fab fa-spotify"></i><small>Spotify</small></a>
             <div v-else></div>
-            <a href="#" id="lm-soundcloud" v-if="onSoundCloud"><i class="fab fa-soundcloud"></i><small>SoundCloud</small></a>
+            <a v-if="onSoundCloud" href="#" class="lm-soundcloud"><i class="fab fa-soundcloud"></i><small>SoundCloud</small></a>
             <div v-else></div>
-            <a href="#" id="lm-apple-music" v-if="onAppleMusic"><i class="fab fa-itunes-note"></i><small>Apple&nbsp;Music</small></a>
+            <a v-if="onAppleMusic" href="#" class="lm-apple-music"><i class="fab fa-itunes-note"></i><small>Apple&nbsp;Music</small></a>
             <div v-else></div>
-            <a href="#" id="lm-bandcamp" v-if="onBandcamp"><i class="fab fa-bandcamp"></i><small>Bandcamp</small></a>
+            <a v-if="onBandcamp" href="#" class="lm-bandcamp"><i class="fab fa-bandcamp"></i><small>Bandcamp</small></a>
             <div v-else></div>
-            <a href="#" id="lm-deezer" v-if="onDeezer"><i class="fab fa-deezer"></i><small>Deezer</small></a>
+            <a v-if="onDeezer" href="#" class="lm-deezer"><i class="fab fa-deezer"></i><small>Deezer</small></a>
             <div v-else></div>
           </div>
         </div>
@@ -69,7 +69,12 @@ $cover-large-desktops: 24rem;
 $cover-global: 20rem;
 $cover-phones: 16rem;
 
-#lm {
+:root {
+  --lm-h1: white;
+  --lm-platforms: black;
+}
+
+.lm {
   &-wrapper {
     @include flexy-dir();
     column-gap: 2rem;
@@ -85,7 +90,8 @@ $cover-phones: 16rem;
       content: 'LATEST RELEASE';
       padding: 0.13rem 0.35rem;
       font-size: 40%;
-      border: 2px solid white;
+      border: 2px solid var(--lm-h1);
+      color: var(--lm-h1);
       border-radius: 3px;
       opacity: .75;
       position: relative;
@@ -195,7 +201,7 @@ $cover-phones: 16rem;
         padding: .35rem .55rem;
         margin: 3px 0;
         border-radius: 6px;
-        background: black;
+        background: var(--lm-platforms);
       }
 
       a, small {
@@ -224,6 +230,14 @@ $cover-phones: 16rem;
 
   &-bandcamp:hover {
     background: #629aa9;
+  }
+
+  :is(&-apple-music, &-spotify, &-deezer, &-soundcloud, &-bandcamp):hover {
+    color:whitesmoke;
+  }
+
+  :is(&-apple-music, &-spotify, &-deezer, &-soundcloud, &-bandcamp) {
+    transition: none;
   }
 
 }

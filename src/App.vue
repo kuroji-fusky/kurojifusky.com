@@ -1,6 +1,17 @@
 <template>
-  <div :class="(darkMode === true) ? 'theme-dark' : 'theme-light' ">
+  <div
+    :class="(darkMode === true) ? 'theme-dark' : 'theme-light' "
+    @themeToggle="darkMode"
+  >
     <skep-navbar />
+    <a 
+      @click="darkMode = !darkMode"
+      class="theme-toggle-btn"
+    >
+      <span class="theme-toggle-icon-rotate">
+        <i class="fas fa-adjust"></i>
+      </span>
+    </a>
     <router-view/>
     <skep-footer />
   </div>
@@ -18,7 +29,7 @@ export default {
     return {
       darkMode: true,
     }
-  }
+  },
 }
 </script>
 
