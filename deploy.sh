@@ -10,6 +10,6 @@ git init
 git add -A
 git commit -m 'vue deploy'
 
-git push -f git@github.com:skepfusky/skepfusky.net.git main:gh-pages
+git push -f git@github.com:skepfusky/skepfusky-net.git main:gh-pages
 
 cd -
