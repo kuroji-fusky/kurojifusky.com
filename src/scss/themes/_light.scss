@@ -7,8 +7,7 @@
 }
 
 .theme-light {
-  --backdrop: #ecf5fa;
-  background: var(--backdrop);
+  background: var(--override-light-theme);
   color: var(--font-light-black);
 
   // #region NAVBAR
@@ -67,7 +66,7 @@
     }
 
     &-misc {
-      --prop-id-misc: #efefef;
+      --prop-id-misc: var(--override-light-theme);
     }
   }
   // #endregion
@@ -76,10 +75,16 @@
   .lm {
     &-wrapper {
       color: var(--font-light-black);
+
+    h1::after {
+      color: var(--font-light-black) !important;
+      border-color: var(--font-light-black) !important;
+    }
+
     }
 
     &-platforms_row a {
-      --lm-platforms: #efefef;
+      --lm-platforms: var(--override-light-theme);
       box-shadow: 2px 2px 12px rgba(black, 24%);
     }
   }
