@@ -1,5 +1,5 @@
 <template>
-  <main class="w-large-desktop" style="text-align: center">
+  <main role="main" class="w-large-desktop" style="text-align: center">
     <h2 class="top-heading">Use of Content</h2>
     <article class="p-info">
       <h3>Lorem ipsum</h3>

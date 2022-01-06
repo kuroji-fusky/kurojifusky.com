@@ -1,29 +1,29 @@
 <template>
   <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
-  <main class="w-large-desktop">
+  <main role="main" class="w-large-desktop">
     <h2 class="top-heading spacing-tablet">DISCOGRAPHY</h2>
     <latest-music 
       title="A New Life"
       date="12/15/2021"
       length="30:00"
-      year="2021"
+      :year="2021"
       genre="Alternate/Indie"
       label="Fusky & Co."
     />
-    <div id="discography-layout-grid">
-      <album-item year="2021" title="Timeless"/>
-      <album-item year="2021" title="Fever Dream"/>
-      <album-item year="2021" title="Nostalgia" :isEP="true" />
-      <album-item year="2021" title="Sea of Clouds (Extended)" cover="single sea of clouds JPG.jpg"/>
-      <album-item year="2021" title="Utopian Dream"/>
-      <album-item year="2021" title="Eclipse" cover="eclipse cover.png"/>
-      <album-item year="2021" title="Origins (Remastered)" cover="origins remastered.png"/>
-      <album-item year="2021" title="Horizon" :isAlbum="true"/>
-      <album-item year="2020" title="Watch the Sunset" cover="WATCH THE GODDAMN SUNSET.jpg"/>
-      <album-item year="2020" title="Awaken" cover="AWAKEN SINGLE.png"/>
-      <album-item year="2020" title="Metalic Emperor"/>
-      <album-item year="2020" title="Origins"/>
-      <album-item year="2018" title="Migloco"/>
+    <div id="discography-layout-grid" role="navigation">
+      <album-item :year="2021" title="Timeless"/>
+      <album-item :year="2021" title="Fever Dream"/>
+      <album-item :year="2021" title="Nostalgia" :isEP="true" />
+      <album-item :year="2021" title="Sea of Clouds (Extended)"/>
+      <album-item :year="2021" title="Utopian Dream"/>
+      <album-item :year="2021" title="Eclipse"/>
+      <album-item :year="2021" title="Origins (Remastered)"/>
+      <album-item :year="2021" title="Horizon" :isAlbum="true"/>
+      <album-item :year="2020" title="Watch the Sunset"/>
+      <album-item :year="2020" title="Awaken"/>
+      <album-item :year="2020" title="Metalic Emperor"/>
+      <album-item :year="2020" title="Origins"/>
+      <album-item :year="2018" title="Migloco"/>
     </div>
   </main>
 </template>

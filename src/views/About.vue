@@ -1,5 +1,5 @@
 <template>
-  <main class="w-large-desktop">
+  <main role="main" class="w-large-desktop">
     <section class="width-large-desktop container-info">
       <article>
         <h2>Lorem ipsum</h2>
@@ -52,7 +52,6 @@
   padding: 0.45rem;
 
   img {
-    // @include prop-transition(width, 200ms);
     width: 200px;
 
     @include md-tablet-devices {
@@ -63,8 +62,6 @@
 
 .info-responsive {
   @include flexy(center, center, column);
-  // @include prop-transition(padding, 200ms);
-
   @include md-desktop-devices {
     padding: 1.25rem;
   }

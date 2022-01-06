@@ -1,5 +1,5 @@
 <template>
-  <main class="w-large-desktop">
+  <main role="main" class="w-large-desktop">
     <div id="quote-content-grid">
       <quote-container />
       <quote-container />

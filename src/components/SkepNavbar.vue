@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="desktop-hero-brand">
+    <nav class="desktop-hero-brand" role="navigation">
       <a class="desktop-hero-brand_btn">
         <i class="fas fa-bars"></i>
         <!-- <div class="desktop-dropdown_menu">

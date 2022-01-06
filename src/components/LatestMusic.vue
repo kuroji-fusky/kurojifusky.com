@@ -3,7 +3,7 @@
     <div class="lm-wrapper">
       <div class="lm-cover">
         <img
-          :src="`./src/img/album-covers/${cover}`"
+          :src="require(`@/img/album-covers/${cover}`)"
           :alt="`Album Cover for ${title}`"
           :aria-label="`Album Cover for ${title}`"
         />
@@ -40,9 +40,9 @@
 <script>
 export default {
   props: {
-    cover: {type: String, default: 'anl final copy 3.png', required: true},
+    cover: {type: String, default: 'A New Life final cover.png', required: true},
     title: { type: String, default: "Album Title", required: true },
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
     length: { type: String, default: "69:69", required: true },
     year: { type: Number, default: new Date().getFullYear(), required: true },
     genre: { type: String, default: "Pop", required: true },
