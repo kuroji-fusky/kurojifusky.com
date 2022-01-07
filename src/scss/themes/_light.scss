@@ -1,5 +1,5 @@
-@use '../util/' as *;
-@use '../styles/palette' as *;
+@use '../util/'as *;
+@use '../styles/palette'as *;
 
 :root {
   --font-light-black: #0b0c10;
@@ -10,7 +10,7 @@
   background: var(--override-light-theme);
   color: var(--font-light-black);
 
-  // #region NAVBAR
+  // NAVBAR
   .navbar-line {
     --nav-line: black;
   }
@@ -28,9 +28,8 @@
   .theme-toggle-icon-rotate {
     transform: rotate(0deg);
   }
-  // #endregion
 
-  // #region FOOTER
+  // FOOTER
   footer {
     --footer-gradient-top: var(--sf-borahae-light-300);
     --footer-gradient-btm: var(--sf-blue-light-200);
@@ -40,9 +39,8 @@
     --brand-logo: var(--font-light-black);
     --brand-logo-hover: var(--sf-blue-dark-300);
   }
-  // #endregion
 
-  // #region CARD CONTENTS
+  // CARD CONTENTS
   .card-container {
     --hc-container-gradient-top: var(--sf-borahae-light-600);
     --hc-container-gradient-btm: var(--sf-blue-light-400);
@@ -69,18 +67,16 @@
       --prop-id-misc: var(--override-light-theme);
     }
   }
-  // #endregion
 
-  // #region DISCOGRAPHY
+  // DISCOGRAPHY
   .lm {
     &-wrapper {
       color: var(--font-light-black);
 
-    h1::after {
-      color: var(--font-light-black) !important;
-      border-color: var(--font-light-black) !important;
-    }
-
+      h1::after {
+        color: var(--font-light-black) !important;
+        border-color: var(--font-light-black) !important;
+      }
     }
 
     &-platforms_row a {
@@ -88,7 +84,6 @@
       box-shadow: 2px 2px 12px rgba(black, 24%);
     }
   }
-  // #endregion
 
   .bar-block {
     --bar-fill: lightgray;
