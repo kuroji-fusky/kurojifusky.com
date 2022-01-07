@@ -16,7 +16,7 @@
         <p>Genre: <span>{{ genre }}</span></p>
         <div class="lm-platforms">
           <strong style="font-size: 88%; margin-top: -6px; opacity: 0.65;">AVAILABLE ON</strong>
-          <div class="lm-platforms_row">
+          <div class="lm-platforms_row" role="navigation">
             <a v-if="onSpotify" href="#" class="lm-spotify"><i class="fab fa-spotify"></i><small>Spotify</small></a>
             <div v-else></div>
             <a v-if="onSoundCloud" href="#" class="lm-soundcloud"><i class="fab fa-soundcloud"></i><small>SoundCloud</small></a>
