@@ -2,8 +2,8 @@
 @use '../styles/palette'as *;
 
 $new: (
-  1: darken($sf-borahae, 22%),
-  2: darken($sf-borahae, 31%),
+  1: darken(red, 22%),
+  2: darken(red, 31%),
 );
 // dark: (
 // 1: darken(gold, 3%),
@@ -11,9 +11,7 @@ $new: (
 // ),
 
 :root {
-
-  @each $increment,
-  $value in $new {
+  @each $increment, $value in $new {
     --hc-new-#{$increment}: #{$value};
   }
 }
@@ -26,7 +24,7 @@ $new: (
 
 $hover-time: 400ms;
 
-#showcase-card-grid {
+#card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
@@ -50,7 +48,7 @@ $hover-time: 400ms;
   --hc-container-gradient-btm: var(--sf-blue-dark-400);
 }
 
-.showcase-card-container {
+.card-container {
   @include soft-corners();
   background: linear-gradient(165deg,
       var(--hc-container-gradient-top),
@@ -73,7 +71,7 @@ $hover-time: 400ms;
     width: 100%;
   }
 
-  &__bg {
+  &-bg {
     overflow: hidden;
     z-index: 2;
     height: 16rem;
@@ -85,15 +83,16 @@ $hover-time: 400ms;
     }
   }
 
-  &__sub {
-    background-color: black;
+  &-sub {
     position: relative;
-    padding-top: 0.65rem !important;
-    padding-bottom: 0.35rem !important;
-    padding: 0 0.75rem;
+    padding: 0.75rem 0.75rem;
     top: -3px;
     z-index: 1;
     font-size: 88%;
+    @include pos-a(12px, unset, unset, 14px);
+    z-index: 5;
+    width: unset;
+    @include soft-corners;
 
     div {
       @include md-tablet-devices {
@@ -106,18 +105,18 @@ $hover-time: 400ms;
     }
   }
 
-  &__bg,
-  &__sub {
+  &-bg,
+  &-sub {
     @include md-tablet-devices {
       border-radius: 0;
     }
   }
 
-  &__info {
+  &-info {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-top: 0.25rem;
+    margin-top: 0.55rem;
     padding: 0 0.85rem;
 
     h2 {
@@ -145,17 +144,23 @@ $hover-time: 400ms;
       transform: translateY(0);
     }
 
-    .showcase-card-container__bg img {
-      transform: scale(1.05);
+    .card-container {
+      &-bg img {
+        transform: scale(1.05);
+        
+        @include md-tablet-devices {
+          transform: scale(1);
+        } 
+      }
 
-      @include md-tablet-devices {
-        transform: scale(1);
+      &-sub {
+
       }
     }
   }
 }
 
-.showcase-card-new::before {
+.card-container.new::before {
   @include pos-a(1rem, unset, 1rem);
   content: 'NEW';
   display: block;

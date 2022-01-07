@@ -1,5 +1,5 @@
 <template>
-  <h2>Page not found stupids</h2>
+  <p>Page not found stupids</p>
 </template>
 
 <style>

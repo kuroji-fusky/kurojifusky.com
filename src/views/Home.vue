@@ -3,15 +3,12 @@
     <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
     <!-- <gallery-carousel /> -->
     <h2 class="top-heading spacing-tablet">Browse my portfolio of cringe</h2>
-    <div id="showcase-card-grid" role="navigation">
+    <div id="card-grid" role="navigation">
       <showcase-card :idSeries="true" />
-      <showcase-card title="Yes" :idMusic="true" />
+      <showcase-card :isNew=true title="Yes" :idMusic="true" />
       <showcase-card title="Hi sisters" :idProject="true" />
       <showcase-card title="Yes" :idFilm="true" />
-      <showcase-card title="Laebl" :idMisc="true" />
-      <showcase-card title="Yes" />
-      <showcase-card title="Yes" />
-      <showcase-card title="Yes" />
+      <!-- <showcase-card title="Laebl" :idMisc="true" /> -->
     </div>
   </main>
 </template>

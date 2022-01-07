@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './views/Home.vue'
+// import Page404 from './views/404.vue'
 
 const routes = [
   {
@@ -34,7 +35,12 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('./views/About.vue')
-  }
+  },
+  // {
+  //   path: '/*',
+  //   name: '404',
+  //   component: Page404
+  // }
 ]
 
 const router = createRouter({

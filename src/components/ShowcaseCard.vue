@@ -1,18 +1,11 @@
 <template>
   <a
-    class="showcase-card-container"
-    :class="[isNew ? 'showcase-card-new' : '']"
+    class="card-container"
+    :class="[isNew ? 'new' : '']"
     :href="`https://${link}`"
   >
-    <div class="showcase-card-container__bg">
-      <img 
-        src="@/img/placeholder.png"
-        :alt="`Cover of ${title}`"
-        :width="imgSize"
-        >
-    </div>
-    <div
-      class="showcase-card-container__sub"
+      <div
+      class="card-container-sub"
       :class="[
         idSeries ? 'cardprop-id-series' : '',
         idMusic ? 'cardprop-id-music' : '',
@@ -21,14 +14,32 @@
         idMisc ? 'cardprop-id-misc' : '',
       ]"
     >
-      <div v-if="idSeries"><i class="fas fa-video"></i>Video series</div>
-      <div v-else-if="idMusic"><i class="fas fa-music"></i>Discography</div>
-      <div v-else-if="idProject"><i class="fas fa-project-diagram"></i>Project</div>
-      <div v-else-if="idFilm"><i class="fas fa-film"></i>Film</div>
-      <div v-else-if="idMisc"><i class="fas fa-box"></i>Miscellaneous</div>
-      <div v-else><i class="fas fa-question"></i>Undefined tag</div>
+      <div v-if="idSeries">
+        <i class="fas fa-video"></i>
+      </div>
+      <div v-else-if="idMusic">
+        <i class="fas fa-music"></i>
+      </div>
+      <div v-else-if="idProject">
+        <i class="fas fa-project-diagram"></i>
+      </div>
+      <div v-else-if="idFilm">
+        <i class="fas fa-film"></i>
+      </div>
+      <div v-else-if="idMisc">
+        <i class="fas fa-box"></i>
+      </div>
+      <div v-else></div>
     </div>
-    <article class="showcase-card-container__info">
+    <div class="card-container-bg">
+      <img 
+        src="@/img/placeholder.png"
+        :alt="`Cover of ${title}`"
+        :width="imgSize"
+        >
+    </div>
+
+    <article class="card-container-info">
       <h2>{{ title }}</h2>
       <p>{{ desc }}</p>
     </article>

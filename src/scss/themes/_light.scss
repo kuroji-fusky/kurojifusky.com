@@ -43,7 +43,7 @@
   // #endregion
 
   // #region CARD CONTENTS
-  .showcase-card-container {
+  .card-container {
     --hc-container-gradient-top: var(--sf-borahae-light-600);
     --hc-container-gradient-btm: var(--sf-blue-light-400);
   }
@@ -89,4 +89,8 @@
     }
   }
   // #endregion
+
+  .bar-block {
+    --bar-fill: lightgray;
+  }
 }

@@ -1,41 +1,83 @@
 <template>
   <main role="main" class="w-large-desktop">
-    <section class="width-large-desktop container-info">
-      <article>
-        <h2>Lorem ipsum</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae itaque nesciunt placeat praesentium iste fugit porro perspiciatis explicabo possimus qui voluptatibus non similique culpa optio ex iusto exercitationem inventore, sequi natus. Sed, enim explicabo! Voluptate nemo aliquid incidunt pariatur sint. Doloribus repudiandae modi repellat? Dolores non corporis nesciunt eos nisi ea assumenda perspiciatis accusamus nemo quos dignissimos voluptates praesentium commodi voluptatibus quo, minus velit quidem necessitatibus at? Ab, libero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quibusdam molestias mollitia ad quas illum numquam cupiditate eligendi, omnis commodi beatae delectus, sint quisquam nostrum?</p>
-      </article>
-      <div class="info-responsive">
-        <figure>
-          <img alt="Ew" aria-label="Ew" />
-          <figcaption>This is your fursona? That is cringe bro.</figcaption>
-        </figure>
-      </div>
+    <h2 class="top-heading spacing-tablet">Proficency</h2>
+    <section class="skill-grid">
+      <skill-bar skill="Video editing" :level="4"></skill-bar>
+      <skill-bar skill="Doo dooing" :level="1"></skill-bar>
+      <skill-bar skill="Music producer" :level="3"></skill-bar>
+      <skill-bar skill="Vocalz" :level="2"></skill-bar>
     </section>
-    <section class="width-large-desktop container-info">
-      <div class="info-responsive">
-        <figure>
-          <img
-            style="border-radius: 10px; border: 2px solid red;"
-            
-            alt="Ew"
-            aria-label="Ew"
-          />
-          <figcaption>Example of a big failure</figcaption>
-        </figure>
-      </div>
-      <article>
-        <h2>asdasd</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam amet dolore illum hic, nam consequuntur porro vel debitis laborum praesentium.</p>
-        <p>Consequuntur rerum amet sint commodi. Pariatur doloribus rerum voluptates enim, illo maxime eveniet deleniti exercitationem magni beatae, neque, in incidunt!</p>
-        <p>Doloribus dolor eaque labore, unde inventore odio possimus repellat ipsa velit optio consectetur necessitatibus, molestias quo reprehenderit doloremque eius expedita!</p>
-        <p>Molestias neque unde ut optio sapiente distinctio obcaecati fugiat quasi consequuntur at, animi tempore mollitia eum sequi. Qui, perferendis dolor.</p>
-      </article>
-    </section>
+    <!-- <section class="container-info"></section> -->
   </main>
 </template>
 
+<script>
+import skillBar from "@/components/SkillBar.vue";
+
+export default {
+  components: {
+    skillBar,
+  },
+
+  data() {
+    return {
+      levels: []
+    }
+  }
+};
+</script>
+
 <style lang="scss">
+$hover-time: 400ms;
+
+.skill {
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1rem;
+    padding: 3.25rem;
+    transition: gap $hover-time ease, padding $hover-time ease;
+
+    @include md-tablet-devices {
+      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 0;
+      padding: 0;
+    }
+
+    @include md-phone-devices {
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+  }
+  &-container {
+    @include flexy-dir;
+    @include soft-corners;
+    padding: 1rem;
+    background: gray;
+  }
+
+  &-bar {
+    $bar-width: 12px;
+    $bar-fill-2: calc($bar-width + 3px);
+    $bar-fill-3: calc($bar-width + 4px * 4.6);
+    $bar-fill-4: calc($bar-width + 4px * 8.6);
+
+    &.low {
+      height: 32px;
+      width: $bar-width;
+      background: red;
+      box-shadow: $bar-fill-2 0 0 white, $bar-fill-3 0 0 white,
+        $bar-fill-4 0 0 white;
+
+      &::after {
+        content: "SHIT";
+        position: relative;
+        left: 60px;
+      }
+    }
+  }
+}
+
 .container-info {
   @include flexy();
 
@@ -47,7 +89,6 @@
     }
   }
 
-  // border: 2px dashed white;
   margin: 0 1rem;
   padding: 0.45rem;
 
