@@ -35,12 +35,7 @@ const routes = [
     path: '/about',
     name: 'About',
     component: () => import('./views/About.vue')
-  },
-  // {
-  //   path: '/*',
-  //   name: '404',
-  //   component: Page404
-  // }
+  }
 ]
 
 const router = createRouter({
