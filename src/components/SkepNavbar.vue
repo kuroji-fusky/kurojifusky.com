@@ -148,7 +148,7 @@ header {
 
 :is(.desktop-hero-brand_btn, .theme-toggle-btn) {
   padding: 0.65rem 0.85rem;
-  border-radius: 6px;
+  @include soft-corners();
   font-size: 22px;
   background: var(--nav-buttons);
   cursor: pointer;
@@ -182,7 +182,7 @@ a {
   width: max-content;
   padding: 0.35rem 0.55rem;
   z-index: 8888;
-  border-radius: 6px;
+  @include soft-corners();
   font-weight: normal !important;
   $hover-time: 250ms;
   transition: opacity $hover-time ease;

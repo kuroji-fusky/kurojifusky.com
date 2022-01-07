@@ -110,7 +110,7 @@ $cover-phones: 16rem;
         margin-top: 3px;
         margin-bottom: 7px;
         border: 2px solid white;
-        border-radius: 6px;
+        @include soft-corners();
         opacity: .75;
       }
     }
@@ -199,7 +199,7 @@ $cover-phones: 16rem;
         column-gap: 4px;
         padding: .35rem .55rem;
         margin: 3px 0;
-        border-radius: 6px;
+        @include soft-corners();
         background: var(--lm-platforms);
       }
 

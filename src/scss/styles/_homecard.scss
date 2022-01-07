@@ -51,7 +51,7 @@ $hover-time: 400ms;
 }
 
 .showcase-card-container {
-  border-radius: 6px;
+  @include soft-corners();
   background: linear-gradient(165deg,
       var(--hc-container-gradient-top),
       var(--hc-container-gradient-btm));

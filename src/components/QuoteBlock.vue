@@ -23,7 +23,7 @@ export default {
     &_wrapper {
       @include flexy-dir(column);
       padding: 0.7rem 0.85rem;
-      border-radius: 6px;
+      @include soft-corners();
       background: mix(gray, black, 16%);
       q {
         font-size: 120%;
