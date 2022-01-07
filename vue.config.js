@@ -8,12 +8,11 @@ module.exports = {
       }
     }
   },
-
   pluginOptions: {
     i18n: {
-      locale: undefined,
-      fallbackLocale: undefined,
-      localeDir: undefined,
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
       enableLegacy: undefined,
       runtimeOnly: false,
       compositionOnly: false,
