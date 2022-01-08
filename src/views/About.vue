@@ -1,7 +1,7 @@
 <template>
   <main role="main" class="w-large-desktop">
     <h2 class="top-heading spacing-tablet">Proficency</h2>
-    <section class="skill-grid">
+    <section class="responsive-grid">
       <skill-bar skill="Video editing" :level="4"></skill-bar>
       <skill-bar skill="Doo dooing" :level="1"></skill-bar>
       <skill-bar skill="Music producer" :level="3"></skill-bar>
@@ -31,24 +31,6 @@ export default {
 $hover-time: 400ms;
 
 .skill {
-  &-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1rem;
-    padding: 3.25rem;
-    transition: gap $hover-time ease, padding $hover-time ease;
-
-    @include md-tablet-devices {
-      gap: 2.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-      gap: 0;
-      padding: 0;
-    }
-
-    @include md-phone-devices {
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    }
-  }
   &-container {
     @include flexy-dir;
     @include soft-corners;

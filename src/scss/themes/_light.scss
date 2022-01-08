@@ -42,9 +42,21 @@
 
   // CARD CONTENTS
   .card-container {
-    --hc-container-gradient-top: var(--sf-borahae-light-600);
-    --hc-container-gradient-btm: var(--sf-blue-light-400);
+    --sc-gradient-top: var(--sf-borahae-light-600);
+    --sc-gradient-btm: var(--sf-blue-light-400);
   }
+
+  $new-light: (
+  1: darken(red, 1%),
+  2: darken(red, 12%),
+  );
+
+  .card-container.new::before {
+    @each $increment, $value in $new-light {
+      --sc-new-#{$increment}: #{$value};
+    }
+  }
+
 
   .cardprop-id {
     &-series {

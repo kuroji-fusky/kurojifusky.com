@@ -33,7 +33,7 @@
     </div>
     <div class="card-container-bg">
       <img 
-        src="@/img/placeholder.png"
+        :src="require(`@/img/${img}`)"
         :alt="`Cover of ${title}`"
         :width="imgSize"
         >
@@ -56,6 +56,12 @@ export default {
     idMisc: Boolean,
 
     isNew: Boolean,
+
+    img: {
+      type: String,
+      default: 'placeholder.png'
+    },
+
     imgSize: {
       type: Number,
       default: 780,

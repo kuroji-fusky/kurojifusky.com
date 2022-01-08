@@ -1,7 +1,7 @@
 @use '../util/'as *;
 @use '../styles/palette'as *;
 
-$new: (
+$new-dark: (
   1: darken(red, 22%),
   2: darken(red, 31%),
 );
@@ -11,8 +11,8 @@ $new: (
 // ),
 
 :root {
-  @each $increment, $value in $new {
-    --hc-new-#{$increment}: #{$value};
+  @each $increment, $value in $new-dark {
+    --sc-new-#{$increment}: #{$value};
   }
 }
 
@@ -24,35 +24,16 @@ $new: (
 
 $hover-time: 400ms;
 
-#card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 1rem;
-  padding: 3.25rem;
-  transition: gap $hover-time ease, padding $hover-time ease;
-
-  @include md-tablet-devices {
-    gap: 2.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 0;
-    padding: 0;
-  }
-
-  @include md-phone-devices {
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  }
-}
-
 :root {
-  --hc-container-gradient-top: var(--sf-borahae-dark-600);
-  --hc-container-gradient-btm: var(--sf-blue-dark-400);
+  --sc-gradient-top: var(--sf-borahae-dark-600);
+  --sc-gradient-btm: var(--sf-blue-dark-400);
 }
 
 .card-container {
   @include soft-corners();
   background: linear-gradient(165deg,
-      var(--hc-container-gradient-top),
-      var(--hc-container-gradient-btm));
+      var(--sc-gradient-top),
+      var(--sc-gradient-btm));
   box-shadow: 0 0 16px rgba(black, 45%);
   transform: translateY(0px);
   cursor: pointer;
@@ -152,10 +133,6 @@ $hover-time: 400ms;
           transform: scale(1);
         } 
       }
-
-      &-sub {
-
-      }
     }
   }
 }
@@ -165,13 +142,14 @@ $hover-time: 400ms;
   content: 'NEW';
   display: block;
   background: linear-gradient(95deg,
-      var(--hc-new-1),
-      var(--hc-new-2)) !important;
+      var(--sc-new-1),
+      var(--sc-new-2)) !important;
   z-index: 3;
   padding: 0.15rem 0.65rem;
   border-radius: 3px;
   font-size: 95%;
   font-weight: 700;
+  color: white !important;
 }
 
 // sum content
