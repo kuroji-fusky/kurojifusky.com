@@ -38,7 +38,6 @@
         :width="imgSize"
         >
     </div>
-
     <article class="card-container-info">
       <h2>{{ title }}</h2>
       <p>{{ desc }}</p>
@@ -108,6 +107,8 @@ $new-dark: (
 }
 
 .card-container {
+  // @include flexy(unset, flex-start, column);
+  display: inline;
   @include soft-corners();
   background: linear-gradient(165deg,
       var(--sc-gradient-top),
@@ -116,7 +117,7 @@ $new-dark: (
   transform: translateY(0px);
   cursor: pointer;
   transition: transform $hover-time ease, filter $hover-time ease;
-  padding-top: 0;
+  padding-top: 0 !important;
   overflow: hidden;
 
   @include md-tablet-devices {

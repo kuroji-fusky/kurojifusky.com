@@ -16,10 +16,6 @@ library.add(fas)
 library.add(far)
 dom.watch()
 
-// import skillBar from "./components/web-components/SkillBar.ce.vue";
-// const skillbarElement = defineCustomElement(skillBar)
-// customElements.define('skill-bar', skillbarElement)
-
 const app = createApp(App)
 app.component("font-awesome-icon", FontAwesomeIcon)
 

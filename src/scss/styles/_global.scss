@@ -47,3 +47,19 @@
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   }
 }
+
+:root {
+  --clickable-link: var(--sf-blue-light-100)
+}
+
+$hover-time: 150ms;
+
+a.clickable {
+  border-bottom: 2px solid white;
+  transition: border $hover-time ease, color $hover-time ease;
+  
+  &:hover {
+    color: var(--clickable-link);
+    border-color: var(--clickable-link);
+  }
+}

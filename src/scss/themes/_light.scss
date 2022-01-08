@@ -10,6 +10,25 @@
   background: var(--override-light-theme);
   color: var(--font-light-black);
 
+  // global.scss
+  a.clickable {
+    border-color: var(--font-light-black);
+    
+    &:hover {
+      --clickable-link: var(--sf-blue-light-300);
+    }
+  } 
+
+  // 404 crap
+  .page-not-found-stupid {
+    background: var(--override-light-theme);
+  }
+
+  .not-found-wrapper {
+    --header-drop-1: var(--sf-cyan-light-300);
+    --header-drop-2: var(--sf-blue-light-500);
+  }
+
   // NAVBAR
   .navbar-line {
     --nav-line: black;
@@ -46,13 +65,14 @@
     --sc-gradient-btm: var(--sf-blue-light-400);
   }
 
-  $new-light: (
-  1: darken(red, 1%),
-  2: darken(red, 12%),
+  $new-light: (1: darken(red, 1%),
+    2: darken(red, 12%),
   );
 
   .card-container.new::before {
-    @each $increment, $value in $new-light {
+
+    @each $increment,
+    $value in $new-light {
       --sc-new-#{$increment}: #{$value};
     }
   }

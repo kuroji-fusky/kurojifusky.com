@@ -1,5 +1,5 @@
 <template>
-  <a href="#">
+  <a href="#" draggable="false">
     <figure class="album-item">
       <img :src="require(`@/img/album-covers/${cover}`)" :alt="`Album cover for ${title}`" :aria-label="`Album cover for ${title}`">
       <figcaption class="album-item_info">
