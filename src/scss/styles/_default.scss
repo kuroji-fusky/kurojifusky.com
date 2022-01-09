@@ -1,4 +1,4 @@
-@use '../util/mixins' as *;
+@use '../util/mixins'as *;
 
 *,
 *::before,
@@ -37,6 +37,10 @@ img {
 
 figcaption {
   text-align: center;
+}
+
+section {
+  padding: 0 3.25rem;
 }
 
 * {

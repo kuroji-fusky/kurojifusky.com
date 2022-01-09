@@ -33,7 +33,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1rem;
-  padding: 3.25rem;
   transition: gap $hover-time ease, padding $hover-time ease;
 
   @include md-tablet-devices {

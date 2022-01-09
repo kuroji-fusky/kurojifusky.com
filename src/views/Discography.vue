@@ -1,4 +1,8 @@
 <template>
+  <!--
+    TODO: Merge latest-music component directly on this page
+    Do all the scripting crap in here
+  -->
   <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
   <main role="main" class="w-large-desktop">
     <h2 class="top-heading spacing-tablet">DISCOGRAPHY</h2>
