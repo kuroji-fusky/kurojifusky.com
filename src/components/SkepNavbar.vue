@@ -14,8 +14,13 @@
         >
       </router-link>
       <ul>
-        <li><router-link to="/discography">Discography<span class="navbar-line"></span></router-link></li>
-        <li><router-link to="/use-of-content">Use of Content<span class="navbar-line"></span></router-link></li>
+        <li id="containsContext">
+          <a href="#">Shit Content<span class="navbar-line"></span></a>
+          <div class="desktop-dropdown">
+            <router-link to="/use-of-content">Use of Content</router-link>
+            <router-link to="/discography">Discography</router-link>
+          </div>
+        </li>
         <li id="containsContext">
           <a href="#">About<span class="navbar-line"></span>
           <div class="desktop-dropdown">
@@ -68,10 +73,12 @@ $hd-padding: 2rem;
 header {
   @include flexy(space-between, center, row);
   @include prop-transition();
-  width: 100%;
+  // width: 100%;
   padding: 0.45rem 1.5rem;
   background: transparent;
   position: static;
+  max-width: 1600px;
+  margin: 0 auto;
 
   @include md-tablet-devices {
     padding: 0.55rem $hd-padding;
@@ -190,6 +197,8 @@ a {
   opacity: 0;
   
   @at-root #containsContext {
+    position: relative;
+    
     &:hover {
       .desktop-dropdown {
         pointer-events: all;

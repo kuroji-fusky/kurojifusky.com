@@ -27,7 +27,7 @@
       <div id="ft-text">
         <p>Been making non-stop hot garbage since 2014!</p>
         <p>
-          <strong id="vue-label">Site proudly made in Vue.js</strong>&copy; {{ new Date().getFullYear() }}
+          <strong id="vue-label">Site proudly made in </strong>&copy; 2014-{{ new Date().getFullYear() }} Fusky N Co Entertainment
         </p>
       </div>
     </div>
