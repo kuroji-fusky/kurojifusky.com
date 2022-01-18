@@ -7,18 +7,21 @@
       <skill-bar skill="Music producer" :level="3"></skill-bar>
       <skill-bar skill="Vocalz" :level="2"></skill-bar>
     </section>
-    <!-- <section class="container-info"></section> -->
+    <section class="container-info">
+      <Infobox />
+    </section>
   </main>
 </template>
 
 <script>
 import skillBar from "@/components/SkillBar.vue";
+import Infobox from "@/components/Infobox.vue";
 
 export default {
   components: {
     skillBar,
+    Infobox
   },
-
   data() {
     return {
       levels: []

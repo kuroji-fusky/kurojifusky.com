@@ -1,5 +1,5 @@
 <template>
-  <aside class="infobox">
+  <sf-ui-infobox class="infobox">
     <h2 
       :class="[
         isAlbum ? 'heading-album' : '',
@@ -19,7 +19,7 @@
       <InfoboxBlockItem title="No. of epsodes" :value="value"/>
     </div>
     <div v-else></div>
-  </aside>
+  </sf-ui-infobox>
 </template>
 
 <script>

@@ -19,4 +19,13 @@ dom.watch()
 const app = createApp(App)
 app.component("font-awesome-icon", FontAwesomeIcon)
 
+// Custom elements lol
+class sfInfobox extends HTMLElement {
+  constructor() {
+    super()
+  }
+}
+
+window.customElements.define('sf-ui-infobox', sfInfobox)
+
 createApp(App).use(i18n).use(router).mount('#app')

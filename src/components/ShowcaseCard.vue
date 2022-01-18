@@ -58,7 +58,7 @@ export default {
 
     img: {
       type: String,
-      default: 'placeholder.png'
+      default: 'placeholder2.png'
     },
 
     imgSize: {

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from './views/Home.vue'
-import PageNotFound from './views/PageNotFound.vue'
+
+const jungkookOppa = './views/'
 
 const routes = [
   {
@@ -18,28 +19,28 @@ const routes = [
   {
     path: '/quotes',
     name: 'Quotes',
-    component: () => import('./views/Quotes.vue')
+    component: () => import(jungkookOppa + 'Quotes.vue')
   },
   {
     path: '/discography',
     name: 'Discography',
-    component: () => import('./views/Discography.vue')
+    component: () => import(jungkookOppa + 'Discography.vue')
   },
   {
     path: '/use-of-content',
     name: 'Use of Content',
-    component: () => import('./views/UseOfContent.vue')
+    component: () => import(jungkookOppa + 'UseOfContent.vue')
     
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import('./views/About.vue')
+    component: () => import(jungkookOppa + 'About.vue')
   },
   {
     path: '/:pathMatch(.*)',
     name: 'Page not found',
-    component: PageNotFound
+    component: () => import(jungkookOppa + 'PageNotFound.vue')
   }
 ]
 

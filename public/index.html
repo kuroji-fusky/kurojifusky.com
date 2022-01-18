@@ -10,11 +10,7 @@
   <link rel='icon shortcut' href="<%= BASE_URL %>favicon.ico">
   <title><%= process.env.VUE_APP_TITLE %></title>
   <style>
-    #app {
-      height: 100%;
-      overflow-x: hidden !important;
-    }
-    #jsDisabled {
+    #js-msg {
       text-align: center;
       font-size: 120%;
       padding: 3rem 0;
@@ -25,7 +21,7 @@
       align-items: center;
       border: 4px dashed purple;
       border-radius: 6px;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Lato', Arial, Helvetica, sans-serif;
       margin: 15pt 45pt;
     }
     body {
@@ -34,14 +30,13 @@
     }
   </style>
 </head>
-<body>
+<body id="app">
   <noscript>
-    <div id="jsDisabled">
+    <div id="js-msg">
       <span>It seems like you're accessing this site without JavaScript installed.
       Please enable it to reveal its beauty! I'm waiting!</span>
       <img src="./nicksmug.png" width="60" alt="nick" aria-label="nick">
     </div>
   </noscript>
-  <div id="app"></div>
 </body>
 </html>

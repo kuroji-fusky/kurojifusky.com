@@ -1,6 +1,6 @@
 <template>
   <main role="main" class="w-large-desktop">
-    <Backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
+    <backdrop imgUrl="album-covers/WATCH THE GODDAMN SUNSET.jpg"/>
     <!-- <gallery-carousel /> -->
     <section id="platform-count">
       <span style="text-transform: uppercase; opacity: .65; margin: 1rem 0;">A blue fusky boi with...</span>

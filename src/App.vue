@@ -32,7 +32,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-// All SCSS stylesheets are loaded all across Vue components
-</style>

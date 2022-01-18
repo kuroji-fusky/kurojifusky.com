@@ -44,8 +44,6 @@
   padding: 0 20px;
   row-gap: 1rem;
 
-
-
   h1 {
     font-size: 350%;
     text-shadow: 4px 4px 0 var(--header-drop-1), 8px 8px 0 var(--header-drop-2);

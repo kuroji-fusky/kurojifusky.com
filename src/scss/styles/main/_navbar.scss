@@ -1,0 +1,175 @@
+@use '../../util/' as *;
+
+.theme-toggle-icon-rotate {
+  margin: -3px 0;
+  padding: 0 !important;
+  @include prop-transition(transform);
+  transform: rotate(180deg) translateY(1px);
+}
+
+$hd-padding: 2rem;
+
+:root {
+  --nav-line: white;
+  --nav-buttons: var(--sf-blue-dark-400);
+  --nav-buttons-hover: var(--sf-blue-dark-100);
+}
+
+header {
+  @include flexy(space-between, center, row);
+  @include prop-transition();
+  // width: 100%;
+  padding: 0.45rem 1.5rem;
+  background: transparent;
+  position: static;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @include md-tablet-devices {
+    padding: 0.55rem $hd-padding;
+    background: black;
+    @include pos-a;
+  }
+}
+
+.desktop-hero-brand {
+  @include flexy();
+  column-gap: 1rem;
+
+  ul {
+    display: flex;
+    list-style: none;
+    column-gap: 1.5rem;
+
+    li {
+      @include flexy-dir(column);
+    }
+
+    a {
+      font-size: 98% !important;
+      position: relative;
+      top: 1px;
+      opacity: .55;
+      position: relative;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .router-link-active {
+      opacity: 1;
+      font-weight: 900;
+
+      @at-root .navbar-line {
+        @include prop-transition(width);
+        @include pos-a();
+        transform: translateY(40px);
+        background: var(--nav-line);
+        height: 2px;
+        width: 0%;
+      }
+
+      .navbar-line {
+        width: 100%;
+      }
+    }
+
+    @include md-laptop-devices {
+      display: none;
+    }
+  }
+}
+
+#icon {
+  &-desktop {
+    display: block;
+
+    @include md-tablet-devices {
+      display: none;
+    }
+  }
+  &-mobile {
+    display: none;
+
+    @include md-tablet-devices {
+      display: block;
+    }
+  }
+}
+
+:is(.desktop-hero-brand_btn, .theme-toggle-btn) {
+  padding: 0.65rem 0.85rem;
+  @include soft-corners();
+  font-size: 22px;
+  background: var(--nav-buttons);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--nav-buttons-hover);
+  }
+}
+
+.theme-toggle-btn {
+  @include pos-a (0.45rem, unset, unset, 1.5rem);
+}
+
+a {
+  @include flexy(center, center, column);
+  padding: 0.75rem 0;
+
+  @include md-desktop-devices {
+    font-size: $desktop-fs;
+  }
+
+  font-size: $laptop-fs;
+  @include prop-transition(color);
+}
+
+.desktop-dropdown {
+  @include pos-a(3rem, unset, -0.55rem);
+  @include flexy-dir(column);
+  --dropdown-content: black;
+  background: var(--dropdown-content);
+  width: max-content;
+  padding: 0.35rem 0.55rem;
+  z-index: 8888;
+  @include soft-corners();
+  font-weight: normal !important;
+  $hover-time: 250ms;
+  transition: opacity $hover-time ease;
+  pointer-events: none;
+  opacity: 0;
+  
+  @at-root #containsContext {
+    position: relative;
+    
+    &:hover {
+      .desktop-dropdown {
+        pointer-events: all;
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    @include flexy(flex-start, flex-start, unset);
+    text-align: left;
+    padding: .65rem .55rem;
+    flex-wrap: nowrap;
+  }
+
+
+  @include md-tablet-devices {
+    display: none !important;
+  }
+}
+
+#mobile-padding {
+  display: none;
+
+  @include md-tablet-devices {
+    display: block;
+    padding: calc($hd-padding + 0.9rem);
+  }
+}
