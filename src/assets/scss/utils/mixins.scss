@@ -1,0 +1,58 @@
+@mixin pos-a($top: auto, $left: auto, $bottom: auto, $right: auto) {
+  position: absolute;
+  inset: $top $right $bottom $left;
+}
+
+@mixin flex-align($h: center, $v: center) {
+  display: flex;
+  justify-content: $h;
+  align-items: $v;
+}
+
+@mixin flex-dir($d: row) {
+  flex-direction: $d;
+}
+
+/* Media queries */
+@mixin phone-devices {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablet-devices {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop-devices {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin laptop-devices-4-3-max {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop-devices-4-3 {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptop-devices-16-9 {
+  @media (min-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin x-desktop-devices {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
