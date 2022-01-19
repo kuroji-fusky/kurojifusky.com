@@ -1,9 +1,8 @@
 <template>
   <footer>
-    <hr>
     <span>&copy; {{ new Date().getFullYear() }} skepfusky</span>
-    <span>Updated January 19, 2022.</span>
-    <span>Made in Vue.js + TypeScript.</span>
+    <span style="font-size: 88%">Updated January 20, 2022.</span>
+    <span style="font-size: 88%">Made in Vue.js + TypeScript.</span>
   </footer>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
-  <h2>People I've worked with lol</h2>
+  <h2>Projects</h2>
+  
 </template>
 
 <script lang="ts">

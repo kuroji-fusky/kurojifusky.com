@@ -12,6 +12,10 @@ body {
   background: #202020;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: inherit;
