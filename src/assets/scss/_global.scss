@@ -1,3 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #202020;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#app {
+  height: 100vh;
+  width: 100%;
+}
+
+div,
+span,
+blockquote {
+  display: block;
+}
+
 h1, h2, h3, h4 {
   font-family: 'Noto Sans KR', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 1rem 0;
