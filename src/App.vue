@@ -1,24 +1,32 @@
 <template>
   <main>
-    <div id="avatar-flip-container">
-      
-    </div>
+    <section>
+      <EpicFlipAvatar/>
+    </section>
+    <section>
+      <CringeBio/>
+    </section>
+    <section>
+      <div id="social-row">
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">tooter</a>
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">instagram</a>
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">youtube</a>
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">github</a>
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">fa lol</a>
+        <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">deviantart</a>
+      </div>
+    </section>
   </main>
-  <footer>&copy; 2014-{{ new Date().getFullYear() }} Skepfusky</footer>
+  <SkepFooter/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import SkepFooter from './components/SkepFooter.vue';
+import EpicFlipAvatar from './components/EpicFlipAvatar.vue';
+import CringeBio from './components/CringeBio.vue';
 
 export default defineComponent({
-  name: 'App',
-  components: {
-  }
+  components: { SkepFooter, CringeBio, EpicFlipAvatar }
 });
 </script>
-
-<style lang="scss">
-@import '@/assets/scss/mixins.scss';
-@import '@/assets/scss/defaults.scss';
-@import '@/assets/scss/styles.scss';
-</style>

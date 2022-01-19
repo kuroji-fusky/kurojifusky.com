@@ -1,0 +1,4 @@
+@mixin pos-a ($top: auto, $right: 0, $bottom: 0, $left: 0){
+  position: absolute;
+  inset: $top $right $bottom $left;
+}
