@@ -1,9 +1,84 @@
 <template>
   <div id="avatar">
-
+    <div id="avatar-inner">
+      <div id="avatar-front">
+        <img src="@/assets/img/drawings-self/Nov4.png" alt="Avatar" draggable="false"/>
+      </div>
+      <div id="avatar-back">
+        <img src="@/assets/img/drawings-self/Nov2.png" alt="Avatar" draggable="false"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss">
+$avatarSize: 300px;
 
+#avatar {
+  width: $avatarSize;
+  height: $avatarSize;
+  perspective: 700px;
+
+  &:hover #avatar-inner {
+    transform: rotateY(180deg);
+  }
+
+  &-front,
+  &-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+
+    img {
+      width: $avatarSize;
+      height: $avatarSize;
+      border-radius: 50%;
+    }
+  }
+
+  &-back {
+    transform: rotateY(180deg);
+  }
+
+  // animation: avatarFall 2s;
+}
+
+@keyframes avatarFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-300px) scale(0.85);
+  }
+  44% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+#avatar-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform-style: preserve-3d;
+  // animation: avatarTwist 2.1s;
+}
+
+@keyframes avatarTwist {
+  0% {
+    transform: rotateY(0deg);
+  }
+  16% {
+    transform: rotateY(0deg);
+  }
+  54% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
 </style>
