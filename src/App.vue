@@ -26,9 +26,9 @@
       <a href="https://vitejs.dev" style="text-decoration: underline !important;" target="_blank" rel="noopener">Made in Vue.js + Vite</a>
     </div> -->
     <div id="solid">
-      <!-- <section>
+      <section>
         <CringeBio/>
-      </section> -->
+      </section>
       <section>
         <Fursona/>
       </section>
@@ -38,13 +38,13 @@
     </div>
   </main>
   <div id="fixed-bg"></div>
-  <!-- <SkepFooter/> -->
+  <SkepFooter/>
 </template>
 
 <script>
 import EpicFlipAvatar from './components/EpicFlipAvatar.vue';
 import SocialSection from './components/SocialSection.vue';
-// import CringeBio from './components/CringeBio.vue';
+import CringeBio from './components/CringeBio.vue';
 import Fursona from './components/Fursona.vue';
 // import Projects from './components/Projects.vue';
 import SkepFooter from './components/SkepFooter.vue';
@@ -53,7 +53,7 @@ export default {
   components: {
     EpicFlipAvatar,
     SocialSection,
-    // CringeBio,
+    CringeBio,
     Fursona,
     // Projects,
     SkepFooter
