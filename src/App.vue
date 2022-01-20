@@ -1,6 +1,6 @@
 <template>
   <main role="main">
-    <section style="height: 100vh; display: flex; flex-direction: column; text-align: center; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
+    <section style="height: 100vh; display: flex; flex-direction: column; text-align: center; row-gap: 1.5rem; justify-content: center; align-items: center;">
       <EpicFlipAvatar/>
       <div class="animate-stall" style="font-size: 1.75rem; cursor: default; display: flex;">
         <strong style="color: #48ddf7;">skep</strong>

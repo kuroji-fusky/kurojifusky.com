@@ -3,12 +3,12 @@
 
   </article>
   <article>
-    <h2>Different iterations</h2>
+    <h2>Different iterations<span id="gradient-block"></span></h2>
     <div id="gallery-layout">
       
       <figure>
         <img src="../assets/img/drawings-self/Jan2022Sketch.png" draggable="false" alt="Was learning TypeScript in the middle of drawing this adorable boi">
-        <figcaption>Warmup Sketch #2; January 2022<br> <i>Was learning TypeScript in the middle of drawing this adorable boi</i></figcaption>
+        <figcaption>Warmup Sketch #2; January 2022<br> <i style="opacity: .5">Was learning TypeScript in the middle of drawing this adorable boi</i></figcaption>
       </figure>
       <figure>
         <img src="../assets/img/drawings-self/Nov4.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
@@ -58,7 +58,7 @@
   </article>
 
   <article>
-    <h2>Sum fanart</h2>
+    <h2>Sum fanart<span id="gradient-block"></span></h2>
     <div id="gallery-layout">
       <figure>
         <img src="../assets/img/drawings-ext/JAKEmegaSNAKE.png" draggable="false" alt="Drawn by JAKEmegaSNAKE (cropped)">

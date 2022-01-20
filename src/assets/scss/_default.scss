@@ -10,6 +10,7 @@
 
 body {
   background: #202020;
+  
 }
 
 html {
@@ -33,12 +34,26 @@ blockquote {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Noto Sans KR', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  padding: 1rem 0;
+  padding: 1rem .25rem;
+  position: relative;
+  z-index: 100;
+  text-shadow: 0 0 12px rgba(black, 50%);
+  width: max-content;
+
+  #gradient-block {
+    z-index: -1;
+    position: absolute;
+    top: 30px;
+    left: 1px;
+    display: block;
+    height: 16px;
+    width: 100%;
+    background: linear-gradient(to right, rgb(27,163,171), rgb(92,4,150));
+  }
 }
 
 main, footer {
-  font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace;
   color: whitesmoke;
 }
 
