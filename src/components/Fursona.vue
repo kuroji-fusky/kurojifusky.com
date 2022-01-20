@@ -5,6 +5,11 @@
   <article>
     <h2>Different iterations</h2>
     <div id="gallery-layout">
+      
+      <figure>
+        <img src="../assets/img/drawings-self/Jan2022Sketch.png" draggable="false" alt="Was learning TypeScript in the middle of drawing this adorable boi">
+        <figcaption>Warmup Sketch #2; January 2022<br> <i>Was learning TypeScript in the middle of drawing this adorable boi</i></figcaption>
+      </figure>
       <figure>
         <img src="../assets/img/drawings-self/Nov4.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
         <figcaption>Enlarged eyes &amp; glasses</figcaption>
@@ -31,7 +36,7 @@
       </figure>
       <figure>
         <img src="../assets/img/drawings-self/June4.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
-        <figcaption>Bold glasses</figcaption>
+        <figcaption>Thicc glasses</figcaption>
       </figure>
       <figure>
         <img src="../assets/img/drawings-self/June3.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
@@ -95,7 +100,12 @@
     width: 300px;
   }
   img {
-    height: 250px;
+    max-height: 250px;
+    background: rgba(gray, 11%);
+    border-radius: 8px;
+    @include phone-devices {
+      max-height: 210px;
+    }
   }
 }
 </style>

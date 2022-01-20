@@ -9,7 +9,7 @@
       <i class="animate-stall" style="cursor: default;">Making top-tier hot garbage since 2014!</i>
       <div class="vertical-list animate-stall" style="max-width: 700px;">
         <ul>
-          <li style="background: #2076c8" >19-year-old manchild</li>
+          <li style="background: #2076c8" >19-year-old Filipino manchild</li>
           <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
           <li style="background: #41b883" >Vue.js developer</li>
           <li style="background: #982bbd" >experienced video editor</li>
@@ -20,18 +20,18 @@
       </div>
       <SocialSection/>
     </section>
-    <div id="temp-footer" style="font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
+    <!-- <div id="temp-footer" style="font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
       &copy; {{ new Date().getFullYear() }} skepfusky
       <br>
       <a href="https://vitejs.dev" style="text-decoration: underline !important;" target="_blank" rel="noopener">Made in Vue.js + Vite</a>
-    </div>
+    </div> -->
     <div id="solid">
       <!-- <section>
         <CringeBio/>
       </section> -->
-      <!-- <section>
+      <section>
         <Fursona/>
-      </section> -->
+      </section>
       <!-- <section>
         <Projects/>
       </section> -->
@@ -66,7 +66,7 @@ $stripe1: rgb(27,163,171);
 $stripe2: rgb(92,4,150);
 
 #app {
-  overflow: hidden !important;
+  // overflow: hidden !important;
 }
 
 #temp-footer {
@@ -129,20 +129,17 @@ $stripe2: rgb(92,4,150);
 }
 
 .animate-stall {
-  &:nth-child(1) {
-    animation: elementStall 2.9s ease;
-  }
   &:nth-child(2) {
-    animation: elementStall 3s ease;
+    animation: elementStall 2.5s ease;
   }
   &:nth-child(3) {
-    animation: elementStall 3.1s ease;
+    animation: elementStall 2.6s ease;
   }
   &:nth-child(4) {
-    animation: elementStall 3.2s ease;
+    animation: elementStall 2.7s ease;
   }
   &:nth-child(5) {
-    animation: elementStall 3.3s ease;
+    animation: elementStall 2.8s ease;
   }
 }
 
