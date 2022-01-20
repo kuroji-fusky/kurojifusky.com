@@ -1,5 +1,8 @@
 <template>
   <article>
+
+  </article>
+  <article>
     <h2>Different iterations</h2>
     <div id="gallery-layout">
       <figure>
@@ -7,7 +10,7 @@
         <figcaption>Enlarged eyes &amp; glasses</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/Nov2.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/Nov2.png" draggable="false" alt="Final w/ Shading">
         <figcaption>Final w/ Shading</figcaption>
       </figure>
       <figure>
@@ -53,7 +56,7 @@
     <h2>Sum fanart</h2>
     <div id="gallery-layout">
       <figure>
-        <img src="../assets/img/drawings-ext/JAKEmegaSNAKE.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-ext/JAKEmegaSNAKE.png" draggable="false" alt="Drawn by JAKEmegaSNAKE (cropped)">
         <figcaption>Drawn by JAKEmegaSNAKE<br>(cropped)</figcaption>
       </figure>
       <figure>
@@ -61,7 +64,7 @@
         <figcaption>Drawn by JAKEmegaSNAKE</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-ext/ZAMBOY_orig.png" draggable="false" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-ext/ZAMBOY_orig.png" draggable="false" alt="Drawn by ZAMBOYYT">
         <figcaption>Drawn by ZAMBOYYT</figcaption>
       </figure>
       <figure>

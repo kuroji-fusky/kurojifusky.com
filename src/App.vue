@@ -3,12 +3,13 @@
     <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Consolas">
       <EpicFlipAvatar/>
       <div style="font-size: 1.75rem;"><strong style="color: #48ddf7;">skep</strong>fusky</div>
+      <i>a crackhead</i>
       <div class="vertical-list" style="max-width: 700px;">
         <ul>
           <li style="background: #2076c8" >19-year-old manchild</li>
           <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
           <li style="background: #41b883" >Vue.js developer</li>
-          <li style="background: #982bbd" >veteran video editor</li>
+          <li style="background: #982bbd" >experienced video editor</li>
           <li style="background: orangered" >filmmaker</li>
           <li style="background: rgb(37, 240, 179); color: #000" >indie musician</li>
           <li style="background: blueviolet" >performer/dancer</li>

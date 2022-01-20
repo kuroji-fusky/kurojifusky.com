@@ -78,7 +78,8 @@ export default defineComponent({
   position: relative;
 
   &:hover .tooltip {
-    visibility: visible;
+    transform: translateY(0px) scale(1);
+    opacity: 1;
   }
 }
 
@@ -86,7 +87,10 @@ export default defineComponent({
   @include pos-a(40px);
   width: 100px;
   text-align: center;
-  visibility: hidden;
+  transition: all 100ms ease;
+  transform: translateY(-7px) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .social-icons {
