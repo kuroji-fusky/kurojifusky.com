@@ -1,10 +1,13 @@
 <template>
   <main role="main">
-    <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Consolas'">
+    <section style="height: 100vh; display: flex; flex-direction: column; text-align: center; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
       <EpicFlipAvatar/>
-      <div style="font-size: 1.75rem; cursor: default;"><strong style="color: #48ddf7;">skep</strong>fusky();</div>
-      <i style="cursor: default;">innovating on the next big thing</i>
-      <div class="vertical-list" style="max-width: 700px;">
+      <div class="animate-stall" style="font-size: 1.75rem; cursor: default; display: flex;">
+        <strong style="color: #48ddf7;">skep</strong>
+        <span style="color:#f0db4f">fusky</span>();
+      </div>
+      <i class="animate-stall" style="cursor: default;">Making top-tier hot garbage since 2014!</i>
+      <div class="vertical-list animate-stall" style="max-width: 700px;">
         <ul>
           <li style="background: #2076c8" >19-year-old manchild</li>
           <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
@@ -17,7 +20,9 @@
       </div>
       <SocialSection/>
     </section>
-    <div id="temp-footer" style="font-family: 'Consolas'">
+    <div id="temp-footer" style="font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
+      &copy; {{ new Date().getFullYear() }} skepfusky
+      <br>
       <a href="https://vitejs.dev" style="text-decoration: underline !important;" target="_blank" rel="noopener">Made in Vue.js + Vite</a>
     </div>
     <div id="solid">
@@ -60,12 +65,17 @@ export default {
 $stripe1: rgb(27,163,171);
 $stripe2: rgb(92,4,150);
 
+#app {
+  overflow: hidden !important;
+}
+
 #temp-footer {
   position: fixed;
   bottom: 1.25rem;
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 * {
@@ -85,6 +95,10 @@ $stripe2: rgb(92,4,150);
 
   li {
     padding: .75rem 1rem;
+
+    @include tablet-devices {
+      padding: .55rem .85rem;
+    }
     box-shadow: 4px 4px 0 rgba(black, 25%);
     transition: all 100ms ease-out;
 
@@ -100,9 +114,8 @@ $stripe2: rgb(92,4,150);
 }
 
 #fixed-bg {
-
   position: fixed;
-  inset: auto 0 0 0;
+  inset: 0 0 0 0;
   height: 100vh;
   z-index: -5;
   background: linear-gradient(90deg, $stripe1 0%, $stripe2 33%, $stripe1 66%, $stripe2 100%);
@@ -113,6 +126,41 @@ $stripe2: rgb(92,4,150);
 @keyframes oohSmooth {
   to{background-position:right}
   from{background-position:left}
+}
+
+.animate-stall {
+  &:nth-child(1) {
+    animation: elementStall 2.9s ease;
+  }
+  &:nth-child(2) {
+    animation: elementStall 3s ease;
+  }
+  &:nth-child(3) {
+    animation: elementStall 3.1s ease;
+  }
+  &:nth-child(4) {
+    animation: elementStall 3.2s ease;
+  }
+  &:nth-child(5) {
+    animation: elementStall 3.3s ease;
+  }
+}
+
+@keyframes elementStall {
+  0% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(16px);
+    opacity: 0;
+    pointer-events: all;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 </style>

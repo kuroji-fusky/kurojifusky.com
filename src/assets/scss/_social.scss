@@ -1,0 +1,46 @@
+@use 'mixins' as *;
+
+#social-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.25rem;
+
+  @include phone-devices {
+    gap: 2.5em;
+    padding: 0 1rem;
+    width: 300px;
+  }
+}
+
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  &:hover .tooltip {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+  }
+}
+
+.tooltip {
+  @include pos-a(40px);
+  width: 100px;
+  text-align: center;
+  transition: all 100ms ease;
+  transform: translateY(-7px) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.social-icons {
+  opacity: 0.65;
+
+  &:hover {
+    opacity: 1;
+  }
+}

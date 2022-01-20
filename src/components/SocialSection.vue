@@ -1,5 +1,5 @@
 <template>
-  <div id="social-row">
+  <div id="social-row" class="animate-stall">
     <a class="social-btn" href="https://youtube.com/skepfusky97" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-youtube"></i></div>
       <div class="tooltip">
@@ -17,7 +17,7 @@
     <a class="social-btn" href="https://twitter.com/skepfuskyjs" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-twitter"></i></div>
       <div class="tooltip">
-        <span>tooter</span>
+        <span>twitter</span>
       </div>
     </a>
     <a class="social-btn" href="https://instagram.com/skepfuskyjs" target="_blank" rel="noreferrer noopener">
@@ -38,13 +38,13 @@
         <span>soundcloud</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-spotify"></i></div>
       <div class="tooltip">
         <span>spotify</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://music.apple.com/us/artist/kokoro-husky/1521326000" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-itunes-note"></i></div>
       <div class="tooltip">
         <span>apple music</span>
@@ -52,52 +52,3 @@
     </a>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  name: "SocialSection",
-  components: {},
-});
-</script>
-
-<style lang="scss">
-#social-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 2.25rem;
-}
-
-.social-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-
-  &:hover .tooltip {
-    transform: translateY(0px) scale(1);
-    opacity: 1;
-  }
-}
-
-.tooltip {
-  @include pos-a(40px);
-  width: 100px;
-  text-align: center;
-  transition: all 100ms ease;
-  transform: translateY(-7px) scale(0.9);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.social-icons {
-  opacity: 0.65;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-</style>

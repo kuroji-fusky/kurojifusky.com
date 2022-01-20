@@ -2,3 +2,15 @@
   position: absolute;
   inset: $top $right $bottom $left
 }
+
+@mixin tablet-devices {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone-devices {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
