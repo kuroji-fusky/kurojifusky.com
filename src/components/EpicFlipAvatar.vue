@@ -2,17 +2,17 @@
   <div id="avatar">
     <div id="avatar-inner">
       <div id="avatar-front">
-        <img src="@/assets/img/drawings-self/Nov4.png" alt="Avatar" draggable="false"/>
+        <img src="../assets/img/drawings-self/Nov4.png" alt="Avatar" draggable="false"/>
       </div>
       <div id="avatar-back">
-        <img src="@/assets/img/drawings-self/Nov2.png" alt="Avatar" draggable="false"/>
+        <img src="../assets/img/drawings-self/Nov2.png" alt="Avatar" draggable="false"/>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-$avatarSize: 300px;
+$avatarSize: 280px;
 
 #avatar {
   width: $avatarSize;
@@ -48,7 +48,7 @@ $avatarSize: 300px;
 @keyframes avatarFall {
   0% {
     opacity: 0;
-    transform: translateY(-300px) scale(0.85);
+    transform: translateY(-300px) scale(0.75);
   }
   44% {
     opacity: 1;
@@ -62,7 +62,7 @@ $avatarSize: 300px;
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 700ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transition: transform 700ms cubic-bezier(.67,-0.43,0,1.07);
   transform-style: preserve-3d;
   // animation: avatarTwist 2.1s;
 }

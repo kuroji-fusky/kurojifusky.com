@@ -42,12 +42,13 @@ main, footer {
   color: whitesmoke;
 }
 
-.vertical-list {
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 1rem;
-  }
+section, footer {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+footer {
+  padding: 1.25rem 0;
+  text-align: center;
 }

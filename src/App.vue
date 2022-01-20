@@ -1,15 +1,17 @@
 <template>
   <main role="main">
-    <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1rem; justify-content: center; align-items: center;">
+    <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Consolas">
       <EpicFlipAvatar/>
-      <div class="vertical-list" style="max-width: 500px;">
+      <div style="font-size: 1.75rem;"><strong style="color: #48ddf7;">skep</strong>fusky</div>
+      <div class="vertical-list" style="max-width: 700px;">
         <ul>
-          <li>19-year-old manchild</li>
-          <li>Vue.js developer</li>
-          <li>veteran video editor</li>
-          <li>filmmaker</li>
-          <li>indie musician</li>
-          <li>performer/dancer</li>
+          <li style="background: #2076c8" >19-year-old manchild</li>
+          <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
+          <li style="background: #41b883" >Vue.js developer</li>
+          <li style="background: #982bbd" >veteran video editor</li>
+          <li style="background: orangered" >filmmaker</li>
+          <li style="background: rgb(37, 240, 179); color: #000" >indie musician</li>
+          <li style="background: blueviolet" >performer/dancer</li>
         </ul>
       </div>
       <SocialSection/>
@@ -27,9 +29,7 @@
     </div>
   </main>
   <div id="fixed-bg"></div>
-  <div id="solid">
-    <SkepFooter/>
-  </div>
+  <SkepFooter/>
 </template>
 
 <script lang="ts">
@@ -54,37 +54,53 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+  $stripe1: rgb(27,163,171);
+  $stripe2: rgb(92,4,150);
+* {
+  scrollbar-color: $stripe1 $stripe2;
+  scrollbar-width: thin;
+}
+
+.vertical-list {
+  ul {
+    cursor: default;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .55rem;
+  }
+
+  li {
+    padding: .75rem 1rem;
+    box-shadow: 4px 4px 0 rgba(black, 25%);
+    transition: all 100ms ease-out;
+
+    &:hover {
+      box-shadow: 8px 8px 0 rgba(black, 15%);
+      transform: translate(-2px, -2px);
+    }
+  }
+}
+
 #solid {
   background: mix(black, gray, 77%);
 }
 
-section, footer {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 12px;
-}
-
 #fixed-bg {
-  $stripe1: rgb(27,163,171);
-  $stripe2: rgb(92,4,150);
+
   position: fixed;
   inset: auto 0 0 0;
   height: 100vh;
   z-index: -5;
   background: linear-gradient(90deg, $stripe1 0%, $stripe2 33%, $stripe1 66%, $stripe2 100%);
   background-size: 300%;
-  filter: blur(32px);
   animation: oohSmooth 27s infinite linear;
 }
 
 @keyframes oohSmooth {
   to{background-position:right}
   from{background-position:left}
-}
-
-footer {
-  padding: 1.25rem 0;
-  text-align: center;
 }
 
 </style>

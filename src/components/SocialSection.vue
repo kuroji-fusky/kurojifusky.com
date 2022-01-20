@@ -1,53 +1,99 @@
 <template>
   <div id="social-row">
     <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
-      <i class="fab fa-2x fa-youtube"></i> 
+      <div class="social-icons"><i class="fab fa-2x fa-youtube"></i></div>
+      <div class="tooltip">
+        <span>youtube</span>
+      </div>
     </a>
     <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
-      <i class="fab fa-2x fa-twitter"></i> 
-    </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener" style="font-size: 96%">
-      <i class="fab fa-2x fa-github"></i> 
-    </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
-      <i class="fab fa-2x fa-instagram"></i> 
-    </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener" style="font-size: 85%">
-      <i class="fab fa-2x fa-deviantart"></i> 
+      <div class="social-icons">
+        <i class="fab fa-2x fa-github"></i>
+      </div>
+      <div class="tooltip">
+        <span>github</span>
+      </div>
     </a>
     <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
-      <i class="fab fa-2x fa-soundcloud"></i> 
+      <div class="social-icons"><i class="fab fa-2x fa-twitter"></i></div>
+      <div class="tooltip">
+        <span>tooter</span>
+      </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener" style="font-size: 90%">
-      <i class="fab fa-2x fa-spotify"></i> 
+    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+      <div class="social-icons"><i class="fab fa-2x fa-instagram"></i></div>
+      <div class="tooltip">
+        <span>instagram</span>
+      </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener" style="font-size: 90%">
-      <i class="fab fa-2x fa-itunes-note"></i> 
+    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+      <div class="social-icons"><i class="fab fa-2x fa-deviantart"></i></div>
+      <div class="tooltip">
+        <span>deviantart</span>
+      </div>
+    </a>
+    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+      <div class="social-icons"><i class="fab fa-2x fa-soundcloud"></i></div>
+      <div class="tooltip">
+        <span>soundcloud</span>
+      </div>
+    </a>
+    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+      <div class="social-icons"><i class="fab fa-2x fa-spotify"></i></div>
+      <div class="tooltip">
+        <span>spotify</span>
+      </div>
+    </a>
+    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+      <div class="social-icons"><i class="fab fa-2x fa-itunes-note"></i></div>
+      <div class="tooltip">
+        <span>apple music</span>
+      </div>
     </a>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'SocialSection',
-})
+  name: "SocialSection",
+  components: {},
+});
 </script>
 
 <style lang="scss">
 #social-row {
   display: flex;
-  column-gap: 2rem;
   align-items: center;
+  justify-content: center;
+  column-gap: 2.25rem;
+}
 
-  a {
+.social-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 
-    opacity: .65;
+  &:hover .tooltip {
+    visibility: visible;
+  }
+}
 
-    &:hover {
-      opacity: 1;
-    }
+.tooltip {
+  @include pos-a(40px);
+  width: 100px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.social-icons {
+  opacity: 0.65;
+
+  &:hover {
+    opacity: 1;
   }
 }
 </style>
