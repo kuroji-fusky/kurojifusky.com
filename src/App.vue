@@ -33,8 +33,7 @@
   <SkepFooter/>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script>
 import EpicFlipAvatar from './components/EpicFlipAvatar.vue';
 import SocialSection from './components/SocialSection.vue';
 // import CringeBio from './components/CringeBio.vue';
@@ -42,7 +41,7 @@ import Fursona from './components/Fursona.vue';
 // import Projects from './components/Projects.vue';
 import SkepFooter from './components/SkepFooter.vue';
 
-export default defineComponent({
+export default {
   components: {
     EpicFlipAvatar,
     SocialSection,
@@ -51,7 +50,7 @@ export default defineComponent({
     // Projects,
     SkepFooter
   }
-});
+};
 </script>
 
 <style lang="scss">
