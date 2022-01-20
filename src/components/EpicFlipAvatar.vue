@@ -5,7 +5,7 @@
         <img src="../assets/img/drawings-self/Nov4.png" alt="Avatar" draggable="false"/>
       </div>
       <div id="avatar-back">
-        <img src="../assets/img/drawings-self/Nov2.png" alt="Avatar" draggable="false"/>
+        <img src="../assets/img/drawings-self/Aug2020.jpg" alt="Avatar" draggable="false"/>
       </div>
     </div>
   </div>
@@ -42,13 +42,14 @@ $avatarSize: 280px;
     transform: rotateY(180deg);
   }
 
-  // animation: avatarFall 2s;
+  animation: avatarFall 2s;
 }
 
 @keyframes avatarFall {
   0% {
     opacity: 0;
     transform: translateY(-300px) scale(0.75);
+    filter:blur(10px)
   }
   44% {
     opacity: 1;
@@ -64,7 +65,7 @@ $avatarSize: 280px;
   height: 100%;
   transition: transform 700ms cubic-bezier(.67,-0.43,0,1.07);
   transform-style: preserve-3d;
-  // animation: avatarTwist 2.1s;
+  animation: avatarTwist 2.1s;
 }
 
 @keyframes avatarTwist {

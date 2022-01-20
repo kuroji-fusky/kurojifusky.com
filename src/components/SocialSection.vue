@@ -1,12 +1,12 @@
 <template>
   <div id="social-row">
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://youtube.com/skepfusky97" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-youtube"></i></div>
       <div class="tooltip">
         <span>youtube</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://github.com/skepfusky" target="_blank" rel="noreferrer noopener">
       <div class="social-icons">
         <i class="fab fa-2x fa-github"></i>
       </div>
@@ -14,25 +14,25 @@
         <span>github</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://twitter.com/skepfuskyjs" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-twitter"></i></div>
       <div class="tooltip">
         <span>tooter</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://instagram.com/skepfuskyjs" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-instagram"></i></div>
       <div class="tooltip">
         <span>instagram</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://deviantart.com/soskeptically" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-deviantart"></i></div>
       <div class="tooltip">
         <span>deviantart</span>
       </div>
     </a>
-    <a class="social-btn" href="#" target="_blank" rel="noreferrer noopener">
+    <a class="social-btn" href="https://soundcloud.com/kokoro-husky-mixtapes" target="_blank" rel="noreferrer noopener">
       <div class="social-icons"><i class="fab fa-2x fa-soundcloud"></i></div>
       <div class="tooltip">
         <span>soundcloud</span>

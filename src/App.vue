@@ -1,9 +1,9 @@
 <template>
   <main role="main">
-    <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Consolas">
+    <section style="height: 100vh; display: flex; flex-direction: column; row-gap: 1.5rem; justify-content: center; align-items: center; font-family: 'Consolas'">
       <EpicFlipAvatar/>
-      <div style="font-size: 1.75rem;"><strong style="color: #48ddf7;">skep</strong>fusky</div>
-      <i>a crackhead</i>
+      <div style="font-size: 1.75rem; cursor: default;"><strong style="color: #48ddf7;">skep</strong>fusky();</div>
+      <i style="cursor: default;">innovating on the next big thing</i>
       <div class="vertical-list" style="max-width: 700px;">
         <ul>
           <li style="background: #2076c8" >19-year-old manchild</li>
@@ -17,20 +17,23 @@
       </div>
       <SocialSection/>
     </section>
+    <div id="temp-footer" style="font-family: 'Consolas'">
+      <a href="https://vitejs.dev" style="text-decoration: underline !important;" target="_blank" rel="noopener">Made in Vue.js + Vite</a>
+    </div>
     <div id="solid">
       <!-- <section>
         <CringeBio/>
       </section> -->
-      <section>
+      <!-- <section>
         <Fursona/>
-      </section>
+      </section> -->
       <!-- <section>
         <Projects/>
       </section> -->
     </div>
   </main>
   <div id="fixed-bg"></div>
-  <SkepFooter/>
+  <!-- <SkepFooter/> -->
 </template>
 
 <script>
@@ -54,8 +57,17 @@ export default {
 </script>
 
 <style lang="scss">
-  $stripe1: rgb(27,163,171);
-  $stripe2: rgb(92,4,150);
+$stripe1: rgb(27,163,171);
+$stripe2: rgb(92,4,150);
+
+#temp-footer {
+  position: fixed;
+  bottom: 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 * {
   scrollbar-color: $stripe1 $stripe2;
   scrollbar-width: thin;
