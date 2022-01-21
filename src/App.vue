@@ -10,7 +10,7 @@
       <div class="vertical-list animate-stall" style="max-width: 700px;">
         <ul>
           <li style="background: #2076c8" >19-year-old Filipino manchild</li>
-          <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
+          <li style="background: #f0db4f; color: #000" >front-end web developer</li>
           <li style="background: #41b883" >Vue.js developer</li>
           <li style="background: #982bbd" >experienced video editor</li>
           <li style="background: orangered" >filmmaker</li>
@@ -19,13 +19,12 @@
         </ul>
       </div>
       <SocialSection/>
+      <a href="#main" id="scroll-for-cringe" class="font-responsive animate-stall">
+        <span style="padding: .55rem 0;">Clicc for cringe</span>
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </section>
-    <!-- <div id="temp-footer" style="font-family: 'Ubuntu Mono', 'Roboto Mono', Consolas, monospace">
-      &copy; {{ new Date().getFullYear() }} skepfusky
-      <br>
-      <a href="https://vitejs.dev" style="text-decoration: underline !important;" target="_blank" rel="noopener">Made in Vue.js + Vite</a>
-    </div> -->
-    <div id="solid">
+    <div id="main" class="font-responsive">
       <section>
         <CringeBio/>
       </section>
@@ -65,22 +64,21 @@ export default {
 $stripe1: rgb(27,163,171);
 $stripe2: rgb(92,4,150);
 
-#app {
-  // overflow: hidden !important;
-}
-
-#temp-footer {
-  position: fixed;
-  bottom: 1.25rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 * {
   scrollbar-color: $stripe1 $stripe2;
   scrollbar-width: thin;
+}
+
+.font-responsive {
+  font-size: 115%;
+
+  @include tablet-devices {
+    font-size: 108%;
+  }
+
+  @include phone-devices {
+    font-size: 100%;
+  }
 }
 
 .vertical-list {
@@ -99,6 +97,7 @@ $stripe2: rgb(92,4,150);
     @include tablet-devices {
       padding: .55rem .85rem;
     }
+
     box-shadow: 4px 4px 0 rgba(black, 25%);
     transition: all 100ms ease-out;
 
@@ -109,8 +108,18 @@ $stripe2: rgb(92,4,150);
   }
 }
 
-#solid {
-  background: mix(black, gray, 77%);
+$bgDefault: mix(black, gray, 77%);
+
+#scroll-for-cringe {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1.2rem;
+  background: linear-gradient(to top, $bgDefault, rgba($bgDefault, 0%));
+  width: 100%;
+}
+
+#main {
+  background: $bgDefault;
 }
 
 #fixed-bg {
@@ -120,7 +129,7 @@ $stripe2: rgb(92,4,150);
   z-index: -5;
   background: linear-gradient(90deg, $stripe1 0%, $stripe2 33%, $stripe1 66%, $stripe2 100%);
   background-size: 300%;
-  animation: oohSmooth 27s infinite linear;
+  animation: oohSmooth 21s infinite linear;
 }
 
 @keyframes oohSmooth {
@@ -130,16 +139,19 @@ $stripe2: rgb(92,4,150);
 
 .animate-stall {
   &:nth-child(2) {
-    animation: elementStall 2.5s ease;
+    animation: elementStall 2.1s ease;
   }
   &:nth-child(3) {
-    animation: elementStall 2.6s ease;
+    animation: elementStall 2.2s ease;
   }
   &:nth-child(4) {
-    animation: elementStall 2.7s ease;
+    animation: elementStall 2.3s ease;
   }
   &:nth-child(5) {
-    animation: elementStall 2.8s ease;
+    animation: elementStall 2.4s ease;
+  }
+  &:nth-child(6) {
+    animation: elementStall 2.5s ease;
   }
 }
 

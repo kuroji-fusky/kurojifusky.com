@@ -10,7 +10,7 @@
     </p>
   </article>
   <article>
-    <h2>My other endevors<span id="gradient-block"></span></h2>
+    <h2>Other endevors<span id="gradient-block"></span></h2>
     <h3>Videos and filmmaking</h3>
     <p>
       I've been making videos on YouTube for nearly decade with varying in terms

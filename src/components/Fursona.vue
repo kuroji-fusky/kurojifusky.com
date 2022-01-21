@@ -62,7 +62,7 @@
     </div>
   </article>
 
-  <article>
+  <!-- <article>
     <h2>Sum fanart<span id="gradient-block"></span></h2>
     <div id="gallery-layout">
       <figure>
@@ -82,7 +82,7 @@
         <figcaption>Drawn by JAKEmegaSNAKE</figcaption>
       </figure>
     </div>
-  </article>
+  </article> -->
 </template>
 
 <style lang="scss">
@@ -104,12 +104,18 @@
     text-align: center;
     width: 300px;
   }
+
   img {
     max-height: 250px;
     background: rgba(gray, 11%);
     border-radius: 8px;
+    transition: transform 500ms cubic-bezier(0,.62,.2,1);
     @include phone-devices {
       max-height: 210px;
+    }
+
+    &:hover, &:focus {
+      transform: scale(1.14);
     }
   }
 }

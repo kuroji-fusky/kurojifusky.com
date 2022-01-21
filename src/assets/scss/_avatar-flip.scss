@@ -46,13 +46,15 @@
 @keyframes avatarFall {
   0% {
     opacity: 0;
-    transform: translateY(-300px) scale(0.75);
+    transform: translateY(20px) scale(0.75);
     filter:blur(10px)
   }
   10% {
-    opacity: 0;
-    transform: translateY(-300px) scale(0.75);
+    transform: translateY(20px) scale(0.75);
     filter:blur(10px)
+  }
+  15% {
+    opacity: 0;
   }
   44% {
     opacity: 1;

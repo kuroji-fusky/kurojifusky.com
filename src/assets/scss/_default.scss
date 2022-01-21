@@ -15,6 +15,7 @@ body {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -33,7 +34,7 @@ blockquote {
   display: block;
 }
 
-h1, h2, h3, h4 {
+h2 {
   padding: 1rem .25rem;
   position: relative;
   z-index: 100;
@@ -48,8 +49,13 @@ h1, h2, h3, h4 {
     display: block;
     height: 16px;
     width: 100%;
-    background: linear-gradient(to right, rgb(27,163,171), rgb(92,4,150));
+    text-shadow: 0 0 12px rgba(black, 50%);
+    background: linear-gradient(45deg, rgb(27,163,171), rgb(92,4,150));
   }
+}
+
+h1, h3, h4 {
+  padding: .55rem 0;
 }
 
 main, footer {
@@ -60,10 +66,11 @@ main, footer {
 section, footer {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0 24px;
 }
 
 footer {
   padding: 1.25rem 0;
   text-align: center;
+  background: rgba(mix(black, gray, 77%), 55%);
 }
