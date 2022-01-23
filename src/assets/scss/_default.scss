@@ -63,13 +63,13 @@ main, footer {
   color: whitesmoke;
 }
 
-section, footer {
+section {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-footer {
+footer #wrapper {
   padding: 1.25rem 0;
   text-align: center;
   background: rgba(mix(black, gray, 77%), 55%);
