@@ -3,13 +3,14 @@
     <h2>Fursona<span id="gradient-block"></span></h2>
     <h3>Description</h3>
     <p>
-      Skep is a fox and husky hybrid or fusky and was originally a husky. Propped with thick black
-      glasses and wearing a purple shirt with white outlines, and completely pantless lmao
+      Skep is a blue-yellow fox-husky hybrid or fusky; and was originally a husky. Propped with thick
+      black glasses and wearing a purple t-shirt with some white outlines, and completely pantless lmao
     </p>
     <br>
     <p>
-      Mixing with a typical traits both of a fox and a husky, he is a wholesome, outgoing, yet weird personality and he easily gets soft when he's flattered and
-      starts to blush lol
+      Mixing with a typical traits both of a fox and a husky, he's a wholesome, outgoing, yet
+      weird personality and he easily gets soft when he's immediately flattered and starts blushing
+      intensely lol
     </p>
   </article>
   <article>
@@ -27,6 +28,10 @@
         <big>Yellow floof</big>
         <span>#f8d817</span>
       </div>
+      <div class="palette" style="background: #ffeecf; color: #000">
+        <big>White part of the eye</big>
+        <span>#ffeecf</span>
+      </div>
       <div class="palette" style="background: #bb3eed">
         <big>Eyes</big>
         <span>#bb3eed</span>
@@ -40,6 +45,7 @@
         <big>Bridge</big>
         <span>#fce392</span>
       </div>
+      
       <div class="palette" style="background: #6f3a0f">
         <big>Nose</big>
         <span>#6f3a0f</span>
@@ -55,7 +61,7 @@
     <h3>Sketches/other versions</h3>
     <div id="gallery-layout">
       <figure>
-        <img src="../assets/img/drawings-self/Jan2022Rough.png" alt="Was learning TypeScript in the middle of drawing this adorable boi">
+        <img src="../assets/img/drawings-self/Jan2022Rough.png" alt="Rough draft, cropped, no shading and no glasses">
         <figcaption>Rough draft, cropped, no shading and no glasses</figcaption>
       </figure>
       <figure>
@@ -71,31 +77,31 @@
         <figcaption>Final w/ Shading</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/Nov1.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/Nov1.png" alt="Rough Draft">
         <figcaption>Rough Draft</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/NovSketch.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/NovSketch.png" alt="Formal Pose Sketch; November 2021">
         <figcaption>Formal Pose Sketch; November 2021</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/Sep1.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/Sep1.png" alt="Exaggerated and 'excited' expression; September 2021">
         <figcaption>Exaggerated and "excited" expression; September 2021</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/Aug1.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/Aug1.png" alt="Shorted left floof for perspective and collar change; August 2021">
         <figcaption>Shorted left floof for perspective and collar change; August 2021</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/Aug3.gif" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/Aug3.gif" alt="I'm not sure why I made this; made in After Effects">
         <figcaption>I'm not sure why I made this; made in After Effects</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/June4.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/June4.png" alt="Thicc glasses">
         <figcaption>Thicc glasses</figcaption>
       </figure>
       <figure>
-        <img src="../assets/img/drawings-self/June3.png" alt="Drawn by JAKEmegaSNAKE">
+        <img src="../assets/img/drawings-self/June3.png" alt="Re-traced in Adobe Illustrator">
         <figcaption>Re-traced in Adobe Illustrator</figcaption>
       </figure>
       <figure>
@@ -112,8 +118,7 @@
       </figure>
     </div>
   </article>
-
-  <!-- <article>
+  <article>
     <h2>Sum fanart<span id="gradient-block"></span></h2>
     <div id="gallery-layout">
       <figure>
@@ -133,7 +138,7 @@
         <figcaption>Drawn by JAKEmegaSNAKE</figcaption>
       </figure>
     </div>
-  </article> -->
+  </article>
 </template>
 
 <style lang="scss">

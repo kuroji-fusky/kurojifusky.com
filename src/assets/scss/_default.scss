@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 *,
 *::before,
 *::after {
@@ -73,4 +75,10 @@ footer #wrapper {
   padding: 1.25rem 0;
   text-align: center;
   background: rgba(mix(black, gray, 77%), 55%);
+}
+
+p {
+  @include tablet-devices {
+    text-align: center;
+  }
 }

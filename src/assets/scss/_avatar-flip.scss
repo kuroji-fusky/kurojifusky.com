@@ -70,6 +70,7 @@
   height: 100%;
   transition: transform 700ms cubic-bezier(.67,-0.43,0,1.07);
   transform-style: preserve-3d;
+  border-radius: 50%;
   animation: avatarTwist 2.6s;
 }
 

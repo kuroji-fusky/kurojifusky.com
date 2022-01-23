@@ -1,6 +1,6 @@
 <template>
   <main role="main">
-    <section style="height: 100vh; display: flex; flex-direction: column; text-align: center; row-gap: 1.5rem; justify-content: center; align-items: center;">
+    <section id="what-a-fcking-showoff">
       <EpicFlipAvatar/>
       <div class="animate-stall" style="font-size: 1.75rem; cursor: default; display: flex;">
         <strong style="color: #48ddf7;">skep</strong>
@@ -9,18 +9,22 @@
       <i class="animate-stall" style="cursor: default;">Making top-tier hot garbage since 2014!</i>
       <div class="vertical-list animate-stall" style="max-width: 700px;">
         <ul>
-          <li style="background: #2076c8" >19-year-old Filipino manchild</li>
-          <li style="background: #f0db4f; color: #000" >front-end web developer</li>
+          <li style="background: #ba20c8" >19-year-old Filipino idiot</li>
+          <li style="background: #f0db4f; color: #000" >front-end JavaScript developer</li>
+          <li style="background: #2076c8" >TypeScript newbie</li>
           <li style="background: #41b883" >Vue.js developer</li>
           <li style="background: #982bbd" >experienced video editor</li>
+          <li style="background: rgb(255, 146, 22);">UI/UX designer</li>
           <li style="background: orangered" >filmmaker</li>
-          <li style="background: rgb(37, 240, 179); color: #000" >indie musician</li>
-          <li style="background: blueviolet" >performer/dancer</li>
+          <li style="background: rgb(37, 240, 179); color: #000">indie musician</li>
+          <li id="hidden-skill" style="background: rgb(129, 192, 13); color: #000">singer-songwriter</li>
+          <li id="hidden-skill" style="background: rgb(226, 43, 134)" >3-octave tenor vocalist</li>
+          <li id="hidden-skill" style="background: blueviolet" >performer/dancer</li>
         </ul>
       </div>
       <SocialSection/>
       <a href="#main" id="scroll-for-cringe" class="font-responsive animate-stall">
-        <span style="padding: .55rem 0;">Clicc for cringe</span>
+        <span style="padding: .55rem 0;">More stuff below</span>
         <i class="fas fa-chevron-down"></i>
       </a>
     </section>
@@ -67,6 +71,26 @@ $stripe2: rgb(92,4,150);
 * {
   scrollbar-color: $stripe1 $stripe2;
   scrollbar-width: thin;
+}
+
+#hidden-skill {
+  opacity: .5;
+  filter: blur(3px);
+
+  &:hover {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+#what-a-fcking-showoff {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .font-responsive {
