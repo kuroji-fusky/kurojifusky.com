@@ -61,6 +61,10 @@
     <h3>Sketches/other versions</h3>
     <div id="gallery-layout">
       <figure>
+        <img src="../assets/img/drawings-self/Jan2022Final.png" alt="Final w/ shading and glasses">
+        <figcaption>Final w/ shading and glasses</figcaption>
+      </figure>
+      <figure>
         <img src="../assets/img/drawings-self/Jan2022Rough.png" alt="Rough draft, cropped, no shading and no glasses">
         <figcaption>Rough draft, cropped, no shading and no glasses</figcaption>
       </figure>
