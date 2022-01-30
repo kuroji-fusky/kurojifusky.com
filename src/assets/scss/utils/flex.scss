@@ -1,0 +1,32 @@
+@use 'mixins' as *;
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-row {@include flex-dir;}
+  &-column {@include flex-dir(column);}
+  &-wrap {flex-wrap: wrap;}
+}
+
+.justify {
+  &-center {justify-content: center;}
+  &-space-between {justify-content: space-between;}
+}
+
+.align {
+  &-center {align-items: center;}
+  &-end {align-items: flex-end;}
+}
+
+.grid {
+  display: grid;
+  display: -ms-grid;
+  display: -moz-grid;
+}
