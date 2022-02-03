@@ -1,6 +1,7 @@
 <template>
   <article>
     <h2>About Me<span id="gradient-block"></span></h2>
+      <img id="lang-showcase" src="https://github-readme-stats.vercel.app/api/top-langs/?username=skepfusky&layout=compact&langs_count=10&theme=dark">
     <p>
       I'm a self-taught individual as a music producer, video editor, filmmaker
       and somewhat profient in front-end web development and because of this;
@@ -8,7 +9,9 @@
       working on Vue.js, a UI framework to build my own and other websites,
       worked a bit of Node.js for bots on Discord and other backend magic... I
       guess lol
+
     </p>
+    <br>
   </article>
   <article>
     <h2>Other endevors<span id="gradient-block"></span></h2>
@@ -39,3 +42,24 @@
     </p>
   </article>
 </template>
+
+<style>
+#lang-showcase {
+  float: right;
+  width: max(26%, 300px);
+}
+
+@media (max-width: 768px) {
+  #lang-showcase {
+  float: none;
+  display: flex;
+  justify-content: center;
+  width: max(20%, 300px);
+  }
+  article:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
