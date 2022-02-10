@@ -21,4 +21,10 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  const siteTitle = to.name?.toString() + " - skepfusky"
+  document.title = siteTitle
+  next()
+})
+
 export default router

@@ -32,7 +32,7 @@ html {
 
 header,
 footer {
-  padding: 1.5em;
+  padding: 1.75em;
 }
 
 body {
@@ -45,18 +45,5 @@ body {
 
 a {
   text-decoration: none;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
