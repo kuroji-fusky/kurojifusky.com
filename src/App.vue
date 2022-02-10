@@ -33,6 +33,8 @@ html {
 header,
 footer {
   padding: 1.75em;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 body {
@@ -45,5 +47,9 @@ body {
 
 a {
   text-decoration: none;
+}
+
+#nv-bar {
+  display: block;
 }
 </style>

@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -28,7 +32,6 @@ $teeth_gaps:
     1\.85 "1.85rem",
     2 "2rem",
     2\.25 "2.25rem",
-    2\.5 "2.5rem",
 ;
 
 @each $length_class, $length_value in $teeth_gaps {
