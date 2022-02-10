@@ -27,6 +27,7 @@
   position: relative;
   color: white;
   text-shadow: 3px 3px 0 rgba(royalblue, 45%);
+  transition: text-shadow 300ms ease;
   animation: whomp 1s ease;
 
   &::before {
@@ -56,17 +57,23 @@
 }
 
 #navbar {
-  a {
-    position: relative;
-    color: var(--color-responsive);
+  > nav {
+    a {
+      position: relative;
+      color: var(--color-responsive);
 
-    &.router-link-exact-active {
-      color: var(--link-hover);
+      &.router-link-exact-active {
+        color: var(--link-hover);
 
-      #nv-bar {
-        width: 100%;
+        #nv-bar {
+          width: 100%;
+        }
       }
     }
+  }
+
+  > a#logo.router-link-exact-active {
+    text-shadow: 0 0 12px rgba(white, 80%);
   }
 }
 header nav {

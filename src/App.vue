@@ -17,7 +17,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 *,
 *::before,
 *::after {
@@ -30,18 +29,20 @@ html {
   scroll-behavior: smooth;
 }
 
-header,
-footer {
+header, footer > #wrapper {
   padding: 1.75em;
   max-width: 1600px;
   margin: 0 auto;
 }
 
+main {
+  padding: 0.55em 0;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 110%;
 }
 
@@ -51,5 +52,11 @@ a {
 
 #nv-bar {
   display: block;
+}
+
+.md-wrapper {
+  padding: 0 1.65rem;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 </style>
