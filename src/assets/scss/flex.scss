@@ -1,0 +1,50 @@
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.item-center {
+  align-items: center;
+}
+
+/* gaps */
+$teeth_gaps: 
+    1 "1rem",
+    1\.25 "1.25rem",
+    1\.5 "1.5rem",
+    1\.75 "1.75rem",
+    1\.85 "1.85rem",
+    2 "2rem",
+    2\.25 "2.25rem",
+    2\.5 "2.5rem",
+;
+
+@each $length_class, $length_value in $teeth_gaps {
+    .gap-x-#{$length_class} {
+        column-gap: #{$length_value};
+    }
+}
+
+@each $length_class, $length_value in $teeth_gaps {
+    .gap-y-#{$length_class} {
+        column-gap: #{$length_value};
+    }
+}
+
+@each $length_class, $length_value in $teeth_gaps {
+    .gap-#{$length_class} {
+        gap: #{$length_value};
+    }
+}
