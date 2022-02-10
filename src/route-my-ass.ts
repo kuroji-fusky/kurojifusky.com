@@ -28,7 +28,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const siteTitle = to.name?.toString() + " - skepfusky"
+  const siteTitle = to.name?.toString() + " - " + process.env.VUE_APP_TITLE
   document.title = siteTitle
   next()
 })
