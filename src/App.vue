@@ -39,6 +39,15 @@ main {
   padding: 0.55em 0;
 }
 
+:is(h1, h2, h3, h4, h5) {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+hr {
+  border: 2px dashed #aaa;
+  margin: 1.2rem auto;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -51,6 +60,8 @@ a {
   text-decoration: none;
 }
 
+/***********/
+
 #nv-bar {
   display: block;
 }
@@ -59,5 +70,9 @@ a {
   padding: 0 1.65rem;
   max-width: 1600px;
   margin: 0 auto;
+}
+
+#grid-responsive {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 </style>

@@ -19,7 +19,7 @@ export default defineComponent({
 
 <style lang="scss">
 a#project-item {
-  
   color: var(--color-responsive);
+  font-weight: 700;
 }
 </style>

@@ -32,6 +32,14 @@
   align-items: center;
 }
 
+.item-end {
+  align-items: flex-end;
+}
+
+.grid {
+  display: grid;
+}
+
 /* gaps */
 $teeth_gaps: 
     0\.25 "0.25rem",
@@ -47,19 +55,19 @@ $teeth_gaps:
 ;
 
 @each $length_class, $length_value in $teeth_gaps {
-    .gap-x-#{$length_class} {
-        column-gap: #{$length_value};
-    }
+  .gap-x-#{$length_class} {
+      column-gap: #{$length_value};
+  }
 }
 
 @each $length_class, $length_value in $teeth_gaps {
-    .gap-y-#{$length_class} {
-        row-gap: #{$length_value};
-    }
+  .gap-y-#{$length_class} {
+      row-gap: #{$length_value};
+  }
 }
 
 @each $length_class, $length_value in $teeth_gaps {
-    .gap-#{$length_class} {
-        gap: #{$length_value};
-    }
+  .gap-#{$length_class} {
+      gap: #{$length_value};
+  }
 }

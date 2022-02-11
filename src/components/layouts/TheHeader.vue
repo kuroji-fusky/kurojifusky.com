@@ -11,6 +11,11 @@
           Projects
           <span id="nv-bar"></span>
         </router-link>
+        <router-link to="/portfolio" class="flex flex-col items-center">
+          Portfolio
+          <span id="nv-bar"></span>
+        </router-link>
+        
         <router-link to="/about" class="flex flex-col items-center">
           About
           <span id="nv-bar"></span>
@@ -75,6 +80,7 @@
     text-shadow: 0 0 12px rgba(white, 80%);
   }
 }
+
 header nav {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;

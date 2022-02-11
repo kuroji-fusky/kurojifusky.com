@@ -1,7 +1,7 @@
 <template>
   <main role="main">
     <section class="md-wrapper">
-      <div id="project-grid" class="gap-0.5">
+      <div id="grid-responsive" class="grid gap-0.5">
         <div class="flex flex-col gap-y-0.5">
           <ProjectItem />
           <ProjectItem />
@@ -29,12 +29,3 @@ export default {
   }  
 }
 </script>
-
-<style lang="scss">
-#project {
-  &-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  }
-}
-</style>
