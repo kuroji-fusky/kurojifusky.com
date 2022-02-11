@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/HomePage.vue'
 
 const balls = './views/'
 
@@ -12,12 +12,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'About',
-    component: () => import(balls + 'About.vue' /* webpackChunkName: "aboutMe" */)
+    component: () => import(balls + 'AboutPage.vue' /* webpackChunkName: "aboutMe" */)
   },
   {
     path: '/projects',
-    name: 'Projects',
-    component: () => import(balls + 'Projects.vue' /* webpackChunkName: "projects" */)
+    name: 'Shitty Projects',
+    component: () => import(balls + 'ProjectsPage.vue' /* webpackChunkName: "projects" */)
   },
   
 ]

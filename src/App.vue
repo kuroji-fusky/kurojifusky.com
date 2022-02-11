@@ -44,6 +44,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   font-size: 110%;
+  overflow-x: hidden;
 }
 
 a {

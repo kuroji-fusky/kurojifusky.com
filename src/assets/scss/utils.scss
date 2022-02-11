@@ -34,6 +34,9 @@
 
 /* gaps */
 $teeth_gaps: 
+    0\.25 "0.25rem",
+    0\.5 "0.5rem",
+    0\.75 "0.75rem",
     1 "1rem",
     1\.25 "1.25rem",
     1\.5 "1.5rem",
@@ -51,7 +54,7 @@ $teeth_gaps:
 
 @each $length_class, $length_value in $teeth_gaps {
     .gap-y-#{$length_class} {
-        column-gap: #{$length_value};
+        row-gap: #{$length_value};
     }
 }
 

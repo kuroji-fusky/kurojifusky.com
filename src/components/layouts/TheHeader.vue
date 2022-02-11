@@ -48,7 +48,6 @@
 @keyframes whomp {
     0% {transform: scale(0)};
   100% {transform: scale(1)};
-
 }
 
 @keyframes smoothBaby {
