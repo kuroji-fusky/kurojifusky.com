@@ -60,7 +60,7 @@ a {
   text-decoration: none;
 }
 
-/***********/
+// ------------
 
 #nv-bar {
   display: block;
@@ -74,5 +74,30 @@ a {
 
 #grid-responsive {
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+// ------------
+// Backdrop
+// ------------
+.bd {
+  position: fixed;
+  inset: 0 auto auto auto;
+  height: 50%;
+  width: 100vw;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  z-index: -2;
+  filter: blur(3px);
+
+  &::after {
+    z-index: 69;
+    content: '';
+    background: linear-gradient(to-top);
+  }
+
+  &.home {
+    background: url('~@/assets/img/LeahBDay.jpg');    
+  }
 }
 </style>

@@ -9,18 +9,22 @@
   --fursona-borahae-alt: #b266ed;
 
   --light: #f5f5f5;
+  --light-transparent: rgba(245, 245, 245, 0.3);
   --dark: #202020;
+  --dark-transparent: rgb(32, 32, 32, 0.3);
 }
 
 body {
   @media (prefers-color-scheme: dark) {
     --color-responsive: var(--light);
+    --shadow-responsive: var(--light-transparent);
     --bg-responsive: var(--dark);
     --link-hover: var(--fursona-cyan);
   }
 
   background-color: var(--bg-responsive);
   color: var(--color-responsive);
+  --shadow-responsive: var(--dark-transparent);
   --link-hover: var(--fursona-blue);
   transition: background 300ms ease, color 300ms ease;
 }

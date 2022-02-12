@@ -30,7 +30,7 @@
   font-family: 'Ubuntu Mono', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-size: 27px;
   position: relative;
-  color: white;
+  color: var(--color-responsive);
   text-shadow: 3px 3px 0 rgba(royalblue, 45%);
   transition: text-shadow 300ms ease;
   animation: whomp 1s ease;

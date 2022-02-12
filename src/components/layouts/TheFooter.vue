@@ -9,7 +9,7 @@
         <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-spotify"></i></a>
         <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-itunes-note"></i></a>
       </div>
-      <div id="copyright">Copyright © 2014-{{ new Date().getFullYear() }} skepfusky</div>
+      <div id="copyright">Copyright © 2014-{{ new Date().getFullYear() }} skepfusky; Made in Vue 3 + TypeScript</div>
     </div>
   </footer>
 </template>
