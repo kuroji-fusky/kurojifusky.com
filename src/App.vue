@@ -88,12 +88,17 @@ a {
   background-size: cover !important;
   background-position: center center !important;
   z-index: -2;
-  filter: blur(3px);
+  filter: blur(14px);
+  opacity: .5;
 
   &::after {
     z-index: 69;
+    position: absolute;
+    inset: auto auto 0 auto;
     content: '';
-    background: linear-gradient(to-top);
+    width: 100vw;
+    height: 200px;
+    background: linear-gradient(to bottom, var(--header-backdrop-point-0) 0%, var(--header-backdrop-point-1) 85%, var(--header-backdrop-point-1) 100%);
   }
 
   &.home {

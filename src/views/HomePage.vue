@@ -156,10 +156,6 @@ a#showcase-nav {
     animation: shadowBump 500ms ease;
     transform: translateY(-3px);
   }
-
-  &:first-child {
-    // background: url("~@/assets/img/LeahBDay.jpg") no-repeat center;
-  }
 }
 
 #showcase-label {

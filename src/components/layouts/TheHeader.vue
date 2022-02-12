@@ -1,4 +1,5 @@
 <template>
+  <div class="header-backdrop"></div>
   <header>
     <div id="navbar" class="flex item-center gap-x-2">
       <router-link to="/" id="logo">
@@ -15,9 +16,12 @@
           Portfolio
           <span id="nv-bar"></span>
         </router-link>
-        
-        <router-link to="/about" class="flex flex-col items-center">
-          About
+        <router-link to="/use-of-content" class="flex flex-col items-center">
+          Use of Content
+          <span id="nv-bar"></span>
+        </router-link>
+        <router-link to="/contact" class="flex flex-col items-center">
+          Contacc Me
           <span id="nv-bar"></span>
         </router-link>
       </nav>
@@ -26,6 +30,15 @@
 </template>
 
 <style lang="scss">
+.header-backdrop {
+  position: fixed;
+  inset: 0 auto auto auto;
+  width: 100vw;
+  height: 200px;
+  background: linear-gradient(to top, var(--header-backdrop-point-0), var(--header-backdrop-point-1));
+  z-index: -1;
+}
+
 #logo {
   font-family: 'Ubuntu Mono', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
   font-size: 27px;
