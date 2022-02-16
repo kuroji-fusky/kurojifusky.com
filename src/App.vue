@@ -1,20 +1,13 @@
+<script lang="ts" setup>
+import TheHeader from "@/components/static/TheHeader.vue"
+import TheFooter from "@/components/static/TheFooter.vue"
+</script>
+
 <template>
   <TheHeader />
   <router-view/>
   <TheFooter />
 </template>
-
-<script lang="ts">
-import TheHeader from "./components/layouts/TheHeader.vue"
-import TheFooter from "./components/layouts/TheFooter.vue"
-
-export default {
-  components: {
-    TheHeader,
-    TheFooter
-  }
-}
-</script>
 
 <style lang="scss">
 *,

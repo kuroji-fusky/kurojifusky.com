@@ -16,14 +16,6 @@
           Portfolio
           <span id="nv-bar"></span>
         </router-link>
-        <router-link to="/use-of-content" class="flex flex-col items-center">
-          Use of Content
-          <span id="nv-bar"></span>
-        </router-link>
-        <router-link to="/contact" class="flex flex-col items-center">
-          Contacc Me
-          <span id="nv-bar"></span>
-        </router-link>
       </nav>
     </div>
   </header>

@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue';
+
+const ProficencyLayout = defineAsyncComponent(
+  () => import('@/components/layouts/ProficencyLayout.vue')
+)
+</script>
+
 <template>
   <div class="bd home"></div>
   <main role="main">
@@ -47,14 +55,11 @@
     <div class="md-wrapper">
       <hr />
     </div>
-    <section class="md-wrapper flex flex-col gap-y-0 75">
-      <h2>PROFICENCY</h2>
-      <div id="xp-grid">
-        <div id="xp-item">
-          <span>web dev lol</span>
-        </div>
-      </div>
-    </section>
+    <ProficencyLayout>
+      <template #yis>
+        you fuckin dumbass
+      </template>
+    </ProficencyLayout>
   </main>
 </template>
 
