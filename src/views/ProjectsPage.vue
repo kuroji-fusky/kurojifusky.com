@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import ProjectItem from '../components/ProjectItem.vue';
+</script>
+
 <template>
   <main role="main">
     <section class="md-wrapper">
@@ -19,13 +23,3 @@
     </section>
   </main>
 </template>
-
-<script lang="ts">
-import ProjectItem from '../components/ProjectItem.vue';
-
-export default {
-  components: {
-    ProjectItem
-  }  
-}
-</script>
