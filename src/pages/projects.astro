@@ -1,0 +1,37 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.svelte';
+import Nav from '../components/Nav.svelte';
+import PortfolioItem from '../components/PortfolioItem.svelte';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="Portfolio | skepfusky" description="My Dick" />
+		<style lang="scss">
+		</style>
+	</head>
+	<body>
+		<Nav projectactive="active"/>
+		<main role="main">
+      <h1>Shitty Portfoilo</h1>
+      <div id="portfolio-grid">
+        <PortfolioItem />
+        <PortfolioItem />
+        <PortfolioItem />
+        <PortfolioItem />
+        <PortfolioItem />
+        <PortfolioItem />
+      </div>
+    </main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+#portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+</style>
