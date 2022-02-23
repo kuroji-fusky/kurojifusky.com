@@ -29,6 +29,10 @@
   width: 100%;
   scrollbar-width: none;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &::before, &::after {
     content: '';
     display: block;

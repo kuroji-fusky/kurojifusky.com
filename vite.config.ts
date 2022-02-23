@@ -9,7 +9,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // This piece of shit is yelling at me
           if (id.includes("node_modules")) {
             return id
               .toString()

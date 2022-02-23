@@ -1,26 +1,19 @@
-<script setup lang="ts">
-import TheProfileCarousel from './components/TheProfileCarousel.vue'
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
 import TheFooter from './components/TheFooter.vue'
+import SocialHandler from './components/SocialHandler.vue'
+
+// Lazy load components
+const SkepHeader = defineAsyncComponent(() => import('./components/layouts/SkepHeader.vue'))
+const AboutMe = defineAsyncComponent(() => import('./components/layouts/AboutMe.vue'))
+const Projects = defineAsyncComponent(() => import('./components/layouts/Projects.vue'))
 </script>
 
 <template>
   <main role="main">
-    <div id="skep-profile-header">
-      <div id="avatar">
-        <img src="./assets/img/03.png" alt="Skepfusky's avatar" aria-label="Skepfusky's avatar">
-      </div>
-      <TheProfileCarousel />
-      <article class="bubble-info">
-        <h1 >Saranghae</h1>
-        <div>
-          <span id="skill-item">✨ Front-end Developer</span>
-          <span id="skill-item">🎵 Indie Music Producer</span>
-          <span id="skill-item">🎥 Filmmaker</span>
-          <span id="skill-item">📱 UI/UX designer</span>
-          <span id="skill-item">🙃 Certified Weirdo</span>
-        </div>
-      </article>
-    </div>
+    <SkepHeader />
+    <AboutMe />
+    <Projects />
   </main>
   <TheFooter />
 </template>
@@ -59,13 +52,26 @@ body {
   font-size: 107%;
 }
 
-main, footer {
+a {
+  text-decoration: none;
+}
+
+section, footer {
   max-width: 1400px;
   margin: 0 auto;
 }
 
-main {
+section {
   padding: 0 1.25ex;
+}
+
+section.grid-full-width {
+  --grid-default: 12;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-default), 1fr);
+  max-width: 100%;
+  padding: 0;
+  position: relative;
 }
 
 footer {
@@ -95,19 +101,18 @@ footer {
   margin-top: 90px;
 
   > #avatar {
+    @include justify-center;
     transform: translateY(-38px);
     position: absolute;
     width: 100%;
-    @include justify-center;
     inset: 0 auto auto 0;
-    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2ex;
     z-index: 70;
 
     img {
       border-radius: 50%;
-      width: 21%;
+      width: 285px;
       border: 8px solid #aaa;
       box-shadow: 0 0 32px #000;
     }
@@ -120,13 +125,12 @@ footer {
 }
 
 #skill-item {
-  padding: 0.35rem 0.55rem;
+  padding: 0.55rem 1.05rem;
   border-radius: 7px;
   font-weight: 700;
   background: purple;
   font-size: 95%;
   box-shadow: 0 0 12px rgba(#000, 45%);
   cursor: default;
-  border: 2px solid violet;
 }
 </style>
