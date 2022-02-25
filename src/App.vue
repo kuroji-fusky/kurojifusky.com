@@ -68,6 +68,10 @@ section {
   padding: 0 1.25ex;
 }
 
+footer {
+  padding: 1.25ex;
+}
+
 .grid-full-width {
   --grid-default: 12;
   display: grid;
@@ -75,10 +79,6 @@ section {
   max-width: 100%;
   padding: 0;
   position: relative;
-}
-
-footer {
-  padding: 1.25ex;
 }
 
 .bubble-info {
@@ -124,8 +124,30 @@ footer {
   > article {
     margin-top: 45px !important;
     margin: 0 20%;
+    transition: margin 300ms ease;
+
+    @media (max-width: 768px) {
+      margin: 0 1%;
+    }
   }
 }
+
+#skep-art-wrapper {
+  animation: popInDatBeauty 500ms 600ms ease forwards;
+  opacity: 0;
+}
+
+@keyframes popInDatBeauty {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 #skill-item {
   padding: 0.55rem 1.05rem;

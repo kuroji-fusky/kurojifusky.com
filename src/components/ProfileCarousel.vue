@@ -34,6 +34,10 @@
   pointer-events: none;
   width: 100%;
   scrollbar-width: none;
+  
+  @media (max-width: 768px) {
+    animation: hideCarousel 100ms ease forwards;
+  }
 
   &::-webkit-scrollbar {
     display: none;
@@ -59,6 +63,11 @@
   }
 }
 
+@keyframes hideCarousel {
+  from {opacity: 1}
+  to {opacity: 0}
+}
+
 #carousel-inline-scroll {
   filter: blur(1px);
   transform: translateY(16px);
@@ -67,15 +76,17 @@
   column-gap: 3rem;
   position: absolute;
   left: 0px;
-  animation: a 37s linear infinite;
+  animation: scrollDatShit 35s linear infinite;
 
   img {
     width: var(--img-scroll);
     height: var(--img-scroll);
+    border-radius: 50%;
+    background: linear-gradient(to bottom, orchid, royalblue);
   }
 }
 
-@keyframes a {
+@keyframes scrollDatShit {
   100% {
     left: -1960px;
   }

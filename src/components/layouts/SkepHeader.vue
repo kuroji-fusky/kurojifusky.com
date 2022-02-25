@@ -35,9 +35,38 @@ import SocialHandler from '../SocialHandler.vue'
     row-gap: 1.75rem;
   }
 
+  #avatar {
+    animation: avatarRestore 300ms ease forwards;
+
+    @media (max-width: 768px) {
+      animation: avatarSmol 300ms ease forwards;
+    }
+  }
+
   #social {
     font-size: 165%;
-    column-gap: 2.5rem;
+    column-gap: 2.75rem;
+
+    @media (max-width: 1280px) {
+      column-gap: 2rem;
+    }
+
+    @media (max-width: 820px) {
+      justify-content: space-around;
+      gap: 2.1rem;
+    }
+  }
+}
+
+$smol: 1.2;
+@keyframes avatarRestore {
+  from {transform: scale($smol) translate(-2px, -40px);}
+  to {transform: scale(1) translateY(-40px)}
+}
+
+@keyframes avatarSmol {
+  to {
+    transform: scale($smol) translate(-2px, -40px);
   }
 }
 </style>

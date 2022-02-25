@@ -33,6 +33,11 @@
 
   .bubble-info {
     margin: 0 10%;
+    transition: margin 300ms ease;
+
+    @media (max-width: 768px) {
+      margin: 0 1%;
+    }
   }
 }
 
