@@ -6,6 +6,7 @@ import TheFooter from './components/TheFooter.vue'
 const SkepHeader = defineAsyncComponent(() => import('./components/layouts/SkepHeader.vue'))
 const AboutMe = defineAsyncComponent(() => import('./components/layouts/AboutMe.vue'))
 const Projects = defineAsyncComponent(() => import('./components/layouts/Projects.vue'))
+const Proficency = defineAsyncComponent(() => import('./components/layouts/Proficency.vue'))
 </script>
 
 <template>
@@ -13,6 +14,7 @@ const Projects = defineAsyncComponent(() => import('./components/layouts/Project
     <SkepHeader />
     <AboutMe />
     <Projects />
+    <Proficency />
   </main>
   <TheFooter />
 </template>
@@ -48,23 +50,25 @@ body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 107%;
+  font-size: 113%;
+}
+
+hr {
+  width: 100%;
+  border: 2px dashed;
 }
 
 a {
   text-decoration: none;
 }
 
-section, footer {
+section {
   max-width: 1400px;
   margin: 0 auto;
-}
-
-section {
   padding: 0 1.25ex;
 }
 
-section.grid-full-width {
+.grid-full-width {
   --grid-default: 12;
   display: grid;
   grid-template-columns: repeat(var(--grid-default), 1fr);
@@ -97,7 +101,7 @@ footer {
 
 #skep-profile-header {
   position: relative;
-  margin-top: 90px;
+  margin-top: 140px;
 
   > #avatar {
     @include justify-center;

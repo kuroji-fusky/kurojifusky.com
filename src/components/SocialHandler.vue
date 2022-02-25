@@ -4,6 +4,7 @@
         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-steam"></i></a>
         <a href="#" target="_blank"><i class="fab fa-soundcloud"></i></a>
         <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
         <a href="#" target="_blank"><i class="fab fa-itunes-note"></i></a>

@@ -1,16 +1,22 @@
 <template>
   <div id="skep-art-wrapper">
     <div id="carousel-inline-scroll">
-      <img src="../assets/img/01.png">
-      <img src="../assets/img/02.png">
-      <img src="../assets/img/03.png">
-      <img src="../assets/img/03.png">
-      <img src="../assets/img/03.png">
-      <img src="../assets/img/03.png">
-      <!--Loop dis shit-->
-      <img src="../assets/img/01.png">
-      <img src="../assets/img/02.png">
-      <img src="../assets/img/03.png">
+      <img src="@/assets/img/01.jpg">
+      <img src="@/assets/img/02.png">
+      <img src="@/assets/img/03.png">
+      <img src="@/assets/img/04.png">
+      <img src="@/assets/img/05.png">
+      <img src="@/assets/img/06.png">
+      <img src="@/assets/img/07.png">
+      <img src="@/assets/img/08.png">
+      <!--Transition breakpoint-->
+      <img src="@/assets/img/01.jpg">
+      <img src="@/assets/img/02.png">
+      <img src="@/assets/img/03.png">
+      <img src="@/assets/img/04.png">
+      <img src="@/assets/img/05.png">
+      <img src="@/assets/img/06.png">
+      <img src="@/assets/img/07.png">
     </div>
   </div> 
 </template>
@@ -61,7 +67,7 @@
   column-gap: 3rem;
   position: absolute;
   left: 0px;
-  animation: cool 45s linear infinite;
+  animation: a 37s linear infinite;
 
   img {
     width: var(--img-scroll);
@@ -69,9 +75,9 @@
   }
 }
 
-@keyframes cool {
+@keyframes a {
   100% {
-    left: -1440px;
+    left: -1960px;
   }
 }
 </style>
