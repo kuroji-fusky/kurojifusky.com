@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
 import TheFooter from './components/TheFooter.vue'
-import SocialHandler from './components/SocialHandler.vue'
 
 // Lazy load components
 const SkepHeader = defineAsyncComponent(() => import('./components/layouts/SkepHeader.vue'))
