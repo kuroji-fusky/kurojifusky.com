@@ -26,10 +26,13 @@ const Proficency = defineAsyncComponent(() => import('./components/layouts/Profi
 @import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap';
 
 :root {
+  --overlay: rgba(79, 79, 79, 0.25); 
+  --item-padding: 0.95rem;
+
+  // Carousel
   --gradient-pnt-0: rgba(32, 32, 32, 0);
   --gradient-pnt-1: rgba(32, 32, 32, 1);
 
-  // Carousel
   --img-scroll: 200px;
   --carousel-fader: 269px;
 }
@@ -47,7 +50,7 @@ html {
 body {
   background: rgb(32, 32, 32);
   color: #f5f5f5;
-  line-height: 1.55rem;
+  line-height: 1.65rem;
   overflow-x: hidden;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -84,7 +87,7 @@ footer {
 }
 
 .bubble-info {
-  background: rgba(79, 79, 79, 0.25);
+  background: var(--overlay);
   padding: 1.15rem;
   border-radius: 10px;
   display: flex;

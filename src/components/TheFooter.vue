@@ -5,8 +5,8 @@ import SocialHandler from './SocialHandler.vue'
 <template>
   <footer>
     <div id="wrapper">
-      <div id="copyright">
-        &copy; 2014-{{ new Date().getFullYear() }} skepfusky, made in Vue 3 + TypeScript + Vite... testicles
+      <div style="font-size: 0.95rem">
+        &copy; 2014-{{ new Date().getFullYear() }} skepfusky, made in Vue 3 + TypeScript + Vite
       </div>
       <SocialHandler />
     </div>

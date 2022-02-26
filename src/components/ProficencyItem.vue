@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const props = defineProps<{
   skill: string,
   since: number,
@@ -51,8 +51,8 @@ h3 {
   display: flex;
   flex-direction: column;
   row-gap: 0.15rem;
-  padding: 0.85rem 0.95rem;
-  background: rgba(77, 77, 77, 0.548);
+  padding: var(--item-padding);
+  background: var(--overlay);
   border-radius: 6px;
 
   div {
