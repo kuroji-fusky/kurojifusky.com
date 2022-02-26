@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import ProfileCarousel from '../ProfileCarousel.vue'
 import SocialHandler from '../SocialHandler.vue'
+import Logo from '../Logo.vue'
 </script>
 
 <template>
-  <section id="skep-profile-header">
+  <section>
     <div id="avatar">
       <img
         src="@/assets/img/08.png"
@@ -14,7 +15,9 @@ import SocialHandler from '../SocialHandler.vue'
     </div>
     <ProfileCarousel />
     <article class="bubble-info">
-      <h1>Saranghae</h1>
+      <h1>
+        <Logo />
+      </h1>
       <div>
         <span id="skill-item">✨ Front-end web developer</span>
         <span id="skill-item">🖌️ UI/UX designer</span>
@@ -30,7 +33,7 @@ import SocialHandler from '../SocialHandler.vue'
 </template>
 
 <style lang="scss" scoped>
-#skep-profile-header {
+section {
   .bubble-info {
     row-gap: 1.75rem;
   }
@@ -58,7 +61,7 @@ import SocialHandler from '../SocialHandler.vue'
   }
 }
 
-$smol: 1.2;
+$smol: 0.97;
 @keyframes avatarRestore {
   from {transform: scale($smol) translate(-2px, -40px);}
   to {transform: scale(1) translateY(-40px)}
@@ -68,5 +71,10 @@ $smol: 1.2;
   to {
     transform: scale($smol) translate(-2px, -40px);
   }
+}
+
+article h1 {
+  font-size: 150%;
+  transform: translateY(4px);
 }
 </style>

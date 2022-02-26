@@ -1,5 +1,5 @@
 <template>
-  <section id="about-me">
+  <section>
     <article class="bubble-info">
       <h1>About me</h1>
       <p>
@@ -21,7 +21,7 @@
 </template>
 
 <style lang="scss" scoped>
-#about-me {
+section {
   margin: 2rem auto;
   text-align: center;
   img {

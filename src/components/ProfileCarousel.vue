@@ -34,7 +34,7 @@
   pointer-events: none;
   width: 100%;
   scrollbar-width: none;
-  
+
   @media (max-width: 768px) {
     animation: hideCarousel 100ms ease forwards;
   }
@@ -82,13 +82,13 @@
     width: var(--img-scroll);
     height: var(--img-scroll);
     border-radius: 50%;
-    background: linear-gradient(to bottom, orchid, royalblue);
+    background: linear-gradient(to bottom, hsla(302, 59%, 65%, 0.5), hsla(225, 73%, 57%, 0.5));
   }
 }
 
 @keyframes scrollDatShit {
   100% {
-    left: -1960px;
+    left: -1985px;
   }
 }
 </style>

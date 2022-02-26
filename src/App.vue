@@ -99,7 +99,7 @@ footer {
   }
 }
 
-#skep-profile-header {
+section:first-child {
   position: relative;
   margin-top: 140px;
 
