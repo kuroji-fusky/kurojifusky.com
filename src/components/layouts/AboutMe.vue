@@ -44,6 +44,7 @@ section {
 #name-highlight {
   background: linear-gradient(to left, orchid, royalblue);
   background-clip: text;
+  -webkit-background-clip: text;
   font-weight: 700;
   -webkit-text-fill-color: transparent;
 }

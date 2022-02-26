@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
+import TheHeader from './components/TheHeader.vue'
 import TheFooter from './components/TheFooter.vue'
 
 // Lazy load components
@@ -10,6 +11,7 @@ const Proficency = defineAsyncComponent(() => import('./components/layouts/Profi
 </script>
 
 <template>
+<TheHeader />
   <main role="main">
     <SkepHeader />
     <AboutMe />
@@ -55,7 +57,7 @@ body {
 
 hr {
   width: 100%;
-  border: 2px dashed;
+  border: 2px dashed #aaa;
 }
 
 a {

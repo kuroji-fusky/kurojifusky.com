@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import ProficencyCard from '../ProficencyCard.vue'
+import ProficencyCard from '@/components/ProficencyCard.vue'
 </script>
 
 <template>
