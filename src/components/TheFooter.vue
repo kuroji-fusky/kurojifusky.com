@@ -14,7 +14,7 @@ import SocialHandler from './SocialHandler.vue'
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/scss/mixin' as *;
+@use '@/assets/scss/mixin' as *;
 
 footer {
   position: relative;

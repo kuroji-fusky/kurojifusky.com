@@ -7,14 +7,25 @@ import ProficencyItem from '@/components/ProficencyItem.vue'
     <h2>Proficency</h2>
     <h3>Programming</h3>
     <div id="skill-grid">
-      <ProficencyItem :level=3 :since=2021 skill="UI/UX Design" />
-      <ProficencyItem :level=3 :since=2021 skill="Front-end web development" />
-      <ProficencyItem :level=1 levelCustom="Dying" :since=2022 skill="Back-end web development" />
+      <ProficencyItem :level=3 :since=2021 skill="UI/UX Design">
+        
+      </ProficencyItem>
+      <ProficencyItem :level=3 :since=2021 skill="Front-end web development">
+
+      </ProficencyItem>
+      <ProficencyItem :level=1 levelCustom="Dying" :since=2022 skill="Back-end web development">
+        Still learning to become a full-stack developer, it's going <i>pretty</i> well so far! *sarcasm*
+      </ProficencyItem>
     </div>
     <h3>Media and arts</h3>
     <div id="skill-grid">
-      <ProficencyItem :level=5 :since=2014 skill="Video editing" />
-      <ProficencyItem :level=3 :since=2018 skill="Music production" />
+      <ProficencyItem :level=5 :since=2014 skill="Video editing">
+        I've been editing videos since 2014, and needless to say, I've gained a lot of
+        experience from it. I use Adobe Premiere for my videos :3
+      </ProficencyItem>
+      <ProficencyItem :level=3 :since=2018 skill="Music production">
+        your mum
+      </ProficencyItem>
     </div>
   </section>
 </template>

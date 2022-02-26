@@ -17,10 +17,11 @@ const props = defineProps<{
 </template>
 
 <style lang="scss">
+@use '@/assets/scss/mixin' as *;
+
 #project-item {
-  display: flex;
   flex-direction: column;
-  align-items: center;
+  @include item-center;
   text-align: center;
   padding: var(--item-padding);
   background: var(--overlay);

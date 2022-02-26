@@ -10,6 +10,7 @@ const props = defineProps<{
 <template>
   <div id="proficency-item">
     <h3>{{ skill }}</h3>
+    <p><slot></slot></p>
     <div id="proficency-lower">
       <div style="width: 30%; border-right: 2px dashed #aaa">Since {{ since }}</div>
       <div style="width: 70%">
@@ -44,9 +45,16 @@ const props = defineProps<{
 </template>
 
 <style lang="scss" scoped>
+@use '@/assets/scss/mixin' as *;
+
 h3 {
   margin-bottom: 4px;
 }
+p {
+  font-size: 90%;
+  line-height: 1.45rem;
+}
+
 #proficency-item {
   display: flex;
   flex-direction: column;
@@ -61,15 +69,13 @@ h3 {
 }
 
 #proficency-lower {
-  display: flex;
-  justify-content: space-between;
+  @include justify-between;
   column-gap: 0.55em;
 }
 
 #proficency-identicator {
   position: relative;
-  display: flex;
-  align-items: center;
+  @include item-center;
   column-gap: 0.45rem;
   font-size: 88%;
   color: rgb(220,220,220);

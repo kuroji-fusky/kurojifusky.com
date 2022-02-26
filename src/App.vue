@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { defineAsyncComponent } from 'vue'
-import TheHeader from './components/TheHeader.vue'
-import TheFooter from './components/TheFooter.vue'
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 // Lazy load components
-const SkepHeader = defineAsyncComponent(() => import('./components/layouts/SkepHeader.vue'))
-const AboutMe = defineAsyncComponent(() => import('./components/layouts/AboutMe.vue'))
-const Projects = defineAsyncComponent(() => import('./components/layouts/Projects.vue'))
-const Proficency = defineAsyncComponent(() => import('./components/layouts/Proficency.vue'))
+const SkepHeader = defineAsyncComponent(() => import('@/components/layouts/SkepHeader.vue'))
+const AboutMe = defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue'))
+const Projects = defineAsyncComponent(() => import('@/components/layouts/Projects.vue'))
+const Proficency = defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const Proficency = defineAsyncComponent(() => import('./components/layouts/Profi
 </template>
 
 <style lang="scss">
-@use './assets/scss/mixin' as *;
+@use '@/assets/scss/mixin' as *;
 @import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap';
 
 :root {
@@ -77,27 +77,16 @@ footer {
   padding: 1.25ex;
 }
 
-.grid-full-width {
-  --grid-default: 12;
-  display: grid;
-  grid-template-columns: repeat(var(--grid-default), 1fr);
-  max-width: 100%;
-  padding: 0;
-  position: relative;
-}
-
 .bubble-info {
   background: var(--overlay);
   padding: 1.15rem;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
+  @include item-center;
   flex-direction: column;
   row-gap: 0.75rem;
 
   > div {
-    justify-content: center;
-    display: flex;
+    @include justify-center;
     column-gap: 0.32rem;
     row-gap: 0.65rem;
     flex-wrap: wrap;
