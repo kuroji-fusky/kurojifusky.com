@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = defineProps<{
+const b = defineProps<{
   name: String,
   repo: String,
 }>()

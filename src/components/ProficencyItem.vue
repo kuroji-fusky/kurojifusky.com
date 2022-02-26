@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const props = defineProps<{
+const a = defineProps<{
   skill: string,
   since: number,
   level: number,
