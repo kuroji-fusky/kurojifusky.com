@@ -8,36 +8,33 @@ const paco = "Avatar of Paco Drawing Site repository"
 
 <template>
   <section>
-    <h2>Projects</h2>
     <div id="project-grid">
-      <ProjectItem name="Tessinator" repo="tessinator">
-        <template #image>
-          <img src="@/assets/img/tessinator.png" :alt="tessinator" :aria-label="tessinator">
-        </template>
-        <template #description>
-          A Discord bot made in early 2021 to learn about the Node.js
+      <ProjectItem 
+        name="Tessinator"
+        repo="tessinator"
+        description="
+          A Discord bot made in early 2021 to learn about the Node.js runtime
           with no prior knowledge with JavaScript whatsoever,
-          it'll be rewritten entirely from TypeScript soon.
-        </template>
+          it'll be rewritten entirely from TypeScript soon."
+      >
+        <img src="@/assets/img/tessinator.png" :alt="tessinator" :aria-label="tessinator">
       </ProjectItem>
-      <ProjectItem name="skepfusky.net" repo="skepfusky.net">
-        <template #image>
+      <ProjectItem 
+        name="skepfusky.net" 
+        repo="skepfusky.net" 
+        description="My portfolio website that you're on right now! Written in
+          Vue 3 + TypeScript + Vite. Vite makes things super fast!"
+        >
           <img src="@/assets/img/08.png" :alt="cutie" :aria-label="cutie">
-        </template>
-        <template #description>
-          My portfolio website that you're in right now! Written in
-          Vue 3 + TypeScript + Vite. Vite makes things super fast!
-        </template>
       </ProjectItem>
-      <ProjectItem name="Paco Drawing Site" repo="pandapaco-art-statistics">
-        <template #image>
+      <ProjectItem 
+        name="Paco Drawing Site" 
+        repo="pandapaco-art-statistics" 
+        description="A GitHub repo that collects a bunch drawing data from Paco
+          Panda. The site uses Vue.js as the front-end and Python to parse
+          and plot said data."
+        >
           <img src="@/assets/img/07.png" :alt="paco" :aria-label="paco">
-        </template>
-        <template #description>
-          A GitHub repo that collects a bunch drawing data from Paco Panda. The
-          site uses Vue.js as the front-end and Python to parse
-          and plot said data.
-        </template>
       </ProjectItem>
     </div>
     <div style="display: flex; justify-content: center;">

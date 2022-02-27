@@ -1,43 +1,48 @@
 <script lang="ts" setup>
-const a = defineProps<{
-  skill: string,
-  since: number,
-  level: number,
-  levelCustom: string,
-}>()
+interface gitGudKid {
+  skill: string;
+  since?: number;
+  level: number;
+  icon: string;
+}
+
+const props = withDefaults(defineProps<gitGudKid>(), {
+  since: 2069,
+  icon: "fa-bar",
+})
 </script>
 
 <template>
   <div id="proficency-item">
-    <h3>{{ skill }}</h3>
-    <p><slot></slot></p>
+    <div>
+      <div id="svg-center">
+        <i :class="['fas', icon]"></i>
+      </div>
+      <h3>{{ skill }}</h3>
+      <p><slot></slot></p>
+    </div>
     <div id="proficency-lower">
       <div style="width: 30%; border-right: 2px dashed #aaa">Since {{ since }}</div>
       <div style="width: 70%">
         <div v-if="level === 1" id="proficency-identicator" style="--donut-fill: red; --donut-val: 10;">
           <div id="donut"></div>
-          <strong v-if="levelCustom">{{ levelCustom }}</strong>
-          <strong v-else>Inexperienced</strong>
+          <strong>Inexperienced</strong>
         </div>
         <div v-else-if="level === 2" id="proficency-identicator" style="--donut-fill: orange; --donut-val: 25;">
           <div id="donut"></div>
-          <strong v-if="levelCustom">{{ levelCustom }}</strong>
           <strong>Novice</strong>
         </div>
         <div v-else-if="level === 3" id="proficency-identicator" style="--donut-fill: yellow; --donut-val: 50;">
           <div id="donut"></div>
-          <strong v-if="levelCustom">{{ levelCustom }}</strong>
           <strong>Intermediate</strong>
         </div>
         <div v-else-if="level === 4" id="proficency-identicator" style="--donut-fill: #92dc0f; --donut-val: 75;">
           <div id="donut"></div>
-          <strong v-if="levelCustom">{{ levelCustom }}</strong>
           <strong>Advanced</strong>
         </div>
-        <div v-else-if="level === 5" id="proficency-identicator" style="--donut-fill: lime; --donut-val: 90;">
+        <div v-else-if="level === 5" id="proficency-identicator" style="--donut-fill: lime; --donut-val: 100;">
           <div id="donut"></div>
-          <strong v-if="levelCustom">{{ levelCustom }}</strong>
-          <strong v-else>Experienced</strong>
+          <strong>Experienced</strong>
         </div>
       </div>
     </div>
@@ -50,14 +55,22 @@ const a = defineProps<{
 h3 {
   margin-bottom: 4px;
 }
+
 p {
   font-size: 90%;
   line-height: 1.45rem;
 }
 
+#svg-center {
+  @include flex-center;
+  height: 120px;
+  font-size: 4.5rem !important;
+}
+
 #proficency-item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   row-gap: 0.15rem;
   padding: var(--item-padding);
   background: var(--overlay);

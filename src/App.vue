@@ -8,6 +8,7 @@ const SkepHeader = defineAsyncComponent(() => import('@/components/layouts/SkepH
 const AboutMe = defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue'))
 const Projects = defineAsyncComponent(() => import('@/components/layouts/Projects.vue'))
 const Proficency = defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
+// const Roadmap = defineAsyncComponent(() => import('@/components/layouts/Roadmap.vue'))
 </script>
 
 <template>
@@ -17,6 +18,7 @@ const Proficency = defineAsyncComponent(() => import('@/components/layouts/Profi
     <AboutMe />
     <Projects />
     <Proficency />
+    <!-- <Roadmap /> -->
   </main>
   <TheFooter />
 </template>
@@ -26,12 +28,12 @@ const Proficency = defineAsyncComponent(() => import('@/components/layouts/Profi
 @import 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap';
 
 :root {
-  --overlay: rgba(79, 79, 79, 0.25); 
+  --overlay: #2c2c2c; 
   --item-padding: 0.95rem;
 
   // Carousel
-  --gradient-pnt-0: rgba(32, 32, 32, 0);
-  --gradient-pnt-1: rgba(32, 32, 32, 1);
+  --gradient-pnt-0: #20202000;
+  --gradient-pnt-1: #202020;
 
   --img-scroll: 200px;
   --carousel-fader: 269px;
@@ -48,14 +50,14 @@ html {
 }
 
 body {
-  background: rgb(32, 32, 32);
+  background: var(--gradient-pnt-1);
   color: #f5f5f5;
   line-height: 1.65rem;
   overflow-x: hidden;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 113%;
+  font-size: 118%;
 }
 
 hr {

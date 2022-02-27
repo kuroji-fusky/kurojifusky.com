@@ -8,13 +8,23 @@
         <span id="name-highlight">Skep</span>, I'm also known by my stage name
         <span id="name-highlight">Kokoro Husky</span> on streaming platforms;
         I'm a 20-year-old high school graduate immediate college dropout from
-        the Philippines who's extremely passionate about sharing and inspiring
-        future generations through talent and art as a self-taught individual.
+        the Philippines!
       </p>
-      <hr />
+      <p>
+        I'm not trying to be a celebrity, or even a <strong><i>popufur</i></strong>...
+        No, I'm just trying to get my name out there as I'm extremely passionate
+        about sharing and possibly inspiring future generations through my broad
+        set of skills, talent, and art as a self-taught individual.
+      </p>
       <p>
         I have an equal passion for programming, music production, and
         filmmaking!
+      </p>
+      <hr>
+      <p>
+        <strong>Fun fact:</strong> The drawings you see on the scrolling
+        carousel is entirely drawn by me! Yes, I draw adorable floofs in my
+        free-time or when I get burnt out in coding stuff.
       </p>
     </article>
   </section>

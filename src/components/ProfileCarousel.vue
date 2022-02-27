@@ -1,6 +1,7 @@
 <template>
   <div id="skep-art-wrapper">
-    <div id="carousel-inline-scroll">
+     <!-- 200px + 50px * 15 + 115px -->
+    <div id="carousel-inline-scroll" style="--breakpoint: 1990px;">
       <img src="@/assets/img/01.jpg">
       <img src="@/assets/img/02.png">
       <img src="@/assets/img/03.png">
@@ -69,11 +70,10 @@
 }
 
 #carousel-inline-scroll {
-  filter: blur(1px);
   transform: translateY(16px);
   opacity: .65;
   display: flex;
-  column-gap: 3rem;
+  column-gap: 50px;
   position: absolute;
   left: 0px;
   animation: scrollDatShit 35s linear infinite;
@@ -88,7 +88,7 @@
 
 @keyframes scrollDatShit {
   100% {
-    left: -1985px;
+    left: calc(-1% - var(--breakpoint));
   }
 }
 </style>
