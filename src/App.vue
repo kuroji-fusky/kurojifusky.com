@@ -69,15 +69,20 @@ a {
   text-decoration: none;
 }
 
-section {
-  max-width: 1400px;
+section, header, footer {
+  max-width: 1640px;
   margin: 0 auto;
+}
+section {
   padding: 0 1.25ex;
 }
-
-footer {
-  padding: 1.25ex;
+footer #wrapper {
+  padding: 1.25ex 1.3rem;
 }
+header {
+  padding: 1.55rem;
+}
+
 
 .bubble-info {
   background: var(--overlay);
@@ -97,7 +102,12 @@ footer {
 
 section:first-child {
   position: relative;
-  margin-top: 140px;
+  margin-top: 100px;
+  transition: margin 300ms ease;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
 
   > #avatar {
     @include justify-center;
@@ -118,11 +128,12 @@ section:first-child {
   }
   
   > article {
-    margin-top: 45px !important;
+    margin-top: 75px !important;
     margin: 0 20%;
     transition: margin 300ms ease;
 
     @media (max-width: 768px) {
+      margin-top: 50px !important;
       margin: 0 1%;
     }
   }

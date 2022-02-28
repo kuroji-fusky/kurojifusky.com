@@ -84,13 +84,16 @@ p {
 #proficency-lower {
   @include justify-between;
   column-gap: 0.55em;
+  background: rgb(60, 60, 60);
+  padding: 0.45rem 0.65rem;
+  border-radius: 3px;
 }
 
 #proficency-identicator {
   position: relative;
   @include item-center;
   column-gap: 0.45rem;
-  font-size: 88%;
+  font-size: 85%;
   color: rgb(220,220,220);
   text-transform: uppercase;
 }

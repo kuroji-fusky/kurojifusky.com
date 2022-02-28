@@ -72,8 +72,8 @@ a {
   box-shadow: 2px 3px 4px rgba(#fff, 12%);
   transition: background 300ms ease;
 
-  &:hover {
+  &:hover, &:active {
     background: rgb(5, 84, 158);
   }
-  }
+}
 </style>

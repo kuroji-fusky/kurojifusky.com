@@ -34,6 +34,7 @@
 section {
   margin: 2rem auto;
   text-align: center;
+
   img {
     border: 9px solid white;
     box-shadow: 0 0 13px rgba(#000, 45%);
@@ -48,6 +49,12 @@ section {
     @media (max-width: 768px) {
       margin: 0 1%;
     }
+  }
+}
+
+hr, p:last-child {
+  @media (max-width: 768px) {
+    display: none;
   }
 }
 

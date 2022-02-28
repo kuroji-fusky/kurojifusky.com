@@ -13,3 +13,30 @@ import Logo from './Logo.vue'
     </nav>
   </header>
 </template>
+
+<style lang="scss" scoped>
+@use '@/assets/scss/mixin' as *;
+
+header {
+  @include justify-between;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+#logo {
+  font-size: 120%;
+}
+
+nav {
+  display: flex;
+  column-gap: 2rem;
+
+  
+}
+
+a {
+  color: #f5f5f5;
+}
+</style>

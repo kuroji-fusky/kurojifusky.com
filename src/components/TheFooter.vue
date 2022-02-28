@@ -19,12 +19,22 @@ import SocialHandler from './SocialHandler.vue'
 footer {
   position: relative;
   padding: 1.25rem 0;
+  
 
   > #wrapper {
-    max-width: 1400px;
     margin: 0 auto;
     width: 100%;
     @include justify-between;
+    @media (max-width: 800px) {
+      text-align: center;
+      display: block !important;
+  }
+  }
+}
+
+#social {
+  @media (max-width: 800px) {
+    display: none;
   }
 }
 </style>

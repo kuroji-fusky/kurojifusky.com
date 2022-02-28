@@ -47,6 +47,8 @@ section {
   }
 
   #social {
+    display: grid;
+    grid-auto-flow: column;
     font-size: 165%;
     column-gap: 2.75rem;
 
@@ -57,6 +59,9 @@ section {
     @media (max-width: 820px) {
       justify-content: space-around;
       gap: 2.1rem;
+    }
+    @media (max-width: 520px) {
+      grid-template-rows: 1fr 1fr;
     }
   }
 }

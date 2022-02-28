@@ -39,6 +39,9 @@ const props = defineProps<abominations>()
 
   &:hover {
     bottom: 6px;
+    @media (max-width: 768px) {
+      bottom: 0;
+    }
   }
 
   &::before {
@@ -68,7 +71,7 @@ const props = defineProps<abominations>()
     box-shadow: 2px 3px 4px rgba(#fff, 12%);
     transition: background 300ms ease;
 
-    &:hover {
+    &:hover, &:active {
       background: rgb(97, 5, 158);
     }
   }
