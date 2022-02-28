@@ -1,25 +1,12 @@
 <script lang="ts" setup>
-import { defineAsyncComponent } from 'vue'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
 
-// Lazy load components
-const SkepHeader = defineAsyncComponent(() => import('@/components/layouts/SkepHeader.vue'))
-const AboutMe = defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue'))
-const Projects = defineAsyncComponent(() => import('@/components/layouts/Projects.vue'))
-const Proficency = defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
-// const Roadmap = defineAsyncComponent(() => import('@/components/layouts/Roadmap.vue'))
 </script>
 
 <template>
-<TheHeader />
-  <main role="main">
-    <SkepHeader />
-    <AboutMe />
-    <Projects />
-    <Proficency />
-    <!-- <Roadmap /> -->
-  </main>
+  <TheHeader />
+  <router-view></router-view>
   <TheFooter />
 </template>
 

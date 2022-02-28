@@ -4,12 +4,12 @@ import Logo from './Logo.vue'
 
 <template>
   <header>
-    <Logo />
+    <router-link to="/">
+      <Logo />
+    </router-link>
     <nav>
-      <a href="#about-me">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#proficency">Proficency</a>
-      <a href="#roadmap">Roadmap</a>
+      <router-link to="/">Home</router-link>
+      <router-link to="/roadmap">Roadmap</router-link>
     </nav>
   </header>
 </template>
