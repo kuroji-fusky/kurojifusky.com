@@ -3,9 +3,8 @@ import ProficencyItem from '@/components/ProficencyItem.vue'
 </script>
 
 <template>
-  <section>
+  <section id="proficency">
     <h2>Proficency</h2>
-    <h3>Programming</h3>
     <div id="skill-grid">
       <ProficencyItem :level=3 :since=2021 skill="UI/UX Design" icon="fa-compass-drafting">
         I've always been fascinated by Windows' UI as a kid, and decided to take
@@ -20,9 +19,6 @@ import ProficencyItem from '@/components/ProficencyItem.vue'
       <ProficencyItem :level=1 :since=2022 skill="Back-end web development" icon="fa-server">
         Still learning to become a full-stack developer, it's going <i>pretty</i> well so far! <b>*extreme sarcasm*</b>
       </ProficencyItem>
-    </div>
-    <h3>Media and arts</h3>
-    <div id="skill-grid">
       <ProficencyItem :level=5 :since=2014 skill="Video editing" icon="fa-clapperboard">
         I've been editing videos since 2014, and needless to say, I've gained a lot of
         experience from it. I use Adobe Premiere for my videos :3

@@ -1,6 +1,5 @@
 <template>
-  <!-- ROADMAP -->
-  <section>
+  <section id="roadmap">
     <h2>My Shitty Roadmap</h2>
     <div id="roadmap-container">
       <div id="namjoon-grid">

@@ -7,7 +7,7 @@ const paco = "Avatar of Paco Drawing Site repository"
 </script>
 
 <template>
-  <section>
+  <section id="projects">
     <div id="project-grid">
       <ProjectItem 
         name="Tessinator"

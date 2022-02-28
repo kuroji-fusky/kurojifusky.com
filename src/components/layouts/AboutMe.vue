@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="about-me">
     <article class="bubble-info">
       <h1>About me</h1>
       <p>
