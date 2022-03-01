@@ -2,34 +2,41 @@
   <section>
     <div id="rm-line"></div>
     <div id="rm-content">
-      <div class="roadmap-item">
-        <div id="rmi-item-intersect">
-          <img src="@/assets/img/08.png" alt="" aria-label="">
-        </div>
-        <div id="rmi-item-content">
-          <h2>Lorem ipsum shit</h2>
-          Lorem ipsum gay
-        </div>
-      </div>
-      <div class="roadmap-item">
-        <div id="rmi-item-intersect">
-          <img src="@/assets/img/08.png" alt="" aria-label="">
-        </div>
-        <div id="rmi-item-content">
-          <h2>Lorem ipsum shit</h2>
-          Lorem ipsum gay
-        </div>
-      </div>
+      <RoadmapItem :year=2022 heading="Getting into your mom development">
+        succ
+      </RoadmapItem>
+      <RoadmapItem :year=2021 heading="Starting from the front-end">
+        Started with HTML, then some knowledge about CSS, but jackshit about JavaScript lmao
+      </RoadmapItem>
+      <RoadmapItem :year=2020 heading="Releasing my first album">
+        lmao
+      </RoadmapItem>
+      <RoadmapItem :year=2020 heading="Editing FANDOM wikis and basic CSS">
+        succ
+      </RoadmapItem>
+      <RoadmapItem :year=2015 heading="Basic ass HTML website">
+        lmao
+      </RoadmapItem>
+      <RoadmapItem :year=2014 heading="Making pointless VB .NET apps">
+        yes
+      </RoadmapItem>
     </div>
   </section>
 </template>
 
+<script lang="ts" setup>
+import { defineAsyncComponent } from 'vue'
+
+const RoadmapItem = defineAsyncComponent(() => import('@/components/RoadmapItem.vue'))
+</script>
+
 <style lang="scss" scoped>
 @use '@/assets/scss/mixin' as *;
 section {
-  display: flex;
-  height: 100vh;
+  display: block;
+  overflow: hidden;
   position: relative;
+  max-width: 1440px;
 
   &::before, &::after {
     content: '';
@@ -59,19 +66,17 @@ section {
 
 #rm-line {
   width: 16%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 
   &::before {
     content: '';
     display: block;
     background: white;
     width: 5px;
-    height: 100vh;
+    height: 100%;
   }
-}
-
-.roadmap-item {
-  @include item-center;
-  width: 100% !important;
 }
 
 #rm-line::before, #rmi-item-intersect {
@@ -80,41 +85,10 @@ section {
 }
 
 #rm-content {
-  width: 16%;
-  position: absolute;
-  top: 0;
+  
   width: 100%;
   margin: 90px 0;
   flex-direction: column;
   row-gap: 3rem;
-}
-
-#rmi-item {
-  &-intersect {
-    --roadmap-item-size: 120px;
-    --roadmap-item-position: 65px;
-    display: block;
-    transition: all 300ms ease;
-    transform: translateX(calc(-1% - var(--roadmap-item-size) + var(--roadmap-item-position)));
-    height: var(--roadmap-item-size);
-    width: var(--roadmap-item-size);
-    background: red;
-    border-radius: 50%;
-    flex-shrink: 0;
-
-    img {
-      width: 100%;
-      border-radius: inherit;
-    }
-  }
-
-  &-content {
-    background: orchid;
-    display: block;
-    margin-right: 4rem;
-    padding: 1.75ex;
-    border-radius: 6px;
-    width: 100%;
-  }
 }
 </style>

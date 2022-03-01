@@ -1,0 +1,66 @@
+<script lang="ts" setup>
+interface countryRoads {
+  year: number
+  heading: string
+}
+
+const props = defineProps<countryRoads>()
+</script>
+
+<template>
+  <div class="roadmap-item">
+    <div id="rmi-item-intersect"></div>
+    <div id="rmi-item-content">
+      {{ year }}
+      <h3>{{ heading }}</h3>
+      <p>
+        <slot></slot>
+      </p>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+@use '@/assets/scss/mixin' as *;
+
+.roadmap-item {
+  @include item-center;
+  width: 100% !important;
+}
+
+#rmi-item-intersect {
+  position: relative;
+  margin-left: 120px;
+}
+
+#rmi-item {
+  &-intersect {
+    --roadmap-item-size: 120px;
+    --roadmap-item-position: 63px;
+    display: block;
+    transition: all 300ms ease;
+    transform: translateX(calc(-1% - var(--roadmap-item-size) + var(--roadmap-item-position)));
+    height: var(--roadmap-item-size);
+    width: var(--roadmap-item-size);
+    background: red;
+    border: 6px solid white;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      border-radius: inherit;
+    }
+  }
+
+  &-content {
+    background: orchid;
+    display: block;
+    margin-right: 4rem;
+    padding: 1.75ex;
+    border-radius: 6px;
+    width: 100%;
+  }
+}
+
+</style>
