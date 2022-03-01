@@ -4,7 +4,6 @@
     <AboutMe />
     <Projects />
     <Proficency />
-    <Roadmap />
   </main>
 </template>
 
@@ -16,5 +15,4 @@ const SkepHeader = defineAsyncComponent(() => import('@/components/layouts/SkepH
 const AboutMe = defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue'))
 const Projects = defineAsyncComponent(() => import('@/components/layouts/Projects.vue'))
 const Proficency = defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
-const Roadmap = defineAsyncComponent(() => import('@/components/layouts/Roadmap.vue'))
 </script>
