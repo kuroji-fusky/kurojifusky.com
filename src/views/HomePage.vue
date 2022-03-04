@@ -7,12 +7,23 @@
   </main>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
+import { useMeta } from 'vue-meta'
 
-// Lazy load components
-const SkepHeader = defineAsyncComponent(() => import('@/components/layouts/SkepHeader.vue'))
-const AboutMe = defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue'))
-const Projects = defineAsyncComponent(() => import('@/components/layouts/Projects.vue'))
-const Proficency = defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
+export default {
+  components: {
+    SkepHeader: defineAsyncComponent(() => import('@/components/layouts/SkepHeader.vue')),
+    AboutMe: defineAsyncComponent(() => import('@/components/layouts/AboutMe.vue')),
+    Projects: defineAsyncComponent(() => import('@/components/layouts/Projects.vue')),
+    Proficency: defineAsyncComponent(() => import('@/components/layouts/Proficency.vue'))
+  },
+  setup() {
+    useMeta({
+      meta: [
+        { vmid: 'ogdes', property: 'og:description', content: 'Homie page' },
+      ]
+    })
+  }
+}
 </script>

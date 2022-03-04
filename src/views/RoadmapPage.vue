@@ -24,10 +24,22 @@
   </section>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts">
 import { defineAsyncComponent } from 'vue'
+import { useMeta } from 'vue-meta'
 
-const RoadmapItem = defineAsyncComponent(() => import('@/components/RoadmapItem.vue'))
+export default {
+  components: {
+    RoadmapItem: defineAsyncComponent(() => import('@/components/RoadmapItem.vue'))
+  },
+  setup() {
+    useMeta({
+      meta: [
+        { vmid: 'ogdes', property: 'og:description', content: 'Roadmap page' },
+      ]
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>

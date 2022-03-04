@@ -1,10 +1,31 @@
-<script lang="ts" setup>
+<script lang="ts">
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import { useMeta } from 'vue-meta'
 
+export default {
+  components: {
+    TheHeader, TheFooter
+  },
+  setup() {
+    useMeta({
+      title: '',
+      htmlAttrs: { lang: 'en', amp: true },
+      meta: [
+        { property: 'og:type', content: 'website' },
+        { vmid: 'ogdes', property: 'og:description', content: 'your mom' },
+      ]
+    })
+  }
+}
 </script>
 
 <template>
+  <metainfo>
+    <template #title="{ content }">
+      {{ content ? `${content} - skepfusky` : `skepfusky`}}
+    </template>
+  </metainfo>
   <TheHeader />
   <router-view></router-view>
   <TheFooter />
