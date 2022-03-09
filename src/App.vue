@@ -3,6 +3,8 @@ import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import { useMeta } from 'vue-meta'
 
+const pussy = "I eat ass"
+
 export default {
   components: {
     TheHeader, TheFooter
@@ -11,10 +13,12 @@ export default {
     useMeta({
       title: '',
       htmlAttrs: { lang: 'en', amp: true },
-      meta: [
-        { property: 'og:type', content: 'website' },
-        { vmid: 'ogdes', property: 'og:description', content: 'your mom' },
-      ]
+      og: {
+        site_name: 'skepfusky'
+      },
+      twitter: {
+        site: '@skepfuskyjs',
+      }
     })
   }
 }
@@ -88,9 +92,8 @@ footer #wrapper {
   padding: 1.25ex 1.3rem;
 }
 header {
-  padding: 1.55rem;
+  padding: 1.55rem 2rem;
 }
-
 
 .bubble-info {
   background: var(--overlay);

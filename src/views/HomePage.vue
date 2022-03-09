@@ -8,8 +8,12 @@
 </template>
 
 <script lang="ts">
+import { faHomeUser } from '@fortawesome/free-solid-svg-icons'
 import { defineAsyncComponent } from 'vue'
 import { useMeta } from 'vue-meta'
+
+const homedesc = "Skep's awful portfolio site lol"
+const title = "Home"
 
 export default {
   components: {
@@ -20,9 +24,16 @@ export default {
   },
   setup() {
     useMeta({
-      meta: [
-        { vmid: 'ogdes', property: 'og:description', content: 'Homie page' },
-      ]
+      title: title,
+      description: homedesc,
+      og: {
+        title: title,
+        description: homedesc,
+      },
+      twitter: {
+        title: title,
+        description: homedesc,
+      }
     })
   }
 }

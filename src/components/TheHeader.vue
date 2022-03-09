@@ -21,19 +21,26 @@ header {
   @include justify-between;
 
   @media (max-width: 768px) {
-    display: none;
+    @include justify-center;
   }
 }
 
 #logo {
   font-size: 120%;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 nav {
   display: flex;
   column-gap: 2rem;
-
-  
+  .portfolio-page-active {
+    color: #48ddf7;
+    text-shadow: 0 0 12px #2076c5;
+    font-weight: 700;
+    transition: all 200ms ease;
+  }
 }
 
 a {

@@ -1,26 +1,59 @@
 <template>
   <section>
-    <div id="rm-line"></div>
-    <div id="rm-content">
-      <RoadmapItem :year=2022 heading="Getting into your mom development">
-        succ
-      </RoadmapItem>
-      <RoadmapItem :year=2021 heading="Starting from the front-end">
-        Started with HTML, then some knowledge about CSS, but jackshit about JavaScript lmao
-      </RoadmapItem>
-      <RoadmapItem :year=2020 heading="Releasing my first album">
-        lmao
-      </RoadmapItem>
-      <RoadmapItem :year=2020 heading="Editing FANDOM wikis and basic CSS">
-        succ
-      </RoadmapItem>
-      <RoadmapItem :year=2015 heading="Basic ass HTML website">
-        lmao
-      </RoadmapItem>
-      <RoadmapItem :year=2014 heading="Making pointless VB .NET apps">
-        yes
-      </RoadmapItem>
+    <div id="top-content">
+      <p>I'm in the process of learning:</p>
+      <ul>
+        <li>TypeScript</li>
+        <li>Python</li>
+        <li>Firebase</li>
+        <li>Svelte</li>
+      </ul>
     </div>
+    <skep-roadmap-wrapper>
+      <div id="rm-line"></div>
+      <div id="rm-content">
+        <RoadmapItem
+          year="March 2022"
+          heading="Getting into back-end web development"
+          desc="succ"
+        >
+          
+        </RoadmapItem>
+        <RoadmapItem
+          year="December 2021"
+          heading="Released my second album"
+          desc="This time it's filled with bangers"
+        >
+          
+        </RoadmapItem>
+        <RoadmapItem
+          year="August 2021"
+          heading="Starting from the front-end"
+          desc="Started with HTML, then some knowledge about CSS, but jackshit about JavaScript lmao"
+        >
+          
+        </RoadmapItem>
+        <RoadmapItem
+          year="March 2021"
+          heading="Releasing my first album"
+          desc="Horizon was okay"
+        >
+          
+        </RoadmapItem>
+        <RoadmapItem
+          year="June 2020"
+          heading="Editing FANDOM wikis and basic CSS"
+          desc="succ"
+        >
+        </RoadmapItem>
+        <RoadmapItem
+          year="2012-2014"
+          heading="Making pointless VB .NET apps"
+          desc="yes"
+        >
+        </RoadmapItem>
+      </div>
+    </skep-roadmap-wrapper>
   </section>
 </template>
 
@@ -28,15 +61,25 @@
 import { defineAsyncComponent } from 'vue'
 import { useMeta } from 'vue-meta'
 
+const homedesc = "A shitty roadmap for my multi-talented skills lol"
+const title = "Roadmap"
+
 export default {
   components: {
     RoadmapItem: defineAsyncComponent(() => import('@/components/RoadmapItem.vue'))
   },
   setup() {
     useMeta({
-      meta: [
-        { vmid: 'ogdes', property: 'og:description', content: 'Roadmap page' },
-      ]
+      title: title,
+      description: homedesc,
+      og: {
+        title: title,
+        description: homedesc,
+      },
+      twitter: {
+        title: title,
+        description: homedesc,
+      }
     })
   }
 }
@@ -45,10 +88,26 @@ export default {
 <style lang="scss" scoped>
 @use '@/assets/scss/mixin' as *;
 section {
+  max-width: 1440px;
+}
+
+#top-content {
+  background: var(--overlay);
+  padding: 2.5ex;
+  z-index: 100;
+  position: relative;
+  border-radius: 6px;
+}
+
+skep-roadmap-wrapper {
   display: block;
   overflow: hidden;
   position: relative;
-  max-width: 1440px;
+  transform: translateY(-25px);
+
+  @media only screen and (max-width: 820px) {
+    @include justify-center;
+  }
 
   &::before, &::after {
     content: '';
@@ -82,6 +141,10 @@ section {
   position: absolute;
   top: 0;
 
+  @media only screen and (max-width: 820px) {
+    @include justify-center;
+  }
+
   &::before {
     content: '';
     display: block;
@@ -94,10 +157,13 @@ section {
 #rm-line::before, #rmi-item-intersect {
   position: relative;
   margin-left: 120px;
+
+  @media only screen and (max-width: 820px) {
+    margin-left: 0;
+  }
 }
 
 #rm-content {
-  
   width: 100%;
   margin: 90px 0;
   flex-direction: column;

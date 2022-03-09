@@ -14,6 +14,14 @@ library.add(far)
 library.add(fab)
 dom.watch()
 
+class RoadmapWrapper extends HTMLElement {
+  constructor() {
+    super()
+  }
+}
+
+customElements.define('skep-roadmap-wrapper', RoadmapWrapper)
+
 createApp(App)
   .use(router)
   .use(createMetaManager())

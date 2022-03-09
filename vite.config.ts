@@ -26,5 +26,11 @@ export default defineConfig({
       },
     },
   },
-  plugins: [vue()],
+  plugins: [vue({
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => tag.startsWith('skep-')
+      }
+    }
+  })],
 });
