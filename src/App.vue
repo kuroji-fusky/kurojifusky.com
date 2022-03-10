@@ -89,7 +89,7 @@ section {
   padding: 0 1.25ex;
 }
 footer #wrapper {
-  padding: 1.25ex 1.3rem;
+  padding: 1.25ex 1.90rem;
 }
 header {
   padding: 1.55rem 2rem;

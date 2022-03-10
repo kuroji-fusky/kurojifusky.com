@@ -18,11 +18,8 @@ import Logo from '../Logo.vue'
       <h1>
         <Logo />
       </h1>
-      <div style="font-size: 87%">
-        <span style="margin-right: 12px;"><i class="fas fa-location-dot"></i> Baguio City, Benguet, PH</span>
-        <span><img src="@/assets/img/vue-logo.svg" alt="Vue logo" width="21" style="transform: translateY(3px)"> Vue developer</span>
-      </div>
       <div>
+        <span id="skill-item"><img src="@/assets/img/vue-logo.svg" alt="Vue logo" width="21" style="transform: translateY(3px); margin-right: 2px">&nbsp;Vue developer</span>
         <span id="skill-item">✨ Front-end web developer</span>
         <span id="skill-item">🖌️ UI/UX designer</span>
         <span id="skill-item">🎵 Independent music artist</span>
