@@ -71,7 +71,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 0.15rem;
+  row-gap: 0.35rem;
   padding: var(--item-padding);
   background: var(--overlay);
   border-radius: 6px;
@@ -83,7 +83,7 @@ p {
 
 #proficency-lower {
   @include justify-between;
-  column-gap: 0.55em;
+  column-gap: 0.75em;
   background: rgb(60, 60, 60);
   padding: 0.45rem 0.65rem;
   border-radius: 3px;

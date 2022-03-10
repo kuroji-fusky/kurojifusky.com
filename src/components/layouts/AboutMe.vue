@@ -7,8 +7,8 @@
         <span id="name-highlight">skepfusky</span>, or simply as
         <span id="name-highlight">Skep</span>, I'm also known by my stage name
         <span id="name-highlight">Kokoro Husky</span> on streaming platforms;
-        I'm a 20-year-old high school graduate immediate college dropout from
-        the Philippines!
+        I'm a 20-year-old high school graduate immediate college dropout
+        self-employed, and self-taught from the Philippines!
       </p>
       <p>
         I'm not trying to be a celebrity, or even a <strong><i>popufur</i></strong>...
@@ -46,14 +46,14 @@ section {
     margin: 0 10%;
     transition: margin 300ms ease;
 
-    @media (max-width: 768px) {
+    @media (max-width: 960px) {
       margin: 0 1%;
     }
   }
 }
 
 hr, p:last-child {
-  @media (max-width: 768px) {
+  @media (max-width: 960px) {
     display: none;
   }
 }

@@ -9,20 +9,20 @@ const props = defineProps<abominations>()
 </script>
 
 <template>
-  <div id="project-item">
+  <skep-project-item>
     <slot></slot>
     <h2>{{ name }}</h2>
     <p>
       {{ description }}
     </p>
-    <a :href="`https://www.github.com/skepfusky/${repo}`" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-  </div>
+    <a :href="`https://www.github.com/skepfusky/${repo}`" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+  </skep-project-item>
 </template>
 
 <style lang="scss">
 @use '@/assets/scss/mixin' as *;
 
-#project-item {
+skep-project-item {
   $gd-border: 2px;
   flex-direction: column;
   @include item-center;
@@ -56,6 +56,7 @@ const props = defineProps<abominations>()
 
   p {
     margin-bottom: 60px;
+    font-size: 88%;
   }
 
   a {

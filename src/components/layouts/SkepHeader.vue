@@ -18,6 +18,10 @@ import Logo from '../Logo.vue'
       <h1>
         <Logo />
       </h1>
+      <div style="font-size: 87%">
+        <span style="margin-right: 12px;"><i class="fas fa-location-dot"></i> Baguio City, Benguet, PH</span>
+        <span><img src="@/assets/img/vue-logo.svg" alt="Vue logo" width="21" style="transform: translateY(3px)"> Vue developer</span>
+      </div>
       <div>
         <span id="skill-item">✨ Front-end web developer</span>
         <span id="skill-item">🖌️ UI/UX designer</span>
@@ -27,6 +31,7 @@ import Logo from '../Logo.vue'
         <span id="skill-item">🎥 Filmmaker</span>
         <span id="skill-item">🙃 Certified weirdo</span>
       </div>
+      <hr>
       <SocialHandler />
     </article>
   </section>
@@ -56,7 +61,7 @@ section {
       column-gap: 2rem;
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 840px) {
       justify-content: space-around;
       gap: 2.1rem;
     }

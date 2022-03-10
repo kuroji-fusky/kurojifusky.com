@@ -1,7 +1,7 @@
 <template>
-  <div id="skep-art-wrapper">
+  <skep-carousel-wrapper>
      <!-- 200px + 50px * 15 + 115px -->
-    <div id="carousel-inline-scroll" style="--breakpoint: 1990px;">
+    <skep-carousel style="--breakpoint: 1990px;">
       <img src="@/assets/img/01.jpg">
       <img src="@/assets/img/02.png">
       <img src="@/assets/img/03.png">
@@ -18,14 +18,14 @@
       <img src="@/assets/img/05.png">
       <img src="@/assets/img/06.png">
       <img src="@/assets/img/07.png">
-    </div>
-  </div> 
+    </skep-carousel>
+  </skep-carousel-wrapper> 
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/scss/mixin' as *;
 
-#skep-art-wrapper {
+skep-carousel-wrapper {
   position: relative;
   overflow-x: scroll;
   max-width: 1400px;
@@ -69,7 +69,7 @@
   to {opacity: 0}
 }
 
-#carousel-inline-scroll {
+skep-carousel {
   transform: translateY(16px);
   opacity: .65;
   display: flex;

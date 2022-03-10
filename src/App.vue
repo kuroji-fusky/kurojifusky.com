@@ -139,18 +139,19 @@ section:first-child {
   }
   
   > article {
-    margin-top: 75px !important;
+    margin-top: 40px !important;
     margin: 0 20%;
     transition: margin 300ms ease;
 
-    @media (max-width: 768px) {
+    @media (max-width: 840px) {
       margin-top: 50px !important;
       margin: 0 1%;
     }
   }
 }
 
-#skep-art-wrapper {
+skep-carousel-wrapper {
+  display: block;
   animation: popInDatBeauty 500ms 600ms ease forwards;
   opacity: 0;
 }
@@ -166,12 +167,11 @@ section:first-child {
   }
 }
 
-
 #skill-item {
   padding: 0.55rem 1.05rem;
   border-radius: 7px;
   font-weight: 700;
-  background: purple;
+  background: #4914a0;
   font-size: 95%;
   box-shadow: 0 0 12px rgba(#000, 45%);
   cursor: default;

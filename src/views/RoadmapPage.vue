@@ -21,8 +21,8 @@
         </RoadmapItem>
         <RoadmapItem
           year="December 2021"
-          heading="Released my second album"
-          desc="This time it's filled with bangers"
+          heading="Released my second album + Learned Vue 3"
+          desc="This time it's filled with bangers and Vue.js OP bro"
         >
           
         </RoadmapItem>

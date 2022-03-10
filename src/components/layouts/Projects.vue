@@ -9,15 +9,13 @@ const paco = "Avatar of Paco Drawing Site repository"
 <template>
   <section id="projects">
     <div id="project-grid">
-      <ProjectItem 
-        name="Tessinator"
-        repo="tessinator"
-        description="
-          A Discord bot made in early 2021 to learn about the Node.js runtime
-          with no prior knowledge with JavaScript whatsoever,
-          it'll be rewritten entirely from TypeScript soon."
+      
+      <ProjectItem
+        name="Majira VS Code Theme"
+        repo="majira-strawberry-vscode-theme"
+        description="A VS Code theme based of Majira's fursona lol [WIP]"
       >
-        <img src="@/assets/img/tessinator.png" :alt="tessinator" :aria-label="tessinator">
+        <img src="@/assets/img/08.png" :alt="cutie" :aria-label="cutie">
       </ProjectItem>
       <ProjectItem 
         name="skepfusky.net" 
@@ -28,13 +26,23 @@ const paco = "Avatar of Paco Drawing Site repository"
           <img src="@/assets/img/08.png" :alt="cutie" :aria-label="cutie">
       </ProjectItem>
       <ProjectItem 
-        name="Paco Drawing Site" 
+        name="Paco Drawing Stats" 
         repo="pandapaco-art-statistics" 
-        description="A GitHub repo that collects a bunch drawing data from Paco
+        description="A repository that collects a bunch drawing data from Paco
           Panda. The site uses Vue.js as the front-end and Python to parse
           and plot said data."
         >
-          <img src="@/assets/img/07.png" :alt="paco" :aria-label="paco">
+          <img src="@/assets/img/paco-yt-icon.jpg" :alt="paco" :aria-label="paco">
+      </ProjectItem>
+      <ProjectItem 
+        name="Tessinator"
+        repo="tessinator"
+        description="
+          A Discord bot made in early 2021 to learn about the Node.js runtime
+          with no prior knowledge with JavaScript whatsoever,
+          it'll be rewritten entirely from TypeScript soon."
+      >
+        <img src="@/assets/img/tessinator.png" :alt="tessinator" :aria-label="tessinator">
       </ProjectItem>
     </div>
     <div style="display: flex; justify-content: center;">
