@@ -67,20 +67,6 @@ p {
   font-size: 4.5rem !important;
 }
 
-#proficency-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  row-gap: 0.35rem;
-  padding: var(--item-padding);
-  background: var(--overlay);
-  border-radius: 6px;
-
-  div {
-    font-size: 96%;
-  }
-}
-
 #proficency-lower {
   @include justify-between;
   column-gap: 0.75em;

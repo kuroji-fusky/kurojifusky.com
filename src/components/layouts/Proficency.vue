@@ -27,11 +27,14 @@ import ProficencyItem from '@/components/ProficencyItem.vue'
         Been producing bangers since 2017, released 10+ singles, 2 EPs and albums on
         SoundCloud, Spotify, and Apple Music.
       </ProficencyItem>
+      <div id="proficency-item">
+        <router-link to="/roadmap">Roadmap lol</router-link>
+      </div>
     </div>
   </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 section {
   display: grid;
   row-gap: 0.55rem;
@@ -42,5 +45,19 @@ section {
   gap: 0.65rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+}
+
+#proficency-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 0.35rem;
+  padding: var(--item-padding);
+  background: var(--overlay);
+  border-radius: 6px;
+
+  div {
+    font-size: 96%;
+  }
 }
 </style>

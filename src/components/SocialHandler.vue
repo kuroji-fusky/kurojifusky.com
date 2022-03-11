@@ -20,10 +20,10 @@
 
 a {
   color: #f5f5f5;
-  transition: color 300ms ease;
+  transition: all 300ms ease;
 }
 
 a:hover {
-  color: rgb(165, 160, 240);
+  color: rgb(93, 226, 244);
 }
 </style>

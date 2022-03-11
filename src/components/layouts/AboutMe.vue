@@ -8,7 +8,8 @@
         <span id="name-highlight">Skep</span>, I'm also known by my stage name
         <span id="name-highlight">Kokoro Husky</span> on streaming platforms;
         I'm a 20-year-old high school graduate immediate college dropout
-        self-employed, and self-taught from the Philippines!
+        self-employed, and self-taught full-stack web developer from the
+        Philippines!
       </p>
       <p>
         I'm not trying to be a celebrity, or even a <strong><i>popufur</i></strong>...

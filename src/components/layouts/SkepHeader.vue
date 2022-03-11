@@ -19,14 +19,13 @@ import Logo from '../Logo.vue'
         <Logo />
       </h1>
       <div>
+        <span id="skill-item">✨ Full-stack web developer</span>
         <span id="skill-item"><img src="@/assets/img/vue-logo.svg" alt="Vue logo" width="21" style="transform: translateY(3px); margin-right: 2px">&nbsp;Vue developer</span>
-        <span id="skill-item">✨ Front-end web developer</span>
-        <span id="skill-item">🖌️ UI/UX designer</span>
+        <span id="skill-item">🖌️ Web &amp; UI/UX designer</span>
         <span id="skill-item">🎵 Independent music artist</span>
         <span id="skill-item">🎤 Tenor vocalist</span>
         <span id="skill-item">🕺 Freestyle performer</span>
         <span id="skill-item">🎥 Filmmaker</span>
-        <span id="skill-item">🙃 Certified weirdo</span>
       </div>
       <hr>
       <SocialHandler />
@@ -35,6 +34,10 @@ import Logo from '../Logo.vue'
 </template>
 
 <style lang="scss" scoped>
+.bubble-info {
+  background: linear-gradient(180deg, #2c2c2c00, var(--overlay));
+}
+
 section {
   .bubble-info {
     row-gap: 1.75rem;
@@ -51,7 +54,7 @@ section {
   #social {
     display: grid;
     grid-auto-flow: column;
-    font-size: 165%;
+    font-size: 135%;
     column-gap: 2.75rem;
 
     @media (max-width: 1280px) {
@@ -81,7 +84,8 @@ $smol: 0.97;
 }
 
 article h1 {
-  font-size: 150%;
+  font-size: 170%;
   transform: translateY(4px);
 }
+
 </style>

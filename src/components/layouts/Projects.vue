@@ -13,7 +13,7 @@ const paco = "Avatar of Paco Drawing Site repository"
       <ProjectItem
         name="Majira VS Code Theme"
         repo="majira-strawberry-vscode-theme"
-        description="A VS Code theme based of Majira's fursona lol [WIP]"
+        description="A totally cool VS Code theme I created based of Majira's fursona (I'm so sorry...)"
       >
         <img src="@/assets/img/08.png" :alt="cutie" :aria-label="cutie">
       </ProjectItem>
@@ -44,6 +44,7 @@ const paco = "Avatar of Paco Drawing Site repository"
       >
         <img src="@/assets/img/tessinator.png" :alt="tessinator" :aria-label="tessinator">
       </ProjectItem>
+      
     </div>
     <div style="display: flex; justify-content: center;">
       <a href="https://github.com/skepfusky?tab=repositories" target="_blank">More abominations I've created</a>

@@ -13,41 +13,51 @@
       <div id="rm-line"></div>
       <div id="rm-content">
         <RoadmapItem
-          year="March 2022"
+          year="February 2022"
           heading="Getting into back-end web development"
-          desc="succ"
+          desc="I've decided to learn another JS framework, Svelte, for small to medium projects that
+          don't require a lot of stuff to configure other than Vue in my opinion. And I'm tapping
+          into back-end web development as I'm learning Python anyways, as well as Firebase, MongoDB,
+          and some basic SQL, because why not?"
         >
           
         </RoadmapItem>
         <RoadmapItem
           year="December 2021"
           heading="Released my second album + Learned Vue 3"
-          desc="This time it's filled with bangers and Vue.js OP bro"
+          desc="This time it's filled with bangers with over 9 tracks, and I was like 'Screw it, I'll
+          make my own website', and I really don't know where I've gotten myself into, learning basic
+          HTML and CSS was way different than editing wikis due to it's different syntax and whatnot.
+          I've gotten to learn Vue 3 after barely knowing anything about JavaScript."
         >
           
         </RoadmapItem>
         <RoadmapItem
           year="August 2021"
           heading="Starting from the front-end"
-          desc="Started with HTML, then some knowledge about CSS, but jackshit about JavaScript lmao"
+          desc="Started with HTML, then some knowledge about CSS back when I was editing wikis from
+          FANDOM, but jackshit about JavaScript at the time other than following a tutorial on
+          Discord bots."
         >
           
         </RoadmapItem>
         <RoadmapItem
           year="March 2021"
           heading="Releasing my first album"
-          desc="Horizon was okay"
+          desc="Horizon was alright, I guess..."
         >
           
         </RoadmapItem>
         <RoadmapItem
           year="June 2020"
           heading="Editing FANDOM wikis and basic CSS"
-          desc="succ"
+          desc="In the midst of the pandemic, I decided to edit wikis and gradually learn wikitext
+          on my own thanks to the forums and other people asking for help. I've gotten a basic
+          understanding of really basic CSS in the beginning of September."
         >
         </RoadmapItem>
         <RoadmapItem
-          year="2012-2014"
+          year="2010-2014"
           heading="Making pointless VB .NET apps"
           desc="yes"
         >

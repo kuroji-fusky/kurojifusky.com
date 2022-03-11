@@ -3,8 +3,6 @@ import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
 import { useMeta } from 'vue-meta'
 
-const pussy = "I eat ass"
-
 export default {
   components: {
     TheHeader, TheFooter
@@ -120,7 +118,7 @@ section:first-child {
     margin-top: 80px;
   }
 
-  > #avatar {
+  #avatar {
     @include justify-center;
     transform: translateY(-38px);
     position: absolute;
