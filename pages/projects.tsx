@@ -1,9 +1,7 @@
-import MainLayout from "../components/MainLayout";
-
 export default function ProjectPage() {
   return(
-    <MainLayout>
+    <div>
       somi fuck me
-    </MainLayout>
+    </div>
   )
 };

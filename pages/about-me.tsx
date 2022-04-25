@@ -1,9 +1,7 @@
-import MainLayout from "../components/MainLayout"
-
 export default function AboutMe() {
   return(
-    <MainLayout>
+    <div>
       About my sad life
-    </MainLayout>
+    </div>
   )
 };
