@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start NEXT_TELEMETRY_DISABLED=1",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^4.0.14",
     "next": "12.1.5",
+    "next-mdx-remote": "^4.0.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.4.4",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
@@ -23,6 +28,7 @@
     "@types/react": "18.0.5",
     "@types/react-dom": "18.0.1",
     "autoprefixer": "^10.4.4",
+    "cssnano": "^5.1.7",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
     "postcss": "^8.4.12",

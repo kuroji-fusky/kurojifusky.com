@@ -1,5 +1,5 @@
 .wrapper {
-  @apply my-0 mx-auto flex flex-col gap-y-2 max-w-screen-2xl p-8;
+  @apply my-0 mx-auto flex flex-col gap-y-8 max-w-screen-2xl p-8;
 }
 
 .contents {
@@ -7,9 +7,13 @@
 }
 
 .content-list {
-  @apply flex flex-col;
+  @apply flex flex-col gap-2;
 }
 
 .lower-third {
-  @apply flex justify-between items-center;
+  @apply flex flex-col sm:flex-row justify-between items-center;
+}
+
+.social-icons {
+  @apply text-white hover:text-blue-400 transition-colors duration-300;
 }

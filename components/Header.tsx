@@ -15,8 +15,8 @@ export default function Header() {
           <Link href="/works" passHref>
             <a>WORKS</a>
           </Link>
+          <Link href="/contact" passHref>BLOG</Link>
           <Link href="/about-me" passHref>ABOUT THIS LOSER</Link>
-          <Link href="/contact" passHref>CONTACT</Link>
         </nav>
       </div>
     </header>

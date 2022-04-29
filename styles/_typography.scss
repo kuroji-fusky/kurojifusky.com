@@ -33,13 +33,5 @@
  */
 
 body {
-  font-size: clamp(1.105rem, 1.75vw, 1.135rem);
-}
-
-/*
- * TYPOGRAPHY
- */
-
-.uppercase-context {
-  @apply uppercase text-slate-600 text-sm;
+  font-size: clamp(1.105rem, 1vw, 1.135rem);
 }

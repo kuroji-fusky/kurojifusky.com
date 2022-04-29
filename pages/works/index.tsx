@@ -1,7 +1,7 @@
 export default function Works() {
-  return(
+  return (
     <div>
       Works page
     </div>
-  )
+  );
 };

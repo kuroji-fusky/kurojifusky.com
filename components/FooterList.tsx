@@ -15,7 +15,7 @@ export default function FooterList({ title, linkItems, nameItems }: IFooterListP
         {linkItems.map((link, index) => (
           <li key={index}>
             <Link href={link}>
-              <a className={styles["link-item"]}>
+              <a className={`link-cover__global ${styles["link-item"]}`}>
                 {nameItems[index]}
               </a>
             </Link>

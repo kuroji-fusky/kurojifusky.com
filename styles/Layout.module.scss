@@ -29,30 +29,64 @@
   }
 }
 
+#skill {
+  &-inline {
+    @apply flex gap-2 flex-wrap;
+  }
+
+  &-item {
+    @apply p-0.5 px-2 rounded-sm bg-slate-700 uppercase whitespace-nowrap;
+    font-size: 88%;
+  }
+}
+
 #project {
   &-grid {
-    @apply grid gap-5 text-center;
+    @apply grid gap-4 text-center;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 
     @media only screen and (min-width: 576px) {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     }
+
+    @media only screen and (max-width: 836px) {
+      @apply translate-x-1;
+    }
+  }
+}
+
+@mixin feature-cards {
+  @apply p-4 flex flex-col gap-y-0.5 bg-gray-700 rounded-md mb-4 mr-4 relative;
+  transition: top 300ms ease, left 300ms ease;
+  top: 0;
+  left: 0;
+  cursor: default;
+
+  &:hover {
+    top: -0.25rem;
+    left: -0.25rem;
+  }
+  
+  &::before {
+    content: '';
+    transform: translate(0.88rem, 0.88rem);
+    @apply block absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(to right, rgba(0, 77, 140, 0.66), rgba(125, 5, 141, 0.66));
+    transition: all 300ms ease;
+  }
+
+  &:hover::before {
+    filter: brightness(165%);
+    transform: translate(1.33rem, 1.33rem);
   }
 }
 
 .featured-project {
   &-card {
-    @apply p-4 flex flex-col gap-y-0.5 bg-gray-500 rounded-md mb-4 mr-4 relative;
-    
-    &::before {
-      content: '';
-      @apply block absolute;
-      inset: 0;
-      transform: translate(0.88rem, 0.88rem);
-      z-index: -1;
-      border-radius: inherit;
-      background: linear-gradient(to right, rgba(0, 77, 140, 0.66), rgba(125, 5, 141, 0.66));
-    }
+    @include feature-cards();
 
     p {
       @apply h-full mb-2;
@@ -64,4 +98,24 @@
     box-shadow: 2px 5px 22px rgba(black, 40%);
     @apply my-0 mx-auto w-[9rem] md:w-[8.5rem] mb-1;
     }
+}
+
+.featured-project-loading {
+  &-card {
+    @include feature-cards();
+    @apply items-center;
   }
+
+  &-image {
+    @apply bg-white w-[9rem] h-[9rem] md:h-[8.5rem] md:w-[8.5rem] mb-1;
+    border-radius: 50%;
+  }
+
+  &-title {
+    @apply bg-white block text-center;
+  }
+  &-description {
+    @apply bg-white block text-center;
+  }
+
+}

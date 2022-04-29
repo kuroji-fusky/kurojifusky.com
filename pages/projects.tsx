@@ -1,7 +1,10 @@
+import UnderConstruction from "../components/UnderConstruction";
+
 export default function ProjectPage() {
   return(
     <div>
-      somi fuck me
+      <UnderConstruction />
+      lmao
     </div>
   )
 };

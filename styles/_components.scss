@@ -2,6 +2,40 @@
  * BUTTONS
  */
 
-.link-button {
+.link-button__global {
   @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base;
+}
+
+.card__global {
+  @apply rounded-md p-5;
+}
+
+.link-text__global {
+  background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20,163,255,0.75) 40%, #0000 50%, #0000 100%);
+  background-size: 250%;
+  background-position: right;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+  transition: background-position 300ms ease;
+
+  &:hover {
+    background-position: left;
+  }
+}
+
+.link-cover__global {
+  @apply w-max relative text-cyan-200 hover:text-white transition-colors duration-300;
+
+  &::after {
+    content: '';
+    @apply absolute h-[2px]  bottom-0 left-0 right-0;
+    background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20,163,255,0.75) 40%, #0000 50%, #0000 100%);
+    background-size: 250%;
+    background-position: right;
+    transition: background-position 300ms ease;
+  }
+
+  &:hover::after {
+    background-position: left;
+  }
 }
