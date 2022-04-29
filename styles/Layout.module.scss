@@ -1,0 +1,60 @@
+.section {
+  @apply flex p-4;
+
+  &.hero-bio {
+    @apply justify-around gap-x-6;
+
+    @media only screen and (max-width: 768px) {
+      @apply flex-col-reverse text-center gap-y-6;
+    }
+  }
+}
+
+.section-header {
+  @apply mb-4 mt-1 flex gap-3 items-center;
+}
+
+#hero-bio {
+  &-info {
+    @apply flex flex-col justify-center;
+  }
+
+  &-svg {
+    @apply grid place-items-center;
+  }
+}
+
+#project {
+  &-grid {
+    @apply grid gap-3;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+
+    @media only screen and (min-width: 576px) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+  }
+}
+
+.featured-project {
+  &-card {
+    @apply p-4 flex flex-col gap-y-0.5 bg-gray-500 rounded-md mb-4 mr-4 relative;
+    
+    &::before {
+      content: '';
+      @apply block absolute;
+      inset: 0;
+      transform: translate(0.88rem, 0.88rem);
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(to right, rgba(0, 140, 0, 0.66), rgba(0, 0, 144, 0.66));
+    }
+
+    p {
+      @apply h-full mb-2;
+    }
+  }
+
+  &-image img {
+    @apply rounded-full;
+  }
+}
