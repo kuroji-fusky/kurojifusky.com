@@ -1,12 +1,17 @@
+/* main stuff */
 .section {
   @apply flex p-4;
 
   &.hero-bio {
-    @apply justify-around gap-x-6;
+    @apply justify-around gap-x-6 px-4 py-[4rem];
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1023px) {
       @apply flex-col-reverse text-center gap-y-6;
     }
+  }
+
+  &:not(.hero-bio) {
+    @apply flex-col;
   }
 }
 
@@ -16,7 +21,7 @@
 
 #hero-bio {
   &-info {
-    @apply flex flex-col justify-center;
+    @apply flex flex-col justify-center gap-y-3 w-auto lg:w-[50%];
   }
 
   &-svg {
@@ -26,11 +31,11 @@
 
 #project {
   &-grid {
-    @apply grid gap-3;
+    @apply grid gap-5 text-center;
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
 
     @media only screen and (min-width: 576px) {
-      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
     }
   }
 }
@@ -46,7 +51,7 @@
       transform: translate(0.88rem, 0.88rem);
       z-index: -1;
       border-radius: inherit;
-      background: linear-gradient(to right, rgba(0, 140, 0, 0.66), rgba(0, 0, 144, 0.66));
+      background: linear-gradient(to right, rgba(0, 77, 140, 0.66), rgba(125, 5, 141, 0.66));
     }
 
     p {
@@ -55,6 +60,8 @@
   }
 
   &-image img {
-    @apply rounded-full;
+    border-radius: 50%;
+    box-shadow: 2px 5px 22px rgba(black, 40%);
+    @apply my-0 mx-auto w-[9rem] md:w-[8.5rem] mb-1;
+    }
   }
-}

@@ -9,7 +9,7 @@ interface IFooterListProps {
 
 export default function FooterList({ title, linkItems, nameItems }: IFooterListProps) {
   return (
-    <div className={styles["content-list"]}>
+    <section className={styles["content-list"]}>
       <h3>{title}</h3>
       <ul>
         {linkItems.map((link, index) => (
@@ -22,6 +22,6 @@ export default function FooterList({ title, linkItems, nameItems }: IFooterListP
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };

@@ -1,9 +1,10 @@
 import Link from "next/link";
+import styles from '../styles/Header.module.scss';
 
 export default function Header() {
   return (
     <header className="bg-slate-600">
-      <div className="my-0 mx-auto max-w-screen-2xl p-5 flex justify-between">
+      <div className={styles.wrapper}>
         <div>
           <Link href="/">
             skepfuskylol

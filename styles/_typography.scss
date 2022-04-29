@@ -8,6 +8,7 @@
   h3,
   h4 {
     @apply font-bold;
+    font-family: 'Noto Sans KR', sans-serif;
   }
   
   h1 {
@@ -32,7 +33,7 @@
  */
 
 body {
-  font-size: clamp(1rem, 1.75vw, 1.125rem);
+  font-size: clamp(1.105rem, 1.75vw, 1.135rem);
 }
 
 /*
