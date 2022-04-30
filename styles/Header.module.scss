@@ -2,10 +2,38 @@
   @apply my-0 mx-auto max-w-screen-2xl px-6 flex justify-between items-center;
 
   nav {
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
     @apply font-black text-base;
-    a {
-      @apply py-6;
-    }
+  }
+}
+
+#nav-item {
+  @apply py-6 cursor-pointer block relative;
+
+  &:hover span {
+    @apply text-slate-50;
+  }
+
+  span {
+    @apply text-slate-500 transition-colors duration-300;
+  }
+
+  &::before {
+    content: "";
+    @apply absolute top-[3rem] left-0 right-0 h-1;
+    background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
+    background-size: 250%;
+    background-position: right;
+    transition: background-position 300ms ease;
+  }
+
+  &:hover::before {
+    background-position: left;
+  }
+}
+
+#dropdown {
+  &-container {
+    @apply absolute top-[3.75rem] right-0 p-3 bg-slate-800 rounded-md w-max cursor-default;
   }
 }

@@ -59,8 +59,8 @@ export default function Home() {
         <hr />
         <div className={styles.section}>
           <div className={styles["section-header"]}>
-            <h3>🌟 FEATURED PROJECTS</h3>
-            <Link href="/projects">See moar</Link>
+            <h3>✨ FEATURED DEVELOPER PROJECTS</h3>
+            {/* <Link href="/projects">See moar</Link> */}
           </div>
           <div id={styles["project-grid"]}>
             {/* <ProjectCardSkeleBoi /> */}
@@ -80,41 +80,62 @@ export default function Home() {
             <ProjectCard
               image="/img/tessinator.png"
               title="Tessinator"
-              description="A boring Discord bot that does nothing"
+              description="A boring Discord bot that does nothing interesting"
               repoLink="skepfusky/tessinator"
             />
-            {/* <ProjectCard
-              image="/img/avatars/08.png"
-              title="ReadyBot"
-              description="Create Discord bots with ease!"
-              repoLink="skepfusky/ReadyBot"
-            /> */}
             <ProjectCard
               image="/img/majira-vscode.png"
               title="Majira Strawberry VS Code Theme"
               description="A VS Code theme based of Majira's fursona"
               repoLink="skepfusky/majira-strawberry-vscode"
             />
-            {/* <ProjectCard
-              image="/img/avatars/08.png"
-              title="Some UI concept"
-              description="Project description"
-              repoLink="skepfusky/voicemeeter-modern-ui-concept"
-            /> */}
+            <ProjectCard
+              image="/img/myfursona.png"
+              title="MyFursona"
+              description="An open source project where you an manage your fursona(s)"
+              repoLink="MyFursona-Project/MyFursona"
+              extLink="https://www.myfursona.art"
+            />
+            <ProjectCard
+              image="/img/myfursona.png"
+              title="Fursuit Detector"
+              description="This is pretty much self-explanatory"
+              repoLink="OpenFurs/fursuit-detector-web"
+            />
           </div>
         </div>
         <hr />
         <div className={styles.section}>
           <div className={styles["section-header"]}>
-            <h3>🌟 PROJECTS I&#39;VE CONTRIBUTED</h3>
+            <h3>🌐 WEBSITES I MADE</h3>
+          </div>
+          <div id={styles["project-grid"]}>
+            <ProjectCard
+              image="/img/myfursona.png"
+              title="Plainrock124 Website"
+              description="My reindition of what his website will look like"
+              repoLink="skepfusky/plainrock124-website"
+            />
+          </div>
+        </div>
+        <hr />
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>
+            <h3>💜 PROJECTS I&#39;VE CONTRIBUTED</h3>
           </div>
           <div id={styles["project-grid"]}>
             <ProjectCard
               image="/img/myfursona.png"
               title="MyFursona"
-              description="An open source project where you an manage your fursona(s)."
+              description="An open source project where you an manage your fursona(s)"
               repoLink="MyFursona-Project/MyFursona"
               extLink="https://www.myfursona.art"
+            />
+            <ProjectCard
+              image="/img/myfursona.png"
+              title="Fursuit Detector"
+              description="This is pretty much self-explanatory"
+              repoLink="OpenFurs/fursuit-detector-web"
             />
           </div>
         </div>
