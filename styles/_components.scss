@@ -10,6 +10,13 @@
   @apply rounded-md p-5;
 }
 
+#highlight {
+  background: linear-gradient(90deg, rgb(9, 142, 251), rgba(241, 46, 205, 0.75));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+  @apply font-extrabold;
+}
+
 .link-text__global {
   background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20,163,255,0.75) 40%, #0000 50%, #0000 100%);
   background-size: 250%;

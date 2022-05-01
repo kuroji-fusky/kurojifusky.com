@@ -61,12 +61,12 @@ export default function Header() {
               <span>Tools</span>
             </a>
           </Link>
-          <Link href="/blog" passHref>
+          <Link href="/about" passHref>
             <a
               id={styles["nav-item"]}
-              className={router.pathname === "/blog" ? styles.active : ""}
+              className={router.pathname === "/about" ? styles.active : ""}
             >
-              <span>Blog</span>
+              <span>About Me</span>
             </a>
           </Link>
         </nav>

@@ -34,7 +34,7 @@ export default function BaseSEO({ title, description, url, keywords }: IBaseSEOP
 };
 
 export function BaseSEOLanding() {
-  const description = "A website that showcases my shitty life and probably the cool shit I made";
+  const description = "A website for skepfusky's works and stuff, I dunno";
   
   return (
     <Head>
@@ -45,7 +45,7 @@ export function BaseSEOLanding() {
       <link rel="apple-touch-icon" href="/favicon.ico" />
       <meta property="og:title" content="skepfusky" />
       <meta property="og:description" content={description} />
-      {/* <meta property="og:image" content="https://www.example.com/image.jpg" /> */}
+      <meta property="og:image" content="/static/avatars/07.jpg" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="skepfusky" />
       <meta name="twitter:card" content="summary" />
@@ -53,7 +53,7 @@ export function BaseSEOLanding() {
       <meta name="twitter:title" content="skepfusky" />
       <meta name="twitter:description" content={description} />
       <meta name="theme-color" content="#fff" />
-      {/* <meta name="twitter:image" content="https://www.example.com/image.jpg" /> */}
+      <meta name="twitter:image" content="/static/avatars/07.jpg" />
     </Head>
   );
 }
