@@ -7,6 +7,15 @@
   }
 }
 
+@mixin itemActive($pos: right) {
+  content: "";
+  @apply absolute top-[3rem] left-0 right-0 h-1;
+  background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
+  background-size: 250%;
+  background-position: $pos;
+  transition: background-position 300ms ease;
+}
+
 #nav-item {
   @apply py-6 cursor-pointer block relative;
 
@@ -19,16 +28,21 @@
   }
 
   &::before {
-    content: "";
-    @apply absolute top-[3rem] left-0 right-0 h-1;
-    background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
-    background-size: 250%;
-    background-position: right;
-    transition: background-position 300ms ease;
+    @include itemActive();
   }
 
   &:hover::before {
     background-position: left;
+  }
+
+  &.active {
+    span {
+      @apply text-slate-50;
+    }
+    
+    &::before {
+      @include itemActive(left);
+    }
   }
 }
 

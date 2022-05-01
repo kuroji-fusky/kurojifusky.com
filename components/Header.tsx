@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from '../styles/Header.module.scss';
 
 export default function Header() {
+  const router = useRouter();
+
   return (
     <header>
       <div className={styles.wrapper}>
@@ -10,7 +13,7 @@ export default function Header() {
         </div>
         <nav className="flex gap-x-8">
           <div id={styles["nav-item"]}>
-            <span>PROJECTS</span>
+            <span>Dev Projects</span>
             {/* <div id={styles["dropdown-container"]}>
               <div id={styles["dropdown-item"]}>
                 <h4>Shit I made</h4>
@@ -27,9 +30,13 @@ export default function Header() {
               </div>
             </div> */}
           </div>
-          <div id={styles["nav-item"]}>
-            <span>WORKS</span>
-            {/* <div id={styles["dropdown-container"]}>
+          <Link href="/portfolio" passHref>
+            <a
+              id={styles["nav-item"]}
+              className={router.pathname === "/portfolio" ? styles.active : ""}
+            >
+              <span>Portfolio</span>
+              {/* <div id={styles["dropdown-container"]}>
               <div id={styles["dropdown-item"]}>
                 <h4>Shit I made</h4>
                 <ul>
@@ -44,10 +51,22 @@ export default function Header() {
                 </ul>
               </div>
             </div> */}
-          </div>
+            </a>
+          </Link>
+          <Link href="/tools" passHref>
+            <a
+              id={styles["nav-item"]}
+              className={router.pathname === "/tools" ? styles.active : ""}
+            >
+              <span>Tools</span>
+            </a>
+          </Link>
           <Link href="/blog" passHref>
-            <a id={styles["nav-item"]}>
-              <span>SHIT BLOG</span>
+            <a
+              id={styles["nav-item"]}
+              className={router.pathname === "/blog" ? styles.active : ""}
+            >
+              <span>Blog</span>
             </a>
           </Link>
         </nav>

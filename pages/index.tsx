@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import Head from "next/head";
 import { BaseSEOLanding } from "../components/BaseSEO";
 import ProjectCard, { ProjectCardSkeleBoi } from "../components/cards/ProjectCard";
 import styles from "../styles/Layout.module.scss";
@@ -8,7 +7,7 @@ import styles from "../styles/Layout.module.scss";
 export default function Home() {
   const skills = [
     "Full-stack web development",
-    "UI/UX Design",
+    "Web and UI/UX Design",
     "Indie music artist",
     "Filmmaker",
     "Novice VFX artist",
