@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-interface IBaseSEOProps {
+interface IBaseHeadProps {
   title: string;
   description: string;
   url?: string;
   keywords?: string[];
 }
-export default function BaseSEO({ title, description, url, keywords }: IBaseSEOProps) {
+export default function BaseHead({ title, description, url, keywords }: IBaseHeadProps) {
   const SITE_NAME = 'skepfusky'
 
   return(
@@ -33,7 +33,7 @@ export default function BaseSEO({ title, description, url, keywords }: IBaseSEOP
   )
 };
 
-export function BaseSEOLanding() {
+export function BaseHeadLanding() {
   const description = "A website for skepfusky's works and stuff, I dunno";
   
   return (

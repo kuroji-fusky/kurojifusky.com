@@ -1,9 +1,9 @@
-import BaseSEO from "../../components/BaseSEO";
+import BaseHead from "../../components/BaseHead";
 
 export default function Portfolio() {
   return(
     <>
-      <BaseSEO title="Portfolio" description="skepfusky's portfolio" />
+      <BaseHead title="Portfolio" description="skepfusky's portfolio" />
     </>
   )
 };

@@ -1,8 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { BaseSEOLanding } from "../components/BaseSEO";
-import ProjectCard, { ProjectCardSkeleBoi } from "../components/cards/ProjectCard";
+import dynamic from "next/dynamic";
+import { BaseHeadLanding } from "../components/BaseHead";
 import styles from "../styles/Layout.module.scss";
+
+import { ProjectCardSkeleBoi } from "../components/cards/ProjectCard";
+const ProjectCard = dynamic(() => import("../components/cards/ProjectCard"), {
+  loading: () => <ProjectCardSkeleBoi />,
+  ssr: false,
+});
 
 export default function Home() {
   const skills = [
@@ -16,18 +22,18 @@ export default function Home() {
 
   return (
     <>
-      <BaseSEOLanding />
+      <BaseHeadLanding />
       <article>
         <div className={`${styles.section} ${styles["hero-bio"]}`}>
-          <div id={styles["hero-bio-info"]}>
+          <article id={styles["hero-bio-info"]}>
             <h1>
-              Hi, I'm <span id="highlight">skepfusky</span>
+              Hi, I'm <span id="highlight">skepfusky!</span>
             </h1>
             <p>
-              , or simply <span id="highlight">Skep</span>, or also known by my
-              stage name <span id="highlight">Kokoro Husky</span> on streaming
-              platforms -- I'm a 20-year-old self-employed and self-taught
-              hobbyist from the Philippines!
+              ...or just simply <span id="highlight">Skep</span>, or also known
+              by my stage name <span id="highlight">Kokoro Husky</span> on
+              streaming platforms -- I'm a 20-year-old self-employed and
+              self-taught hobbyist from the Philippines!
             </p>
             <p>
               I'm not trying to be a celebrity, or even a{" "}
@@ -46,7 +52,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </article>
           <div id={styles["hero-bio-svg"]}>
             {/* todo: cringe svg here */}
             <img
@@ -60,22 +66,20 @@ export default function Home() {
         <div className={styles.section}>
           <div className={styles["section-header"]}>
             <h3>✨ FEATURED DEVELOPER PROJECTS</h3>
-            {/* <Link href="/projects">See moar</Link> */}
           </div>
           <div id={styles["project-grid"]}>
-            {/* <ProjectCardSkeleBoi /> */}
-            <ProjectCard
-              image="/static/avatars/08.png"
-              title="This awful website"
-              description="This terrible website you're browsing written in Next.js"
-              repoLink="skepfusky/skepfusky-website"
-            />
             <ProjectCard
               image="/static/projects/paco-yt-icon.jpg"
               title="Paco Drawing Stats"
               description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
               pageLink="/works/paco-drawing-stats"
               repoLink="skepfusky/pandapaco-drawing-stats"
+            />
+            <ProjectCard
+              image="/static/avatars/08.png"
+              title="This awful website"
+              description="This terrible website you're currently browsing written in Next.js"
+              repoLink="skepfusky/skepfusky-website"
             />
             <ProjectCard
               image="/static/projects/tessinator.png"
@@ -96,12 +100,6 @@ export default function Home() {
               repoLink="MyFursona-Project/MyFursona"
               extLink="https://www.myfursona.art"
             />
-            {/* <ProjectCard
-              image="/static/projects/myfursona.png"
-              title="Fursuit Detector"
-              description="This is pretty much self-explanatory"
-              repoLink="OpenFurs/fursuit-detector-web"
-            /> */}
           </div>
         </div>
         {/* <div className={styles.section}>

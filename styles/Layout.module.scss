@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 /* main stuff */
 .section {
   @apply flex p-4;
@@ -103,19 +105,28 @@
 .featured-project-loading {
   &-card {
     @include feature-cards();
-    @apply items-center;
+    @apply items-center gap-y-3;
   }
 
+  &-image, &-title, &-description {
+  }
+  
   &-image {
-    @apply bg-white w-[9rem] h-[9rem] md:h-[8.5rem] md:w-[8.5rem] mb-1;
+    @apply w-[9rem] h-[9rem] md:h-[8.5rem] md:w-[8.5rem] mb-1;
+    @include skeletonSwipe(750px);
     border-radius: 50%;
   }
 
-  &-title {
-    @apply bg-white block text-center;
-  }
+  &-title,
   &-description {
-    @apply bg-white block text-center;
+    @apply block text-center h-6 rounded-md;
+    @include skeletonSwipe(700px);
   }
 
+  &-title {
+    @apply w-[60%];
+  }
+  &-description {
+    @apply w-[30%];
+  }
 }
