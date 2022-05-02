@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import styles from '../../styles/Layout.module.scss'
+import styles from '../styles/Layout.module.scss'
 
 interface IProjectCardProps {
   title: string;

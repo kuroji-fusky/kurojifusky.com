@@ -9,7 +9,7 @@ export default function Header() {
     <header>
       <div className={styles.wrapper}>
         <div>
-          <Link href="/">skepfuskylol</Link>
+          <Link href="/">skepfusky</Link>
         </div>
         <nav className="flex gap-x-8">
           <div id={styles["nav-item"]}>

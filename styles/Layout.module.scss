@@ -2,10 +2,10 @@
 
 /* main stuff */
 .section {
-  @apply flex p-4;
+  @apply flex p-1 sm:p-4;
 
   &.hero-bio {
-    @apply justify-around gap-x-6 px-4 py-[4rem];
+    @apply justify-around gap-x-6 p-1 sm:px-4 py-[4rem];
 
     @media only screen and (max-width: 1023px) {
       @apply flex-col-reverse text-center gap-y-6;
@@ -33,7 +33,7 @@
 
 #skill {
   &-inline {
-    @apply flex gap-2 flex-wrap;
+    @apply flex gap-2 flex-wrap justify-center lg:justify-start;
   }
 
   &-item {
@@ -45,7 +45,7 @@
 #project {
   &-grid {
     @apply grid gap-4 text-center;
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
     @media only screen and (min-width: 576px) {
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
@@ -106,9 +106,6 @@
   &-card {
     @include feature-cards();
     @apply items-center gap-y-3;
-  }
-
-  &-image, &-title, &-description {
   }
   
   &-image {

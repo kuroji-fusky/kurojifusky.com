@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import { BaseHeadLanding } from "../components/BaseHead";
 import styles from "../styles/Layout.module.scss";
 
-import { ProjectCardSkeleBoi } from "../components/cards/ProjectCard";
-const ProjectCard = dynamic(() => import("../components/cards/ProjectCard"), {
+import { ProjectCardSkeleBoi } from "../components/Cards"
+const ProjectCard = dynamic(() => import("../components/Cards"), {
   loading: () => <ProjectCardSkeleBoi />,
   ssr: false,
 });
@@ -65,7 +65,33 @@ export default function Home() {
         <hr />
         <div className={styles.section}>
           <div className={styles["section-header"]}>
-            <h3>✨ FEATURED DEVELOPER PROJECTS</h3>
+            <h3>📺 Channels</h3>
+          </div>
+          <div
+            className="grid gap-8 mx-auto w-[90%] md:grid-flow-row"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            }}
+          >
+            <ProjectCard
+              image="/static/projects/paco-yt-icon.jpg"
+              title="Paco Drawing Stats"
+              description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
+              pageLink="/works/paco-drawing-stats"
+              repoLink="skepfusky/pandapaco-drawing-stats"
+            />
+            <ProjectCard
+              image="/static/avatars/08.png"
+              title="This awful website"
+              description="This terrible website you're currently browsing written in Next.js"
+              repoLink="skepfusky/skepfusky-website"
+            />
+          </div>
+        </div>
+        <hr />
+        <div className={styles.section}>
+          <div className={styles["section-header"]}>
+            <h3>✨ Featured Developer Projects</h3>
           </div>
           <div id={styles["project-grid"]}>
             <ProjectCard
@@ -82,12 +108,6 @@ export default function Home() {
               repoLink="skepfusky/skepfusky-website"
             />
             <ProjectCard
-              image="/static/projects/tessinator.png"
-              title="Tessinator"
-              description="A boring Discord bot that does nothing interesting"
-              repoLink="skepfusky/tessinator"
-            />
-            <ProjectCard
               image="/static/projects/majira-vscode.png"
               title="Majira Strawberry VS Code Theme"
               description="A VS Code theme based of Majira's fursona"
@@ -102,6 +122,7 @@ export default function Home() {
             />
           </div>
         </div>
+        <hr />
         {/* <div className={styles.section}>
           <div className={styles["section-header"]}>
             <h3>🌐 WEBSITES I MADE</h3>
