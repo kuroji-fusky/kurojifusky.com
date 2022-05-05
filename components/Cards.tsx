@@ -65,7 +65,7 @@ export function YouToobCard({ image, title, description }: ICardProps) {
   );
 }
 
-export function CardSkeleBoi() {
+export function CardSkeleton() {
   return (
     <div className={styles["featured-project-loading-card"]}>
       <div className={styles["featured-project-loading-image"]}></div>

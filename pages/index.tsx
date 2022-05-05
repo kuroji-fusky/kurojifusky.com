@@ -2,10 +2,10 @@ import React from "react";
 import dynamic from "next/dynamic";
 import styles from "../styles/Layout.module.scss";
 import { ContainerBaseSEO } from "../components/Container";
-import { CardSkeleBoi, YouToobCard } from "../components/Cards"
+import { CardSkeleton, YouToobCard } from "../components/Cards"
 
 const ProjectCard = dynamic(() => import("../components/Cards"), {
-  loading: () => <CardSkeleBoi />,
+  loading: () => <CardSkeleton />,
   ssr: false,
 });
 
