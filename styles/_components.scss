@@ -10,11 +10,44 @@
   @apply rounded-md p-5;
 }
 
+$g1: rgb(9, 142, 251);
+$g2: rgba(241, 46, 205, 0.75);
+
+header {
+  @apply fixed w-full z-20 transition-all;
+}
+
+.sticky-nav {
+  @apply bg-slate-700;
+}
+
 #highlight {
-  background: linear-gradient(90deg, rgb(9, 142, 251), rgba(241, 46, 205, 0.75));
+  background: linear-gradient(90deg, $g1, $g2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   @apply font-extrabold;
+}
+
+#highlight-scroll {
+  background: linear-gradient(90deg, $g1 0%, $g2 33%, $g1 66%, $g2 100%);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+  @apply font-extrabold;
+  animation: gradientScroll 12s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes gradientScroll {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 
 .link-text__global {

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from '../styles/Header.module.scss';
@@ -5,9 +6,23 @@ import styles from '../styles/Header.module.scss';
 export default function Header() {
   const router = useRouter();
 
+  const [stickyClass, setStickyClass] = useState("");
+
+  useEffect(() => {
+    window.addEventListener("scroll", stickNavbar);
+    return () => window.removeEventListener("scroll", stickNavbar);
+  }, []);
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      let windowHeight = window.scrollY;
+      windowHeight > 0 ? setStickyClass("sticky-nav") : setStickyClass("");
+    }
+  };
+
   return (
-    <header>
-      <div className={styles.wrapper}>
+    <header className={stickyClass}>
+      <div className={`${styles.wrapper}`}>
         <div>
           <Link href="/">skepfusky</Link>
         </div>

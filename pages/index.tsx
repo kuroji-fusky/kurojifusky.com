@@ -24,10 +24,10 @@ export default function Home() {
       <div className={`${styles.section} ${styles["hero-bio"]}`}>
         <article id={styles["hero-bio-info"]}>
           <h1>
-            Hi, I'm <span id="highlight">skepfusky!</span>
+            Hi, I'm <span id="highlight-scroll">skepfusky!</span>
           </h1>
           <p>
-            ...or just simply <span id="highlight">Skep</span>, or also known by
+            Or just simply <span id="highlight">Skep</span>, or also known by
             my stage name <span id="highlight">Kokoro Husky</span> on streaming
             platforms -- I'm a 20-year-old self-employed and self-taught
             hobbyist from the Philippines!
@@ -53,7 +53,7 @@ export default function Home() {
           {/* todo: cringe svg here */}
           <img
             src="/static/avatars/07.png"
-            alt="Your mom"
+            alt="Skepfusky avatar"
             className="rounded-full w-[200px]"
           />
         </div>
@@ -105,12 +105,6 @@ export default function Home() {
             repoLink="skepfusky/skepfusky-website"
           />
           <ProjectCard
-            image="/static/projects/majira-vscode.png"
-            title="Majira Strawberry VS Code Theme"
-            description="A VS Code theme based of Majira's fursona"
-            repoLink="skepfusky/majira-strawberry-vscode"
-          />
-          <ProjectCard
             image="/static/projects/myfursona.png"
             title="MyFursona"
             description="An open source project where you an manage your fursona(s)"
@@ -120,11 +114,11 @@ export default function Home() {
         </div>
       </div>
       <hr />
-      <div className={styles.section}>
+      <div className={`${styles.section} ${styles['section-row']}`}>
         <div className={styles.seperator}>
           <div className={styles["section-header"]}>
             <h3 style={{ "--emoji-key": "'🌐'" } as React.CSSProperties}>
-              Websites I made
+              Websites I've written
             </h3>
           </div>
         </div>
