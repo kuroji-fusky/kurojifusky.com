@@ -1,14 +1,13 @@
-import BaseHead from "../components/BaseHead";
+import Container from "../components/Container";
 import UnderConstruction from "../components/UnderConstruction";
 
 export default function AboutMe() {
   return(
-    <div>
-      <BaseHead title="About" description="wow" />
+    <Container title="About Me" description="ME HE HEEEEEE">
       <UnderConstruction />
       <h2>About me</h2>
       <p>I'm stupid lol</p>
       <hr />
-    </div>
+    </Container>
   )
 };

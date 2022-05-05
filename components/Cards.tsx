@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from '../styles/Layout.module.scss'
 
-interface IProjectCardProps {
+interface ICardProps {
   title: string;
   description: string;
   image?: string;
@@ -20,7 +19,7 @@ export default function ProjectCard({
   repoLink,
   pageLink,
   extLink
-}: IProjectCardProps) {
+}: ICardProps) {
   return (
     <section className={styles["featured-project-card"]}>
       <div className={styles["featured-project-image"]}>
@@ -54,7 +53,19 @@ export default function ProjectCard({
   );
 };
 
-export function ProjectCardSkeleBoi() {
+export function YouToobCard({ image, title, description }: ICardProps) {
+  return (
+    <section className={styles["featured-project-card"]}>
+      <div className={styles["featured-project-image"]}>
+        <img src={image} alt={`The icon for my youtube channel, ${title}.`} />
+      </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </section>
+  );
+}
+
+export function CardSkeleBoi() {
   return (
     <div className={styles["featured-project-loading-card"]}>
       <div className={styles["featured-project-loading-image"]}></div>

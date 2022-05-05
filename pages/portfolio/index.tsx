@@ -1,9 +1,9 @@
-import BaseHead from "../../components/BaseHead";
+import Container from "../../components/Container";
 
 export default function Portfolio() {
   return(
-    <>
-      <BaseHead title="Portfolio" description="skepfusky's portfolio" />
-    </>
+    <Container title="Portfolio" description="skepfusky's portfolio">
+      
+    </Container>
   )
 };

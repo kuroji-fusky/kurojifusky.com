@@ -1,7 +1,9 @@
+import Container from "../components/Container";
+
 export default function NotFoundPage() {
   return(
-    <div>
-      why tf are you even here lol
-    </div>
+    <Container title="Page not found!" description="Page not found">
+      uh oh 404 page lol
+    </Container>
   )
 };

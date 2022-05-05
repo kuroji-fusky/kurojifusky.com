@@ -10,7 +10,6 @@ import {
 import Link from "next/link";
 import styles from "../styles/Footer.module.scss";
 import FooterList from "./FooterList";
-import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
   return (

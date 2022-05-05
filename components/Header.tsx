@@ -53,14 +53,14 @@ export default function Header() {
             </div> */}
             </a>
           </Link>
-          <Link href="/tools" passHref>
+          {/* <Link href="/tools" passHref>
             <a
               id={styles["nav-item"]}
               className={router.pathname === "/tools" ? styles.active : ""}
             >
               <span>Tools</span>
             </a>
-          </Link>
+          </Link> */}
           <Link href="/about" passHref>
             <a
               id={styles["nav-item"]}
