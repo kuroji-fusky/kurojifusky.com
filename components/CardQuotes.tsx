@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styles from "../styles/Cards.module.scss";
 
 interface ICardQuotesProps {
   quote: string;
@@ -19,13 +18,13 @@ export default function CardQuotes({
   authorSocialIcon = ["fab", "fa-twitter"],
 }: ICardQuotesProps) {
   return (
-    <blockquote className={styles.quote}>
+    <blockquote className="quote">
       <q>{quote}</q>
-      <div className={styles.author}>
+      <div className="author">
         <img src={authorImg} alt={`The avatar of ${author}.`} />
-        <div className={styles["author-container"]}>
-            <span className={styles["author-name"]}>{author}</span>
-          <a href={authorLink} className={styles["author-social"]}>
+        <div className="author-container">
+          <span className="author-name">{author}</span>
+          <a href={authorLink} className="author-social">
             <FontAwesomeIcon icon={authorSocialIcon} />
             <span>{authorSocial}</span>
           </a>

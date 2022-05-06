@@ -1,7 +1,6 @@
 import CardQuotes, { CardQuoteSkeleton } from "../components/CardQuotes";
 import Container from "../components/Container";
 import UnderConstruction from "../components/UnderConstruction";
-import styles from "../styles/Layout.module.scss";
 
 export default function QuotePage() {
   const quotes = [
@@ -27,7 +26,7 @@ export default function QuotePage() {
     <Container title="Quotes" description="ily guys sm 💜">
       <UnderConstruction />
       <h1>Quotes</h1>
-      <div id={styles.grid}>
+      <div id="quotes-grid">
         {quotes.map((quotes, i) => (
           <CardQuotes
             key={i}

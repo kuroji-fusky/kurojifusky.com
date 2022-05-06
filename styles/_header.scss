@@ -1,0 +1,48 @@
+@mixin itemActive($pos: right) {
+  content: "";
+  @apply absolute top-[3rem] left-0 right-0 h-1 translate-y-1 transition-all duration-300 -z-1;
+  background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
+  background-size: 250%;
+  background-position: $pos;
+}
+
+#nav-item {
+  @apply py-6 cursor-pointer block relative;
+
+  &:hover span {
+    @apply text-slate-50;
+  }
+
+  span {
+    @apply text-slate-500 transition-colors duration-300;
+
+    &::before {
+      content: var(--emoji-key, "🦊");
+      @apply pr-1;
+    }
+  }
+
+  &::before {
+    @include itemActive();
+  }
+
+  &:hover::before {
+    @apply bg-left;
+  }
+
+  &.active {
+    span {
+      @apply text-slate-50;
+    }
+    
+    &::before {
+      @include itemActive(left);
+    }
+  }
+}
+
+#dropdown {
+  &-container {
+    @apply absolute top-[3.75rem] right-0 p-3 bg-slate-800 rounded-md w-max cursor-default;
+  }
+}

@@ -2,12 +2,12 @@
   @apply my-0 mx-auto flex flex-col gap-y-8 max-w-screen-2xl p-8;
 }
 
-.contents {
+.footer-contents {
   @apply grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4;
 }
 
-.content-list {
-  @apply flex flex-col gap-2;
+.contents {
+  @apply flex gap-2;
 }
 
 .lower-third {

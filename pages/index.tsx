@@ -1,96 +1,47 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import styles from "../styles/Layout.module.scss";
 import { ContainerBaseSEO } from "../components/Container";
-import { CardSkeleton, YouToobCard } from "../components/Cards"
+import { ProjectCard, CardSkeleton, ChannelCard } from "../components/Cards";
+import Intro from "../components/Intro";
+import ShowcaseSection from "../components/ShowcaseSection";
 
-const ProjectCard = dynamic(() => import("../components/Cards"), {
-  loading: () => <CardSkeleton />,
-  ssr: false,
-});
+// const ProjectCard = dynamic(() => import("../components/Cards"), {
+//   loading: () => <CardSkeleton />,
+//   ssr: false,
+// });
 
 export default function Home() {
-  const skills = [
-    "Full-stack web development",
-    "Web and UI/UX Design",
-    "Indie music artist",
-    "Filmmaker",
-    "Novice VFX artist",
-    "Performer",
-  ];
-
   return (
     <ContainerBaseSEO>
-      <div className={`${styles.section} ${styles["hero-bio"]}`}>
-        <article id={styles["hero-bio-info"]}>
-          <h1>
-            Hi, I'm <span id="highlight-scroll">skepfusky!</span>
-          </h1>
-          <p>
-            Or just simply <span id="highlight">Skep</span>, or also known by
-            my stage name <span id="highlight">Kokoro Husky</span> on streaming
-            platforms -- I'm a 20-year-old self-employed and self-taught
-            hobbyist from the Philippines!
-          </p>
-          <p>
-            I'm not trying to be a celebrity, or even a{" "}
-            <b>
-              <i>popufur...</i>
-            </b>{" "}
-            I'm just trying to get my name out there as I'm extremely passionate
-            about sharing and possibly inspiring future generations through my
-            broad set of skills, talent, and art as a self-taught individual.
-          </p>
-          <div id={styles["skill-inline"]}>
-            {skills.map((skill, i) => (
-              <div id={styles["skill-item"]} key={i}>
-                {skill}
-              </div>
-            ))}
-          </div>
-        </article>
-        <div id={styles["hero-bio-svg"]}>
-          {/* todo: cringe svg here */}
-          <img
-            src="/static/avatars/07.png"
-            alt="Skepfusky avatar"
-            className="rounded-full w-[200px]"
-          />
-        </div>
+      <div className="relative z-[69]">
+        <Intro />
       </div>
-      <hr />
-      <div className={styles.section}>
-        <div className={styles["section-header"]}>
-          <h3 style={{ "--emoji-key": '"📺"' } as React.CSSProperties}>
-            Channels
-          </h3>
-        </div>
-        <div
-          className="grid gap-8 mx-auto w-[90%] text-center md:grid-flow-row"
-          style={{
+      <div className="relative z-[70] blanket-dat-hoe">
+        <ShowcaseSection
+          heading="Shitty Channels"
+          emojiKey="📺"
+          sectionClassName="grid gap-8 mx-auto w-[90%] text-center md:grid-flow-row"
+          sectionStyles={{
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           }}
         >
-          <YouToobCard
+          <ChannelCard
             image="/static/avatars/08.png"
             title="skepfusky"
             description="The main source for abominations"
           />
-          <YouToobCard
-            image="/static/avatars/08.png"
+          <ChannelCard
+            image="/static/avatars/08_2.png"
             title="codefusky"
-            description="lol"
+            description="Some web development shenanigans"
           />
-        </div>
-      </div>
-      <hr />
-      <div className={styles.section}>
-        <div className={styles["section-header"]}>
-          <h3 style={{ "--emoji-key": '"✨"' } as React.CSSProperties}>
-            Featured Developer Projects
-          </h3>
-        </div>
-        <div id={styles["project-grid"]}>
+        </ShowcaseSection>
+        <hr />
+        <ShowcaseSection
+          heading="Shitty Projects"
+          emojiKey="✨"
+          sectionId="project-grid"
+        >
           <ProjectCard
             image="/static/projects/paco-yt-icon.jpg"
             title="Paco Drawing Stats"
@@ -111,27 +62,38 @@ export default function Home() {
             repoLink="MyFursona-Project/MyFursona"
             extLink="https://www.myfursona.art"
           />
-        </div>
-      </div>
-      <hr />
-      <div className={`${styles.section} ${styles['section-row']}`}>
-        <div className={styles.seperator}>
-          <div className={styles["section-header"]}>
-            <h3 style={{ "--emoji-key": "'🌐'" } as React.CSSProperties}>
-              Websites I've written
+        </ShowcaseSection>
+        {/* <div className="section">
+          <div className="section-header">
+            <h3 style={{ "--emoji-key": '""' } as React.CSSProperties}>
+              Featured Developer Projects
             </h3>
           </div>
-        </div>
-        <div className={styles.seperator}>
-          <div className={styles["section-header"]}>
-            <h3 style={{ "--emoji-key": "'💜'" } as React.CSSProperties}>
-              Contributed Projects
-            </h3>
+          <div id="project-grid">
+            
           </div>
         </div>
-      </div>
-      {/* <div className={styles.section}>
-          <div className={styles["section-header"]}>
+        <hr />
+        <div className="section section-row">
+          <div className="seperator">
+            <div className="section-header">
+              <h3 style={{ "--emoji-key": "'🌐'" } as React.CSSProperties}>
+                Websites I've written
+              </h3>
+              still WIP lol
+            </div>
+          </div>
+          <div className="seperator">
+            <div className="section-header">
+              <h3 style={{ "--emoji-key": "'💜'" } as React.CSSProperties}>
+                Contributed Projects
+              </h3>
+              still WIP lol
+            </div>
+          </div>
+        </div> */}
+        {/* <div className={styles.section}>
+          <div className="section-header">
             <h3>🌐 WEBSITES I MADE</h3>
           </div>
           <div id={styles["project-grid"]}>
@@ -144,8 +106,8 @@ export default function Home() {
           </div>
         </div>
         <hr /> */}
-      {/* <div className={styles.section}>
-          <div className={styles["section-header"]}>
+        {/* <div className={styles.section}>
+          <div className="section-header">
             <h3>💜 PROJECTS I'VE CONTRIBUTED</h3>
           </div>
           <div id={styles["project-grid"]}>
@@ -165,18 +127,19 @@ export default function Home() {
           </div>
         </div>
         <hr /> */}
-      {/* <div className={styles.section}>
-          <div className={styles["section-header"]}>
+        {/* <div className={styles.section}>
+          <div className="section-header">
             <h3>🎵 DISCOGRAPHY</h3>
             <Link href="/projects">See moar</Link>
           </div>
         </div>
         <hr /> */}
-      {/* <div className={styles.section}>
-          <div className={styles["section-header"]}>
+        {/* <div className={styles.section}>
+          <div className="section-header">
             <h3>📝 PROFICENCY</h3>
           </div>
         </div> */}
+      </div>
     </ContainerBaseSEO>
   );
 }
