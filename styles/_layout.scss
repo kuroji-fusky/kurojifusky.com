@@ -1,5 +1,57 @@
 @use 'mixins' as *;
 
+/************
+ * Quote cards
+ ************/
+
+.quote {
+  @apply p-5 rounded-md bg-slate-600 flex flex-col gap-y-4;
+
+  q {
+    @apply text-2xl;
+
+    &::before,
+    &::after {
+      content: '';
+    }
+  }
+}
+
+.author {
+  @apply flex gap-x-5;
+
+  img {
+    border-radius: 50%;
+    width: 4.75rem;
+  }
+
+  &-container {
+    @apply flex flex-col justify-center;
+  }
+
+  &-name {
+    &::before {
+      content: '— ';
+    }
+
+    @apply text-gray-400;
+  }
+
+  &-social {
+    @apply text-base flex gap-x-1 items-center;
+  }
+}
+
+/************
+ * Warnings
+ ************/
+
+.under-construction {
+  @apply text-center my-5;
+  background-image: linear-gradient(45deg, #700404 25%, #4a0505 25%, #4a0505 50%, #700404 50%, #700404 75%, #4a0505 75%, #4a0505 100%);
+  background-size: 56.57px 56.57px;
+}
+
 /* main stuff */
 .section {
   @apply flex p-1 sm:p-4;
@@ -9,6 +61,10 @@
 
     @media only screen and (max-width: 1023px) {
       @apply flex-col-reverse justify-center items-center gap-y-6 text-center;
+    }
+
+    p {
+      font-size: clamp(1.105rem, 2vw, 1.245rem);
     }
   }
 
@@ -108,7 +164,7 @@
     @include feature-cards();
 
     p {
-      @apply h-full mb-2;
+      @apply h-full mb-2 text-lg;
     }
   }
 

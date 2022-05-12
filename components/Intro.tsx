@@ -3,9 +3,9 @@ export default function Intro() {
     "Full-stack web development",
     "Web and UI/UX Design",
     "Indie music artist",
+    "Experienced video editor",
     "Filmmaker",
     "Novice VFX artist",
-    "Performer",
   ];
 
   return (

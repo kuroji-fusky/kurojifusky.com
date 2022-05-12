@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
 interface ISectionPwaps {
   heading: string;
   emojiKey: string;
   sectionClassName?: string;
-  sectionStyles?: any;
+  sectionStyles?: CSSProperties;
   sectionId?: string;
   children?: any;
 }

@@ -3,7 +3,7 @@
  */
 
 .link-button__global {
-  @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base;
+  @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base duration-300 transition-colors hover:border-cyan-400 hover:text-cyan-400;
 }
 
 .card__global {
@@ -34,7 +34,7 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   @apply font-extrabold;
-  animation: gradientScroll 6s linear infinite;
+  animation: gradientScroll 9s linear infinite;
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;

@@ -5,22 +5,16 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      display: ["Noto Sans KR", 'system-ui', 'sans-serif'],
+      heading: ["Noto Sans KR", 'system-ui', 'sans-serif'],
       body: ["Lato", 'system-ui', 'sans-serif'],
     },
     screens: {
       sm: '640px',
       md: '768px',
-      max_md: { max: '767px' },
       lg: '1024px',
       xl: '1366px',
       '2xl': '1536px'
     },
-    // colors: {
-    //   transparent: "transparent",
-    //   current: "currentColor",
-    //   'white': "#fff",
-    // },
     zIndex: {
       '1': '1',
       '2': '2',
@@ -34,7 +28,18 @@ module.exports = {
       'md': '6px',
       'full': '50%',
     },
-    extend: {},
+    extend: {
+      colors: {
+        'royalblue': '#2076c5',
+        // 'cyan': '#48ddf7',
+        'lemon': '#fce392',
+        'yellow': '#f8d817',
+        'borahae': '#bb3eed',
+        'borahae-alt': '#b266ed',
+        'borahae-light': '#ffabff',
+        'brown': '#6f3a0f',
+      },
+    },
   },
   plugins: [],
 }

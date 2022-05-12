@@ -7,11 +7,7 @@
 }
 
 .contents {
-  @apply flex gap-2;
-}
-
-.lower-third {
-  @apply flex flex-col sm:flex-row justify-between items-center;
+  @apply grid grid-cols-1 md:grid-cols-3 gap-2;
 }
 
 .social-icons {
