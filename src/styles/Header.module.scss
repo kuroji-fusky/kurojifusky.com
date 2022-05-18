@@ -2,7 +2,6 @@
   @apply my-0 mx-auto max-w-screen-2xl px-6 flex justify-between items-center relative;
 
   nav {
-    font-family: "Noto Sans KR", sans-serif;
-    @apply font-black text-base;
+    @apply font-heading font-black text-base;
   }
 }

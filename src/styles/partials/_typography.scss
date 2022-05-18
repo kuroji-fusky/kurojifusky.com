@@ -1,0 +1,29 @@
+/*
+ * Override TailwindCSS heading base styles
+ */
+@layer base {
+  $font-headings: (
+    1 '4xl',
+    2 '3xl',
+    3 '2xl',
+    4 'xl',
+    5 'lg',
+  );
+
+  @each $i, $size in $font-headings {
+    h#{$i} {
+      @apply font-bold font-heading text-#{$size};
+    }
+  }
+
+  body {
+    @apply font-body;
+  }
+}
+
+/*
+ * Responsive
+ */
+body {
+  font-size: clamp(1.105rem, 1.8vw, 1.215rem);
+}

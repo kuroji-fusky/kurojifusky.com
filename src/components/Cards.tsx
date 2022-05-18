@@ -52,17 +52,17 @@ export function ProjectCard({
   );
 };
 
-export function ChannelCard({ image, title, description }: ICardProps) {
-  return (
-    <section className="featured-project-card">
-      <div className="featured-project-image">
-        <img src={image} alt={`The icon for my youtube channel, ${title}.`} />
-      </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </section>
-  );
-}
+// export function ChannelCard({ image, title, description }: ICardProps) {
+//   return (
+//     <section className="featured-project-card">
+//       <div className="featured-project-image">
+//         <img src={image} alt={`The icon for my youtube channel, ${title}.`} />
+//       </div>
+//       <h3>{title}</h3>
+//       <p>{description}</p>
+//     </section>
+//   );
+// }
 
 export function CardSkeleton() {
   return (

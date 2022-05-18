@@ -1,0 +1,18 @@
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap";
+
+@layer base {
+  body {
+    @apply leading-8;
+    background-color: #202020;
+    color: #f5f5f5;
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 2px dashed #b5b5b5;
+  }
+
+  html {
+    @apply antialiased scroll-smooth;
+  }
+}

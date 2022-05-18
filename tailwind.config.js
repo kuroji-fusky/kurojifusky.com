@@ -1,7 +1,7 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
@@ -23,11 +23,6 @@ module.exports = {
       '5': '5',
       'mosttop': '9999',
     },
-    borderRadius: {
-      'sm': '.125rem',
-      'md': '6px',
-      'full': '50%',
-    },
     extend: {
       colors: {
         'royalblue': '#2076c5',
@@ -38,6 +33,11 @@ module.exports = {
         'borahae-alt': '#b266ed',
         'borahae-light': '#ffabff',
         'brown': '#6f3a0f',
+      },
+      borderRadius: {
+        'sm': '.125rem',
+        'md': '6px',
+        'full': '50%',
       },
     },
   },

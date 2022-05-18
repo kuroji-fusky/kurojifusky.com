@@ -15,11 +15,6 @@
 
   span {
     @apply text-slate-500 transition-colors duration-300;
-
-    &::before {
-      content: var(--emoji-key, "🦊");
-      @apply pr-1;
-    }
   }
 
   &::before {

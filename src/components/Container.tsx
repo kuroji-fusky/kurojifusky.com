@@ -4,7 +4,7 @@ interface IContainerProps {
   title?: string;
   description?: string;
   keywords?: string[];
-  children: any;
+  children: React.ReactNode;
 }
 
 export default function Container({ title, description, keywords, children }: IContainerProps) {
