@@ -28,22 +28,25 @@ export default function Header() {
 				</div>
 				<nav className="flex flex-row gap-x-8">
 					<div id="nav-item">
-						<span>Dev Projects</span>
-						{/* <div id="dropdown-container">
-              <div id="dropdown-item">
-                <h4>Shit I made</h4>
-                <ul>
-                  <li>Paco Drawing Stats</li>
-                  <li>Majira VS Code Theme</li>
-                </ul>
-              </div>
-              <div id="dropdown-item">
-                <h4>I contributed</h4>
-                <ul>
-                  <li>MyFursona</li>
-                </ul>
-              </div>
-            </div> */}
+						<span>Contents</span>
+						<div id="dropdown-container">
+							<div id="dropdown-item">
+								<h3>Developer Projects</h3>
+								<ul>
+									<li>Paco Drawing Stats</li>
+									<li>Majira VS Code Theme</li>
+									<li>Tungsten</li>
+									<li>Sonamoji</li>
+								</ul>
+							</div>
+							<div id="dropdown-item">
+								<h3>I contributed</h3>
+								<ul>
+									<li>MyFursona</li>
+									<li>Searchpets</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<Link href="/portfolio" passHref>
 						<a
@@ -51,34 +54,19 @@ export default function Header() {
 							className={router.pathname === "/portfolio" ? "active" : ""}
 						>
 							<span>Portfolio</span>
-							{/* <div id="dropdown-container">
-              <div id="dropdown-item">
-                <h4>Shit I made</h4>
-                <ul>
-                  <li>Paco Drawing Stats</li>
-                  <li>Majira VS Code Theme</li>
-                </ul>
-              </div>
-              <div id="dropdown-item">
-                <h4>I contributed</h4>
-                <ul>
-                  <li>MyFursona</li>
-                </ul>
-              </div>
-            </div> */}
 						</a>
 					</Link>
-					{/* <Link href="/tools" passHref>
-            <a
-              id="nav-item"
-              className={router.pathname === "/tools" ? styles.active : ""}
-            >
-              <span>Tools</span>
-            </a>
-          </Link> */}
+					<Link href="/discography" passHref>
+						<a
+							id="nav-item"
+							className={router.pathname === "/discography" ? "active" : ""}
+						>
+							<span>Discography</span>
+						</a>
+					</Link>
 					<Link href="/about" passHref>
 						<a id="nav-item">
-							<span>About Me</span>
+							<span>About</span>
 						</a>
 					</Link>
 				</nav>

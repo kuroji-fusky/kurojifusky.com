@@ -36,8 +36,14 @@
   }
 }
 
+#nav-item:hover {
+  #dropdown-container {
+    @apply right-0 pointer-events-auto opacity-100;
+  }
+}
+
 #dropdown {
   &-container {
-    @apply absolute top-[3.75rem] right-0 p-3 bg-slate-800 rounded-md w-max cursor-default;
+    @apply absolute top-[3.75rem] right-1 pointer-events-none opacity-0 transition-all duration-300 p-4 bg-slate-800 rounded-md w-max cursor-default flex gap-3;
   }
 }
