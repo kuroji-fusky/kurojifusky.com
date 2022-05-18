@@ -20,7 +20,6 @@ export default function Home() {
 	];
 	return (
 		<ContainerBaseSEO>
-			<hr />
 			<ShowcaseSection
 				heading="Stuff I made"
 				emojiKey="✨"
@@ -51,7 +50,7 @@ export default function Home() {
 			<ShowcaseSection heading="About me" emojiKey="🦊" sectionId="hero-bio">
 				<article>
 					<p>
-						Heya, I'm <span id="highlight">skepfusky!</span> ...or just simply{" "}
+						Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
 						<span id="highlight">Skep</span>, or also known by my stage name{" "}
 						<span id="highlight">Kokoro Husky</span> on streaming platforms --
 						I'm a 20-year-old self-employed and self-taught hobbyist from the
@@ -59,9 +58,9 @@ export default function Home() {
 					</p>
 					<p>
 						I'm not trying to be a celebrity, or even a{" "}
-						<b>
-							<i>popufur...</i>
-						</b>{" "}
+						<strong>
+							<em>popufur...</em>
+						</strong>{" "}
 						I'm just trying to get my name out there as I'm extremely passionate
 						about sharing and possibly inspiring future generations through my
 						broad set of skills, talent, and art as a self-taught individual.

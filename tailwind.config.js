@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      heading: ["Noto Sans KR", 'system-ui', 'sans-serif'],
-      body: ["Lato", 'system-ui', 'sans-serif'],
+      'noto-sans': ["Noto Sans KR", 'system-ui', 'sans-serif'],
+      'lato': ["Lato", 'system-ui', 'sans-serif'],
     },
     screens: {
       sm: '640px',
@@ -27,8 +27,8 @@ module.exports = {
       colors: {
         'royalblue': '#2076c5',
         // 'cyan': '#48ddf7',
-        'lemon': '#fce392',
-        'yellow': '#f8d817',
+        'pale': '#fce392',
+        'lemon': '#f8d817',
         'borahae': '#bb3eed',
         'borahae-alt': '#b266ed',
         'borahae-light': '#ffabff',

@@ -1,8 +1,10 @@
+@use 'mixins' as *;
+
 /*
  * BUTTONS
  */
 
-.link-button__global {
+.link-btn {
   @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base duration-300 transition-colors hover:border-cyan-400 hover:text-cyan-400;
 }
 
@@ -11,14 +13,12 @@
 }
 
 $g1: rgb(9, 142, 251);
-$g2: rgba(241, 46, 205, 0.75);
-
-header {
-  @apply fixed w-full z-1 transition-all;
-}
+$g2: rgba(255, 39, 215, 0.75);
 
 .sticky-nav {
-  @apply bg-slate-700;
+  #site-wordmark {
+    background-position: top;
+  }
 }
 
 #highlight {
@@ -26,19 +26,6 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   @apply font-extrabold;
-}
-
-#highlight-scroll {
-  background: linear-gradient(90deg, $g1 0%, $g2 33%, $g1 66%, $g2 100%);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #0000;
-  @apply font-extrabold;
-  animation: gradientScroll 9s linear infinite;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
 }
 
 @keyframes gradientScroll {
@@ -50,40 +37,16 @@ header {
   }
 }
 
-.link-text__global {
-  background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20,163,255,0.75) 40%, #0000 50%, #0000 100%);
-  background-size: 250%;
-  background-position: right;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #0000;
-  transition: background-position 300ms ease;
-
-  &:hover {
-    background-position: left;
-  }
-}
-
-.link-cover__global {
+.gradient-link {
   @apply w-max relative text-cyan-200 hover:text-white transition-colors duration-300;
 
   &::after {
-    content: '';
-    @apply absolute h-[2px]  bottom-0 left-0 right-0;
-    background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20,163,255,0.75) 40%, #0000 50%, #0000 100%);
-    background-size: 250%;
-    background-position: right;
-    transition: background-position 300ms ease;
+    content: "";
+    @apply absolute h-[2px] bottom-0 left-0 right-0;
+    @include gradient-hover();
   }
 
   &:hover::after {
-    background-position: left;
+    @include gradient-hover(left);
   }
-}
-
-header, footer {
-  z-index: 9999;
-}
-
-footer {
-  @apply relative;
 }

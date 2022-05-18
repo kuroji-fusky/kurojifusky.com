@@ -29,19 +29,19 @@ export function ProjectCard({
       <div className="py-2 flex justify-center gap-x-2">
         {repoLink && (
           <Link href={`https://github.com/${repoLink}`} passHref>
-            <a className="link-button__global" target="_blank">
+            <a className="link-btn" target="_blank">
               Code
             </a>
           </Link>
         )}
         {pageLink && (
           <Link href={pageLink} passHref>
-            <a className="link-button__global">About</a>
+            <a className="link-btn">About</a>
           </Link>
         )}
         {extLink && (
           <Link href={extLink} passHref>
-            <a className="link-button__global">
+            <a className="link-btn">
               Website{" "}
               <FontAwesomeIcon icon={faExternalLink} />
             </a>

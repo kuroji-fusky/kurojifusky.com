@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 
-interface ISectionPwaps {
+interface ISectionProps {
 	heading: string;
 	emojiKey: string;
   rootSectionClassName?: string;
@@ -18,7 +18,7 @@ export default function ShowcaseSection({
 	sectionStyles,
 	sectionId,
 	children
-}: ISectionPwaps): JSX.Element {
+}: ISectionProps): JSX.Element {
 	return (
 		<div className={`section ${rootSectionClassName}`}>
 			<div className="section-header">
