@@ -5,14 +5,14 @@ header {
   width: 100vw;
 
   @media (min-width: 768px) {
-    width: 13rem;
+    width: 13.5rem;
   }
 
   --bg-header-active: rgb(13, 13, 13, 0.8);
 }
 
 #site-wordmark {
-  @apply text-2xl pl-0 md:pl-14;
+  @apply text-2xl pl-0 md:pl-14 select-none bg-bottom;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 300%;
   -webkit-background-clip: text;
@@ -22,11 +22,10 @@ header {
 }
 
 .header-active {
-  width: 100vw;
-  background: var(--bg-header-active);
+  background: #0000;
 
   #site-wordmark {
-    @apply opacity-100 md:opacity-0;
+    @apply opacity-0 pointer-events-none -translate-y-7;
   }
 }
 
@@ -43,7 +42,7 @@ header {
 }
 
 #burger-menu {
-  @apply absolute top-0 left-1 px-7 py-5;
+  @apply absolute top-0 left-1 px-7 py-5 transition-all duration-[420ms];
 
   &:hover {
     #brief-dropdown-container {
@@ -57,18 +56,26 @@ header {
   }
 }
 
+.burger-active {
+  transform: rotate(90deg);
+}
+
 /** Big toggle menu **/
 #toggle-menu-container {
-  @apply fixed z-mosttop w-full duration-[420ms] overflow-auto;
-  height: calc(100vh - 4.5rem);
+  @apply fixed top-0 w-full -z-1 duration-[420ms] overflow-auto;
+  height: 100vh;
 }
 
 @supports (backdrop-filter: blur(6px)) {
-  #toggle-menu-container,
-  .wrapper-interactive {
+  #toggle-menu-container {
     backdrop-filter: blur(6px);
   }
 }
+
+$menu-toggle-desktop: translateY(4rem);
+$menu-toggle-desktop-active: translateY(1.2rem);
+$menu-toggle-mobile: translateY(4rem);
+$menu-toggle-mobile-active: translateY(1.2rem);
 
 .toggled-menu {
   &-open {
@@ -79,10 +86,10 @@ header {
     @apply opacity-0 pointer-events-none;
 
     > #toggle-menu-wrapper {
-      transform: scale(0.95) translateY(1rem);
+      transform: $menu-toggle-mobile;
 
       @media (min-width: 768px) {
-        transform: scale(0.95);
+        transform: $menu-toggle-desktop;
       }
     }
   }
@@ -90,16 +97,30 @@ header {
 
 #toggle-menu-wrapper {
   @apply my-0 mx-auto px-6 max-w-screen-xl flex flex-col transition-all duration-[420ms];
-  transform: scale(1) translateY(1rem);
+  transform: $menu-toggle-mobile-active;
   transition: transform 320ms;
 
   @media (min-width: 768px) {
-    transform: scale(1);
+    transform: $menu-toggle-desktop-active;
   }
 
   hr {
     @apply border-b-2 my-3 border-blue-700;
     border-style: solid;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  > h2 {
+    @apply text-center;
+  }
+
+  h2,
+  h3 {
+    @apply cursor-default;
   }
 }
 
