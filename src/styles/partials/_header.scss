@@ -12,7 +12,7 @@ header {
 }
 
 #site-wordmark {
-  @apply text-2xl pl-0 md:pl-14 select-none bg-bottom;
+  @apply text-2xl pl-0 md:pl-14 transition-all duration-300  select-none bg-bottom;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 300%;
   -webkit-background-clip: text;

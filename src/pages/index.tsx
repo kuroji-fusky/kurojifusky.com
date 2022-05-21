@@ -15,7 +15,7 @@ export default function Home() {
 	];
 	return (
 		<ContainerBaseSEO>
-      <UnderConstruction />
+			<UnderConstruction />
 			<div className="section" id="hero-bio">
 				<article>
 					<p>
