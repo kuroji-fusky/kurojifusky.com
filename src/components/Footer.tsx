@@ -53,7 +53,7 @@ export default function Header() {
 							{"Proudly made with "}
 							<FontAwesomeIcon
 								icon={faHeart}
-								className="text-borahae"
+								className="text-borahaealt-600"
 								style={{ marginInline: "3px" }}
 							/>
 							{" in "}

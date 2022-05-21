@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 header {
-  @apply fixed z-1 transition-all duration-[420ms] bg-slate-700;
+  @apply fixed top-0 z-1 transition-all duration-[420ms] bg-slate-700;
   width: 100vw;
 
   @media (min-width: 768px) {
@@ -42,7 +42,7 @@ header {
 }
 
 #burger-menu {
-  @apply absolute top-0 left-1 px-7 py-5 transition-all duration-[420ms];
+  @apply absolute top-0 left-1 px-7 py-5 transition-all duration-[320ms];
 
   &:hover {
     #brief-dropdown-container {
@@ -62,7 +62,7 @@ header {
 
 /** Big toggle menu **/
 #toggle-menu-container {
-  @apply fixed top-0 w-full -z-1 duration-[420ms] overflow-auto;
+  @apply fixed top-0 w-full -z-1 duration-[250ms] overflow-auto;
   height: 100vh;
 }
 
@@ -72,10 +72,8 @@ header {
   }
 }
 
-$menu-toggle-desktop: translateY(4rem);
-$menu-toggle-desktop-active: translateY(1.2rem);
-$menu-toggle-mobile: translateY(4rem);
-$menu-toggle-mobile-active: translateY(1.2rem);
+$menu-toggle: translateY(4rem);
+$menu-toggle-active: translateY(1.2rem);
 
 .toggled-menu {
   &-open {
@@ -86,10 +84,12 @@ $menu-toggle-mobile-active: translateY(1.2rem);
     @apply opacity-0 pointer-events-none;
 
     > #toggle-menu-wrapper {
-      transform: $menu-toggle-mobile;
+      transform: $menu-toggle;
+      opacity: 0;
 
       @media (min-width: 768px) {
-        transform: $menu-toggle-desktop;
+        transform: $menu-toggle;
+        opacity: 0;
       }
     }
   }
@@ -97,11 +97,14 @@ $menu-toggle-mobile-active: translateY(1.2rem);
 
 #toggle-menu-wrapper {
   @apply my-0 mx-auto px-6 max-w-screen-xl flex flex-col transition-all duration-[420ms];
-  transform: $menu-toggle-mobile-active;
-  transition: transform 320ms;
+  transform: $menu-toggle-active;
+  opacity: 1;
+  transition: transform 320ms, opacity 320ms;
+  transition-delay: 150ms;
 
   @media (min-width: 768px) {
-    transform: $menu-toggle-desktop-active;
+    transform: $menu-toggle-active;
+    opacity: 1;
   }
 
   hr {
@@ -115,7 +118,7 @@ $menu-toggle-mobile-active: translateY(1.2rem);
   }
 
   > h2 {
-    @apply text-center;
+    @apply text-center my-3;
   }
 
   h2,

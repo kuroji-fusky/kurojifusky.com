@@ -1,13 +1,8 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import { ContainerBaseSEO } from "../components/Container";
-import { ProjectCard, CardSkeleton } from "../components/Cards";
+import { ProjectCard } from "../components/Cards";
 import ShowcaseSection from "../components/ShowcaseSection";
-
-// const ProjectCard = dynamic(() => import("../components/Cards"), {
-//   loading: () => <CardSkeleton />,
-//   ssr: false,
-// });
+import UnderConstruction from "../components/UnderConstruction";
 
 export default function Home() {
 	const skills = [
@@ -20,34 +15,8 @@ export default function Home() {
 	];
 	return (
 		<ContainerBaseSEO>
-			<ShowcaseSection
-				heading="Stuff I made"
-				emojiKey="✨"
-				sectionId="project-grid"
-			>
-				<ProjectCard
-					image="/static/projects/paco-yt-icon.jpg"
-					title="Paco Drawing Stats"
-					description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
-					pageLink="/portfolio/paco-drawing-stats"
-					repoLink="skepfusky/pandapaco-drawing-stats"
-				/>
-				<ProjectCard
-					image="/static/avatars/08.png"
-					title="This awful website"
-					description="This terrible website you're currently browsing written in Next.js"
-					repoLink="skepfusky/skepfusky-website"
-				/>
-				{/* <ProjectCard
-            image="/static/projects/myfursona.png"
-            title="MyFursona"
-            description="An open source project where you an manage your fursona(s)"
-            repoLink="MyFursona-Project/MyFursona"
-            extLink="https://www.myfursona.art"
-          /> */}
-			</ShowcaseSection>
-			<hr />
-			<ShowcaseSection heading="About me" emojiKey="🦊" sectionId="hero-bio">
+      <UnderConstruction />
+			<div className="section" id="hero-bio">
 				<article>
 					<p>
 						Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
@@ -81,8 +50,34 @@ export default function Home() {
 						className="rounded-full w-[16rem]"
 					/>
 				</div>
+			</div>
+			<hr />
+			<ShowcaseSection
+				heading="Showcase"
+				emojiKey="✨"
+				sectionId="project-grid"
+			>
+				<ProjectCard
+					image="/static/projects/paco-yt-icon.jpg"
+					title="Paco Drawing Stats"
+					description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
+					pageLink="/portfolio/paco-drawing-stats"
+					repoLink="skepfusky/pandapaco-drawing-stats"
+				/>
+				<ProjectCard
+					image="/static/avatars/08.png"
+					title="This awful website"
+					description="This terrible website you're currently browsing written in Next.js"
+					repoLink="skepfusky/skepfusky-website"
+				/>
+				<ProjectCard
+					image="/static/projects/myfursona.png"
+					title="MyFursona"
+					description="An open source project where you an manage your fursona(s)"
+					repoLink="MyFursona-Project/MyFursona"
+					extLink="https://www.myfursona.art"
+				/>
 			</ShowcaseSection>
-			<div className="section hero-bio"></div>
 		</ContainerBaseSEO>
 	);
 }

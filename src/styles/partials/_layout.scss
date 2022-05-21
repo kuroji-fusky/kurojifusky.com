@@ -136,7 +136,7 @@ html {
 
 #skill {
   &-inline {
-    @apply flex gap-2 mt-2 flex-wrap justify-center lg:justify-start;
+    @apply flex gap-2 mt-2 flex-wrap justify-center;
   }
 
   &-item {
