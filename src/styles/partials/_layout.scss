@@ -89,7 +89,7 @@ html {
  ************/
 .layout-seperator {
   background: lighten($main-bg, 4%);
-  // z-index: -5;
+  z-index: -5;
 }
 
 .layout-item-wrapper {
@@ -164,7 +164,8 @@ html {
 /** Project  **/
 
 #showcase {
-  @apply grid gap-4 text-center z-2;
+  @apply grid relative gap-4 text-center;
+  z-index: 0;
   grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
   @media only screen and (min-width: 576px) {

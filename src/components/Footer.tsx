@@ -48,8 +48,8 @@ export default function Header() {
 							</a>
 						</Link>
 					</div>
-					<div className="flex text-base justify-end gap-x-4">
-						<span>
+					<div className="flex flex-col md:flex-row text-base justify-end gap-x-4">
+						<span className="whitespace-nowrap">
 							{"Proudly made with "}
 							<FontAwesomeIcon
 								icon={faHeart}
@@ -69,7 +69,9 @@ export default function Header() {
 								</a>
 							</Link>
 						</span> */}
-						<span>&copy; 2014-{new Date().getFullYear()} Fusky & Co., LLC</span>
+						<span className="whitespace-nowrap">
+							&copy; 2014-{new Date().getFullYear()} Fusky & Co., LLC
+						</span>
 					</div>
 				</div>
 			</div>

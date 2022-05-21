@@ -7,7 +7,11 @@
 }
 
 .contents {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-2;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-2 select-none text-center md:text-inherit;
+
+  @media only screen and (max-width: 768px) {
+    @apply place-items-center;
+  }
 }
 
 .social-icons {
