@@ -67,6 +67,12 @@ export default function Home() {
 						sectionId="showcase"
 					>
 						<ProjectCard
+							image="/static/avatars/08.png"
+							title="This awful website"
+							description="This terrible website you're currently browsing is written in Next.js"
+							repoLink="skepfusky/skepfusky-website"
+						/>
+						<ProjectCard
 							image="/static/projects/paco-yt-icon.jpg"
 							title="Paco Drawing Stats"
 							description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
@@ -74,10 +80,11 @@ export default function Home() {
 							repoLink="skepfusky/pandapaco-drawing-stats"
 						/>
 						<ProjectCard
-							image="/static/avatars/08.png"
-							title="This awful website"
-							description="This terrible website you're currently browsing written in Next.js"
-							repoLink="skepfusky/skepfusky-website"
+							image="/static/projects/majira-vscode.png"
+							title="Majira Strawberry VS Code Theme"
+							pageLink="/projects/majira-strawberry-vscode"
+							description="Increase your coding productivity by 69% with this beautiful theme!"
+							repoLink="skepfusky/majira-strawberry-vscode"
 						/>
 						<ProjectCard
 							image="/static/projects/myfursona.png"
@@ -87,13 +94,7 @@ export default function Home() {
 							repoLink="MyFursona-Project/MyFursona"
 							extLink="https://www.myfursona.art"
 						/>
-						<ProjectCard
-							image="/static/projects/majira-vscode.png"
-							title="Majira Strawberry VS Code Theme"
-							pageLink="/projects/majira-strawberry-vscode"
-							description="Increase your coding productivity by 69% with this beautiful theme!"
-							repoLink="skepfusky/majira-strawberry-vscode"
-						/>
+
 						<ProjectCard
 							image="/static/projects/tessinator.png"
 							title="Tessinator"
