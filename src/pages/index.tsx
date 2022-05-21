@@ -77,6 +77,18 @@ export default function Home() {
 					repoLink="MyFursona-Project/MyFursona"
 					extLink="https://www.myfursona.art"
 				/>
+				<ProjectCard
+					image="/static/projects/majira-vscode.png"
+					title="Majira Strawberry VS Code Theme"
+					description="Increase your coding productivity by 69% with this beautiful theme!"
+					repoLink="skepfusky/majira-strawberry-vscode"
+				/>
+				<ProjectCard
+					image="/static/projects/tessinator.png"
+					title="Tessinator"
+					description="An awful Discord bot when I barely knew anything about Node.js"
+					repoLink="skepfusky/tessinator"
+				/>
 			</ShowcaseSection>
 		</ContainerBaseSEO>
 	);

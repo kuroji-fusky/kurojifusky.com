@@ -28,7 +28,7 @@
 }
 
 @mixin feature-cards {
-  @apply p-4 flex flex-col gap-y-0.5 bg-gray-700 rounded-md mb-4 mr-4 relative top-0 left-0 cursor-default;
+  @apply p-4 flex flex-col gap-y-0.5 bg-neutral-400 rounded-md mb-4 mr-4 relative top-0 left-0 cursor-default;
   transition: top 300ms ease, left 300ms ease;
 
   &:hover {

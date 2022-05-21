@@ -13,7 +13,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
 	return (
-		<footer className="bg-slate-900 text-white">
+		<footer className="bg-neutral-900 text-white">
 			<div className={styles.wrapper}>
 				<div className={styles.contents}>
 					<div className="flex gap-x-[1.5rem]">
