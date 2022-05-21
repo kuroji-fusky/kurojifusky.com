@@ -8,7 +8,8 @@ import {
 import {
 	faBars,
 	faClose,
-	faExternalLinkAlt
+	faExternalLinkAlt,
+	faLightbulb
 } from "@fortawesome/free-solid-svg-icons";
 import {
 	faGithub,
@@ -54,7 +55,7 @@ export default function Header() {
 	const stickNavbar = () => {
 		let windowHeight = window.scrollY;
 		if (window !== undefined)
-			windowHeight > 1 ? setStickyClass("sticky-nav") : setStickyClass("");
+			windowHeight > 1 ? setStickyClass("gradient-toggle") : setStickyClass("");
 	};
 
 	return (
@@ -234,9 +235,28 @@ export default function Header() {
 							<span>TBA</span>
 						</div>
 					</nav>
-					<div id="toggle-lower-third" className="text-base mt-5">
-						V5: Contentful &bull; Copyright &copy; 2014-
-						{new Date().getFullYear()} Fusky & Co., LLC. All rights reserved.
+					<div id="toggle-lower-third">
+						<span id="desktop-esc-info">
+							<FontAwesomeIcon icon={faLightbulb} className="pr-2" />
+							Protip: You can press{" "}
+							<span className="px-1  mx-1 text-sm rounded-md border-neutral-200 border-2">
+								ESC
+							</span>{" "}
+							to close the menu
+						</span>
+						<div className="flex justify-between items-center">
+							<span>
+								V5: Contentful &bull; Copyright &copy; 2014-
+								{new Date().getFullYear()} Fusky & Co., LLC. All rights
+								reserved.
+							</span>
+							<span>
+								<button id="theme-toggle">
+									<FontAwesomeIcon icon={faLightbulb} className="mr-2" />
+									Theme: Dark
+								</button>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

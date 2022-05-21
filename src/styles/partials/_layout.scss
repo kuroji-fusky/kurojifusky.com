@@ -115,10 +115,10 @@ html {
 }
 
 #hero-bio {
-  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center;
+  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
 
   > article {
-    @apply gap-y-3;
+    @apply flex flex-col gap-y-2;
   }
 
   p {
@@ -136,7 +136,7 @@ html {
 
 #skill {
   &-inline {
-    @apply flex gap-2 mt-2 flex-wrap justify-center;
+    @apply flex gap-2 mt-2 flex-wrap justify-center lg:justify-start;
   }
 
   &-item {

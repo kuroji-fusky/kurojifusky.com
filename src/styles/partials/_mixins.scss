@@ -1,6 +1,4 @@
 @mixin gradient-hover($pos: right) {
-  // content: "";
-  // @apply absolute top-[1.3rem] left-0 right-0 h-[2px] translate-y-1 transition-all duration-300 -z-1;
   background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
   background-size: 250%;
   background-position: $pos;
