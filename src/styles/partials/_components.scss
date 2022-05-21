@@ -5,7 +5,7 @@
  */
 
 .link-btn {
-  @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base duration-300 transition-colors hover:border-cyan-400 hover:text-cyan-400;
+  @apply py-[0.22rem] px-[1rem] rounded-md border-slate-50 border-2 text-base duration-300 transition-colors hover:border-borahae-400 hover:text-borahae-400;
 }
 
 .card__global {
@@ -38,7 +38,7 @@ $g2: rgba(255, 39, 215, 0.75);
 }
 
 .gradient-link {
-  @apply w-max relative text-cyan-200 hover:text-white transition-colors duration-300;
+  @apply w-max relative text-borahaealt-200 hover:text-white transition-colors duration-300;
 
   &::after {
     content: "";

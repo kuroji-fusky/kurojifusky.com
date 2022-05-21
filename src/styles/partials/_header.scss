@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 header {
-  @apply fixed top-0 z-1 transition-all duration-[420ms] bg-slate-700;
+  @apply fixed top-0 z-1 transition-all duration-[420ms] bg-neutral-900;
   width: 100vw;
 
   &::before {
@@ -20,7 +20,7 @@ header {
 #site-wordmark {
   @apply text-2xl pl-0 md:pl-14 transition-all duration-300  select-none bg-bottom;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
-  background-size: 100% 300%;
+  background-size: 100% 250%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   background-position: bottom;
@@ -120,7 +120,7 @@ $menu-toggle-active: translateY(1.2rem);
   }
 
   hr {
-    @apply border-b-2 my-3 border-blue-700;
+    @apply border-b-2 my-3 border-borahae-400;
     border-style: solid;
     display: none;
 

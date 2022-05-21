@@ -3,7 +3,6 @@ import React, { CSSProperties } from "react";
 interface ISectionProps {
 	heading: string;
 	emojiKey: string;
-  rootSectionClassName?: string;
 	sectionClassName?: string;
 	sectionStyles?: CSSProperties;
 	sectionId?: string;
@@ -13,14 +12,13 @@ interface ISectionProps {
 export default function ShowcaseSection({
 	heading = "Bruh moment",
 	emojiKey = "😳",
-  rootSectionClassName,
 	sectionClassName,
 	sectionStyles,
 	sectionId,
 	children
 }: ISectionProps): JSX.Element {
 	return (
-		<div className={`section ${rootSectionClassName}`}>
+		<div className="section">
 			<div className="section-header">
 				<h3 style={{ "--emoji-key": `"${emojiKey}"` } as React.CSSProperties}>
 					{heading}

@@ -84,6 +84,18 @@ html {
   background-size: 56.57px 56.57px;
 }
 
+/************
+ * Layout Cutouts
+ ************/
+.layout-seperator {
+  background: lighten($main-bg, 4%);
+  // z-index: -5;
+}
+
+.layout-item-wrapper {
+  @apply mx-auto my-0 max-w-screen-xl;
+}
+
 /* main stuff */
 .section {
   @apply flex p-1 sm:p-4;
@@ -115,7 +127,8 @@ html {
 }
 
 #hero-bio {
-  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
+  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center  lg:text-left;
+  height: calc(100vh - 5.8rem);
 
   > article {
     @apply flex flex-col gap-y-2;
@@ -140,22 +153,49 @@ html {
   }
 
   &-item {
-    @apply p-0.5 px-3 rounded-md bg-slate-700 uppercase whitespace-nowrap text-[88%];
+    @apply p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
   }
 }
 
-#project {
-  &-grid {
-    @apply grid gap-4 text-center;
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+#scroll-down {
+  @apply select-none w-full flex flex-col items-center py-5;
+}
 
-    @media only screen and (min-width: 576px) {
-      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    }
+/** Project  **/
 
-    @media only screen and (max-width: 836px) {
-      @apply translate-x-1;
-    }
+#showcase {
+  @apply grid gap-4 text-center z-2;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+
+  @media only screen and (min-width: 576px) {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+
+  @media only screen and (max-width: 836px) {
+    @apply translate-x-1;
+  }
+}
+
+/** Cool card thing **/
+@mixin feature-cards {
+  @apply p-4 relative top-0 left-0 flex flex-col gap-y-0.5 rounded-md mb-4 mr-4 cursor-default select-none;
+  transition: top 300ms ease, left 300ms ease;
+  background: $bg-violet-highlight;
+
+  &::before {
+    content: "";
+    @apply block absolute -z-1 inset-0 transition-all duration-300;
+    transform: translate(0.88rem, 0.88rem);
+    background: linear-gradient(to right, rgba(0, 77, 140, 0.66), rgba(125, 5, 141, 0.66));
+    border-radius: inherit;
+  }
+
+  &:hover {
+    @apply -top-[0.25rem] -left-[0.25rem];
+  }
+
+  &:hover::before {
+    @apply brightness-[165%] translate-x-[1.33rem] translate-y-[1.33rem];
   }
 }
 
@@ -164,7 +204,7 @@ html {
     @include feature-cards();
 
     p {
-      @apply h-full mb-2 text-lg;
+      @apply h-full mb-2 leading-7;
     }
   }
 
