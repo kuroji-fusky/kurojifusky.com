@@ -16,27 +16,14 @@
 
   &::before {
     content: "404";
-    position: absolute;
     @apply absolute top-0 bg-transparent overflow-hidden h-[7rem];
-    @apply -left-[2px];
-    // left: -2px;
     text-shadow: -5px 0 $cyan;
-    // background: #0000;
-    // overflow: hidden;
-    // height: 7rem;
-    // top: 0;
     animation: noise-1 6.5s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
   }
 
   &::after {
     content: "404";
-    position: absolute;
-    height: 7rem;
-    left: 2px;
-    text-shadow: -5px 0 $lemon;
-    overflow: hidden;
-    background: #0000;
-    top: 0;
+    @apply absolute left-[2px] top-0 bg-transparent overflow-hidden h-[7rem];
     animation: noise-2 6.5s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
   }
 }
