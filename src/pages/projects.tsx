@@ -1,5 +1,5 @@
-import Container from "../components/Container";
-import UnderConstruction from "../components/UnderConstruction";
+import Container from "@/components/Container";
+import UnderConstruction from "@/components/UnderConstruction";
 
 export default function ProjectPage() {
   return(

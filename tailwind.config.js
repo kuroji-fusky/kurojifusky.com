@@ -5,8 +5,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'noto-sans': ["Noto Sans KR", 'system-ui', 'sans-serif'],
-      'lato': ["Lato", 'system-ui', 'sans-serif'],
+      'noto-sans': ["Noto Sans KR", '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'],
+      'lato': ["Lato", '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'],
     },
     screens: {
       sm: '640px',

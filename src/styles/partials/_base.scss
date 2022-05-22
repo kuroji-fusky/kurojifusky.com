@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply leading-8;
+    @apply leading-8 overflow-x-hidden;
     background-color: $main-bg;
     color: $main-fg;
   }

@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
+import styles from "@/styles/Home.module.scss";
+
 interface ICardProps {
 	title: string;
 	description: string;
@@ -11,7 +13,7 @@ interface ICardProps {
 	extLink?: string;
 }
 
-export function ProjectCard({
+export default function ProjectCard({
 	title,
 	description,
 	image,
@@ -20,8 +22,8 @@ export function ProjectCard({
 	extLink
 }: ICardProps) {
 	return (
-		<div className="featured-project-card">
-			<div className="featured-project-image">
+		<div className={styles["featured-project-card"]}>
+			<div className={styles["featured-project-image"]}>
 				<img src={image} alt={`Image for a project, ${title}.`} />
 			</div>
 			<h3>{title}</h3>
@@ -51,24 +53,12 @@ export function ProjectCard({
 	);
 }
 
-// export function ChannelCard({ image, title, description }: ICardProps) {
-//   return (
-//     <section className="featured-project-card">
-//       <div className="featured-project-image">
-//         <img src={image} alt={`The icon for my youtube channel, ${title}.`} />
-//       </div>
-//       <h3>{title}</h3>
-//       <p>{description}</p>
-//     </section>
-//   );
-// }
-
 export function CardSkeleton() {
 	return (
-		<div className="featured-project-loading-card">
-			<div className="featured-project-loading-image"></div>
-			<div className="featured-project-loading-title"></div>
-			<div className="featured-project-loading-description"></div>
+		<div className={styles["featured-project-loading-card"]}>
+			<div className={styles["featured-project-loading-image"]}></div>
+			<div className={styles["featured-project-loading-title"]}></div>
+			<div className={styles["featured-project-loading-description"]}></div>
 			<div className="py-2 flex justify-center gap-x-2"></div>
 		</div>
 	);

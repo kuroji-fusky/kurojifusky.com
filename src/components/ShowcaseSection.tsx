@@ -1,4 +1,5 @@
 import React, { CSSProperties } from "react";
+import styles from "@/styles/Home.module.scss";
 
 interface ISectionProps {
 	heading: string;
@@ -18,8 +19,8 @@ export default function ShowcaseSection({
 	children
 }: ISectionProps): JSX.Element {
 	return (
-		<div className="section">
-			<div className="section-header">
+		<div className={styles["section"]}>
+			<div className={styles["section-header"]}>
 				<h3 style={{ "--emoji-key": `"${emojiKey}"` } as React.CSSProperties}>
 					{heading}
 				</h3>

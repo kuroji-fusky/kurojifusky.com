@@ -1,6 +1,6 @@
-import CardQuotes, { CardQuoteSkeleton } from "../components/CardQuotes";
-import Container from "../components/Container";
-import UnderConstruction from "../components/UnderConstruction";
+import CardQuotes, { CardQuoteSkeleton } from "@/components/CardQuotes";
+import Container from "@/components/Container";
+import UnderConstruction from "@/components/UnderConstruction";
 
 export default function QuotePage() {
   const quotes = [

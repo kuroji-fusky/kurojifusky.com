@@ -1,9 +1,11 @@
 import React from "react";
-import { ContainerBaseSEO } from "../components/Container";
-import { ProjectCard } from "../components/Cards";
-import ShowcaseSection from "../components/ShowcaseSection";
+import Container from "@/components/Container";
+import ProjectCard from "@/components/Cards";
+import ShowcaseSection from "@/components/ShowcaseSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
+import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
 	const skills = [
@@ -15,10 +17,13 @@ export default function Home() {
 		"Novice VFX artist"
 	];
 	return (
-		<ContainerBaseSEO>
+		<Container
+			title="Home"
+			description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
+		>
 			{/* <UnderConstruction /> */}
 			<div className="layout-item-wrapper">
-				<div className="section" id="hero-bio">
+				<div className={styles.section} id={styles["hero-bio"]}>
 					<article>
 						<p>
 							Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
@@ -37,15 +42,15 @@ export default function Home() {
 							through my broad set of skills, talent, and art as a self-taught
 							individual.
 						</p>
-						<div id="skill-inline">
+						<div id={styles["skill-inline"]}>
 							{skills.map((skill, i) => (
-								<div id="skill-item" key={i}>
+								<div id={styles["skill-item"]} key={i}>
 									{skill}
 								</div>
 							))}
 						</div>
 					</article>
-					<div id="hero-bio-svg">
+					<div id={styles["hero-bio-svg"]}>
 						{/* todo: cringe svg here */}
 						<img
 							src="/static/avatars/07.png"
@@ -53,18 +58,19 @@ export default function Home() {
 							className="rounded-full w-[16rem]"
 						/>
 					</div>
+					<a href="#showcase" id={styles["scroll-down"]}>
+						<span>Scroll down for cringe</span>
+						<FontAwesomeIcon icon={faAngleDown} size="lg" />
+					</a>
 				</div>
 			</div>
-			<a href="#showcase" id="scroll-down">
-				<span>Scroll down for cringe</span>
-				<FontAwesomeIcon icon={faAngleDown} size="lg" />
-			</a>
-			<div className="layout-seperator">
+
+			<div className="layout-seperator" id="showcase">
 				<div className="layout-item-wrapper">
 					<ShowcaseSection
 						heading="Projects I've made or contributed"
 						emojiKey="✨"
-						sectionId="showcase"
+						sectionId={styles.showcase}
 					>
 						<ProjectCard
 							image="/static/avatars/08.png"
@@ -104,6 +110,6 @@ export default function Home() {
 					</ShowcaseSection>
 				</div>
 			</div>
-		</ContainerBaseSEO>
+		</Container>
 	);
 }
