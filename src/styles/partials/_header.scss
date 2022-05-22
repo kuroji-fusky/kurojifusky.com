@@ -6,8 +6,7 @@ header {
 
   &::before {
     content: "";
-    background: #0000;
-    @apply absolute top-[.65rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
+    @apply bg-transparent absolute top-[.65rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
   }
 
   @media (min-width: 768px) {
@@ -18,13 +17,12 @@ header {
 }
 
 #site-wordmark {
-  @apply text-2xl pl-0 md:pl-14 transition-all duration-300  select-none bg-bottom;
+  @apply text-2xl pl-0 md:pl-14 transition-all duration-300 select-none bg-bottom;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 250%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   background-position: bottom;
-  transition: all 300ms ease;
 }
 
 .header-active {
@@ -54,17 +52,6 @@ header {
 
 #burger-menu {
   @apply absolute top-0 left-1 px-7 py-5 transition-all duration-[320ms];
-
-  &:hover {
-    #brief-dropdown-container {
-      @apply -left-1 pointer-events-auto;
-      opacity: 1;
-    }
-
-    #brief-dropdown-container.toggled-menu-active {
-      @apply -left-[14rem] pointer-events-none;
-    }
-  }
 }
 
 .burger-active {
