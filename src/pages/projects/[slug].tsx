@@ -5,8 +5,9 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import ProjectHeader from "@/components/ProjectHeader";
+import SEOHead from "@/components/SEOHead";
 
-const components = { ProjectHeader };
+const components = { ProjectHeader, SEOHead };
 
 export default function Project({
 	source
@@ -40,8 +41,7 @@ type Params = {
 export const getStaticProps: GetStaticProps<Params> = async ({
 	params: { slug }
 }: Params) => {
-	const articlePath: any = fs.readFileSync(
-		path.join("content/projects", `${slug}.mdx`)
+	const articlePath: any = fs.readFileSync(path.join("content/projects", `${slug}.mdx`)
 	);
 
 	const { data: metaData, content } = matter(articlePath);

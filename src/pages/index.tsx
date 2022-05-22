@@ -1,11 +1,17 @@
 import React from "react";
-import Container from "@/components/Container";
-import ProjectCard from "@/components/Cards";
-import ShowcaseSection from "@/components/ShowcaseSection";
+import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import ShowcaseSection from "@/components/ShowcaseSection";
+import { CardSkeleton } from "@/components/Cards";
+
+const ProjectCard = dynamic(() => import("@/components/Cards"), {
+	loading: () => <CardSkeleton />,
+	ssr: false
+});
 
 import styles from "@/styles/Home.module.scss";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
 	const skills = [
@@ -17,10 +23,11 @@ export default function Home() {
 		"Novice VFX artist"
 	];
 	return (
-		<Container
-			title="Home"
-			description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
-		>
+		<div>
+			<SEOHead
+				title="Home"
+				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
+			/>
 			{/* <UnderConstruction /> */}
 			<div className="layout-item-wrapper">
 				<div className={styles.section} id={styles["hero-bio"]}>
@@ -64,7 +71,6 @@ export default function Home() {
 					</a>
 				</div>
 			</div>
-
 			<div className="layout-seperator" id="showcase">
 				<div className="layout-item-wrapper">
 					<ShowcaseSection
@@ -88,7 +94,6 @@ export default function Home() {
 						<ProjectCard
 							image="/static/projects/majira-vscode.png"
 							title="Majira Strawberry VS Code Theme"
-							pageLink="/projects/majira-strawberry-vscode"
 							description="Increase your coding productivity by 69% with this beautiful theme!"
 							repoLink="skepfusky/majira-strawberry-vscode"
 						/>
@@ -100,7 +105,6 @@ export default function Home() {
 							repoLink="MyFursona-Project/MyFursona"
 							extLink="https://www.myfursona.art"
 						/>
-
 						<ProjectCard
 							image="/static/projects/tessinator.png"
 							title="Tessinator"
@@ -110,6 +114,6 @@ export default function Home() {
 					</ShowcaseSection>
 				</div>
 			</div>
-		</Container>
+		</div>
 	);
 }

@@ -1,9 +1,10 @@
-import Container from "@/components/Container";
+import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/PageNotFound.module.scss";
 
 export default function NotFoundPage() {
 	return (
-		<Container title="Page not found!" description="Page not found">
+		<div>
+			<SEOHead title="Page not found!" description="Page not found" />
 			<div className="layout-item-wrapper" id={styles.wrapper}>
 				<div className={styles["glitch-container"]}>
 					<div className={styles["glitch-text"]}>404</div>
@@ -16,6 +17,6 @@ export default function NotFoundPage() {
 					</span>
 				</div>
 			</div>
-		</Container>
+		</div>
 	);
 }
