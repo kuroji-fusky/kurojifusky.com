@@ -154,14 +154,14 @@ export default function Header() {
 							</ul>
 							<h3>Albums</h3>
 							<ul>
-								<MenuItem itemLabelEm="Horizon" itemLink="/albums/horizon" />
+								<MenuItem itemLabelEm="Horizon" itemLink="/discography/horizon" />
 								<MenuItem
 									itemLabelEm="A New Life"
-									itemLink="/albums/a-new-life"
+									itemLink="/discography/a-new-life"
 								/>
 								<MenuItem
 									itemLabelEm="Recursion"
-									itemLink="/albums/recursion"
+									itemLink="/discography/recursion"
 								/>
 							</ul>
 							<h2>About me</h2>

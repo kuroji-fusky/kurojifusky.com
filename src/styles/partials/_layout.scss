@@ -4,6 +4,12 @@
 /************
  * Scrollbar
  ************/
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $borahae $main-bg;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -18,17 +24,12 @@
   }
 }
 
-html {
-  scrollbar-width: thin;
-  scrollbar-color: $borahae $main-bg;
-}
-
 /************
  * Quote cards
  ************/
 
 .quote {
-  @apply p-5 rounded-md bg-slate-600 flex flex-col gap-y-4;
+  @apply p-5 rounded-md bg-neutral-600 flex flex-col gap-y-4;
 
   q {
     @apply text-2xl;
@@ -94,4 +95,40 @@ html {
 
 .layout-item-wrapper {
   @apply mx-auto my-0 max-w-screen-xl;
+}
+
+/************
+ * MDX
+ ************/
+
+#mdx-seperator {
+  @apply flex flex-row-reverse gap-4;
+
+  > aside {
+    @apply bg-neutral-900 p-4 rounded-md h-fit;
+    width: 50rem;
+  }
+}
+
+#tracklist {
+  @apply w-fit bg-slate-600 rounded-md;
+
+  &-head,
+  &-item {
+    @apply flex;
+
+    * {
+      @apply p-[0.66rem];
+    }
+  }
+}
+
+.track {
+  &-title {
+    @apply block w-[18rem];
+  }
+
+  &-length {
+    @apply block w-[6rem];
+  }
 }

@@ -1,4 +1,8 @@
-@use 'mixins' as *;
+@use "mixins" as *;
+
+code {
+  @apply bg-neutral-900 p-[3px];
+}
 
 /*
  * BUTTONS
@@ -48,5 +52,16 @@ $g2: rgba(255, 39, 215, 0.75);
 
   &:hover::after {
     @include gradient-hover(left);
+  }
+}
+
+/*
+ * Biro design stuff
+ */
+
+.bd {
+  &__item-title {
+    @apply px-2 bg-neutral-900 rounded-md uppercase;
+    font-size: 80%;
   }
 }

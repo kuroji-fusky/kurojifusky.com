@@ -2,16 +2,15 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import ShowcaseSection from "@/components/ShowcaseSection";
-import { CardSkeleton } from "@/components/Cards";
+import Section from "@/components/Section";
+import { CardSkeleton } from "@/components/landing/ProjectCard";
+import SEOHead from "@/components/SEOHead";
+import styles from "@/styles/Home.module.scss";
 
-const ProjectCard = dynamic(() => import("@/components/Cards"), {
+const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
 	ssr: false
 });
-
-import styles from "@/styles/Home.module.scss";
-import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
 	const skills = [
@@ -73,7 +72,7 @@ export default function Home() {
 			</div>
 			<div className="layout-seperator" id="showcase">
 				<div className="layout-item-wrapper">
-					<ShowcaseSection
+					<Section
 						heading="Projects I've made or contributed"
 						emojiKey="✨"
 						sectionId={styles.showcase}
@@ -88,7 +87,7 @@ export default function Home() {
 							image="/static/projects/paco-yt-icon.jpg"
 							title="Paco Drawing Stats"
 							description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
-							pageLink="/projects/paco-drawing-stats"
+							pageLink="/projects/pandapaco-drawing-stats"
 							repoLink="skepfusky/pandapaco-drawing-stats"
 						/>
 						<ProjectCard
@@ -111,7 +110,7 @@ export default function Home() {
 							description="An awful Discord bot when I barely knew anything about Node.js"
 							repoLink="skepfusky/tessinator"
 						/>
-					</ShowcaseSection>
+					</Section>
 				</div>
 			</div>
 		</div>

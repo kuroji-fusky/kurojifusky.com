@@ -1,14 +1,42 @@
 ---
-title: 'A New Life'
-type: 'Album'
-releaseDate: 'December 15, 2021'
-albumArt: ''
+title: "A New Life"
+excerpt: "A New Life is a second self-produced 9-track album released on December 16, 2021."
+type: "Album"
+length: "28:17"
+releaseDate: "December 15, 2021"
+albumArt: "/static/album-covers/A New Life_cover.png"
 trackNum: 9
 year: 2021
 ---
 
-<!-- <DiscographyHeader /> -->
+<SEOHead title={title} description={excerpt} />
 
-My shitty album
+<DiscographyHeader
+  albumType={type}
+  length={length}
+  title={title}
+  dateString={releaseDate}
+  img={albumArt}
+  backdropImg={albumArt}
+  trackNum={trackNum}
+  genre="EDM"
+  copyright={`${year} Fusky & Co., LLC`}
+/>
 
-<!-- <DiscograpgyChrono /> -->
+**A New Life** is my second self-produced 9-track album released on December 16, 2021.
+
+## Tracklist
+
+<TracklistContainer albumLength={length}>
+  <TracklistItem trackNumber={1} title="Intro: A Special Farewell" length="1:23" />
+  <TracklistItem trackNumber={2} title="Nostalgia" length="2:15" />
+  <TracklistItem trackNumber={3} title="Dreaming" length="4:44" />
+  <TracklistItem trackNumber={4} title="Eclipse (Extended)" length="3:04" />
+  <TracklistItem trackNumber={5} title="Utopian Dream (Remastered)" length="2:33" />
+  <TracklistItem trackNumber={6} title="Sea of Clouds (Extended)" length="4:11" />
+  <TracklistItem trackNumber={7} title="Timeless" length="3:07" />
+  <TracklistItem trackNumber={8} title="Fever Dream (Extended)" length="2:59" />
+  <TracklistItem trackNumber={9} title="Good Days" length="3:58" />
+</TracklistContainer>
+
+{/* <DiscographyChrono /> */}

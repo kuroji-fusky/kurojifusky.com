@@ -2,7 +2,7 @@
 @use 'partials/mixins' as *;
 
 .section {
-  @apply flex p-1 sm:p-4;
+  @apply flex p-4;
 
   &:not(.section-row) {
     @apply flex-col;
@@ -21,7 +21,7 @@
   @apply mb-4 mt-1 flex flex-col gap-3 items-center md:items-start;
 
   h3 {
-    @apply uppercase flex flex-col md:flex-row;
+    @apply uppercase flex flex-col md:flex-row text-center md:text-left;
 
     &::before {
       content: var(--emoji-key, "😳");
