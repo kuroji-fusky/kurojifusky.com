@@ -1,4 +1,3 @@
 # Detect mdx files as a language
 *.mdx linguist-detectable=true
 *.mdx linguist-language=Markdown
-/README.md linguist-documentation=true
