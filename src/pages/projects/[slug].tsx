@@ -14,14 +14,14 @@ export default function Project({
 	source: MDXRemoteSerializeResult<Record<string, unknown>>;
 }): InferGetStaticPropsType<typeof getStaticProps> {
 	return (
-		<div>
+		<div className="layout-item-wrapper">
 			<MDXRemote {...source} components={components} />
 		</div>
 	);
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const articlePath = path.join("src/articles");
+	const articlePath = path.join("content/projects");
 	const files = fs.readdirSync(articlePath);
 	const paths = files.map((fileName: string) => ({
 		params: { slug: fileName.replace(".mdx", "") }
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps<Params> = async ({
 	params: { slug }
 }: Params) => {
 	const articlePath: any = fs.readFileSync(
-		path.join("src/articles", `${slug}.mdx`)
+		path.join("content/projects", `${slug}.mdx`)
 	);
 
 	const { data: metaData, content } = matter(articlePath);
