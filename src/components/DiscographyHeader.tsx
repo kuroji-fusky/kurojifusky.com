@@ -1,5 +1,6 @@
 import styles from "@/styles/StaticHeader.module.scss";
 import Image from "next/image";
+
 interface IDiscographyHeaderProps {
 	title: string;
 	img?: string;

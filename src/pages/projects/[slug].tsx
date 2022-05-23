@@ -16,7 +16,7 @@ export default function Project({
 	source: MDXRemoteSerializeResult<Record<string, unknown>>;
 }): InferGetStaticPropsType<typeof getStaticProps> {
 	return (
-		<div className="layout-item-wrapper px-6 static-content">
+		<div className="layout-item-wrapper px-6 rendered-static-content">
 			<MDXRemote {...source} components={components} />
 		</div>
 	);

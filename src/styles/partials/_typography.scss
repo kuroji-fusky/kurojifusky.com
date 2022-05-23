@@ -15,7 +15,7 @@
   }
 }
 
-.static-content {
+.rendered-static-content {
   @for $i from 1 through 6  {
     h#{$i} {
       @apply my-[0.5rem];

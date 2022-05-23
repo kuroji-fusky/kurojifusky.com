@@ -4,32 +4,30 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import DiscographyHeader from "@/components/DiscographyHeader";
 import SEOHead from "@/components/SEOHead";
-import TracklistContainer from "@/components/TracklistContainer";
-import TracklistItem from "@/components/TracklistItem";
+import RoadmapItem from "@/components/RoadmapItem";
+import RoadmapContainer from "@/components/RoadmapContainer";
 
 const components = {
-	DiscographyHeader,
 	SEOHead,
-	TracklistContainer,
-	TracklistItem
+  RoadmapContainer,
+  RoadmapItem
 };
 
-export default function DiscographySlug({
+export default function SkepfuskySlug({
 	source
 }: {
 	source: MDXRemoteSerializeResult<Record<string, unknown>>;
 }): InferGetStaticPropsType<typeof getStaticProps> {
 	return (
-		<div className="layout-item-wrapper px-6 rendered-static-content">
+		<div className="px-6 rendered-static-content">
 			<MDXRemote {...source} components={components} />
 		</div>
 	);
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const articlePath = path.join("content/discography");
+	const articlePath = path.join("content/skepfusky");
 	const files = fs.readdirSync(articlePath);
 	const paths = files.map((fileName: string) => ({
 		params: { slug: fileName.replace(".mdx", "") }
@@ -49,7 +47,7 @@ export const getStaticProps: GetStaticProps<Params> = async ({
 	params: { slug }
 }: Params) => {
 	const articlePath: any = fs.readFileSync(
-		path.join("content/discography", `${slug}.mdx`)
+		path.join("content/skepfusky", `${slug}.mdx`)
 	);
 
 	const { data: metaData, content } = matter(articlePath);

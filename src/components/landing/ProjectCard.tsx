@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCode,
 	faExternalLink,
-	faInfo,
 	faInfoCircle
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -54,7 +53,11 @@ export default function ProjectCard({
 					<Link href={extLink} passHref>
 						<a className="link-btn flex items-center">
 							Website
-							<FontAwesomeIcon icon={faExternalLink} size="sm" className="pl-1" />
+							<FontAwesomeIcon
+								icon={faExternalLink}
+								size="sm"
+								className="pl-1"
+							/>
 						</a>
 					</Link>
 				)}

@@ -11,7 +11,7 @@ import Link from "next/link";
 import styles from "../styles/Footer.module.scss";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-export default function Header() {
+export default function Footer() {
 	return (
 		<footer className="bg-neutral-900 text-white">
 			<div className={styles.wrapper}>
@@ -61,14 +61,6 @@ export default function Header() {
 								<a className="gradient-link">Next.js!</a>
 							</Link>
 						</span>
-						{/* <span>
-							<Link href="http://github.com/skepfusky/skepfusky-website">
-								<a className="gradient-link">
-									<FontAwesomeIcon icon={faCode} className="pr-1" size="sm" />
-									Website source code
-								</a>
-							</Link>
-						</span> */}
 						<span className="whitespace-nowrap">
 							&copy; 2014-{new Date().getFullYear()} Fusky & Co., LLC
 						</span>
