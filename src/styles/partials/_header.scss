@@ -128,15 +128,7 @@ $menu-toggle-active: translateY(1.2rem);
 
 #toggle-nav {
   &-menu {
-    @apply grid grid-cols-3 gap-5;
-
-    @media only screen and (max-width: 880px) {
-      @apply grid-cols-2;
-    }
-
-    @media only screen and (max-width: 480px) {
-      @apply grid-cols-1;
-    }
+    @apply grid gap-5;
   }
 
   &-item {

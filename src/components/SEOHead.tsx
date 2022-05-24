@@ -25,14 +25,14 @@ export default function SEOHead({
 			<link rel="apple-touch-icon" href="/favicon.ico" />
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
-			{image ?? <meta property="og:image" content={image} />}
+			{image && <meta property="og:image" content={image} />}
 			<meta property="og:type" content="website" />
 			<meta property="og:site_name" content={SITE_NAME} />
 			<meta name="twitter:card" content="summary" />
 			<meta name="twitter:creator" content="@skepfuskyjs" />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
-			{image ?? <meta name="twitter:image" content={image} />}
+			{image && <meta name="twitter:image" content={image} />}
 		</Head>
 	);
 }

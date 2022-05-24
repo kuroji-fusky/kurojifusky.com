@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {
-	FontAwesomeIcon,
-	FontAwesomeIconProps
-} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBars,
 	faClose,
@@ -81,159 +78,18 @@ export default function Header() {
 					<h2>Site navigation</h2>
 					<hr />
 					<nav id="toggle-nav-menu">
-						<div id="toggle-nav-item">
-							<h2>Projects</h2>
-							<h3>Web</h3>
-							<ul>
-								<MenuItem
-									itemLabel="Paco Drawing Stats"
-									itemLink="/projects/pandapaco-drawing-stats"
-									onClick={toggleMenu}
-								/>
-								<MenuItem
-									itemLabel="Art & Biro Recreated"
-									itemLink="/projects/art-and-biro-recreated"
-									onClick={toggleMenu}
-								/>
-								<MenuItem
-									itemLabel="Unofficial Plainrock124 Website"
-									itemLink="/projects/unofficial-plainrock124-site"
-									onClick={toggleMenu}
-								/>
-								<MenuItem
-									itemLabel="Floofy Cuddles"
-									itemLink="/projects/floofy-cuddles"
-									onClick={toggleMenu}
-								/>
-								{/* <MenuItem itemLabel="Sonamoji" itemLink="/projects/sonamoji" /> */}
-							</ul>
-							<h3>Cross-platform</h3>
-							<ul>
-								<MenuItem
-									itemLabel="Tungsten"
-									itemLink="/projects/tungsten"
-									onClick={toggleMenu}
-								/>
-							</ul>
-							<h3>Miscellaneous</h3>
-							<ul>
-								<MenuItem
-									itemLabel="Biro Design System"
-									itemLink="#"
-									isExternal={true}
-									onClick={toggleMenu}
-								/>
-								<MenuItem
-									itemLabel="Modern Voicemeeter UI Concept"
-									itemLink="/projects/modern-voicemeeter-ui-concept"
-									onClick={toggleMenu}
-								/>
-							</ul>
-							<h3>Stuff I've contributed</h3>
-							<ul>
-								<MenuItem
-									itemLabel="Searchpets"
-									itemLink="/projects/searchpets"
-									onClick={toggleMenu}
-								/>
-								{/* <li>MyFursona</li> */}
-								{/* <li>FurDevs Website</li> */}
-								{/* <li>Fursuit Detector</li> */}
-							</ul>
-						</div>
-						<div id="toggle-nav-item">
-							<h2>Portfolio</h2>
-							<h3>Content</h3>
-							<ul>
-								<MenuItem itemLabel="YTPs" itemLink="/shows/ytps" />
-								<MenuItem
-									itemLabelEm="Jin Woo's Adventure"
-									itemLink="/shows/jin-woos-adventure"
-								/>
-								<MenuItem itemLabel="See more..." itemLink="/shows" />
-							</ul>
-							<h3>Albums</h3>
-							<ul>
-								<MenuItem itemLabelEm="Horizon" itemLink="/discography/horizon" />
-								<MenuItem
-									itemLabelEm="A New Life"
-									itemLink="/discography/a-new-life"
-								/>
-								<MenuItem
-									itemLabelEm="Recursion"
-									itemLink="/discography/recursion"
-								/>
-							</ul>
-							<h2>About me</h2>
-							<ul>
-								<MenuItem itemLabel="Contact" itemLink="/contact" />
-								<MenuItem
-									itemLabel="Project Status"
-									itemLink="/project-status"
-								/>
-								<MenuItem itemLabel="Fursona" itemLink="/about/fursona" />
-								<MenuItem
-									itemLabel="Tools & Technologies"
-									itemLink="/tech-stack"
-								/>
-								<MenuItem itemLabel="Hobby Roadmap" itemLink="/roadmap" />
-								<MenuItem itemLabel="Quotes" itemLink="/quotes" />
-								<MenuItem
-									itemLabel="Background/Biography"
-									itemLink="/biography"
-								/>
-							</ul>
-						</div>
-						<div id="toggle-nav-item">
-							<h2>Social Media</h2>
-							<ul>
-								<SocialItem
-									itemIcon={faYoutube}
-									itemLabel="skepfusky"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faYoutube}
-									itemLabel="codefusky"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faTwitter}
-									itemLabel="@skepfuskyjs"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faInstagram}
-									itemLabel="@skepfuskyjs"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faGithub}
-									itemLabel="skepfusky"
-									itemLink="#"
-								/>
-							</ul>
-							<h3>On streaming platforms</h3>
-							<ul>
-								<SocialItem
-									itemIcon={faSpotify}
-									itemLabel="Spotify"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faItunesNote}
-									itemLabel="Apple Music/iTunes"
-									itemLink="#"
-								/>
-								<SocialItem
-									itemIcon={faSoundcloud}
-									itemLabel="SoundCloud"
-									itemLink="#"
-								/>
-							</ul>
-							<h2>Contact</h2>
-							<span>TBA</span>
-						</div>
+						<Link href="/projects">
+							<a onClick={toggleMenu}>Projects</a>
+						</Link>
+						<Link href="/discography">
+							<a onClick={toggleMenu}>Discography</a>
+						</Link>
+						<Link href="/blog">
+							<a onClick={toggleMenu}>Blog</a>
+						</Link>
+						<Link href="/about">
+							<a onClick={toggleMenu}>About</a>
+						</Link>
 					</nav>
 					<div id="toggle-lower-third">
 						<span id="desktop-esc-info">
@@ -261,58 +117,5 @@ export default function Header() {
 				</div>
 			</div>
 		</header>
-	);
-}
-
-interface IItemProps {
-	itemIcon?: FontAwesomeIconProps["icon"] | any;
-	itemLabel?: string;
-	itemLabelEm?: string;
-	itemLink: string;
-	isExternal?: boolean;
-	props?: any;
-}
-
-export function SocialItem({ itemIcon, itemLabel, itemLink }: IItemProps) {
-	return (
-		<li>
-			<Link href={itemLink}>
-				<a id="nav-item">
-					<FontAwesomeIcon icon={itemIcon} className="pr-2" />
-					<span>{itemLabel}</span>
-				</a>
-			</Link>
-		</li>
-	);
-}
-
-export function MenuItem({
-	isExternal,
-	itemLabel,
-	itemLabelEm,
-	itemLink,
-	props
-}: IItemProps | any) {
-	return (
-		<li>
-			<Link href={itemLink}>
-				<a id="nav-item" {...props}>
-					{itemLabelEm ? (
-						<span>
-							<em>{itemLabelEm}</em>
-						</span>
-					) : (
-						<span>{itemLabel}</span>
-					)}
-					{isExternal && (
-						<FontAwesomeIcon
-							icon={faExternalLinkAlt}
-							className="pl-2"
-							size="sm"
-						/>
-					)}
-				</a>
-			</Link>
-		</li>
 	);
 }

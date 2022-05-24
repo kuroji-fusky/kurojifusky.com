@@ -19,7 +19,7 @@ export default function Home() {
 		"Indie music artist",
 		"Experienced video editor",
 		"Filmmaker",
-		"Novice VFX artist"
+		"Novice VFX artist",
 	];
 	return (
 		<div>
@@ -73,7 +73,7 @@ export default function Home() {
 			<div className="layout-seperator" id="showcase">
 				<div className="layout-item-wrapper">
 					<Section
-						heading="Projects I've made or contributed"
+						heading="Projects"
 						emojiKey="✨"
 						sectionId={styles.showcase}
 					>
