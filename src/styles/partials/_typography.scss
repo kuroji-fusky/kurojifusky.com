@@ -11,7 +11,7 @@
   }
 
   body {
-    @apply font-lato;
+    @apply font-lato #{!important};
   }
 }
 
@@ -22,7 +22,6 @@
     }
   }
 }
-
 
 /*
  * Responsive

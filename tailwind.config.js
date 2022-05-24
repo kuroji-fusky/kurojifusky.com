@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -5,8 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'noto-sans': ["Noto Sans KR", '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'],
-      'lato': ["Lato", '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'],
+      'noto-sans': ["Noto Sans", ...defaultTheme.fontFamily.sans],
+      'lato': ["Lato", ...defaultTheme.fontFamily.sans],
     },
     screens: {
       sm: '640px',

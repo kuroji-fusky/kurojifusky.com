@@ -51,7 +51,7 @@ header {
 }
 
 #burger-menu {
-  @apply absolute top-0 left-1 px-7 py-5 transition-all duration-[320ms];
+  @apply absolute top-[4px] left-1 px-7 py-5 transition-all duration-[320ms];
 }
 
 .burger-active {

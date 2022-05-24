@@ -5,8 +5,7 @@ import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import SEOHead from "@/components/SEOHead";
-import RoadmapItem from "@/components/RoadmapItem";
-import RoadmapContainer from "@/components/RoadmapContainer";
+import RoadmapContainer, { RoadmapItem } from "@/components/RoadmapContainer";
 
 const components = {
 	SEOHead,

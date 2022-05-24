@@ -3,6 +3,7 @@ import {
 	faGithub,
 	faInstagram,
 	faItunesNote,
+	faSoundcloud,
 	faSpotify,
 	faTwitter,
 	faYoutube
@@ -35,6 +36,11 @@ export default function Footer() {
 						<Link href="https://github.com/skepfusky">
 							<a className={styles["social-icons"]} target="_blank">
 								<FontAwesomeIcon icon={faGithub} />
+							</a>
+						</Link>
+						<Link href="https://soundcloud.com/kokoro-husky-mixtapes">
+							<a className={styles["social-icons"]} target="_blank">
+								<FontAwesomeIcon icon={faSoundcloud} />
 							</a>
 						</Link>
 						<Link href="https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl?si=byCWjlfqR3OXDiGTiuCpqA">

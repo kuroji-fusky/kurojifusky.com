@@ -16,7 +16,9 @@ export default function SEOHead({
 	const SITE_NAME = "skepfusky";
 	return (
 		<Head>
-			<title>{title} • {SITE_NAME}</title>
+			<title>
+				{title} • {SITE_NAME}
+			</title>
 			<meta name="description" content={description} />
 			<meta name="keywords" content={keywords?.join(", ")} />
 			<meta name="viewport" content="width=device-width, initial-scale=1" />

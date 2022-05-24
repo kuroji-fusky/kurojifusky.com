@@ -6,8 +6,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import DiscographyHeader from "@/components/DiscographyHeader";
 import SEOHead from "@/components/SEOHead";
-import TracklistContainer from "@/components/TracklistContainer";
-import TracklistItem from "@/components/TracklistItem";
+import TracklistContainer, { TracklistItem } from "@/components/Tracklist";
 
 const components = {
 	DiscographyHeader,
