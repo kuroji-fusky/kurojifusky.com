@@ -25,7 +25,7 @@
 
     &::before {
       content: var(--emoji-key, "😳");
-      @apply rounded-full bg-[#442265ad] md:bg-transparent mx-auto px-3 py-[0.90rem] md:px-1 md:py-0.5 text-4xl md:text-lg mb-2 md:mb-0 text-center md:text-inherit;
+      @apply rounded-full bg-borahaealt-500 bg-opacity-25  md:bg-transparent mx-auto px-3 py-[0.90rem] md:px-1 md:py-0.5 text-4xl md:text-lg mb-2 md:mb-0 text-center md:text-inherit;
     }
   }
 }

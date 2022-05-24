@@ -19,7 +19,7 @@ export default function Home() {
 		"Indie music artist",
 		"Experienced video editor",
 		"Filmmaker",
-		"Novice VFX artist",
+		"Novice VFX artist"
 	];
 	return (
 		<div>
@@ -38,7 +38,7 @@ export default function Home() {
 							I'm a 20-year-old self-employed and self-taught hobbyist from the
 							Philippines!
 						</p>
-						<p>
+						<p className="hidden sm:block">
 							I'm not trying to be a celebrity, or even a{" "}
 							<strong>
 								<em>popufur...</em>
@@ -72,11 +72,7 @@ export default function Home() {
 			</div>
 			<div className="layout-seperator" id="showcase">
 				<div className="layout-item-wrapper">
-					<Section
-						heading="Projects"
-						emojiKey="✨"
-						sectionId={styles.showcase}
-					>
+					<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
 						<ProjectCard
 							image="/static/avatars/08.png"
 							title="This awful website"
