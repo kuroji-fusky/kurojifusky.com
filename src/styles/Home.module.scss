@@ -61,7 +61,7 @@
 }
 
 #scroll-down {
-  @apply absolute bottom-0 select-none w-full flex flex-col items-center py-5;
+  @apply absolute bottom-0 select-none w-full flex flex-col items-center py-5 transition-opacity duration-200 ease-in-out;
 }
 
 /** Project  **/

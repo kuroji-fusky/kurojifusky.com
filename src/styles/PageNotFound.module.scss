@@ -2,14 +2,14 @@
 
 #wrapper {
   @apply flex flex-col items-center justify-center;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 5.8rem);
   overflow: hidden !important;
 }
 
 .glitch-text {
   @apply text-borahae-100;
   @apply relative font-noto-sans font-black;
-  font-size: 7vw;
+  font-size: 9rem;
   animation: glitch 5s 5s infinite;
   height: 7rem;
 
@@ -35,7 +35,6 @@
     transform: rotateX(0deg) skewX(0deg);
   }
 }
-
 
 .glitch {
   &-container {

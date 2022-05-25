@@ -68,10 +68,41 @@ export default function Header() {
 					<h2>Site navigation</h2>
 					<hr />
 					<nav id="toggle-nav-menu">
-            <NavItem title="Projects" link="/projects" icon="a" onClick={toggleMenu} />
-            <NavItem title="Discography" link="/discography" icon="a" onClick={toggleMenu} />
-            <NavItem title="Blog" link="/blog" icon="a" onClick={toggleMenu} />
-            <NavItem title="About" link="/about" icon="a" onClick={toggleMenu} />
+						<NavItem
+							iconColor="bg-skycyan-800"
+							title="Home"
+							link="/"
+							icon="🏠"
+							onClick={toggleMenu}
+						/>
+						<NavItem
+							iconColor="bg-red-600"
+							title="Projects"
+							link="/projects"
+							icon="👀"
+							onClick={toggleMenu}
+						/>
+						<NavItem
+							iconColor="bg-lemon-600"
+							title="Discography"
+							link="/discography"
+							icon="💽"
+							onClick={toggleMenu}
+						/>
+						<NavItem
+							iconColor="bg-borahae-500"
+							title="Blog"
+							link="/blog"
+							icon="📝"
+							onClick={toggleMenu}
+						/>
+						<NavItem
+							iconColor="bg-royalblue-400"
+							title="About"
+							link="/about"
+							icon="🦊"
+							onClick={toggleMenu}
+						/>
 					</nav>
 					<div id="toggle-lower-third">
 						<span id="desktop-esc-info">
@@ -103,16 +134,25 @@ export default function Header() {
 }
 
 interface INavItemProps {
-  title: string;
-  icon: string;
-  link: string;
+	title: string;
+	icon: string;
+	link: string;
+	iconColor: string;
 }
 
-export function NavItem({ title, icon, link, ...props}: INavItemProps | any) {
-  return (
+export function NavItem({
+	title,
+	iconColor,
+	icon,
+	link,
+	...props
+}: INavItemProps | any) {
+	return (
 		<Link href={link}>
 			<a id="nav-item" {...props}>
-				<div id="nav-icon">{icon}</div>
+				<div id="nav-icon" className={iconColor}>
+					{icon}
+				</div>
 				<span>{title}</span>
 			</a>
 		</Link>

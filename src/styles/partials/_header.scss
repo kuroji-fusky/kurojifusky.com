@@ -133,7 +133,11 @@ $menu-toggle-active: translateY(1.2rem);
 }
 
 #nav-item {
+  @apply flex flex-col items-center;
+}
 
+#nav-icon {
+  @apply p-4 rounded-md;
 }
 
 #desktop-esc-info {

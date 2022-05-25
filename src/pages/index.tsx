@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
@@ -21,6 +21,23 @@ export default function Home() {
 		"Filmmaker",
 		"Novice VFX artist"
 	];
+
+	const [removeCringe, isRemovedCringe] = useState("");
+
+	useEffect(() => {
+		window.addEventListener("scroll", removeDatCringe);
+		return () => window.removeEventListener("scroll", removeDatCringe);
+	}, []);
+
+	const removeDatCringe = () => {
+		let windowHeight = window.scrollY;
+		if (window !== undefined) {
+			if (windowHeight > 200) {
+				isRemovedCringe("opacity-0 pointer-events-none");
+			}
+		}
+	};
+
 	return (
 		<div>
 			<SEOHead
@@ -64,7 +81,11 @@ export default function Home() {
 							className="rounded-full w-[16rem]"
 						/>
 					</div>
-					<a href="#showcase" id={styles["scroll-down"]}>
+					<a
+						href="#showcase"
+						id={styles["scroll-down"]}
+						className={removeCringe}
+					>
 						<span>Scroll down for cringe</span>
 						<FaIcon icon={faAngleDown} size="lg" />
 					</a>
