@@ -17,7 +17,7 @@ export default function Section({
 	sectionStyles,
 	sectionId,
 	children
-}: ISectionProps): JSX.Element {
+}: ISectionProps) {
 	return (
 		<div className={styles["section"]}>
 			<div className={styles["section-header"]}>

@@ -6,7 +6,7 @@ header {
 
   &::before {
     content: "";
-    @apply bg-transparent absolute top-[.65rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
+    @apply bg-transparent absolute top-[1.5rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
   }
 
   @media (min-width: 768px) {
@@ -30,7 +30,7 @@ header {
   &::before {
     content: "";
     background: rgba(249, 41, 41);
-    @apply absolute top-[.65rem] left-[.9rem] h-12 w-12 rounded-md;
+    @apply absolute top-[.75rem] left-[.9rem] h-12 w-12 rounded-md;
   }
 
   #site-wordmark {
@@ -128,28 +128,12 @@ $menu-toggle-active: translateY(1.2rem);
 
 #toggle-nav {
   &-menu {
-    @apply grid gap-5;
-  }
-
-  &-item {
-    @apply flex flex-col gap-y-3;
-
-    #nav-item {
-      @apply relative -left-2;
-    }
+    @apply grid grid-flow-col gap-5;
   }
 }
 
 #nav-item {
-  @apply cursor-pointer relative transition-colors duration-300 px-[0.55rem] py-[0.4rem] rounded-md text-slate-300;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 105%;
-  }
-
-  &:hover {
-    @apply bg-blue-700 text-white;
-  }
 }
 
 #desktop-esc-info {

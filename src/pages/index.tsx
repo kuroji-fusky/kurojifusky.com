@@ -1,6 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Section from "@/components/Section";
 import { CardSkeleton } from "@/components/landing/ProjectCard";
@@ -30,7 +30,7 @@ export default function Home() {
 			{/* <UnderConstruction /> */}
 			<div className="layout-item-wrapper">
 				<div className={styles.section} id={styles["hero-bio"]}>
-					<article>
+					<article className="cursor-default">
 						<p>
 							Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
 							<span id="highlight">Skep</span>, or also known by my stage name{" "}
@@ -66,7 +66,7 @@ export default function Home() {
 					</div>
 					<a href="#showcase" id={styles["scroll-down"]}>
 						<span>Scroll down for cringe</span>
-						<FontAwesomeIcon icon={faAngleDown} size="lg" />
+						<FaIcon icon={faAngleDown} size="lg" />
 					</a>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 
 interface ICardQuotesProps {
   quote: string;
@@ -25,7 +25,7 @@ export default function CardQuotes({
         <div className="author-container">
           <span className="author-name">{author}</span>
           <a href={authorLink} className="author-social">
-            <FontAwesomeIcon icon={authorSocialIcon} />
+            <FaIcon icon={authorSocialIcon} />
             <span>{authorSocial}</span>
           </a>
         </div>

@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBars,
 	faClose,
-	faExternalLinkAlt,
 	faLightbulb
 } from "@fortawesome/free-solid-svg-icons";
-import {
-	faGithub,
-	faInstagram,
-	faItunesNote,
-	faSoundcloud,
-	faSpotify,
-	faTwitter,
-	faYoutube
-} from "@fortawesome/free-brands-svg-icons";
 
 export default function Header() {
 	const router = useRouter();
@@ -63,7 +53,7 @@ export default function Header() {
 					className={isOpen ? "burger-active" : ""}
 					onClick={toggleMenu}
 				>
-					<FontAwesomeIcon icon={isOpen ? faClose : faBars} />
+					<FaIcon icon={isOpen ? faClose : faBars} />
 				</button>
 				<strong id="site-wordmark">
 					<Link href="/">skepfusky</Link>
@@ -78,22 +68,14 @@ export default function Header() {
 					<h2>Site navigation</h2>
 					<hr />
 					<nav id="toggle-nav-menu">
-						<Link href="/projects">
-							<a onClick={toggleMenu}>Projects</a>
-						</Link>
-						<Link href="/discography">
-							<a onClick={toggleMenu}>Discography</a>
-						</Link>
-						<Link href="/blog">
-							<a onClick={toggleMenu}>Blog</a>
-						</Link>
-						<Link href="/about">
-							<a onClick={toggleMenu}>About</a>
-						</Link>
+            <NavItem title="Projects" link="/projects" icon="a" onClick={toggleMenu} />
+            <NavItem title="Discography" link="/discography" icon="a" onClick={toggleMenu} />
+            <NavItem title="Blog" link="/blog" icon="a" onClick={toggleMenu} />
+            <NavItem title="About" link="/about" icon="a" onClick={toggleMenu} />
 					</nav>
 					<div id="toggle-lower-third">
 						<span id="desktop-esc-info">
-							<FontAwesomeIcon icon={faLightbulb} className="pr-2" />
+							<FaIcon icon={faLightbulb} className="pr-2" />
 							Protip: You can press{" "}
 							<span className="px-1  mx-1 text-sm rounded-md border-neutral-200 border-2">
 								ESC
@@ -108,7 +90,7 @@ export default function Header() {
 							</span>
 							<span>
 								<button id="theme-toggle">
-									<FontAwesomeIcon icon={faLightbulb} className="mr-2" />
+									<FaIcon icon={faLightbulb} className="mr-2" />
 									Theme: Dark
 								</button>
 							</span>
@@ -117,5 +99,22 @@ export default function Header() {
 				</div>
 			</div>
 		</header>
+	);
+}
+
+interface INavItemProps {
+  title: string;
+  icon: string;
+  link: string;
+}
+
+export function NavItem({ title, icon, link, ...props}: INavItemProps | any) {
+  return (
+		<Link href={link}>
+			<a id="nav-item" {...props}>
+				<div id="nav-icon">{icon}</div>
+				<span>{title}</span>
+			</a>
+		</Link>
 	);
 }

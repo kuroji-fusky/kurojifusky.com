@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
 	faInstagram,
@@ -20,44 +20,44 @@ export default function Footer() {
 					<div className="flex gap-x-[1.5rem]">
 						<Link href="https://youtube.com/skepfusky97">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faYoutube} />
+								<FaIcon icon={faYoutube} />
 							</a>
 						</Link>
 						<Link href="https://twitter.com/skepfuskyjs">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faTwitter} />
+								<FaIcon icon={faTwitter} />
 							</a>
 						</Link>
 						<Link href="https://instagram.com/skepfusky">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faInstagram} />
+								<FaIcon icon={faInstagram} />
 							</a>
 						</Link>
 						<Link href="https://github.com/skepfusky">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faGithub} />
+								<FaIcon icon={faGithub} />
 							</a>
 						</Link>
 						<Link href="https://soundcloud.com/kokoro-husky-mixtapes">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faSoundcloud} />
+								<FaIcon icon={faSoundcloud} />
 							</a>
 						</Link>
 						<Link href="https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl?si=byCWjlfqR3OXDiGTiuCpqA">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faSpotify} />
+								<FaIcon icon={faSpotify} />
 							</a>
 						</Link>
 						<Link href="https://music.apple.com/us/artist/kokoro-husky/1521326000">
 							<a className={styles["social-icons"]} target="_blank">
-								<FontAwesomeIcon icon={faItunesNote} />
+								<FaIcon icon={faItunesNote} />
 							</a>
 						</Link>
 					</div>
 					<div className="flex flex-col md:flex-row text-base justify-end gap-x-4">
 						<span className="whitespace-nowrap">
 							{"Proudly made with "}
-							<FontAwesomeIcon
+							<FaIcon
 								icon={faHeart}
 								className="text-borahaealt-600"
 								style={{ marginInline: "3px" }}

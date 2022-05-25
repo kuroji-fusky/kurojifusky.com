@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCode,
 	faExternalLink,
@@ -36,7 +36,7 @@ export default function ProjectCard({
 				{repoLink && (
 					<Link href={`https://github.com/${repoLink}`} passHref>
 						<a className="link-btn flex items-center" target="_blank">
-							<FontAwesomeIcon icon={faCode} size="sm" className="pr-1" />
+							<FaIcon icon={faCode} size="sm" className="pr-1" />
 							Code
 						</a>
 					</Link>
@@ -44,7 +44,7 @@ export default function ProjectCard({
 				{pageLink && (
 					<Link href={pageLink} passHref>
 						<a className="link-btn flex items-center">
-							<FontAwesomeIcon icon={faInfoCircle} size="sm" className="pr-1" />
+							<FaIcon icon={faInfoCircle} size="sm" className="pr-1" />
 							About
 						</a>
 					</Link>
@@ -53,7 +53,7 @@ export default function ProjectCard({
 					<Link href={extLink} passHref>
 						<a className="link-btn flex items-center">
 							Website
-							<FontAwesomeIcon
+							<FaIcon
 								icon={faExternalLink}
 								size="sm"
 								className="pl-1"
