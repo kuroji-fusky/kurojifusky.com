@@ -68,36 +68,21 @@ export default function Header() {
 					<h2>Site navigation</h2>
 					<hr />
 					<nav id="toggle-nav-menu">
+						<NavItem title="Home" link="/" icon="🏠" onClick={toggleMenu} />
 						<NavItem
-							iconColor="bg-skycyan-800"
-							title="Home"
-							link="/"
-							icon="🏠"
-							onClick={toggleMenu}
-						/>
-						<NavItem
-							iconColor="bg-red-600"
 							title="Projects"
 							link="/projects"
 							icon="👀"
 							onClick={toggleMenu}
 						/>
 						<NavItem
-							iconColor="bg-lemon-600"
 							title="Discography"
 							link="/discography"
 							icon="💽"
 							onClick={toggleMenu}
 						/>
+						<NavItem title="Blog" link="/blog" icon="📝" onClick={toggleMenu} />
 						<NavItem
-							iconColor="bg-borahae-500"
-							title="Blog"
-							link="/blog"
-							icon="📝"
-							onClick={toggleMenu}
-						/>
-						<NavItem
-							iconColor="bg-royalblue-400"
 							title="About"
 							link="/about"
 							icon="🦊"
@@ -105,19 +90,14 @@ export default function Header() {
 						/>
 					</nav>
 					<div id="toggle-lower-third">
-						<span id="desktop-esc-info">
-							<FaIcon icon={faLightbulb} className="pr-2" />
-							Protip: You can press{" "}
-							<span className="px-1  mx-1 text-sm rounded-md border-neutral-200 border-2">
-								ESC
-							</span>{" "}
-							to close the menu
-						</span>
 						<div className="flex justify-between items-center">
-							<span>
-								V5: Contentful &bull; Copyright &copy; 2014-
-								{new Date().getFullYear()} Fusky & Co., LLC. All rights
-								reserved.
+							<span id="desktop-esc-info">
+								<FaIcon icon={faLightbulb} className="pr-2" />
+								Protip: You can press{" "}
+								<span className="px-1 mx-1 text-sm rounded-md border-neutral-200 border-2">
+									ESC
+								</span>{" "}
+								to close the menu.
 							</span>
 							<span>
 								<button id="theme-toggle">
@@ -137,22 +117,13 @@ interface INavItemProps {
 	title: string;
 	icon: string;
 	link: string;
-	iconColor: string;
 }
 
-export function NavItem({
-	title,
-	iconColor,
-	icon,
-	link,
-	...props
-}: INavItemProps | any) {
+export function NavItem({ title, icon, link, ...props }: INavItemProps | any) {
 	return (
 		<Link href={link}>
 			<a id="nav-item" {...props}>
-				<div id="nav-icon" className={iconColor}>
-					{icon}
-				</div>
+				<div id="nav-icon">{icon}</div>
 				<span>{title}</span>
 			</a>
 		</Link>

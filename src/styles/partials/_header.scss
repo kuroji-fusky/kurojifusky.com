@@ -58,7 +58,9 @@ header {
   transform: rotate(90deg);
 }
 
-/** Big toggle menu **/
+/*******************
+ * Big toggle menu
+ *******************/
 #toggle-menu-container {
   @apply fixed top-0 w-full -z-1 duration-[250ms] overflow-auto select-none;
   height: 100vh;
@@ -100,6 +102,7 @@ $menu-toggle-active: translateY(1.2rem);
   opacity: 1;
   transition: transform 320ms, opacity 320ms;
   transition-delay: 150ms !important;
+  height: calc(100vh - 3.5rem);
 
   @media (min-width: 768px) {
     transform: $menu-toggle-active;
@@ -126,14 +129,32 @@ $menu-toggle-active: translateY(1.2rem);
   }
 }
 
+/*******************
+ * Menu contents
+ *******************/
+
 #toggle-nav {
   &-menu {
-    @apply grid grid-flow-col gap-5;
+    @apply grid grid-flow-col gap-2;
   }
 }
 
 #nav-item {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center p-3 rounded-md transition-colors duration-200;
+
+  $nav-colors: (1 "bg-skycyan-800", 2 "bg-red-600", 3 "bg-lemon-600", 4 "bg-borahae-500", 5 "bg-royalblue-400");
+
+  @each $i, $color in $nav-colors {
+    &:nth-child(#{$i}) {
+      #nav-icon {
+        @apply #{$color};
+      }
+
+      &:hover {
+        @apply #{$color} bg-opacity-25;
+      }
+    }
+  }
 }
 
 #nav-icon {
@@ -145,7 +166,7 @@ $menu-toggle-active: translateY(1.2rem);
 }
 
 #toggle-lower-third {
-  @apply text-base mt-5;
+  @apply text-base mt-5 absolute bottom-0 left-5 right-5;
 }
 
 #theme-toggle {
