@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { MDXRemote } from "next-mdx-remote";
 import DiscographyHeader from "@/components/DiscographyHeader";
 import SEOHead from "@/components/SEOHead";
 import TracklistContainer, { TracklistItem } from "@/components/Tracklist";
@@ -15,11 +15,7 @@ const components = {
 	TracklistItem
 };
 
-export default function DiscographySlug({
-	source
-}: {
-	source: MDXRemoteSerializeResult<Record<string, unknown>>;
-}): InferGetStaticPropsType<typeof getStaticProps> {
+export default function DiscographySlug({ source }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="layout-item-wrapper px-6 rendered-static-content">
 			<MDXRemote {...source} components={components} />

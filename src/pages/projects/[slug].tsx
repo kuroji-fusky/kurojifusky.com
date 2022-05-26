@@ -10,7 +10,9 @@ import SidebarContainer from "@/components/SidebarContainer";
 
 const components = { SEOHead, ProjectHeader, SidebarContainer };
 
-export default function Project({ source }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Project({
+	source
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="layout-item-wrapper px-6 rendered-static-content">
 			<MDXRemote {...source} components={components} />
