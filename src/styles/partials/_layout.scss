@@ -98,6 +98,23 @@ html {
 }
 
 /************
+ * Static Items
+ ************/
+
+#static-item {
+  @apply flex gap-4;
+
+  &__img-wrapper {
+    @apply flex-shrink-0 m-4 relative h-[7rem] w-[7rem];
+
+    img {
+      @apply rounded-full;
+    }
+  }
+}
+
+
+/************
  * MDX
  ************/
 

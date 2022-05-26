@@ -35,3 +35,12 @@ export function UnderConstructionArticle() {
 		/>
 	);
 }
+
+export function AnyMistakes() {
+	return (
+		<Card
+			title="Any mistakes?"
+			description="If you have any questions or concerns, you may fix it by contacting me on Twitter or GitHub!"
+		/>
+	);
+}

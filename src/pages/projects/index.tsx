@@ -9,7 +9,7 @@ export default function ProjectPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div>
+		<div className="layout-item-wrapper px-6">
 			<h1>Project Page</h1>
 			<div className="project-item-container">
 				{items.map((item: ProjectPages, i: number) => (

@@ -9,12 +9,10 @@ export default function DiscographyPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div>
-			<div className="project-item-container">
-				{items.map((item: DiscographyPages, i: number) => (
-					<AlbumItems key={i} items={item} />
-				))}
-			</div>
+		<div className="project-item-container">
+			{items.map((item: DiscographyPages, i: number) => (
+				<AlbumItems key={i} items={item} />
+			))}
 		</div>
 	);
 }

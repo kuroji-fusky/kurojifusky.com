@@ -9,13 +9,10 @@ export default function DiscographyPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div>
-			<h1>Project Page</h1>
-			<div className="project-item-container">
-				{items.map((item: BlogPages, i: number) => (
-					<BlogItems key={i} items={item} />
-				))}
-			</div>
+		<div className="project-item-container">
+			{items.map((item: BlogPages, i: number) => (
+				<BlogItems key={i} items={item} />
+			))}
 		</div>
 	);
 }
@@ -32,5 +29,5 @@ export const getStaticProps: GetStaticProps = async () => {
 		return { slug, metadata };
 	});
 
-	return { props: { items: projectItem }};
+	return { props: { items: projectItem } };
 };
