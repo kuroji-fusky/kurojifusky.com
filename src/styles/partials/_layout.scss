@@ -1,6 +1,10 @@
 @use "mixins" as *;
 @use "variables" as *;
 
+main {
+  @apply mt-[4.35rem];
+}
+
 /************
  * Scrollbar
  ************/

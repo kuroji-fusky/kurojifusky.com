@@ -1,7 +1,10 @@
 @use "mixins" as *;
 
+/*******************
+ * Main navbar
+ *******************/
 header {
-  @apply fixed top-0 z-1 transition-all duration-[420ms] bg-neutral-900;
+  @apply fixed flex justify-between top-0 z-1  bg-neutral-900;
   width: 100vw;
 
   &::before {
@@ -9,15 +12,11 @@ header {
     @apply bg-transparent absolute top-[1.5rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
   }
 
-  @media (min-width: 768px) {
-    width: 13.5rem;
-  }
-
   --bg-header-active: rgb(13, 13, 13, 0.8);
 }
 
 #site-wordmark {
-  @apply text-2xl pl-0 md:pl-14 transition-all duration-300 select-none bg-bottom;
+  @apply text-2xl pl-0 transition-all duration-300 select-none bg-bottom;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 250%;
   -webkit-background-clip: text;
@@ -26,15 +25,10 @@ header {
 }
 
 .header-active {
-  background: #0000;
   &::before {
     content: "";
     background: rgba(249, 41, 41);
     @apply absolute top-[.75rem] left-[.9rem] h-12 w-12 rounded-md;
-  }
-
-  #site-wordmark {
-    @apply opacity-0 pointer-events-none -translate-y-7;
   }
 }
 
@@ -46,8 +40,8 @@ header {
   }
 }
 
-.wrapper-interactive {
-  @apply p-5 flex justify-center items-center gap-x-4 relative;
+.header-logo {
+  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem];
 }
 
 #burger-menu {
@@ -56,6 +50,10 @@ header {
 
 .burger-active {
   transform: rotate(90deg);
+}
+
+.header-nav {
+  @apply flex py-5 pr-10 gap-x-7;
 }
 
 /*******************
@@ -104,21 +102,6 @@ $menu-toggle-active: translateY(1.2rem);
   transition-delay: 150ms !important;
   height: calc(100vh - 3.5rem);
 
-  @media (min-width: 768px) {
-    transform: $menu-toggle-active;
-    opacity: 1;
-  }
-
-  hr {
-    @apply border-b-2 my-3 border-borahae-400;
-    border-style: solid;
-    display: none;
-
-    @media (min-width: 768px) {
-      display: block;
-    }
-  }
-
   > h2 {
     @apply text-center mt-3 mb-6 md:my-3;
   }
@@ -140,18 +123,16 @@ $menu-toggle-active: translateY(1.2rem);
 }
 
 #nav-item {
-  @apply flex flex-col items-center p-3 rounded-md transition-colors duration-200;
+  @apply flex flex-col items-center p-3 rounded-md font-semibold;
 
-  $nav-colors: (1 "bg-skycyan-800", 2 "bg-red-600", 3 "bg-lemon-600", 4 "bg-borahae-500", 5 "bg-royalblue-400");
+  $nav-colors: (1 "bg-red-600", 2 "bg-lemon-600", 3 "bg-borahae-500", 4 "bg-royalblue-400");
 
   @each $i, $color in $nav-colors {
     &:nth-child(#{$i}) {
+      @apply #{$color} bg-opacity-25;
+
       #nav-icon {
         @apply #{$color};
-      }
-
-      &:hover {
-        @apply #{$color} bg-opacity-25;
       }
     }
   }

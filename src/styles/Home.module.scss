@@ -31,7 +31,8 @@
 }
 
 #hero-bio {
-  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center h-[100vh] w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
+  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
+  height: calc(100vh - 4.4rem);
 
   > article {
     @apply flex flex-col gap-y-2;
@@ -64,7 +65,7 @@
   @apply absolute bottom-0 select-none w-full flex flex-col items-center py-5 transition-opacity duration-200 ease-in-out;
 }
 
-/** Project  **/
+/** Project **/
 
 #showcase {
   @apply grid relative gap-4 text-center;

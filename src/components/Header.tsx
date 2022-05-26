@@ -47,7 +47,7 @@ export default function Header() {
 
 	return (
 		<header className={`${stickyClass} ${isOpen ? "header-active" : ""}`}>
-			<div className="wrapper-interactive">
+			<div className="header-logo">
 				<button
 					id="burger-menu"
 					className={isOpen ? "burger-active" : ""}
@@ -59,6 +59,18 @@ export default function Header() {
 					<Link href="/">skepfusky</Link>
 				</strong>
 			</div>
+			<nav className="header-nav">
+				<Link href="/projects" passHref>
+					<a className="header-nav-item">Projects</a>
+				</Link>
+				<span className="header-nav-item">Media</span>
+				<Link href="/blog" passHref>
+					<a className="header-nav-item">Blog</a>
+				</Link>
+				<Link href="/about" passHref>
+					<a className="header-nav-item">About</a>
+				</Link>
+			</nav>
 			{/* Big ass toggle menu */}
 			<div
 				id="toggle-menu-container"
@@ -68,7 +80,6 @@ export default function Header() {
 					<h2>Site navigation</h2>
 					<hr />
 					<nav id="toggle-nav-menu">
-						<NavItem title="Home" link="/" icon="🏠" onClick={toggleMenu} />
 						<NavItem
 							title="Projects"
 							link="/projects"
