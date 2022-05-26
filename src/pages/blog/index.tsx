@@ -2,18 +2,18 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { ProjectItems } from "@/components/StaticItems";
-import { ProjectPages } from "@/models/ParseMyAss";
+import { BlogItems } from "@/components/StaticItems";
+import { BlogPages } from "@/models/ParseMyAss";
 
-export default function ProjectPage({
+export default function DiscographyPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div>
 			<h1>Project Page</h1>
 			<div className="project-item-container">
-				{items.map((item: ProjectPages, i: number) => (
-					<ProjectItems key={i} items={item} />
+				{items.map((item: BlogPages, i: number) => (
+					<BlogItems key={i} items={item} />
 				))}
 			</div>
 		</div>
@@ -21,16 +21,16 @@ export default function ProjectPage({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const articleDir = path.join("content/projects");
+	const articleDir = path.join("content/blog");
 
 	const files = fs.readdirSync(articleDir);
 
 	const projectItem = files.map((fileName: string) => {
 		const slug = fileName.replace(".mdx", "");
-		const article = fs.readFileSync(path.join("content/projects", fileName));
+		const article = fs.readFileSync(path.join("content/blog", fileName));
 		const { data: metadata } = matter(article);
 		return { slug, metadata };
 	});
 
-	return { props: { items: projectItem } };
+	return { props: { items: projectItem }};
 };
