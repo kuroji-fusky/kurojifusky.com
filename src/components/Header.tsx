@@ -70,6 +70,9 @@ export default function Header() {
 				<Link href="/about" passHref>
 					<a className="header-nav-item">About</a>
 				</Link>
+				<button id="theme-toggle">
+					<FaIcon icon={faLightbulb} />
+				</button>
 			</nav>
 			{/* Big ass toggle menu */}
 			<div
@@ -100,24 +103,6 @@ export default function Header() {
 							onClick={toggleMenu}
 						/>
 					</nav>
-					<div id="toggle-lower-third">
-						<div className="flex justify-between items-center">
-							<span id="desktop-esc-info">
-								<FaIcon icon={faLightbulb} className="pr-2" />
-								Protip: You can press{" "}
-								<span className="px-1 mx-1 text-sm rounded-md border-neutral-200 border-2">
-									ESC
-								</span>{" "}
-								to close the menu.
-							</span>
-							<span>
-								<button id="theme-toggle">
-									<FaIcon icon={faLightbulb} className="mr-2" />
-									Theme: Dark
-								</button>
-							</span>
-						</div>
-					</div>
 				</div>
 			</div>
 		</header>

@@ -31,8 +31,7 @@
 }
 
 #hero-bio {
-  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
-  height: calc(100vh - 4.4rem);
+  @apply h-viewport gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
 
   > article {
     @apply flex flex-col gap-y-2;

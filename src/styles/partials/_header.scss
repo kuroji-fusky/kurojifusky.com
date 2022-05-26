@@ -3,9 +3,16 @@
 /*******************
  * Main navbar
  *******************/
+
+$header-default: 5.4rem;
+$header-expand: 4.6rem;
+
+$padding-default: 1.5rem;
+$padding-expand: 1.25rem;
+
 header {
-  @apply fixed flex justify-between top-0 z-1  bg-neutral-900;
-  width: 100vw;
+  @apply w-viewport fixed flex justify-between top-0 z-1 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
+  transition: background 200ms ease, height 200ms ease;
 
   &::before {
     content: "";
@@ -13,6 +20,10 @@ header {
   }
 
   --bg-header-active: rgb(13, 13, 13, 0.8);
+}
+
+.gradient-toggle {
+  @apply bg-neutral-900 h-[#{$header-expand}];
 }
 
 #site-wordmark {
@@ -41,11 +52,15 @@ header {
 }
 
 .header-logo {
-  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem];
+  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[11.5rem];
+}
+
+.gradient-toggle button#burger-menu {
+  @apply py-[#{$padding-expand}];
 }
 
 #burger-menu {
-  @apply absolute top-[4px] left-1 px-7 py-5 transition-all duration-[320ms];
+  @apply absolute top-[4px] left-1 px-7 py-[#{$padding-default}] transition-all duration-[320ms] block md:hidden;
 }
 
 .burger-active {
@@ -53,15 +68,23 @@ header {
 }
 
 .header-nav {
-  @apply flex py-5 pr-10 gap-x-7;
+  @apply flex items-center h-[#{$header-default}] pr-10 gap-x-7;
+  transition: height 200ms ease;
+}
+
+.gradient-toggle nav.header-nav {
+  @apply h-[#{$header-expand}];
+}
+
+#theme-toggle {
+  @apply p-2;
 }
 
 /*******************
  * Big toggle menu
  *******************/
 #toggle-menu-container {
-  @apply fixed top-0 w-full -z-1 duration-[250ms] overflow-auto select-none;
-  height: 100vh;
+  @apply h-viewport fixed top-0 w-full -z-1 duration-[250ms] overflow-auto select-none;
 }
 
 @supports (backdrop-filter: blur(6px)) {
@@ -140,16 +163,4 @@ $menu-toggle-active: translateY(1.2rem);
 
 #nav-icon {
   @apply p-4 rounded-md;
-}
-
-#desktop-esc-info {
-  @apply transition-all duration-[250ms] text-neutral-200 flex justify-center items-center;
-}
-
-#toggle-lower-third {
-  @apply text-base mt-5 absolute bottom-0 left-5 right-5;
-}
-
-#theme-toggle {
-  @apply px-4 py-2 border-white border-2 rounded-md;
 }

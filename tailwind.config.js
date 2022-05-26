@@ -126,9 +126,12 @@ module.exports = {
         'md': '6px',
         'full': '50%',
       },
-      rotate: {
-        '360': '360deg',
-      }
+      height: {
+        'viewport': '100vh',
+      },
+      width: {
+        'viewport': '100vw',
+      },
     },
   },
   plugins: [],
