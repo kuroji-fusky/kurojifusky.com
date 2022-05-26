@@ -15,7 +15,9 @@ const components = {
 	TracklistItem
 };
 
-export default function DiscographySlug({ source }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function DiscographySlug({
+	source
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div className="layout-item-wrapper px-6 rendered-static-content">
 			<MDXRemote {...source} components={components} />

@@ -10,7 +10,6 @@ export default function DiscographyPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div>
-			<h1>Project Page</h1>
 			<div className="project-item-container">
 				{items.map((item: DiscographyPages, i: number) => (
 					<AlbumItems key={i} items={item} />
@@ -25,12 +24,12 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	const files = fs.readdirSync(articleDir);
 
-	const projectItem = files.map((fileName: string) => {
+	const discographyItem = files.map((fileName: string) => {
 		const slug = fileName.replace(".mdx", "");
 		const article = fs.readFileSync(path.join("content/discography", fileName));
 		const { data: metadata } = matter(article);
 		return { slug, metadata };
 	});
 
-	return { props: { items: projectItem } };
+	return { props: { items: discographyItem } };
 };

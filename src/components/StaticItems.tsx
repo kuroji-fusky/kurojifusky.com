@@ -27,6 +27,7 @@ export function AlbumItems({ items }: { items: DiscographyPages }) {
 			<img src={albumArt} alt={title} />
 			<div>{releaseDate}</div>
 			<div>{year}</div>
+			<div>{length}</div>
 			<div>{albumType}</div>
 			<div>{trackNum} track(s)</div>
 			<Link href={`/discography/${slug}`} passHref>
