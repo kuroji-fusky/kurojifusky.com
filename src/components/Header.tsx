@@ -24,9 +24,7 @@ export default function Header() {
 	// Detect of the ESC key is pressed anywhere on the document
 	useEffect(() => {
 		const gtfo = (event: KeyboardEvent) => {
-			if (event.key === "Escape") {
-				setIsOpen(false);
-			}
+			if (event.key === "Escape") return setIsOpen(false);
 		};
 		document.addEventListener("keydown", gtfo);
 		return () => document.removeEventListener("keydown", gtfo);
@@ -34,16 +32,23 @@ export default function Header() {
 
 	const [stickyClass, setStickyClass] = useState("");
 
+	const stickNavbar = () => {
+		let windowHeight = window.scrollY;
+		windowHeight > 21 ? setStickyClass("gradient-toggle") : setStickyClass("");
+	};
+
 	useEffect(() => {
 		window.addEventListener("scroll", stickNavbar);
 		return () => window.removeEventListener("scroll", stickNavbar);
 	}, []);
 
-	const stickNavbar = () => {
-		let windowHeight = window.scrollY;
-		if (window !== undefined)
-			windowHeight > 1 ? setStickyClass("gradient-toggle") : setStickyClass("");
-	};
+	const projectsDropdown = [
+		{ link: "/projects/pandapaco-drawing-stats", title: "Paco Drawing Stats" },
+		{ link: "/projects/biro-ui", title: "Biro UI" },
+		{ link: "/projects/searchpets", title: "Searchpets" },
+		{ link: "/projects/myfursona", title: "MyFursona" },
+		{ link: "/projects/floofy-clicker", title: "Floofy Clicker" }
+	];
 
 	return (
 		<header className={`${stickyClass} ${isOpen ? "header-active" : ""}`}>
@@ -60,16 +65,35 @@ export default function Header() {
 				</strong>
 			</div>
 			<nav className="header-nav">
-				<Link href="/projects" passHref>
-					<a className="header-nav-item">Projects</a>
-				</Link>
-				<span className="header-nav-item">Media</span>
-				<Link href="/blog" passHref>
-					<a className="header-nav-item">Blog</a>
-				</Link>
-				<Link href="/about" passHref>
-					<a className="header-nav-item">About</a>
-				</Link>
+				<span className="header-nav-item">
+					<a href="#">Projects</a>
+					<div className="dropdown">
+						<ul className="dropdown-item">
+							{projectsDropdown.map((project, index) => (
+								<li key={index}>
+									<Link href={project.link}>
+										<a>{project.title}</a>
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+				</span>
+				<span className="header-nav-item">
+					Media
+					<div className="dropdown">{/* contents */}</div>
+				</span>
+				<span className="header-nav-item">
+					<Link href="/blog" passHref>
+						Blog
+					</Link>
+				</span>
+				<span className="header-nav-item">
+					<Link href="/about" passHref>
+						About
+					</Link>
+					<div className="dropdown">{/* contents */}</div>
+				</span>
 				<button id="theme-toggle">
 					<FaIcon icon={faLightbulb} />
 				</button>

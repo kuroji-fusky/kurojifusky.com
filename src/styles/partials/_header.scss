@@ -4,19 +4,19 @@
  * Main navbar
  *******************/
 
-$header-default: 5.4rem;
-$header-expand: 4.6rem;
+$header-default: 6.4rem;
+$header-expand: 5.6rem;
 
-$padding-default: 1.5rem;
-$padding-expand: 1.25rem;
+$padding-default: 2.2rem;
+$padding-expand: 1.75rem;
 
 header {
   @apply w-viewport fixed flex justify-between top-0 z-1 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
-  transition: background 200ms ease, height 200ms ease;
+  transition: background 300ms ease, height 300ms ease;
 
   &::before {
     content: "";
-    @apply bg-transparent absolute top-[1.5rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
+    @apply bg-transparent absolute top-[2.5rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
   }
 
   --bg-header-active: rgb(13, 13, 13, 0.8);
@@ -38,12 +38,18 @@ header {
 .header-active {
   &::before {
     content: "";
-    background: rgba(249, 41, 41);
-    @apply absolute top-[.75rem] left-[.9rem] h-12 w-12 rounded-md;
+    @media only screen and (max-width: 768px) {
+      background: rgba(249, 41, 41);
+      @apply absolute top-[1.7rem] left-[.9rem] h-12 w-12 rounded-md;
+    }
   }
 }
 
 .gradient-toggle.header-active {
+  &::before {
+    @apply absolute top-[1.4rem] left-[.9rem] h-12 w-12 rounded-md;
+  }
+
   #site-wordmark {
     @media only screen and (max-width: 768px) {
       background-position: bottom;
@@ -55,8 +61,11 @@ header {
   @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[11.5rem];
 }
 
-.gradient-toggle button#burger-menu {
-  @apply py-[#{$padding-expand}];
+.gradient-toggle {
+  
+  button#burger-menu {
+    @apply py-[#{$padding-expand}];
+  }
 }
 
 #burger-menu {
@@ -68,8 +77,16 @@ header {
 }
 
 .header-nav {
-  @apply flex items-center h-[#{$header-default}] pr-10 gap-x-7;
+  @apply select-none hidden md:flex items-center h-[#{$header-default}] pr-10 gap-x-9;
   transition: height 200ms ease;
+
+  &-item {
+    @apply relative cursor-pointer py-4 text-lg;
+
+    &:hover {
+      // @apply text-neutral-100;
+    }
+  }
 }
 
 .gradient-toggle nav.header-nav {
@@ -81,10 +98,21 @@ header {
 }
 
 /*******************
+ * Dropdown
+ *******************/
+.dropdown {
+  @apply absolute right-0 top-12 px-3 py-1 bg-neutral-400 opacity-40 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max;
+}
+
+.header-nav-item:hover .dropdown {
+  @apply top-14 opacity-100 pointer-events-auto;
+}
+
+/*******************
  * Big toggle menu
  *******************/
 #toggle-menu-container {
-  @apply h-viewport fixed top-0 w-full -z-1 duration-[250ms] overflow-auto select-none;
+  @apply h-viewport fixed top-0 w-full -z-1 duration-[250ms] overflow-auto select-none block md:hidden;
 }
 
 @supports (backdrop-filter: blur(6px)) {
