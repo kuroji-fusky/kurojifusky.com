@@ -7,3 +7,29 @@
 <p align="center">
 The source code of my shitty website written in Next.js + TypeScript with TailwindCSS and Sass
 </p>
+
+## Installation
+
+- Fork or clone the repo and install the garbage
+
+```console
+yarn
+```
+
+- Run a local dev server
+
+```console
+yarn dev
+```
+
+- Create a producion build
+
+```console
+yarn build
+```
+
+- Preview the abomination
+
+```console
+yarn start
+```
