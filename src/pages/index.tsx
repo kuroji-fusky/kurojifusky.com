@@ -108,6 +108,14 @@ export default function Home() {
 							repoLink="skepfusky/pandapaco-drawing-stats"
 						/>
 						<ProjectCard
+							image="/static/projects/searchpets-icon.png"
+							title="Searchpets!"
+							description="A website that searches characters from a furry comic, Housepets!"
+							repoLink="OpenFurs/searchpets"
+							pageLink="/projects/searchpets"
+							extLink="https://searchpets.xyz"
+						/>
+						<ProjectCard
 							image="/static/projects/majira-vscode.png"
 							title="Majira Strawberry VS Code Theme"
 							description="Increase your coding productivity by 69% with this beautiful theme!"
