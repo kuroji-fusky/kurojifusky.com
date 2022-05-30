@@ -19,7 +19,7 @@ export default function Section({
 	children
 }: ISectionProps) {
 	return (
-		<div className={styles["section"]}>
+		<section className={styles["section"]}>
 			<div className={styles["section-header"]}>
 				<h3 style={{ "--emoji-key": `"${emojiKey}"` } as React.CSSProperties}>
 					{heading}
@@ -28,6 +28,6 @@ export default function Section({
 			<div className={sectionClassName} style={sectionStyles} id={sectionId}>
 				{children}
 			</div>
-		</div>
+		</section>
 	);
 }

@@ -10,25 +10,25 @@ The source code of my shitty website written in Next.js + TypeScript with Tailwi
 
 ## Installation
 
-- Fork or clone the repo and install the garbage
+Fork or clone the repo and install the garbage
 
 ```console
 yarn
 ```
 
-- Run a local dev server
+Run a local dev server
 
 ```console
 yarn dev
 ```
 
-- Create a producion build
+Create a producion build
 
 ```console
 yarn build
 ```
 
-- Preview the abomination
+Preview the abomination
 
 ```console
 yarn start
