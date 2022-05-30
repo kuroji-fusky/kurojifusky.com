@@ -9,8 +9,8 @@ import RoadmapContainer, { RoadmapItem } from "@/components/RoadmapContainer";
 
 const components = {
 	SEOHead,
-  RoadmapContainer,
-  RoadmapItem,
+	RoadmapContainer,
+	RoadmapItem
 };
 
 export default function SkepfuskySlug({
