@@ -30,8 +30,8 @@
   }
 }
 
-#hero-bio {
-  @apply h-viewport gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
+#bio {
+  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
 
   > article {
     @apply flex flex-col gap-y-2;
@@ -61,7 +61,7 @@
 }
 
 #scroll-down {
-  @apply absolute bottom-0 select-none w-full flex flex-col items-center py-5 transition-opacity duration-200 ease-in-out;
+  @apply absolute bottom-0 left-0 right-0 select-none w-full flex flex-col items-center py-5 transition-opacity duration-200 ease-in-out;
 }
 
 /** Project **/

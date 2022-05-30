@@ -47,45 +47,11 @@ export default function Home() {
 			/>
 			{/* <UnderConstruction /> */}
 			<ParallaxProvider>
-				<Parallax speed={-50}>
+				<Parallax speed={-69}>
 					<div className="layout-item-wrapper">
-						<div className={styles.section} id={styles["hero-bio"]}>
-							<article className="cursor-default">
-								<p>
-									Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
-									<span id="highlight">Skep</span>, or also known by my stage
-									name <span id="highlight">Kokoro Husky</span> on streaming
-									platforms -- I'm a 20-year-old self-employed and self-taught
-									hobbyist from the Philippines!
-								</p>
-								<p className="hidden sm:block">
-									I'm not trying to be a celebrity, or even a{" "}
-									<strong>
-										<em>popufur...</em>
-									</strong>{" "}
-									I'm just trying to get my name out there as I'm extremely
-									passionate about sharing and possibly inspiring future
-									generations through my broad set of skills, talent, and art as
-									a self-taught individual.
-								</p>
-								<div id={styles["skill-inline"]}>
-									{skills.map((skill, i) => (
-										<div id={styles["skill-item"]} key={i}>
-											{skill}
-										</div>
-									))}
-								</div>
-							</article>
-							<Parallax speed={10}>
-                <div id={styles["hero-bio-svg"]}>
-                  {/* todo: cringe svg here */}
-                  <img
-                    src="/static/avatars/07.png"
-                    alt="Skepfusky avatar"
-                    className="rounded-full w-[16rem]"
-                  />
-                </div>
-              </Parallax>
+						<div className="h-viewport grid place-items-center">
+              <h2>Coming Soon...</h2>
+              {/* scrolldown absolute position */}
 							<a
 								href="#showcase"
 								id={styles["scroll-down"]}
@@ -146,6 +112,44 @@ export default function Home() {
 									description="An awful Discord bot when I barely knew anything about Node.js"
 									repoLink="skepfusky/tessinator"
 								/>
+							</Section>
+							<Section heading="About me" emojiKey="🦊">
+								<div className={styles.section} id={styles["bio"]}>
+									<article className="cursor-default">
+										<p>
+											Heya, I'm <span id="highlight">skepfusky</span> or just
+											simply <span id="highlight">Skep</span>, or also known by
+											my stage name <span id="highlight">Kokoro Husky</span> on
+											streaming platforms -- I'm a 20-year-old self-employed and
+											self-taught hobbyist from the Philippines!
+										</p>
+										<p className="hidden sm:block">
+											I'm not trying to be a celebrity, or even a{" "}
+											<strong>
+												<em>popufur...</em>
+											</strong>{" "}
+											I'm just trying to get my name out there as I'm extremely
+											passionate about sharing and possibly inspiring future
+											generations through my broad set of skills, talent, and
+											art as a self-taught individual.
+										</p>
+										<div id={styles["skill-inline"]}>
+											{skills.map((skill, i) => (
+												<div id={styles["skill-item"]} key={i}>
+													{skill}
+												</div>
+											))}
+										</div>
+									</article>
+									<div id={styles["bio-svg"]}>
+										{/* todo: cringe svg here */}
+										<img
+											src="/static/avatars/07.png"
+											alt="Skepfusky avatar"
+											className="rounded-full w-[16rem]"
+										/>
+									</div>
+								</div>
 							</Section>
 						</div>
 					</div>
