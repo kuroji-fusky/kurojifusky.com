@@ -81,7 +81,7 @@ header {
   transition: height 200ms ease;
 
   &-item {
-    @apply relative cursor-pointer py-4 text-lg;
+    @apply relative cursor-pointer p-4 text-lg;
 
     &:hover {
       // @apply text-neutral-100;
@@ -101,11 +101,31 @@ header {
  * Dropdown
  *******************/
 .dropdown {
-  @apply absolute right-0 top-12 px-3 py-1 bg-neutral-400 opacity-40 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max;
+  @apply absolute right-0 top-12 py-3 px-2 bg-neutral-400 opacity-40 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
+
+  &-item {
+    @apply flex flex-col gap-y-0.5;
+
+    h4 {
+      @apply mx-2;
+    }
+
+    a {
+      @apply flex items-center px-2 py-1 rounded-md;
+
+      &:hover {
+        @apply bg-neutral-50 bg-opacity-25;
+      }
+    }
+
+    img {
+      @apply w-7 h-7 rounded-full;
+    }
+  }
 }
 
 .header-nav-item:hover .dropdown {
-  @apply top-14 opacity-100 pointer-events-auto;
+  @apply top-[3.75rem] opacity-100 pointer-events-auto;
 }
 
 /*******************

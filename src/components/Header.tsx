@@ -43,12 +43,52 @@ export default function Header() {
 	}, []);
 
 	const projectsDropdown = [
-		{ link: "/projects/pandapaco-drawing-stats", title: "Paco Drawing Stats" },
-		{ link: "/projects/biro-ui", title: "Biro UI" },
-		{ link: "/projects/searchpets", title: "Searchpets" },
-		{ link: "/projects/myfursona", title: "MyFursona" },
-		{ link: "/projects/floofy-clicker", title: "Floofy Clicker" }
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/pandapaco-drawing-stats",
+			title: "Paco Drawing Stats"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/floofy-clicker",
+			title: "Floofy Clicker"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/scammerino",
+			title: "Scammerino"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/cookie-clicker-afk",
+			title: "Cookie Clicker AFK"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/biro-ui",
+			title: "Biro UI"
+		}
 	];
+
+	const projectsContributed = [
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/searchpets",
+			title: "Searchpets"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/myfursona",
+			title: "MyFursona"
+		}
+	];
+
+  const aboutMe = [
+    {
+      link: "/about/roadmap",
+      title: "Roadmap"
+    },
+  ]
 
 	return (
 		<header className={`${stickyClass} ${isOpen ? "header-active" : ""}`}>
@@ -69,10 +109,37 @@ export default function Header() {
 					<a href="#">Projects</a>
 					<div className="dropdown">
 						<ul className="dropdown-item">
+							<li>
+								<h4>My shit</h4>
+							</li>
 							{projectsDropdown.map((project, index) => (
 								<li key={index}>
 									<Link href={project.link}>
-										<a>{project.title}</a>
+										<a>
+											<img
+												src={project.img}
+												alt={`A small project image for ${project.title}`}
+											/>
+											<span>{project.title}</span>
+										</a>
+									</Link>
+								</li>
+							))}
+						</ul>
+						<ul className="dropdown-item">
+							<li>
+								<h4>Their shit</h4>
+							</li>
+							{projectsContributed.map((project, index) => (
+								<li key={index}>
+									<Link href={project.link}>
+										<a>
+											<img
+												src={project.img}
+												alt={`A small project image for ${project.title}`}
+											/>
+											<span>{project.title}</span>
+										</a>
 									</Link>
 								</li>
 							))}
@@ -81,7 +148,13 @@ export default function Header() {
 				</span>
 				<span className="header-nav-item">
 					Media
-					<div className="dropdown">{/* contents */}</div>
+					<div className="dropdown">
+						<ul className="dropdown-item">
+							<li>
+								<h4>Discography</h4>
+							</li>
+						</ul>
+					</div>
 				</span>
 				<span className="header-nav-item">
 					<Link href="/blog" passHref>
@@ -92,7 +165,17 @@ export default function Header() {
 					<Link href="/about" passHref>
 						About
 					</Link>
-					<div className="dropdown">{/* contents */}</div>
+					<div className="dropdown">
+            <ul className="dropdown-item">
+              {aboutMe.map((about, index) => (
+                <li key={index}>
+                  <Link href={about.link} passHref>
+                    <a>{about.title}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 				</span>
 				<button id="theme-toggle">
 					<FaIcon icon={faLightbulb} />

@@ -40,7 +40,7 @@ export default function Home() {
 	};
 
 	return (
-		<div>
+		<>
 			<SEOHead
 				title="Home"
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
@@ -149,6 +149,6 @@ export default function Home() {
 					</div>
 				</Parallax>
 			</ParallaxProvider>
-		</div>
+		</>
 	);
 }
