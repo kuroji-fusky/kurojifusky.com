@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       'noto-sans': ["Noto Sans", ...defaultTheme.fontFamily.sans],
       'lato': ["Lato", ...defaultTheme.fontFamily.sans],
+      'ubuntu-mono': ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
     },
     screens: {
       sm: '640px',

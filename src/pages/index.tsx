@@ -76,14 +76,16 @@ export default function Home() {
 									))}
 								</div>
 							</article>
-							<div id={styles["hero-bio-svg"]}>
-								{/* todo: cringe svg here */}
-								<img
-									src="/static/avatars/07.png"
-									alt="Skepfusky avatar"
-									className="rounded-full w-[16rem]"
-								/>
-							</div>
+							<Parallax speed={10}>
+                <div id={styles["hero-bio-svg"]}>
+                  {/* todo: cringe svg here */}
+                  <img
+                    src="/static/avatars/07.png"
+                    alt="Skepfusky avatar"
+                    className="rounded-full w-[16rem]"
+                  />
+                </div>
+              </Parallax>
 							<a
 								href="#showcase"
 								id={styles["scroll-down"]}

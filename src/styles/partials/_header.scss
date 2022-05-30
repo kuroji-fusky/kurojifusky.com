@@ -26,8 +26,24 @@ header {
   @apply bg-neutral-900 h-[#{$header-expand}];
 }
 
-#site-wordmark {
-  @apply text-2xl pl-0 transition-all duration-300 select-none bg-bottom;
+.header-logo {
+  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[13.5rem];
+
+  &:hover {
+    text-shadow: 0 0 24px white;
+
+    #site-wordmark span:not(#only-highlightable) {
+      @apply text-white;
+    }
+  }
+}
+
+#site-wordmark span:not(#only-highlightable) {
+  @apply text-gray-500 transition-colors duration-300 font-ubuntu-mono;
+}
+
+#only-highlightable {
+  @apply text-2xl pl-0 transition-all duration-300 select-none bg-bottom mx-0.5;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 250%;
   -webkit-background-clip: text;
@@ -50,19 +66,14 @@ header {
     @apply absolute top-[1.4rem] left-[.9rem] h-12 w-12 rounded-md;
   }
 
-  #site-wordmark {
+  #only-highlightable {
     @media only screen and (max-width: 768px) {
       background-position: bottom;
     }
   }
 }
 
-.header-logo {
-  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[11.5rem];
-}
-
 .gradient-toggle {
-  
   button#burger-menu {
     @apply py-[#{$padding-expand}];
   }

@@ -83,12 +83,12 @@ export default function Header() {
 		}
 	];
 
-  const aboutMe = [
-    {
-      link: "/about/roadmap",
-      title: "Roadmap"
-    },
-  ]
+	const aboutMe = [
+		{
+			link: "/about/roadmap",
+			title: "Roadmap"
+		}
+	];
 
 	return (
 		<header className={`${stickyClass} ${isOpen ? "header-active" : ""}`}>
@@ -101,7 +101,13 @@ export default function Header() {
 					<FaIcon icon={isOpen ? faClose : faBars} />
 				</button>
 				<strong id="site-wordmark">
-					<Link href="/">skepfusky</Link>
+					<Link href="/">
+						<a>
+							<span>&lt;</span>
+							<span id="only-highlightable">skepfusky</span>
+							<span>&#47;&gt;</span>
+						</a>
+					</Link>
 				</strong>
 			</div>
 			<nav className="header-nav">
@@ -166,16 +172,16 @@ export default function Header() {
 						About
 					</Link>
 					<div className="dropdown">
-            <ul className="dropdown-item">
-              {aboutMe.map((about, index) => (
-                <li key={index}>
-                  <Link href={about.link} passHref>
-                    <a>{about.title}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+						<ul className="dropdown-item">
+							{aboutMe.map((about, index) => (
+								<li key={index}>
+									<Link href={about.link} passHref>
+										<a>{about.title}</a>
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 				</span>
 				<button id="theme-toggle">
 					<FaIcon icon={faLightbulb} />
