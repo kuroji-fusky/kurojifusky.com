@@ -43,12 +43,11 @@ header {
 }
 
 #only-highlightable {
-  @apply text-2xl pl-0 transition-all duration-300 select-none bg-bottom mx-0.5;
+  @apply text-2xl pl-0 transition-all bg-bottom duration-300 select-none bg-bottom mx-0.5;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 250%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
-  background-position: bottom;
 }
 
 .header-active {
@@ -88,14 +87,27 @@ header {
 }
 
 .header-nav {
-  @apply select-none hidden md:flex items-center h-[#{$header-default}] pr-10 gap-x-9;
+  @apply select-none hidden md:flex items-center h-[#{$header-default}] pr-10 gap-x-4;
   transition: height 200ms ease;
 
   &-item {
     @apply relative cursor-pointer p-4 text-lg;
 
-    &:hover {
-      // @apply text-neutral-100;
+    :is(a, span) {
+      @apply relative;
+    }
+
+    > :is(a, span)::before {
+      content: "";
+      @apply absolute -bottom-3 h-[3px] w-full;
+      background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
+      background-size: 250% 100%;
+      background-position: right;
+      transition: background-position 300ms ease;
+    }
+
+    &:hover > :is(a, span)::before {
+      background-position: left;
     }
   }
 }
@@ -112,7 +124,7 @@ header {
  * Dropdown
  *******************/
 .dropdown {
-  @apply absolute right-0 top-12 py-3 px-2 bg-neutral-400 opacity-40 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
+  @apply absolute right-0 top-12 py-3 px-2 bg-neutral-400 opacity-0 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
 
   &-item {
     @apply flex flex-col gap-y-0.5;

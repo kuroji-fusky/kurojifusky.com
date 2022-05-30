@@ -116,7 +116,7 @@ export default function Header() {
 					<div className="dropdown">
 						<ul className="dropdown-item">
 							<li>
-								<h4>My shit</h4>
+								<h4>Stuff I made</h4>
 							</li>
 							{projectsDropdown.map((project, index) => (
 								<li key={index}>
@@ -134,7 +134,7 @@ export default function Header() {
 						</ul>
 						<ul className="dropdown-item">
 							<li>
-								<h4>Their shit</h4>
+								<h4>Stuff I've contributed</h4>
 							</li>
 							{projectsContributed.map((project, index) => (
 								<li key={index}>
@@ -153,7 +153,7 @@ export default function Header() {
 					</div>
 				</span>
 				<span className="header-nav-item">
-					Media
+					<span>Media</span>
 					<div className="dropdown">
 						<ul className="dropdown-item">
 							<li>
