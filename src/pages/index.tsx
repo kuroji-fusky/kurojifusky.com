@@ -7,6 +7,7 @@ import Section from "@/components/Section";
 import { CardSkeleton } from "@/components/landing/ProjectCard";
 import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/Home.module.scss";
+import DefaultLayout from "@/layouts/Default";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -44,8 +45,8 @@ export default function Home() {
 			<SEOHead
 				title="Home"
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
+        image="/static/avatars/07.png"
 			/>
-			{/* <UnderConstruction /> */}
 			<ParallaxProvider>
 				<Parallax speed={-69}>
 					<div className="layout-item-wrapper">
@@ -158,3 +159,5 @@ export default function Home() {
 		</>
 	);
 }
+
+Home.PageLayout = DefaultLayout;

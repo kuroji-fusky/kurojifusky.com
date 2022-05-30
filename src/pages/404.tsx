@@ -1,5 +1,6 @@
 import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/PageNotFound.module.scss";
+import DefaultLayout from "@/layouts/Default";
 
 export default function NotFoundPage() {
 	return (
@@ -18,3 +19,5 @@ export default function NotFoundPage() {
 		</div>
 	);
 }
+
+NotFoundPage.PageLayout = DefaultLayout;

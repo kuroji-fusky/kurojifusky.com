@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { AlbumItems } from "@/components/StaticItems";
 import { DiscographyPages } from "@/models/ParseMyAss";
+import DefaultLayout from "@/layouts/Default";
 
 export default function DiscographyPage({
 	items
@@ -31,3 +32,5 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return { props: { items: discographyItem } };
 };
+
+DiscographyPage.PageLayout = DefaultLayout;

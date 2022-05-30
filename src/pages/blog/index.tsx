@@ -4,8 +4,9 @@ import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { BlogItems } from "@/components/StaticItems";
 import { BlogPages } from "@/models/ParseMyAss";
+import DefaultLayout from "@/layouts/Default";
 
-export default function DiscographyPage({
+export default function BlogPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
@@ -31,3 +32,5 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return { props: { items: projectItem } };
 };
+
+BlogPage.PageLayout = DefaultLayout;

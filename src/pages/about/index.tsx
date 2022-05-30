@@ -1,7 +1,8 @@
 import SEOHead from "@/components/SEOHead";
 import UnderConstruction from "@/components/UnderConstruction";
+import DefaultLayout from "@/layouts/Default";
 
-export default function AboutMe() {
+export default function AboutPage() {
   return (
 		<div>
 			<SEOHead title="About Me" description="ME HE HEEEEEE" />
@@ -12,3 +13,5 @@ export default function AboutMe() {
 		</div>
 	);
 };
+
+AboutPage.PageLayout = DefaultLayout;

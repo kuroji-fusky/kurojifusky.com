@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { ProjectItems } from "@/components/StaticItems";
 import { ProjectPages } from "@/models/ParseMyAss";
+import DefaultLayout from "@/layouts/Default";
 
 export default function ProjectPage({
 	items
@@ -34,3 +35,5 @@ export const getStaticProps: GetStaticProps = async () => {
 
 	return { props: { items: projectItem } };
 };
+
+ProjectPage.PageLayout = DefaultLayout;

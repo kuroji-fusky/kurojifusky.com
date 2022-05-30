@@ -11,7 +11,7 @@ export default function SEOHead({
 	title,
 	description,
 	image,
-	keywords
+	keywords = ["skepfusky", "kokoro husky", "furry", "filipino", "music", "programming"]
 }: ISEOHeadProps) {
 	const router = useRouter();
 	const SITE_NAME = "skepfusky";
@@ -30,7 +30,7 @@ export default function SEOHead({
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			{image && <meta property="og:image" content={image} />}
-			<meta name="og:url" content={`https://searchpets.xyz${router.asPath}`} />
+			<meta name="og:url" content={`https://skepfusky.xyz${router.asPath}`} />
 			<meta property="og:type" content="website" />
 			<meta property="og:site_name" content={SITE_NAME} />
 			<meta name="twitter:card" content="summary" />
@@ -38,7 +38,7 @@ export default function SEOHead({
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			{image && <meta name="twitter:image" content={image} />}
-			<link rel="canonical" href={`https://searchpets.xyz${router.asPath}`} />
+			<link rel="canonical" href={`https://skepfusky.xyz${router.asPath}`} />
 		</Head>
 	);
 }

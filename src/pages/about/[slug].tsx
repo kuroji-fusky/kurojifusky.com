@@ -6,6 +6,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import SEOHead from "@/components/SEOHead";
 import RoadmapContainer, { RoadmapItem } from "@/components/RoadmapContainer";
+import DefaultLayout from "@/layouts/Default";
 
 const components = {
 	SEOHead,
@@ -51,3 +52,5 @@ export const getStaticProps: GetStaticProps<Params> = async ({
 	const mdxSrc = await serialize(content, { scope: metaData });
 	return { props: { source: mdxSrc } };
 };
+
+SkepfuskySlug.PageLayout = DefaultLayout;
