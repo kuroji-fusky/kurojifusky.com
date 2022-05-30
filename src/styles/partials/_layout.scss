@@ -100,9 +100,18 @@ html {
 /************
  * Static Items
  ************/
+.item-container {
+  @apply flex flex-col gap-y-4;
+}
 
 #static-item {
-  @apply flex gap-4;
+  @apply flex gap-2 p-3 shadow-md rounded-md items-center transition-all duration-300;
+  background-color: $bg-violet-highlight;
+
+  &:hover {
+    @apply -translate-y-1;
+    background-color: lighten($bg-violet-highlight, 6%);
+  }
 
   &__img-wrapper {
     @apply flex-shrink-0 m-4 relative h-[7rem] w-[7rem];
@@ -110,6 +119,18 @@ html {
     img {
       @apply rounded-full;
     }
+  }
+
+  &__contents {
+    @apply flex flex-col gap-y-1;
+  }
+
+  &__date {
+    @apply text-sm;
+  }
+
+  &__description {
+    line-height: 1.5rem;
   }
 }
 

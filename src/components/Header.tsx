@@ -112,11 +112,11 @@ export default function Header() {
 			</div>
 			<nav className="header-nav">
 				<span className="header-nav-item">
-					<a href="#">Projects</a>
+					<Link href="/projects">Projects</Link>
 					<div className="dropdown">
 						<ul className="dropdown-item">
 							<li>
-								<h4>Stuff I made</h4>
+								<strong>Stuff I made</strong>
 							</li>
 							{projectsDropdown.map((project, index) => (
 								<li key={index}>
@@ -134,7 +134,7 @@ export default function Header() {
 						</ul>
 						<ul className="dropdown-item">
 							<li>
-								<h4>Stuff I've contributed</h4>
+								<strong>Stuff I've contributed</strong>
 							</li>
 							{projectsContributed.map((project, index) => (
 								<li key={index}>
@@ -183,9 +183,9 @@ export default function Header() {
 						</ul>
 					</div>
 				</span>
-				<button id="theme-toggle">
+				{/* <button id="theme-toggle">
 					<FaIcon icon={faLightbulb} />
-				</button>
+				</button> */}
 			</nav>
 			{/* Big ass toggle menu */}
 			<div

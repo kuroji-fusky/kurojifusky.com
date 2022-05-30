@@ -4,7 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import ProjectHeader from "@/components/ProjectHeader";
+import ProjectHeader from "@/components/static/ProjectHeader";
 import SEOHead from "@/components/SEOHead";
 import SidebarContainer from "@/components/SidebarContainer";
 

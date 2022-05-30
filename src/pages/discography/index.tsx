@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { AlbumItems } from "@/components/StaticItems";
+import { AlbumItems } from "@/components/static/StaticItems";
 import { DiscographyPages } from "@/models/ParseMyAss";
 import DefaultLayout from "@/layouts/Default";
 

@@ -1,4 +1,6 @@
 import { BlogPages, DiscographyPages, ProjectPages } from "@/models/ParseMyAss";
+import { faAngleRight, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,11 +14,14 @@ export function ProjectItems({ items }: { items: ProjectPages }) {
 			</div>
 			<div id="static-item__contents">
 				<h3>{title}</h3>
-				<div>{dateString}</div>
-				<div>{excerpt}</div>
-        <Link href={`/projects/${slug}`} passHref>
-          <a>Read More</a>
-        </Link>
+				<span id="static-item__date">{dateString}</span>
+				<div id="static-item__description">{excerpt}</div>
+				<Link href={`/projects/${slug}`} passHref>
+					<a className="link-btn mr-auto mt-1">
+						Read More
+						<FaIcon icon={faAngleRight} size="sm" className="ml-2" />
+					</a>
+				</Link>
 			</div>
 		</div>
 	);
@@ -52,7 +57,9 @@ export function BlogItems({ items }: { items: BlogPages }) {
 			<div>{excerpt}</div>
 			<div>{tags}</div>
 			<Link href={`/blog/${slug}`} passHref>
-				<a>Read More</a>
+				<a>
+          Read More
+        </a>
 			</Link>
 		</div>
 	);

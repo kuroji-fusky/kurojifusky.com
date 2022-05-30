@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { BlogItems } from "@/components/StaticItems";
+import { BlogItems } from "@/components/static/StaticItems";
 import { BlogPages } from "@/models/ParseMyAss";
 import DefaultLayout from "@/layouts/Default";
 

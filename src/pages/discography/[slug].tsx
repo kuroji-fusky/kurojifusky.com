@@ -4,9 +4,9 @@ import path from "path";
 import matter from "gray-matter";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
-import DiscographyHeader from "@/components/DiscographyHeader";
+import DiscographyHeader from "@/components/static/DiscographyHeader";
 import SEOHead from "@/components/SEOHead";
-import TracklistContainer, { TracklistItem } from "@/components/Tracklist";
+import TracklistContainer, { TracklistItem } from "@/components/static/Tracklist";
 
 const components = {
 	DiscographyHeader,

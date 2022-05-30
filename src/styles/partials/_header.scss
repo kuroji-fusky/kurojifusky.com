@@ -1,4 +1,5 @@
 @use "mixins" as *;
+@use "variables" as *;
 
 /*******************
  * Main navbar
@@ -124,13 +125,31 @@ header {
 /*******************
  * Dropdown
  *******************/
+.header-nav-item {
+  &:hover .dropdown {
+    @apply top-[3.75rem] opacity-100 pointer-events-auto;
+  }
+
+  &:first-child .dropdown {
+    transform: translateX(10rem);
+  }
+
+  &:nth-child(2) .dropdown {
+    @apply translate-x-9;
+  }
+
+  &:last-child .dropdown {
+    @apply translate-x-1;
+  }
+}
+
 .dropdown {
-  @apply absolute right-0 top-12 py-3 px-2 bg-neutral-400 opacity-0 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
+  @apply absolute right-0 top-[4.5rem] py-3 px-2 bg-neutral-900 opacity-0 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
 
   &-item {
     @apply flex flex-col gap-y-0.5;
 
-    h4 {
+    strong {
       @apply mx-2;
     }
 
@@ -146,10 +165,6 @@ header {
       @apply w-7 h-7 rounded-full;
     }
   }
-}
-
-.header-nav-item:hover .dropdown {
-  @apply top-[3.75rem] opacity-100 pointer-events-auto;
 }
 
 /*******************

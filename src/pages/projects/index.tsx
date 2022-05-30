@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { ProjectItems } from "@/components/StaticItems";
+import { ProjectItems } from "@/components/static/StaticItems";
 import { ProjectPages } from "@/models/ParseMyAss";
 import DefaultLayout from "@/layouts/Default";
 
@@ -10,9 +10,9 @@ export default function ProjectPage({
 	items
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div className="layout-item-wrapper px-6">
-			<h1>Project Page</h1>
-			<div className="project-item-container">
+		<div className="layout-item-wrapper px-6 mt-20 mb-7">
+			<h1 className="my-10 text-center">Projects</h1>
+			<div className="item-container">
 				{items.map((item: ProjectPages, i: number) => (
 					<ProjectItems key={i} items={item} />
 				))}
