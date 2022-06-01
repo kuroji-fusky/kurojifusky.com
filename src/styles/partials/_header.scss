@@ -12,7 +12,7 @@ $padding-default: 2.2rem;
 $padding-expand: 1.75rem;
 
 header {
-  @apply w-viewport fixed flex justify-between top-0 z-1 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
+  @apply w-viewport fixed flex justify-between top-0 z-3 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
   transition: background 300ms ease, height 300ms ease;
 
   &::before {
@@ -27,14 +27,30 @@ header {
   @apply bg-neutral-900 h-[#{$header-expand}];
 }
 
+#site-wordmark {
+  @apply translate-x-6 md:translate-x-0;
+
+  a {
+    @apply flex items-center;
+  }
+}
+
 .header-logo {
   @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[13.5rem];
 
   &:hover {
     text-shadow: 0 0 24px #fff;
 
+    @media only screen and (max-width: 768px) {
+      text-shadow: none;
+    }
+
     #site-wordmark span:not(#only-highlightable) {
       @apply text-white;
+
+      @media only screen and (max-width: 768px) {
+        @apply text-gray-500;
+      }
     }
   }
 }
@@ -44,7 +60,7 @@ header {
 }
 
 #only-highlightable {
-  @apply text-2xl pl-0 transition-all duration-300 select-none  mx-0.5;
+  @apply text-2xl pl-0 transition-all duration-300 select-none mx-0.5;
   background: linear-gradient(180deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #fff 50%, #fff 100%);
   background-size: 100% 250%;
   -webkit-background-clip: text;
@@ -57,14 +73,14 @@ header {
     content: "";
     @media only screen and (max-width: 768px) {
       background: rgba(249, 41, 41);
-      @apply absolute top-[1.7rem] left-[.9rem] h-12 w-12 rounded-md;
+      @apply absolute top-[1.8rem] left-[.9rem] h-12 w-12 rounded-md;
     }
   }
 }
 
 .gradient-toggle.header-active {
   &::before {
-    @apply absolute top-[1.4rem] left-[.9rem] h-12 w-12 rounded-md;
+    @apply absolute top-[1.3rem] left-[.9rem] h-12 w-12 rounded-md;
   }
 
   #only-highlightable {
@@ -232,7 +248,11 @@ $menu-toggle-active: translateY(1.2rem);
 
 #toggle-nav {
   &-menu {
-    @apply grid grid-flow-col gap-2;
+    @apply grid gap-2;
+
+    ul {
+      @apply list-none;
+    }
   }
 }
 

@@ -186,7 +186,7 @@ export default function Header() {
 				<div id="toggle-menu-wrapper">
 					<h2>Site navigation</h2>
 					<hr />
-					<nav id="toggle-nav-menu">
+					<ul id="toggle-nav-menu" role="navigation">
 						<NavItem
 							title="Projects"
 							link="/projects"
@@ -206,7 +206,7 @@ export default function Header() {
 							icon="🦊"
 							onClick={toggleMenu}
 						/>
-					</nav>
+					</ul>
 				</div>
 			</div>
 		</header>
