@@ -22,14 +22,8 @@ Run a local dev server
 yarn dev
 ```
 
-Create a producion build
+Create a production build and preview the abomination
 
 ```console
-yarn build
-```
-
-Preview the abomination
-
-```console
-yarn start
+yarn build && yarn start
 ```
