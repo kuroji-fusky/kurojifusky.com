@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import {
-	faBars,
-	faClose,
-	faLightbulb
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
 	const router = useRouter();
@@ -44,27 +40,32 @@ export default function Header() {
 
 	const projectsDropdown = [
 		{
-			img: "/static/avatars/02.png",
+			img: "/static/projects/paco-yt-icon.jpg",
 			link: "/projects/pandapaco-drawing-stats",
 			title: "Paco Drawing Stats"
 		},
 		{
-			img: "/static/avatars/02.png",
+			// img: "/static/avatars/02.png",
 			link: "/projects/floofy-clicker",
 			title: "Floofy Clicker"
 		},
 		{
-			img: "/static/avatars/02.png",
+			img: "/static/projects/scammerino-lol.jpg",
 			link: "/projects/scammerino",
 			title: "Scammerino"
 		},
 		{
-			img: "/static/avatars/02.png",
+			img: "/static/projects/majira-vscode.png",
+			link: "/projects/majira-vscode",
+			title: "Majira VS Code Theme"
+		},
+		{
+			// img: "/static/avatars/02.png",
 			link: "/projects/cookie-clicker-afk",
 			title: "Cookie Clicker AFK"
 		},
 		{
-			img: "/static/avatars/02.png",
+			// img: "/static/avatars/02.png",
 			link: "/projects/biro-ui",
 			title: "Biro UI"
 		}
@@ -72,12 +73,12 @@ export default function Header() {
 
 	const projectsContributed = [
 		{
-			img: "/static/avatars/02.png",
+			img: "/static/projects/searchpets-icon.png",
 			link: "/projects/searchpets",
 			title: "Searchpets"
 		},
 		{
-			img: "/static/avatars/02.png",
+			img: "/static/projects/myfursona.png",
 			link: "/projects/myfursona",
 			title: "MyFursona"
 		}
@@ -119,17 +120,12 @@ export default function Header() {
 								<strong>Stuff I made</strong>
 							</li>
 							{projectsDropdown.map((project, index) => (
-								<li key={index}>
-									<Link href={project.link}>
-										<a>
-											<img
-												src={project.img}
-												alt={`A small project image for ${project.title}`}
-											/>
-											<span>{project.title}</span>
-										</a>
-									</Link>
-								</li>
+								<DropdownItem
+									key={index}
+									title={project.title}
+									img={project.img}
+									link={project.link}
+								/>
 							))}
 						</ul>
 						<ul className="dropdown-item">
@@ -137,17 +133,12 @@ export default function Header() {
 								<strong>Stuff I've contributed</strong>
 							</li>
 							{projectsContributed.map((project, index) => (
-								<li key={index}>
-									<Link href={project.link}>
-										<a>
-											<img
-												src={project.img}
-												alt={`A small project image for ${project.title}`}
-											/>
-											<span>{project.title}</span>
-										</a>
-									</Link>
-								</li>
+								<DropdownItem
+									key={index}
+									title={project.title}
+									img={project.img}
+									link={project.link}
+								/>
 							))}
 						</ul>
 					</div>
@@ -222,19 +213,42 @@ export default function Header() {
 	);
 }
 
-interface INavItemProps {
+//* For smol ass nav menu
+export function DropdownItem({
+	title,
+	link,
+	img
+}: {
 	title: string;
-	icon: string;
 	link: string;
+	img?: string;
+}) {
+	return (
+		<li>
+			<Link href={link}>
+				<a>
+					{img ? (
+						<img src={img} alt={`A small project image for ${title}`} />
+					) : (
+						<span id="nav-no-img" className="h-7 w-7"></span>
+					)}
+					<span>{title}</span>
+				</a>
+			</Link>
+		</li>
+	);
 }
 
-export function NavItem({ title, icon, link, ...props }: INavItemProps | any) {
+//* For big ass nav menu
+export function NavItem({ title, icon, link, ...props }: string | any) {
 	return (
-		<Link href={link}>
-			<a id="nav-item" {...props}>
-				<div id="nav-icon">{icon}</div>
-				<span>{title}</span>
-			</a>
-		</Link>
+		<li>
+			<Link href={link}>
+				<a id="nav-item" {...props}>
+					<div id="nav-icon">{icon}</div>
+					<span>{title}</span>
+				</a>
+			</Link>
+		</li>
 	);
 }

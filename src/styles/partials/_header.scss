@@ -161,6 +161,10 @@ header {
       }
     }
 
+    li span:last-child {
+      @apply ml-[0.5rem];
+    }
+
     img {
       @apply w-7 h-7 rounded-full;
     }

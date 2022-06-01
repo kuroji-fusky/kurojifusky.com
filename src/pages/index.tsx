@@ -45,14 +45,14 @@ export default function Home() {
 			<SEOHead
 				title="Home"
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
-        image="/static/avatars/07.png"
+				image="/static/avatars/07.png"
 			/>
 			<ParallaxProvider>
 				<Parallax speed={-69}>
 					<div className="layout-item-wrapper">
 						<div className="h-viewport grid place-items-center">
-              <h2>Coming Soon...</h2>
-              {/* scrolldown absolute position */}
+							<h2>Coming Soon...</h2>
+							{/* scrolldown absolute position */}
 							<a
 								href="#showcase"
 								id={styles["scroll-down"]}
@@ -98,6 +98,12 @@ export default function Home() {
 									title="Majira Strawberry VS Code Theme"
 									description="Increase your coding productivity by 69% with this beautiful theme!"
 									repoLink="skepfusky/majira-strawberry-vscode"
+								/>
+								<ProjectCard
+									image="/static/projects/scammerino-lol.jpg"
+									title="Scammerino"
+									description="Play with scammers' feelings with a game of Bingo or rating their patience"
+									repoLink="skepfusky/scammerino"
 								/>
 								<ProjectCard
 									image="/static/projects/myfursona.png"
