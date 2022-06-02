@@ -51,9 +51,11 @@ export default function Home() {
 			<Parallax translateY={["-245", "245"]} className="layout-item-wrapper">
 				<div className="h-viewport grid place-items-center">
 					<div className="flex flex-col gap-y-9">
-						<div className="bg-borahae-600 rounded-2xl overflow-hidden">
+						<div className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden"
+              style={{ boxShadow: "inset 0 0 50px rgba(0, 0, 0, 0.3)" }}
+            >
 							<Parallax
-								speed={-12}
+								speed={-15}
 								className="relative h-[14rem] md:h-[25rem] w-[14rem] md:w-[25rem] "
 							>
 								<Image

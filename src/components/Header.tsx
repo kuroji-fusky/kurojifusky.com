@@ -151,13 +151,13 @@ export default function Header() {
 				</span>
 				<span className="header-nav-item">
 					<span>Media</span>
-					<div className="dropdown">
+					{/* <div className="dropdown">
 						<ul className="dropdown-item">
 							<li>
-								<h4>Discography</h4>
+                <strong>TBA</strong>
 							</li>
 						</ul>
-					</div>
+					</div> */}
 				</span>
 				<span className="header-nav-item">
 					<Link href="/blog" passHref>
