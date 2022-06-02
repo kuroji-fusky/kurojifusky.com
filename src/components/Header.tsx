@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
 	const router = useRouter();
-
+  
+	// * Navbar stuff
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -174,9 +176,7 @@ export default function Header() {
 						</ul>
 					</div>
 				</span>
-				{/* <button id="theme-toggle">
-					<FaIcon icon={faLightbulb} />
-				</button> */}
+				<ThemeToggle />
 			</nav>
 			{/* Big ass toggle menu */}
 			<div

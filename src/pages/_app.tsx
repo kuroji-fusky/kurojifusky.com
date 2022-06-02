@@ -3,6 +3,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@/styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
 
 config.autoAddCss = false;
 
@@ -13,6 +14,14 @@ type NestedComponents = AppProps & {
 };
 
 export default function ShitApp({ Component, pageProps }: NestedComponents | any) {
+  useEffect(() => {
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.body.setAttribute("sf-reduced-motion", "disabled");
+    } else {
+      document.body.setAttribute("sf-reduced-motion", "enabled");
+    }
+  }, []);
+
 	return (
 		<>
 			{Component.PageLayout ? (
