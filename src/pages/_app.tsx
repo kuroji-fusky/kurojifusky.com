@@ -1,9 +1,9 @@
 import type { AppProps } from "next/app";
+import { useEffect } from "react";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@/styles/globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Footer from "@/components/Footer";
-import { useEffect } from "react";
 
 config.autoAddCss = false;
 
