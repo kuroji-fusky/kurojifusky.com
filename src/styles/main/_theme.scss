@@ -1,0 +1,13 @@
+@use "../partials" as *;
+
+body {
+  [sf-theme="dark"] {
+    background-color: $main-bg;
+    color: $main-fg;
+  }
+
+  [sf-theme="light"] {
+    background-color: $main-fg;
+    color: $main-bg;
+  }
+}

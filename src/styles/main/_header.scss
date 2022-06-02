@@ -134,7 +134,20 @@ header {
 }
 
 #theme-toggle {
-  @apply p-2;
+  @apply px-4 py-2 border-2 rounded-md relative;
+
+  &:hover #tooltip {
+    @apply opacity-100 top-[3.5rem];
+  }
+}
+
+#tooltip {
+  @apply opacity-0 bg-neutral-400 bg-opacity-50 py-2 px-4 rounded-md absolute top-[4rem] right-0 w-max pointer-events-none transition-all duration-200;
+  font-size: 90%;
+
+  > span {
+    @apply w-[21rem] inline-block;
+  }
 }
 
 /*******************

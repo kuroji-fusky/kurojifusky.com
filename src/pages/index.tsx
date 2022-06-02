@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import Section from "@/components/Section";
 import { CardSkeleton } from "@/components/landing/ProjectCard";
 import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/Home.module.scss";
 import DefaultLayout from "@/layouts/Default";
+import Image from "next/image";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -47,9 +48,24 @@ export default function Home() {
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<Parallax speed={-100} className="layout-item-wrapper">
+			<Parallax translateY={["-245", "245"]} className="layout-item-wrapper">
 				<div className="h-viewport grid place-items-center">
-					<h2>Coming Soon...</h2>
+					<div className="flex flex-col gap-y-9">
+						<div className="bg-borahae-600 rounded-2xl overflow-hidden">
+							<Parallax
+								speed={-12}
+								className="relative h-[14rem] md:h-[25rem] w-[14rem] md:w-[25rem] "
+							>
+								<Image
+									src="/static/avatars/FormalAvatar-SVG.svg"
+									alt="Omg a furry"
+									layout="fill"
+									objectFit="contain"
+								/>
+							</Parallax>
+						</div>
+						<h2 className="text-center">Coming soon...</h2>
+					</div>
 					{/* scrolldown absolute position */}
 					<a
 						href="#showcase"
@@ -87,7 +103,7 @@ export default function Home() {
 							description="A website that searches characters from a furry comic, Housepets!"
 							repoLink="OpenFurs/searchpets"
 							pageLink="/projects/searchpets"
-							extLink="https://searchpets.xyz"
+							// extLink="https://searchpets.xyz"
 						/>
 						<ProjectCard
 							image="/static/projects/majira-vscode.png"

@@ -90,7 +90,11 @@ export default function Header() {
 		{
 			link: "/about/roadmap",
 			title: "Roadmap"
-		}
+		},
+    {
+      link: "/about/fursona-gallery",
+      title: "Fursona Gallery"
+    }
 	];
 
 	return (

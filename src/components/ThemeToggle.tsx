@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faAdjust } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
 	const [theme, setTheme] = useState("dark");
@@ -39,10 +39,18 @@ export default function ThemeToggle() {
 
 	return (
 		<button id="theme-toggle" onClick={toggleTheme}>
-			<FaIcon icon={faLightbulb} />
-      <span>
-        Current Theme: {theme !== "dark" ? "AAAAA" : "Eye-saver"}
-      </span>
+			<FaIcon icon={faAdjust} />
+			<span id="tooltip">
+				Current Theme:{" "}
+				<strong>
+					{theme !== "dark" ? "AAAAAAA TURN IT OFF" : "Eye-saver :3"}
+				</strong>
+				<hr className="my-2" />
+				<span>
+					⚠️ Light theme on this site is still in the works, some elements will
+					not display its correct color but feel free to blind yourself lol
+				</span>
+			</span>
 		</button>
 	);
 }

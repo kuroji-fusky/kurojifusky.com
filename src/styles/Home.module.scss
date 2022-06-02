@@ -1,6 +1,10 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
 
+
+
+/*** Sections and Seperators  ***/
+
 .section {
   @apply flex p-4;
 
