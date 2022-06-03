@@ -56,11 +56,11 @@
 
 #skill {
   &-inline {
-    @apply flex gap-2 mt-2 flex-wrap justify-center lg:justify-start;
+    @apply flex gap-2 mt-2 flex-wrap justify-center;
   }
 
   &-item {
-    @apply p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
+    @apply cursor-default p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
   }
 }
 

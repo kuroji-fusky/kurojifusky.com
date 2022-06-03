@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
 	const router = useRouter();
-  
+
 	// * Navbar stuff
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleMenu = () => setIsOpen(!isOpen);
@@ -91,10 +91,10 @@ export default function Header() {
 			link: "/about/roadmap",
 			title: "Roadmap"
 		},
-    {
-      link: "/about/fursona-gallery",
-      title: "Fursona Gallery"
-    }
+		{
+			link: "/about/fursona-gallery",
+			title: "Fursona Gallery"
+		}
 	];
 
 	return (
@@ -119,7 +119,11 @@ export default function Header() {
 			</div>
 			<nav className="header-nav">
 				<span className="header-nav-item">
-					<Link href="/projects">Projects</Link>
+					<Link href="/projects">
+						<a className={router.asPath === "/projects" ? "page-active" : ""}>
+							Projects
+						</a>
+					</Link>
 					<div className="dropdown">
 						<ul className="dropdown-item">
 							<li>
@@ -161,12 +165,16 @@ export default function Header() {
 				</span>
 				<span className="header-nav-item">
 					<Link href="/blog" passHref>
-						Blog
+						<a className={router.asPath === "/blog" ? "page-active" : ""}>
+							Blog
+						</a>
 					</Link>
 				</span>
 				<span className="header-nav-item">
 					<Link href="/about" passHref>
-						About
+						<a className={router.asPath === "/about" ? "page-active" : ""}>
+							About
+						</a>
 					</Link>
 					<div className="dropdown">
 						<ul className="dropdown-item">
@@ -244,11 +252,11 @@ export function DropdownItem({
 }
 
 //* For big ass nav menu
-export function NavItem({ title, icon, link, ...props }: string | any) {
+export function NavItem({ title, icon, link, onClick }: string | any) {
 	return (
 		<li>
 			<Link href={link}>
-				<a id="nav-item" {...props}>
+				<a id="nav-item" {...onClick}>
 					<div id="nav-icon">{icon}</div>
 					<span>{title}</span>
 				</a>

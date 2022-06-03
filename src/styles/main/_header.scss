@@ -18,12 +18,10 @@ header {
     content: "";
     @apply bg-transparent absolute top-[2.5rem] left-[.9rem] transition-all duration-300 h-12 w-12 rounded-md;
   }
-
-  --bg-header-active: rgb(13, 13, 13, 0.8);
 }
 
 .gradient-toggle {
-  @apply bg-neutral-900 h-[#{$header-expand}];
+  @apply bg-neutral-900 bg-opacity-75 h-[#{$header-expand}];
 }
 
 #site-wordmark {
@@ -123,7 +121,8 @@ header {
       transition: background-position 300ms ease;
     }
 
-    &:hover > :is(a, span)::before {
+    &:hover > :is(a, span)::before,
+    .page-active::before {
       background-position: left;
     }
   }
@@ -266,6 +265,10 @@ $menu-toggle-active: translateY(1.2rem);
       @apply list-none;
     }
   }
+}
+
+.page-active {
+  @apply font-bold;
 }
 
 #nav-item {

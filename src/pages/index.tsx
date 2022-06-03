@@ -52,7 +52,7 @@ export default function Home() {
 				<div className="h-viewport grid place-items-center">
 					<div className="flex flex-col gap-y-9">
 						<div
-							className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden"
+							className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden mx-auto"
 							style={{ boxShadow: "inset 0 0 50px rgba(0, 0, 0, 0.3)" }}
 						>
 							<Parallax
@@ -68,6 +68,13 @@ export default function Home() {
 							</Parallax>
 						</div>
 						<h2 className="text-center">Coming soon...</h2>
+						<div id={styles["skill-inline"]} className="w-[30rem]">
+							{skills.map((skill, i) => (
+								<div id={styles["skill-item"]} key={i}>
+									{skill}
+								</div>
+							))}
+						</div>
 					</div>
 					{/* scrolldown absolute position */}
 					<a
@@ -149,7 +156,7 @@ export default function Home() {
 									platforms -- I'm a 20-year-old self-employed and self-taught
 									hobbyist from the Philippines!
 								</p>
-								<p className="hidden sm:block">
+								<p>
 									I'm not trying to be a celebrity, or even a{" "}
 									<strong>
 										<em>popufur...</em>
@@ -159,13 +166,6 @@ export default function Home() {
 									generations through my broad set of skills, talent, and art as
 									a self-taught individual.
 								</p>
-								<div id={styles["skill-inline"]}>
-									{skills.map((skill, i) => (
-										<div id={styles["skill-item"]} key={i}>
-											{skill}
-										</div>
-									))}
-								</div>
 							</article>
 							<div id={styles["bio-svg"]}>
 								{/* todo: cringe svg here */}
