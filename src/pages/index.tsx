@@ -48,14 +48,15 @@ export default function Home() {
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<Parallax speed={-100} className="layout-item-wrapper">
+			<Parallax speed={-200} className="layout-item-wrapper">
 				<div className="h-viewport grid place-items-center">
 					<div className="flex flex-col gap-y-9">
-						<div className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden"
-              style={{ boxShadow: "inset 0 0 50px rgba(0, 0, 0, 0.3)" }}
-            >
+						<div
+							className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden"
+							style={{ boxShadow: "inset 0 0 50px rgba(0, 0, 0, 0.3)" }}
+						>
 							<Parallax
-								speed={-15}
+								speed={-18}
 								className="relative h-[14rem] md:h-[25rem] w-[14rem] md:w-[25rem] "
 							>
 								<Image
@@ -80,10 +81,14 @@ export default function Home() {
 				</div>
 			</Parallax>
 			<div
-				className="layout-seperator"
-				id="showcase"
-				style={{ position: "relative", zIndex: "2" }}
-			>
+				className="layout-clip"
+				style={
+					{
+						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
+					} as React.CSSProperties
+				}
+			></div>
+			<div className="layout-seperator relative z-2" id="showcase">
 				<div className="layout-item-wrapper">
 					<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
 						<ProjectCard

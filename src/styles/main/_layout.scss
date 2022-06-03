@@ -45,6 +45,12 @@ html {
 /************
  * Layout Cutouts
  ************/
+.layout-clip {
+  @apply block h-[2.75rem] translate-y-1;
+  background: lighten($main-bg, 4%);
+  clip-path: var(--clip-path-layout);
+}
+
 .layout-seperator {
   background: lighten($main-bg, 4%);
   z-index: -5;
