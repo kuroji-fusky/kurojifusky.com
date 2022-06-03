@@ -15,8 +15,8 @@ export default function Header() {
 	// If isOpen is true add a style to the body element to make the menu appear
 	useEffect(() => {
 		isOpen
-			? (document.body.style.overflow = "hidden")
-			: (document.body.style.overflow = "visible");
+			? (document.body.style.overflowY = "hidden")
+			: (document.body.style.overflowY = "scroll");
 	}, [isOpen]);
 
 	// Detect of the ESC key is pressed anywhere on the document
