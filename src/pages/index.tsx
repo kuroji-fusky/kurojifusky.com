@@ -19,7 +19,7 @@ export default function Home() {
 	const skills = [
 		"Full-stack web development",
 		"Web and UI/UX Design",
-		"Indie music artist",
+		"Indie musician",
 		"Experienced video editor",
 		"Filmmaker",
 		"Novice VFX artist"
@@ -61,9 +61,10 @@ export default function Home() {
 							>
 								<Image
 									src="/static/avatars/FormalAvatar-SVG.svg"
-									alt="Omg a furry"
+									alt="Omg what a cutie"
 									layout="fill"
 									objectFit="contain"
+                  priority={true}
 								/>
 							</Parallax>
 						</div>

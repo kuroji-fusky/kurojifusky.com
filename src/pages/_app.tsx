@@ -14,14 +14,6 @@ type NestedComponents = AppProps & {
 };
 
 export default function ShitApp({ Component, pageProps }: NestedComponents | any) {
-  useEffect(() => {
-    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.body.setAttribute("sf-reduced-motion", "enabled");
-    } else {
-      document.body.setAttribute("sf-reduced-motion", "disabled");
-    }
-  }, []);
-
 	return (
 		<>
 			{Component.PageLayout ? (
