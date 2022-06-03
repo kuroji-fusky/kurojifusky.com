@@ -3,7 +3,7 @@ import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import { faAdjust } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
-	const [theme, setTheme] = useState("dark");
+	const [theme, setTheme] = useState("");
 
 	const toggleTheme = () => {
 		if (theme !== "dark") {
@@ -43,7 +43,11 @@ export default function ThemeToggle() {
 			<span id="tooltip">
 				Current Theme:{" "}
 				<strong>
-					{theme !== "dark" ? "AAAAAAA TURN IT OFF" : "Eye-saver :3"}
+					{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}
+					{typeof window !== "undefined" &&
+					localStorage.getItem("skepfuskyappTheme") !== null
+						? " (overidden)"
+						: " (system default)"}
 				</strong>
 				<hr className="my-2" />
 				<span>

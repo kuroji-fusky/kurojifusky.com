@@ -16,7 +16,6 @@ html {
 
 ::-webkit-scrollbar-thumb {
   background-color: $borahae;
-  // border-radius: 0.5rem;
 
   &:hover {
     background-color: $borahae-alt;
@@ -47,12 +46,12 @@ html {
  ************/
 .layout-clip {
   @apply block h-[2.75rem] translate-y-1;
-  background: lighten($main-bg, 4%);
+  background: var(--bg-layout-seperator);
   clip-path: var(--clip-path-layout);
 }
 
 .layout-seperator {
-  background: lighten($main-bg, 4%);
+  background: var(--bg-layout-seperator);
   z-index: -5;
 }
 
