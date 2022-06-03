@@ -48,7 +48,7 @@ export default function Home() {
 				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<Parallax translateY={["-245", "245"]} className="layout-item-wrapper">
+			<Parallax speed={-100} className="layout-item-wrapper">
 				<div className="h-viewport grid place-items-center">
 					<div className="flex flex-col gap-y-9">
 						<div className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden"
