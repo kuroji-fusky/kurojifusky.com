@@ -4,17 +4,19 @@ import { faAdjust } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
 	const [theme, setTheme] = useState("");
+	const [themeOverride, setThemeOverride] = useState("");
 
 	const toggleTheme = () => {
 		if (theme !== "dark") {
 			setTheme("dark");
 			document.body.setAttribute("sf-theme", "dark");
 			localStorage.setItem("skepfuskyappTheme", "dark");
-		} else {
-			setTheme("light");
-			document.body.setAttribute("sf-theme", "light");
-			localStorage.setItem("skepfuskyappTheme", "light");
+			return;
 		}
+
+		setTheme("light");
+		document.body.setAttribute("sf-theme", "light");
+		localStorage.setItem("skepfuskyappTheme", "light");
 	};
 
 	useEffect(() => {
@@ -26,14 +28,20 @@ export default function ThemeToggle() {
 			document.body.setAttribute("sf-theme", "light");
 		}
 
-		if (localStorage.getItem("skepfuskyappTheme") === null) {
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-				setTheme("dark");
-				document.body.setAttribute("sf-theme", "dark");
-			} else {
-				setTheme("light");
-				document.body.setAttribute("sf-theme", "light");
-			}
+		if (localStorage.getItem("skepfuskyappTheme") !== null) {
+			setThemeOverride("(overidden)");
+			return;
+		}
+
+		setThemeOverride("(system default)");
+
+		// If it is null then find the system default
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			setTheme("dark");
+			document.body.setAttribute("sf-theme", "dark");
+		} else {
+			setTheme("light");
+			document.body.setAttribute("sf-theme", "light");
 		}
 	}, []);
 
@@ -44,11 +52,7 @@ export default function ThemeToggle() {
 				Current Theme:{" "}
 				<strong>
 					{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}
-          {/* // ! Found the damn culpit for that stupid hydration error lmfao */}
-					{/* {typeof window !== "undefined" &&
-					localStorage.getItem("skepfuskyappTheme") !== null
-						? " (overidden)"
-						: " (system default)"} */}
+					{`  ${themeOverride}`}
 				</strong>
 				<hr className="my-2" />
 				<span>
