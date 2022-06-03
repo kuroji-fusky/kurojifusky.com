@@ -44,10 +44,11 @@ export default function ThemeToggle() {
 				Current Theme:{" "}
 				<strong>
 					{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}
-					{typeof window !== "undefined" &&
+          {/* // ! Found the damn culpit for that stupid hydration error lmfao */}
+					{/* {typeof window !== "undefined" &&
 					localStorage.getItem("skepfuskyappTheme") !== null
 						? " (overidden)"
-						: " (system default)"}
+						: " (system default)"} */}
 				</strong>
 				<hr className="my-2" />
 				<span>
