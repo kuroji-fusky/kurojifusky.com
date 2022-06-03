@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import Section from "@/components/Section";
-import { CardSkeleton } from "@/components/landing/ProjectCard";
-import SEOHead from "@/components/SEOHead";
-import styles from "@/styles/Home.module.scss";
-import DefaultLayout from "@/layouts/Default";
-import Image from "next/image";
+import React, { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+import { Parallax, ParallaxProvider } from "react-scroll-parallax"
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import Section from "@/components/Section"
+import { CardSkeleton } from "@/components/landing/ProjectCard"
+import SEOHead from "@/components/SEOHead"
+import styles from "@/styles/Home.module.scss"
+import DefaultLayout from "@/layouts/Default"
+import Image from "next/image"
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
 	ssr: false
-});
+})
 
 export default function Home() {
 	const skills = [
@@ -23,23 +23,23 @@ export default function Home() {
 		"Experienced video editor",
 		"Filmmaker",
 		"Novice VFX artist"
-	];
+	]
 
-	const [removeCringe, isRemovedCringe] = useState("");
+	const [removeCringe, isRemovedCringe] = useState("")
 
 	useEffect(() => {
-		window.addEventListener("scroll", removeDatCringe);
-		return () => window.removeEventListener("scroll", removeDatCringe);
-	}, []);
+		window.addEventListener("scroll", removeDatCringe)
+		return () => window.removeEventListener("scroll", removeDatCringe)
+	}, [])
 
 	const removeDatCringe = () => {
-		let windowHeight = window.scrollY;
+		let windowHeight = window.scrollY
 		if (window !== undefined) {
 			if (windowHeight > 200) {
-				isRemovedCringe("opacity-0 pointer-events-none");
+				isRemovedCringe("opacity-0 pointer-events-none")
 			}
 		}
-	};
+	}
 
 	return (
 		<ParallaxProvider>
@@ -180,7 +180,7 @@ export default function Home() {
 				</div>
 			</div>
 		</ParallaxProvider>
-	);
+	)
 }
 
-Home.PageLayout = DefaultLayout;
+Home.PageLayout = DefaultLayout

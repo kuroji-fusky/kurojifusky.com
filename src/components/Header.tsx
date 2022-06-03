@@ -120,7 +120,7 @@ export default function Header() {
 			<nav className="header-nav">
 				<span className="header-nav-item">
 					<Link href="/projects">
-						<a className={router.asPath === "/projects" ? "page-active" : ""}>
+						<a className={router.pathname === "/projects" ? "page-active" : ""}>
 							Projects
 						</a>
 					</Link>
@@ -165,14 +165,14 @@ export default function Header() {
 				</span>
 				<span className="header-nav-item">
 					<Link href="/blog" passHref>
-						<a className={router.asPath === "/blog" ? "page-active" : ""}>
+						<a className={router.pathname === "/blog" ? "page-active" : ""}>
 							Blog
 						</a>
 					</Link>
 				</span>
 				<span className="header-nav-item">
 					<Link href="/about" passHref>
-						<a className={router.asPath === "/about" ? "page-active" : ""}>
+						<a className={router.pathname === "/about" ? "page-active" : ""}>
 							About
 						</a>
 					</Link>

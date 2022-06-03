@@ -49,11 +49,11 @@ header {
         @apply text-gray-500;
       }
     }
-  }
-}
 
-#site-wordmark span:not(#only-highlightable) {
-  @apply text-gray-500 transition-colors duration-300 font-ubuntu-mono;
+    @at-root #site-wordmark span:not(#only-highlightable) {
+      @apply text-gray-500 transition-colors duration-300 font-ubuntu-mono;
+    }
+  }
 }
 
 #only-highlightable {
@@ -112,7 +112,7 @@ header {
       @apply relative;
     }
 
-    > :is(a, span)::before {
+    :is(a, span)::before {
       content: "";
       @apply absolute -bottom-3 h-[3px] w-full;
       background: linear-gradient(90deg, rgb(155, 33, 255) 0%, rgba(20, 163, 255, 0.75) 40%, #0000 50%, #0000 100%);
@@ -273,18 +273,6 @@ $menu-toggle-active: translateY(1.2rem);
 
 #nav-item {
   @apply flex flex-col items-center p-3 rounded-md font-semibold;
-
-  $nav-colors: (1 "bg-red-600", 2 "bg-lemon-600", 3 "bg-borahae-500", 4 "bg-royalblue-400");
-
-  @each $i, $color in $nav-colors {
-    &:nth-child(#{$i}) {
-      @apply #{$color} bg-opacity-25;
-
-      #nav-icon {
-        @apply #{$color};
-      }
-    }
-  }
 }
 
 #nav-icon {
