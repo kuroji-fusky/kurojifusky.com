@@ -21,6 +21,14 @@
   .layout-clip {
     --bg-layout-seperator: #{lighten($main-bg, 4%)};
   }
+
+  .dropdown {
+    @apply bg-neutral-900;
+
+    a:hover {
+        @apply bg-neutral-50 bg-opacity-25;
+    }
+  }
 }
 
 [sf-theme="light"] {
@@ -32,5 +40,13 @@
   .layout-seperator,
   .layout-clip {
     --bg-layout-seperator: #{darken($main-fg, 6.5%)};
+  }
+
+  .dropdown {
+    @apply bg-neutral-100;
+
+    a:hover {
+      @apply bg-neutral-300 bg-opacity-25;
+    }
   }
 }

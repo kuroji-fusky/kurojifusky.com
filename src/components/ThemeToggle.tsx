@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import { faAdjust } from "@fortawesome/free-solid-svg-icons";
+import {
+	faAdjust,
+	faDisplay,
+	faMoon,
+	faSun
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeToggle() {
 	const [theme, setTheme] = useState("");
@@ -46,20 +51,34 @@ export default function ThemeToggle() {
 	}, []);
 
 	return (
-		<button id="theme-toggle" onClick={toggleTheme}>
-			<FaIcon icon={faAdjust} />
-			<span id="tooltip">
-				Current Theme:{" "}
-				<strong>
-					{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}
-					{`  ${themeOverride}`}
-				</strong>
-				<hr className="my-2" />
-				<span>
+		<span className="header-nav-item">
+			<span>
+				<FaIcon icon={faAdjust} className="mx-3" />
+			</span>
+			<div className="dropdown flex flex-col items-end px-5">
+				<div className="flex items-center justify-between w-full">
+					<span className="text-base uppercase flex items-center gap-x-2">
+						<FaIcon icon={faAdjust} /> Current theme
+					</span>
+					<span>
+						<strong>{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}</strong>
+						<button id="theme-button-toggle" onClick={toggleTheme}>
+							<FaIcon icon={theme !== "dark" ? faSun : faMoon} />
+						</button>
+					</span>
+				</div>
+				<div className="flex items-center justify-between w-full">
+					<span className="text-base uppercase flex items-center gap-x-2">
+						<FaIcon icon={faDisplay} /> Parallax
+					</span>
+					<strong>TBA</strong>
+				</div>
+				<hr className="my-1" />
+				<span className="w-[24rem] text-base">
 					⚠️ Light theme on this site is still in the works, some elements will
 					not display its correct color but feel free to blind yourself lol
 				</span>
-			</span>
-		</button>
+			</div>
+		</span>
 	);
 }

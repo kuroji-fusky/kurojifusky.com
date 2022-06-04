@@ -118,7 +118,7 @@ export default function Home() {
 							description="A website that searches characters from a furry comic, Housepets!"
 							repoLink="OpenFurs/searchpets"
 							pageLink="/projects/searchpets"
-							// extLink="https://searchpets.xyz"
+							extLink="https://searchpets.xyz"
 						/>
 						<ProjectCard
 							image="/static/projects/majira-vscode.png"

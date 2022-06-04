@@ -22,8 +22,10 @@ export default function Header() {
 	// Detect of the ESC key is pressed anywhere on the document
 	useEffect(() => {
 		const gtfo = (event: KeyboardEvent) => {
-			if (event.key === "Escape") return setIsOpen(false);
+			if (event.key === "Escape")
+      return setIsOpen(false);
 		};
+
 		document.addEventListener("keydown", gtfo);
 		return () => document.removeEventListener("keydown", gtfo);
 	}, []);
@@ -31,8 +33,9 @@ export default function Header() {
 	const [stickyClass, setStickyClass] = useState("");
 
 	const stickNavbar = () => {
-		let windowHeight = window.scrollY;
-		windowHeight > 21 ? setStickyClass("gradient-toggle") : setStickyClass("");
+		window.scrollY > 21
+      ? setStickyClass("gradient-toggle")
+      : setStickyClass("");
 	};
 
 	useEffect(() => {
@@ -46,31 +49,31 @@ export default function Header() {
 			link: "/projects/pandapaco-drawing-stats",
 			title: "Paco Drawing Stats"
 		},
-		{
+		// {
+		// 	img: "/static/avatars/02.png",
+		// 	link: "/projects/floofy-clicker",
+		// 	title: "Floofy Clicker"
+		// },
+		// {
+		// 	img: "/static/projects/scammerino-lol.jpg",
+		// 	link: "/projects/scammerino",
+		// 	title: "Scammerino"
+		// },
+		// {
+		// 	img: "/static/projects/majira-vscode.png",
+		// 	link: "/projects/majira-vscode",
+		// 	title: "Majira VS Code Theme"
+		// },
+		// {
 			// img: "/static/avatars/02.png",
-			link: "/projects/floofy-clicker",
-			title: "Floofy Clicker"
-		},
-		{
-			img: "/static/projects/scammerino-lol.jpg",
-			link: "/projects/scammerino",
-			title: "Scammerino"
-		},
-		{
-			img: "/static/projects/majira-vscode.png",
-			link: "/projects/majira-vscode",
-			title: "Majira VS Code Theme"
-		},
-		{
-			// img: "/static/avatars/02.png",
-			link: "/projects/cookie-clicker-afk",
-			title: "Cookie Clicker AFK"
-		},
-		{
-			// img: "/static/avatars/02.png",
-			link: "/projects/biro-ui",
-			title: "Biro UI"
-		}
+		// 	link: "/projects/cookie-clicker-afk",
+		// 	title: "Cookie Clicker AFK"
+		// },
+		// {
+		// 	img: "/static/avatars/02.png",
+		// 	link: "/projects/biro-ui",
+		// 	title: "Biro UI"
+		// }
 	];
 
 	const projectsContributed = [
