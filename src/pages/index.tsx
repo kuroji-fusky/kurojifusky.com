@@ -107,7 +107,9 @@ export default function Home() {
 				}
 			></div>
 			<div className="layout-seperator z-3 relative">
-				<div className="mx-auto my-0 max-w-[1536px] relative">good shit</div>
+				<div className="layout-item-wrapper">
+          idk
+				</div>
 			</div>
 			<div
 				className="layout-clip z-3 relative"
