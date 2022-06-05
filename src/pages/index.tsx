@@ -22,7 +22,7 @@ export default function Home() {
 		"Filmmaker",
 		"Full-stack web developer",
 		"Web and UI/UX designer",
-		"Novice VFX artist",
+		"Novice VFX artist"
 	];
 
 	const [removeCringe, isRemovedCringe] = useState("");
@@ -33,9 +33,8 @@ export default function Home() {
 	}, []);
 
 	const removeDatCringe = () => {
-		let windowHeight = window.scrollY;
 		if (window !== undefined) {
-			if (windowHeight > 200) {
+			if (window.scrollY > 200) {
 				isRemovedCringe("opacity-0 pointer-events-none");
 			}
 		}
@@ -48,47 +47,77 @@ export default function Home() {
 				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<div className="h-viewport flex gap-6 items-center pt-32 justify-between mx-auto my-0 max-w-[1536px] p-8">
+			<div className="h-viewport flex gap-6 items-center justify-between mx-auto my-0 max-w-[960px] lg:max-w-[1500px] p-8">
 				<div className="flex flex-col gap-y-2">
-					Hi, I'm
 					<span className="text-[2.5rem] lg:text-5xl md:text-4xl flex items-center font-ubuntu-mono">
 						<span>&lt;</span>
-						<span>skepfusky</span>
+						<span id="highlight">skepfusky</span>
 						<span>&#47;&gt;</span>
 					</span>
-            <span>
-              I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!
-            </span>
-          <div className="w-[50%] flex flex-wrap gap-2 uppercase">
-            {skills.map((skill, index) => (
-              <span key={index} className="rounded-md bg-borahae-600 px-3 py-1 cursor-default">
-                {skill}
-              </span>
-            ))}
-          </div>
+					<article className="w-[70%] text-lg lg:text-xl">
+						<p>
+							Hi, I'm <strong>skepfusky</strong>, simply known as{" "}
+							<strong>Skep</strong>, also known by my stage name{" "}
+							<strong>Kokoro Husky</strong> on streaming platforms -- I'm a
+							20-year-old self-employed and self-taught hobbyist from the
+							Philippines!
+						</p>
+						<p className="mt-2">
+							I'm just trying to get my name out there as I'm extremely
+							passionate about sharing and possibly inspiring future generations
+							through my broad set of skills, talent, and art as a self-taught
+							individual.
+						</p>
+					</article>
+					<div className="w-[60%] flex flex-wrap gap-2 uppercase">
+						{skills.map((skill, index) => (
+							<span
+								key={index}
+								className="rounded-md bg-borahae-600 px-3 py-1 cursor-default"
+							>
+								{skill}
+							</span>
+						))}
+					</div>
 				</div>
-				<div>parallax image stuff</div>
+				<div className="relative h-[23rem] w-[23rem]">
+					<div className="absolute -left-14 z-3 -2 flex items-center">
+						<Parallax speed={-34} className="relative h-[21rem] w-[21rem] z-1">
+							<Image
+								src="/static/avatars/FormalAvatar-SVG.svg"
+								alt="Skepfusky"
+								objectFit="contain"
+								layout="fill"
+								priority={true}
+							/>
+						</Parallax>
+					</div>
+					<Parallax
+						speed={-30}
+						className="absolute -left-14 h-[21rem] w-[21rem] rounded-full bg-stone-700 z-0"
+					></Parallax>
+				</div>
 			</div>
 			<div
-				className="layout-clip"
+				className="layout-clip z-3 relative"
 				style={
 					{
 						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
 					} as React.CSSProperties
 				}
 			></div>
-			<div className="layout-seperator">
+			<div className="layout-seperator z-3 relative">
 				<div className="mx-auto my-0 max-w-[1536px] relative">good shit</div>
 			</div>
 			<div
-				className="layout-clip z-3"
+				className="layout-clip z-3 relative"
 				style={
 					{
 						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
 					} as React.CSSProperties
 				}
 			></div>
-			<div className="layout-seperator relative z-2" id="showcase">
+			<div className="layout-seperator z-3 relative" id="showcase">
 				<div className="layout-item-wrapper">
 					<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
 						<ProjectCard
@@ -140,35 +169,7 @@ export default function Home() {
 						/>
 					</Section>
 					<Section heading="About me" emojiKey="🦊">
-						<div className={styles.section} id={styles["bio"]}>
-							<article className="cursor-default">
-								<p>
-									Heya, I'm <span id="highlight">skepfusky</span> or just simply{" "}
-									<span id="highlight">Skep</span>, or also known by my stage
-									name <span id="highlight">Kokoro Husky</span> on streaming
-									platforms -- I'm a 20-year-old self-employed and self-taught
-									hobbyist from the Philippines!
-								</p>
-								<p>
-									I'm not trying to be a celebrity, or even a{" "}
-									<strong>
-										<em>popufur...</em>
-									</strong>{" "}
-									I'm just trying to get my name out there as I'm extremely
-									passionate about sharing and possibly inspiring future
-									generations through my broad set of skills, talent, and art as
-									a self-taught individual.
-								</p>
-							</article>
-							<div id={styles["bio-svg"]}>
-								{/* todo: cringe svg here */}
-								<img
-									src="/static/avatars/07.png"
-									alt="Skepfusky avatar"
-									className="rounded-full w-[16rem]"
-								/>
-							</div>
-						</div>
+						<div className={styles.section} id={styles["bio"]}></div>
 					</Section>
 				</div>
 			</div>
