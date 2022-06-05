@@ -24,14 +24,7 @@ export default function ShitApp({
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
 			/>
 			<Script strategy="lazyOnload">
-				{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-          page_path: window.location.pathname,
-          });
-        `}
+				{`window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {\npage_path: window.location.pathname,\n});`}
 			</Script>
 			{Component.PageLayout ? (
 				<Component.PageLayout>

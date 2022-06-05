@@ -1,95 +1,87 @@
-import React, { useEffect, useState } from "react"
-import dynamic from "next/dynamic"
-import { Parallax, ParallaxProvider } from "react-scroll-parallax"
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
-import Section from "@/components/Section"
-import { CardSkeleton } from "@/components/landing/ProjectCard"
-import SEOHead from "@/components/SEOHead"
-import styles from "@/styles/Home.module.scss"
-import DefaultLayout from "@/layouts/Default"
-import Image from "next/image"
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import Section from "@/components/Section";
+import { CardSkeleton } from "@/components/landing/ProjectCard";
+import SEOHead from "@/components/SEOHead";
+import styles from "@/styles/Home.module.scss";
+import DefaultLayout from "@/layouts/Default";
+import Image from "next/image";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
 	ssr: false
-})
+});
 
 export default function Home() {
 	const skills = [
-		"Full-stack web development",
-		"Web and UI/UX Design",
-		"Indie musician",
 		"Experienced video editor",
+		"Indie musician",
 		"Filmmaker",
-		"Novice VFX artist"
-	]
+		"Full-stack web developer",
+		"Web and UI/UX designer",
+		"Novice VFX artist",
+	];
 
-	const [removeCringe, isRemovedCringe] = useState("")
+	const [removeCringe, isRemovedCringe] = useState("");
 
 	useEffect(() => {
-		window.addEventListener("scroll", removeDatCringe)
-		return () => window.removeEventListener("scroll", removeDatCringe)
-	}, [])
+		window.addEventListener("scroll", removeDatCringe);
+		return () => window.removeEventListener("scroll", removeDatCringe);
+	}, []);
 
 	const removeDatCringe = () => {
-		let windowHeight = window.scrollY
+		let windowHeight = window.scrollY;
 		if (window !== undefined) {
 			if (windowHeight > 200) {
-				isRemovedCringe("opacity-0 pointer-events-none")
+				isRemovedCringe("opacity-0 pointer-events-none");
 			}
 		}
-	}
+	};
 
 	return (
 		<ParallaxProvider>
 			<SEOHead
 				title="Home"
-				description="Hi! I'm skepfusky, I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
+				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<Parallax speed={-200} className="layout-item-wrapper">
-				<div className="h-viewport grid place-items-center">
-					<div className="flex flex-col gap-y-9">
-						<div
-							className="bg-gradient-to-t from-borahae-600 to-royalblue-400 rounded-2xl overflow-hidden mx-auto"
-							style={{ boxShadow: "inset 0 0 50px rgba(0, 0, 0, 0.3)" }}
-						>
-							<Parallax
-								speed={-18}
-								className="relative h-[14rem] md:h-[25rem] w-[14rem] md:w-[25rem] "
-							>
-								<Image
-									src="/static/avatars/FormalAvatar-SVG.svg"
-									alt="Omg what a cutie"
-									layout="fill"
-									objectFit="contain"
-                  priority={true}
-								/>
-							</Parallax>
-						</div>
-						<h2 className="text-center">Coming soon...</h2>
-						<div id={styles["skill-inline"]} className="w-[30rem]">
-							{skills.map((skill, i) => (
-								<div id={styles["skill-item"]} key={i}>
-									{skill}
-								</div>
-							))}
-						</div>
-					</div>
-					{/* scrolldown absolute position */}
-					<a
-						href="#showcase"
-						id={styles["scroll-down"]}
-						className={removeCringe}
-					>
-						<span>Scroll down for cringe</span>
-						<FaIcon icon={faAngleDown} size="lg" />
-					</a>
+			<div className="h-viewport flex gap-6 items-center pt-32 justify-between mx-auto my-0 max-w-[1536px] p-8">
+				<div className="flex flex-col gap-y-2">
+					Hi, I'm
+					<span className="text-[2.5rem] lg:text-5xl md:text-4xl flex items-center font-ubuntu-mono">
+						<span>&lt;</span>
+						<span>skepfusky</span>
+						<span>&#47;&gt;</span>
+					</span>
+            <span>
+              I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!
+            </span>
+          <div className="w-[50%] flex flex-wrap gap-2 uppercase">
+            {skills.map((skill, index) => (
+              <span key={index} className="rounded-md bg-borahae-600 px-3 py-1 cursor-default">
+                {skill}
+              </span>
+            ))}
+          </div>
 				</div>
-			</Parallax>
+				<div>parallax image stuff</div>
+			</div>
 			<div
 				className="layout-clip"
+				style={
+					{
+						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
+					} as React.CSSProperties
+				}
+			></div>
+			<div className="layout-seperator">
+				<div className="mx-auto my-0 max-w-[1536px] relative">good shit</div>
+			</div>
+			<div
+				className="layout-clip z-3"
 				style={
 					{
 						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
@@ -181,7 +173,7 @@ export default function Home() {
 				</div>
 			</div>
 		</ParallaxProvider>
-	)
+	);
 }
 
-Home.PageLayout = DefaultLayout
+Home.PageLayout = DefaultLayout;
