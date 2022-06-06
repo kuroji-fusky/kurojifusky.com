@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,8 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { Parallax } from "react-scroll-parallax";
 import styles from "@/styles/Home.module.scss";
+
+import { ParallaxDisable } from "@/models/Context";
 
 export default function HeroHeader() {
 	const skills = [
@@ -30,11 +32,13 @@ export default function HeroHeader() {
 			if (window.scrollY > 200) {
 				isRemovedCringe("opacity-0 pointer-events-none");
         // add aria-hidden to the navbar to prevent screen readers from reading the navbar
-        const a: any = document.getElementById(`${styles["scroll-down"]}`);
-        a.setAttribute("aria-hidden", "true");
+        const appendHidden: any = document.getElementById(`${styles["scroll-down"]}`);
+        appendHidden.setAttribute("aria-hidden", "true");
 			}
 		}
 	};
+
+  const { disableParallax } = useContext(ParallaxDisable);
 
 	return (
 		<div className={styles["hero-header"]}>
@@ -70,6 +74,7 @@ export default function HeroHeader() {
 				<div className="absolute -left-14 z-3 -2 flex items-center">
 					<Parallax
 						speed={-35}
+            disabled={disableParallax}
 						className="relative h-[21rem] w-[21rem] z-1 flex flex-col-reverse"
 					>
 						<Image
@@ -93,6 +98,7 @@ export default function HeroHeader() {
 				</div>
 				<Parallax
 					speed={-30}
+          disabled={disableParallax}
 					className="absolute -left-14 h-[21rem] w-[21rem] rounded-full bg-stone-700 z-0"
 				></Parallax>
 			</div>

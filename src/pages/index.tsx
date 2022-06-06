@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { ParallaxProvider } from "react-scroll-parallax";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import Section from "@/components/Section";
 import { CardSkeleton } from "@/components/landing/ProjectCard";
 import SEOHead from "@/components/SEOHead";
@@ -10,6 +10,7 @@ import HeroHeader from "@/components/layouts/HeroHeader";
 import HomeHeading from "@/components/HomeHeading";
 import Image from "next/image";
 import AlbumItem from "@/components/AlbumItem";
+import { ParallaxDisable } from "@/models/Context";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -17,6 +18,9 @@ const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 });
 
 export default function Home() {
+
+	const { disableParallax } = useContext(ParallaxDisable);
+
 	return (
 		<ParallaxProvider>
 			<SEOHead
@@ -24,6 +28,9 @@ export default function Home() {
 				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
+      <div className="fixed top-16 left-8 p-5 bg-neutral-600 text-white">
+        {disableParallax ? "Parallax disabled" : "Parallax enabled"}
+      </div>
 			<HeroHeader />
 			<div
 				className="layout-clip z-3 relative"
@@ -38,44 +45,49 @@ export default function Home() {
 					<div>
 						<HomeHeading title="music stuff" emojiKey="😂" />
 						<p className="mt-4">
-							I started to produce music independently in 2017. Initally, making
-							hip-hop/rap music, then changed to alternative/indie music in
-							2020, and I've released 2 albums and 2 EPs so far. The DAW I
+							I started to produce music independently in 2017. Initially,
+							making hip-hop/rap music, then switched to alternative/indie music
+							in 2020, and I've released 2 albums and 2 EPs so far. The DAW I
 							currently use is FL Studio, and I'm hopefully making a transition
 							to use Cubase soon, who knows? I'm also master my own music and
-							planning to join a record label, AWAL, to expand my reach.
+							I've currently taken a break from producing music at the moment.
 						</p>
 					</div>
 					<div className="flex justify-around py-[3.5rem]">
 						<AlbumItem
 							title="Recursion"
 							cover="Recursion_cover.png"
-							albumType="Album"
-							date="TBA"
+							albumType="album"
+							date="2022"
+							className="hidden sm:flex"
 						/>
 						<AlbumItem
 							title="A New Life"
 							cover="A New Life_cover.png"
-							albumType="Album"
+							albumType="album"
 							date="Dec 2021"
+							className="hidden sm:flex"
 						/>
 						<AlbumItem
 							title="Horizon"
 							cover="Horizon_cover.png"
-							albumType="Album"
+							albumType="album"
 							date="May 2021"
+							className="hidden md:flex"
 						/>
 						<AlbumItem
 							title="Dreams and Phases"
 							cover="Dreams and Phases_cover.jpg"
-							albumType="Single"
+							albumType="single"
 							date="Dec 2021"
+							className="hidden lg:flex"
 						/>
 						<AlbumItem
 							title="Origins"
 							cover="Origins_cover.png"
-							albumType="Single"
+							albumType="single"
 							date="Aug 2020"
+							className="hidden xl:flex"
 						/>
 					</div>
 				</section>

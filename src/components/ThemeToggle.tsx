@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ParallaxDisable } from "@/models/Context";
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
 import {
 	faAdjust,
@@ -50,6 +51,8 @@ export default function ThemeToggle() {
 		}
 	}, []);
 
+	const { disableParallax, setDisableParallax } = useContext(ParallaxDisable);
+
 	return (
 		<span className="header-nav-item">
 			<span>
@@ -71,7 +74,12 @@ export default function ThemeToggle() {
 					<span className="text-base uppercase flex items-center gap-x-2">
 						<FaIcon icon={faDisplay} /> Parallax
 					</span>
-					<strong>TBA</strong>
+					<button
+						onClick={() => setDisableParallax(!disableParallax)}
+						className="p-1 bg-neutral-300"
+					>
+						Disable parallax
+					</button>
 				</div>
 				<hr className="my-1" />
 				<span className="w-[24rem] text-base">
