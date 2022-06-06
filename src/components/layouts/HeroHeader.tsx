@@ -29,6 +29,9 @@ export default function HeroHeader() {
 		if (window !== undefined) {
 			if (window.scrollY > 200) {
 				isRemovedCringe("opacity-0 pointer-events-none");
+        // add aria-hidden to the navbar to prevent screen readers from reading the navbar
+        const a: any = document.getElementById(`${styles["scroll-down"]}`);
+        a.setAttribute("aria-hidden", "true");
 			}
 		}
 	};

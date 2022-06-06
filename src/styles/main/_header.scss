@@ -33,7 +33,7 @@ header {
 }
 
 .header-logo {
-  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[13.5rem];
+  @apply py-5 pr-0 flex justify-center items-center gap-x-4 relative w-[16rem] md:w-[13.5rem] font-ubuntu-mono;
 
   &:hover {
     text-shadow: 0 0 24px #fff;
@@ -51,7 +51,7 @@ header {
     }
 
     @at-root #site-wordmark span:not(#only-highlightable) {
-      @apply text-gray-500 transition-colors duration-300 font-ubuntu-mono;
+      @apply text-gray-500 transition-colors duration-300;
     }
   }
 }
