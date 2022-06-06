@@ -45,32 +45,30 @@ export default function Header() {
 			img: "/static/projects/paco-yt-icon.jpg",
 			link: "/projects/pandapaco-drawing-stats",
 			title: "Paco Drawing Stats"
+		},
+		{
+			link: "/projects/floofy-clicker",
+			title: "Floofy Clicker"
+		},
+		{
+			img: "/static/projects/scammerino-lol.jpg",
+			link: "/projects/scammerino",
+			title: "Scammerino"
+		},
+		{
+			img: "/static/projects/majira-vscode.png",
+			link: "/projects/majira-vscode",
+			title: "Majira VS Code Theme"
+		},
+		{
+			link: "/projects/cookie-clicker-afk",
+			title: "Cookie Clicker AFK"
+		},
+		{
+			img: "/static/avatars/02.png",
+			link: "/projects/biro-ui",
+			title: "Biro UI"
 		}
-		// {
-		// 	img: "/static/avatars/02.png",
-		// 	link: "/projects/floofy-clicker",
-		// 	title: "Floofy Clicker"
-		// },
-		// {
-		// 	img: "/static/projects/scammerino-lol.jpg",
-		// 	link: "/projects/scammerino",
-		// 	title: "Scammerino"
-		// },
-		// {
-		// 	img: "/static/projects/majira-vscode.png",
-		// 	link: "/projects/majira-vscode",
-		// 	title: "Majira VS Code Theme"
-		// },
-		// {
-		// img: "/static/avatars/02.png",
-		// 	link: "/projects/cookie-clicker-afk",
-		// 	title: "Cookie Clicker AFK"
-		// },
-		// {
-		// 	img: "/static/avatars/02.png",
-		// 	link: "/projects/biro-ui",
-		// 	title: "Biro UI"
-		// }
 	]
 
 	const projectsContributed = [
@@ -94,6 +92,35 @@ export default function Header() {
 		{
 			link: "/about/fursona-gallery",
 			title: "Fursona Gallery"
+		}
+	]
+
+	const discography = [
+		{
+			link: "/discography/a-new-life",
+			title: "A New Life"
+		},
+		{
+			link: "/discography/horizon",
+			title: "Horizon"
+		},
+		{
+			link: "/discography/nostalgia",
+			title: "Nostalgia"
+		}
+	]
+
+	const videoContent = [
+		{
+			link: "/content/ytp",
+			title: "YouTube Poops"
+		}
+	]
+
+	const videoSeries = [
+		{
+			link: "/content/jin-woos-adventure",
+			title: "Jin Woo's Adventure"
 		}
 	]
 

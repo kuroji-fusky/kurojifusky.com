@@ -1,5 +1,6 @@
 import Image from "next/image"
 import styles from "@/styles/AlbumItem.module.scss"
+import Link from "next/link"
 
 interface IAlbumItemProps {
 	title: string
@@ -18,14 +19,17 @@ export default function AlbumItem({
 }: IAlbumItemProps) {
 	return (
 		<div className={`${styles["album-container"]} ${className}`}>
-			<div className={styles["album-aside"]}>
-				<Image
-					layout="fill"
-					src={`/static/album-covers/${cover}`}
-					alt={`Album cover for ${title}`}
-					className="rounded-xl"
-				/>
-			</div>
+			{/* Replace any whitespaces with a dash */}
+			<Link href={`/discography/${title.toLowerCase().replace(/\s+/g, "-")}`}>
+				<a className={styles["album-aside"]}>
+					<Image
+						layout="fill"
+						src={`/static/album-covers/${cover}`}
+						alt={`Album cover for ${title}`}
+						className="rounded-xl"
+					/>
+				</a>
+			</Link>
 			<div id={styles.contents}>
 				<h3>{title}</h3>
 				<ul>

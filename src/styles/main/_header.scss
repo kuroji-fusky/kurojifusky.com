@@ -280,13 +280,11 @@ $menu-toggle-active: translateY(1.2rem);
  * Menu contents
  *******************/
 
-#toggle-nav {
-	&-menu {
-		@apply grid gap-2;
+#toggle-nav-menu {
+	@apply grid gap-2;
 
-		ul {
-			@apply list-none;
-		}
+	ul {
+		@apply list-none;
 	}
 }
 
