@@ -41,11 +41,20 @@ $g2: rgba(255, 39, 215, 0.75);
 }
 
 #highlight {
-  background: linear-gradient(90deg, $g1, $g2);
+  background: linear-gradient(90deg, $g1, $g2, $g1, $g2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: #0000;
   @apply font-extrabold;
+  animation: gradientScroll 6s infinite linear;
+  background-size: 300%;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  #highlight {
+    animation: none !important;
+  }
+}
+
 
 @keyframes gradientScroll {
   0% {

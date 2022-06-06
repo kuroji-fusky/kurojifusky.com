@@ -8,6 +8,10 @@
 The source code of my shitty website written in Next.js + TypeScript with TailwindCSS and Sass
 </p>
 
+## Libraries used
+
+- [`react-scroll-parallax`](https://react-scroll-parallax.damnthat.tv/docs/intro)
+
 ## Installation
 
 Fork or clone the repo and install the garbage

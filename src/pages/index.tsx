@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { ParallaxProvider } from "react-scroll-parallax";
 import Section from "@/components/Section";
 import { CardSkeleton } from "@/components/landing/ProjectCard";
 import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/Home.module.scss";
 import DefaultLayout from "@/layouts/Default";
-import Image from "next/image";
+import HeroHeader from "@/components/layouts/HeroHeader";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -16,88 +14,14 @@ const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 });
 
 export default function Home() {
-	const skills = [
-		"Experienced video editor",
-		"Indie musician",
-		"Filmmaker",
-		"Full-stack web developer",
-		"Web and UI/UX designer",
-		"Novice VFX artist"
-	];
-
-	const [removeCringe, isRemovedCringe] = useState("");
-
-	useEffect(() => {
-		window.addEventListener("scroll", removeDatCringe);
-		return () => window.removeEventListener("scroll", removeDatCringe);
-	}, []);
-
-	const removeDatCringe = () => {
-		if (window !== undefined) {
-			if (window.scrollY > 200) {
-				isRemovedCringe("opacity-0 pointer-events-none");
-			}
-		}
-	};
-
-	return (
+  return (
 		<ParallaxProvider>
 			<SEOHead
 				title="Home"
 				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-			<div className="h-viewport flex gap-6 items-center justify-between mx-auto my-0 max-w-[960px] lg:max-w-[1500px] p-8">
-				<div className="flex flex-col gap-y-2">
-					<span className="text-[2.5rem] lg:text-5xl md:text-4xl flex items-center font-ubuntu-mono">
-						<span>&lt;</span>
-						<span id="highlight">skepfusky</span>
-						<span>&#47;&gt;</span>
-					</span>
-					<article className="w-[70%] text-lg lg:text-xl">
-						<p>
-							Hi, I'm <strong>skepfusky</strong>, simply known as{" "}
-							<strong>Skep</strong>, also known by my stage name{" "}
-							<strong>Kokoro Husky</strong> on streaming platforms -- I'm a
-							20-year-old self-employed and self-taught hobbyist from the
-							Philippines!
-						</p>
-						<p className="mt-2">
-							I'm just trying to get my name out there as I'm extremely
-							passionate about sharing and possibly inspiring future generations
-							through my broad set of skills, talent, and art as a self-taught
-							individual.
-						</p>
-					</article>
-					<div className="w-[60%] flex flex-wrap gap-2 uppercase">
-						{skills.map((skill, index) => (
-							<span
-								key={index}
-								className="rounded-md bg-borahae-600 px-3 py-1 cursor-default"
-							>
-								{skill}
-							</span>
-						))}
-					</div>
-				</div>
-				<div className="relative h-[23rem] w-[23rem]">
-					<div className="absolute -left-14 z-3 -2 flex items-center">
-						<Parallax speed={-34} className="relative h-[21rem] w-[21rem] z-1">
-							<Image
-								src="/static/avatars/FormalAvatar-SVG.svg"
-								alt="Skepfusky"
-								objectFit="contain"
-								layout="fill"
-								priority={true}
-							/>
-						</Parallax>
-					</div>
-					<Parallax
-						speed={-30}
-						className="absolute -left-14 h-[21rem] w-[21rem] rounded-full bg-stone-700 z-0"
-					></Parallax>
-				</div>
-			</div>
+			<HeroHeader />
 			<div
 				className="layout-clip z-3 relative"
 				style={
@@ -107,8 +31,10 @@ export default function Home() {
 				}
 			></div>
 			<div className="layout-seperator z-3 relative">
-				<div className="layout-item-wrapper">
-          idk
+				<div className="layout-item-wrapper px-6">
+					<div className="flex gap-x-3">
+						<span>Yesh</span>
+					</div>
 				</div>
 			</div>
 			<div
@@ -169,9 +95,6 @@ export default function Home() {
 							description="An awful Discord bot when I barely knew anything about Node.js"
 							repoLink="skepfusky/tessinator"
 						/>
-					</Section>
-					<Section heading="About me" emojiKey="🦊">
-						<div className={styles.section} id={styles["bio"]}></div>
 					</Section>
 				</div>
 			</div>

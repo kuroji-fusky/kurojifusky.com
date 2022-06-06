@@ -5,10 +5,11 @@
 @layer base {
   html {
     @apply antialiased scroll-smooth scroll-pt-20;
+    overflow-x: hidden !important
   }
 
   body {
-    @apply leading-7 overflow-x-hidden;
+    @apply leading-7;
   }
 
   hr {

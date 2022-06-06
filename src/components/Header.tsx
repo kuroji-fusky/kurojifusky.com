@@ -101,7 +101,7 @@ export default function Header() {
 	];
 
 	return (
-		<header className={`${stickyClass} ${isOpen ? "header-active" : ""}`}>
+		<header className={`${stickyClass} ${isOpen ? "header-active" : ""} z-mosttop`}>
 			<div className="header-logo">
 				<button
 					id="burger-menu"

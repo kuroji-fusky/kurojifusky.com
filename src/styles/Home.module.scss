@@ -1,10 +1,39 @@
-@use 'partials/variables' as *;
-@use 'partials/mixins' as *;
+@use "partials/variables" as *;
+@use "partials/mixins" as *;
 
+/*** Hero stuff  ***/
+.hero {
+  &-header {
+    @apply h-viewport w-full flex gap-6 items-center justify-between mx-auto my-0;
 
+    max-width: 1440px;
 
-/*** Sections and Seperators  ***/
+    @media only screen and (max-width: 1540px) {
+      max-width: 1280px;
+    }
 
+    @media only screen and (max-width: 1380px) {
+      max-width: 1024px;
+    }
+    
+    @media only screen and (max-width: 1220px) {
+      @apply flex-col-reverse gap-0;
+    }
+  }
+  &-contents {
+    @apply flex flex-col gap-y-5;
+
+    @media only screen and (max-width: 1220px) {
+      @apply text-center items-center;
+    }
+
+    article {
+      @apply w-[70%] text-lg lg:text-xl;
+    }
+  }
+}
+
+/*** Sections and Seperators ***/
 .section {
   @apply flex p-4;
 
@@ -54,14 +83,8 @@
   }
 }
 
-#skill {
-  &-inline {
-    @apply flex gap-2 mt-2 flex-wrap justify-center;
-  }
-
-  &-item {
-    @apply cursor-default p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
-  }
+#skill-item {
+  @apply cursor-default p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
 }
 
 #scroll-down {
