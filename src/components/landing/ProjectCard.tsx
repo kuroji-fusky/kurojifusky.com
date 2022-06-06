@@ -1,20 +1,20 @@
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import {
 	faCode,
 	faExternalLink,
 	faInfoCircle
-} from "@fortawesome/free-solid-svg-icons";
-import Link from "next/link";
+} from "@fortawesome/free-solid-svg-icons"
+import Link from "next/link"
 
-import styles from "@/styles/Home.module.scss";
+import styles from "@/styles/Home.module.scss"
 
 interface ICardProps {
-	title: string;
-	description: string;
-	image?: string;
-	pageLink?: string;
-	repoLink?: string;
-	extLink?: string;
+	title: string
+	description: string
+	image?: string
+	pageLink?: string
+	repoLink?: string
+	extLink?: string
 }
 
 export default function ProjectCard({
@@ -53,17 +53,13 @@ export default function ProjectCard({
 					<Link href={extLink} passHref>
 						<a className="link-btn flex items-center">
 							Website
-							<FaIcon
-								icon={faExternalLink}
-								size="sm"
-								className="pl-1"
-							/>
+							<FaIcon icon={faExternalLink} size="sm" className="pl-1" />
 						</a>
 					</Link>
 				)}
 			</div>
 		</div>
-	);
+	)
 }
 
 export function CardSkeleton() {
@@ -74,5 +70,5 @@ export function CardSkeleton() {
 			<div className={styles["featured-project-loading-description"]}></div>
 			<div className="py-2 flex justify-center gap-x-2"></div>
 		</div>
-	);
+	)
 }

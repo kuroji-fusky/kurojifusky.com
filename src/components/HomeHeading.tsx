@@ -1,7 +1,7 @@
 interface IHomeHeadingProps {
-  title: string;
-  emojiKey: string;
-  className?: string;
+	title: string
+	emojiKey: string
+	className?: string
 }
 
 export default function HomeHeading({
@@ -16,5 +16,5 @@ export default function HomeHeading({
 			</span>
 			<h3 className="uppercase font-extrabold text-xl">{title}</h3>
 		</div>
-	);
-};
+	)
+}

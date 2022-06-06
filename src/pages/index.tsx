@@ -1,25 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
-import Section from "@/components/Section";
-import { CardSkeleton } from "@/components/landing/ProjectCard";
-import SEOHead from "@/components/SEOHead";
-import styles from "@/styles/Home.module.scss";
-import DefaultLayout from "@/layouts/Default";
-import HeroHeader from "@/components/layouts/HeroHeader";
-import HomeHeading from "@/components/HomeHeading";
-import Image from "next/image";
-import AlbumItem from "@/components/AlbumItem";
-import { ParallaxDisable } from "@/models/Context";
+import React, { useContext, useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+import { Parallax, ParallaxProvider } from "react-scroll-parallax"
+import Section from "@/components/Section"
+import { CardSkeleton } from "@/components/landing/ProjectCard"
+import SEOHead from "@/components/SEOHead"
+import styles from "@/styles/Home.module.scss"
+import DefaultLayout from "@/layouts/Default"
+import HeroHeader from "@/components/layouts/HeroHeader"
+import HomeHeading from "@/components/HomeHeading"
+import Image from "next/image"
+import AlbumItem from "@/components/AlbumItem"
+import { ParallaxDisable } from "@/models/Context"
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
 	ssr: false
-});
+})
 
 export default function Home() {
-
-	const { disableParallax } = useContext(ParallaxDisable);
+	const { disableParallax } = useContext(ParallaxDisable)
 
 	return (
 		<ParallaxProvider>
@@ -28,9 +27,9 @@ export default function Home() {
 				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
 				image="/static/avatars/07.png"
 			/>
-      <div className="fixed top-16 left-8 p-5 bg-neutral-600 text-white">
-        {disableParallax ? "Parallax disabled" : "Parallax enabled"}
-      </div>
+			<div className="fixed top-16 left-8 p-5 bg-neutral-600 text-white">
+				{disableParallax ? "Parallax disabled" : "Parallax enabled"}
+			</div>
 			<HeroHeader />
 			<div
 				className="layout-clip z-3 relative"
@@ -154,7 +153,7 @@ export default function Home() {
 				</div>
 			</div>
 		</ParallaxProvider>
-	);
+	)
 }
 
-Home.PageLayout = DefaultLayout;
+Home.PageLayout = DefaultLayout

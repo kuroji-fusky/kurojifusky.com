@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
+import Head from "next/head"
+import { useRouter } from "next/router"
 interface ISEOHeadProps {
-	title: string;
-	description: string;
-	image?: string;
-	keywords?: string[];
+	title: string
+	description: string
+	image?: string
+	keywords?: string[]
 }
 
 export default function SEOHead({
@@ -20,8 +20,8 @@ export default function SEOHead({
 		"programming"
 	]
 }: ISEOHeadProps) {
-	const router = useRouter();
-	const SITE_NAME = "skepfusky";
+	const router = useRouter()
+	const SITE_NAME = "skepfusky"
 
 	return (
 		<Head>
@@ -55,5 +55,5 @@ export default function SEOHead({
 			<link rel="apple-touch-icon" href="/favicon.ico" />
 			<link rel="canonical" href={`https://skepfusky.xyz${router.asPath}`} />
 		</Head>
-	);
+	)
 }

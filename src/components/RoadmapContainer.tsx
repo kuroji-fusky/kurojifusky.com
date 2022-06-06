@@ -1,18 +1,18 @@
-import styles from "@/styles/Roadmap.module.scss";
+import styles from "@/styles/Roadmap.module.scss"
 
 export default function RoadmapContainer({
 	children
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
-	return <div id={styles.container}>{children}</div>;
+	return <div id={styles.container}>{children}</div>
 }
 
 interface IRoadmapItemProps {
-	title: string;
-	children: React.ReactNode;
-	img?: string;
-	imgAlt?: string;
+	title: string
+	children: React.ReactNode
+	img?: string
+	imgAlt?: string
 }
 
 export function RoadmapItem({
@@ -31,5 +31,5 @@ export function RoadmapItem({
 				{children}
 			</div>
 		</div>
-	);
+	)
 }

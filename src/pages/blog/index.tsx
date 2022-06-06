@@ -1,10 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { BlogItems } from "@/components/static/StaticItems";
-import { BlogPages } from "@/models/ParseMyAss";
-import DefaultLayout from "@/layouts/Default";
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
+import { BlogItems } from "@/components/static/StaticItems"
+import { BlogPages } from "@/models/ParseMyAss"
+import DefaultLayout from "@/layouts/Default"
 
 export default function BlogPage({
 	items
@@ -15,22 +15,22 @@ export default function BlogPage({
 				<BlogItems key={i} items={item} />
 			))}
 		</div>
-	);
+	)
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const articleDir = path.join("content/blog");
+	const articleDir = path.join("content/blog")
 
-	const files = fs.readdirSync(articleDir);
+	const files = fs.readdirSync(articleDir)
 
 	const projectItem = files.map((fileName: string) => {
-		const slug = fileName.replace(".mdx", "");
-		const article = fs.readFileSync(path.join("content/blog", fileName));
-		const { data: metadata } = matter(article);
-		return { slug, metadata };
-	});
+		const slug = fileName.replace(".mdx", "")
+		const article = fs.readFileSync(path.join("content/blog", fileName))
+		const { data: metadata } = matter(article)
+		return { slug, metadata }
+	})
 
-	return { props: { items: projectItem } };
-};
+	return { props: { items: projectItem } }
+}
 
-BlogPage.PageLayout = DefaultLayout;
+BlogPage.PageLayout = DefaultLayout

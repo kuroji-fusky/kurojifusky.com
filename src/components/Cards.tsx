@@ -1,9 +1,9 @@
-import styles from "@/styles/Cards.module.scss";
+import styles from "@/styles/Cards.module.scss"
 
 interface ICardProps {
-	emojiKey?: string;
-	title: string;
-	description: string;
+	emojiKey?: string
+	title: string
+	description: string
 }
 
 export default function Card({ emojiKey, title, description }: ICardProps) {
@@ -15,7 +15,7 @@ export default function Card({ emojiKey, title, description }: ICardProps) {
 				<p>{description}</p>
 			</div>
 		</div>
-	);
+	)
 }
 
 export function UnderConstruction() {
@@ -24,7 +24,7 @@ export function UnderConstruction() {
 			title="This page is under construction"
 			description="Some or most of the content is either missing or currently in the works!"
 		/>
-	);
+	)
 }
 
 export function UnderConstructionArticle() {
@@ -33,7 +33,7 @@ export function UnderConstructionArticle() {
 			title="This article is under construction"
 			description="Some or most of the content is either missing or currently in the works!"
 		/>
-	);
+	)
 }
 
 export function AnyMistakes() {
@@ -42,5 +42,5 @@ export function AnyMistakes() {
 			title="Any mistakes?"
 			description="If you have any questions or concerns, you may fix it by contacting me on Twitter or GitHub!"
 		/>
-	);
+	)
 }

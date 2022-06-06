@@ -1,4 +1,4 @@
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import {
 	faGithub,
 	faInstagram,
@@ -7,10 +7,10 @@ import {
 	faSpotify,
 	faTwitter,
 	faYoutube
-} from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
-import styles from "../styles/Footer.module.scss";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-brands-svg-icons"
+import Link from "next/link"
+import styles from "../styles/Footer.module.scss"
+import { faHeart } from "@fortawesome/free-solid-svg-icons"
 
 export default function Footer() {
 	return (
@@ -74,5 +74,5 @@ export default function Footer() {
 				</div>
 			</div>
 		</footer>
-	);
+	)
 }

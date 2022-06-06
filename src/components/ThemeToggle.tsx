@@ -1,57 +1,57 @@
-import { useContext, useEffect, useState } from "react";
-import { ParallaxDisable } from "@/models/Context";
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
+import { useContext, useEffect, useState } from "react"
+import { ParallaxDisable } from "@/models/Context"
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import {
 	faAdjust,
 	faDisplay,
 	faMoon,
 	faSun
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons"
 
 export default function ThemeToggle() {
-	const [theme, setTheme] = useState("");
-	const [themeOverride, setThemeOverride] = useState("");
+	const [theme, setTheme] = useState("")
+	const [themeOverride, setThemeOverride] = useState("")
 
 	const toggleTheme = () => {
 		if (theme !== "dark") {
-			setTheme("dark");
-			document.body.setAttribute("sf-theme", "dark");
-			localStorage.setItem("skepfuskyappTheme", "dark");
-			return;
+			setTheme("dark")
+			document.body.setAttribute("sf-theme", "dark")
+			localStorage.setItem("skepfuskyappTheme", "dark")
+			return
 		}
 
-		setTheme("light");
-		document.body.setAttribute("sf-theme", "light");
-		localStorage.setItem("skepfuskyappTheme", "light");
-	};
+		setTheme("light")
+		document.body.setAttribute("sf-theme", "light")
+		localStorage.setItem("skepfuskyappTheme", "light")
+	}
 
 	useEffect(() => {
 		if (localStorage.getItem("skepfuskyappTheme") === "dark") {
-			setTheme("dark");
-			document.body.setAttribute("sf-theme", "dark");
+			setTheme("dark")
+			document.body.setAttribute("sf-theme", "dark")
 		} else {
-			setTheme("light");
-			document.body.setAttribute("sf-theme", "light");
+			setTheme("light")
+			document.body.setAttribute("sf-theme", "light")
 		}
 
 		if (localStorage.getItem("skepfuskyappTheme") !== null) {
-			setThemeOverride("(overidden)");
-			return;
+			setThemeOverride("(overidden)")
+			return
 		}
 
-		setThemeOverride("(system default)");
+		setThemeOverride("(system default)")
 
 		// If it is null then find the system default
 		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			setTheme("dark");
-			document.body.setAttribute("sf-theme", "dark");
+			setTheme("dark")
+			document.body.setAttribute("sf-theme", "dark")
 		} else {
-			setTheme("light");
-			document.body.setAttribute("sf-theme", "light");
+			setTheme("light")
+			document.body.setAttribute("sf-theme", "light")
 		}
-	}, []);
+	}, [])
 
-	const { disableParallax, setDisableParallax } = useContext(ParallaxDisable);
+	const { disableParallax, setDisableParallax } = useContext(ParallaxDisable)
 
 	return (
 		<span className="header-nav-item">
@@ -88,5 +88,5 @@ export default function ThemeToggle() {
 				</span>
 			</div>
 		</span>
-	);
+	)
 }

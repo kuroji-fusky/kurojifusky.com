@@ -1,12 +1,12 @@
-import Image from "next/image";
-import styles from "@/styles/AlbumItem.module.scss";
+import Image from "next/image"
+import styles from "@/styles/AlbumItem.module.scss"
 
 interface IAlbumItemProps {
-	title: string;
-	albumType: string;
-	cover: string;
-	date: string;
-  className?: string;
+	title: string
+	albumType: string
+	cover: string
+	date: string
+	className?: string
 }
 
 export default function AlbumItem({
@@ -14,7 +14,7 @@ export default function AlbumItem({
 	albumType,
 	cover,
 	date,
-  className
+	className
 }: IAlbumItemProps) {
 	return (
 		<div className={`${styles["album-container"]} ${className}`}>
@@ -43,5 +43,5 @@ export default function AlbumItem({
 				</ul>
 			</div>
 		</div>
-	);
+	)
 }

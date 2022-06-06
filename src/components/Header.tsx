@@ -1,54 +1,51 @@
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import ThemeToggle from "./ThemeToggle";
+import React, { useState, useEffect } from "react"
+import { useRouter } from "next/router"
+import Link from "next/link"
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
+import ThemeToggle from "./ThemeToggle"
 
 export default function Header() {
-	const router = useRouter();
+	const router = useRouter()
 
 	// * Navbar stuff
-	const [isOpen, setIsOpen] = useState(false);
-	const toggleMenu = () => setIsOpen(!isOpen);
+	const [isOpen, setIsOpen] = useState(false)
+	const toggleMenu = () => setIsOpen(!isOpen)
 
 	// If isOpen is true add a style to the body element to make the menu appear
 	useEffect(() => {
 		isOpen
 			? (document.body.style.overflowY = "hidden")
-			: (document.body.style.overflowY = "scroll");
-	}, [isOpen]);
+			: (document.body.style.overflowY = "scroll")
+	}, [isOpen])
 
 	// Detect of the ESC key is pressed anywhere on the document
 	useEffect(() => {
 		const gtfo = (event: KeyboardEvent) => {
-			if (event.key === "Escape")
-      return setIsOpen(false);
-		};
+			if (event.key === "Escape") return setIsOpen(false)
+		}
 
-		document.addEventListener("keydown", gtfo);
-		return () => document.removeEventListener("keydown", gtfo);
-	}, []);
+		document.addEventListener("keydown", gtfo)
+		return () => document.removeEventListener("keydown", gtfo)
+	}, [])
 
-	const [stickyClass, setStickyClass] = useState("");
+	const [stickyClass, setStickyClass] = useState("")
 
 	const stickNavbar = () => {
-		window.scrollY > 21
-      ? setStickyClass("gradient-toggle")
-      : setStickyClass("");
-	};
+		window.scrollY > 21 ? setStickyClass("gradient-toggle") : setStickyClass("")
+	}
 
 	useEffect(() => {
-		window.addEventListener("scroll", stickNavbar);
-		return () => window.removeEventListener("scroll", stickNavbar);
-	}, []);
+		window.addEventListener("scroll", stickNavbar)
+		return () => window.removeEventListener("scroll", stickNavbar)
+	}, [])
 
 	const projectsDropdown = [
 		{
 			img: "/static/projects/paco-yt-icon.jpg",
 			link: "/projects/pandapaco-drawing-stats",
 			title: "Paco Drawing Stats"
-		},
+		}
 		// {
 		// 	img: "/static/avatars/02.png",
 		// 	link: "/projects/floofy-clicker",
@@ -65,7 +62,7 @@ export default function Header() {
 		// 	title: "Majira VS Code Theme"
 		// },
 		// {
-			// img: "/static/avatars/02.png",
+		// img: "/static/avatars/02.png",
 		// 	link: "/projects/cookie-clicker-afk",
 		// 	title: "Cookie Clicker AFK"
 		// },
@@ -74,7 +71,7 @@ export default function Header() {
 		// 	link: "/projects/biro-ui",
 		// 	title: "Biro UI"
 		// }
-	];
+	]
 
 	const projectsContributed = [
 		{
@@ -87,7 +84,7 @@ export default function Header() {
 			link: "/projects/myfursona",
 			title: "MyFursona"
 		}
-	];
+	]
 
 	const aboutMe = [
 		{
@@ -98,10 +95,12 @@ export default function Header() {
 			link: "/about/fursona-gallery",
 			title: "Fursona Gallery"
 		}
-	];
+	]
 
 	return (
-		<header className={`${stickyClass} ${isOpen ? "header-active" : ""} z-mosttop`}>
+		<header
+			className={`${stickyClass} ${isOpen ? "header-active" : ""} z-mosttop`}
+		>
 			<div className="header-logo">
 				<button
 					id="burger-menu"
@@ -225,7 +224,7 @@ export default function Header() {
 				</div>
 			</div>
 		</header>
-	);
+	)
 }
 
 //* For smol ass nav menu
@@ -234,9 +233,9 @@ export function DropdownItem({
 	link,
 	img
 }: {
-	title: string;
-	link: string;
-	img?: string;
+	title: string
+	link: string
+	img?: string
 }) {
 	return (
 		<li>
@@ -251,7 +250,7 @@ export function DropdownItem({
 				</a>
 			</Link>
 		</li>
-	);
+	)
 }
 
 //* For big ass nav menu
@@ -265,5 +264,5 @@ export function NavItem({ title, icon, link, onClick }: string | any) {
 				</a>
 			</Link>
 		</li>
-	);
+	)
 }

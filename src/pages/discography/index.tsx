@@ -1,10 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { AlbumItems } from "@/components/static/StaticItems";
-import { DiscographyPages } from "@/models/ParseMyAss";
-import DefaultLayout from "@/layouts/Default";
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
+import { AlbumItems } from "@/components/static/StaticItems"
+import { DiscographyPages } from "@/models/ParseMyAss"
+import DefaultLayout from "@/layouts/Default"
 
 export default function DiscographyPage({
 	items
@@ -15,22 +15,22 @@ export default function DiscographyPage({
 				<AlbumItems key={i} items={item} />
 			))}
 		</div>
-	);
+	)
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-	const articleDir = path.join("content/discography");
+	const articleDir = path.join("content/discography")
 
-	const files = fs.readdirSync(articleDir);
+	const files = fs.readdirSync(articleDir)
 
 	const discographyItem = files.map((fileName: string) => {
-		const slug = fileName.replace(".mdx", "");
-		const article = fs.readFileSync(path.join("content/discography", fileName));
-		const { data: metadata } = matter(article);
-		return { slug, metadata };
-	});
+		const slug = fileName.replace(".mdx", "")
+		const article = fs.readFileSync(path.join("content/discography", fileName))
+		const { data: metadata } = matter(article)
+		return { slug, metadata }
+	})
 
-	return { props: { items: discographyItem } };
-};
+	return { props: { items: discographyItem } }
+}
 
-DiscographyPage.PageLayout = DefaultLayout;
+DiscographyPage.PageLayout = DefaultLayout

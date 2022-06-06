@@ -1,13 +1,13 @@
-import React, { CSSProperties } from "react";
-import styles from "@/styles/Home.module.scss";
+import React, { CSSProperties } from "react"
+import styles from "@/styles/Home.module.scss"
 
 interface ISectionProps {
-	heading: string;
-	emojiKey: string;
-	sectionClassName?: string;
-	sectionStyles?: CSSProperties;
-	sectionId?: string;
-	children?: any;
+	heading: string
+	emojiKey: string
+	sectionClassName?: string
+	sectionStyles?: CSSProperties
+	sectionId?: string
+	children?: any
 }
 
 export default function Section({
@@ -29,5 +29,5 @@ export default function Section({
 				{children}
 			</div>
 		</section>
-	);
+	)
 }

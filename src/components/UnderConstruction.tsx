@@ -7,5 +7,5 @@ export default function UnderConstruction() {
 				missing or incomplete!
 			</p>
 		</div>
-	);
+	)
 }
