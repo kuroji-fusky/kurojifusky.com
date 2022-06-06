@@ -7,6 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import styles from "@/styles/Home.module.scss";
 import DefaultLayout from "@/layouts/Default";
 import HeroHeader from "@/components/layouts/HeroHeader";
+import HomeHeading from "@/components/HomeHeading";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -14,7 +15,7 @@ const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 });
 
 export default function Home() {
-  return (
+	return (
 		<ParallaxProvider>
 			<SEOHead
 				title="Home"
@@ -31,9 +32,46 @@ export default function Home() {
 				}
 			></div>
 			<div className="layout-seperator z-3 relative">
-				<div className="layout-item-wrapper px-6">
-					<div className="flex gap-x-3">
-						<span>Yesh</span>
+				<div className="my-0 mx-auto max-w-[1440px] px-6">
+					<div className="flex gap-x-3 justify-between">
+						<div>
+							<HomeHeading title="Editing videos lol" emojiKey="👀" />
+							<p className="mt-2">
+								I've been making videos on YouTube for nearly decade with
+								varying in terms of quality and my editing style. Previously, I
+								used Sony Vegas to edit on my crappy laptop. Now I use Adobe
+								products such as Premiere Pro and After Effects for the most of
+								my video work.
+							</p>
+							<p className="mt-2">
+								Strangely, my inspiration to begin in filmography and music is
+								through a handful of YouTube vloggers in mid-2017, and as a
+								desire to learn filmmaking - I recieved my first camera which is
+								a GoPro HERO+LCD, and a mirrorless DSLR camera, Canon EOS M50 --
+								the sole reason I picked this specific camera is that it has the
+								ability to shoot videos in 4K lol -- and naturally, begin to tap
+								into intermediate photography as well!
+							</p>
+						</div>
+						<div>contents</div>
+					</div>
+				</div>
+
+				<div className="my-0 mx-auto max-w-[1440px] px-6">
+					<div className="flex gap-x-3 justify-between">
+						<div>
+							<HomeHeading title="music lmfaooo" emojiKey="😂" />
+							<p className="mt-2">
+								I started to produce music independently in 2017. Initally,
+								making hip-hop/rap music, then changed to alternative/indie
+								music in 2020, and I've released 2 albums and 2 EPs so far. The
+								DAW I currently use is FL Studio, and I'm hopefully making a
+								transition to use Cubase soon, who knows? I'm also master my own
+								music and planning to join a record label, AWAL, to expand my
+								reach.
+							</p>
+						</div>
+						<div>contents</div>
 					</div>
 				</div>
 			</div>
