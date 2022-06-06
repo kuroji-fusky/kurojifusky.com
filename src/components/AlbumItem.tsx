@@ -40,7 +40,7 @@ export default function AlbumItem({
 					) : albumType === "single" ? (
 						<li>Single</li>
 					) : (
-						<li>Error</li>
+						<li></li>
 					)}
 					<li>&bull;</li>
 					<li>{date}</li>

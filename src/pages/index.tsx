@@ -45,7 +45,7 @@ export default function Home() {
 							I've currently taken a break from producing music at the moment.
 						</p>
 					</div>
-					<div className="flex justify-around py-[3.5rem]">
+					<div className="flex justify-around pt-3 pb-[3.5rem]">
 						<AlbumItem
 							title="Recursion"
 							cover="Recursion_cover.png"

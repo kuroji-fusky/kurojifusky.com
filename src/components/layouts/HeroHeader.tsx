@@ -72,7 +72,7 @@ export default function HeroHeader() {
 					))}
 				</div>
 			</div>
-			<div className="relative h-[23rem] w-[23rem]">
+			<div className={styles["artwork-container"]}>
 				<div className="absolute -left-14 z-3 -2 flex items-center">
 					<Parallax
 						speed={-35}
@@ -87,14 +87,22 @@ export default function HeroHeader() {
 							priority={true}
 							className="pointer-events-none"
 						/>
-						<span className="translate-y-8 text-base opacity-50 hover:opacity-100 transition-opacity cursor-default">
-							Art by{" "}
-							<Link href="https://twitter.com/skepfuskyjs">
-								<a className="gradient-link">
-									<FaIcon icon={faTwitter} className="mx-1" size="sm" />
-									@skepfuskyjs
-								</a>
-							</Link>
+						<span className={styles["artwork-sublabel"]}>
+							<span>
+								Art by{" "}
+								<Link href="https://twitter.com/skepfuskyjs">
+									<a className="gradient-link">
+										<FaIcon icon={faTwitter} className="mx-1" size="sm" />
+										@skepfuskyjs
+									</a>
+								</Link>
+							</span>
+							<span>
+								More on{" "}
+								<Link href="/about/fursona-gallery" passHref>
+									<a className="gradient-link">Fursona Gallery</a>
+								</Link>
+							</span>
 						</span>
 					</Parallax>
 				</div>
