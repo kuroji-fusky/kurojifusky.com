@@ -57,10 +57,7 @@ export default function HeroHeader() {
 				</article>
 				<div className="w-[60%] flex flex-wrap gap-2 uppercase">
 					{skills.map((skill, index) => (
-						<span
-							key={index}
-							id={styles['skill-item']}
-						>
+						<span key={index} id={styles["skill-item"]}>
 							{skill}
 						</span>
 					))}
@@ -80,8 +77,8 @@ export default function HeroHeader() {
 							priority={true}
 							className="pointer-events-none"
 						/>
-						<span className="translate-y-8 text-base">
-							Artwork:
+						<span className="translate-y-8 text-base opacity-50 hover:opacity-100 transition-opacity cursor-default">
+							Art by{" "}
 							<Link href="https://twitter.com/skepfuskyjs">
 								<a className="gradient-link">
 									<FaIcon icon={faTwitter} className="mx-1" size="sm" />

@@ -8,6 +8,8 @@ import styles from "@/styles/Home.module.scss";
 import DefaultLayout from "@/layouts/Default";
 import HeroHeader from "@/components/layouts/HeroHeader";
 import HomeHeading from "@/components/HomeHeading";
+import Image from "next/image";
+import AlbumItem from "@/components/AlbumItem";
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -32,48 +34,51 @@ export default function Home() {
 				}
 			></div>
 			<div className="layout-seperator z-3 relative">
-				<div className="my-0 mx-auto max-w-[1440px] px-6">
-					<div className="flex gap-x-3 justify-between">
-						<div>
-							<HomeHeading title="Editing videos lol" emojiKey="👀" />
-							<p className="mt-2">
-								I've been making videos on YouTube for nearly decade with
-								varying in terms of quality and my editing style. Previously, I
-								used Sony Vegas to edit on my crappy laptop. Now I use Adobe
-								products such as Premiere Pro and After Effects for the most of
-								my video work.
-							</p>
-							<p className="mt-2">
-								Strangely, my inspiration to begin in filmography and music is
-								through a handful of YouTube vloggers in mid-2017, and as a
-								desire to learn filmmaking - I recieved my first camera which is
-								a GoPro HERO+LCD, and a mirrorless DSLR camera, Canon EOS M50 --
-								the sole reason I picked this specific camera is that it has the
-								ability to shoot videos in 4K lol -- and naturally, begin to tap
-								into intermediate photography as well!
-							</p>
-						</div>
-						<div>contents</div>
+				<section className="my-0 mx-auto max-w-[1440px] px-6 flex flex-col gap-x-10 justify-between relative">
+					<div>
+						<HomeHeading title="music stuff" emojiKey="😂" />
+						<p className="mt-4">
+							I started to produce music independently in 2017. Initally, making
+							hip-hop/rap music, then changed to alternative/indie music in
+							2020, and I've released 2 albums and 2 EPs so far. The DAW I
+							currently use is FL Studio, and I'm hopefully making a transition
+							to use Cubase soon, who knows? I'm also master my own music and
+							planning to join a record label, AWAL, to expand my reach.
+						</p>
 					</div>
-				</div>
-
-				<div className="my-0 mx-auto max-w-[1440px] px-6">
-					<div className="flex gap-x-3 justify-between">
-						<div>
-							<HomeHeading title="music lmfaooo" emojiKey="😂" />
-							<p className="mt-2">
-								I started to produce music independently in 2017. Initally,
-								making hip-hop/rap music, then changed to alternative/indie
-								music in 2020, and I've released 2 albums and 2 EPs so far. The
-								DAW I currently use is FL Studio, and I'm hopefully making a
-								transition to use Cubase soon, who knows? I'm also master my own
-								music and planning to join a record label, AWAL, to expand my
-								reach.
-							</p>
-						</div>
-						<div>contents</div>
+					<div className="flex justify-around py-[3.5rem]">
+						<AlbumItem
+							title="Recursion"
+							cover="Recursion_cover.png"
+							albumType="Album"
+							date="TBA"
+						/>
+						<AlbumItem
+							title="A New Life"
+							cover="A New Life_cover.png"
+							albumType="Album"
+							date="Dec 2021"
+						/>
+						<AlbumItem
+							title="Horizon"
+							cover="Horizon_cover.png"
+							albumType="Album"
+							date="May 2021"
+						/>
+						<AlbumItem
+							title="Dreams and Phases"
+							cover="Dreams and Phases_cover.jpg"
+							albumType="Single"
+							date="Dec 2021"
+						/>
+						<AlbumItem
+							title="Origins"
+							cover="Origins_cover.png"
+							albumType="Single"
+							date="Aug 2020"
+						/>
 					</div>
-				</div>
+				</section>
 			</div>
 			<div
 				className="layout-clip z-3 relative"

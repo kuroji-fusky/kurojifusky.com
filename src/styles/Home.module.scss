@@ -63,26 +63,6 @@
   }
 }
 
-#bio {
-  @apply gap-9 p-8 sm:px-12 flex flex-col-reverse lg:flex-row justify-center items-center w-auto lg:w-[90%] my-0 mx-auto text-center lg:text-left;
-
-  > article {
-    @apply flex flex-col gap-y-2;
-  }
-
-  p {
-    font-size: clamp(1.105rem, 2vw, 1.245rem);
-  }
-
-  &-svg {
-    @apply grid place-items-center;
-
-    img {
-      @apply w-[12rem] lg:min-w-[15rem];
-    }
-  }
-}
-
 #skill-item {
   @apply cursor-default p-0.5 px-3 rounded-md bg-borahae-700 uppercase whitespace-nowrap text-[88%];
 }
