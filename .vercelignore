@@ -1,3 +1,5 @@
+.github
+.husky
 .vscode
-archive
 .gitattributes
+README.md
