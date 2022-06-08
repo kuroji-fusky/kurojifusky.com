@@ -88,15 +88,13 @@ export default function HeroHeader() {
 							className="pointer-events-none"
 						/>
 						<span className={styles["artwork-sublabel"]}>
-							<span>
-								Art by{" "}
-								<Link href="https://twitter.com/skepfuskyjs">
-									<a className="gradient-link">
-										<FaIcon icon={faTwitter} className="mx-1" size="sm" />
-										@skepfuskyjs
-									</a>
-								</Link>
-							</span>
+							Art by{" "}
+							<Link href="https://twitter.com/skepfuskyjs">
+								<a className="gradient-link">
+									<FaIcon icon={faTwitter} className="mx-1" size="sm" />
+									@skepfuskyjs
+								</a>
+							</Link>
 						</span>
 					</Parallax>
 				</div>

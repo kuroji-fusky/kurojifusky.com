@@ -6,8 +6,8 @@ export default function MusicSection() {
 		<div className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">
 				<Section heading={"Music"} emojiKey="🎵">
-					<div>
-						<p className="mt-4">
+					<article>
+						<p>
 							I started to produce music independently in 2017. Initially,
 							making hip-hop/rap music, then switched to alternative/indie music
 							in 2020, and I've released 2 albums and 2 EPs so far. The DAW I
@@ -15,7 +15,7 @@ export default function MusicSection() {
 							to use Cubase soon, who knows? I'm also master my own music and
 							I've currently taken a break from producing music at the moment.
 						</p>
-					</div>
+					</article>
 					<div className="flex justify-around pt-3 pb-[3.5rem]">
 						<AlbumItem
 							title="Recursion"

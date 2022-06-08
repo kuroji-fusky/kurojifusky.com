@@ -67,7 +67,11 @@
 }
 
 .artwork-sublabel {
-	@apply translate-y-8 text-base opacity-50 hover:opacity-100 transition-opacity cursor-default flex w-[25.5rem] justify-between -translate-x-9;
+	@apply translate-y-8 text-base opacity-50 hover:opacity-100 transition-opacity cursor-default w-[25.5rem] -translate-x-9;
+
+	@media only screen and (max-width: 1220px) {
+		@apply -translate-x-9 text-center;
+	}
 }
 
 /*** Sections and Seperators ***/

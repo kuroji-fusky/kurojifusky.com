@@ -11,6 +11,7 @@ import Section from "@/components/Section"
 import styles from "@/styles/Home.module.scss"
 import ProjectsSection from "@/components/layouts/ProjectsSection"
 import MusicSection from "@/components/layouts/MusicSection"
+import VideoSection from "@/components/layouts/VideoSection"
 
 const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	loading: () => <CardSkeleton />,
@@ -44,6 +45,15 @@ export default function Home() {
 				}
 			></div>
 			<MusicSection />
+			<div
+				className="layout-clip z-3 relative"
+				style={
+					{
+						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
+					} as React.CSSProperties
+				}
+			></div>
+			<VideoSection />
 		</ParallaxProvider>
 	)
 }

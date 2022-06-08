@@ -8,12 +8,6 @@ export default function ProjectsSection() {
 			<div className="layout-item-wrapper">
 				<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
 					<ProjectCard
-						image="/static/avatars/08.png"
-						title="This awful website"
-						description="This terrible website you're currently browsing is written in Next.js"
-						repoLink="skepfusky/skepfusky-website"
-					/>
-					<ProjectCard
 						image="/static/projects/paco-yt-icon.jpg"
 						title="Paco Drawing Stats"
 						description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"

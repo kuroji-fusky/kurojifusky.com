@@ -239,8 +239,7 @@ $menu-toggle-active: translateY(1.2rem);
 
 .toggled-menu {
 	&-open {
-		@apply pointer-events-auto;
-		background: var(--bg-header-active);
+		@apply pointer-events-auto bg-black bg-opacity-75;
 	}
 
 	&-closed {
