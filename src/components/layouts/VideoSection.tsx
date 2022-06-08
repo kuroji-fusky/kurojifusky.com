@@ -15,7 +15,7 @@ export default function VideoSection() {
 						</p>
 					</article>
 					<div className="grid grid-cols-2 gap-2">
-						<VideoItem
+						{/* <VideoItem
 							id="5SybfjVntTw"
 							title="DFC Day 2019 - School Edit"
 							date="Multiple dates"
@@ -40,7 +40,7 @@ export default function VideoSection() {
 							title="Hundred Islands Vacation Highlights"
 						>
 							yes
-						</VideoItem>
+						</VideoItem> */}
 					</div>
 				</Section>
 			</div>
