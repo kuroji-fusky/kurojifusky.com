@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Script from "next/script"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { ParallaxDisable } from "@/models/Context"
@@ -22,15 +22,6 @@ export default function ShitApp({
 	const [disableParallax, setDisableParallax] = useState<boolean>(false)
 	useCallback(() => {
 		if (typeof window !== "undefined") {
-			// Detect of toggleParallax is true if not then set to false
-			window.addEventListener("resize", () => {
-				if (window.innerWidth < 768) {
-					setDisableParallax(true)
-				} else {
-					setDisableParallax(false)
-				}
-			})
-
 			window.addEventListener("click", () => {
 				if (disableParallax !== false) {
 					setDisableParallax(true)
@@ -40,6 +31,19 @@ export default function ShitApp({
 			})
 		}
 	}, [disableParallax])
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			// Detect of toggleParallax is true if not then set to false
+			window.addEventListener("resize", () => {
+				if (window.innerWidth < 1220) {
+					setDisableParallax(true)
+				} else {
+					setDisableParallax(false)
+				}
+			})
+		}
+	}, [])
 
 	return (
 		<>

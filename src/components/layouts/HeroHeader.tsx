@@ -73,11 +73,11 @@ export default function HeroHeader() {
 				</div>
 			</div>
 			<div className={styles["artwork-container"]}>
-				<div className="absolute -left-14 z-3 -2 flex items-center">
+				<div className={styles["hero-parallax-container"]}>
 					<Parallax
 						speed={-35}
 						disabled={disableParallax}
-						className="relative h-[21rem] w-[21rem] z-1 flex flex-col-reverse"
+						className={styles["hero-parallax-avatar"]}
 					>
 						<Image
 							src="/static/avatars/FormalAvatar-SVG.svg"
@@ -97,19 +97,13 @@ export default function HeroHeader() {
 									</a>
 								</Link>
 							</span>
-							<span>
-								More on{" "}
-								<Link href="/about/fursona-gallery" passHref>
-									<a className="gradient-link">Fursona Gallery</a>
-								</Link>
-							</span>
 						</span>
 					</Parallax>
 				</div>
 				<Parallax
 					speed={-30}
 					disabled={disableParallax}
-					className="absolute -left-14 h-[21rem] w-[21rem] rounded-full bg-stone-700 z-0"
+					className={styles["hero-parallax-bg"]}
 				></Parallax>
 			</div>
 			<div id={styles["scroll-down"]} className={removeCringe}>

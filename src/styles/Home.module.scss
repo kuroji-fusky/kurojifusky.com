@@ -17,9 +17,30 @@
 		}
 
 		@media only screen and (max-width: 1220px) {
-			@apply flex-col-reverse gap-0;
+			@apply flex-col-reverse gap-0 justify-center;
 		}
 	}
+
+	&-parallax-container {
+		@apply absolute -left-14 z-3 flex items-center;
+
+		@media only screen and (max-width: 1220px) {
+			@apply left-[5.65rem];
+		}
+	}
+
+	&-parallax-avatar {
+		@apply relative h-[21rem] w-[21rem] z-1 flex flex-col-reverse;
+	}
+
+	&-parallax-bg {
+		@apply absolute -left-14 h-[21rem] w-[21rem] rounded-full bg-stone-700;
+
+		@media only screen and (max-width: 1220px) {
+			@apply left-[5.65rem];
+		}
+	}
+
 	&-contents {
 		@apply flex flex-col gap-y-5;
 
