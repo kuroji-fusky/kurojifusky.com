@@ -1,5 +1,5 @@
 {
-	"extends": ["next", "prettier"],
+	"extends": ["next", "next/core-web-vitals", "prettier"],
 	"rules": {
 		"@next/next/no-img-element": "off",
 		"@next/next/inline-script-id": "off",

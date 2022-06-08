@@ -9,7 +9,7 @@
 		"lint": "next lint",
 		"format": "prettier --write .",
 		"prepare": "husky install",
-		"pre-commit": "yarn lint && yarn format"
+		"pre-commit": "yarn lint && yarn format && git add -A ."
 	},
 	"dependencies": {
 		"gray-matter": "^4.0.3",
