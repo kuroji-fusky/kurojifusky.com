@@ -2,30 +2,30 @@
  * Override TailwindCSS heading base styles
  */
 @layer base {
-  $font-headings: (1 "4xl", 2 "3xl", 3 "2xl", 4 "xl", 5 "lg");
+	$font-headings: (1 "4xl", 2 "3xl", 3 "2xl", 4 "xl", 5 "lg");
 
-  @each $i, $size in $font-headings {
-    h#{$i} {
-      @apply font-bold font-noto-sans text-#{$size};
-    }
-  }
+	@each $i, $size in $font-headings {
+		h#{$i} {
+			@apply font-bold font-noto-sans text-#{$size};
+		}
+	}
 
-  body {
-    @apply font-lato #{!important};
-  }
+	body {
+		@apply font-lato #{!important};
+	}
 }
 
 .rendered-static-content {
-  @for $i from 1 through 6  {
-    h#{$i} {
-      @apply my-[0.5rem];
-    }
-  }
+	@for $i from 1 through 6 {
+		h#{$i} {
+			@apply my-[0.5rem];
+		}
+	}
 }
 
 /*
  * Responsive
  */
 body {
-  font-size: clamp(1.105rem, 1.8vw, 1.115rem);
+	font-size: clamp(1.105rem, 1.8vw, 1.115rem);
 }

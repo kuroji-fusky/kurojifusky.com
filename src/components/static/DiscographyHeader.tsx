@@ -1,16 +1,16 @@
-import styles from "@/styles/StaticHeader.module.scss";
-import Image from "next/image";
+import styles from "@/styles/StaticHeader.module.scss"
+import Image from "next/image"
 
 interface IDiscographyHeaderProps {
-	title: string;
-	img?: string;
-	backdropImg?: string;
-	albumType: string;
-	length: string;
-	dateString: string;
-  genre: string;
-	copyright: string;
-	trackNum: number;
+	title: string
+	img?: string
+	backdropImg?: string
+	albumType: string
+	length: string
+	dateString: string
+	genre: string
+	copyright: string
+	trackNum: number
 }
 
 export default function DiscographyHeader({
@@ -22,7 +22,7 @@ export default function DiscographyHeader({
 	length,
 	dateString,
 	copyright,
-  genre
+	genre
 }: IDiscographyHeaderProps) {
 	return (
 		<div id={styles["static-header"]}>
@@ -68,5 +68,5 @@ export default function DiscographyHeader({
 				<span>&copy; {copyright}</span>
 			</div>
 		</div>
-	);
+	)
 }

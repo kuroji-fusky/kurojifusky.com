@@ -1,11 +1,11 @@
-import styles from "@/styles/StaticHeader.module.scss";
-import Image from "next/image";
+import styles from "@/styles/StaticHeader.module.scss"
+import Image from "next/image"
 
 interface IProjectHeaderProps {
-	title: string;
-	dateString: string;
-	backdropImg?: string | any;
-	img?: string;
+	title: string
+	dateString: string
+	backdropImg?: string | any
+	img?: string
 }
 
 export default function ProjectHeader({
@@ -45,5 +45,5 @@ export default function ProjectHeader({
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

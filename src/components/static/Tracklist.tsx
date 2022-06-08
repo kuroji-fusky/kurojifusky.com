@@ -1,7 +1,7 @@
 export default function TracklistContainer({
 	children
 }: {
-	children: React.ReactNode;
+	children: React.ReactNode
 }) {
 	return (
 		<div id="tracklist">
@@ -12,13 +12,13 @@ export default function TracklistContainer({
 			</div>
 			{children}
 		</div>
-	);
+	)
 }
 
 interface ITracklistItemProps {
-	trackNumber: number;
-	title: string;
-	length: string;
+	trackNumber: number
+	title: string
+	length: string
 }
 
 export function TracklistItem({
@@ -32,5 +32,5 @@ export function TracklistItem({
 			<div className="track-title">{title}</div>
 			<div className="track-length">{length}</div>
 		</div>
-	);
+	)
 }

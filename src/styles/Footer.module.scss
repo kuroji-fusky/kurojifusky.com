@@ -1,19 +1,19 @@
 .wrapper {
-  @apply my-0 mx-auto flex flex-col gap-y-8 max-w-screen-2xl p-8;
+	@apply my-0 mx-auto flex flex-col gap-y-8 max-w-screen-2xl p-8;
 }
 
 .footer-contents {
-  @apply grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4;
+	@apply grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4;
 }
 
 .contents {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-2 select-none text-center md:text-inherit;
+	@apply grid grid-cols-1 md:grid-cols-2 gap-2 select-none text-center md:text-inherit;
 
-  @media only screen and (max-width: 768px) {
-    @apply place-items-center;
-  }
+	@media only screen and (max-width: 768px) {
+		@apply place-items-center;
+	}
 }
 
 .social-icons {
-  @apply text-white hover:text-borahaealt-400 transition-colors duration-300;
+	@apply text-white hover:text-borahaealt-400 transition-colors duration-300;
 }

@@ -5,21 +5,21 @@
  ************/
 
 html {
-  scrollbar-width: thin;
-  scrollbar-color: $borahae $main-bg;
+	scrollbar-width: thin;
+	scrollbar-color: $borahae $main-bg;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+	width: 10px;
+	height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $borahae;
+	background-color: $borahae;
 
-  &:hover {
-    background-color: $borahae-alt;
-  }
+	&:hover {
+		background-color: $borahae-alt;
+	}
 }
 
 /************
@@ -27,73 +27,73 @@ html {
  ************/
 
 .under-construction {
-  @apply text-center my-5;
-  background-image: linear-gradient(
-    45deg,
-    #700404 25%,
-    #4a0505 25%,
-    #4a0505 50%,
-    #700404 50%,
-    #700404 75%,
-    #4a0505 75%,
-    #4a0505 100%
-  );
-  background-size: 56.57px 56.57px;
+	@apply text-center my-5;
+	background-image: linear-gradient(
+		45deg,
+		#700404 25%,
+		#4a0505 25%,
+		#4a0505 50%,
+		#700404 50%,
+		#700404 75%,
+		#4a0505 75%,
+		#4a0505 100%
+	);
+	background-size: 56.57px 56.57px;
 }
 
 /************
  * Layout Cutouts
  ************/
 .layout-clip {
-  @apply block h-[2.75rem] translate-y-1;
-  background: var(--bg-layout-seperator);
-  clip-path: var(--clip-path-layout);
+	@apply block h-[2.75rem] translate-y-1;
+	background: var(--bg-layout-seperator);
+	clip-path: var(--clip-path-layout);
 }
 
 .layout-seperator {
-  background: var(--bg-layout-seperator);
-  z-index: -5;
+	background: var(--bg-layout-seperator);
+	z-index: -5;
 }
 
 .layout-item-wrapper {
-  @apply mx-auto my-0 max-w-screen-xl;
+	@apply mx-auto my-0 max-w-screen-xl;
 }
 
 /************
  * Static Items
  ************/
 .item-container {
-  @apply flex flex-col gap-y-4;
+	@apply flex flex-col gap-y-4;
 }
 
 #static-item {
-  @apply flex gap-2 p-3 shadow-md rounded-md items-center transition-all duration-300;
-  background-color: $bg-violet-highlight;
+	@apply flex gap-2 p-3 shadow-md rounded-md items-center transition-all duration-300;
+	background-color: $bg-violet-highlight;
 
-  &:hover {
-    @apply -translate-y-1;
-    background-color: lighten($bg-violet-highlight, 6%);
-  }
+	&:hover {
+		@apply -translate-y-1;
+		background-color: lighten($bg-violet-highlight, 6%);
+	}
 
-  &__img-wrapper {
-    @apply flex-shrink-0 m-4 relative h-[7rem] w-[7rem];
+	&__img-wrapper {
+		@apply flex-shrink-0 m-4 relative h-[7rem] w-[7rem];
 
-    img {
-      @apply rounded-full;
-    }
-  }
+		img {
+			@apply rounded-full;
+		}
+	}
 
-  &__contents {
-    @apply flex flex-col gap-y-1;
-  }
+	&__contents {
+		@apply flex flex-col gap-y-1;
+	}
 
-  &__date {
-    @apply text-sm;
-  }
+	&__date {
+		@apply text-sm;
+	}
 
-  &__description {
-    line-height: 1.5rem;
-  }
+	&__description {
+		line-height: 1.5rem;
+	}
 }
 
 /************
@@ -101,33 +101,33 @@ html {
  ************/
 
 #mdx-seperator {
-  @apply flex flex-row-reverse gap-4;
+	@apply flex flex-row-reverse gap-4;
 
-  > aside {
-    @apply bg-neutral-900 p-4 rounded-md h-fit;
-    width: 50rem;
-  }
+	> aside {
+		@apply bg-neutral-900 p-4 rounded-md h-fit;
+		width: 50rem;
+	}
 }
 
 #tracklist {
-  @apply w-fit bg-slate-600 rounded-md;
+	@apply w-fit bg-slate-600 rounded-md;
 
-  &-head,
-  &-item {
-    @apply flex;
+	&-head,
+	&-item {
+		@apply flex;
 
-    * {
-      @apply p-[0.66rem];
-    }
-  }
+		* {
+			@apply p-[0.66rem];
+		}
+	}
 }
 
 .track {
-  &-title {
-    @apply block w-[18rem];
-  }
+	&-title {
+		@apply block w-[18rem];
+	}
 
-  &-length {
-    @apply block w-[6rem];
-  }
+	&-length {
+		@apply block w-[6rem];
+	}
 }

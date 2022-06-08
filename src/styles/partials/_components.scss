@@ -1,14 +1,14 @@
 @use "mixins" as *;
 
 code {
-  @apply bg-neutral-900 p-[3px];
+	@apply bg-neutral-900 p-[3px];
 }
 
 /*
  * Nav no img placeholder
  */
 #nav-no-img {
-  @apply border-2 border-dashed rounded-full;
+	@apply border-2 border-dashed rounded-full;
 }
 
 /*
@@ -16,67 +16,66 @@ code {
  */
 
 .link-btn {
-  @apply py-[0.22rem] px-[1rem] rounded-md border-white border-2 text-base duration-300 transition-all;
+	@apply py-[0.22rem] px-[1rem] rounded-md border-white border-2 text-base duration-300 transition-all;
 
-  &:hover {
-    @apply bg-borahae-600 border-borahae-600;
-  }
+	&:hover {
+		@apply bg-borahae-600 border-borahae-600;
+	}
 
-  &:active {
-    @apply bg-transparent border-borahae-200 text-borahae-200;
-  }
+	&:active {
+		@apply bg-transparent border-borahae-200 text-borahae-200;
+	}
 }
 
 .card__global {
-  @apply rounded-md p-5;
+	@apply rounded-md p-5;
 }
 
 $g1: rgb(9, 142, 251);
 $g2: rgba(255, 39, 215, 0.75);
 
 .gradient-toggle {
-  #only-highlightable {
-    background-position: top;
-  }
+	#only-highlightable {
+		background-position: top;
+	}
 }
 
 #highlight {
-  background: linear-gradient(90deg, $g1, $g2, $g1, $g2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #0000;
-  @apply font-extrabold;
-  animation: gradientScroll 6s infinite linear;
-  background-size: 300%;
+	background: linear-gradient(90deg, $g1, $g2, $g1, $g2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #0000;
+	@apply font-extrabold;
+	animation: gradientScroll 6s infinite linear;
+	background-size: 300%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  #highlight {
-    animation: none !important;
-  }
+	#highlight {
+		animation: none !important;
+	}
 }
 
-
 @keyframes gradientScroll {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
 }
 
 .gradient-link {
-  @apply w-max relative text-borahaealt-200 hover:text-white transition-colors duration-300;
+	@apply w-max relative text-borahaealt-200 hover:text-white transition-colors duration-300;
 
-  &::after {
-    content: "";
-    @apply absolute h-[2px] bottom-0 left-0 right-0;
-    @include gradient-hover();
-  }
+	&::after {
+		content: "";
+		@apply absolute h-[2px] bottom-0 left-0 right-0;
+		@include gradient-hover();
+	}
 
-  &:hover::after {
-    @include gradient-hover(left);
-  }
+	&:hover::after {
+		@include gradient-hover(left);
+	}
 }
 
 /*
@@ -84,8 +83,8 @@ $g2: rgba(255, 39, 215, 0.75);
  */
 
 .bd {
-  &__item-title {
-    @apply px-2 bg-neutral-900 rounded-md uppercase;
-    font-size: 80%;
-  }
+	&__item-title {
+		@apply px-2 bg-neutral-900 rounded-md uppercase;
+		font-size: 80%;
+	}
 }

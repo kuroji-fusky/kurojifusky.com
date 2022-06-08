@@ -1,12 +1,12 @@
-import { BlogPages, DiscographyPages, ProjectPages } from "@/models/ParseMyAss";
-import { faAngleRight, faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
-import Link from "next/link";
+import { BlogPages, DiscographyPages, ProjectPages } from "@/models/ParseMyAss"
+import { faAngleRight, faCaretRight } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
+import Image from "next/image"
+import Link from "next/link"
 
 export function ProjectItems({ items }: { items: ProjectPages }) {
-	const { slug, metadata } = items;
-	const { title, img, dateString, excerpt } = metadata;
+	const { slug, metadata } = items
+	const { title, img, dateString, excerpt } = metadata
 	return (
 		<div id="static-item">
 			<div id="static-item__img-wrapper">
@@ -24,13 +24,13 @@ export function ProjectItems({ items }: { items: ProjectPages }) {
 				</Link>
 			</div>
 		</div>
-	);
+	)
 }
 
 export function AlbumItems({ items }: { items: DiscographyPages }) {
-	const { slug, metadata } = items;
+	const { slug, metadata } = items
 	const { title, albumType, length, releaseDate, year, albumArt, trackNum } =
-		metadata;
+		metadata
 	return (
 		<div>
 			<div>{title}</div>
@@ -44,12 +44,12 @@ export function AlbumItems({ items }: { items: DiscographyPages }) {
 				<a>Read More</a>
 			</Link>
 		</div>
-	);
+	)
 }
 
 export function BlogItems({ items }: { items: BlogPages }) {
-	const { slug, metadata } = items;
-	const { title, dateString, excerpt, tags } = metadata;
+	const { slug, metadata } = items
+	const { title, dateString, excerpt, tags } = metadata
 	return (
 		<div>
 			<div>{title}</div>
@@ -57,10 +57,8 @@ export function BlogItems({ items }: { items: BlogPages }) {
 			<div>{excerpt}</div>
 			<div>{tags}</div>
 			<Link href={`/blog/${slug}`} passHref>
-				<a>
-          Read More
-        </a>
+				<a>Read More</a>
 			</Link>
 		</div>
-	);
+	)
 }

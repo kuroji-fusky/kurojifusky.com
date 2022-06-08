@@ -1,52 +1,52 @@
 @use "../partials" as *;
 
 :root {
-  --theme-black: #{$main-bg};
-  --theme-white: #{$main-fg};
-  
-  --theme-bg-dark: var(--theme-black);
-  --theme-fg-dark: var(--theme-white);
-  
-  --theme-bg-light: var(--theme-white);
-  --theme-fg-light: var(--theme-black);
+	--theme-black: #{$main-bg};
+	--theme-white: #{$main-fg};
+
+	--theme-bg-dark: var(--theme-black);
+	--theme-fg-dark: var(--theme-white);
+
+	--theme-bg-light: var(--theme-white);
+	--theme-fg-light: var(--theme-black);
 }
 
 [sf-theme="dark"] {
-  --theme-cards: #{$bg-violet-highlight};
+	--theme-cards: #{$bg-violet-highlight};
 
-  background-color: var(--theme-bg-dark);
-  color: var(--theme-fg-dark);
+	background-color: var(--theme-bg-dark);
+	color: var(--theme-fg-dark);
 
-  .layout-seperator,
-  .layout-clip {
-    --bg-layout-seperator: #{lighten($main-bg, 4%)};
-  }
+	.layout-seperator,
+	.layout-clip {
+		--bg-layout-seperator: #{lighten($main-bg, 4%)};
+	}
 
-  .dropdown {
-    @apply bg-neutral-900;
+	.dropdown {
+		@apply bg-neutral-900;
 
-    a:hover {
-        @apply bg-neutral-50 bg-opacity-25;
-    }
-  }
+		a:hover {
+			@apply bg-neutral-50 bg-opacity-25;
+		}
+	}
 }
 
 [sf-theme="light"] {
-  --theme-cards: rgb(220, 212, 239);
+	--theme-cards: rgb(220, 212, 239);
 
-  background-color: var(--theme-bg-light);
-  color: var(--theme-fg-light);
+	background-color: var(--theme-bg-light);
+	color: var(--theme-fg-light);
 
-  .layout-seperator,
-  .layout-clip {
-    --bg-layout-seperator: #{darken($main-fg, 6.5%)};
-  }
+	.layout-seperator,
+	.layout-clip {
+		--bg-layout-seperator: #{darken($main-fg, 6.5%)};
+	}
 
-  .dropdown {
-    @apply bg-neutral-100;
+	.dropdown {
+		@apply bg-neutral-100;
 
-    a:hover {
-      @apply bg-neutral-300 bg-opacity-25;
-    }
-  }
+		a:hover {
+			@apply bg-neutral-300 bg-opacity-25;
+		}
+	}
 }
