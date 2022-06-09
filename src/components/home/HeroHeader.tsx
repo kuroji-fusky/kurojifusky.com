@@ -58,9 +58,6 @@ export default function HeroHeader() {
 					))}
 				</div>
 				<div>
-					<Link href="/about" passHref>
-						More About Meh
-					</Link>
 					<Link href="/#projects" passHref>
 						Projects
 					</Link>
@@ -69,6 +66,9 @@ export default function HeroHeader() {
 					</Link>
 					<Link href="/#music" passHref>
 						Music
+					</Link>
+					<Link href="/about" passHref>
+						More About Meh
 					</Link>
 				</div>
 			</div>

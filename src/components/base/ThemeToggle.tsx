@@ -66,8 +66,18 @@ export default function ThemeToggle() {
 					</span>
 					<span>
 						<strong>{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}</strong>
-						<button id={styles["theme-button-toggle"]} onClick={toggleTheme}>
+						{/* <button id={styles["theme-button-toggle"]} onClick={toggleTheme}>
 							<FaIcon icon={theme !== "dark" ? faSun : faMoon} />
+						</button>
+             */}
+						<button sf-theme-set="true">
+							<FaIcon icon={faDisplay} />
+						</button>
+						<button sf-theme-set="false">
+							<FaIcon icon={faMoon} />
+						</button>
+						<button sf-theme-set="false">
+							<FaIcon icon={faSun} />
 						</button>
 					</span>
 				</div>
@@ -79,7 +89,7 @@ export default function ThemeToggle() {
 						onClick={() => setDisableParallax(!disableParallax)}
 						className="p-1 bg-neutral-300"
 					>
-						Disable parallax
+						<div id="switch-toggle-inner"></div>
 					</button>
 				</div>
 				<hr className="my-1" />
