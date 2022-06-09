@@ -59,7 +59,7 @@ export default function ThemeToggle() {
 			<span>
 				<FaIcon icon={faAdjust} className="mx-3" />
 			</span>
-			<div className={`${styles.dropdown} flex flex-col items-end px-5`}>
+			<div className={styles.dropdown}>
 				<div className="flex items-center justify-between w-full">
 					<span className="text-base uppercase flex items-center gap-x-2">
 						<FaIcon icon={faAdjust} /> Current theme

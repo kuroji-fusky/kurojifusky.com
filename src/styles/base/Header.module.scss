@@ -6,12 +6,11 @@
 
 $header-default: 6.4rem;
 $header-expand: 5.6rem;
-
 $padding-default: 2.2rem;
 $padding-expand: 1.75rem;
 
 #container {
-	@apply w-viewport fixed flex justify-between top-0 z-3 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
+	@apply w-viewport fixed top-0 z-mosttop bg-neutral-900 md:bg-transparent h-[#{$header-default}];
 	transition: background 300ms ease, height 300ms ease;
 
 	&::before {
@@ -20,8 +19,37 @@ $padding-expand: 1.75rem;
 	}
 }
 
+.wrapper {
+	@apply flex justify-between max-w-screen-2xl my-0 mx-auto;
+}
+
 .gradient-toggle {
-	@apply bg-neutral-900 bg-opacity-75 h-[#{$header-expand}];
+	@apply bg-neutral-900 bg-opacity-75 h-[#{$header-expand}] #{!important};
+
+	button#burger-menu {
+		@apply py-[#{$padding-expand}];
+	}
+
+	#only-highlightable {
+		background-position: top;
+	}
+
+	nav.header-nav {
+		@apply h-[#{$header-expand}];
+	}
+
+	// Only the burger menu is expandable
+	&.header-active {
+		&::before {
+			@apply absolute top-[1.3rem] left-[.9rem] h-12 w-12 rounded-md;
+		}
+
+		#only-highlightable {
+			@media only screen and (max-width: 768px) {
+				background-position: bottom;
+			}
+		}
+	}
 }
 
 #site-wordmark {
@@ -81,28 +109,6 @@ $padding-expand: 1.75rem;
 	}
 }
 
-.gradient-toggle.header-active {
-	&::before {
-		@apply absolute top-[1.3rem] left-[.9rem] h-12 w-12 rounded-md;
-	}
-
-	#only-highlightable {
-		@media only screen and (max-width: 768px) {
-			background-position: bottom;
-		}
-	}
-}
-
-.gradient-toggle {
-	button#burger-menu {
-		@apply py-[#{$padding-expand}];
-	}
-
-	#only-highlightable {
-		background-position: top;
-	}
-}
-
 #burger-menu {
 	@apply absolute top-[4px] left-1 px-7 py-[#{$padding-default}] transition-all duration-[320ms] block md:hidden;
 }
@@ -142,10 +148,6 @@ $padding-expand: 1.75rem;
 			background-position: left;
 		}
 	}
-}
-
-.gradient-toggle nav.header-nav {
-	@apply h-[#{$header-expand}];
 }
 
 [sf-theme="dark"] #theme-button-toggle {
@@ -197,7 +199,7 @@ $padding-expand: 1.75rem;
 	}
 
 	&:last-child .dropdown {
-		@apply translate-x-1;
+		@apply translate-x-1 flex flex-col items-end px-5;
 	}
 }
 

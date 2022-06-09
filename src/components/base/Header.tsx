@@ -128,131 +128,140 @@ export default function Header() {
 
 	return (
 		<header
-			className={`${stickyClass} ${isOpen ? "header-active" : ""} z-mosttop`}
+			className={`${stickyClass} ${isOpen ? styles["header-active"] : ""}`}
 			id={styles.container}
 		>
-			<div className={styles["header-logo"]}>
-				<button
-					id={styles["burger-menu"]}
-					className={isOpen ? "burger-active" : ""}
-					onClick={toggleMenu}
-				>
-					<FaIcon icon={isOpen ? faClose : faBars} />
-				</button>
-				<strong id={styles["site-wordmark"]}>
-					<Link href="/">
-						<a>
-							<span>&lt;</span>
-							<span id={styles["only-highlightable"]}>skepfusky</span>
-							<span>&#47;&gt;</span>
-						</a>
-					</Link>
-				</strong>
-			</div>
-			<nav className={styles["header-nav"]}>
-				<span className={styles["header-nav-item"]}>
-					<Link href="/projects">
-						<a className={router.pathname === "/projects" ? "page-active" : ""}>
-							Dev Projects
-						</a>
-					</Link>
-					<div className={styles.dropdown}>
-						<ul className={styles["dropdown-item"]}>
-							<li>
-								<strong>Stuff I made</strong>
-							</li>
-							{projectsDropdown.map((project, index) => (
-								<DropdownItem
-									key={index}
-									title={project.title}
-									img={project.img}
-									link={project.link}
-								/>
-							))}
-						</ul>
-						<ul className={styles["dropdown-item"]}>
-							<li>
-								<strong>Stuff I've contributed</strong>
-							</li>
-							{projectsContributed.map((project, index) => (
-								<DropdownItem
-									key={index}
-									title={project.title}
-									img={project.img}
-									link={project.link}
-								/>
-							))}
-						</ul>
-					</div>
-				</span>
-				<span className={styles["header-nav-item"]}>
-					<span>Media</span>
-					{/* <div className={styles.dropdown}>
+			<div className={styles.wrapper}>
+				<div className={styles["header-logo"]}>
+					<button
+						id={styles["burger-menu"]}
+						className={isOpen ? "burger-active" : ""}
+						onClick={toggleMenu}
+					>
+						<FaIcon icon={isOpen ? faClose : faBars} />
+					</button>
+					<strong id={styles["site-wordmark"]}>
+						<Link href="/">
+							<a>
+								<span>&lt;</span>
+								<span id={styles["only-highlightable"]}>skepfusky</span>
+								<span>&#47;&gt;</span>
+							</a>
+						</Link>
+					</strong>
+				</div>
+				<nav className={styles["header-nav"]}>
+					<span className={styles["header-nav-item"]}>
+						<Link href="/projects">
+							<a
+								className={router.pathname === "/projects" ? "page-active" : ""}
+							>
+								Dev Projects
+							</a>
+						</Link>
+						<div className={styles.dropdown}>
+							<ul className={styles["dropdown-item"]}>
+								<li>
+									<strong>Stuff I made</strong>
+								</li>
+								{projectsDropdown.map((project, index) => (
+									<DropdownItem
+										key={index}
+										title={project.title}
+										img={project.img}
+										link={project.link}
+									/>
+								))}
+							</ul>
+							<ul className={styles["dropdown-item"]}>
+								<li>
+									<strong>Stuff I've contributed</strong>
+								</li>
+								{projectsContributed.map((project, index) => (
+									<DropdownItem
+										key={index}
+										title={project.title}
+										img={project.img}
+										link={project.link}
+									/>
+								))}
+							</ul>
+						</div>
+					</span>
+					<span className={styles["header-nav-item"]}>
+						<span>Media</span>
+						{/* <div className={styles.dropdown}>
 						<ul className={styles["dropdown-item"]}>
 							<li>
                 <strong>TBA</strong>
 							</li>
 						</ul>
 					</div> */}
-				</span>
-				<span className={styles["header-nav-item"]}>
-					<Link href="/blog" passHref>
-						<a className={router.pathname === "/blog" ? "page-active" : ""}>
-							Blog
-						</a>
-					</Link>
-				</span>
-				<span className={styles["header-nav-item"]}>
-					<Link href="/about" passHref>
-						<a className={router.pathname === "/about" ? "page-active" : ""}>
-							About
-						</a>
-					</Link>
-					<div className={styles.dropdown}>
-						<ul className={styles["dropdown-item"]}>
-							{aboutMe.map((about, index) => (
-								<li key={index}>
-									<Link href={about.link} passHref>
-										<a>{about.title}</a>
-									</Link>
-								</li>
-							))}
+					</span>
+					<span className={styles["header-nav-item"]}>
+						<Link href="/blog" passHref>
+							<a className={router.pathname === "/blog" ? "page-active" : ""}>
+								Blog
+							</a>
+						</Link>
+					</span>
+					<span className={styles["header-nav-item"]}>
+						<Link href="/about" passHref>
+							<a className={router.pathname === "/about" ? "page-active" : ""}>
+								About
+							</a>
+						</Link>
+						<div className={styles.dropdown}>
+							<ul className={styles["dropdown-item"]}>
+								{aboutMe.map((about, index) => (
+									<li key={index}>
+										<Link href={about.link} passHref>
+											<a>{about.title}</a>
+										</Link>
+									</li>
+								))}
+							</ul>
+						</div>
+					</span>
+					<ThemeToggle />
+				</nav>
+				{/* Big ass toggle menu */}
+				<div
+					id={styles["toggle-menu-container"]}
+					className={
+						isOpen ? styles["toggled-menu-open"] : styles["toggled-menu-closed"]
+					}
+				>
+					<div id={styles["toggle-menu-wrapper"]}>
+						<h2>Site navigation</h2>
+						<hr />
+						<ul id={styles["toggle-nav-menu"]} role="navigation">
+							<NavItem
+								title="Projects"
+								link="/projects"
+								icon="👀"
+								onClick={toggleMenu}
+							/>
+							<NavItem
+								title="Discography"
+								link="/discography"
+								icon="💽"
+								onClick={toggleMenu}
+							/>
+							<NavItem
+								title="Blog"
+								link="/blog"
+								icon="📝"
+								onClick={toggleMenu}
+							/>
+							<NavItem
+								title="About"
+								link="/about"
+								icon="🦊"
+								onClick={toggleMenu}
+							/>
 						</ul>
 					</div>
-				</span>
-				<ThemeToggle />
-			</nav>
-			{/* Big ass toggle menu */}
-			<div
-				id={styles["toggle-menu-container"]}
-				className={
-					isOpen ? styles["toggled-menu-open"] : styles["toggled-menu-closed"]
-				}
-			>
-				<div id={styles["toggle-menu-wrapper"]}>
-					<h2>Site navigation</h2>
-					<hr />
-					<ul id={styles["toggle-nav-menu"]} role="navigation">
-						<NavItem
-							title="Projects"
-							link="/projects"
-							icon="👀"
-							onClick={toggleMenu}
-						/>
-						<NavItem
-							title="Discography"
-							link="/discography"
-							icon="💽"
-							onClick={toggleMenu}
-						/>
-						<NavItem title="Blog" link="/blog" icon="📝" onClick={toggleMenu} />
-						<NavItem
-							title="About"
-							link="/about"
-							icon="🦊"
-							onClick={toggleMenu}
-						/>
-					</ul>
 				</div>
 			</div>
 		</header>
