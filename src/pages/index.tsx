@@ -1,22 +1,11 @@
-import React, { useContext, useEffect, useState } from "react"
-import dynamic from "next/dynamic"
 import { ParallaxProvider } from "react-scroll-parallax"
-import { CardSkeleton } from "@/components/landing/ProjectCard"
 import DefaultLayout from "@/layouts/Default"
 import SEOHead from "@/components/SEOHead"
 import HeroHeader from "@/components/layouts/HeroHeader"
-import HomeHeading from "@/components/HomeHeading"
-import AlbumItem from "@/components/AlbumItem"
-import Section from "@/components/Section"
-import styles from "@/styles/Home.module.scss"
 import ProjectsSection from "@/components/layouts/ProjectsSection"
 import MusicSection from "@/components/layouts/MusicSection"
 import VideoSection from "@/components/layouts/VideoSection"
-
-const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
-	loading: () => <CardSkeleton />,
-	ssr: false
-})
+import SectionSeparator from "@/components/SectionSeparator"
 
 export default function Home() {
 	return (
@@ -27,32 +16,11 @@ export default function Home() {
 				image="/static/avatars/07.png"
 			/>
 			<HeroHeader />
-			<div
-				className="layout-clip z-3 relative"
-				style={
-					{
-						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
-					} as React.CSSProperties
-				}
-			></div>
+			<SectionSeparator />
 			<ProjectsSection />
-			<div
-				className="layout-clip z-3 relative"
-				style={
-					{
-						"--clip-path-layout": "polygon(0 0, 100% 86%, 100% 100%, 0 100%)"
-					} as React.CSSProperties
-				}
-			></div>
+			<SectionSeparator clipPath="polygon(0 0, 100% 86%, 100% 100%, 0 100%)" />
 			<MusicSection />
-			<div
-				className="layout-clip z-3 relative"
-				style={
-					{
-						"--clip-path-layout": "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
-					} as React.CSSProperties
-				}
-			></div>
+			<SectionSeparator />
 			<VideoSection />
 		</ParallaxProvider>
 	)

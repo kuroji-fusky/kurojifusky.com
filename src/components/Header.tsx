@@ -150,7 +150,7 @@ export default function Header() {
 				<span className="header-nav-item">
 					<Link href="/projects">
 						<a className={router.pathname === "/projects" ? "page-active" : ""}>
-							Projects
+							Dev Projects
 						</a>
 					</Link>
 					<div className="dropdown">

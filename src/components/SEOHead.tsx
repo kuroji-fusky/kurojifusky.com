@@ -11,14 +11,7 @@ export default function SEOHead({
 	title,
 	description,
 	image,
-	keywords = [
-		"skepfusky",
-		"kokoro husky",
-		"furry",
-		"filipino",
-		"music",
-		"programming"
-	]
+	keywords = ["skepfusky", "kokoro husky", "furry", "music", "programming"]
 }: ISEOHeadProps) {
 	const router = useRouter()
 	const SITE_NAME = "skepfusky"

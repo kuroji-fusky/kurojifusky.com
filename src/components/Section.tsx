@@ -11,7 +11,7 @@ interface ISectionProps {
 }
 
 export default function Section({
-	heading = "Bruh moment",
+	heading,
 	emojiKey = "😳",
 	sectionClassName,
 	sectionStyles,

@@ -1,6 +1,12 @@
-import ProjectCard from "../landing/ProjectCard"
+import dynamic from "next/dynamic"
 import Section from "../Section"
+import { CardSkeleton } from "@/components/landing/ProjectCard"
 import styles from "@/styles/Home.module.scss"
+
+const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
+	loading: () => <CardSkeleton />,
+	ssr: false
+})
 
 export default function ProjectsSection() {
 	return (

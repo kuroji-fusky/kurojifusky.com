@@ -129,7 +129,7 @@
 }
 
 @mixin feature-cards {
-	@apply p-4 relative top-0 left-0 flex flex-col gap-y-0.5 rounded-md mb-4 mr-4 cursor-default select-none;
+	@apply relative top-0 left-0 flex flex-col gap-y-0.5 rounded-md mb-4 mr-4 cursor-default select-none;
 	transition: top 300ms ease, left 300ms ease;
 	background: var(--theme-cards);
 
@@ -157,6 +157,7 @@
 .featured-project {
 	&-card {
 		@include feature-cards();
+		@apply p-5;
 
 		p {
 			@apply h-full mb-2 leading-7;
@@ -192,5 +193,26 @@
 
 	&-description {
 		@apply w-[30%];
+	}
+}
+
+/** Video stuff **/
+
+#video-item {
+	&-container {
+		@include feature-cards();
+		@apply p-[1.85rem];
+
+		img {
+			@apply rounded-md;
+		}
+	}
+
+	&-details {
+		@apply flex flex-col gap-y-1 mt-1 leading-6;
+
+		#video-description {
+			@apply text-base;
+		}
 	}
 }

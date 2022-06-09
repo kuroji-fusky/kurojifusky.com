@@ -3,7 +3,7 @@ import Section from "../Section"
 
 export default function MusicSection() {
 	return (
-		<div className="layout-seperator z-3 relative">
+		<div id="music" className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">
 				<Section heading={"Music"} emojiKey="🎵">
 					<article>
