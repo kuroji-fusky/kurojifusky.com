@@ -15,7 +15,7 @@ export default function VideoSection() {
 							music
 						</p>
 					</article>
-					<div className="grid grid-cols-3 gap-2">
+					<div className="grid grid-cols-3 gap-4">
 						<VideoItem
 							id="5SybfjVntTw"
 							title="DFC Day 2019 - School Edit"
