@@ -1,13 +1,13 @@
-import SectionContainer from "./SectionContainer"
+import Section from "./Section"
 import { YouTubeThumbnail } from "@/partials/YoutubeComponent"
 import styles from "@/styles/Home.module.scss"
 import Link from "next/link"
 
-export default function VideoSection() {
+export default function Video() {
 	return (
 		<div id="videos" className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">
-				<SectionContainer heading={"Videos and Filmmaking"} emojiKey="🎬">
+				<Section heading={"Videos and Filmmaking"} emojiKey="🎬">
 					<article>
 						<p>
 							I Initially had a passion for video editing and filmmaking back
@@ -64,7 +64,7 @@ export default function VideoSection() {
 							Just a family vacation vlog edit in Itogon, Philippines.
 						</VideoItem>
 					</div>
-				</SectionContainer>
+				</Section>
 			</div>
 		</div>
 	)

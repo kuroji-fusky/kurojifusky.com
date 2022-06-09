@@ -11,6 +11,7 @@ interface ICardProps {
 	title: string
 	description: string
 	image?: string
+	techIcons: string[]
 	pageLink?: string
 	repoLink?: string
 	extLink?: string
@@ -20,6 +21,7 @@ export default function ProjectCard({
 	title,
 	description,
 	image,
+	techIcons,
 	repoLink,
 	pageLink,
 	extLink
@@ -28,6 +30,11 @@ export default function ProjectCard({
 		<div className={styles["featured-project-card"]}>
 			<div className={styles["featured-project-image"]}>
 				<img src={image} alt={`Image for a project, ${title}.`} />
+			</div>
+			<div className={styles["tech-icons"]}>
+				{techIcons?.map((icon, index) => (
+					<i className={`devicon-${icon}`} key={index} />
+				))}
 			</div>
 			<h3>{title}</h3>
 			<p>{description}</p>

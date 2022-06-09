@@ -3,6 +3,7 @@
 	"rules": {
 		"@next/next/no-img-element": "off",
 		"@next/next/inline-script-id": "off",
-		"react/no-unescaped-entities": "off"
+		"react/no-unescaped-entities": "off",
+		"@next/next/no-css-tags": "off"
 	}
 }

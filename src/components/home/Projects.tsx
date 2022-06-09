@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import SectionContainer from "./SectionContainer"
+import Section from "./Section"
 import { CardSkeleton } from "@/components/landing/ProjectCard"
 import styles from "@/styles/Home.module.scss"
 
@@ -8,21 +8,23 @@ const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 	ssr: false
 })
 
-export default function ProjectsSection() {
+export default function Projects() {
 	return (
 		<div className="layout-seperator z-3 relative" id="projects">
 			<div className="layout-item-wrapper">
-				<SectionContainer
-					heading="Projects"
-					emojiKey="✨"
-					sectionId={styles.showcase}
-				>
+				<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
 					<ProjectCard
 						image="/static/projects/paco-yt-icon.jpg"
 						title="Paco Drawing Stats"
-						description="A repository that collects a bunch drawing data from Paco Panda, written in Python and Next.js"
+						description="A repository that collects a bunch drawing data from Paco Panda, written in FastAPI and Next.js"
 						pageLink="/projects/pandapaco-drawing-stats"
 						repoLink="skepfusky/pandapaco-drawing-stats"
+						techIcons={[
+							"nextjs-plain",
+							"typescript-plain colored",
+							"python-plain colored",
+							"fastapi-plain colored"
+						]}
 					/>
 					<ProjectCard
 						image="/static/projects/searchpets-icon.png"
@@ -31,18 +33,30 @@ export default function ProjectsSection() {
 						repoLink="OpenFurs/searchpets"
 						pageLink="/projects/searchpets"
 						extLink="https://searchpets.xyz"
+						techIcons={[
+							"nextjs-plain",
+							"typescript-plain colored",
+							"python-plain colored",
+							"flask-plain"
+						]}
 					/>
 					<ProjectCard
 						image="/static/projects/majira-vscode.png"
 						title="Majira Strawberry VS Code Theme"
 						description="Increase your coding productivity by 69% with this beautiful theme!"
 						repoLink="skepfusky/majira-strawberry-vscode"
+						techIcons={["vscode-plain colored"]}
 					/>
 					<ProjectCard
 						image="/static/projects/scammerino-lol.jpg"
 						title="Scammerino"
 						description="Play with scammers' feelings with a game of Bingo or rating their patience"
 						repoLink="skepfusky/scammerino"
+						techIcons={[
+							"electron-original",
+							"vuejs-plain",
+							"typescript-plain colored"
+						]}
 					/>
 					<ProjectCard
 						image="/static/projects/myfursona.png"
@@ -51,14 +65,13 @@ export default function ProjectsSection() {
 						description="An open source project where you an manage your fursona(s)"
 						repoLink="MyFursona-Project/MyFursona"
 						extLink="https://www.myfursona.art"
+						techIcons={[
+							"nextjs-plain",
+							"typescript-plain colored",
+							"go-plain colored"
+						]}
 					/>
-					<ProjectCard
-						image="/static/projects/tessinator.png"
-						title="Tessinator"
-						description="An awful Discord bot when I barely knew anything about Node.js"
-						repoLink="skepfusky/tessinator"
-					/>
-				</SectionContainer>
+				</Section>
 			</div>
 		</div>
 	)

@@ -115,7 +115,7 @@
 /** Project **/
 
 #showcase {
-	@apply grid relative gap-4 text-center;
+	@apply grid relative gap-4;
 	z-index: 0;
 	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 
@@ -129,7 +129,7 @@
 }
 
 @mixin feature-cards {
-	@apply relative top-0 left-0 flex flex-col gap-y-0.5 rounded-md mb-4 mr-4 cursor-default select-none;
+	@apply relative top-0 left-0 flex flex-col gap-y-[0.33rem] rounded-md mb-4 mr-4 cursor-default select-none;
 	transition: top 300ms ease, left 300ms ease;
 	background: var(--theme-cards);
 
@@ -157,7 +157,7 @@
 .featured-project {
 	&-card {
 		@include feature-cards();
-		@apply p-5;
+		@apply p-5 items-start;
 
 		p {
 			@apply h-full mb-2 leading-7;
@@ -183,7 +183,7 @@
 
 	&-title,
 	&-description {
-		@apply block text-center h-6 rounded-md;
+		@apply block h-6 rounded-md;
 		@include skeletonSwipe(700px);
 	}
 
@@ -194,6 +194,11 @@
 	&-description {
 		@apply w-[30%];
 	}
+}
+
+.tech-icons {
+	@apply absolute top-5 right-5 flex gap-x-5;
+	font-size: 115%;
 }
 
 /** Video stuff **/

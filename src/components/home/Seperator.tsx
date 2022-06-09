@@ -1,4 +1,4 @@
-export default function SectionSeparator({
+export default function Seperator({
 	clipPath = "polygon(0 100%, 100% 0, 100% 100%, 0% 100%)"
 }: {
 	clipPath?: string
