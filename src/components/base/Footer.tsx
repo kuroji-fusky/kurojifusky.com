@@ -8,16 +8,16 @@ import {
 	faTwitter,
 	faYoutube
 } from "@fortawesome/free-brands-svg-icons"
-import Link from "next/link"
-import styles from "../styles/Footer.module.scss"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import Link from "next/link"
+import styles from "@/styles/base/Footer.module.scss"
 
 export default function Footer() {
 	return (
-		<footer className="bg-neutral-900 text-white">
+		<footer className={styles.container}>
 			<div className={styles.wrapper}>
 				<div className={styles.contents}>
-					<div className="flex gap-x-[1.5rem]">
+					<div className={styles["social-container"]}>
 						<Link href="https://youtube.com/skepfusky97">
 							<a className={styles["social-icons"]} target="_blank">
 								<FaIcon icon={faYoutube} />

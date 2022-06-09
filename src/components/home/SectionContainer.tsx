@@ -10,7 +10,7 @@ interface ISectionProps {
 	children?: any
 }
 
-export default function Section({
+export default function SectionContainer({
 	heading,
 	emojiKey = "😳",
 	sectionClassName,

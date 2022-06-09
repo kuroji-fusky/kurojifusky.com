@@ -57,6 +57,20 @@ export default function HeroHeader() {
 						</span>
 					))}
 				</div>
+				<div>
+					<Link href="/about" passHref>
+						More About Meh
+					</Link>
+					<Link href="/#projects" passHref>
+						Projects
+					</Link>
+					<Link href="/#videos" passHref>
+						Videos
+					</Link>
+					<Link href="/#music" passHref>
+						Music
+					</Link>
+				</div>
 			</div>
 			<div className={styles["artwork-container"]}>
 				<div className={styles["hero-parallax-container"]}>

@@ -1,4 +1,4 @@
-import SEOHead from "@/components/SEOHead"
+import SEOHead from "@/partials/SEOHead"
 import styles from "@/styles/PageNotFound.module.scss"
 import DefaultLayout from "@/layouts/Default"
 

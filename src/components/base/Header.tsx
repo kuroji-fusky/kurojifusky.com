@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
-import ThemeToggle from "./ThemeToggle"
+import ThemeToggle from "../base/ThemeToggle"
 
 export default function Header() {
 	const router = useRouter()
@@ -65,7 +65,6 @@ export default function Header() {
 			title: "Cookie Clicker AFK"
 		},
 		{
-			img: "/static/avatars/02.png",
 			link: "/projects/biro-ui",
 			title: "Biro UI"
 		}

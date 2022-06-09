@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from "react"
 import Script from "next/script"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { ParallaxDisable } from "@/models/Context"
-import Footer from "@/components/Footer"
+import Footer from "@/components/base/Footer"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import "@/styles/globals.scss"
 

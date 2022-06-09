@@ -1,11 +1,11 @@
 import { ParallaxProvider } from "react-scroll-parallax"
 import DefaultLayout from "@/layouts/Default"
-import SEOHead from "@/components/SEOHead"
-import HeroHeader from "@/components/layouts/HeroHeader"
-import ProjectsSection from "@/components/layouts/ProjectsSection"
-import MusicSection from "@/components/layouts/MusicSection"
-import VideoSection from "@/components/layouts/VideoSection"
-import SectionSeparator from "@/components/SectionSeparator"
+import SEOHead from "@/partials/SEOHead"
+import HeroHeader from "@/components/home/HeroHeader"
+import ProjectsSection from "@/components/home/ProjectsSection"
+import MusicSection from "@/components/home/MusicSection"
+import VideoSection from "@/components/home/VideoSection"
+import SectionSeparator from "@/components/home/SectionSeparator"
 
 export default function Home() {
 	return (

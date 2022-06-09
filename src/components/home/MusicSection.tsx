@@ -1,11 +1,11 @@
 import AlbumItem from "../AlbumItem"
-import Section from "../Section"
+import SectionContainer from "./SectionContainer"
 
 export default function MusicSection() {
 	return (
 		<div id="music" className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">
-				<Section heading={"Music"} emojiKey="🎵">
+				<SectionContainer heading={"Music"} emojiKey="🎵">
 					<article>
 						<p>
 							I started to produce music independently in 2017. Initially,
@@ -53,7 +53,7 @@ export default function MusicSection() {
 							className="hidden xl:flex"
 						/>
 					</div>
-				</Section>
+				</SectionContainer>
 			</div>
 		</div>
 	)

@@ -1,3 +1,7 @@
+.container {
+	@apply bg-neutral-900 text-white;
+}
+
 .wrapper {
 	@apply my-0 mx-auto flex flex-col gap-y-8 max-w-screen-2xl p-8;
 }
@@ -12,6 +16,10 @@
 	@media only screen and (max-width: 768px) {
 		@apply place-items-center;
 	}
+}
+
+.social-container {
+	@apply flex gap-x-[1.5rem];
 }
 
 .social-icons {

@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic"
-import Section from "../Section"
+import SectionContainer from "./SectionContainer"
 import { CardSkeleton } from "@/components/landing/ProjectCard"
 import styles from "@/styles/Home.module.scss"
 
@@ -10,9 +10,13 @@ const ProjectCard = dynamic(() => import("@/components/landing/ProjectCard"), {
 
 export default function ProjectsSection() {
 	return (
-		<div className="layout-seperator z-3 relative" id="showcase">
+		<div className="layout-seperator z-3 relative" id="projects">
 			<div className="layout-item-wrapper">
-				<Section heading="Projects" emojiKey="✨" sectionId={styles.showcase}>
+				<SectionContainer
+					heading="Projects"
+					emojiKey="✨"
+					sectionId={styles.showcase}
+				>
 					<ProjectCard
 						image="/static/projects/paco-yt-icon.jpg"
 						title="Paco Drawing Stats"
@@ -54,7 +58,7 @@ export default function ProjectsSection() {
 						description="An awful Discord bot when I barely knew anything about Node.js"
 						repoLink="skepfusky/tessinator"
 					/>
-				</Section>
+				</SectionContainer>
 			</div>
 		</div>
 	)

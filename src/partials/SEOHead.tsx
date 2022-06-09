@@ -16,14 +16,16 @@ export default function SEOHead({
 	const router = useRouter()
 	const SITE_NAME = "skepfusky"
 
-	const titleMain = "Official Website of that stupid autistic dude"
+	const titleMain = "Official website of skepfusky"
 	const descMain =
-		"Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
+		"Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines! Feel free to browse my cringe, or not..."
 
 	let titleGlobal = `${title} | ${SITE_NAME}`
 
 	return (
 		<Head>
+			<meta httpEquiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			{router.pathname === "/" ? (
 				<>
 					<title>{titleMain}</title>
@@ -40,6 +42,8 @@ export default function SEOHead({
 			<meta name="keywords" content={keywords?.join(", ")} />
 			<meta name="theme-color" content="#9427e7" />
 			<link rel="canonical" href={`https://skepfusky.xyz${router.asPath}`} />
+			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+			<link rel="apple-touch-icon" href="/favicon.ico" />
 
 			{/* Open Graph */}
 			<meta property="og:type" content="website" />

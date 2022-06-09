@@ -5,7 +5,6 @@ import {
 	faInfoCircle
 } from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link"
-
 import styles from "@/styles/Home.module.scss"
 
 interface ICardProps {
