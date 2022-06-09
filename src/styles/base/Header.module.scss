@@ -1,5 +1,4 @@
 @use "../partials/mixins" as *;
-@use "../partials/variables" as *;
 
 /*******************
  * Main navbar
@@ -97,6 +96,10 @@ $padding-expand: 1.75rem;
 .gradient-toggle {
 	button#burger-menu {
 		@apply py-[#{$padding-expand}];
+	}
+
+	#only-highlightable {
+		background-position: top;
 	}
 }
 

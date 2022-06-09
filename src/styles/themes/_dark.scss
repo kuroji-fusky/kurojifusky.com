@@ -1,0 +1,22 @@
+@use "colors" as *;
+
+[sf-theme="dark"] {
+	--theme-cards: #{$bg-violet-highlight};
+	--bg-dropdown: #1c1a1e;
+
+	background-color: var(--theme-bg-dark);
+	color: var(--theme-fg-dark);
+
+	.layout-seperator,
+	.layout-clip {
+		--bg-layout-seperator: #{lighten($main-bg, 4%)};
+	}
+
+	.dropdown {
+		@apply bg-neutral-900;
+
+		a:hover {
+			@apply bg-neutral-50 bg-opacity-25;
+		}
+	}
+}

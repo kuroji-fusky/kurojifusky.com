@@ -1,4 +1,4 @@
-@use "../partials" as *;
+@use "../themes/colors" as *;
 
 /************
  * Scrollbar
@@ -20,25 +20,6 @@ html {
 	&:hover {
 		background-color: $borahae-alt;
 	}
-}
-
-/************
- * Warnings
- ************/
-
-.under-construction {
-	@apply text-center my-5;
-	background-image: linear-gradient(
-		45deg,
-		#700404 25%,
-		#4a0505 25%,
-		#4a0505 50%,
-		#700404 50%,
-		#700404 75%,
-		#4a0505 75%,
-		#4a0505 100%
-	);
-	background-size: 56.57px 56.57px;
 }
 
 /************
@@ -99,7 +80,6 @@ html {
 /************
  * MDX
  ************/
-
 #mdx-seperator {
 	@apply flex flex-row-reverse gap-4;
 

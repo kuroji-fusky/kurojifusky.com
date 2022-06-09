@@ -33,7 +33,9 @@ export default function Header() {
 	const [stickyClass, setStickyClass] = useState("")
 
 	const stickNavbar = () => {
-		window.scrollY > 21 ? setStickyClass("gradient-toggle") : setStickyClass("")
+		window.scrollY > 21
+			? setStickyClass(styles["gradient-toggle"])
+			: setStickyClass("")
 	}
 
 	useEffect(() => {

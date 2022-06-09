@@ -34,12 +34,6 @@ code {
 $g1: rgb(9, 142, 251);
 $g2: rgba(255, 39, 215, 0.75);
 
-.gradient-toggle {
-	#only-highlightable {
-		background-position: top;
-	}
-}
-
 #highlight {
 	background: linear-gradient(90deg, $g1, $g2, $g1, $g2);
 	-webkit-background-clip: text;

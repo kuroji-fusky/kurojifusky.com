@@ -1,5 +1,5 @@
 @use "partials/mixins" as *;
-@use "partials/variables" as *;
+@use "themes/colors" as *;
 
 #static-header {
 	--backdrop-height: 24rem;

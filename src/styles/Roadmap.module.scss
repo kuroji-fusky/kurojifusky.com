@@ -1,4 +1,4 @@
-@use "partials/variables" as *;
+@use "themes/colors" as *;
 
 #container {
 	@apply flex flex-col gap-y-8 mb-7;
