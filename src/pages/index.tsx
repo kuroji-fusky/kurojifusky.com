@@ -10,11 +10,7 @@ import SectionSeparator from "@/components/SectionSeparator"
 export default function Home() {
 	return (
 		<ParallaxProvider>
-			<SEOHead
-				title="Home"
-				description="Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines!"
-				image="/static/avatars/07.png"
-			/>
+			<SEOHead image="/static/avatars/07.png" />
 			<HeroHeader />
 			<SectionSeparator />
 			<ProjectsSection />

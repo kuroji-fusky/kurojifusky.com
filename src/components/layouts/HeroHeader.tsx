@@ -45,25 +45,11 @@ export default function HeroHeader() {
 	return (
 		<div className={styles["hero-header"]}>
 			<div className={styles["hero-contents"]}>
-				<span className="text-[2.5rem] lg:text-5xl md:text-4xl flex items-center font-ubuntu-mono">
+				<span className="text-[2.5rem] lg:text-6xl md:text-4xl flex items-center font-ubuntu-mono">
 					<span>&lt;</span>
 					<span id="highlight">skepfusky</span>
 					<span>&#47;&gt;</span>
 				</span>
-				<article>
-					<p>
-						Hi, I'm <strong>skepfusky</strong>, simply known as{" "}
-						<strong>Skep</strong>, also known by my stage name{" "}
-						<strong>Kokoro Husky</strong> on streaming platforms -- I'm a
-						20-year-old self-employed and self-taught hobbyist from the
-						Philippines!
-					</p>
-					<p className="mt-2">
-						I'm just trying to get my name out there as I'm extremely passionate
-						about sharing and possibly inspiring future generations through my
-						broad set of skills, talent, and art as a self-taught individual.
-					</p>
-				</article>
 				<div className="w-[60%] flex flex-wrap gap-2 uppercase">
 					{skills.map((skill, index) => (
 						<span key={index} id={styles["skill-item"]}>
