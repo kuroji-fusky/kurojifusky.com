@@ -10,9 +10,9 @@
 	--theme-bg-light: var(--theme-white);
 	--theme-fg-light: var(--theme-black);
 }
-
 [sf-theme="dark"] {
 	--theme-cards: #{$bg-violet-highlight};
+	--bg-dropdown: #1c1a1e;
 
 	background-color: var(--theme-bg-dark);
 	color: var(--theme-fg-dark);
@@ -33,6 +33,7 @@
 
 [sf-theme="light"] {
 	--theme-cards: rgb(220, 212, 239);
+	--bg-dropdown: #d4d2d6;
 
 	background-color: var(--theme-bg-light);
 	color: var(--theme-fg-light);
@@ -43,8 +44,6 @@
 	}
 
 	.dropdown {
-		@apply bg-neutral-100;
-
 		a:hover {
 			@apply bg-neutral-300 bg-opacity-25;
 		}

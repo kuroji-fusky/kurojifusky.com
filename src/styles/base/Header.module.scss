@@ -1,4 +1,5 @@
-@use "../partials" as *;
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
 
 /*******************
  * Main navbar
@@ -10,7 +11,7 @@ $header-expand: 5.6rem;
 $padding-default: 2.2rem;
 $padding-expand: 1.75rem;
 
-header {
+#container {
 	@apply w-viewport fixed flex justify-between top-0 z-3 bg-neutral-900 md:bg-transparent h-[#{$header-default}];
 	transition: background 300ms ease, height 300ms ease;
 
@@ -199,6 +200,7 @@ header {
 
 .dropdown {
 	@apply absolute right-0 top-[4.5rem] py-3 px-2 opacity-0 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
+	background: var(--bg-dropdown);
 
 	&-item {
 		@apply flex flex-col gap-y-0.5;

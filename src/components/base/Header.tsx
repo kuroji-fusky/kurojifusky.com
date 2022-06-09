@@ -4,6 +4,7 @@ import Link from "next/link"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
 import ThemeToggle from "../base/ThemeToggle"
+import styles from "@/styles/base/Header.module.scss"
 
 export default function Header() {
 	const router = useRouter()
@@ -126,34 +127,35 @@ export default function Header() {
 	return (
 		<header
 			className={`${stickyClass} ${isOpen ? "header-active" : ""} z-mosttop`}
+			id={styles.container}
 		>
-			<div className="header-logo">
+			<div className={styles["header-logo"]}>
 				<button
-					id="burger-menu"
+					id={styles["burger-menu"]}
 					className={isOpen ? "burger-active" : ""}
 					onClick={toggleMenu}
 				>
 					<FaIcon icon={isOpen ? faClose : faBars} />
 				</button>
-				<strong id="site-wordmark">
+				<strong id={styles["site-wordmark"]}>
 					<Link href="/">
 						<a>
 							<span>&lt;</span>
-							<span id="only-highlightable">skepfusky</span>
+							<span id={styles["only-highlightable"]}>skepfusky</span>
 							<span>&#47;&gt;</span>
 						</a>
 					</Link>
 				</strong>
 			</div>
-			<nav className="header-nav">
-				<span className="header-nav-item">
+			<nav className={styles["header-nav"]}>
+				<span className={styles["header-nav-item"]}>
 					<Link href="/projects">
 						<a className={router.pathname === "/projects" ? "page-active" : ""}>
 							Dev Projects
 						</a>
 					</Link>
-					<div className="dropdown">
-						<ul className="dropdown-item">
+					<div className={styles.dropdown}>
+						<ul className={styles["dropdown-item"]}>
 							<li>
 								<strong>Stuff I made</strong>
 							</li>
@@ -166,7 +168,7 @@ export default function Header() {
 								/>
 							))}
 						</ul>
-						<ul className="dropdown-item">
+						<ul className={styles["dropdown-item"]}>
 							<li>
 								<strong>Stuff I've contributed</strong>
 							</li>
@@ -181,31 +183,31 @@ export default function Header() {
 						</ul>
 					</div>
 				</span>
-				<span className="header-nav-item">
+				<span className={styles["header-nav-item"]}>
 					<span>Media</span>
-					{/* <div className="dropdown">
-						<ul className="dropdown-item">
+					{/* <div className={styles.dropdown}>
+						<ul className={styles["dropdown-item"]}>
 							<li>
                 <strong>TBA</strong>
 							</li>
 						</ul>
 					</div> */}
 				</span>
-				<span className="header-nav-item">
+				<span className={styles["header-nav-item"]}>
 					<Link href="/blog" passHref>
 						<a className={router.pathname === "/blog" ? "page-active" : ""}>
 							Blog
 						</a>
 					</Link>
 				</span>
-				<span className="header-nav-item">
+				<span className={styles["header-nav-item"]}>
 					<Link href="/about" passHref>
 						<a className={router.pathname === "/about" ? "page-active" : ""}>
 							About
 						</a>
 					</Link>
-					<div className="dropdown">
-						<ul className="dropdown-item">
+					<div className={styles.dropdown}>
+						<ul className={styles["dropdown-item"]}>
 							{aboutMe.map((about, index) => (
 								<li key={index}>
 									<Link href={about.link} passHref>
@@ -220,13 +222,15 @@ export default function Header() {
 			</nav>
 			{/* Big ass toggle menu */}
 			<div
-				id="toggle-menu-container"
-				className={isOpen ? "toggled-menu-open" : "toggled-menu-closed"}
+				id={styles["toggle-menu-container"]}
+				className={
+					isOpen ? styles["toggled-menu-open"] : styles["toggled-menu-closed"]
+				}
 			>
-				<div id="toggle-menu-wrapper">
+				<div id={styles["toggle-menu-wrapper"]}>
 					<h2>Site navigation</h2>
 					<hr />
-					<ul id="toggle-nav-menu" role="navigation">
+					<ul id={styles["toggle-nav-menu"]} role="navigation">
 						<NavItem
 							title="Projects"
 							link="/projects"
@@ -270,7 +274,7 @@ export function DropdownItem({
 					{img ? (
 						<img src={img} alt={`A small project image for ${title}`} />
 					) : (
-						<span id="nav-no-img" className="h-7 w-7"></span>
+						<span id={styles["nav-no-img"]} className="h-7 w-7"></span>
 					)}
 					<span>{title}</span>
 				</a>
@@ -284,8 +288,8 @@ export function NavItem({ title, icon, link, onClick }: string | any) {
 	return (
 		<li>
 			<Link href={link}>
-				<a id="nav-item" {...onClick}>
-					<div id="nav-icon">{icon}</div>
+				<a id={styles["nav-item"]} {...onClick}>
+					<div id={styles["nav-icon"]}>{icon}</div>
 					<span>{title}</span>
 				</a>
 			</Link>

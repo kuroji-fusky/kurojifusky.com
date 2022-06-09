@@ -8,7 +8,7 @@ export default function DefaultLayout({
 	return (
 		<>
 			<Header />
-			<main>{children}</main>
+			<main role="main">{children}</main>
 		</>
 	)
 }

@@ -7,6 +7,7 @@ import {
 	faMoon,
 	faSun
 } from "@fortawesome/free-solid-svg-icons"
+import styles from "@/styles/base/Header.module.scss"
 
 export default function ThemeToggle() {
 	const [theme, setTheme] = useState("")
@@ -54,18 +55,18 @@ export default function ThemeToggle() {
 	const { disableParallax, setDisableParallax } = useContext(ParallaxDisable)
 
 	return (
-		<span className="header-nav-item">
+		<span className={styles["header-nav-item"]}>
 			<span>
 				<FaIcon icon={faAdjust} className="mx-3" />
 			</span>
-			<div className="dropdown flex flex-col items-end px-5">
+			<div className={`${styles.dropdown} flex flex-col items-end px-5`}>
 				<div className="flex items-center justify-between w-full">
 					<span className="text-base uppercase flex items-center gap-x-2">
 						<FaIcon icon={faAdjust} /> Current theme
 					</span>
 					<span>
 						<strong>{theme !== "dark" ? "AAAAAAA" : "Eye-saver :3"}</strong>
-						<button id="theme-button-toggle" onClick={toggleTheme}>
+						<button id={styles["theme-button-toggle"]} onClick={toggleTheme}>
 							<FaIcon icon={theme !== "dark" ? faSun : faMoon} />
 						</button>
 					</span>
