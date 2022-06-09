@@ -17,7 +17,7 @@ export function YouTubeEmbed({ id }: { id: string }) {
 
 export function YouTubeThumbnail({ id }: { id: string }) {
 	return (
-		<div className="aspect-video relative">
+		<div className="relative" style={{ aspectRatio: "16/9" }}>
 			<Image
 				layout="fill"
 				objectFit="contain"
