@@ -5,8 +5,8 @@ import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
 import ProjectHeader from "@/components/static/ProjectHeader"
-import SEOHead from "@/partials/SEOHead"
-import SidebarContainer from "@/components/SidebarContainer"
+import SEOHead from "@/components/partials/SEOHead"
+import SidebarContainer from "@/components/partials/SidebarContainer"
 
 const components = { SEOHead, ProjectHeader, SidebarContainer }
 

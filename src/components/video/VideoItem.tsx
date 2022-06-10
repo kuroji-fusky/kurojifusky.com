@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { VideoItemProps } from "@/models/Interfaces"
-import { YoutubeThumbnail } from "@/partials/YoutubeComponent"
+import { YoutubeThumbnail } from "@/components/partials/YoutubeComponent"
 import styles from "@/styles/Home.module.scss"
 
 export function VideoItem({ id, title, description, date }: VideoItemProps) {

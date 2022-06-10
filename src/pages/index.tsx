@@ -1,6 +1,6 @@
 import { ParallaxProvider } from "react-scroll-parallax"
 import DefaultLayout from "@/layouts/Default"
-import SEOHead from "@/partials/SEOHead"
+import SEOHead from "@/components/partials/SEOHead"
 import HeroHeader from "@/components/home/HeroHeader"
 import Projects from "@/components/home/Projects"
 import Music from "@/components/home/Music"

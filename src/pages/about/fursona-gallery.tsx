@@ -1,5 +1,5 @@
 import DefaultLayout from "@/layouts/Default"
-import SEOHead from "@/partials/SEOHead"
+import SEOHead from "@/components/partials/SEOHead"
 import Image from "next/image"
 
 export default function FursonaGallery() {

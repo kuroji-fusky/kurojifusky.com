@@ -4,18 +4,19 @@ interface ISEOHeadProps {
 	title?: string
 	description?: string
 	image?: string
-	keywords?: string[]
 }
 
-export default function SEOHead({
-	title,
-	description,
-	image,
-	keywords = ["skepfusky", "kokoro husky", "furry", "music", "programming"]
-}: ISEOHeadProps) {
+export default function SEOHead({ title, description, image }: ISEOHeadProps) {
 	const router = useRouter()
 	const SITE_NAME = "skepfusky"
 
+	const keywords = [
+		"skepfusky",
+		"kokoro husky",
+		"furry",
+		"music",
+		"programming"
+	]
 	const titleMain = "Official website of skepfusky"
 	const descMain =
 		"Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines! Feel free to browse my cringe, or not..."
@@ -39,7 +40,7 @@ export default function SEOHead({
 					<meta name="description" content={description} />
 				</>
 			)}
-			<meta name="keywords" content={keywords?.join(", ")} />
+			<meta name="keywords" content={keywords.join(", ")} />
 			<meta name="theme-color" content="#9427e7" />
 			<link rel="canonical" href={`https://skepfusky.xyz${router.asPath}`} />
 			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />

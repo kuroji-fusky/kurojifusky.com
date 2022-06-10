@@ -1,4 +1,4 @@
-import SEOHead from "@/partials/SEOHead"
+import SEOHead from "@/components/partials/SEOHead"
 import DefaultLayout from "@/layouts/Default"
 
 export default function AboutPage() {

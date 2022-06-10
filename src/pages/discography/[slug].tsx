@@ -5,7 +5,7 @@ import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
 import DiscographyHeader from "@/components/static/DiscographyHeader"
-import SEOHead from "@/partials/SEOHead"
+import SEOHead from "@/components/partials/SEOHead"
 import TracklistContainer, {
 	TracklistItem
 } from "@/components/static/Tracklist"
