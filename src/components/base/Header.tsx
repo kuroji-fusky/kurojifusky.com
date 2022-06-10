@@ -73,7 +73,7 @@ export default function Header() {
 					</strong>
 				</div>
 				<nav className={styles["header-nav"]}>
-					<span className={styles["header-nav-item"]}>
+					<span className={styles["header-nav-item-tba"]}>
 						<Link href="/projects">
 							<a
 								className={router.pathname === "/projects" ? "page-active" : ""}
@@ -110,7 +110,7 @@ export default function Header() {
 							</ul>
 						</div>
 					</span>
-					<span className={styles["header-nav-item"]}>
+					<span className={styles["header-nav-item-tba"]}>
 						<span>Media</span>
 						{/* <div className={styles.dropdown}>
 						<ul className={styles["dropdown-item"]}>
@@ -120,14 +120,14 @@ export default function Header() {
 						</ul>
 					</div> */}
 					</span>
-					<span className={styles["header-nav-item"]}>
+					<span className={styles["header-nav-item-tba"]}>
 						<Link href="/blog" passHref>
 							<a className={router.pathname === "/blog" ? "page-active" : ""}>
 								Blog
 							</a>
 						</Link>
 					</span>
-					<span className={styles["header-nav-item"]}>
+					<span className={styles["header-nav-item-tba"]}>
 						<Link href="/about" passHref>
 							<a className={router.pathname === "/about" ? "page-active" : ""}>
 								About

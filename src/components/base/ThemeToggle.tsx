@@ -89,7 +89,10 @@ export default function ThemeToggle() {
 						onClick={() => setDisableParallax(!disableParallax)}
 						className="p-1"
 					>
-						<div data-toggle-state={disableParallax} id={styles["switch-toggle-inner"]}></div>
+						<div
+							data-toggle-state={disableParallax}
+							id={styles["switch-toggle-inner"]}
+						></div>
 					</button>
 				</div>
 				<hr className="my-1" />

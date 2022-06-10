@@ -75,9 +75,6 @@ export default function HeroHeader() {
 						<Link href="/#music" passHref>
 							<a className="gradient-link">Music</a>
 						</Link>
-						<Link href="/about" passHref>
-							<a className="gradient-link">More on this idiot</a>
-						</Link>
 					</div>
 				</div>
 			</Parallax>
@@ -88,9 +85,15 @@ export default function HeroHeader() {
 						disabled={disableParallax}
 						className={styles["hero-parallax-avatar"]}
 					>
+						<Link href="https://youtu.be/5t53TcKIlMc" passHref>
+							<a
+								title="Don't you dare boop me!"
+								className="block rounded-full z-mosttop absolute h-[2.65rem] w-[2.8rem] top-[53%] left-[145px]"
+							></a>
+						</Link>
 						<Image
-							src="/static/avatars/FormalAvatar-SVG.svg"
-							alt="Skepfusky"
+							src="/static/avatars/07-transparent.png"
+							alt="Skepfusky fursona, drawn by @skepfuskyjs on Twitter"
 							objectFit="contain"
 							layout="fill"
 							priority={true}

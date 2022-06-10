@@ -118,14 +118,7 @@ export const projects: ProjectItemProps[] = [
 			"flask-plain"
 		]
 	},
-	{
-		img: "/static/projects/majira-vscode.png",
-		projectTitle: "Majira Strawberry VS Code Theme",
-		description:
-			"Increase your coding productivity by 69% with this beautiful theme!",
-		repoLink: "skepfusky/majira-strawberry-vscode",
-		techIcons: ["vscode-plain colored"]
-	},
+
 	{
 		img: "/static/projects/scammerino-lol.jpg",
 		projectTitle: "Scammerino",
@@ -133,6 +126,14 @@ export const projects: ProjectItemProps[] = [
 			"Play with scammers' feelings with a game of Bingo or rating their patience",
 		repoLink: "skepfusky/scammerino",
 		techIcons: ["electron-original", "vuejs-plain", "typescript-plain colored"]
+	},
+	{
+		img: "/static/projects/majira-vscode.png",
+		projectTitle: "Majira Strawberry VS Code Theme",
+		description:
+			"Increase your coding productivity by 69% with this beautiful theme!",
+		repoLink: "skepfusky/majira-strawberry-vscode",
+		techIcons: ["vscode-plain colored"]
 	},
 	{
 		img: "/static/projects/myfursona.png",
