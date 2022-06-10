@@ -23,6 +23,6 @@
 		"jsx": "preserve",
 		"incremental": true
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/config.js"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/models/Contents.ts"],
 	"exclude": ["node_modules"]
 }

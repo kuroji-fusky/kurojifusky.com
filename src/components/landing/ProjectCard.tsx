@@ -6,37 +6,28 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link"
 import styles from "@/styles/Home.module.scss"
-
-interface ICardProps {
-	title: string
-	description: string
-	image?: string
-	techIcons: string[]
-	pageLink?: string
-	repoLink?: string
-	extLink?: string
-}
+import { ProjectCardProps } from "@/models/Interfaces"
 
 export default function ProjectCard({
-	title,
+	projectTitle,
 	description,
-	image,
+	img,
 	techIcons,
 	repoLink,
 	pageLink,
 	extLink
-}: ICardProps) {
+}: ProjectCardProps) {
 	return (
 		<div className={styles["featured-project-card"]}>
 			<div className={styles["featured-project-image"]}>
-				<img src={image} alt={`Image for a project, ${title}.`} />
+				<img src={img} alt={`Image for a project, ${projectTitle}.`} />
 			</div>
 			<div className={styles["tech-icons"]}>
 				{techIcons?.map((icon, index) => (
 					<i className={`devicon-${icon}`} key={index} />
 				))}
 			</div>
-			<h3>{title}</h3>
+			<h3>{projectTitle}</h3>
 			<p>{description}</p>
 			<div className="py-2 flex justify-center gap-x-2">
 				{repoLink && (

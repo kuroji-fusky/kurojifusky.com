@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-export function YouTubeEmbed({ id }: { id: string }) {
+export function YoutubeEmbed({ id }: { id: string }) {
 	return (
 		<div className="aspect-video">
 			<iframe
@@ -15,7 +15,7 @@ export function YouTubeEmbed({ id }: { id: string }) {
 	)
 }
 
-export function YouTubeThumbnail({ id }: { id: string }) {
+export function YoutubeThumbnail({ id }: { id: string }) {
 	return (
 		<div className="relative" style={{ aspectRatio: "16/9" }}>
 			<Image
