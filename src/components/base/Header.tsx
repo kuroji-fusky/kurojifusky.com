@@ -5,7 +5,6 @@ import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
 import ThemeToggle from "../base/ThemeToggle"
 import styles from "@/styles/base/Header.module.scss"
-
 import {
 	projectsDropdown,
 	projectsContributed,

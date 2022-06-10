@@ -14,7 +14,7 @@ export default function Video() {
 							music
 						</p>
 					</article>
-					<div className="grid grid-cols-3 gap-4">
+					<div className="grid grid-cols-3 gap-0.5">
 						{videos.map((video, index) => (
 							<VideoItem
 								key={index}

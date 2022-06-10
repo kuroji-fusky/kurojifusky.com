@@ -44,7 +44,11 @@ export default function HeroHeader() {
 
 	return (
 		<div className={styles["hero-header"]}>
-			<div className={styles["hero-contents"]}>
+			<Parallax
+				speed={-35}
+				disabled={disableParallax}
+				className={styles["hero-contents"]}
+			>
 				<span className="text-[2.5rem] lg:text-6xl md:text-4xl flex items-center font-ubuntu-mono">
 					<span>&lt;</span>
 					<span id="highlight">skepfusky</span>
@@ -57,21 +61,26 @@ export default function HeroHeader() {
 						</span>
 					))}
 				</div>
-				<div>
-					<Link href="/#projects" passHref>
-						Projects
-					</Link>
-					<Link href="/#videos" passHref>
-						Videos
-					</Link>
-					<Link href="/#music" passHref>
-						Music
-					</Link>
-					<Link href="/about" passHref>
-						More About Meh
-					</Link>
+				<div className="text-base">
+					<span className="text-neutral-300 uppercase text-sm select-none">
+						browse my portfolio
+					</span>
+					<div className="flex gap-x-5">
+						<Link href="/#projects" passHref>
+							<a className="gradient-link">Projects</a>
+						</Link>
+						<Link href="/#videos" passHref>
+							<a className="gradient-link">Videos</a>
+						</Link>
+						<Link href="/#music" passHref>
+							<a className="gradient-link">Music</a>
+						</Link>
+						<Link href="/about" passHref>
+							<a className="gradient-link">More on this idiot</a>
+						</Link>
+					</div>
 				</div>
-			</div>
+			</Parallax>
 			<div className={styles["artwork-container"]}>
 				<div className={styles["hero-parallax-container"]}>
 					<Parallax

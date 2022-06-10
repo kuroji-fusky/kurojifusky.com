@@ -150,38 +150,6 @@ $padding-expand: 1.75rem;
 	}
 }
 
-[sf-theme="dark"] #theme-button-toggle {
-	@apply left-3;
-	&::before {
-		@apply -translate-x-3;
-	}
-}
-
-[sf-theme="light"] #theme-button-toggle {
-	@apply -left-3;
-	&::before {
-		@apply translate-x-3;
-	}
-}
-
-#theme-button-toggle {
-	@apply mx-5 my-1 px-[0.6rem] py-1 relative bg-neutral-300 rounded-full transition-all duration-300;
-
-	&::before {
-		content: "";
-		@apply bg-neutral-700 h-[1.1rem] absolute -inset-x-3 top-[0.66rem] -z-1 rounded-xl transition-all duration-300;
-	}
-}
-
-#tooltip {
-	@apply opacity-0 bg-neutral-400 bg-opacity-50 py-2 px-4 rounded-md absolute top-[4rem] right-0 w-max pointer-events-none transition-all duration-200;
-	font-size: 90%;
-
-	> span {
-		@apply w-[21rem] inline-block;
-	}
-}
-
 /*******************
  * Dropdown
  *******************/
@@ -205,7 +173,7 @@ $padding-expand: 1.75rem;
 
 .dropdown {
 	@apply absolute right-0 top-[4.5rem] py-3 px-2 opacity-0 pointer-events-none rounded-md transition-all duration-300 cursor-auto w-max flex gap-x-2 shadow-md;
-	background: var(--bg-dropdown);
+	background: var(--dropdown-bg);
 
 	&-item {
 		@apply flex flex-col gap-y-0.5;
@@ -215,7 +183,11 @@ $padding-expand: 1.75rem;
 		}
 
 		a {
-			@apply flex items-center px-2 py-1 rounded-md;
+			@apply flex items-center px-2 py-1 rounded-md transition-colors;
+
+      &:hover {
+        background-color: var(--dropdown-item-bg);
+      }
 		}
 
 		li span:last-child {
@@ -226,6 +198,27 @@ $padding-expand: 1.75rem;
 			@apply w-7 h-7 rounded-full;
 		}
 	}
+}
+
+/*******************
+ * Switches
+ *******************/
+#switch-toggle-inner {
+  @apply h-[1.8rem] w-[2.6rem] relative;
+
+  &::before {
+    content: "";
+    @apply bg-neutral-100 flex translate-y-[0.35rem] inset-0 h-[50%] w-full rounded-md;
+  }
+
+  &::after {
+    content: "";
+    @apply bg-borahaealt-500 z-2 -top-[0.85rem] relative flex inset-0 h-[25px] w-[25px] rounded-full transition-transform;
+  }
+
+  &[data-toggle-state="true"]::after {
+    @apply translate-x-5;
+  }
 }
 
 /*******************

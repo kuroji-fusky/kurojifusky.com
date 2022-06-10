@@ -115,7 +115,7 @@
 /** Project **/
 
 #showcase {
-	@apply grid relative gap-4;
+	@apply grid relative gap-3;
 	z-index: 0;
 	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 

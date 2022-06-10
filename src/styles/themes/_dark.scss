@@ -2,7 +2,8 @@
 
 [sf-theme="dark"] {
 	--theme-cards: #{$bg-violet-highlight};
-	--bg-dropdown: #1c1a1e;
+	--dropdown-bg: #1c1a1e;
+  --dropdown-item-bg: rgb(232 231 233 / 25%);
 
 	background-color: var(--theme-bg-dark);
 	color: var(--theme-fg-dark);
@@ -10,13 +11,5 @@
 	.layout-seperator,
 	.layout-clip {
 		--bg-layout-seperator: #{lighten($main-bg, 4%)};
-	}
-
-	.dropdown {
-		@apply bg-neutral-900;
-
-		a:hover {
-			@apply bg-neutral-50 bg-opacity-25;
-		}
 	}
 }

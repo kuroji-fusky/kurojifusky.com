@@ -45,7 +45,7 @@ export default function ProjectCard({
 			<div className="py-2 flex justify-center gap-x-2">
 				{repoLink && (
 					<Link href={`https://github.com/${repoLink}`} passHref>
-						<a className="link-btn flex items-center text-base" target="_blank">
+						<a className="link-btn flex items-center text-sm" target="_blank">
 							<FaIcon icon={faCode} size="sm" className="pr-1" />
 							Code
 						</a>
@@ -53,7 +53,7 @@ export default function ProjectCard({
 				)}
 				{pageLink && (
 					<Link href={pageLink} passHref>
-						<a className="link-btn flex items-center text-base">
+						<a className="link-btn flex items-center text-sm">
 							<FaIcon icon={faInfoCircle} size="sm" className="pr-1" />
 							About
 						</a>
@@ -61,7 +61,7 @@ export default function ProjectCard({
 				)}
 				{extLink && (
 					<Link href={extLink} passHref>
-						<a className="link-btn flex items-center text-base">
+						<a className="link-btn flex items-center text-sm">
 							Website
 							<FaIcon icon={faExternalLink} size="sm" className="pl-1" />
 						</a>

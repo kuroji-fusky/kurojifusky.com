@@ -2,7 +2,8 @@
 
 [sf-theme="light"] {
 	--theme-cards: rgb(220, 212, 239);
-	--bg-dropdown: #d4d2d6;
+	--dropdown-bg: #d4d2d6;
+  --dropdown-item-bg: rgb(124 114 131 / 25%);
 
 	background-color: var(--theme-bg-light);
 	color: var(--theme-fg-light);

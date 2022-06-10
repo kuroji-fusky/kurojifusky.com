@@ -54,7 +54,7 @@ export default function Footer() {
 							</a>
 						</Link>
 					</div>
-					<div className="flex flex-col md:flex-row text-base justify-end gap-x-4">
+					<div className="flex flex-col md:flex-row text-sm justify-end gap-x-4">
 						<span className="whitespace-nowrap">
 							{"Proudly made with "}
 							<FaIcon
