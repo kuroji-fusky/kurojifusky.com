@@ -15,14 +15,15 @@ export function YoutubeEmbed({ id }: { id: string }) {
 	)
 }
 
-export function YoutubeThumbnail({ id }: { id: string }) {
+export function YoutubeThumbnail({ id, alt }: { id: string; alt: string }) {
 	return (
 		<div className="relative" style={{ aspectRatio: "16/9" }}>
 			<Image
 				layout="fill"
+				itemType="thumbnail"
 				objectFit="contain"
 				src={`https://img.youtube.com/vi/${id}/maxresdefault.jpg`}
-				alt="youtube thumbnail"
+				alt={alt}
 			/>
 		</div>
 	)

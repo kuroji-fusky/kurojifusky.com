@@ -1,10 +1,94 @@
 import {
-	ProjectCardProps,
-	VideoItemProps
-	// DiscographyItemProps
+	ProjectItemProps,
+	VideoItemProps,
+	AlbumItemProps,
+	NavbarProps
 } from "./Interfaces"
 
-export const projects: ProjectCardProps[] = [
+export const projectsDropdown: NavbarProps[] = [
+	{
+		img: "/static/projects/paco-yt-icon.jpg",
+		link: "/projects/pandapaco-drawing-stats",
+		title: "Paco Drawing Stats"
+	},
+	{
+		link: "/projects/floofy-clicker",
+		title: "Floofy Clicker"
+	},
+	{
+		img: "/static/projects/scammerino-lol.jpg",
+		link: "/projects/scammerino",
+		title: "Scammerino"
+	},
+	{
+		img: "/static/projects/majira-vscode.png",
+		link: "/projects/majira-vscode",
+		title: "Majira VS Code Theme"
+	},
+	{
+		link: "/projects/cookie-clicker-afk",
+		title: "Cookie Clicker AFK"
+	},
+	{
+		link: "/projects/biro-ui",
+		title: "Biro UI"
+	}
+]
+
+export const projectsContributed: NavbarProps[] = [
+	{
+		img: "/static/projects/searchpets-icon.png",
+		link: "/projects/searchpets",
+		title: "Searchpets"
+	},
+	{
+		img: "/static/projects/myfursona.png",
+		link: "/projects/myfursona",
+		title: "MyFursona"
+	}
+]
+
+export const discographyDropdown: NavbarProps[] = [
+	{
+		link: "/discography/a-new-life",
+		title: "A New Life"
+	},
+	{
+		link: "/discography/horizon",
+		title: "Horizon"
+	},
+	{
+		link: "/discography/nostalgia",
+		title: "Nostalgia"
+	}
+]
+
+export const videoSeriesDropdown: NavbarProps[] = [
+	{
+		link: "/content/jin-woos-adventure",
+		title: "Jin Woo's Adventure"
+	}
+]
+
+export const videoContentDropdown: NavbarProps[] = [
+	{
+		link: "/content/ytp",
+		title: "YouTube Poops"
+	}
+]
+
+export const aboutMeDropdown: NavbarProps[] = [
+	{
+		link: "/about/roadmap",
+		title: "Roadmap"
+	},
+	{
+		link: "/about/fursona-gallery",
+		title: "Fursona Gallery"
+	}
+]
+
+export const projects: ProjectItemProps[] = [
 	{
 		img: "/static/projects/paco-yt-icon.jpg",
 		projectTitle: "Paco Drawing Stats",
@@ -104,4 +188,36 @@ export const videos: VideoItemProps[] = [
 		description: "Just a family vacation vlog edit in Itogon, Philippines."
 	}
 ]
-// export const music: DiscographyItemProps[] = []
+
+export const albums: AlbumItemProps[] = [
+	{
+		title: "Recursion",
+		cover: "Recursion_cover.png",
+		albumType: "Album",
+		date: "2022"
+	},
+	{
+		title: "A New Life",
+		cover: "A New Life_cover.png",
+		albumType: "Album",
+		date: "Dec 2021"
+	},
+	{
+		title: "Horizon",
+		cover: "Horizon_cover.png",
+		albumType: "Album",
+		date: "May 2021"
+	},
+	{
+		title: "Dreaming",
+		cover: "Dreaming_cover.png",
+		albumType: "Single",
+		date: "Apr 2021"
+	},
+	{
+		title: "Origins",
+		cover: "Origins_cover.png",
+		albumType: "Single",
+		date: "Aug 2020"
+	}
+]

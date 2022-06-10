@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import Link from "next/link"
 import styles from "@/styles/Home.module.scss"
-import { ProjectCardProps } from "@/models/Interfaces"
+import { ProjectItemProps } from "@/models/Interfaces"
 
 export default function ProjectCard({
 	projectTitle,
@@ -16,11 +16,23 @@ export default function ProjectCard({
 	repoLink,
 	pageLink,
 	extLink
-}: ProjectCardProps) {
+}: ProjectItemProps) {
 	return (
-		<div className={styles["featured-project-card"]}>
+		<div
+			className={styles["featured-project-card"]}
+			itemScope
+			itemType="http://schema.org/CreativeWork"
+		>
 			<div className={styles["featured-project-image"]}>
-				<img src={img} alt={`Image for a project, ${projectTitle}.`} />
+				{img ? (
+					<img
+						itemType="logo"
+						src={img}
+						alt={`Image for a project, ${projectTitle}.`}
+					/>
+				) : (
+					<div>lol</div>
+				)}
 			</div>
 			<div className={styles["tech-icons"]}>
 				{techIcons?.map((icon, index) => (
@@ -28,11 +40,12 @@ export default function ProjectCard({
 				))}
 			</div>
 			<h3>{projectTitle}</h3>
-			<p>{description}</p>
+			<p itemType="description">{description}</p>
+			{/* <p itemType="license">MIT</p> */}
 			<div className="py-2 flex justify-center gap-x-2">
 				{repoLink && (
 					<Link href={`https://github.com/${repoLink}`} passHref>
-						<a className="link-btn flex items-center" target="_blank">
+						<a className="link-btn flex items-center text-base" target="_blank">
 							<FaIcon icon={faCode} size="sm" className="pr-1" />
 							Code
 						</a>
@@ -40,7 +53,7 @@ export default function ProjectCard({
 				)}
 				{pageLink && (
 					<Link href={pageLink} passHref>
-						<a className="link-btn flex items-center">
+						<a className="link-btn flex items-center text-base">
 							<FaIcon icon={faInfoCircle} size="sm" className="pr-1" />
 							About
 						</a>
@@ -48,7 +61,7 @@ export default function ProjectCard({
 				)}
 				{extLink && (
 					<Link href={extLink} passHref>
-						<a className="link-btn flex items-center">
+						<a className="link-btn flex items-center text-base">
 							Website
 							<FaIcon icon={faExternalLink} size="sm" className="pl-1" />
 						</a>

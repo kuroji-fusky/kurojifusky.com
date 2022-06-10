@@ -7,7 +7,7 @@ import { MDXRemote } from "next-mdx-remote"
 import SEOHead from "@/partials/SEOHead"
 import RoadmapContainer, {
 	RoadmapItem
-} from "@/components/roadmaps/RoadmapContainer"
+} from "@/components/roadmap/RoadmapContainer"
 import DefaultLayout from "@/layouts/Default"
 
 const components = {

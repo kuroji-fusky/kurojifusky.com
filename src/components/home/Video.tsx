@@ -1,6 +1,6 @@
 import { videos } from "@/models/Contents"
 import Section from "./Section"
-import { VideoItem } from "./video/VideoItem"
+import { VideoItem } from "../video/VideoItem"
 
 export default function Video() {
 	return (

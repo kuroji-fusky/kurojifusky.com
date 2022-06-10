@@ -1,25 +1,16 @@
 import Image from "next/image"
 import styles from "@/styles/AlbumItem.module.scss"
 import Link from "next/link"
-
-interface IAlbumItemProps {
-	title: string
-	albumType: string
-	cover: string
-	date: string
-	className?: string
-}
+import { AlbumItemProps } from "@/models/Interfaces"
 
 export default function AlbumItem({
 	title,
 	albumType,
 	cover,
-	date,
-	className
-}: IAlbumItemProps) {
+	date
+}: AlbumItemProps) {
 	return (
-		<div className={`${styles["album-container"]} ${className}`}>
-			{/* Replace any whitespaces with a dash */}
+		<div className={styles["album-container"]}>
 			<Link href={`/discography/${title.toLowerCase().replace(/\s+/g, "-")}`}>
 				<a className={styles["album-aside"]}>
 					<Image
@@ -33,16 +24,7 @@ export default function AlbumItem({
 			<div id={styles.contents}>
 				<h3>{title}</h3>
 				<ul>
-					{albumType === "album" ? (
-						<li>Album</li>
-					) : albumType === "ep" ? (
-						<li>EP</li>
-					) : albumType === "single" ? (
-						<li>Single</li>
-					) : (
-						<li></li>
-					)}
-					<li>&bull;</li>
+					<li>{albumType}</li>
 					<li>{date}</li>
 				</ul>
 			</div>

@@ -136,7 +136,7 @@
 	&::before {
 		content: "";
 		@apply block absolute -z-1 inset-0 transition-all duration-300;
-		transform: translate(0.88rem, 0.88rem);
+		transform: translate(0.5rem, 0.5rem);
 		background: linear-gradient(
 			to right,
 			rgba(0, 77, 140, 0.66),
@@ -146,11 +146,11 @@
 	}
 
 	&:hover {
-		@apply -top-[0.25rem] -left-[0.25rem];
+		@apply -top-[0.15rem] -left-[0.15rem];
 	}
 
 	&:hover::before {
-		@apply brightness-[165%] translate-x-[1.33rem] translate-y-[1.33rem];
+		@apply brightness-[200%] translate-x-[0.75rem] translate-y-[0.75rem];
 	}
 }
 
@@ -160,7 +160,7 @@
 		@apply p-5 items-start;
 
 		p {
-			@apply h-full mb-2 leading-7;
+			@apply h-full mb-2 leading-6 text-base;
 		}
 	}
 

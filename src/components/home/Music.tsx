@@ -1,4 +1,5 @@
-import AlbumItem from "../AlbumItem"
+import { albums } from "@/models/Contents"
+import AlbumItem from "../music/AlbumItem"
 import Section from "./Section"
 
 export default function Music() {
@@ -17,41 +18,15 @@ export default function Music() {
 						</p>
 					</article>
 					<div className="flex justify-around pt-3 pb-[3.5rem]">
-						<AlbumItem
-							title="Recursion"
-							cover="Recursion_cover.png"
-							albumType="album"
-							date="2022"
-							className="hidden sm:flex"
-						/>
-						<AlbumItem
-							title="A New Life"
-							cover="A New Life_cover.png"
-							albumType="album"
-							date="Dec 2021"
-							className="hidden sm:flex"
-						/>
-						<AlbumItem
-							title="Horizon"
-							cover="Horizon_cover.png"
-							albumType="album"
-							date="May 2021"
-							className="hidden md:flex"
-						/>
-						<AlbumItem
-							title="Dreaming"
-							cover="Dreaming_cover.png"
-							albumType="single"
-							date="Apr 2021"
-							className="hidden lg:flex"
-						/>
-						<AlbumItem
-							title="Origins"
-							cover="Origins_cover.png"
-							albumType="single"
-							date="Aug 2020"
-							className="hidden xl:flex"
-						/>
+						{albums.map((album, index) => (
+							<AlbumItem
+								key={index}
+								title={album.title}
+								albumType={album.albumType}
+								date={album.date}
+								cover={album.cover}
+							/>
+						))}
 					</div>
 				</Section>
 			</div>

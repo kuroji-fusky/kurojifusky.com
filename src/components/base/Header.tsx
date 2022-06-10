@@ -6,6 +6,12 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
 import ThemeToggle from "../base/ThemeToggle"
 import styles from "@/styles/base/Header.module.scss"
 
+import {
+	projectsDropdown,
+	projectsContributed,
+	aboutMeDropdown
+} from "@/models/Contents"
+
 export default function Header() {
 	const router = useRouter()
 
@@ -42,89 +48,6 @@ export default function Header() {
 		window.addEventListener("scroll", stickNavbar)
 		return () => window.removeEventListener("scroll", stickNavbar)
 	}, [])
-
-	const projectsDropdown = [
-		{
-			img: "/static/projects/paco-yt-icon.jpg",
-			link: "/projects/pandapaco-drawing-stats",
-			title: "Paco Drawing Stats"
-		},
-		{
-			link: "/projects/floofy-clicker",
-			title: "Floofy Clicker"
-		},
-		{
-			img: "/static/projects/scammerino-lol.jpg",
-			link: "/projects/scammerino",
-			title: "Scammerino"
-		},
-		{
-			img: "/static/projects/majira-vscode.png",
-			link: "/projects/majira-vscode",
-			title: "Majira VS Code Theme"
-		},
-		{
-			link: "/projects/cookie-clicker-afk",
-			title: "Cookie Clicker AFK"
-		},
-		{
-			link: "/projects/biro-ui",
-			title: "Biro UI"
-		}
-	]
-
-	const projectsContributed = [
-		{
-			img: "/static/projects/searchpets-icon.png",
-			link: "/projects/searchpets",
-			title: "Searchpets"
-		},
-		{
-			img: "/static/projects/myfursona.png",
-			link: "/projects/myfursona",
-			title: "MyFursona"
-		}
-	]
-
-	const aboutMe = [
-		{
-			link: "/about/roadmap",
-			title: "Roadmap"
-		},
-		{
-			link: "/about/fursona-gallery",
-			title: "Fursona Gallery"
-		}
-	]
-
-	const discography = [
-		{
-			link: "/discography/a-new-life",
-			title: "A New Life"
-		},
-		{
-			link: "/discography/horizon",
-			title: "Horizon"
-		},
-		{
-			link: "/discography/nostalgia",
-			title: "Nostalgia"
-		}
-	]
-
-	const videoContent = [
-		{
-			link: "/content/ytp",
-			title: "YouTube Poops"
-		}
-	]
-
-	const videoSeries = [
-		{
-			link: "/content/jin-woos-adventure",
-			title: "Jin Woo's Adventure"
-		}
-	]
 
 	return (
 		<header
@@ -213,7 +136,7 @@ export default function Header() {
 						</Link>
 						<div className={styles.dropdown}>
 							<ul className={styles["dropdown-item"]}>
-								{aboutMe.map((about, index) => (
+								{aboutMeDropdown.map((about, index) => (
 									<li key={index}>
 										<Link href={about.link} passHref>
 											<a>{about.title}</a>

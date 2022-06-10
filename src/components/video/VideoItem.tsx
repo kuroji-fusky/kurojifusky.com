@@ -5,17 +5,17 @@ import styles from "@/styles/Home.module.scss"
 
 export function VideoItem({ id, title, description, date }: VideoItemProps) {
 	return (
-		<div id={styles["video-item-container"]}>
+		<div
+			id={styles["video-item-container"]}
+			itemScope
+			itemType="http://schema.org/CreativeWork"
+		>
 			<Link href={`https://youtu.be/${id}`} passHref>
 				<a>
-					<YoutubeThumbnail id={id} />
+					<YoutubeThumbnail id={id} alt={`Thumbnail for ${title}`} />
 				</a>
 			</Link>
-			<article
-				id={styles["video-item-details"]}
-				itemScope
-				itemType="http://schema.org/CreativeWork"
-			>
+			<article id={styles["video-item-details"]}>
 				<h3>{title}</h3>
 				<p id={styles["video-description"]}>{description}</p>
 				<p>
