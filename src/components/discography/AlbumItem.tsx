@@ -15,6 +15,7 @@ export default function AlbumItem({
 				<a className={styles["album-aside"]}>
 					<Image
 						layout="fill"
+						blurDataURL={`/static/album-covers/${cover}`}
 						src={`/static/album-covers/${cover}`}
 						alt={`Album cover for ${title}`}
 						className="rounded-xl"

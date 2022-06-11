@@ -93,6 +93,7 @@ export default function HeroHeader() {
 						</Link>
 						<Image
 							src="/static/avatars/07-transparent.png"
+							blurDataURL="/static/avatars/07-transparent.png"
 							alt="Skepfusky fursona, drawn by @skepfuskyjs on Twitter"
 							objectFit="contain"
 							layout="fill"

@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: true,
 	compress: true,
-	productionBrowserSourceMaps: true,
+  trailingSlash: true,
 	images: {
 		domains: ["img.youtube.com"]
 	}
