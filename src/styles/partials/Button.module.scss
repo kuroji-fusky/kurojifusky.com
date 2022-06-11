@@ -1,0 +1,11 @@
+.link-btn {
+	@apply py-[0.22rem] px-[1rem] rounded-md border-white border-2 duration-300 transition-all;
+
+	&:hover {
+		@apply bg-borahae-600 border-borahae-600;
+	}
+
+	&:active {
+		@apply bg-transparent border-borahae-200 text-borahae-200;
+	}
+}

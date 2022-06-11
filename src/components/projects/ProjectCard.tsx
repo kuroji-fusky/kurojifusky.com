@@ -8,6 +8,7 @@ import Link from "next/link"
 import styles from "@/styles/Home.module.scss"
 import { ProjectItemProps } from "@/models/Interfaces"
 import { useInView } from "react-intersection-observer"
+import Button from "../partials/Button"
 
 export default function ProjectCard({
 	projectTitle,
@@ -58,28 +59,25 @@ export default function ProjectCard({
 				{/* <p itemType="license">MIT</p> */}
 				<div className="py-2 flex justify-center gap-x-2">
 					{repoLink && (
-						<Link href={`https://github.com/${repoLink}`} passHref>
-							<a className="link-btn flex items-center text-sm" target="_blank">
-								<FaIcon icon={faCode} size="sm" className="pr-1" />
-								Code
-							</a>
-						</Link>
+						<Button
+							link={`https://github.com/${repoLink}`}
+							className="flex items-center text-sm"
+						>
+							<FaIcon icon={faCode} size="sm" className="pr-1" />
+							Code
+						</Button>
 					)}
 					{pageLink && (
-						<Link href={pageLink} passHref>
-							<a className="link-btn flex items-center text-sm">
-								<FaIcon icon={faInfoCircle} size="sm" className="pr-1" />
-								About
-							</a>
-						</Link>
+						<Button link={pageLink} className="flex items-center text-sm">
+							<FaIcon icon={faInfoCircle} size="sm" className="pr-1" />
+							About
+						</Button>
 					)}
 					{extLink && (
-						<Link href={extLink} passHref>
-							<a className="link-btn flex items-center text-sm">
-								Website
-								<FaIcon icon={faExternalLink} size="sm" className="pl-1" />
-							</a>
-						</Link>
+						<Button link={extLink} className="flex items-center text-sm">
+							Website
+							<FaIcon icon={faExternalLink} size="sm" className="pl-1" />
+						</Button>
 					)}
 				</div>
 			</div>

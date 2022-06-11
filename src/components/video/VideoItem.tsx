@@ -1,8 +1,8 @@
 import Link from "next/link"
+import { useInView } from "react-intersection-observer"
 import { VideoItemProps } from "@/models/Interfaces"
 import { YoutubeThumbnail } from "@/components/partials/YoutubeComponent"
 import styles from "@/styles/Home.module.scss"
-import { useInView } from "react-intersection-observer"
 
 export function VideoItem({ id, title, description, date }: VideoItemProps) {
 	const { ref, inView } = useInView({
