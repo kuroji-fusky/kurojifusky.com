@@ -1,6 +1,14 @@
 @use "themes/colors" as *;
 @use "partials/mixins" as *;
 
+/*** IntersectionObserver stuff ***/
+.io-viewport-outside {
+  @apply transition-all duration-700 relative top-0 opacity-100;
+}
+.io-viewport-enter {
+  @apply transition-all duration-700 relative -top-12 opacity-0;
+}
+
 /*** Hero stuff  ***/
 .hero {
 	&-header {
@@ -129,7 +137,7 @@
 }
 
 @mixin feature-cards {
-	@apply relative top-0 left-0 flex flex-col gap-y-[0.33rem] rounded-md mb-4 mr-4 cursor-default select-none;
+	@apply relative h-[97%] top-0 left-0 flex flex-col gap-y-[0.33rem] rounded-md mb-4 mr-4 cursor-default select-none;
 	transition: top 300ms ease, left 300ms ease;
 	background: var(--theme-cards);
 
@@ -206,7 +214,7 @@
 #video-item {
 	&-container {
 		@include feature-cards();
-		@apply p-[1.85rem];
+		@apply p-[1.85rem] h-[95%];
 
 		img {
 			@apply rounded-md;

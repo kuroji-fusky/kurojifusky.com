@@ -11,6 +11,7 @@ The source code of my shitty website written in Next.js + TypeScript with Tailwi
 ## Libraries used
 
 - [`react-scroll-parallax`](https://react-scroll-parallax.damnthat.tv/docs/intro)
+- [`react-intersection-observer`](https://github.com/thebuilder/react-intersection-observer#readme)
 
 ## Installation
 

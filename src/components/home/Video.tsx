@@ -3,6 +3,7 @@ import Section from "./Section"
 import { VideoItem } from "../video/VideoItem"
 
 export default function Video() {
+
 	return (
 		<div id="videos" className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">

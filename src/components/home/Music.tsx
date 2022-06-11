@@ -1,8 +1,17 @@
 import { albums } from "@/models/Contents"
+import { useInView } from "react-intersection-observer"
 import AlbumItem from "../discography/AlbumItem"
 import Section from "./Section"
+import styles from "@/styles/Home.module.scss"
 
 export default function Music() {
+	const { ref, inView } = useInView({
+		threshold: 0,
+		triggerOnce: true,
+		delay: 600,
+		rootMargin: "-150px 0px -275px 0px"
+	})
+
 	return (
 		<div id="music" className="layout-seperator z-3 relative">
 			<div className="layout-item-wrapper">
@@ -21,7 +30,14 @@ export default function Music() {
 							moment.
 						</p>
 					</article>
-					<div className="flex justify-around pt-3 pb-[3.5rem]">
+					<div
+						ref={ref}
+						className={`flex justify-around pt-3 pb-[3.5rem] ${
+							inView
+								? styles["io-viewport-outside"]
+								: styles["io-viewport-enter"]
+						}`}
+					>
 						{albums.map((album, index) => (
 							<AlbumItem
 								key={index}

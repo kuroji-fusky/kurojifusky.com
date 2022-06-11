@@ -122,7 +122,7 @@ $padding-expand: 1.75rem;
 	transition: height 200ms ease;
 
 	&-item {
-		@apply relative cursor-pointer p-4 text-lg;
+		@apply relative cursor-pointer p-4 text-[1.115rem];
 
 		> :is(a, span) {
 			@apply relative;
