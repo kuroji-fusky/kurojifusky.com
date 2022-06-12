@@ -4,11 +4,10 @@ import {
 	faExternalLink,
 	faInfoCircle
 } from "@fortawesome/free-solid-svg-icons"
-import Link from "next/link"
 import styles from "@/styles/Home.module.scss"
 import { ProjectItemProps } from "@/models/Interfaces"
 import { useInView } from "react-intersection-observer"
-import Button from "../partials/Button"
+import Button from "@/components/partials/Button"
 
 export default function ProjectCard({
 	projectTitle,
@@ -23,7 +22,7 @@ export default function ProjectCard({
 		threshold: 0,
 		triggerOnce: true,
 		delay: 600,
-		rootMargin: "-100px 0px -200px 0px"
+		rootMargin: "-150px 0px -125px 0px"
 	})
 
 	return (

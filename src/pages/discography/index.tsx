@@ -2,8 +2,8 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
-import { AlbumItems } from "@/components/static/StaticItems"
-import { DiscographyPages } from "@/models/ParseMyAss"
+import { AlbumItemPage } from "@/components/discography/AlbumItem"
+import { DiscographyPages } from "@/models/Interfaces"
 import DefaultLayout from "@/layouts/Default"
 
 export default function DiscographyPage({
@@ -12,7 +12,7 @@ export default function DiscographyPage({
 	return (
 		<div className="project-item-container">
 			{items.map((item: DiscographyPages, i: number) => (
-				<AlbumItems key={i} items={item} />
+				<AlbumItemPage key={i} items={item} />
 			))}
 		</div>
 	)

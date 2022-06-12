@@ -1,6 +1,6 @@
 import { videos } from "@/models/Contents"
 import Section from "./Section"
-import { VideoItem } from "../video/VideoItem"
+import { VideoItem } from "@/components/video/VideoItem"
 
 export default function Video() {
 	return (
@@ -18,10 +18,10 @@ export default function Video() {
 						{videos.map((video, index) => (
 							<VideoItem
 								key={index}
-								id={video.id}
-								title={video.title}
+								videoId={video.videoId}
+								videoTitle={video.videoTitle}
 								description={video.description}
-								date={video.date}
+								releaseDate={video.releaseDate}
 							/>
 						))}
 					</div>

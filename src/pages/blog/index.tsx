@@ -2,8 +2,8 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
-import { BlogItems } from "@/components/static/StaticItems"
-import { BlogPages } from "@/models/ParseMyAss"
+import { BlogItems } from "@/components/blog/BlogItemPage"
+import { BlogPages } from "@/models/Interfaces"
 import DefaultLayout from "@/layouts/Default"
 
 export default function BlogPage({

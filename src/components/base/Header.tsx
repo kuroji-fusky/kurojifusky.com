@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons"
-import ThemeToggle from "../base/ThemeToggle"
+import ThemeToggle from "@/components/base/ThemeToggle"
 import styles from "@/styles/base/Header.module.scss"
 import {
 	projectsDropdown,
@@ -83,23 +83,7 @@ export default function Header() {
 						</Link>
 						<div className={styles.dropdown}>
 							<ul className={styles["dropdown-item"]}>
-								<li>
-									<strong>Stuff I made</strong>
-								</li>
 								{projectsDropdown.map((project, index) => (
-									<DropdownItem
-										key={index}
-										title={project.title}
-										img={project.img}
-										link={project.link}
-									/>
-								))}
-							</ul>
-							<ul className={styles["dropdown-item"]}>
-								<li>
-									<strong>Stuff I've contributed</strong>
-								</li>
-								{projectsContributed.map((project, index) => (
 									<DropdownItem
 										key={index}
 										title={project.title}

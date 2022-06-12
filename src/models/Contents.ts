@@ -7,6 +7,11 @@ import {
 
 export const projectsDropdown: NavbarProps[] = [
 	{
+		img: "/static/projects/searchpets-icon.png",
+		link: "/projects/searchpets",
+		title: "Searchpets"
+	},
+	{
 		img: "/static/projects/paco-yt-icon.jpg",
 		link: "/projects/pandapaco-drawing-stats",
 		title: "Paco Drawing Stats"
@@ -35,18 +40,7 @@ export const projectsDropdown: NavbarProps[] = [
 	}
 ]
 
-export const projectsContributed: NavbarProps[] = [
-	{
-		img: "/static/projects/searchpets-icon.png",
-		link: "/projects/searchpets",
-		title: "Searchpets"
-	},
-	{
-		img: "/static/projects/myfursona.png",
-		link: "/projects/myfursona",
-		title: "MyFursona"
-	}
-]
+export const projectsContributed: NavbarProps[] = []
 
 export const discographyDropdown: NavbarProps[] = [
 	{
@@ -118,7 +112,6 @@ export const projects: ProjectItemProps[] = [
 			"flask-plain"
 		]
 	},
-
 	{
 		img: "/static/projects/scammerino-lol.jpg",
 		projectTitle: "Scammerino",
@@ -148,77 +141,77 @@ export const projects: ProjectItemProps[] = [
 
 export const videos: VideoItemProps[] = [
 	{
-		id: "5SybfjVntTw",
-		title: "DFC Day 2019 - School Edit",
-		date: "Oct 4, 2019; Nov 9, 2019; Dec 12-13, 2019",
+		videoId: "5SybfjVntTw",
+		videoTitle: "DFC Day 2019 - School Edit",
+		releaseDate: "Oct 4, 2019; Nov 9, 2019; Dec 12-13, 2019",
 		description:
 			"The highlights on my previous school DFCIS in 2019 - filmed on a Canon EOS M50 and GoPro."
 	},
 	{
-		id: "zIPay0PwumY",
-		title: "School Project - Philippine Tourism",
-		date: "May 2019",
+		videoId: "zIPay0PwumY",
+		videoTitle: "School Project - Philippine Tourism",
+		releaseDate: "May 2019",
 		description:
 			"A school video project on Philippine tourism filmed at a skating rink and Diplomat Hotel."
 	},
 	{
-		id: "Jiydcwo0CeI",
-		title: "School Field Trip Edit (2018)",
-		date: "May 2018",
+		videoId: "Jiydcwo0CeI",
+		videoTitle: "School Field Trip Edit (2018)",
+		releaseDate: "May 2018",
 		description:
 			"A school field trip in 2018 filmed at Riverview Resort on a GoPro for the first time."
 	},
 	{
-		id: "vioAgEgk2O0",
-		title: "Solitude - Music Video",
-		date: "April-May 2020",
+		videoId: "vioAgEgk2O0",
+		videoTitle: "Solitude - Music Video",
+		releaseDate: "April-May 2020",
 		description:
 			'Music video for "Solitude" recorded in the midst of the 2020 pandemic. Re-released in 2021.'
 	},
 	{
-		id: "Z2KV_Lag7bE",
-		title: "A New Beginning - Music Video",
-		date: "Jan 2020; 2019",
+		videoId: "Z2KV_Lag7bE",
+		videoTitle: "A New Beginning - Music Video",
+		releaseDate: "Jan 2020; 2019",
 		description:
 			'Music video for "A New Beginning" from my debut self-produced album Horizon. Filmed sometime before the pandemic hit.'
 	},
 	{
-		id: "4uUjRlgUEnY",
-		title: "Itogon Vlog Edit",
-		date: "May 2019",
+		videoId: "4uUjRlgUEnY",
+		videoTitle: "Itogon Vlog Edit",
+		releaseDate: "May 2019",
 		description: "Just a family vacation vlog edit in Itogon, Philippines."
 	}
 ]
 
 export const albums: AlbumItemProps[] = [
 	{
-		title: "Recursion",
-		cover: "Recursion_cover.png",
+		albumTitle: "Recursion",
+		albumCover: "Recursion_cover.png",
 		albumType: "Album",
-		date: "2022"
+		releaseDate: "2022"
 	},
 	{
-		title: "A New Life",
-		cover: "A New Life_cover.png",
+		albumTitle: "A New Life",
+		albumCover: "A New Life_cover.png",
 		albumType: "Album",
-		date: "Dec 2021"
+		releaseDate: "Dec 2021"
 	},
 	{
-		title: "Horizon",
-		cover: "Horizon_cover.png",
+		albumTitle: "Horizon",
+		albumCover: "Horizon_cover.png",
 		albumType: "Album",
-		date: "May 2021"
+		releaseDate: "May 2021"
 	},
 	{
-		title: "Dreaming",
-		cover: "Dreaming_cover.png",
+		albumTitle: "Dreaming",
+		albumCover: "Dreaming_cover.png",
 		albumType: "Single",
-		date: "Apr 2021"
+		releaseDate: "Apr 2021"
 	},
 	{
-		title: "Origins",
-		cover: "Origins_cover.png",
+		albumTitle: "Origins",
+		albumCover: "Origins_cover.png",
 		albumType: "Single",
-		date: "Aug 2020"
+		releaseDate: "Aug 2020"
 	}
 ]

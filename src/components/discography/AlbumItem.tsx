@@ -1,34 +1,63 @@
 import Image from "next/image"
-import styles from "@/styles/AlbumItem.module.scss"
 import Link from "next/link"
-import { AlbumItemProps } from "@/models/Interfaces"
+import { AlbumItemProps, DiscographyPages } from "@/models/Interfaces"
+import styles from "@/styles/AlbumItem.module.scss"
 
-export default function AlbumItem({
-	title,
+export function AlbumItem({
+	albumTitle,
 	albumType,
-	cover,
-	date
+	albumCover,
+	releaseDate
 }: AlbumItemProps) {
 	return (
 		<div className={styles["album-container"]}>
-			<Link href={`/discography/${title.toLowerCase().replace(/\s+/g, "-")}`}>
+			<Link
+				href={`/discography/${albumTitle.toLowerCase().replace(/\s+/g, "-")}`}
+			>
 				<a className={styles["album-aside"]}>
 					<Image
 						layout="fill"
-						blurDataURL={`/static/album-covers/${cover}`}
-						src={`/static/album-covers/${cover}`}
-						alt={`Album cover for ${title}`}
+						blurDataURL={`/static/album-covers/${albumCover}`}
+						src={`/static/album-covers/${albumCover}`}
+						alt={`Album cover for ${albumTitle}`}
 						className="rounded-xl"
 					/>
 				</a>
 			</Link>
 			<div id={styles.contents}>
-				<h3>{title}</h3>
+				<h3>{albumTitle}</h3>
 				<ul>
 					<li>{albumType}</li>
-					<li>{date}</li>
+					<li>{releaseDate}</li>
 				</ul>
 			</div>
+		</div>
+	)
+}
+
+export function AlbumItemPage({ items }: { items: DiscographyPages }) {
+	const { slug, metadata } = items
+	const {
+		albumTitle,
+		albumType,
+		length,
+		releaseDate,
+		year,
+		albumCover,
+		trackNum
+	} = metadata
+	return (
+		<div>
+			<div>{albumTitle}</div>
+			<img src={albumCover} alt={albumTitle} />
+			<div>{releaseDate}</div>
+			<div>{year}</div>
+			<div>{length}</div>
+			<div>{albumType}</div>
+			<div>{trackNum} track(s)</div>
+			<Link href={`/discography/${slug}`} passHref>
+				<a>Read More</a>
+			</Link>
 		</div>
 	)
 }

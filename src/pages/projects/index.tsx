@@ -3,7 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
 import { ProjectItems } from "@/components/static/StaticItems"
-import { ProjectPages } from "@/models/ParseMyAss"
+import { ProjectPages } from "@/models/Interfaces"
 import DefaultLayout from "@/layouts/Default"
 
 export default function ProjectPage({

@@ -1,3 +1,36 @@
+interface AlbumDetails {
+	albumTitle: string
+	artist?: string | string[]
+	releaseDate: string
+	albumCover: string
+	albumType: "Album" | "EP" | "Single"
+}
+
+interface Slug {
+	slug: string
+}
+
+interface ProjectMetadata {
+	title: string
+	dateString: string
+	img: string
+	excerpt: string
+}
+
+interface DiscographyMetadata extends AlbumDetails {
+	length: string | number
+	year: number
+	trackNum: number
+}
+
+interface BlogMetadata {
+	title: string
+	excerpt: string
+	dateString: string
+	blogType: string
+	tags: string[]
+}
+
 export interface NavbarProps {
 	link: string
 	title: string
@@ -15,15 +48,22 @@ export interface ProjectItemProps {
 }
 
 export interface VideoItemProps {
-	id: string
-	title: string
-	date: string
+	videoId: string
+	videoTitle: string
+	releaseDate: string
 	description?: string
 }
 
-export interface AlbumItemProps {
-	title: string
-	albumType: "Album" | "EP" | "Single"
-	cover: string
-	date: string
+export interface AlbumItemProps extends AlbumDetails {}
+
+export interface ProjectPages extends Slug {
+	metadata: ProjectMetadata
+}
+
+export interface DiscographyPages extends Slug {
+	metadata: DiscographyMetadata
+}
+
+export interface BlogPages extends Slug {
+	metadata: BlogMetadata
 }

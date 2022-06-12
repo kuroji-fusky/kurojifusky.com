@@ -1,6 +1,6 @@
 import { albums } from "@/models/Contents"
 import { useInView } from "react-intersection-observer"
-import AlbumItem from "../discography/AlbumItem"
+import { AlbumItem } from "@/components/discography/AlbumItem"
 import Section from "./Section"
 import styles from "@/styles/Home.module.scss"
 
@@ -9,7 +9,7 @@ export default function Music() {
 		threshold: 0,
 		triggerOnce: true,
 		delay: 600,
-		rootMargin: "-150px 0px -275px 0px"
+		rootMargin: "-150px 0px -125px 0px"
 	})
 
 	return (
@@ -41,10 +41,10 @@ export default function Music() {
 						{albums.map((album, index) => (
 							<AlbumItem
 								key={index}
-								title={album.title}
+								albumTitle={album.albumTitle}
 								albumType={album.albumType}
-								date={album.date}
-								cover={album.cover}
+								releaseDate={album.releaseDate}
+								albumCover={album.albumCover}
 							/>
 						))}
 					</div>
