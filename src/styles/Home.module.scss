@@ -3,10 +3,10 @@
 
 /*** IntersectionObserver stuff ***/
 .io-viewport-outside {
-  @apply transition-all duration-700 relative top-0 opacity-100;
+	@apply transition-all duration-700 relative top-0 opacity-100;
 }
 .io-viewport-enter {
-  @apply transition-all duration-700 relative -top-12 opacity-0;
+	@apply transition-all duration-700 relative -top-12 opacity-0;
 }
 
 /*** Hero stuff  ***/
