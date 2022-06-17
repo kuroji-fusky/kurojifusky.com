@@ -6,20 +6,22 @@
       </NuxtLink>
       <nav>
         <NuxtLink to="/" activeClass="active">Home</NuxtLink>
-        <NuxtLink to="/fursona" activeClass="active">
-          Fursona
-        </NuxtLink>
+        <NuxtLink to="/fursona" activeClass="active"> Fursona </NuxtLink>
       </nav>
     </div>
   </header>
 </template>
 
 <style lang="scss" scoped>
+header {
+  @apply fixed top-0 left-0 z-mosttop w-full bg-neutral-900 bg-opacity-40;
+}
+
 .wrapper {
-  @apply my-0 mx-auto max-w-screen-2xl p-6 flex justify-between;
+  @apply my-0 mx-auto max-w-screen-2xl px-10 py-7 flex justify-between;
 
   nav {
-    @apply flex gap-x-4;
+    @apply flex gap-x-4 items-center;
 
     .active {
       @apply font-bold;

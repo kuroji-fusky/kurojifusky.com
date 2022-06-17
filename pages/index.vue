@@ -6,10 +6,6 @@ definePageMeta({
 
 <template>
   <div class="tba-fit">
-    <BaseHead
-      title="Home"
-      description="Official skepfusky website I guess lmao"
-    />
     <TBA />
     <div class="absolute h-full inset-0 px-7">
       <section id="hero-header">
@@ -22,8 +18,8 @@ definePageMeta({
           <p>
             Hi, I'm <strong id="gradient">skepfusky</strong>, simply known as
             <strong id="gradient">Skep</strong>, also known by my stage name
-            <strong id="gradient">Kokoro Husky</strong> on streaming platforms -- I'm a
-            20-year-old self-employed and self-taught hobbyist from the
+            <strong id="gradient">Kokoro Husky</strong> on streaming platforms
+            -- I'm a 20-year-old self-employed and self-taught hobbyist from the
             Philippines!
           </p>
           <p className="mt-2">
@@ -37,6 +33,10 @@ definePageMeta({
         </div>
       </section>
     </div>
+    <BaseHead
+      title="Home"
+      description="Official skepfusky website I guess lmao"
+    />
   </div>
 </template>
 
@@ -59,7 +59,7 @@ definePageMeta({
 
   &-img {
     @apply flex justify-center;
-    
+
     img {
       @apply w-[350px] rounded-full object-contain;
     }

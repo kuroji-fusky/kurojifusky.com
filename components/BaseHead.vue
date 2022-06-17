@@ -3,30 +3,61 @@ const props = withDefaults(
   defineProps<{
     title?: string;
     description?: string;
-    keywords?: string[] | any;
     img?: string;
     isDefaultIndex?: boolean;
   }>(),
-  {
-    title: "",
-    description: "",
-    keywords: ["programming", "music", "skepfusky", "kokoro husky", "yes"],
-    img: "",
-  }
+  {}
 );
 
 const SITE_TITLE = ref("skepfusky");
+const keywords = ["programming", "music", "skepfusky", "kokoro husky", "yes"];
+
+const indexTitle = "skep is home";
+const indexDescription = "yeet";
 </script>
 
 <template>
   <Head>
-    <Title>{{ title }} - {{ SITE_TITLE }}</Title>
-    <Meta name="title" :content="`${title} - ${SITE_TITLE}`" />
-    <Meta name="description" :content="description" />
-    <Meta property="og:title" :content="`${title} - ${SITE_TITLE}`" />
-    <Meta property="og:description" :content="description" />
-    <Meta name="twitter:title" :content="`${title} - ${SITE_TITLE}`" />
-    <Meta name="twitter:description" :content="description" />
+    <Title v-if="$route.name === 'index'">{{ indexTitle }}</Title>
+    <Title v-else>{{ $route.name }} {{ title }} - {{ SITE_TITLE }}</Title>
+
+    <Meta v-if="$route.name === 'index'" name="title" :content="indexTitle" />
+    <Meta v-else name="title" :content="`${title} - ${SITE_TITLE}`" />
+
+    <Meta
+      v-if="$route.name === 'index'"
+      name="description"
+      :content="indexDescription"
+    />
+    <Meta v-else name="description" :content="description" />
+
+    <Meta
+      v-if="$route.name === 'index'"
+      property="og:title"
+      :content="indexTitle"
+    />
+    <Meta v-else property="og:title" :content="`${title} - ${SITE_TITLE}`" />
+
+    <Meta
+      v-if="$route.name === 'index'"
+      property="og:description"
+      :content="indexDescription"
+    />
+    <Meta v-else property="og:description" :content="description" />
+
+    <Meta
+      v-if="$route.name === 'index'"
+      name="twitter:title"
+      :content="indexTitle"
+    />
+    <Meta v-else name="twitter:title" :content="`${title} - ${SITE_TITLE}`" />
+
+    <Meta
+      v-if="$route.name === 'index'"
+      name="twitter:description"
+      :content="indexDescription"
+    />
+    <Meta v-else name="twitter:description" :content="description" />
 
     <!-- No change -->
     <Meta rel="shortcut icon" href="/favicon.ico" />

@@ -66,7 +66,7 @@ footer {
 }
 
 #wrapper {
-  @apply p-8 text-sm;
+  @apply p-10 text-sm;
 }
 
 .heading {
@@ -74,6 +74,6 @@ footer {
 }
 
 .social {
-  @apply flex justify-center gap-x-5 mt-2;
+  @apply flex justify-center gap-x-6 mt-2;
 }
 </style>
