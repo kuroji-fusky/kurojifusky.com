@@ -5,13 +5,18 @@
 </h1>
 
 <p align="center">
-The source code of my shitty website written in Next.js + TypeScript with TailwindCSS and Sass
+The source code of my personal website written in Nuxt.js - blogs and other juicy content is powered by
+<a href="https://github.com/nuxt-community/sanity-module">
+  <code>@nuxtjs/sanity</code>
+</a>
+! Deployed in Vercel.
 </p>
 
-## Libraries used
+# Libraries used
 
-- [`react-scroll-parallax`](https://react-scroll-parallax.damnthat.tv/docs/intro)
-- [`react-intersection-observer`](https://github.com/thebuilder/react-intersection-observer#readme)
+- [`@nuxtjs/sanity`](https://github.com/nuxt-community/sanity-module)
+- [`@nuxtjs/tailwindcss`](https://github.com/nuxt-community/tailwindcss-module)
+- [`@nuxt/content`](https://github.com/nuxt/content)
 
 ## Installation
 

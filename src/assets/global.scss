@@ -1,0 +1,54 @@
+@import "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply font-open-sans;
+  }
+
+  body {
+    @apply bg-neutral-800 text-white;
+  }
+
+  $font-sizes: (
+    1 "4xl",
+    2 "3xl",
+    3 "2xl",
+    4 "xl",
+    5 "lg",
+    6 "base",
+  );
+
+  @each $index, $size in $font-sizes {
+    h#{$index} {
+      @apply font-noto-sans font-bold text-#{$size};
+    }
+  }
+}
+
+$g1: rgb(9, 142, 251);
+$g2: rgba(255, 39, 215, 0.75);
+
+#gradient {
+	background: linear-gradient(90deg, $g1, $g2, $g1, $g2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: #0000;
+	background-size: 300%;
+  
+  &-scroll {
+    @extend #gradient;
+    animation: gradientScroll 6s infinite linear;
+  }
+}
+
+@keyframes gradientScroll {
+	0% {
+		background-position: left;
+	}
+	100% {
+		background-position: right;
+	}
+}
