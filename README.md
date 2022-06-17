@@ -13,7 +13,6 @@ The source code of my personal website written in Nuxt.js - stuff like blogs and
 
 - [`@nuxtjs/sanity`](https://github.com/nuxt-community/sanity-module)
 - [`@nuxtjs/tailwindcss`](https://github.com/nuxt-community/tailwindcss-module)
-- [`@nuxt/content`](https://github.com/nuxt/content)
 
 ## Running the thing
 

@@ -5,9 +5,9 @@
         <span id="logo">skepfusky</span>
       </NuxtLink>
       <nav>
-        <NuxtLink to="/" activeClass="active"> Home </NuxtLink>
+        <NuxtLink to="/" activeClass="active">Home</NuxtLink>
         <NuxtLink to="/fursona" activeClass="active">
-          *flushed emoji*
+          Fursona
         </NuxtLink>
       </nav>
     </div>
