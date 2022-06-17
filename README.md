@@ -5,20 +5,17 @@
 </h1>
 
 <p align="center">
-The source code of my personal website written in Nuxt.js - blogs and other juicy content is powered by
-<a href="https://github.com/nuxt-community/sanity-module">
-  <code>@nuxtjs/sanity</code>
-</a>
-! Deployed in Vercel.
+The source code of my personal website written in Nuxt.js - stuff like blogs and other juicy content is powered by
+<a href="https://github.com/nuxt-community/sanity-module">@nuxtjs/sanity</a>! Deployed on Vercel.
 </p>
 
-# Libraries used
+## Libraries used
 
 - [`@nuxtjs/sanity`](https://github.com/nuxt-community/sanity-module)
 - [`@nuxtjs/tailwindcss`](https://github.com/nuxt-community/tailwindcss-module)
 - [`@nuxt/content`](https://github.com/nuxt/content)
 
-## Installation
+## Running the thing
 
 Fork or clone the repo and install the garbage
 
@@ -35,5 +32,5 @@ yarn dev
 Create a production build and preview the abomination
 
 ```console
-yarn build && yarn start
+yarn build && yarn preview
 ```

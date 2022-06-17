@@ -7,9 +7,8 @@ export default defineNuxtConfig({
     strict: true,
   },
   meta: {
-    link: [{ rel: "icon", href: "/assets/favicon.ico" }],
+    link: [{ rel: "icon", href: "/favicon.ico" }],
   },
-  srcDir: "src/",
   css: ["/assets/global.scss", "@fortawesome/fontawesome-svg-core/styles.css"],
   modules: [
     "@nuxtjs/tailwindcss",

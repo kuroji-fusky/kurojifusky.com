@@ -7,13 +7,13 @@
     >
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/08.png" />
+          <img src="/static/08.png" />
           <figcaption>
             A blooshy boi
           </figcaption>
         </figure>
         <figure>
-          <img src="/assets/static/sketch_jan2020_result.png" style="width: 26.8rem"/>
+          <img src="/static/sketch_jan2020_result.png" style="width: 26.8rem"/>
           <figcaption>
             A sketch from January 2022
           </figcaption>
@@ -41,7 +41,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/skep-early-2019.png" />
+          <img src="/static/skep-early-2019.png" />
           <figcaption>
             A very and awful early head <br />design drawn from Photoshop in
             2019.
@@ -65,7 +65,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/skep-ref-2020.png" style="width: 520px" />
+          <img src="/static/skep-ref-2020.png" style="width: 520px" />
           <figcaption>
             Initial design in 2020, inspired from the colors from
             <em>Map of the Soul: 7</em>
@@ -82,7 +82,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/01.jpg" />
+          <img src="/static/01.jpg" />
           <figcaption>Crude mspaint headshot drawn in 2020</figcaption>
         </figure>
       </div>
@@ -104,7 +104,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/skep-ref-2022.png" style="width: 520px" />
+          <img src="/static/skep-ref-2022.png" style="width: 520px" />
           <figcaption>5th minor design update with yellow-ish eyes</figcaption>
         </figure>
       </div>
@@ -131,7 +131,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/JakeJune.png" style="width: 15rem" />
+          <img src="/static/JakeJune.png" style="width: 15rem" />
           <figcaption>
             <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
           </figcaption>
@@ -140,13 +140,13 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/assets/static/JAKEmegaSNAKE.png" />
+          <img src="/static/JAKEmegaSNAKE.png" />
           <figcaption>
             <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
           </figcaption>
         </figure>
         <figure>
-          <img src="/assets/static/ZAMBOY_orig.png" style="width: 26.8rem" />
+          <img src="/static/ZAMBOY_orig.png" style="width: 26.8rem" />
           <figcaption>
             <fa-icon :icon="['fab', 'discord']" /> ZAMBOYYT
           </figcaption>
