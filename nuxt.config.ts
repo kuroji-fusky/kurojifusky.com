@@ -12,9 +12,18 @@ export default defineNuxtConfig({
   css: ["/assets/global.scss", "@fortawesome/fontawesome-svg-core/styles.css"],
   modules: [
     "@nuxtjs/tailwindcss",
-    // "@nuxtjs/sanity",
-    // "@nuxt/content"
+    "@nuxtjs/sanity"
   ],
+  // @nuxtjs/sanity config
+  runtimeConfig: {
+    sanity: {
+      token: process.env.NUXT_SANITY_TOKEN
+    }
+  },
+  sanity: {
+    projectId: "Skepfusky Nuxt CMS",
+  },
+  // @nuxtjs/tailwindcss config
   tailwindcss: {
     viewer: false,
   },
