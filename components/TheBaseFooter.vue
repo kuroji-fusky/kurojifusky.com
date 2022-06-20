@@ -39,7 +39,7 @@ const socials = [
         <span
           >If you're curious, my website's source code is available 
           <NuxtLink
-            to="https://v3.nuxtjs.org/"
+            to="https://github.com/skepfusky/skepfusky.xyz"
             class="text-sona-borahaealt-300 underline"
             >right here!</NuxtLink
           ></span
