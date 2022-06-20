@@ -42,7 +42,7 @@ definePageMeta({
 
 <style lang="scss">
 .tba-fit {
-  height: calc(100vh - 12rem);
+  height: calc(100vh - 15rem);
   position: relative;
 }
 

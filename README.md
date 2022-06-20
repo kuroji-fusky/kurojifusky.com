@@ -6,12 +6,12 @@
 
 <p align="center">
 The source code of my personal website written in Nuxt.js - stuff like blogs and other juicy content is powered by
-<a href="https://github.com/nuxt-community/sanity-module">@nuxtjs/sanity</a>! Deployed on Vercel.
+<a href="https://github.com/nuxt-community/strapi-module">Strapi</a>! Deployed on Vercel.
 </p>
 
 ## Libraries used
 
-- [`@nuxtjs/sanity`](https://github.com/nuxt-community/sanity-module)
+- [`@nuxtjs/strapi`](https://github.com/nuxt-community/strapi-module)
 - [`@nuxtjs/tailwindcss`](https://github.com/nuxt-community/tailwindcss-module)
 
 ## Running the thing

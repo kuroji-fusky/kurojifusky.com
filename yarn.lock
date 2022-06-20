@@ -567,19 +567,16 @@
     vite-node "^0.14.2"
     vite-plugin-checker "^0.4.6"
 
-"@nuxtjs/sanity@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/sanity/-/sanity-1.2.2.tgz#1a435a960538bf88fe54d9ff1fbdd11935108239"
-  integrity sha512-3HK38bEfcMKJvm2/zHrrUZFvt/aipT9ZToC2rI54eUm7V9G+bRkzyP2oFAYSFSW/hNMsihP1VTgQhJ1umBQO8w==
+"@nuxtjs/strapi@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/strapi/-/strapi-1.4.0.tgz#3b8e8a348178569bfe8a48996aef2b2735eb824b"
+  integrity sha512-NucE05SSNZYYsCxTAqqDbzbm6n4/7+ZwnWqZWOWZ3/nf6rXbMRlq+EvNLhwN75QArFtYcI35JhjUuroecBNxIw==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.3"
-    "@portabletext/types" "^1.0.3"
-    chalk "^5.0.1"
     defu "^6.0.0"
-    fs-extra "^10.1.0"
-    knitwork "^0.1.1"
-    ohash "^0.1.0"
+    graphql "^16.5.0"
     pathe "^0.3.0"
+    qs "^6.10.5"
 
 "@nuxtjs/tailwindcss@^5.1.2":
   version "5.1.2"
@@ -600,11 +597,6 @@
     tailwind-config-viewer "^1.7.0"
     tailwindcss "^3.0.24"
     ufo "^0.8.4"
-
-"@portabletext/types@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-1.0.3.tgz#b23f832ae5331c1d864195a95eba34abf340597e"
-  integrity sha512-SDDsdury2SaTI2D5Ea6o+Y39SSZMYHRMWJHxkxYl3yzFP0n/0EknOhoXcoaV+bxGr2dTTqZi2TOEj+uWYuavSw==
 
 "@rollup/plugin-alias@^3.1.9":
   version "3.1.9"
@@ -2401,6 +2393,11 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, 
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.10.tgz#147d3a006da4ca3ce14728c7aefc287c367d7a6c"
   integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
 
+graphql@^16.5.0:
+  version "16.5.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.5.0.tgz#41b5c1182eaac7f3d47164fb247f61e4dfb69c85"
+  integrity sha512-qbHgh8Ix+j/qY+a/ZcJnFQ+j8ezakqPiHwPiZhV/3PgGlgf96QMBB5/f2rkiC9sgLoy/xvT6TSiaf2nTHJh5iA==
+
 gzip-size@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-7.0.0.tgz#9f9644251f15bc78460fccef4055ae5a5562ac60"
@@ -4117,7 +4114,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-qs@^6.9.4:
+qs@^6.10.5, qs@^6.9.4:
   version "6.10.5"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.10.5.tgz#974715920a80ff6a262264acd2c7e6c2a53282b4"
   integrity sha512-O5RlPh0VFtR78y79rgcgKK4wbAI0C5zGVLztOIdpWX6ep368q5Hv6XRxDvXuZ9q3C6v+e3n8UfZZJw7IIG27eQ==

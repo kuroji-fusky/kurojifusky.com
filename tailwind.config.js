@@ -3,10 +3,10 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   content: [
-    "src/components/**/*.{vue,js,ts}",
-    "src/pages/**/*.{vue,js,ts}",
-    "src/layouts/**/*.{vue,js,ts}",
-    "src/composables/**/*.{js,ts}",
+    "components/**/*.{vue,js,ts}",
+    "pages/**/*.{vue,js,ts}",
+    "layouts/**/*.{vue,js,ts}",
+    "composables/**/*.{js,ts}",
   ],
   theme: {
     fontFamily: {
@@ -37,6 +37,7 @@ module.exports = {
     extend: {
       colors: {
         'sona-royalblue': {
+          DEFAULT: "#2076C5",
           50: "#E4F0FB",
           100: "#CEE4F8",
           200: "#9DC8F0",
@@ -49,6 +50,7 @@ module.exports = {
           900: "#061A2D"
         },
         'sona-skycyan': {
+          DEFAULT: "#48DDF7",
           50: "#EBFCFE",
           100: "#DCF9FE",
           200: "#B5F2FD",
@@ -61,6 +63,7 @@ module.exports = {
           900: "#023741"
         },
         'sona-pale': {
+          DEFAULT: "#FCE392",
           50: "#FFFBF5",
           100: "#FFF7EB",
           200: "#FEEFD2",
@@ -73,6 +76,7 @@ module.exports = {
           900: "#3C2701"
         },
         'sona-yellow': {
+          DEFAULT: "#F8D817",
           50: "#FFFBE6",
           100: "#FEF8D2",
           200: "#FDEFA0",
@@ -85,6 +89,7 @@ module.exports = {
           900: "#372F01"
         },
         'sona-borahae': {
+          DEFAULT: "#BB3EED",
           50: "#F9ECFE",
           100: "#F2D9FC",
           200: "#E4AFF8",
@@ -97,6 +102,7 @@ module.exports = {
           900: "#2A0439"
         },
         'sona-borahaealt': {
+          DEFAULT: "#B266ED",
           50: "#F8F1FE",
           100: "#EFDFFC",
           200: "#E1C3F9",
@@ -109,6 +115,7 @@ module.exports = {
           900: "#25063C"
         },
         'sona-magenta': {
+          DEFAULT: "#FFABFF",
           50: "#FFF5FF",
           100: "#FFF0FF",
           200: "#FFDBFF",
@@ -121,6 +128,7 @@ module.exports = {
           900: "#570057"
         },
         neutral: {
+          DEFAULT: "#211E23",
           50: "#E8E7E9",
           100: "#D4D2D6",
           200: "#A7A1AB",

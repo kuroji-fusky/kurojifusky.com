@@ -6,7 +6,7 @@
       </NuxtLink>
       <nav>
         <NuxtLink to="/" activeClass="active">Home</NuxtLink>
-        <NuxtLink to="/fursona" activeClass="active"> Fursona </NuxtLink>
+        <NuxtLink to="/fursona" activeClass="active">Fursona</NuxtLink>
       </nav>
     </div>
   </header>
@@ -14,7 +14,7 @@
 
 <style lang="scss" scoped>
 header {
-  @apply fixed top-0 left-0 z-mosttop w-full bg-neutral-900 bg-opacity-40;
+  @apply z-mosttop w-full bg-neutral-900 bg-opacity-40;
 }
 
 .wrapper {

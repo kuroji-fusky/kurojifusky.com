@@ -37,11 +37,11 @@ const socials = [
       <div class="heading">
         <span>&copy; 2014-{{ new Date().getFullYear() }} Fusky & Co., LLC</span>
         <span
-          >Made in
+          >If you're curious, my website's source code is available 
           <NuxtLink
             to="https://v3.nuxtjs.org/"
             class="text-sona-borahaealt-300 underline"
-            >Nuxt 3.</NuxtLink
+            >right here!</NuxtLink
           ></span
         >
       </div>

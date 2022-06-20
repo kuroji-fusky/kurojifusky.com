@@ -7,7 +7,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/sanity": "^1.2.2",
+    "@nuxtjs/strapi": "^1.4.0",
     "@nuxtjs/tailwindcss": "^5.1.2",
     "nuxt": "3.0.0-rc.4",
     "sass": "^1.52.3",
