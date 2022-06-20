@@ -9,11 +9,11 @@ const props = withDefaults(
   {}
 );
 
-const SITE_TITLE = ref("skepfusky");
+const SITE_TITLE = "skepfusky";
 const keywords = ["programming", "music", "skepfusky", "kokoro husky", "yes"];
 
-const indexTitle = "skep is home";
-const indexDescription = "yeet";
+const indexTitle = "skepfusky official website";
+const indexDescription = "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines! Feel free to browse my cringe, or not...";
 </script>
 
 <template>

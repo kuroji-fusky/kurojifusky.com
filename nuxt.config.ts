@@ -11,14 +11,18 @@ export default defineNuxtConfig({
   },
   css: ["/assets/global.scss", "@fortawesome/fontawesome-svg-core/styles.css"],
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
-  // @nuxtjs/tailwindcss config
-  tailwindcss: {
-    viewer: false,
-  },
   webpack: {
     optimizeCSS: true,
   },
+  //
+  //  @nuxtjs/tailwindcss config
+  //
+  tailwindcss: {
+    viewer: false,
+  },
+  //
   // @nuxtjs/strapi config
+  //
   strapi: {
     prefix: "/api",
     url: "http://localhost:1337",
