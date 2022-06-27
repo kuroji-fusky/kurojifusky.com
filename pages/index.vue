@@ -29,7 +29,7 @@ definePageMeta({
           </p>
         </article>
         <div id="hero-header-img">
-          <img src="/static/07.png" alt="Kokoro Husky" />
+          <img src="/static/fursonas/07.png" alt="Kokoro Husky" />
         </div>
       </section>
     </div>

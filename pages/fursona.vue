@@ -7,18 +7,17 @@
     >
       <div id="figure-container">
         <figure>
-          <img src="/static/08.png" />
+          <img src="/static/fursonas/sketch_jan2020_result.png" style="width: 26.8rem"/>
           <figcaption>
-            A blooshy boi
+            Sketch from January 2022
           </figcaption>
         </figure>
         <figure>
-          <img src="/static/sketch_jan2020_result.png" style="width: 26.8rem"/>
+          <img src="/static/fursonas/08.png" />
           <figcaption>
-            A sketch from January 2022
+            A cute, blooshy boi
           </figcaption>
         </figure>
-        
       </div>
       <h2>Brief Description</h2>
       <p>
@@ -41,7 +40,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/static/skep-early-2019.png" />
+          <img src="/static/fursonas/skep-early-2019.png" />
           <figcaption>
             A very and awful early head <br />design drawn from Photoshop in
             2019.
@@ -65,7 +64,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/static/skep-ref-2020.png" style="width: 520px" />
+          <img src="/static/fursonas/skep-ref-2020.png" style="width: 520px" />
           <figcaption>
             Initial design in 2020, inspired from the colors from
             <em>Map of the Soul: 7</em>
@@ -82,7 +81,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/static/01.jpg" />
+          <img src="/static/fursonas/01.jpg" />
           <figcaption>Crude mspaint headshot drawn in 2020</figcaption>
         </figure>
       </div>
@@ -104,7 +103,7 @@
 
       <div id="figure-container">
         <figure>
-          <img src="/static/skep-ref-2022.png" style="width: 520px" />
+          <img src="/static/fursonas/skep-ref-2022.png" style="width: 520px" />
           <figcaption>5th minor design update with yellow-ish eyes</figcaption>
         </figure>
       </div>
@@ -128,30 +127,6 @@
         individualism, royalty, and ambition. It also can boost imagination and
         creativity, on the other, too much purple can cause moodiness.
       </p>
-
-      <div id="figure-container">
-        <figure>
-          <img src="/static/JakeJune.png" style="width: 15rem" />
-          <figcaption>
-            <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
-          </figcaption>
-        </figure>
-      </div>
-
-      <div id="figure-container">
-        <figure>
-          <img src="/static/JAKEmegaSNAKE.png" />
-          <figcaption>
-            <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="/static/ZAMBOY_orig.png" style="width: 26.8rem" />
-          <figcaption>
-            <fa-icon :icon="['fab', 'discord']" /> ZAMBOYYT
-          </figcaption>
-        </figure>
-      </div>
 
       <h3>Why the name <em>"Skep"</em>?</h3>
       <p>
@@ -188,6 +163,36 @@
         qualities are what makes me like them the most initially. Including
         foxes as well!
       </p>
+      <h2>Some fanarts lol</h2>
+            <div id="figure-container">
+        <figure>
+          <img src="/static/fursonas/JakeJune.png" style="width: 15rem" />
+          <figcaption>
+            <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="/static/fursonas/ZAMBOY_orig.png" style="width: 23.8rem" />
+          <figcaption>
+            <fa-icon :icon="['fab', 'discord']" /> ZAMBOYYT
+          </figcaption>
+        </figure>
+      </div>
+
+      <div id="figure-container">
+        <figure>
+          <img src="/static/fursonas/JAKEmegaSNAKE.png" />
+          <figcaption>
+            <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="/static/fursonas/jake_2022.png" style="width: 26.8rem" />
+          <figcaption>
+            <fa-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
+          </figcaption>
+        </figure>
+      </div>
     </article>
     <TBA />
   </div>

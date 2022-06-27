@@ -6,6 +6,7 @@
       </NuxtLink>
       <nav>
         <NuxtLink to="/" activeClass="active">Home</NuxtLink>
+        <NuxtLink to="/projects" activeClass="active">Projects</NuxtLink>
         <NuxtLink to="/fursona" activeClass="active">Fursona</NuxtLink>
       </nav>
     </div>

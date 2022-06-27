@@ -70,7 +70,7 @@ footer {
 }
 
 .heading {
-  @apply flex flex-col items-center text-center gap-y-1;
+  @apply flex flex-col items-center text-center gap-y-1 select-none;
 }
 
 .social {

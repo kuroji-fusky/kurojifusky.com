@@ -19,7 +19,7 @@ const indexDescription = "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old
 <template>
   <Head>
     <Title v-if="$route.name === 'index'">{{ indexTitle }}</Title>
-    <Title v-else>{{ $route.name }} {{ title }} - {{ SITE_TITLE }}</Title>
+    <Title v-else>{{ title }} - {{ SITE_TITLE }}</Title>
 
     <Meta v-if="$route.name === 'index'" name="title" :content="indexTitle" />
     <Meta v-else name="title" :content="`${title} - ${SITE_TITLE}`" />
@@ -60,7 +60,6 @@ const indexDescription = "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old
     <Meta v-else name="twitter:description" :content="description" />
 
     <!-- No change -->
-    <Meta rel="shortcut icon" href="/favicon.ico" />
     <Meta v-if="keywords" name="keywords" :content="keywords?.join(', ')" />
     <Meta v-if="img" name="image" :content="img" />
     <Meta property="og:type" content="website" />
