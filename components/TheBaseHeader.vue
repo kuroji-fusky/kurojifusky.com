@@ -19,10 +19,14 @@ header {
 }
 
 .wrapper {
-  @apply my-0 mx-auto max-w-screen-2xl px-10 py-7 flex justify-between;
+  @apply my-0 mx-auto max-w-screen-2xl px-5 py-4 flex items-center justify-between;
 
   nav {
     @apply flex gap-x-4 items-center;
+
+    a {
+      @apply p-4;
+    }
 
     .active {
       @apply font-bold;

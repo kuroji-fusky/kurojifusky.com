@@ -16,9 +16,9 @@ const props = withDefaults(
 </script>
 
 <template>
-  <div id="item-container">
+  <section id="item-container" itemscope itemtype="http://schema.org/Projects">
     <div id="image-container">
-      <img :src="`/static/${img}`" />
+      <img :src="`/static/${img}`" :alt="`Image for ${title}`" />
     </div>
     <article id="item-contents">
       <h2 class="text-2xl">{{ title }}</h2>
@@ -39,7 +39,7 @@ const props = withDefaults(
         </span> -->
       </div>
     </article>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
