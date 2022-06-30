@@ -60,18 +60,6 @@ const projects = [
           <img src="/static/fursonas/07.png" alt="Kokoro Husky" />
         </div>
       </section>
-      <div class="max-w-screen-xl mx-auto">
-        <h2 class="p-3">Dev projects</h2>
-        <div class="grid gap-4 grid-cols-3 p-3">
-          <ContentItem
-            v-for="project in projects"
-            :title="project.title"
-            :description="project.description"
-            :img="project.img"
-            :github-link="project.githubLink"
-          />
-        </div>
-      </div>
     </div>
   </div>
 </template>
