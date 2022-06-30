@@ -4,10 +4,11 @@ import { techStack, creativeStack } from "../models/Content";
 
 <template>
   <div class="page-wrapper">
+    <TBA />
     <div class="page-wrapper-separator">
       <div class="profile-hero">
         <img src="/static/fursonas/08.png" alt="skepfusky" />
-        <div>socials</div>
+        <div>Socials WIP</div>
       </div>
       <div id="container">
         <ResumeSection title="About Me">
@@ -32,7 +33,7 @@ import { techStack, creativeStack } from "../models/Content";
             </li>
           </ul>
         </ResumeSection>
-        <ResumeSection techTitle="Film">
+        <ResumeSection techTitle="Creative">
           <ul class="resume-section-grid">
                         <li
               class="resume-tech-item"
@@ -44,14 +45,15 @@ import { techStack, creativeStack } from "../models/Content";
             </li>
           </ul>
         </ResumeSection>
-        <ResumeSection techTitle="Music">
+        <!-- <ResumeSection techTitle="Music">
           <ul class="resume-section-grid"></ul>
-        </ResumeSection>
+        </ResumeSection> -->
         <ResumeSection title="Quotes">
           <div></div>
         </ResumeSection>
       </div>
     </div>
+    <BaseHead title="Resume" description="Find out what da skepfusky doin" />
   </div>
 </template>
 

@@ -109,7 +109,7 @@
       </div>
 
       <p>
-        It had a minor update in July 2021 where I have changed the eyes from
+        I've decided to tweak some minor updates in July 2021 where I have changed the eyes from
         blue to purple to purple to signify "borahae" or "I purple you"; for
         context: it combines two Korean words: Violet (보라; bora) and 'I love
         you' (사랑해; saranghae) - the word "borahae" has become a staple term
@@ -216,10 +216,10 @@ figcaption {
 }
 
 .static-block {
-  @apply pl-5 py-3 italic relative text-[105%] bg-sona-borahaealt-700 bg-opacity-20;
+  @apply pl-5 py-3 italic relative text-[105%] rounded-md bg-sona-borahaealt-700 bg-opacity-20;
   &::before {
     content: "";
-    @apply absolute top-0 left-0 h-full w-1 bg-sona-borahaealt-600;
+    @apply absolute top-0 left-0 h-full w-1 rounded-tl-md rounded-bl-md bg-sona-borahaealt-600;
   }
 }
 </style>

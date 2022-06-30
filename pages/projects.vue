@@ -1,27 +1,5 @@
 <script setup lang="ts">
-const projects = [
-  {
-    img: "fursonas/04.png",
-    title: "skepfusky",
-    githubLink: "skepfusky/skepfusky.xyz",
-    description: "the website you're currently browsing rn",
-  },
-  {
-    img: "fursonas/05.png",
-    title: "Fren Time Tracker",
-    githubLink: "skepfusky/fren-time-tracker",
-  },
-  {
-    img: "fursonas/06.png",
-    title: "Scammerino",
-    githubLink: "skepfusky/scammerino",
-  },
-  {
-    img: "fursonas/07.png",
-    title: "Paco Drawing Stats",
-    githubLink: "skepfusky/pacopanda-drawing-stats",
-  },
-];
+import { projects } from "../models/Content"
 </script>
 
 <template>

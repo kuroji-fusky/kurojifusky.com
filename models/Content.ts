@@ -1,3 +1,32 @@
+// Projects
+export const projects = [
+  {
+    img: "fursonas/07.png",
+    title: "skepfusky",
+    githubLink: "skepfusky/skepfusky.xyz",
+    description: "The website you're currently browsing right now! Written in Nuxt 3",
+  },
+  {
+    img: "projects/paco-stats-2022.png",
+    title: "Paco Drawing Stats",
+    githubLink: "skepfusky/pacopanda-drawing-stats",
+    description: "An open source data visualization project for displaying drawing data by a furry artist and illustrator Paco Panda",
+  },
+  {
+    img: "projects/mutahar-funny.jpg",
+    title: "Scammerino",
+    githubLink: "skepfusky/scammerino",
+    description: "Play with scammers' shenanigans by rating them or by playing a game of Bingo",
+  },
+  {
+    img: "projects/time.jpg",
+    title: "Fren Time Tracker",
+    githubLink: "skepfusky/fren-time-tracker",
+    description: "Track your friends' time if you live from the other side of the planet",
+  },
+];
+
+// Resume stuff
 export const techStack = [
   { name: "Python", icon: "python-plain colored"},
   { name: "JavaScript", icon: "javascript-plain colored"},
@@ -8,7 +37,7 @@ export const techStack = [
   { name: "Tailwind CSS", icon: "tailwindcss-plain colored"},
   { name: "Node.js", icon: "nodejs-plain colored"},
   { name: "React", icon: "react-plain colored"},
-  { name: "Vue", icon: "vuejs-plain colored"},
+  { name: "Vue.js", icon: "vuejs-plain colored"},
   { name: "Svelte", icon: "svelte-plain colored"},
   { name: "Next.js", icon: "nextjs-plain"},
   { name: "Nuxt.js", icon: "nuxtjs-plain colored"},
