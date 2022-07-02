@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-inter leading-7 text-[#f5f5f5] bg-neutral-900;
+  }
+
+  $font-size: [ 1 "5xl", 2 "4xl", 3 "3xl", 4 "2xl", 5 "xl", 6 "lg", ];
+
+  @each $i, $s in $font-size {
+    h#{$i} {
+      @apply font-bold text-#{$s};
+    }
+  }
+
+  ::selection {
+    @apply bg-neutral-700 text-neutral-50;
+  }
+}
+
+@layer components {
+  .site-link {
+    @apply text-sona-borahaealt-400 hover:text-sona-borahaealt-100 hover:underline transition-all duration-300;
+
+    &::selection {
+      @apply bg-neutral-700 text-sona-borahaealt-50;
+    }
+  }
+}
+
+#wrapper {
+  @apply max-w-screen-2xl mx-auto px-7;
+}
