@@ -1,10 +1,11 @@
-import { defineNuxtConfig } from "nuxt";
+import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  modules: ["@nuxtjs/tailwindcss"],
   typescript: {
-    shim: false,
     strict: true,
+    shim: false,
   },
   meta: {
     link: [
@@ -15,24 +16,8 @@ export default defineNuxtConfig({
       },
     ],
   },
-  css: ["/assets/global.scss", "@fortawesome/fontawesome-svg-core/styles.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
-  webpack: {
-    optimizeCSS: true,
-  },
-  //
-  //  @nuxtjs/tailwindcss config
-  //
-  tailwindcss: {
-    viewer: false,
-  },
-  //
-  // @nuxtjs/strapi config
-  //
-  strapi: {
-    prefix: "/api",
-    url: "http://localhost:1337",
-    version: "v4",
-    cookie: {},
-  },
+  // @nuxtjs/tailwind config
+  tailwind: {
+    exposeConfig: true,
+  }
 });
