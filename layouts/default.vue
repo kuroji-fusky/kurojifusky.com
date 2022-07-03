@@ -9,6 +9,10 @@ const route = useRoute();
 let title = "skep official website";
 let desc = "Description";
 
+definePageMeta({
+  layout: "default",
+});
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - skepfusky` : "skepfusky official website";

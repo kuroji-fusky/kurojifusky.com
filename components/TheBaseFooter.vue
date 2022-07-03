@@ -2,14 +2,14 @@
   <footer>
     <div id="wrapper">
       <ul id="social-row">
-          <li v-for="a in socials" :key="a.icon" class="site-link">
-            <a :href="a.link" target="_blank">
-              <font-awesome-icon :icon="['fab', `fa-${a.icon}`]" />
-            </a>
-          </li>
+        <li v-for="a in socials" :key="a.icon" class="site-link">
+          <a :href="a.link" target="_blank">
+            <font-awesome-icon :icon="['fab', `fa-${a.icon}`]" />
+          </a>
+        </li>
       </ul>
       <div class="flex gap-5 text-sm">
-        <ul class="flex gap-2">
+        <ul class="flex gap-5">
           <li><a class="site-link" href="#">Copyright</a></li>
           <li><a class="site-link" href="#">Contact</a></li>
         </ul>
@@ -30,7 +30,7 @@ import { socials } from "~~/models/Content";
 
 <style lang="scss" scoped>
 #wrapper {
-  @apply flex justify-between items-center;
+  @apply flex justify-between items-center py-7;
 }
 
 #social-row {
