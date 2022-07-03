@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply font-inter leading-7 text-[#f5f5f5] bg-neutral-900;
+    @apply font-inter leading-7 text-[#f5f5f5] bg-neutral-900 overflow-x-hidden;
   }
 
   $font-size: [ 1 "5xl", 2 "4xl", 3 "3xl", 4 "2xl", 5 "xl", 6 "lg", ];
@@ -36,7 +36,7 @@
   }
 
   .card {
-    @apply border-[1px] border-neutral-400 rounded-md;
+    @apply border-2 border-neutral-400 rounded-md;
     box-shadow: 4px 4px 0 theme("colors.neutral.400");
 
     &-hoverable {

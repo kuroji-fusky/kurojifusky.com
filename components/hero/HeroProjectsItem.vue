@@ -13,7 +13,7 @@
 
 <style lang="scss" scoped>
 #project-item {
-  @apply flex flex-col justify-center items-center p-6 text-center gap-y-2;
+  @apply flex flex-col justify-center items-center p-6 text-center gap-y-2 select-none;
 
   p {
     @apply leading-6 w-[17.45rem];
