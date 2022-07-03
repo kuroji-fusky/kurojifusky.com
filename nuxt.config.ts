@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
-    // "@nuxtjs/strapi",
+    "@nuxtjs/strapi",
     "@nuxtjs/color-mode",
   ],
   typescript: {
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   ],
   meta: {
     link: [
-      // { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
         href: "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css",
