@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     // "@nuxtjs/strapi",
+    "@nuxtjs/color-mode",
   ],
   typescript: {
     strict: true,
@@ -31,4 +32,9 @@ export default defineNuxtConfig({
     exposeConfig: true,
     viewer: false,
   },
+  // @nuxtjs/color-mode config
+  colorMode: {
+    fallback: "dark",
+    storageKey: 'sf-theme-mode',
+  }
 });

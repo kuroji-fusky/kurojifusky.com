@@ -1,6 +1,6 @@
 <template>
   <div id="projects-heading">
-    <h2>Latest Projects</h2>
+    <h2 class="highlight">Latest Projects</h2>
     <span>
       <button class="scrollers">
         <font-awesome-icon :icon="['fas', 'chevron-left']" />
@@ -41,11 +41,11 @@
 
 #projects-carousel-wrapper {
   @apply overflow-x-auto relative;
-  scroll-padding: 0;
-  scroll-snap-type: both mandatory;
 }
 
 #projects-carousel {
   @apply flex gap-x-3 px-4 py-1;
+  scroll-padding: 0;
+  scroll-snap-type: both mandatory;
 }
 </style>

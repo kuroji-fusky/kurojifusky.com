@@ -34,6 +34,6 @@ nav > ul {
 
 a,
 li {
-  @apply py-[2rem];
+  @apply py-[1.65rem];
 }
 </style>

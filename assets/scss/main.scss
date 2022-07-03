@@ -10,14 +10,14 @@
   }
 
   body {
-    @apply font-inter leading-7 text-[#f5f5f5] bg-neutral-900 overflow-x-hidden;
+    @apply font-open-sans leading-7 text-[#f5f5f5] bg-neutral-900 overflow-x-hidden;
   }
 
   $font-size: [ 1 "5xl", 2 "4xl", 3 "3xl", 4 "2xl", 5 "xl", 6 "lg", ];
 
   @each $i, $s in $font-size {
     h#{$i} {
-      @apply font-bold text-#{$s};
+      @apply font-inter font-bold text-#{$s};
     }
   }
 
@@ -27,6 +27,12 @@
 }
 
 @layer components {
+  @for $i from 1 through 6 {
+    h#{$i}.highlight {
+      @apply relative before:absolute before:bottom-0 before:left-0 before:right-0 before:h-[45%] before:bg-gradient-to-l before:from-sona-royalblue-600 before:to-sona-borahae-600 before:-z-1;
+    }
+  }
+
   .site-link {
     @apply text-sona-borahae-200 hover:text-sona-borahaealt-50 hover:underline transition-all duration-300;
 
@@ -37,12 +43,13 @@
 
   .card {
     @apply border-2 border-neutral-400 rounded-md;
-    box-shadow: 4px 4px 0 theme("colors.neutral.400");
+    box-shadow: 5px 5px 0 theme("colors.neutral.400");
 
     &-hoverable {
       @extend .card;
+      @apply border-neutral-400;
       &:hover {
-        box-shadow: 8px 8px 0 theme("colors.neutral.400");
+        box-shadow: 5px 5px 0 theme("colors.neutral.300");
       }
     }
   }

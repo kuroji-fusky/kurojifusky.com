@@ -8,7 +8,6 @@
       <li>Video editor</li>
       <li>Novice VFX artist</li>
     </ul>
-    <p>Browse my stuff</p>
   </div>
 </template>
 
