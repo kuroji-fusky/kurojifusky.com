@@ -9,13 +9,13 @@
       <nav>
         <ul>
           <li>
-            <NuxtLink to="/projects">Projects</NuxtLink>
+            <NuxtLink to="#">Projects</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/tools">Tools</NuxtLink>
+            <NuxtLink to="#">Tools</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/about">About</NuxtLink>
+            <NuxtLink to="#">About</NuxtLink>
           </li>
         </ul>
       </nav>

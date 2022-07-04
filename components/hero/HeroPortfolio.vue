@@ -4,7 +4,8 @@
     <a
       v-for="item in portfolio"
       :key="item.link"
-      :href="item.link"
+      href="#"
+      v-on:click="tba()"
       class="hero-item card-hoverable"
     >
       <span class="text-5xl">{{ item.emoji }}</span>
@@ -16,6 +17,10 @@
 
 <script setup lang="ts">
 import { portfolio } from "~~/models/Content";
+
+function tba() {
+  alert("This website is still being worked on lol")
+}
 </script>
 
 <style lang="scss" scoped>

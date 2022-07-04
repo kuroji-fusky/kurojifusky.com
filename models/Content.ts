@@ -1,11 +1,17 @@
 export const socials = [
   { icon: "youtube", link: "https://youtube.com/c/skepfusky97" },
   { icon: "twitter", link: "https://twitter.com/skepfuskyjs" },
-  { icon: "instagram", link: "https://instagram.com/skepfuskyjs" },
+  { icon: "instagram", link: "https://instagram.com/skepfusky" },
   { icon: "github", link: "https://github.com/skepfusky" },
-  { icon: "spotify", link: "https://github.com/skepfusky" },
-  { icon: "itunes-note", link: "https://github.com/skepfusky" },
-  { icon: "soundcloud", link: "https://github.com/skepfusky" },
+  {
+    icon: "spotify",
+    link: "https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl?si=byCWjlfqR3OXDiGTiuCpqA",
+  },
+  {
+    icon: "itunes-note",
+    link: "https://music.apple.com/us/artist/kokoro-husky/1521326000",
+  },
+  { icon: "soundcloud", link: "https://soundcloud.com/kokoro-husky-mixtapes" },
 ];
 
 export const portfolio = [
