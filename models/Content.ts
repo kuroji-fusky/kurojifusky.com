@@ -1,58 +1,114 @@
-// Projects
-export const projects = [
+export const socials = [
+  { icon: "youtube", link: "https://youtube.com/c/skepfusky97" },
+  { icon: "twitter", link: "https://twitter.com/skepfuskyjs" },
+  { icon: "instagram", link: "https://instagram.com/skepfusky" },
+  { icon: "github", link: "https://github.com/skepfusky" },
   {
-    img: "fursonas/07.png",
-    title: "skepfusky",
-    githubLink: "skepfusky/skepfusky.xyz",
-    description: "The website you're currently browsing right now! Written in Nuxt 3",
+    icon: "spotify",
+    link: "https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl?si=byCWjlfqR3OXDiGTiuCpqA",
   },
   {
-    img: "projects/paco-stats-2022.png",
-    title: "Paco Drawing Stats",
-    githubLink: "skepfusky/pacopanda-drawing-stats",
-    description: "An open source data visualization project for displaying drawing data by a furry artist and illustrator Paco Panda",
+    icon: "itunes-note",
+    link: "https://music.apple.com/us/artist/kokoro-husky/1521326000",
+  },
+  { icon: "soundcloud", link: "https://soundcloud.com/kokoro-husky-mixtapes" },
+];
+
+export const portfolio = [
+  {
+    emoji: "🧑‍💻",
+    link: "/projects",
+    title: "Projects",
+    description: "Projects that I'm currently working on or have completed!",
   },
   {
-    img: "projects/mutahar-funny.jpg",
-    title: "Scammerino",
-    githubLink: "skepfusky/scammerino",
-    description: "Play with scammers' shenanigans by rating them or by playing a game of Bingo",
+    emoji: "💿",
+    link: "/discography",
+    title: "Discography",
+    description: "High-quality music lol",
   },
   {
-    img: "projects/time.jpg",
-    title: "Fren Time Tracker",
-    githubLink: "skepfusky/fren-time-tracker",
-    description: "Track your friends' time if you live from the other side of the planet",
+    emoji: "🎥",
+    link: "/content",
+    title: "Videos",
+    description: "Videos and other content that I've made!",
+  },
+  {
+    emoji: "📝",
+    link: "/blog",
+    title: "Blog",
+    description: "Blog about my sad life",
+  },
+  {
+    emoji: "⚙️",
+    link: "/tools",
+    title: "Tools",
+    description: "See the tools and technologies I use!",
+  },
+  {
+    emoji: "🦊",
+    link: "/about",
+    title: "About Me",
+    description: "More about me, my resume, and some le epic moments",
   },
 ];
 
-// Resume stuff
-export const techStack = [
-  { name: "Python", icon: "python-plain colored"},
-  { name: "JavaScript", icon: "javascript-plain colored"},
-  { name: "TypeScript", icon: "typescript-plain colored"},
-  { name: "CSS", icon: "css3-plain colored"},
-  { name: "Sass", icon: "sass-plain colored"},
-  { name: "HTML", icon: "html5-plain colored"},
-  { name: "Tailwind CSS", icon: "tailwindcss-plain colored"},
-  { name: "Node.js", icon: "nodejs-plain colored"},
-  { name: "React", icon: "react-plain colored"},
-  { name: "Vue.js", icon: "vuejs-plain colored"},
-  { name: "Svelte", icon: "svelte-plain colored"},
-  { name: "Next.js", icon: "nextjs-plain"},
-  { name: "Nuxt.js", icon: "nuxtjs-plain colored"},
-  { name: "Flask", icon: "flask-plain"},
-  { name: "FastAPI", icon: "fastapi-plain colored"},
-  { name: "GraphQL", icon: "graphql-plain colored"},
-  { name: "Redis", icon: "redis-plain colored"},
-  { name: "Jupyter Notebook", icon: "jupyter-plain colored"},
-  { name: "Docker", icon: "docker-plain colored"},
-]
-
-export const creativeStack = [
-  { name: "Illustrator", icon: "illustrator-plain"},
-  { name: "Photoshop", icon: "photoshop-plain"},
-  { name: "Premiere Pro", icon: "premierepro-plain"},
-  { name: "After Effects", icon: "aftereffects-plain"},
-  { name: "Figma", icon: "figma-plain colored"},
-]
+export const projects = [
+  {
+    title: "Fren Time Tracker",
+    description:
+      "Track your friends' time if you live from the other side of the planet",
+    techStack: ["python"],
+    githubRepo: "skepfusky/fren-time-tracker",
+    // websiteUrl: "",
+  },
+  {
+    title: "Scammerino",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["vue", "electron", "vite"],
+    githubRepo: "skepfusky/scammerino",
+    // websiteUrl: "",
+  },
+  {
+    title: "Paco Drawing Stats",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["nextjs", "sass", "tailwindcss", "python", "fastapi"],
+    githubRepo: "skepfusky/paco-drawing-stats",
+    // websiteUrl: "",
+  },
+  {
+    title: "The Crimson Paw",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["python"],
+    githubRepo: "skepfusky/The-Crimson-Paw",
+    // websiteUrl: "",
+  },
+  {
+    title: "Tungsten",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["nuxtjs", "tailwindcss", "sass"],
+    githubRepo: "skepfusky/tungsten",
+    // websiteUrl: "",
+  },
+  {
+    title: "Majira VS Code Theme",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["vscode"],
+    githubRepo: "skepfusky/majira-vscode-theme",
+    // websiteUrl: "",
+  },
+  {
+    title: "MyFursona",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["nextjs", "sass", "fastify"],
+    githubRepo: "MyFursona-Projects/MyFursona",
+    // websiteUrl: "",
+  },
+  {
+    title: "Searchpets",
+    description: "A bot that automatically sends you messages to scam you",
+    techStack: ["nextjs", "sass", "tailwindcss", "python", "fastapi"],
+    githubRepo: "OpenFurs/searchpets",
+    // websiteUrl: "",
+  },
+];

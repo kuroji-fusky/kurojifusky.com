@@ -1,11 +1,20 @@
-import { defineNuxtConfig } from "nuxt";
+import { defineNuxtConfig } from 'nuxt'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/strapi",
+    "@nuxtjs/color-mode",
+  ],
   typescript: {
-    shim: false,
     strict: true,
+    shim: false,
   },
+  css: [
+    "assets/scss/main.scss",
+    "@fortawesome/fontawesome-svg-core/styles.css",
+  ],
   meta: {
     link: [
       { rel: "icon", href: "/favicon.ico" },
@@ -15,24 +24,17 @@ export default defineNuxtConfig({
       },
     ],
   },
-  css: ["/assets/global.scss", "@fortawesome/fontawesome-svg-core/styles.css"],
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi"],
   webpack: {
     optimizeCSS: true,
   },
-  //
-  //  @nuxtjs/tailwindcss config
-  //
+  // @nuxtjs/tailwind config
   tailwindcss: {
+    exposeConfig: true,
     viewer: false,
   },
-  //
-  // @nuxtjs/strapi config
-  //
-  strapi: {
-    prefix: "/api",
-    url: "http://localhost:1337",
-    version: "v4",
-    cookie: {},
-  },
+  // @nuxtjs/color-mode config
+  colorMode: {
+    fallback: "dark",
+    storageKey: 'sf-theme-mode',
+  }
 });

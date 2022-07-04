@@ -8,9 +8,13 @@ module.exports = {
     "layouts/**/*.{vue,js,ts}",
     "composables/**/*.{js,ts}",
   ],
+  experimental: {
+    // Remove unused Tailwind variables
+    optimizeUniversalDefaults: true,
+  },
   theme: {
     fontFamily: {
-      "noto-sans": ["Noto Sans", ...defaultTheme.fontFamily.sans],
+      "inter": ["Inter", ...defaultTheme.fontFamily.sans],
       "open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
       "ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono]
     },
