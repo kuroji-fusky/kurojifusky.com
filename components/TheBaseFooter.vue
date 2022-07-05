@@ -32,6 +32,10 @@ import { socials } from "~~/models/Content";
 <style lang="scss" scoped>
 footer {
   @apply relative;
+
+  &:not(.site-link) {
+    @apply text-[#f5f5f5];
+  }
 }
 
 #gradient-bg {

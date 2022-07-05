@@ -3,7 +3,7 @@
     <div id="wrapper">
       <NuxtLink to="/">
         <span id="logo">
-          <img src="" alt="skepfusky lol" />
+          <img src="" alt="skepfusky" />
         </span>
       </NuxtLink>
       <nav id="nav-header">

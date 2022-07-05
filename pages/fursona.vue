@@ -8,7 +8,7 @@
         />
         <figcaption>
           Drawn by
-          <font-awesome-icon :icon="['fab', 'discord']" />
+          <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
           JAKEmegaSNAKE
         </figcaption>
       </figure>
@@ -20,23 +20,24 @@
         />
         <figcaption>
           Drawn by
-          <font-awesome-icon :icon="['fab', 'twitter']" />
+          <font-awesome-icon class="px-0.5" :icon="['fab', 'twitter']" />
           @skepfuskyjs
         </figcaption>
       </figure>
     </div>
     <article class="temp-static-content">
-      <h2>Brief Description</h2>
-      <p>
-        <strong>Skep</strong> is a blue and yellow fox-husky hybrid or fusky;
-        and was originally a husky. Propped with thick black glasses and wearing
-        a purple t-shirt with white outlines, and completely pantless lmao
-      </p>
-      <p>
-        Mixing with a typical traits both of a fox and a husky, he's a
-        wholesome, outgoing, yet weird personality and he easily gets soft when
-        he's immediately flattered and starts blushing intensely lol
-      </p>
+      <div class="text-[1.25rem] pb-3">
+        <p class="pb-3">
+          <strong>Skep</strong> is a blue and yellow fox-husky hybrid or fusky;
+          and was originally a husky. Propped with thick black glasses and wearing
+          a purple t-shirt with white outlines, and completely pantless! (lmao)
+        </p>
+        <p>
+          Mixing with a typical traits both of a fox and a husky, he's a
+          wholesome, outgoing, yet weird personality and he easily gets soft when
+          he's immediately flattered and starts blushing intensely (lol)
+        </p>
+      </div>
       <h2>History and background</h2>
       <p>
         My first attempt at making a fursona was around mid-2019 when I was
@@ -104,7 +105,7 @@
       <div id="figure-container">
         <figure>
           <img src="/static/fursonas/skep-ref-2022.png" style="width: 520px" />
-          <figcaption>5th minor design update with yellow-ish eyes</figcaption>
+          <figcaption>5th and final revision with yellow-ish eyes</figcaption>
         </figure>
       </div>
       <p>
@@ -159,7 +160,7 @@
         qualities are what makes me like them the most initially. Including
         foxes as well!
       </p>
-      <h2>Some fanarts lol</h2>
+      <h3>Some fanarts lol</h3>
       <div id="figure-container">
         <figure>
           <img src="/static/fursonas/JakeJune.png" style="width: 15rem" />
@@ -192,11 +193,18 @@
   </main>
 </template>
 
+<script setup>
+definePageMeta({
+  title: "Fursona",
+  description: "A fursona for the fursona",
+})
+</script>
+
 <style lang="scss" scoped>
 #hero-fursona {
   --size-edge: 16rem;
   --size-mid: 22rem;
-  @apply flex justify-center items-center py-6 w-full;
+  @apply relative flex justify-center items-center py-12 w-full;
 
   * {
     @apply transition-all duration-[420ms];
@@ -234,7 +242,7 @@
     }
 
     figcaption {
-      @apply opacity-0 py-2;
+      @apply opacity-0 py-2 select-none text-[#f5f5f5];
     }
   }
 
@@ -249,6 +257,14 @@
       @apply shadow-2xl shadow-black z-5;
     }
   }
+
+  &::before {
+    @apply content-[""] transition-all duration-[420ms] absolute m-auto h-[7rem] w-[50%] bg-gradient-to-r rounded-full from-sona-royalblue-600 via-sona-borahaealt-600 to-sona-royalblue-600 blur-[127px];
+  }
+
+  &:hover::before {
+    @apply h-[20rem] w-[60%];
+  }
 }
 
 main {
@@ -261,7 +277,7 @@ main {
 
 h2,
 h3 {
-  @apply py-2;
+  @apply py-4;
 }
 
 #figure-container {
@@ -269,16 +285,19 @@ h3 {
 
   figure {
     @apply flex flex-col items-center gap-y-2;
+
     img {
       @apply w-[15rem] rounded-md;
     }
   }
 }
+
 figcaption {
   @apply text-gray-400 text-sm text-center;
 }
+
 .static-block {
-  @apply pl-5 py-3 italic relative text-[105%] rounded-md bg-sona-borahaealt-700 bg-opacity-20;
+  @apply pl-5 py-3 italic relative text-[105%] rounded-md bg-sona-borahaealt-700 bg-opacity-20 text-left;
   &::before {
     content: "";
     @apply absolute top-0 left-0 h-full w-1 rounded-tl-md rounded-bl-md bg-sona-borahaealt-600;

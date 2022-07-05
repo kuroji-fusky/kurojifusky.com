@@ -3,3 +3,10 @@
     project page
   </main>
 </template>
+
+<script setup>
+definePageMeta({
+  title: "Projects",
+  description: "skepfusky projects"
+})
+</script>
