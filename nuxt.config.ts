@@ -1,12 +1,8 @@
-import { defineNuxtConfig } from 'nuxt'
+import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/strapi",
-    "@nuxtjs/color-mode",
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxtjs/color-mode"],
   typescript: {
     strict: true,
     shim: false,
@@ -17,6 +13,10 @@ export default defineNuxtConfig({
   ],
   meta: {
     link: [
+      {
+        name: "http-equiv",
+        content: "X-UA-Compatible",
+      },
       { rel: "icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
@@ -35,6 +35,6 @@ export default defineNuxtConfig({
   // @nuxtjs/color-mode config
   colorMode: {
     fallback: "dark",
-    storageKey: 'sf-theme-mode',
-  }
+    storageKey: "sf-theme-mode",
+  },
 });

@@ -10,6 +10,7 @@ let title = "skepfusky official website";
 let desc =
   "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines";
 let img = "TBA";
+let siteUrl = `https://skepfusky.xyz${route.path}`
 
 definePageMeta({
   layout: "default",
@@ -30,12 +31,17 @@ useHead({
     { property: "og:title", content: title },
     { property: "og:description", content: desc },
     { property: "og:type", content: "website" },
-    { property: "og:img", content: img },
+    { property: "og:image", content: img },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "628" },
+    { property: "og:url", content: siteUrl },
     { name: "twitter:title", content: desc },
     { name: "twitter:site", content: "@skepfuskyjs" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:description", content: desc },
-    { name: "twitter:img", content: img },
+    { name: "twitter:image", content: img },
+    { name: "twitter:url", content: siteUrl },
   ],
+  link: [{ rel: "canonical", href: siteUrl }],
 });
 </script>
