@@ -5,7 +5,7 @@
       <a
         v-for="item in portfolio"
         :key="item.link"
-        href="#"
+        :href="item.link"
         v-on:click="tba()"
         class="hero-item card-hoverable"
       >

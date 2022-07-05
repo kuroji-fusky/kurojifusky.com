@@ -1,6 +1,6 @@
 <template>
   <main class="content-wrapper">
-    project page
+    Lame sauce, this page is still under construction, check back later lol
   </main>
 </template>
 

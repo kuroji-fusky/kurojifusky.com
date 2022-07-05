@@ -18,9 +18,9 @@
             <NuxtLink to="#">About</NuxtLink>
             <div id="dropdown">
               <ul>
-                <li>
-                  <NuxtLink to="/fursona">Fursona</NuxtLink>
-                </li>
+                <li><NuxtLink to="/fursona">Fursona</NuxtLink></li>
+                <li><NuxtLink to="#">Technologies</NuxtLink></li>
+                <li><NuxtLink to="#">Resume</NuxtLink></li>
               </ul>
             </div>
           </li>
@@ -39,12 +39,18 @@ nav > ul {
   @apply flex gap-x-14;
 }
 
-#nav-header :is(li, a) {
-  @apply relative py-[1.65rem];
+#nav-header {
+  :is(li, a) {
+    @apply relative py-[1.65rem];
+  }
+
+  li:hover #dropdown {
+    @apply opacity-100 top-[4rem] pointer-events-auto;
+  }
 }
 
 #dropdown {
-  @apply absolute top-[3.5rem] right-0 p-1 rounded-md bg-neutral-500 shadow-md;
+  @apply opacity-0 z-10 pointer-events-none absolute top-[3.5rem] right-0 p-1 rounded-md bg-neutral-500 shadow-md transition-all duration-300;
 
   li {
     @apply p-0;

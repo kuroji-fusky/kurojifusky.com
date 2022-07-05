@@ -204,7 +204,7 @@ definePageMeta({
 #hero-fursona {
   --size-edge: 16rem;
   --size-mid: 22rem;
-  @apply relative flex justify-center items-center py-12 w-full;
+  @apply relative flex justify-center items-center py-12 w-full z-1;
 
   * {
     @apply transition-all duration-[420ms];
