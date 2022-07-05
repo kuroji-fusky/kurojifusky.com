@@ -12,6 +12,7 @@ import {
   faItunesNote,
   faSoundcloud,
   faSpotify,
+  faDiscord,
 } from "@fortawesome/free-brands-svg-icons";
 
 config.autoAddCss = false;
@@ -24,7 +25,8 @@ library.add(
   faTwitter,
   faItunesNote,
   faSoundcloud,
-  faSpotify
+  faSpotify,
+  faDiscord
 );
 
 export default defineNuxtPlugin((nuxtApp) => {

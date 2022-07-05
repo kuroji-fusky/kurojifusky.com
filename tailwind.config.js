@@ -10,7 +10,7 @@ module.exports = {
   ],
   experimental: {
     // Remove unused Tailwind variables
-    optimizeUniversalDefaults: true,
+    // optimizeUniversalDefaults: true,
   },
   theme: {
     fontFamily: {

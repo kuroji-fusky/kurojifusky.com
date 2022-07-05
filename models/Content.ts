@@ -37,7 +37,7 @@ export const portfolio = [
     emoji: "📝",
     link: "/blog",
     title: "Blog",
-    description: "Blog about my sad life",
+    description: "Blog about programming and other stuff, I guess lol",
   },
   {
     emoji: "⚙️",

@@ -21,6 +21,7 @@
         </span>
       </div>
     </div>
+    <div id="gradient-bg"></div>
   </footer>
 </template>
 
@@ -29,6 +30,14 @@ import { socials } from "~~/models/Content";
 </script>
 
 <style lang="scss" scoped>
+footer {
+  @apply relative;
+}
+
+#gradient-bg {
+  @apply absolute bottom-0 -left-12 -right-12 h-[4.5rem] bg-gradient-to-l from-sona-borahae-600 via-sona-royalblue-500 to-sona-skycyan-600 -z-10 opacity-50 blur-[100px];
+}
+
 #wrapper {
   @apply flex justify-between items-center py-7;
 }

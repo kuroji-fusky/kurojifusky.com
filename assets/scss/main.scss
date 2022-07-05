@@ -49,9 +49,13 @@
       @extend .card;
       @apply border-neutral-400;
       &:hover {
-        box-shadow: 5px 5px 0 theme("colors.neutral.300");
+        box-shadow: 0 0 0 theme("colors.neutral.300");
       }
     }
+  }
+
+  .content-wrapper {
+    @apply max-w-screen-2xl mx-auto p-7;
   }
 }
 
