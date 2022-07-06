@@ -10,7 +10,7 @@
         :icon="proj.techStack"
         :githubRepo="proj.githubRepo"
         :websiteUrl="proj.websiteUrl"
-        :image="proj.img"
+        :image="proj.image"
       />
     </div>
   </main>

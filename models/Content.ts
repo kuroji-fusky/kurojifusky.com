@@ -57,23 +57,25 @@ export const portfolio = [
 
 export const projects: ProjectArrayProps[] = [
   {
+    image: "/static/projects/time.jpg",
     title: "Fren Time Tracker",
     description:
       "Track your friends' time if you live from the other side of the planet",
     techStack: ["nextjs-plain", "typescript-plain", "electron-original"],
     githubRepo: "skepfusky/fren-time-tracker",
-    // websiteUrl: "",
   },
   {
     title: "Scammerino",
-    description: "A bot that automatically sends you messages to scam you",
+    description:
+      "Play with scammers' feelings with a game of Bingo or rating their patience",
     techStack: ["vuejs-plain", "typescript-plain", "electron-original"],
     githubRepo: "skepfusky/scammerino",
-    // websiteUrl: "",
   },
   {
+    image: "/static/projects/paco-stats-2022.png",
     title: "Paco Drawing Stats",
-    description: "A bot that automatically sends you messages to scam you",
+    description:
+      "A repository that collects a bunch drawing data from Paco Panda, written in FastAPI and Next.js",
     techStack: [
       "nextjs-plain",
       "sass-plain",
@@ -86,15 +88,15 @@ export const projects: ProjectArrayProps[] = [
     // websiteUrl: "",
   },
   {
+    image: "/static/projects/crimson-paw-icon.png",
     title: "The Crimson Paw",
-    description: "A bot that automatically sends you messages to scam you",
+    description: "Moderation bot for The Bad Guys servers written in Python",
     techStack: ["python-plain"],
     githubRepo: "skepfusky/The-Crimson-Paw",
-    // websiteUrl: "",
   },
   {
     title: "Tungsten",
-    description: "A bot that automatically sends you messages to scam you",
+    description: "[information classified]",
     techStack: [
       "nuxtjs-plain",
       "typescript-plain",
@@ -106,21 +108,24 @@ export const projects: ProjectArrayProps[] = [
   },
   {
     title: "Majira VS Code Theme",
-    description: "A bot that automatically sends you messages to scam you",
+    description:
+      "Increase your coding productivity by 69% with this beautiful theme!",
     techStack: ["vscode-plain"],
     githubRepo: "skepfusky/majira-vscode-theme",
     // websiteUrl: "",
   },
   {
     title: "MyFursona",
-    description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nextjs-plain", "sass-plain"],
+    description: "An open source project where you an manage your fursona(s)",
+    techStack: ["nextjs-plain", "sass-plain", "typescript-plain"],
     githubRepo: "MyFursona-Projects/MyFursona",
     websiteUrl: "https://myfursona.art",
   },
   {
+    image: "/static/projects/searchpets-peanut-transparent.png",
     title: "Searchpets",
-    description: "A bot that automatically sends you messages to scam you",
+    description:
+      "A website that searches characters from a furry comic, Housepets!",
     techStack: [
       "nextjs-plain",
       "typescript-plain",

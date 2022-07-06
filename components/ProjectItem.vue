@@ -47,8 +47,8 @@ const props = withDefaults(
 
 <style lang="scss" scoped>
 #project-item {
-  @apply flex flex-col justify-center items-center p-6 text-center gap-y-2 select-none bg-neutral-600;
-  
+  @apply flex flex-col justify-center items-center px-3 py-5 text-center gap-y-2 select-none bg-neutral-600;
+
   img {
     @apply w-[12rem] h-[12rem] object-cover rounded-full;
   }
