@@ -14,12 +14,12 @@
 </template>
 
 <script setup>
-import { projects } from "~~/models/Content";
+import { projects } from "~~/models/Content"
 
 definePageMeta({
   title: "Projects",
   description: "skepfusky projects",
-});
+})
 </script>
 
 <style scoped>

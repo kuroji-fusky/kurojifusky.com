@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import { socials } from "~~/models/Content";
+import { socials } from "~~/models/Content"
 </script>
 
 <style lang="scss" scoped>

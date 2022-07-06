@@ -18,10 +18,10 @@
 </template>
 
 <script setup lang="ts">
-import { portfolio } from "~~/models/Content";
+import { portfolio } from "~~/models/Content"
 
 function tba() {
-  alert("This website is still being worked on lol");
+  alert("This website is still being worked on lol")
 }
 </script>
 

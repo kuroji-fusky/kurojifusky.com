@@ -22,11 +22,11 @@
 
 <script setup lang="ts">
 defineProps<{
-  title: string;
-  description: string;
-  icon: string[];
-  githubLink: string;
-}>();
+  title: string
+  description: string
+  icon: string[]
+  githubLink: string
+}>()
 </script>
 
 <style lang="scss" scoped>

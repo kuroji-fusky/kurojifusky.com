@@ -1,9 +1,9 @@
-import { library, config } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library, config } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import {
   faChevronLeft,
   faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons"
 import {
   faGithub,
   faYoutube,
@@ -13,9 +13,9 @@ import {
   faSoundcloud,
   faSpotify,
   faDiscord,
-} from "@fortawesome/free-brands-svg-icons";
+} from "@fortawesome/free-brands-svg-icons"
 
-config.autoAddCss = false;
+config.autoAddCss = false
 library.add(
   faChevronLeft,
   faChevronRight,
@@ -27,8 +27,8 @@ library.add(
   faSoundcloud,
   faSpotify,
   faDiscord
-);
+)
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.component("font-awesome-icon", FontAwesomeIcon, {});
-});
+  nuxtApp.vueApp.component("font-awesome-icon", FontAwesomeIcon, {})
+})

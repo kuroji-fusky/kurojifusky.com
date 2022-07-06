@@ -5,17 +5,17 @@
 </template>
 
 <script setup>
-const route = useRoute();
+const route = useRoute()
 
-let title = "skepfusky official website";
+let title = "skepfusky official website"
 let desc =
-  "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines";
-let img = "TBA";
-let siteUrl = `https://skepfusky.xyz${route.path}`;
+  "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines"
+let img = "TBA"
+let siteUrl = `https://skepfusky.xyz${route.path}`
 
 definePageMeta({
   layout: "default",
-});
+})
 
 useHead({
   title: route.path === "/" ? title : `${route.meta.title} - skepfusky`,
@@ -52,5 +52,5 @@ useHead({
     { name: "twitter:url", content: siteUrl },
   ],
   link: [{ rel: "canonical", href: siteUrl }],
-});
+})
 </script>

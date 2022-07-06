@@ -8,10 +8,6 @@ module.exports = {
     "layouts/**/*.{vue,js,ts}",
     "composables/**/*.{js,ts}",
   ],
-  experimental: {
-    // Remove unused Tailwind variables
-    // optimizeUniversalDefaults: true,
-  },
   theme: {
     fontFamily: {
       "inter": ["Inter", ...defaultTheme.fontFamily.sans],

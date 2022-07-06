@@ -17,7 +17,7 @@
     @apply font-open-sans leading-7 text-[#f5f5f5] bg-neutral-900 overflow-x-hidden;
   }
 
-  $font-size: [ 1 "5xl", 2 "4xl", 3 "3xl", 4 "2xl", 5 "xl", 6 "lg"];
+  $font-size: [ 1 "5xl", 2 "4xl", 3 "3xl", 4 "2xl", 5 "xl", 6 "lg" ];
 
   @each $i, $s in $font-size {
     h#{$i} {

@@ -201,7 +201,7 @@
 definePageMeta({
   title: "Fursona",
   description: "A fursona for the fursona",
-});
+})
 </script>
 
 <style lang="scss" scoped>
