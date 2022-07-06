@@ -2,7 +2,7 @@
   <footer>
     <div id="wrapper">
       <ul id="social-row">
-        <li v-for="a in socials" :key="a.icon" class="site-link">
+        <li v-for="a in socials" :key="a.icon" class="site-link-reverse">
           <a :href="a.link" target="_blank">
             <font-awesome-icon :icon="['fab', `fa-${a.icon}`]" />
           </a>

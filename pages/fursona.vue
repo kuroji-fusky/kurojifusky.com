@@ -26,18 +26,19 @@
       </figure>
     </div>
     <article class="temp-static-content">
-      <div class="text-[1.25rem] pb-3">
+      <div class="text-[1.25rem] pb-3 leading-relaxed">
         <p class="pb-3">
           <strong>Skep</strong> is a blue and yellow fox-husky hybrid or fusky;
-          and was originally a husky. Propped with thick black glasses and wearing
-          a purple t-shirt with white outlines, and completely pantless! (lmao)
+          and was originally a husky. Wearing thick black glasses and a purple
+          t-shirt with white outlines, and completely pantless! (lmao)
         </p>
         <p>
           Mixing with a typical traits both of a fox and a husky, he's a
-          wholesome, outgoing, yet weird personality and he easily gets soft when
-          he's immediately flattered and starts blushing intensely (lol)
+          wholesome, outgoing, yet weird personality and he easily gets soft
+          when he's immediately flattered and starts blushing intensely (lol)
         </p>
       </div>
+      <hr />
       <h2>History and background</h2>
       <p>
         My first attempt at making a fursona was around mid-2019 when I was
@@ -68,25 +69,26 @@
       </p>
       <div id="figure-container">
         <figure>
+          <img src="/static/fursonas/01.jpg" />
+          <figcaption>Crude mspaint headshot drawn in 2020</figcaption>
+        </figure>
+      </div>
+      <div id="figure-container">
+        <figure>
           <img src="/static/fursonas/skep-ref-2020.png" style="width: 520px" />
           <figcaption>
-            Initial design in 2020, inspired from the colors from
+            Initial design in 2020, inspired from the colors from BTS' studio
+            album
             <em>Map of the Soul: 7</em>
             <br />
             Ref sheet by
             <NuxtLink
-              to="https://www.furaffinity.net/view/32456028/"
+              href="https://www.furaffinity.net/view/32456028/"
               class="text-sona-borahae-100 underline"
               >KuteKittyKat</NuxtLink
             >
             on FurAffinity
           </figcaption>
-        </figure>
-      </div>
-      <div id="figure-container">
-        <figure>
-          <img src="/static/fursonas/01.jpg" />
-          <figcaption>Crude mspaint headshot drawn in 2020</figcaption>
         </figure>
       </div>
       <p>
@@ -139,26 +141,28 @@
         Then I brought back the name "skep" for its simplicity and kept the name
         "Kokoro Husky" as a stage/artist name instead. Although, there is a
         popular Minecraft YouTuber with the same name
-        <em>(*cough* *cough*, Skeppy)</em> and I would 100% deny any
-        associations with him whatsoever.
+        <em>(*cough* *cough*, Skeppy)</em> and
+        <span class="underline">
+          I would 100% deny any associations with him whatsoever.
+        </span>
       </p>
       <h3>Why a husky? Why a fox?</h3>
       <p>
-        I was initially a husky until when I'm talking to a friend of mine
-        talking about the usual furry stuff and immediately had an idea to
+        My fursona was initially a husky until when I'm talking to a friend of
+        mine talking about the usual furry stuff and immediately had an idea to
         become a fox-husky hybrid; since I equally had a fascination with both
         foxes and huskies with both their traits after looking at some
         interesting facts online.
       </p>
       <p>
         During my childhood, I grew up watching various shows and movies I've
-        grown up, most notably The Fox And The Hound 2, the Balto trilogy, Bolt,
-        101 Dalmatians, and others. (Most of them are Disney movies; unrelated,
-        but I used to watch a lot of <em>Care Bears</em> if you're that old lol)
-        But I think that Bolt and Balto are what influenced it, well sort of...
-        mainly since I like its pure appearance, courageous, and charismatic
-        qualities are what makes me like them the most initially. Including
-        foxes as well!
+        grown up, most notably <em>The Fox And The Hound 2</em>, the
+        <em>Balto</em> trilogy, <em>Bolt</em>, <em>101 Dalmatians</em>, and
+        others. (Most of them are Disney movies; unrelated, but I used to watch
+        a lot of <em>Care Bears</em> if you're that old lol) But I think that
+        Bolt and Balto are what influenced it, well sort of... mainly since I
+        like its pure appearance, courageous, and charismatic qualities are what
+        makes me like them the most initially. Including foxes as well!
       </p>
       <h3>Some fanarts lol</h3>
       <div id="figure-container">
@@ -197,13 +201,19 @@
 definePageMeta({
   title: "Fursona",
   description: "A fursona for the fursona",
-})
+});
 </script>
 
 <style lang="scss" scoped>
 #hero-fursona {
-  --size-edge: 16rem;
-  --size-mid: 22rem;
+  --size-edge: 14rem;
+  --size-mid: 20rem;
+
+  @media only screen and (min-width: 1024px) {
+    --size-edge: 16rem;
+    --size-mid: 22rem;
+  }
+
   @apply relative flex justify-center items-center py-12 w-full z-1;
 
   * {
@@ -239,6 +249,10 @@ definePageMeta({
     &:first-child,
     &:last-child {
       @apply opacity-30 translate-y-6;
+
+      @media only screen and (max-width: 800px) {
+        @apply opacity-0 #{!important};
+      }
     }
 
     figcaption {
@@ -281,10 +295,10 @@ h3 {
 }
 
 #figure-container {
-  @apply p-2 flex justify-center gap-x-4;
+  @apply p-2 flex justify-center gap-x-4 flex-col md:flex-row;
 
   figure {
-    @apply flex flex-col items-center gap-y-2;
+    @apply flex flex-col items-center gap-2;
 
     img {
       @apply w-[15rem] rounded-md;
@@ -297,7 +311,8 @@ figcaption {
 }
 
 .static-block {
-  @apply pl-5 py-3 italic relative text-[105%] rounded-md bg-sona-borahaealt-700 bg-opacity-20 text-left;
+  @apply pl-5 py-3 my-3 italic relative text-[105%] rounded-md bg-sona-borahaealt-700 bg-opacity-20 text-left;
+
   &::before {
     content: "";
     @apply absolute top-0 left-0 h-full w-1 rounded-tl-md rounded-bl-md bg-sona-borahaealt-600;

@@ -1,3 +1,5 @@
+import { ProjectArrayProps } from "./Interfaces"
+
 export const socials = [
   { icon: "youtube", link: "https://youtube.com/c/skepfusky97" },
   { icon: "twitter", link: "https://twitter.com/skepfuskyjs" },
@@ -12,7 +14,7 @@ export const socials = [
     link: "https://music.apple.com/us/artist/kokoro-husky/1521326000",
   },
   { icon: "soundcloud", link: "https://soundcloud.com/kokoro-husky-mixtapes" },
-];
+]
 
 export const portfolio = [
   {
@@ -51,64 +53,76 @@ export const portfolio = [
     title: "About Me",
     description: "More about me, my resume, and some le epic moments",
   },
-];
+]
 
-export const projects = [
+export const projects: ProjectArrayProps[] = [
   {
     title: "Fren Time Tracker",
     description:
       "Track your friends' time if you live from the other side of the planet",
-    techStack: ["python"],
+    techStack: ["python-plain"],
     githubRepo: "skepfusky/fren-time-tracker",
     // websiteUrl: "",
   },
   {
     title: "Scammerino",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["vue", "electron", "vite"],
+    techStack: ["vuejs-plain", "electron-original"],
     githubRepo: "skepfusky/scammerino",
     // websiteUrl: "",
   },
   {
     title: "Paco Drawing Stats",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nextjs", "sass", "tailwindcss", "python", "fastapi"],
+    techStack: [
+      "nextjs-plain",
+      "sass-plain",
+      "tailwindcss-plain",
+      "python-plain",
+      "fastapi-plain",
+    ],
     githubRepo: "skepfusky/paco-drawing-stats",
     // websiteUrl: "",
   },
   {
     title: "The Crimson Paw",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["python"],
+    techStack: ["python-plain"],
     githubRepo: "skepfusky/The-Crimson-Paw",
     // websiteUrl: "",
   },
   {
     title: "Tungsten",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nuxtjs", "tailwindcss", "sass"],
+    techStack: ["nuxtjs-plain", "tailwindcss-plain", "sass-plain"],
     githubRepo: "skepfusky/tungsten",
     // websiteUrl: "",
   },
   {
     title: "Majira VS Code Theme",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["vscode"],
+    techStack: ["vscode-plain"],
     githubRepo: "skepfusky/majira-vscode-theme",
     // websiteUrl: "",
   },
   {
     title: "MyFursona",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nextjs", "sass", "fastify"],
+    techStack: ["nextjs-plain", "sass-plain", "fastify-plain"],
     githubRepo: "MyFursona-Projects/MyFursona",
     // websiteUrl: "",
   },
   {
     title: "Searchpets",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nextjs", "sass", "tailwindcss", "python", "fastapi"],
+    techStack: [
+      "nextjs-plain",
+      "sass-plain",
+      "tailwindcss-plain",
+      "python-plain",
+      "fastapi-plain",
+    ],
     githubRepo: "OpenFurs/searchpets",
     // websiteUrl: "",
   },
-];
+]

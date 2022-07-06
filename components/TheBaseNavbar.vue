@@ -12,7 +12,7 @@
             <NuxtLink to="/projects">Projects</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="#">Tools</NuxtLink>
+            <NuxtLink to="#">Other works</NuxtLink>
           </li>
           <li>
             <NuxtLink to="#">About</NuxtLink>
@@ -57,7 +57,7 @@ nav > ul {
   }
 
   a {
-    @apply px-3 py-2 transition-all duration-200 hover:bg-neutral-400 rounded-md;
+    @apply block px-3 py-1 transition-all duration-200 hover:bg-neutral-400 rounded-md;
   }
 }
 </style>
