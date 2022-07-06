@@ -8,6 +8,9 @@
         :title="proj.title"
         :description="proj.description"
         :icon="proj.techStack"
+        :githubRepo="proj.githubRepo"
+        :websiteUrl="proj.websiteUrl"
+        :image="proj.img"
       />
     </div>
   </main>

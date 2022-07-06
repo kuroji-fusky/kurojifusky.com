@@ -60,14 +60,14 @@ export const projects: ProjectArrayProps[] = [
     title: "Fren Time Tracker",
     description:
       "Track your friends' time if you live from the other side of the planet",
-    techStack: ["python-plain"],
+    techStack: ["nextjs-plain", "typescript-plain", "electron-original"],
     githubRepo: "skepfusky/fren-time-tracker",
     // websiteUrl: "",
   },
   {
     title: "Scammerino",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["vuejs-plain", "electron-original"],
+    techStack: ["vuejs-plain", "typescript-plain", "electron-original"],
     githubRepo: "skepfusky/scammerino",
     // websiteUrl: "",
   },
@@ -77,6 +77,7 @@ export const projects: ProjectArrayProps[] = [
     techStack: [
       "nextjs-plain",
       "sass-plain",
+      "typescript-plain",
       "tailwindcss-plain",
       "python-plain",
       "fastapi-plain",
@@ -94,7 +95,12 @@ export const projects: ProjectArrayProps[] = [
   {
     title: "Tungsten",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nuxtjs-plain", "tailwindcss-plain", "sass-plain"],
+    techStack: [
+      "nuxtjs-plain",
+      "typescript-plain",
+      "tailwindcss-plain",
+      "sass-plain",
+    ],
     githubRepo: "skepfusky/tungsten",
     // websiteUrl: "",
   },
@@ -108,21 +114,22 @@ export const projects: ProjectArrayProps[] = [
   {
     title: "MyFursona",
     description: "A bot that automatically sends you messages to scam you",
-    techStack: ["nextjs-plain", "sass-plain", "fastify-plain"],
+    techStack: ["nextjs-plain", "sass-plain"],
     githubRepo: "MyFursona-Projects/MyFursona",
-    // websiteUrl: "",
+    websiteUrl: "https://myfursona.art",
   },
   {
     title: "Searchpets",
     description: "A bot that automatically sends you messages to scam you",
     techStack: [
       "nextjs-plain",
+      "typescript-plain",
       "sass-plain",
       "tailwindcss-plain",
       "python-plain",
       "fastapi-plain",
     ],
     githubRepo: "OpenFurs/searchpets",
-    // websiteUrl: "",
+    websiteUrl: "https://searchpets.xyz",
   },
 ]
