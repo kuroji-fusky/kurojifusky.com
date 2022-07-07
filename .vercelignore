@@ -1,0 +1,9 @@
+.github
+.vscode
+.idea
+*.py
+.stylelintrc
+.prettierrc
+.gitattributes
+.editorconfig
+skepfusky-cms/*
