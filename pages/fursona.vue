@@ -12,7 +12,17 @@
           JAKEmegaSNAKE
         </figcaption>
       </figure>
-      <img src="/static/fursonas/08.png" alt="skepfusky" />
+      <figure id="art-credit-root">
+        <img
+          src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
+          alt="skepfusky drawn by catastrophe#6282 on Discord"
+        />
+        <figcaption>
+          Drawn by
+          <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
+          catastrophe#6282
+        </figcaption>
+      </figure>
       <figure id="art-credit">
         <img
           src="/static/fursonas/07.png"
@@ -164,22 +174,18 @@
         like its pure appearance, courageous, and charismatic qualities are what
         makes me like them the most initially. Including foxes as well!
       </p>
-      <h3>Some fanarts lol</h3>
+      <h3>Artworks from commissions and stuff lol</h3>
       <div id="figure-container">
         <figure>
-          <img src="/static/fursonas/JakeJune.png" style="width: 15rem" />
+          <img
+            src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
+            alt="skepfusky drawn by catastrophe#6282 on Discord"
+            style="width: 14rem"
+          />
           <figcaption>
-            <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
+            <font-awesome-icon :icon="['fab', 'discord']" /> catastrophe#6282
           </figcaption>
         </figure>
-        <figure>
-          <img src="/static/fursonas/ZAMBOY_orig.png" style="width: 23.8rem" />
-          <figcaption>
-            <font-awesome-icon :icon="['fab', 'discord']" /> ZAMBOYYT
-          </figcaption>
-        </figure>
-      </div>
-      <div id="figure-container">
         <figure>
           <img src="/static/fursonas/JAKEmegaSNAKE.png" />
           <figcaption>
@@ -188,6 +194,20 @@
         </figure>
         <figure>
           <img src="/static/fursonas/jake_2022.png" style="width: 26.8rem" />
+          <figcaption>
+            <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
+          </figcaption>
+        </figure>
+      </div>
+      <div id="figure-container">
+        <figure>
+          <img src="/static/fursonas/ZAMBOY_orig.png" style="width: 23.8rem" />
+          <figcaption>
+            <font-awesome-icon :icon="['fab', 'discord']" /> ZAMBOYYT
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="/static/fursonas/JakeJune.png" style="width: 15rem" />
           <figcaption>
             <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
           </figcaption>
@@ -221,7 +241,7 @@ definePageMeta({
   }
 
   &:hover {
-    img:nth-child(2) {
+    #art-credit-root {
       @apply scale-105;
     }
 
@@ -248,7 +268,7 @@ definePageMeta({
 
     &:first-child,
     &:last-child {
-      @apply opacity-30 translate-y-6;
+      @apply opacity-30 translate-y-6 flex-shrink-0;
 
       @media only screen and (max-width: 800px) {
         @apply opacity-0 #{!important};
@@ -257,6 +277,18 @@ definePageMeta({
 
     figcaption {
       @apply opacity-0 py-2 select-none text-[#f5f5f5];
+    }
+  }
+
+  #art-credit-root {
+    @apply z-5 flex-shrink-0;
+
+    img {
+      @apply w-[var(--size-mid)] h-[var(--size-mid)];
+    }
+
+    figcaption {
+      @apply text-[#f5f5f5] py-2 select-none;
     }
   }
 
@@ -298,7 +330,11 @@ h3 {
   @apply p-2 flex justify-center gap-x-4 flex-col md:flex-row;
 
   figure {
-    @apply flex flex-col items-center gap-2;
+    @apply flex flex-col items-center gap-2 mb-2;
+
+    &:last-child {
+      @apply mb-0;
+    }
 
     img {
       @apply w-[15rem] rounded-md;

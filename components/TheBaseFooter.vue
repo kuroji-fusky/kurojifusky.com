@@ -25,7 +25,7 @@
   </footer>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { socials } from "~~/models/Content"
 </script>
 
@@ -43,7 +43,7 @@ footer {
 }
 
 #wrapper {
-  @apply flex justify-between items-center py-7;
+  @apply flex justify-between items-center py-7 px-10;
 }
 
 #social-row {
