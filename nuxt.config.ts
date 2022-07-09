@@ -4,7 +4,6 @@ import { defineNuxtConfig } from "nuxt"
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxtjs/color-mode"],
   typescript: {
-    strict: true,
     shim: false,
   },
   css: [
@@ -29,12 +28,11 @@ export default defineNuxtConfig({
   },
   // @nuxtjs/tailwind config
   tailwindcss: {
-    exposeConfig: true,
+    // exposeConfig: true,
     viewer: false,
   },
   // @nuxtjs/color-mode config
   colorMode: {
     fallback: "dark",
-    storageKey: "sf-theme-mode",
   },
 })
