@@ -253,7 +253,7 @@ definePageMeta({
     }
 
     figcaption {
-      @apply delay-200  opacity-100 #{!important};
+      @apply delay-200 opacity-100 #{!important};
     }
   }
 
@@ -281,10 +281,10 @@ definePageMeta({
   }
 
   #art-credit-root {
-    @apply z-5 flex-shrink-0;
+    @apply z-5 flex-shrink-0 ;
 
     img {
-      @apply w-[var(--size-mid)] h-[var(--size-mid)];
+      @apply shadow-2xl shadow-black w-[var(--size-mid)] h-[var(--size-mid)];
     }
 
     figcaption {
@@ -297,10 +297,6 @@ definePageMeta({
 
     &:not(:nth-child(2)) {
       @apply w-[var(--size-edge)] h-[var(--size-edge)];
-    }
-
-    &:nth-child(2) {
-      @apply shadow-2xl shadow-black z-5;
     }
   }
 
