@@ -1,3 +1,10 @@
+"""
+A script that blurs images to achieve a specific effect
+similar to CSS filter and clip-path. The blurred images
+is accompanied by the background-size effect.
+
+Written by skepfusky
+"""
 # import argparse
 import os
 from PIL import Image, ImageFilter
