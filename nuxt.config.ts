@@ -2,7 +2,12 @@ import { defineNuxtConfig } from "nuxt"
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/strapi", "@nuxtjs/color-mode"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/strapi",
+    "@nuxtjs/color-mode",
+    "@nuxt/image-edge",
+  ],
   typescript: {
     shim: false,
   },
@@ -25,6 +30,21 @@ export default defineNuxtConfig({
   },
   webpack: {
     optimizeCSS: true,
+  },
+  // @nuxtjs/image-edge config
+  // !! May break shit
+  image: {
+    screen: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
+    domains: [],
+    strapi: {
+      url: "http://localhost:1337/uploads/",
+    }
   },
   // @nuxtjs/tailwind config
   tailwindcss: {
