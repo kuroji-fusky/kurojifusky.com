@@ -1,9 +1,9 @@
+strapi/*
+post-processing/*
 .github
 .vscode
-.idea
-*.py
+.idea*
 .stylelintrc
 .prettierrc
 .gitattributes
 .editorconfig
-skepfusky-cms/*
