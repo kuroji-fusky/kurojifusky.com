@@ -28,8 +28,8 @@ export default defineNuxtConfig({
   },
   // @nuxtjs/tailwind config
   tailwindcss: {
-    // exposeConfig: true,
     viewer: false,
+    configPath: "tailwind.config.ts",
   },
   // @nuxtjs/color-mode config
   colorMode: {

@@ -3,13 +3,10 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 export default <Config>{
   content: [
-    `components/**/*.{vue,js}`,
-    `layouts/**/*.vue`,
-    `pages/**/*.vue`,
-    `composables/**/*.{js,ts}`,
-    `plugins/**/*.{js,ts}`,
-    `App.{js,ts,vue}`,
-    `app.{js,ts,vue}`,
+    "components/**/*.{vue,js,ts}",
+    "pages/**/*.{vue,js,ts}",
+    "layouts/**/*.{vue,js,ts}",
+    "composables/**/*.{js,ts}",
   ],
   theme: {
     fontFamily: {
