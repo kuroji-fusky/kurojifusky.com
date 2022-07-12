@@ -14,6 +14,7 @@ The source code of my personal website written in Nuxt.js - stuff like blogs and
 - [`@nuxtjs/strapi`](https://github.com/nuxt-community/strapi-module)
 - [`@nuxtjs/tailwindcss`](https://github.com/nuxt-community/tailwindcss-module)
 - [`@nuxtjs/color-mode`](https://github.com/nuxt-community/color-mode-module)
+- [`@nuxt/image`](https://github.com/nuxt/image)
 
 ## Running the thing
 
