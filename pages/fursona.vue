@@ -1,40 +1,42 @@
 <template>
   <main class="content-wrapper">
-    <div id="hero-fursona">
-      <figure id="art-credit">
-        <img
-          src="/static/fursonas/JAKEmegaSNAKE.png"
-          alt="skepfusky, drawn by JAKEmegaSNAKE on Discord"
-        />
-        <figcaption>
-          Drawn by
-          <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
-          JAKEmegaSNAKE
-        </figcaption>
-      </figure>
-      <figure id="art-credit-root">
-        <img
-          src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
-          alt="skepfusky drawn by catastrophe#6282 on Discord"
-        />
-        <figcaption>
-          Drawn by
-          <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
-          catastrophe#6282
-        </figcaption>
-      </figure>
-      <figure id="art-credit">
-        <img
-          src="/static/fursonas/07.png"
-          alt="skepfusky, drawn by @skepfuskyjs"
-        />
-        <figcaption>
-          Drawn by
-          <font-awesome-icon class="px-0.5" :icon="['fab', 'twitter']" />
-          @skepfuskyjs
-        </figcaption>
-      </figure>
-    </div>
+    <client-only>
+      <div id="hero-fursona">
+        <figure id="art-credit">
+          <img
+            src="/static/fursonas/JAKEmegaSNAKE.png"
+            alt="skepfusky, drawn by JAKEmegaSNAKE on Discord"
+          />
+          <figcaption>
+            Drawn by
+            <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
+            JAKEmegaSNAKE
+          </figcaption>
+        </figure>
+        <figure id="art-credit-root">
+          <img
+            src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
+            alt="skepfusky drawn by catastrophe#6282 on Discord"
+          />
+          <figcaption>
+            Drawn by
+            <font-awesome-icon class="px-0.5" :icon="['fab', 'discord']" />
+            catastrophe#6282
+          </figcaption>
+        </figure>
+        <figure id="art-credit">
+          <img
+            src="/static/fursonas/07.png"
+            alt="skepfusky, drawn by @skepfuskyjs"
+          />
+          <figcaption>
+            Drawn by
+            <font-awesome-icon class="px-0.5" :icon="['fab', 'twitter']" />
+            @skepfuskyjs
+          </figcaption>
+        </figure>
+      </div>
+    </client-only>
     <article class="temp-static-content">
       <div class="text-[1.25rem] pb-3 leading-relaxed">
         <p class="pb-3">
