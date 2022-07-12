@@ -5,7 +5,7 @@ is accompanied by the background-size effect.
 
 Written by skepfusky
 """
-# import argparse
+import argparse
 import os
 from PIL import Image, ImageFilter
 
@@ -20,6 +20,10 @@ Argparse stuff
 # parser.add_argument("--blur-all", action="store_true", help="Blur all images in the folder")
 # args = parser.parse_args()
 
+# Goes to root directory
+root_path = os.path.dirname(os.getcwd())
+os.chdir(root_path)
+
 """
 Some functions to blur crap
 """
@@ -28,7 +32,7 @@ def blur_img(input_img, output_img):
     
     if "_blur" in input_img:
       print(f"[NOTICE] {input_img} is already blurred!")
-      return output_img
+      return
     
     else:
       if img.format == 'JPEG':
@@ -50,4 +54,4 @@ def blur_folder(input_folder):
         
     return input_folder
 
-blur_folder("public/static/fursonas/")
+blur_folder(f"{os.getcwd()}/public/static/fursonas/comms/")
