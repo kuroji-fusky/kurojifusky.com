@@ -6,7 +6,7 @@ Written by skepfusky
 """
 import argparse
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 # Parser stuff
 parser = argparse.ArgumentParser(
@@ -28,6 +28,5 @@ def gradient3d(width, height, start_list, stop_list):
 
 gradient_color = gradient3d(1280, 720, (47, 46, 48), (127, 31, 100))
 gradient_result = Image.fromarray(np.uint8(gradient_color))
-gradient_result.show()
 
 print("Gradient done lol")

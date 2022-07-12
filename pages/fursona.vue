@@ -4,7 +4,7 @@
       <div id="hero-fursona">
         <figure id="art-credit">
           <img
-            src="/static/fursonas/JAKEmegaSNAKE.png"
+            src="/static/fursonas/comms/JAKEmegaSNAKE.png"
             alt="skepfusky, drawn by JAKEmegaSNAKE on Discord"
           />
           <figcaption>
@@ -15,7 +15,7 @@
         </figure>
         <figure id="art-credit-root">
           <img
-            src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
+            src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
             alt="skepfusky drawn by catastrophe#6282 on Discord"
           />
           <figcaption>
@@ -181,7 +181,7 @@
         <div id="figure-container">
           <figure>
             <img
-              src="/static/fursonas/comm_for_davey_g2_catastrophe.jpg"
+              src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
               alt="skepfusky drawn by catastrophe#6282 on Discord"
               style="width: 14rem"
             />
@@ -190,13 +190,20 @@
             </figcaption>
           </figure>
           <figure>
-            <img src="/static/fursonas/JAKEmegaSNAKE.png" />
+            <img
+              src="/static/fursonas/comms/JAKEmegaSNAKE.png"
+              alt="Drawn by JAKEmegaSNAKE on Discord"
+            />
             <figcaption>
               <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
             </figcaption>
           </figure>
           <figure>
-            <img src="/static/fursonas/jake_2022.png" style="width: 26.8rem" />
+            <img
+              src="/static/fursonas/comms/jake_2022.png"
+              alt="Drawn by JAKEmegaSNAKE on Discord"
+              style="width: 26.8rem"
+            />
             <figcaption>
               <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
             </figcaption>
@@ -205,7 +212,8 @@
         <div id="figure-container">
           <figure>
             <img
-              src="/static/fursonas/ZAMBOY_orig.png"
+              src="/static/fursonas/comms/ZAMBOY_orig.png"
+              alt="Drawn by ZAMBOYYT on Discord"
               style="width: 23.8rem"
             />
             <figcaption>
@@ -213,7 +221,11 @@
             </figcaption>
           </figure>
           <figure>
-            <img src="/static/fursonas/JakeJune.png" style="width: 15rem" />
+            <img
+              src="/static/fursonas/comms/JakeJune.png"
+              alt="Drawn by JAKEmegaSNAKE on Discord"
+              style="width: 15rem"
+            />
             <figcaption>
               <font-awesome-icon :icon="['fab', 'discord']" /> JAKEmegaSNAKE
             </figcaption>

@@ -6,7 +6,6 @@ is accompanied by the background-size effect.
 Written by skepfusky
 """
 import os
-
 from PIL import Image, ImageFilter
 
 """
@@ -27,8 +26,6 @@ os.chdir(root_path)
 """
 Some functions to blur crap
 """
-
-
 def blur_img(input_img, output_img):
   img = Image.open(input_img)
   # if "_blur" in img:
