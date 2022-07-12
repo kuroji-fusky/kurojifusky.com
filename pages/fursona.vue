@@ -3,10 +3,9 @@
     <client-only>
       <div id="hero-fursona">
         <figure id="art-credit">
-          <nuxt-img
+          <img
             src="/static/fursonas/comms/JAKEmegaSNAKE.png"
             alt="skepfusky, drawn by JAKEmegaSNAKE on Discord"
-            format="webp"
           />
           <figcaption>
             Drawn by
@@ -15,10 +14,9 @@
           </figcaption>
         </figure>
         <figure id="art-credit-root">
-          <nuxt-img
+          <img
             src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
             alt="skepfusky drawn by catastrophe#6282 on Discord"
-            format="webp"
           />
           <figcaption>
             Drawn by
@@ -27,10 +25,9 @@
           </figcaption>
         </figure>
         <figure id="art-credit">
-          <nuxt-img
+          <img
             src="/static/fursonas/07.png"
             alt="skepfusky, drawn by @skepfuskyjs"
-            format="webp"
           />
           <figcaption>
             Drawn by
@@ -63,7 +60,7 @@
       </p>
       <div id="figure-container">
         <figure>
-          <nuxt-img format="webp" src="/static/fursonas/skep-early-2019.png" />
+          <img src="/static/fursonas/skep-early-2019.png" />
           <figcaption>
             A very and awful early head <br />design drawn from Photoshop in
             2019.
@@ -84,13 +81,13 @@
       </p>
       <div id="figure-container">
         <figure>
-          <nuxt-img format="webp" src="/static/fursonas/01.jpg"  />
+          <img src="/static/fursonas/01.jpg" />
           <figcaption>Crude mspaint headshot drawn in 2020</figcaption>
         </figure>
       </div>
       <div id="figure-container">
         <figure>
-          <nuxt-img format="webp" src="/static/fursonas/skep-ref-2020.png" style="width: 520px" />
+          <img src="/static/fursonas/skep-ref-2020.png" style="width: 520px" />
           <figcaption>
             Initial design in 2020, inspired from the colors from BTS' studio
             album
@@ -121,7 +118,7 @@
       </p>
       <div id="figure-container">
         <figure>
-          <nuxt-img format="webp" src="/static/fursonas/skep-ref-2022.png" style="width: 520px" />
+          <img src="/static/fursonas/skep-ref-2022.png" style="width: 520px" />
           <figcaption>5th and final revision with yellow-ish eyes</figcaption>
         </figure>
       </div>
@@ -183,8 +180,7 @@
       <client-only>
         <div id="figure-container">
           <figure>
-            <nuxt-img
-              format="webp"
+            <img
               src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
               alt="skepfusky drawn by catastrophe#6282 on Discord"
               style="width: 14rem"
@@ -194,8 +190,7 @@
             </figcaption>
           </figure>
           <figure>
-            <nuxt-img
-              format="webp"
+            <img
               src="/static/fursonas/comms/JAKEmegaSNAKE.png"
               alt="Drawn by JAKEmegaSNAKE on Discord"
             />
@@ -204,8 +199,7 @@
             </figcaption>
           </figure>
           <figure>
-            <nuxt-img
-              format="webp"
+            <img
               src="/static/fursonas/comms/jake_2022.png"
               alt="Drawn by JAKEmegaSNAKE on Discord"
               style="width: 26.8rem"
@@ -217,8 +211,7 @@
         </div>
         <div id="figure-container">
           <figure>
-            <nuxt-img
-              format="webp"
+            <img
               src="/static/fursonas/comms/ZAMBOY_orig.png"
               alt="Drawn by ZAMBOYYT on Discord"
               style="width: 23.8rem"
@@ -228,8 +221,7 @@
             </figcaption>
           </figure>
           <figure>
-            <nuxt-img
-              format="webp"
+            <img
               src="/static/fursonas/comms/JakeJune.png"
               alt="Drawn by JAKEmegaSNAKE on Discord"
               style="width: 15rem"

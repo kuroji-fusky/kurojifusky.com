@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/strapi",
     "@nuxtjs/color-mode",
-    "@nuxt/image-edge",
+    // "@nuxt/image-edge",
   ],
   typescript: {
     shim: false,
