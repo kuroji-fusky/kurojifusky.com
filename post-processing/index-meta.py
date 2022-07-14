@@ -8,14 +8,15 @@ import os
 import numpy as np
 import textwrap
 from datetime import date
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from random import choice as rnd
-from PIL import Image, ImageDraw, ImageFont
+
+root_path = os.path.dirname(os.getcwd())
+os.chdir(root_path)
 
 BANNER_WIDTH, BANNER_HEIGHT = (1280, 630)
 
-"""
-Generate gradient
-"""
+## Generate gradient
 def gradient2d(start, stop, width, height):
   return np.tile(np.linspace(start, stop, height), (width, 1)).T
 
@@ -30,15 +31,13 @@ def gradient3d(width, height, start_list, stop_list):
 banner_gradient = gradient3d(BANNER_WIDTH, BANNER_HEIGHT, (47, 46, 48), (32, 31, 30))
 banner_result = Image.fromarray(np.uint8(banner_gradient))
 
-"""
-Take the generated gradient, append text and align it to the center
-""" 
+## Take the generated gradient, append text and align it to the center
 header_text = "skepfusky"
 banner_text = ImageDraw.Draw(banner_result)
-font_heading = ImageFont.truetype("fonts/Inter-ExtraBold.ttf", 55)
-font_sub = ImageFont.truetype("fonts/Inter-Medium.ttf", 19)
+font_heading = ImageFont.truetype("post-processing/fonts/Inter-ExtraBold.ttf", 55)
+font_sub = ImageFont.truetype("post-processing/fonts/Inter-Medium.ttf", 19)
 
-suffixes = [" broke ass", " a lazy", ""]
+suffixes = [" broke ass", " lazy", ""]
 furry_stuff = ["floofy", "fox-husky", "soft boi"]
 
 def age(born):
@@ -48,7 +47,7 @@ def age(born):
 age = age(date(2002, 3, 15))
 
 sub_text = f"Hi! I'm a {age}-year-old {rnd(furry_stuff)} hobbyist as a{rnd(suffixes)} programmer," \
-           " filmmaker, indie musician!"
+           " video editor, filmmaker, indie musician!"
 
 sub_text_break = textwrap.wrap(sub_text, width=69)
 
@@ -63,13 +62,18 @@ for line in sub_text_break:
                    anchor="mt")
   y_text += height
 
-# Show that nice image baby
-banner_result.show()
+## Add the cutie to the banner
+avatar_size = (300,300)
 
-# Goes to root directory
-root_path = os.path.dirname(os.getcwd())
-os.chdir(root_path)
-# print(root_path)
+banner_avatar = Image.open("public/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg").resize(avatar_size)
 
-# Saves the image
-# banner_result.save("public/static/meta/banner.png", "PNG")
+avatar_mask = Image.new("L", avatar_size, 0)
+avatar_draw = ImageDraw.Draw(avatar_mask)
+avatar_draw.ellipse((0, 0, (avatar_size[0] - 3), (avatar_size[1] - 3)), fill=255)
+
+banner_result.paste(banner_avatar, (int(BANNER_WIDTH / 2.6), 75), mask=avatar_mask)
+
+## Save and print the final output
+banner_result.save("public/static/meta/banner.png", "PNG", quality=90)
+print("[SUCCESS] Banner saved!")
+print(f"[RND OUTPUT] \"{sub_text}\"")
