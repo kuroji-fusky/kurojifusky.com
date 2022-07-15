@@ -5,13 +5,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue"
+
 const route = useRoute()
 
-let title = "skepfusky official website"
-let desc =
+let title = ref("skepfusky official website")
+let desc = ref(
   "Hi! I'm skepfusky (or Kokoro Husky), I'm a 20-year-old self-employed and self-taught hobbyist from the Philippines"
-let img = "TBA"
-let siteUrl = `https://skepfusky.xyz${route.path}`
+)
+let img = ref("TBA")
+let siteUrl = ref(`https://skepfusky.xyz${route.path}`)
 
 definePageMeta({
   layout: "default",

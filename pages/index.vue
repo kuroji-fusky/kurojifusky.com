@@ -1,7 +1,7 @@
 <template>
   <main>
     <HeroHeader />
-    <HeroPortfolio />
+    <!-- <HeroPortfolio /> -->
     <!-- <HeroProjects /> -->
   </main>
 </template>

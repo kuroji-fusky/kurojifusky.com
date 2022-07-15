@@ -1,11 +1,11 @@
 <template>
   <li>
-    <NuxtLink v-if="extLink" :href="extLink">
+    <a v-if="extLink" :href="extLink">
       {{ title }}
-    </NuxtLink>
-    <NuxtLink v-else :to="pageLink">
+    </a>
+    <a v-else :href="pageLink">
       {{ title }}
-    </NuxtLink>
+    </a>
   </li>
 </template>
 

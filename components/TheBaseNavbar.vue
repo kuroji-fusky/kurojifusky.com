@@ -1,15 +1,15 @@
 <template>
   <header>
     <div id="wrapper">
-      <NuxtLink to="/">
+      <a href="/">
         <span id="logo">
           <img src="" alt="skepfusky" />
         </span>
-      </NuxtLink>
+      </a>
       <nav id="nav-header">
         <ul>
           <li>
-            <NuxtLink to="/projects">Projects</NuxtLink>
+            <a href="/projects">Projects</a>
             <DropdownContainer class="translate-x-[6rem]">
               <DropdownList heading="Personal">
                 <DropdownItem
@@ -27,7 +27,7 @@
             </DropdownContainer>
           </li>
           <li>
-            <NuxtLink to="#">Other works</NuxtLink>
+            <a href="#">Other works</a>
             <DropdownContainer>
               <DropdownList>
                 <DropdownItem page-link="/discography" title="Discography" />
@@ -36,10 +36,10 @@
             </DropdownContainer>
           </li>
           <li>
-            <NuxtLink to="/blog">Blog</NuxtLink>
+            <a href="/blog">Blog</a>
           </li>
           <li>
-            <NuxtLink to="#">About</NuxtLink>
+            <a href="#">About</a>
             <DropdownContainer class="translate-x-4">
               <DropdownList>
                 <DropdownItem page-link="/fursona" title="Fursona" />
@@ -64,6 +64,12 @@ const personalCrap = [
 </script>
 
 <style lang="scss" scoped>
+header {
+  @apply relative before:content-[""] before:absolute before:bottom-0 before:left-0 before:right-0 before:h-0.5 before:bg-gradient-to-r from-sona-borahae-600 to-sona-royalblue-500 z-mosttop;
+  
+  background-color: theme("colors.neutral.900");
+}
+
 #wrapper {
   @apply flex justify-between items-center select-none px-10;
 }
