@@ -57,6 +57,7 @@
     &-hoverable {
       @extend .card;
       @apply border-neutral-400;
+      
       &:hover {
         @apply translate-x-[0.33rem] translate-y-[0.33rem];
         box-shadow: 0 0 0 theme("colors.neutral.300");

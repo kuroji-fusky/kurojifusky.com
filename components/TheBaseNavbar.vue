@@ -1,3 +1,12 @@
+<script setup>
+const personalCrap = [
+  { title: "Fren Time Tracker", link: "/projects/fren-time-tracker" },
+  { title: "Scammerino", link: "/projects/scammerino" },
+  { title: "Paco Drawing Stats", link: "/projects/paco-drawing-stats" },
+  { title: "Crimson Paw", link: "/projects/the-crimson-paw" },
+]
+</script>
+
 <template>
   <header>
     <div id="wrapper">
@@ -53,15 +62,6 @@
     </div>
   </header>
 </template>
-
-<script setup>
-const personalCrap = [
-  { title: "Fren Time Tracker", link: "/projects/fren-time-tracker" },
-  { title: "Scammerino", link: "/projects/scammerino" },
-  { title: "Paco Drawing Stats", link: "/projects/paco-drawing-stats" },
-  { title: "Crimson Paw", link: "/projects/the-crimson-paw" },
-]
-</script>
 
 <style lang="scss" scoped>
 header {
