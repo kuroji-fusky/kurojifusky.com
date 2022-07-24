@@ -1,0 +1,23 @@
+.button {
+  @apply px-3 py-[0.28rem] rounded-md border-2 border-white transition-all duration-[320ms] select-none;
+
+  box-shadow: 2px 2px 0 #fff;
+
+  &:hover {
+    @apply translate-x-[2px] translate-y-[2px] border-transparent bg-white text-neutral-900;
+
+    box-shadow: 0 0 0 #fff;
+  }
+}
+
+.project-card {
+  @apply bg-neutral-400 py-3 px-3 rounded-md flex flex-col items-center text-center;
+
+  .button {
+    @apply text-sm;
+  }
+}
+
+.btn-wrapper {
+  @apply flex gap-x-2 mt-2 select-none;
+}

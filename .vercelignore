@@ -1,9 +1,0 @@
-strapi/*
-post-processing/*
-.github
-.vscode
-.idea*
-.stylelintrc
-.prettierrc
-.gitattributes
-.editorconfig

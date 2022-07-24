@@ -1,0 +1,52 @@
+.wrapper {
+  @apply grid place-items-center relative;
+  height: calc(100vh - 15.5rem);
+
+  @media only screen and (min-width: 768px) {
+    height: calc(100vh - 10.5rem);
+  }
+}
+
+.container {
+  @apply relative mx-5 text-center px-5 py-16 rounded-xl max-w-[40rem] flex flex-col gap-y-5 bg-neutral-900 select-none;
+
+  &::before {
+    @apply content-[""] absolute -top-4 -left-12 w-[80%] h-24 -z-4 blur-[205px] animate-pulse;
+
+    background: linear-gradient(
+      90deg,
+      theme("colors.sona-borahae.400"),
+      theme("colors.sona-royalblue.500"),
+      theme("colors.sona-borahae.400"),
+      theme("colors.sona-royalblue.500")
+    );
+
+    background-size: 300% 100%;
+    animation: gradientScroll 10s linear infinite;
+  }
+
+  &::after {
+    @apply content-[""] absolute -bottom-4 -right-16 w-[110%] h-24 bg-gradient-to-r from-red-500 to-orange-600 -z-4 blur-[120px] animate-[pulse_5s_infinite];
+  }
+
+  h1 {
+    @apply text-7xl;
+  }
+}
+
+@keyframes gradientScroll {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.back-to-home {
+  @apply flex justify-center;
+}
+
+.button {
+  @apply flex items-center gap-x-2;
+}
