@@ -5,7 +5,7 @@ import Projects from "@/components/home/Projects"
 
 export default function Home() {
   return (
-    <Container>
+    <Container noWrapper>
       <HeaderHero />
       {/* <Projects /> */}
       <OtherShit />

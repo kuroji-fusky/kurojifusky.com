@@ -1,5 +1,5 @@
 import ProjectItem from "../cards/ProjectItem"
-import styles from "@/styles/Hero.module.scss"
+import styles from "@/styles/Home.module.scss"
 import baseStyles from "@/styles/Base.module.scss"
 
 export default function Projects() {

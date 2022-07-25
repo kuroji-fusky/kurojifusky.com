@@ -1,5 +1,5 @@
 .wrapper {
-  @apply grid place-items-center relative;
+  @apply grid place-items-center relative overflow-x-hidden;
   height: calc(100vh - 15.5rem);
 
   @media only screen and (min-width: 768px) {

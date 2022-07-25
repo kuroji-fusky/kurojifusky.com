@@ -3,7 +3,8 @@
 
   box-shadow: 2px 2px 0 #fff;
 
-  &:hover {
+  &:hover,
+  &:focus {
     @apply translate-x-[2px] translate-y-[2px] border-transparent bg-white text-neutral-900;
 
     box-shadow: 0 0 0 #fff;

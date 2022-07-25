@@ -3,13 +3,10 @@ export interface ILayoutProps {
 }
 
 export interface IContainerProps extends ILayoutProps {
-  /**
-   * @description Container that uses title, description for its `<meta>` tags
-   * @see ILayoutProps
-   */
   title?: string
   image?: string
   description?: string
+  noWrapper?: true
 }
 
 export interface IProjectCardProps {

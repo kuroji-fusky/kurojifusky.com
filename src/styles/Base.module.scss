@@ -149,6 +149,6 @@ header.line {
   }
 
   .right {
-    @apply flex gap-x-7 gap-y-1 items-center flex-col md:flex-row;
+    @apply flex gap-x-7 gap-y-1 items-center flex-col md:flex-row text-sm;
   }
 }

@@ -8,12 +8,13 @@ import { NavbarContext } from "@/utils/Context"
 import { useContext } from "react"
 
 export default function ErrorPage() {
-  const { open, isOpen } = useContext(NavbarContext)
+  const { open } = useContext(NavbarContext)
 
   const isInteractive =
     open === true
       ? baseStyles["not-found-interactive-inactive"].toString()
       : baseStyles["not-found-interactive"].toString()
+
   return (
     <main className={`${styles.wrapper} ${isInteractive}`}>
       <article className={styles.container}>

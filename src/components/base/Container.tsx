@@ -1,23 +1,33 @@
-import Head from "next/head";
-import { IContainerProps } from "@/utils/Interface";
-import { useRouter } from "next/router";
+import Head from "next/head"
+import { IContainerProps } from "@/utils/Interface"
+import { useRouter } from "next/router"
+import baseStyles from "@/styles/Base.module.scss"
 
-export default function Container({ title, description, image, children }: IContainerProps) {
-  const router = useRouter();
-  
+export default function Container({
+  title,
+  description,
+  image,
+  children,
+  noWrapper
+}: IContainerProps) {
+  const router = useRouter()
+
   if (router.pathname === "/") {
-    title = "skepfusky";
-    description = "skepfusky's personal website";
+    title = "skepfusky"
+    description = "skepfusky's personal website"
   }
 
-  let url = `https://skepfusky.xyz${router.pathname}`;
+  let url = `https://skepfusky.xyz${router.pathname}`
 
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content="portfoilo, skepfusky, Kokoro Husky, projects" />
+        <meta
+          name="keywords"
+          content="portfoilo, skepfusky, Kokoro Husky, projects"
+        />
         <meta name="theme-color" content="#bb3eed" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
@@ -35,7 +45,11 @@ export default function Container({ title, description, image, children }: ICont
         <meta name="twitter:url" content={url} />
         <link rel="canonical" href={url} />
       </Head>
-      {children}
+      {noWrapper ? (
+        <>{children}</>
+        ) : (
+        <div className={baseStyles["content-wrapper"]}>{children}</div>
+      )}
     </>
   )
-};
+}
