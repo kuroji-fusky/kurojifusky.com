@@ -9,7 +9,7 @@ import {
   faSoundcloud
 } from "@fortawesome/free-brands-svg-icons"
 import Link from "next/link"
-import styles from "@/styles/Base.module.scss"
+import styles from "@/styles/Footer.module.scss"
 
 export default function Footer() {
   const socialIcons = [
@@ -33,7 +33,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.wrapper}>
-      <div className={styles["footer-wrapper"]}>
+      <div className={styles.container}>
         <div className={styles.left}>
           {socialIcons.map(({ icon, link }) => (
             <Link key={link} href={link} passHref>
@@ -50,7 +50,13 @@ export default function Footer() {
           <Link href="/contact">
             <a className="anchor">Contact</a>
           </Link>
-          <span>&copy; 2014-{new Date().getFullYear()} Fusky N Co., LLC</span>
+          <span>
+            &copy; 2014-{new Date().getFullYear()} Fusky N Co., LLC. Written in{" "}
+            <Link href="https://nextjs.org" passHref>
+              <a className="anchor">Next.js</a>
+            </Link>
+            !
+          </span>
         </div>
       </div>
     </footer>

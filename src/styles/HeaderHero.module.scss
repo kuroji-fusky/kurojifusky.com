@@ -1,0 +1,32 @@
+#hero {
+  // @apply h-screen;
+
+  .container {
+    @apply flex items-start justify-center p-6 text-center text-5xl md:text-6xl select-none;
+  }
+}
+
+.text {
+  @apply font-inter font-bold text-transparent h-[4.2rem];
+
+  background: linear-gradient(
+    90deg,
+    theme("colors.sona-borahae.600"),
+    theme("colors.sona-royalblue.500"),
+    theme("colors.sona-borahae.600"),
+    theme("colors.sona-royalblue.500")
+  );
+
+  background-size: 300% 100%;
+  animation: gradientScroll 10s linear infinite;
+  @apply bg-clip-text #{!important};
+}
+
+@keyframes gradientScroll {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

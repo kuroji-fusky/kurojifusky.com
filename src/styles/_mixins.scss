@@ -1,0 +1,7 @@
+@mixin contentWrapper() {
+  @apply mx-auto px-7 max-w-screen-2xl;
+
+  h1.section-heading {
+    @apply mt-4 mb-3;
+  }
+}

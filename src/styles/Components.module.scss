@@ -10,15 +10,3 @@
     box-shadow: 0 0 0 #fff;
   }
 }
-
-.project-card {
-  @apply bg-neutral-400 py-3 px-3 rounded-md flex flex-col items-center text-center;
-
-  .button {
-    @apply text-sm;
-  }
-}
-
-.btn-wrapper {
-  @apply flex gap-x-2 mt-2 select-none;
-}

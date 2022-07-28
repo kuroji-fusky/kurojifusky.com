@@ -3,9 +3,9 @@ import Link from "next/link"
 import { NavbarContext } from "@/utils/Context"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
-import styles from "@/styles/Base.module.scss"
+import styles from "@/styles/Navbar.module.scss"
 
-export default function Header() {
+export default function Navbar() {
   const { open, isOpen } = useContext(NavbarContext)
 
   const navCloset =

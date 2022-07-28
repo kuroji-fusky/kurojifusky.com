@@ -1,22 +1,12 @@
 import styles from "@/styles/NotFound.module.scss"
-import baseStyles from "@/styles/Base.module.scss"
 import componentStyles from "@/styles/Components.module.scss"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons"
-import { NavbarContext } from "@/utils/Context"
-import { useContext } from "react"
 
 export default function ErrorPage() {
-  const { open } = useContext(NavbarContext)
-
-  const isInteractive =
-    open === true
-      ? baseStyles["not-found-interactive-inactive"].toString()
-      : baseStyles["not-found-interactive"].toString()
-
   return (
-    <main className={`${styles.wrapper} ${isInteractive}`}>
+    <main className={styles.wrapper}>
       <article className={styles.container}>
         <h1>404</h1>
         <p>

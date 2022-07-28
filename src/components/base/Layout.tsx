@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import baseStyles from "@/styles/Base.module.scss"
-import Header from "./Header"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 import { ILayoutProps } from "@/utils/Interface"
 import { NavbarContext } from "@/utils/Context"
@@ -34,13 +33,10 @@ export default function Layout({ children }: ILayoutProps) {
     }
   }, [isOpen])
 
-  const isInteractive =
-    open !== true ? baseStyles[""] : baseStyles["popup-active"].toString()
-
   return (
     <NavbarContext.Provider value={{ open, isOpen }}>
-      <Header />
-      <div className={isInteractive}>{children}</div>
+      <Navbar />
+      {children}
       <Footer />
     </NavbarContext.Provider>
   )

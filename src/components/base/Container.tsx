@@ -1,7 +1,7 @@
 import Head from "next/head"
 import { IContainerProps } from "@/utils/Interface"
 import { useRouter } from "next/router"
-import baseStyles from "@/styles/Base.module.scss"
+import styles from "@/styles/Layout.module.scss"
 
 export default function Container({
   title,
@@ -46,9 +46,9 @@ export default function Container({
         <link rel="canonical" href={url} />
       </Head>
       {noWrapper ? (
-        <>{children}</>
+        <main role="main">{children}</main>
         ) : (
-        <div className={baseStyles["content-wrapper"]}>{children}</div>
+        <div className={styles.wrapper}>{children}</div>
       )}
     </>
   )

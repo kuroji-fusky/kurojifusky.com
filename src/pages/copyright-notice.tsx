@@ -1,5 +1,4 @@
 import Container from "@/components/base/Container"
-import baseStyles from "@/styles/Base.module.scss"
 
 export default function CopyrightNotice() {
   return (

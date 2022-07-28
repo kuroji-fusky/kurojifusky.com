@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { IProjectCardProps } from "@/utils/Interface"
 import Link from "next/link"
-import styles from "@/styles/Components.module.scss"
+import styles from "@/styles/Projects.module.scss"
 
 export default function ProjectItem({
   title = "Title",

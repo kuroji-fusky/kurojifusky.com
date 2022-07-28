@@ -18,9 +18,9 @@ export default class ShitApp extends Document {
   render() {
     return (
       <Html>
-        <link rel="apple-touch-icon" type="image/x-icon" href="/favicon.png" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
         <Head />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" type="image/x-icon" href="/favicon.ico" />
         <body>
           <Main />
           <NextScript />
