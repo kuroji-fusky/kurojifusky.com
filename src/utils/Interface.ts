@@ -15,4 +15,5 @@ export interface IProjectCardProps {
   image?: string
   link?: string
   repoLink?: string
+  onClick?: () => void
 }

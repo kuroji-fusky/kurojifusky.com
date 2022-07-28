@@ -25,8 +25,6 @@ export function OtherItem() {
               src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
               layout="fill"
               objectFit="cover"
-              width="100%"
-              height="100%"
               alt=""
               quality={82}
             />

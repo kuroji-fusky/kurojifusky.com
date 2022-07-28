@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 .wrapper {
-  @include contentWrapper();
+  @include contentWrapper("1280px");
 }
 
 // Card
