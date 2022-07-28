@@ -35,9 +35,7 @@ export default function Layout({ children }: ILayoutProps) {
   }, [isOpen])
 
   const isInteractive =
-    open === true
-      ? baseStyles["interactive-inactive"].toString()
-      : baseStyles["interactive"].toString()
+    open !== true ? baseStyles[""] : baseStyles["popup-active"].toString()
 
   return (
     <NavbarContext.Provider value={{ open, isOpen }}>

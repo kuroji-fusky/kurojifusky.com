@@ -1,5 +1,3 @@
-import { useContext } from "react"
-import { NavbarContext } from "@/utils/Context"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -14,13 +12,6 @@ import Link from "next/link"
 import styles from "@/styles/Base.module.scss"
 
 export default function Footer() {
-  const { open, isOpen } = useContext(NavbarContext)
-
-  const isInteractive =
-    open === true
-      ? styles["interactive-inactive"].toString()
-      : styles["interactive"].toString()
-
   const socialIcons = [
     { icon: faYoutube, link: "https://youtube.com/c/skepfusky97" },
     { icon: faTwitter, link: "https://twitter.com/skepfuskyjs" },
@@ -41,7 +32,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className={`${styles.wrapper} ${isInteractive}`}>
+    <footer className={styles.wrapper}>
       <div className={styles["footer-wrapper"]}>
         <div className={styles.left}>
           {socialIcons.map(({ icon, link }) => (

@@ -11,13 +11,8 @@
   @apply relative mx-auto max-w-screen-xl 2xl:max-w-screen-2xl px-8 flex justify-between items-center select-none;
 }
 
-// Specificity stuff
-.interactive {
-  @apply z-1 ;
-
-  &-inactive {
-    @apply -z-mosttop pointer-events-none #{!important};
-  }
+.popup-active {
+  @apply -z-mosttop pointer-events-none;
 }
 
 .not-found-interactive {
@@ -30,7 +25,7 @@
 
 // Header
 header.line {
-  @apply relative;
+  @apply relative z-3;
 
   &::before {
     @apply content-[""] absolute h-0.5 bottom-0 left-0 right-0 bg-gradient-to-r from-sona-borahae-500 to-sona-royalblue-400;
