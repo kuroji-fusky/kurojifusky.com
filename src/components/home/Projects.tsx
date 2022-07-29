@@ -7,7 +7,7 @@ export default function Projects() {
     <div className={styles.wrapper}>
       <h1 className={styles["section-heading"]}>Projects</h1>
       <div className="flex justify-center gap-x-6">
-        <div className="flex gap-3 py-5">
+        <div className="flex gap-3">
           <ProjectNibblet />
           <ProjectNibblet />
           <ProjectNibblet />
@@ -40,7 +40,7 @@ export default function Projects() {
 
 export function ProjectNibblet({ image = "", onClick }: IProjectCardProps) {
   return (
-    <div className="rounded-xl p-4 grid place-items-center h-min leading-3 border-2 border-white hover:-translate-y-1" onClick={onClick}>
+    <div className="rounded-xl p-[0.85rem] grid place-items-center h-min leading-3 border-2 border-white transition-transform duration-300 hover:-translate-y-1" onClick={onClick}>
       <Image
         width={48}
         height={48}
