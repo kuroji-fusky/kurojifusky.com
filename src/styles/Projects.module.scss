@@ -1,18 +1,26 @@
 @use "mixins" as *;
 
+#divider {
+  @apply border-t-2 border-neutral-300 pb-10;
+}
+
 .wrapper {
   @include contentWrapper("1280px");
 }
 
-// Card
-.project-card {
-  @apply bg-neutral-400 py-3 px-3 rounded-md flex flex-col items-center text-center;
+.container {
+  @apply grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 justify-center gap-6;
+}
 
-  .button {
-    @apply text-sm;
+.item {
+  composes: item from "./Others.module.scss";
+  @apply p-4 flex flex-col items-center text-center gap-y-3;
+
+  h2 {
+    @apply text-2xl;
   }
 }
 
-.btn-wrapper {
-  @apply flex gap-x-2 mt-2 select-none;
+.img-wrapper {
+  @apply relative rounded-xl overflow-hidden md:w-[120px] w-[90px] md:h-[120px] h-[90px];
 }

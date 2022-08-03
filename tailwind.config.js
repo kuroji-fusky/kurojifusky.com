@@ -135,6 +135,15 @@ module.exports = {
         md: "6px",
         full: "50%"
       },
+      animation: {
+        "gradient-scroll": "gradient-scroll-slow 12s linear infinite"
+      },
+      keyframes: {
+        "gradient-scroll-slow": {
+          "0%": { "background-position": "left" },
+          "100%": { "background-position": "right" },
+        }
+      },
     }
   },
   plugins: [],

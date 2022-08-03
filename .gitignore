@@ -35,3 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 public/static/meta/index.html
+
+skepfusky-cms

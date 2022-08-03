@@ -1,53 +1,48 @@
 import styles from "@/styles/Projects.module.scss"
 import { IProjectCardProps } from "@/utils/Interface"
 import Image from "next/image"
+import compStyles from "@/styles/Components.module.scss"
+import Link from "next/link"
+import { CringeProjects } from "@/utils/Contents"
 
 export default function Projects() {
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles["section-heading"]}>Projects</h1>
-      <div className="flex justify-center gap-x-6">
-        <div className="flex gap-3">
-          <ProjectNibblet />
-          <ProjectNibblet />
-          <ProjectNibblet />
-          <ProjectNibblet />
-          <ProjectNibblet />
-        </div>
-        <aside className="flex flex-col md:flex-row text-center md:text-left items-center gap-x-3 gap-y-1 p-5 border-2 border-white rounded-lg">
-          <div className="relative">
-            <Image
-              width={100}
-              height={100}
-              objectFit="cover"
-              alt=""
-              src="/static/projects/time.jpg"
+    <section id={styles.divider}>
+      <div className={styles.wrapper}>
+        <h1 className={styles["section-heading"]}>Projects</h1>
+        <div className={styles.container}>
+          {CringeProjects.map((projects) => (
+            <ProjectItem
+              key={projects.name}
+              title={projects.name}
+              description={projects.description}
+              image={projects.image}
+              repoLink={projects.repoLink}
             />
-          </div>
-          <div>
-            <h1>Title</h1>
-            <p>Description</p>
-            <div className={styles["btn-wrapper"]}>
-              <button>view project</button>
-              <button>visit</button>
-            </div>
-          </div>
-        </aside>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
-export function ProjectNibblet({ image = "", onClick }: IProjectCardProps) {
+export function ProjectItem({ title, description, image }: IProjectCardProps) {
   return (
-    <div className="rounded-xl p-[0.85rem] grid place-items-center h-min leading-3 border-2 border-white transition-transform duration-300 hover:-translate-y-1" onClick={onClick}>
-      <Image
-        width={48}
-        height={48}
-        objectFit="cover"
-        alt=""
-        src="/static/projects/mutahar-funny.jpg"
-      />
+    <div className={styles.item}>
+      <div className={styles["img-wrapper"]}>
+        <Image
+          width="100%"
+          height="100%"
+          objectFit="cover"
+          layout="fill"
+          alt=""
+          src={`/static/projects/${image}`}
+        />
+      </div>
+      <article>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </article>
     </div>
   )
 }

@@ -7,7 +7,7 @@
 }
 
 .text {
-  @apply font-inter font-bold text-transparent h-[4.2rem];
+  @apply font-inter font-bold text-transparent h-[4.2rem] animate-gradient-scroll;
 
   background: linear-gradient(
     90deg,
@@ -17,16 +17,6 @@
     theme("colors.sona-royalblue.500")
   );
 
+  @apply bg-clip-text;
   background-size: 300% 100%;
-  animation: gradientScroll 10s linear infinite;
-  @apply bg-clip-text #{!important};
-}
-
-@keyframes gradientScroll {
-  0% {
-    background-position: left;
-  }
-  100% {
-    background-position: right;
-  }
 }

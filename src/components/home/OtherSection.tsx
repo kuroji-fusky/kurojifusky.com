@@ -4,13 +4,15 @@ import Link from "next/link"
 
 export default function OtherSection() {
   return (
-    <section className={styles.wrapper}>
-      <h1 className={styles["section-heading"]}>Other stuff I do</h1>
-      <ul className={styles["grid-container"]}>
-        <OtherItem />
-        <OtherItem />
-        <OtherItem />
-      </ul>
+    <section id={styles.divider}>
+      <div className={styles.wrapper}>
+        <h1 className={styles["section-heading"]}>My Hobbies</h1>
+        <ul className={styles["grid-container"]}>
+          <OtherItem />
+          <OtherItem />
+          <OtherItem />
+        </ul>
+      </div>
     </section>
   )
 }
@@ -29,7 +31,7 @@ export function OtherItem() {
               quality={82}
             />
           </div>
-          <article>
+          <article className={styles.content}>
             <h2>Heading</h2>
             <p>Description</p>
           </article>

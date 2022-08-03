@@ -11,7 +11,7 @@
   @apply relative mx-5 text-center px-5 py-16 rounded-xl max-w-[40rem] lg:max-w-[52.5rem] flex flex-col gap-y-5 bg-neutral-900 bg-opacity-50 select-none;
 
   &::before {
-    @apply content-[""] absolute -top-4 -left-12 w-[80%] h-24 -z-4 blur-[205px] animate-pulse;
+    @apply content-[""] absolute -top-4 -left-12 w-[80%] h-24 -z-4 blur-[205px] animate-pulse animate-gradient-scroll;
 
     background: linear-gradient(
       90deg,
@@ -22,7 +22,6 @@
     );
 
     background-size: 300% 100%;
-    animation: gradientScroll 10s linear infinite;
   }
 
   &::after {

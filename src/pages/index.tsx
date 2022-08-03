@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <Container noWrapper>
       <HeaderHero />
-      <Projects />
       <OtherSection />
+      <Projects />
     </Container>
   )
 }

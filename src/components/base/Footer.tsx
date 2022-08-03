@@ -44,12 +44,17 @@ export default function Footer() {
           ))}
         </div>
         <div className={styles.right}>
-          <Link href="/copyright-notice">
-            <a className="anchor">Copyright</a>
-          </Link>
-          <Link href="/contact">
-            <a className="anchor">Contact</a>
-          </Link>
+          <div className={styles["link-row"]}>
+            <Link href="/status">
+              <a className="anchor">API Status</a>
+            </Link>
+            <Link href="/copyright-notice">
+              <a className="anchor">Copyright</a>
+            </Link>
+            <Link href="/contact">
+              <a className="anchor">Contact</a>
+            </Link>
+          </div>
           <span>
             &copy; 2014-{new Date().getFullYear()} Fusky N Co., LLC. Written in{" "}
             <Link href="https://nextjs.org" passHref>

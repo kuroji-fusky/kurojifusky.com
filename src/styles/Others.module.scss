@@ -1,5 +1,9 @@
 @use "mixins" as *;
 
+#divider {
+  @apply border-t-2 border-neutral-300 pb-10;
+}
+
 .wrapper {
   @include contentWrapper();
 }
@@ -20,7 +24,7 @@
   @apply flex flex-col bg-neutral-500 rounded-md overflow-hidden border-2 border-neutral-300 select-none;
   box-shadow: 4px 4px 0 theme("colors.neutral.300");
 
-  article {
+  article.content {
     @apply p-4 flex flex-col justify-center;
   }
 

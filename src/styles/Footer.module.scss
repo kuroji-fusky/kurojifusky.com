@@ -12,6 +12,10 @@
   }
 
   .right {
-    @apply flex gap-x-7 gap-y-1 items-center flex-col md:flex-row text-sm;
+    @apply flex gap-x-7 gap-y-1 justify-end lg:flex-row flex-col text-sm;
   }
+}
+
+.link-row {
+  @apply flex md:justify-end justify-center lg:gap-x-9 gap-x-5;
 }
