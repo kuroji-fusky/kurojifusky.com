@@ -6,7 +6,7 @@ import { faAngleLeft } from "@fortawesome/free-solid-svg-icons"
 
 export default function ErrorPage() {
   return (
-    <main className={styles.wrapper}>
+    <main className={styles.wrapper} role="main">
       <article className={styles.container}>
         <h1>404</h1>
         <p>

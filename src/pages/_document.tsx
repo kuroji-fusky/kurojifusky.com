@@ -17,7 +17,7 @@ export default class ShitApp extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head />
         <link
           rel="stylesheet"
@@ -25,6 +25,22 @@ export default class ShitApp extends Document {
         />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" type="image/x-icon" href="/favicon.ico" />
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.GA}', {
+              page_path: window.location.pathname,
+            });
+            `
+          }}
+        />
         <body>
           <Main />
           <NextScript />
