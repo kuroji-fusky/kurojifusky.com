@@ -1,13 +1,32 @@
+import Image from "next/image"
+import { Parallax, ParallaxProvider } from "react-scroll-parallax"
 import styles from "@/styles/HeaderHero.module.scss"
 
 export default function HeaderHero() {
   return (
-    <section id={styles.hero}>
-      <div className={styles.container}>
-        <span className={styles.side}>&lt;</span>
-        <span className={styles.text}>skepfusky</span>
-        <span className={styles.side}>&#47;&gt;</span>
-      </div>
-    </section>
+    <ParallaxProvider>
+      <section id={styles.hero}>
+        <div className={styles.fursona}>
+          <Parallax
+            speed={-50}
+            className={styles["fursona-wrapper"]}
+          >
+            <Image
+              src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
+              layout="fill"
+              objectFit="cover"
+              alt="skepfusky commission"
+              quality={69}
+            />
+          </Parallax>
+        </div>
+        <div className={styles.container}>
+          <span>&lt;</span>
+          <span className={styles.text}>skepfusky</span>
+          <span>&#47;&gt;</span>
+        </div>
+        <div>Some stuff here I suppose lol</div>
+      </section>
+    </ParallaxProvider>
   )
 }

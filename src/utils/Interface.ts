@@ -1,3 +1,8 @@
+export interface IEventProps {
+  action: string
+  params: any
+}
+
 export interface ILayoutProps {
   children: React.ReactNode
 }

@@ -136,7 +136,7 @@ module.exports = {
         full: "50%"
       },
       animation: {
-        "gradient-scroll": "gradient-scroll-slow 12s linear infinite"
+        "gradient-scroll": "gradient-scroll-slow 9s linear infinite"
       },
       keyframes: {
         "gradient-scroll-slow": {

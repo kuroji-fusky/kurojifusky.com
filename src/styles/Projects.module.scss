@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 #divider {
-  @apply border-t-2 border-neutral-300 pb-10;
+  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;
 }
 
 .wrapper {
@@ -9,7 +9,7 @@
 }
 
 .container {
-  @apply grid xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 justify-center gap-6;
+  @apply grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-6;
 }
 
 .item {

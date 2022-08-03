@@ -31,8 +31,6 @@ export function ProjectItem({ title, description, image }: IProjectCardProps) {
     <div className={styles.item}>
       <div className={styles["img-wrapper"]}>
         <Image
-          width="100%"
-          height="100%"
           objectFit="cover"
           layout="fill"
           alt=""

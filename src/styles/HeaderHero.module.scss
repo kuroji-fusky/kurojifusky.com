@@ -1,16 +1,24 @@
 #hero {
-  // @apply h-screen;
+  @apply h-screen flex flex-col items-center justify-center overflow-hidden;
 
   .container {
-    @apply flex items-start justify-center p-6 text-center text-5xl md:text-6xl select-none;
+    @apply flex items-center p-6 text-center text-5xl md:text-6xl select-none;
   }
 }
 
+.fursona {
+  @apply absolute inset-0 grid place-items-center -z-1 opacity-30;
+}
+
+.fursona-wrapper {
+  @apply relative lg:h-[40rem] lg:w-[40rem] md:h-[32rem] md:w-[32rem] h-[23rem] w-[23rem];
+}
+
 .text {
-  @apply font-inter font-bold text-transparent h-[4.2rem] animate-gradient-scroll;
+  @apply lg:text-[5rem] lg:h-[80px] h-[60px] inline-block md:translate-y-1 translate-y-3  overflow-y-clip font-inter font-bold text-transparent animate-gradient-scroll;
 
   background: linear-gradient(
-    90deg,
+  90deg,
     theme("colors.sona-borahae.600"),
     theme("colors.sona-royalblue.500"),
     theme("colors.sona-borahae.600"),
