@@ -14,6 +14,12 @@ export interface IContainerProps extends ILayoutProps {
   noWrapper?: true
 }
 
+export interface IOtherCardProps {
+  title: string
+  description: string
+  image: string
+}
+
 export interface IProjectCardProps {
   title?: string
   description?: string

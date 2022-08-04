@@ -44,7 +44,7 @@ export const CringeProjects = [
   },
   {
     name: "Foxington Vault",
-    description: "An solo project to archive a certain franchise",
+    description: "A solo project to archive a certain franchise",
     image: "crimson-paw-icon.png"
   }
 ]

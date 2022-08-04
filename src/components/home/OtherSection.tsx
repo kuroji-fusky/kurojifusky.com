@@ -1,4 +1,5 @@
 import styles from "@/styles/Others.module.scss"
+import { IOtherCardProps } from "@/utils/Interface"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -7,25 +8,39 @@ export default function OtherSection() {
     <section className={styles.divider}>
       <div className={styles.wrapper}>
         <h1 className={styles["section-heading"]}>Stuff I do</h1>
-        <p className={styles["section-heading"]}>I do extracuricular shit fam</p>
+        <p className={styles["section-heading"]}>
+          I do extracuricular shit fam
+        </p>
         <ul className={styles["grid-container"]}>
-          <OtherItem />
-          <OtherItem />
-          <OtherItem />
+          <OtherItem
+            title="Video editing"
+            description="lmao"
+            image="fursonas/01.jpg"
+          />
+          <OtherItem
+            title="Photography"
+            description="lmao"
+            image="fursonas/01.jpg"
+          />
+          <OtherItem
+            title="Dance lol"
+            description="lmao"
+            image="fursonas/01.jpg"
+          />
         </ul>
       </div>
     </section>
   )
 }
 
-export function OtherItem() {
+export function OtherItem({ title, description, image }: IOtherCardProps) {
   return (
     <li className={styles.item}>
       <Link href="#">
         <a>
           <div className={styles["img-wrapper"]}>
             <Image
-              src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
+              src={`/static/${image}`}
               layout="fill"
               objectFit="cover"
               alt=""
@@ -33,8 +48,8 @@ export function OtherItem() {
             />
           </div>
           <article className={styles.content}>
-            <h2>Heading</h2>
-            <p>Description</p>
+            <h2>{title}</h2>
+            <p>{description}</p>
           </article>
         </a>
       </Link>

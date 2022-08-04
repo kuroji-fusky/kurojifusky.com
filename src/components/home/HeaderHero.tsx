@@ -25,7 +25,11 @@ export default function HeaderHero() {
           <span className={styles.text}>skepfusky</span>
           <span>&#47;&gt;</span>
         </div>
-        <div>Some stuff here I suppose lol</div>
+        <div>
+          <p>
+            a boring person lol
+          </p>
+        </div>
       </section>
     </ParallaxProvider>
   )
