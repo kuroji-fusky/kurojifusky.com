@@ -1,10 +1,10 @@
-
+import Link from "next/link"
 import Image from "next/image"
 import { Parallax, ParallaxProvider } from "react-scroll-parallax"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/HeaderHero.module.scss"
 import { socials } from "@/utils/Contents"
-import Link from "next/link"
+import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
 export default function HeaderHero() {
   return (
@@ -18,6 +18,8 @@ export default function HeaderHero() {
               objectFit="cover"
               alt="skepfusky commission"
               quality={69}
+              onLoadingComplete={() => alert("oof")}
+              priority
             />
           </Parallax>
         </div>
@@ -27,7 +29,16 @@ export default function HeaderHero() {
           <span>&#47;&gt;</span>
         </div>
         <div className={styles.bio}>
-          <p>a 20-year-old hobbyist as a full-stack web developer, video editor, and music producer</p>
+          <p>
+            <span>
+              a 20-year-old hobbyist as a full-stack web developer, video
+              editor, and music producer
+            </span>
+            <br />
+            <span>
+              artwork by: <FaIcon icon={faDiscord} /> catastrophe#6282
+            </span>
+          </p>
           <div className={styles.socials}>
             {socials.map(({ icon, link }) => (
               <Link key={link} href={link} passHref>

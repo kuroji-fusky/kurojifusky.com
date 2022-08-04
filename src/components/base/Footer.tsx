@@ -44,11 +44,12 @@ export default function Footer() {
         </div>
       </footer>
       <div className={styles["peek-a-boo"]}>
-        <Link href="https://pat-the-cutie.skepfusky.xyz" passHref>
+        <Link href="https://www.youtube.com/watch?v=WATSk1MEm40" passHref>
           <a className={styles.cutie}>
             <Image
               alt="woah a cutie"
               layout="fill"
+              loading="lazy"
               src="/static/fursonas/07-transparent.png"
             />
           </a>

@@ -26,6 +26,7 @@ export default function OtherSection() {
             image="fursonas/01.jpg"
           />
         </ul>
+        <h1>DIAMONDS</h1>
       </div>
     </section>
   )
@@ -43,6 +44,7 @@ export function OtherItem({ title, description, image }: IOtherCardProps) {
               layout="fill"
               objectFit="cover"
               alt={title}
+              loading="lazy"
               quality={82}
             />
           </div>

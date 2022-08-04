@@ -48,7 +48,7 @@ export default function Container({
       {noWrapper ? (
         <main role="main">{children}</main>
         ) : (
-        <div className={styles.wrapper}>{children}</div>
+        <main className={styles.wrapper} role="main">{children}</main>
       )}
     </>
   )
