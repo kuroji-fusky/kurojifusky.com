@@ -6,20 +6,29 @@
 
 .wrapper {
   @include contentWrapper();
-  @apply lg-others:h-auto h-[490px] flex flex-col justify-center;
+  @apply h-auto lg-others:h-[490px] flex flex-col justify-center;
 
   h1.section-heading {
-    @apply mt-0 lg-others:mt-4 lg-others:translate-y-10;
+    @apply mt-16 lg-others:mt-10;
   }
 
   p.section-heading {
-    @apply text-center lg-others:translate-y-10;
+    @apply text-center;
   }
 }
 
 .grid-container {
-  @apply grid grid-cols-3 gap-3 translate-y-9 lg-others:mx-24
-  lg-others:grid-cols-1 lg-others:place-items-center lg-others:gap-0;
+  @apply grid 
+  lg-others:grid-cols-3
+  lg-others:gap-3
+  lg-others:place-items-center
+  lg-others:mx-3
+  place-items-stretch
+  translate-y-9  
+  grid-cols-1
+  gap-0
+  mx-24
+  sm:mx-[unset];
 
   &:hover {
     .item:first-child,
@@ -34,30 +43,45 @@
   box-shadow: 4px 4px 0 theme("colors.neutral.300");
 
   article.content {
-    @apply p-4 flex flex-col items-center
-    lg-others:absolute lg-others:w-full lg-others:z-1 lg-others:inset-0 lg-others:bg-neutral-900 lg-others:bg-opacity-60 lg-others:justify-center;
+    @apply p-4
+    flex
+    flex-col
+    items-center
+    absolute
+    w-full
+    z-1
+    inset-0
+    lg-others:static
+    lg-others:bg-neutral-900
+    lg-others:bg-opacity-60
+    lg-others:justify-center
+    text-center;
+
+    h2 {
+      @apply whitespace-nowrap;
+    }
   }
 
   &:first-child,
   &:last-child {
-    @apply -translate-y-4 lg-others:translate-y-0 scale-100 lg-others:scale-95;
+    @apply lg-others:-translate-y-4 translate-y-0 lg-others:scale-100 scale-95;
   }
 
   &:first-child {
-    @apply translate-x-10 lg-others:translate-x-0 lg-others:translate-y-10;
+    @apply lg-others:translate-x-10 translate-x-0 lg-others:-translate-y-6;
   }
 
   &:last-child {
-    @apply -translate-x-10 lg-others:translate-x-0 lg-others:-translate-y-10;
+    @apply lg-others:-translate-x-10 translate-x-0 lg-others:-translate-y-6;
   }
 
   &:nth-child(2) {
-    @apply z-1 translate-y-3 lg-others:translate-y-0;
+    @apply z-1 lg-others:translate-y-3 translate-y-0;
   }
 
   &:hover {
     .img-wrapper img {
-      @apply scale-105 lg-others:scale-100;
+      @apply lg-others:scale-105 scale-100;
     }
   }
 }

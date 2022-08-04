@@ -11,7 +11,7 @@
 }
 
 .fursona-wrapper {
-  @apply relative lg:h-[40rem] lg:w-[40rem] md:h-[32rem] md:w-[32rem] h-[23rem] w-[23rem];
+  @apply relative lg:h-[50rem] lg:w-[50rem] md:h-[42rem] md:w-[42rem] h-[32rem] w-[32rem];
 }
 
 .text {
@@ -27,4 +27,12 @@
 
   @apply bg-clip-text;
   background-size: 300% 100%;
+}
+
+.bio {
+  @apply flex flex-col items-center gap-y-5 text-center px-10;
+}
+
+.socials {
+  @apply flex gap-x-9;
 }

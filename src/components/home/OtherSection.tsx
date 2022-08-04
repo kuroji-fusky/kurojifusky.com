@@ -5,25 +5,23 @@ import Link from "next/link"
 
 export default function OtherSection() {
   return (
-    <section className={styles.divider}>
+    <section className={styles.divider} aria-label="Here's some stuff I do">
       <div className={styles.wrapper}>
-        <h1 className={styles["section-heading"]}>Stuff I do</h1>
-        <p className={styles["section-heading"]}>
-          I do extracuricular shit fam
-        </p>
+        <h1 className={styles["section-heading"]}>Here's some stuff I do</h1>
+        <p className={styles["section-heading"]}>I'm a whole package baby</p>
         <ul className={styles["grid-container"]}>
           <OtherItem
-            title="Video editing"
+            title="Videography"
             description="lmao"
             image="fursonas/01.jpg"
           />
           <OtherItem
-            title="Photography"
+            title="UI Design"
             description="lmao"
             image="fursonas/01.jpg"
           />
           <OtherItem
-            title="Dance lol"
+            title="Self-produced music"
             description="lmao"
             image="fursonas/01.jpg"
           />
@@ -40,10 +38,11 @@ export function OtherItem({ title, description, image }: IOtherCardProps) {
         <a>
           <div className={styles["img-wrapper"]}>
             <Image
+              aria-label={title}
               src={`/static/${image}`}
               layout="fill"
               objectFit="cover"
-              alt=""
+              alt={title}
               quality={82}
             />
           </div>

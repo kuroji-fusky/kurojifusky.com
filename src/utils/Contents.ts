@@ -1,3 +1,5 @@
+import { faGithub, faInstagram, faItunesNote, faSoundcloud, faSpotify, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
+
 export const CringeProjects = [
   {
     name: "Paco Drawing Stats",
@@ -34,7 +36,8 @@ export const CringeProjects = [
   },
   {
     name: "Majira Strawberry VS Code Theme",
-    description: "It's exactly what it sounds like, a Majira-themed VS Code theme",
+    description:
+      "It's exactly what it sounds like, a Majira-themed VS Code theme",
     image: "crimson-paw-icon.png"
   },
   {
@@ -46,5 +49,24 @@ export const CringeProjects = [
     name: "Foxington Vault",
     description: "A solo project to archive a certain franchise",
     image: "crimson-paw-icon.png"
+  }
+]
+
+export const socials = [
+  { icon: faYoutube, link: "https://youtube.com/c/skepfusky97" },
+  { icon: faTwitter, link: "https://twitter.com/skepfuskyjs" },
+  { icon: faInstagram, link: "https://instagram.com/skepfuskyjs" },
+  { icon: faGithub, link: "https://github.com/skepfusky" },
+  {
+    icon: faSoundcloud,
+    link: "https://soundcloud.com/kokoro-husky-mixtapes"
+  },
+  {
+    icon: faSpotify,
+    link: "https://open.spotify.com/artist/3fouosCOFa1ykd6j9DZkWl?si=byCWjlfqR3OXDiGTiuCpqA"
+  },
+  {
+    icon: faItunesNote,
+    link: "https://music.apple.com/us/artist/kokoro-husky/1521326000"
   }
 ]
