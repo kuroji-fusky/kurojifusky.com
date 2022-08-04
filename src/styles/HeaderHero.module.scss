@@ -1,5 +1,5 @@
 #hero {
-  @apply h-screen flex flex-col items-center justify-center overflow-hidden ;
+  @apply h-screen flex flex-col items-center justify-center overflow-x-hidden;
 
   .container {
     @apply flex items-center p-6 text-center text-5xl md:text-6xl select-none opacity-0 transition-opacity duration-[750ms];

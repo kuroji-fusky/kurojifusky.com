@@ -1,5 +1,5 @@
 header.line {
-  @apply fixed z-3 w-full bg-neutral-900;
+  @apply fixed z-mosttop w-full bg-neutral-900;
 
   &::before {
     @apply content-[""] absolute h-0.5 bottom-0 left-0 right-0 bg-gradient-to-r from-sona-borahae-500 to-sona-royalblue-400;

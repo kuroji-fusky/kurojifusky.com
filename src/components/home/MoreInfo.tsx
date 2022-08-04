@@ -1,16 +1,23 @@
+import Link from "next/link"
 import styles from "@/styles/MoreInfo.module.scss"
 
 export default function MoreInfo() {
   return (
-    <section className={styles.divider} aria-label="idk lol">
+    <section className={styles.divider} aria-label="More about me">
       <div className={styles.wrapper}>
-        <h2 className="mt-8 mb-2">More stuff</h2>
-        <p className="text-lg w-[80%]">
-          I do most of my days writing code (sometimes dancing like an idiot),
-          but if I've gotten exhausted someday, I can always go
-          back to editing videos or probably drop a new single, who knows?
-        </p>
+        <h2 className="mt-8 mb-2">More about me</h2>
+        <div className="grid grid-cols-3"></div>
       </div>
     </section>
+  )
+}
+
+export function MoreInfoButton({ name }: { name: string }) {
+  return (
+    <button className={styles.button}>
+      <Link href="#">
+        <a>{name}</a>
+      </Link>
+    </button>
   )
 }

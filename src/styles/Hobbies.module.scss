@@ -1,7 +1,7 @@
 @use "mixins" as *;
 
 .divider {
-  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900 bg-opacity-60 backdrop-blur-md;
+  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;
 }
 
 .wrapper {
@@ -54,7 +54,7 @@
   }
 
   &:nth-child(2) {
-    @apply lg-others:translate-y-3 translate-y-0;
+    @apply z-1 lg-others:translate-y-3 translate-y-0;
   }
 
   &:hover {

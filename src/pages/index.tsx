@@ -9,7 +9,7 @@ export default function Home() {
     <Container noWrapper>
       <HeaderHero />
       <Hobbies />
-      <MoreInfo />
+      {/* <MoreInfo /> */}
       <Projects />
     </Container>
   )
