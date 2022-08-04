@@ -10,11 +10,11 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth scroll-pt-20;
   }
 
   body {
-    @apply bg-neutral-900 text-white;
+    @apply bg-neutral-900 text-white ;
     @apply overflow-x-hidden #{!important};
 
     * {

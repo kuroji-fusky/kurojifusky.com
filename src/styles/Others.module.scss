@@ -1,36 +1,63 @@
 @use "mixins" as *;
 
-#divider {
-  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;
+.divider {
+  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900 bg-opacity-60 backdrop-blur-md;
 }
 
 .wrapper {
   @include contentWrapper();
+  @apply lg-others:h-auto h-[490px] flex flex-col justify-center;
+
+  h1.section-heading {
+    @apply mt-0 lg-others:mt-4 lg-others:translate-y-10;
+  }
+
+  p.section-heading {
+    @apply text-center lg-others:translate-y-10;
+  }
 }
 
 .grid-container {
-  @media only screen and (min-width: 960px) {
-    @apply grid-cols-3;
-  }
+  @apply grid grid-cols-3 gap-3 translate-y-9 lg-others:mx-24
+  lg-others:grid-cols-1 lg-others:place-items-center lg-others:gap-0;
 
-  @apply grid grid-cols-2 gap-3;
-
-  @media only screen and (max-width: 700px) {
-    @apply grid-cols-1;
+  &:hover {
+    .item:first-child,
+    .item:last-child {
+      @apply translate-x-0;
+    }
   }
 }
 
 .item {
-  @apply flex flex-col bg-neutral-500 rounded-md overflow-hidden border-2 border-neutral-300 select-none;
+  @apply flex flex-col bg-neutral-500 rounded-md overflow-hidden border-2 border-neutral-300 select-none transition-transform duration-300 lg-others:w-full;
   box-shadow: 4px 4px 0 theme("colors.neutral.300");
 
   article.content {
-    @apply p-4 flex flex-col justify-center;
+    @apply p-4 flex flex-col items-center
+    lg-others:absolute lg-others:w-full lg-others:z-1 lg-others:inset-0 lg-others:bg-neutral-900 lg-others:bg-opacity-60 lg-others:justify-center;
+  }
+
+  &:first-child,
+  &:last-child {
+    @apply -translate-y-4 lg-others:translate-y-0 scale-100 lg-others:scale-95;
+  }
+
+  &:first-child {
+    @apply translate-x-10 lg-others:translate-x-0 lg-others:translate-y-10;
+  }
+
+  &:last-child {
+    @apply -translate-x-10 lg-others:translate-x-0 lg-others:-translate-y-10;
+  }
+
+  &:nth-child(2) {
+    @apply z-1 translate-y-3 lg-others:translate-y-0;
   }
 
   &:hover {
     .img-wrapper img {
-      @apply scale-105;
+      @apply scale-105 lg-others:scale-100;
     }
   }
 }

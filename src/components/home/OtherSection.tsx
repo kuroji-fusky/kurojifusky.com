@@ -4,9 +4,10 @@ import Link from "next/link"
 
 export default function OtherSection() {
   return (
-    <section id={styles.divider}>
+    <section className={styles.divider}>
       <div className={styles.wrapper}>
         <h1 className={styles["section-heading"]}>Stuff I do</h1>
+        <p className={styles["section-heading"]}>I do extracuricular shit fam</p>
         <ul className={styles["grid-container"]}>
           <OtherItem />
           <OtherItem />

@@ -7,7 +7,7 @@ import { CringeProjects } from "@/utils/Contents"
 
 export default function Projects() {
   return (
-    <section id={styles.divider}>
+    <section id="projects" className={styles.divider}>
       <div className={styles.wrapper}>
         <h1 className={styles["section-heading"]}>Projects</h1>
         <div className={styles.container}>

@@ -1,20 +1,30 @@
 @use "mixins" as *;
 
-#divider {
+.divider {
   @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;
 }
 
 .wrapper {
   @include contentWrapper("1280px");
+
+  h1.section-heading {
+    @apply my-10;
+  }
 }
 
 .container {
-  @apply grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-6;
+  @apply grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-center gap-2 md:gap-4;
 }
 
 .item {
   composes: item from "./Others.module.scss";
   @apply p-4 flex flex-col items-center text-center gap-y-3;
+
+  &:first-child,
+  &:nth-child(2),
+  &:last-child {
+    @apply translate-y-0 translate-x-0;
+  }
 
   h2 {
     @apply text-2xl;
