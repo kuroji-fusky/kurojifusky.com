@@ -18,17 +18,7 @@
 }
 
 .grid-container {
-  @apply grid 
-  lg-others:grid-cols-3
-  lg-others:gap-3
-  lg-others:place-items-center
-  lg-others:mx-3
-  place-items-stretch
-  translate-y-9  
-  grid-cols-1
-  gap-0
-  mx-0
-  md:mx-24;
+  @apply z-3 grid lg-others:grid-cols-3 lg-others:gap-3 lg-others:place-items-center lg-others:mx-3 place-items-stretch translate-y-9   grid-cols-1 gap-0 mx-0 md:mx-24;
 
   &:hover {
     .item:first-child,
@@ -64,7 +54,7 @@
   }
 
   &:nth-child(2) {
-    @apply z-1 lg-others:translate-y-3 translate-y-0;
+    @apply lg-others:translate-y-3 translate-y-0;
   }
 
   &:hover {

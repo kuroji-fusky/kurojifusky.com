@@ -7,9 +7,9 @@ import { CringeProjects } from "@/utils/Contents"
 
 export default function Projects() {
   return (
-    <section id="projects" className={styles.divider} aria-label="Projects">
+    <section id="projects" aria-label="Recent Projects">
       <div className={styles.wrapper}>
-        <h1 className={styles["section-heading"]}>Open Source Projects</h1>
+        <h1 className={styles["section-heading"]}>Recent Projects</h1>
         <div className={styles.container}>
           {CringeProjects.map((projects) => (
             <ProjectItem

@@ -1,9 +1,5 @@
 @use "mixins" as *;
 
-.divider {
-  @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;
-}
-
 .wrapper {
   @include contentWrapper("1280px");
 
@@ -17,7 +13,7 @@
 }
 
 .item {
-  composes: item from "./Others.module.scss";
+  composes: item from "./Hobbies.module.scss";
   @apply p-4 flex flex-col items-center text-center gap-y-3;
 
   &:first-child,

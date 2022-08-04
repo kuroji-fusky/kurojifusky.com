@@ -1,8 +1,13 @@
 #hero {
-  @apply h-screen flex flex-col items-center justify-center overflow-hidden;
+  @apply h-screen flex flex-col items-center justify-center overflow-hidden ;
 
   .container {
-    @apply flex items-center p-6 text-center text-5xl md:text-6xl select-none;
+    @apply flex items-center p-6 text-center text-5xl md:text-6xl select-none opacity-0 transition-opacity duration-[750ms];
+  }
+
+  .container-loaded {
+    @extend .container;
+    @apply opacity-100;
   }
 }
 
@@ -39,14 +44,23 @@
 }
 
 .bio {
-  @apply flex flex-col items-center gap-y-5 text-center px-10;
+  @apply flex flex-col items-center gap-y-5 text-center px-10 opacity-0 transition-all duration-[750ms] ease-out;
 
   p {
-    @apply leading-10;
+    @apply leading-[0rem] transition-[line-height] duration-[750ms] ease-out;
   }
 
   .heading {
-    @apply text-xl w-[80%] inline-block;
+    @apply text-xl w-[70%] inline-block;
+  }
+}
+
+.bio-loaded {
+  @extend .bio;
+  @apply opacity-100;
+
+  p {
+    @apply leading-[3rem];
   }
 }
 

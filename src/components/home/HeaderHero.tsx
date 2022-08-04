@@ -11,7 +11,7 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 export default function HeaderHero() {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const changeLoaded = () => {
+  const fursonaLoaded = () => {
     if (isLoaded !== true) {
       return styles.fursona.toString()
     }
@@ -19,19 +19,36 @@ export default function HeaderHero() {
     return styles["fursona-loaded"].toString()
   }
 
+  const bioLoaded = () => {
+    if (isLoaded !== true) {
+      return styles.bio.toString()
+    }
+
+    return styles["bio-loaded"].toString()
+  }
+
+  const containerLoaded = () => {
+    if (isLoaded !== true) {
+      return styles.container.toString()
+    }
+
+    return styles["container-loaded"].toString()
+  }
+
+
   return (
     <ParallaxProvider>
       <section id={styles.hero}>
-        <div className={styles.container}>
+        <div className={containerLoaded()}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>
           <span>&#47;&gt;</span>
         </div>
-        <div className={styles.bio}>
+        <article className={bioLoaded()}>
           <p>
             <span className={styles.heading}>
-              a 20-year-old hobbyist as a full-stack web developer, video
-              editor, and music producer
+              a 20-year-old hobbyist as a full-stack web developer, aspiring
+              filmmaker, video editor, designer, and music producer from the Philippines
             </span>
             <br />
             <span>
@@ -47,9 +64,13 @@ export default function HeaderHero() {
               </Link>
             ))}
           </div>
-        </div>
-        <div className={changeLoaded()}>
-          <Parallax speed={-50} disabled={isMobile} className={styles["fursona-img-wrapper"]}>
+        </article>
+        <div className={fursonaLoaded()}>
+          <Parallax
+            speed={-50}
+            disabled={isMobile}
+            className={styles["fursona-img-wrapper"]}
+          >
             <Image
               src="/static/fursonas/comms/comm_for_davey_g2.png"
               layout="fill"
