@@ -29,7 +29,7 @@ export default function HeaderHero() {
         </div>
         <div className={styles.bio}>
           <p>
-            <span>
+            <span className={styles.heading}>
               a 20-year-old hobbyist as a full-stack web developer, video
               editor, and music producer
             </span>

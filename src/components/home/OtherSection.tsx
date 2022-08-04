@@ -11,18 +11,18 @@ export default function OtherSection() {
         <ul className={styles["grid-container"]}>
           <OtherItem
             title="Videography"
-            description="lmao"
-            image="fursonas/01.jpg"
+            description="I've been editing videos for almost a decade, from Minecraft videos, SFM animations, vlogs, and... YTPs lol"
+            image="fursonas/08.png"
           />
           <OtherItem
-            title="UI Design"
-            description="lmao"
-            image="fursonas/01.jpg"
+            title="Programming & UI Design"
+            description="This is where I rekindled my passing ever since I wrote some code in Visual Basic, .vbs, and .bat files at age 10"
+            image="fursonas/09.png"
           />
           <OtherItem
-            title="Self-produced music"
-            description="lmao"
-            image="fursonas/01.jpg"
+            title="Indie music production"
+            description="Getting into self-produced music since 2017 with FL Studio and released 2 albums and 3 EPs"
+            image="fursonas/08.png"
           />
         </ul>
       </div>

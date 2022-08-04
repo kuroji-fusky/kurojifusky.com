@@ -7,7 +7,7 @@
 }
 
 .fursona {
-  @apply absolute overflow-x-hidden inset-0 flex justify-center items-center -z-1 opacity-[42%] transition-all duration-[1s] before:content-[""] before:opacity-25 before:inset-0 before:absolute before:bg-gradient-to-bl before:from-sona-pale-800 before:via-sona-borahae-600 before:to-sona-borahaealt-800 before:transition-opacity;
+  @apply absolute overflow-x-hidden inset-0 -z-1 flex justify-center items-center opacity-[21%] transition-all duration-[1s] before:content-[""] before:opacity-25 before:inset-0 before:absolute before:bg-gradient-to-bl before:from-sona-pale-800 before:via-sona-borahae-600 before:to-sona-borahaealt-800;
 
   .fursona-img-wrapper {
     @apply opacity-0 -top-6;
@@ -19,12 +19,12 @@
   @extend .fursona;
 
   .fursona-img-wrapper {
-    @apply opacity-100 top-0 relative lg:h-[50rem] lg:w-[50rem] md:h-[42rem] md:w-[42rem] h-[32rem] w-[32rem];
+    @apply opacity-100 top-6 relative lg:h-[50rem] lg:w-[50rem] md:h-[42rem] md:w-[42rem] h-[32rem] w-[32rem];
   }
 }
 
 .text {
-  @apply lg:text-[5rem] lg:h-[80px] h-[60px] inline-block md:translate-y-1 translate-y-3  overflow-y-clip font-inter font-bold text-transparent animate-gradient-scroll;
+  @apply lg:text-[5rem] lg:h-[80px] h-[60px] inline-block md:translate-y-1 translate-y-3 font-inter font-bold text-transparent animate-gradient-scroll;
 
   background: linear-gradient(
     90deg,
@@ -40,6 +40,14 @@
 
 .bio {
   @apply flex flex-col items-center gap-y-5 text-center px-10;
+
+  p {
+    @apply leading-10;
+  }
+
+  .heading {
+    @apply text-xl w-[80%] inline-block;
+  }
 }
 
 .socials {

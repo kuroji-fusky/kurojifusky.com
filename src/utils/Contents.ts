@@ -1,18 +1,26 @@
-import { faGithub, faInstagram, faItunesNote, faSoundcloud, faSpotify, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
+import {
+  faGithub,
+  faInstagram,
+  faItunesNote,
+  faSoundcloud,
+  faSpotify,
+  faTwitter,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons"
 
 export const CringeProjects = [
   {
     name: "Paco Drawing Stats",
     description:
       "A data visualization project that collects drawings from a furry artist and illustrator Paco Panda, written in TypeScript and Python",
-    image: "crimson-paw-icon.png",
+    image: "paco-stats-2022.png",
     repoLink: "skepfusky/pacopanda-drawing-stats"
   },
-  {
-    name: "Biro UI",
-    description: "My WIP design system",
-    image: "crimson-paw-icon.png"
-  },
+  // {
+  //   name: "Biro UI",
+  //   description: "My WIP design system",
+  //   image: "crimson-paw-icon.png"
+  // },
   {
     name: "Searchpets!",
     description:
@@ -29,27 +37,27 @@ export const CringeProjects = [
     description: "A time tracking app lol",
     image: "time.jpg"
   },
-  {
-    name: "Furry Trash API",
-    description: "A furry trash API written in the Go programming language",
-    image: "crimson-paw-icon.png"
-  },
+  // {
+  //   name: "Furry Trash API",
+  //   description: "A furry trash API written in the Go programming language",
+  //   image: "crimson-paw-icon.png"
+  // },
   {
     name: "Majira Strawberry VS Code Theme",
     description:
       "It's exactly what it sounds like, a Majira-themed VS Code theme",
-    image: "crimson-paw-icon.png"
+    image: "majira-vscode.png"
   },
-  {
-    name: "Tungsten",
-    description: "A WIP social platform thingy",
-    image: "crimson-paw-icon.png"
-  },
-  {
-    name: "Foxington Vault",
-    description: "A solo project to archive a certain franchise",
-    image: "crimson-paw-icon.png"
-  }
+  // {
+  //   name: "Tungsten",
+  //   description: "A WIP social platform thingy",
+  //   image: "crimson-paw-icon.png"
+  // },
+  // {
+  //   name: "Foxington Vault",
+  //   description: "A solo project to archive a certain franchise",
+  //   image: "crimson-paw-icon.png"
+  // }
 ]
 
 export const socials = [
