@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Parallax, ParallaxProvider } from "react-scroll-parallax"
@@ -7,22 +8,19 @@ import { socials } from "@/utils/Contents"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
 export default function HeaderHero() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  const changeLoaded = () => {
+    if (isLoaded !== true) {
+      return styles.fursona.toString()
+    }
+
+    return styles["fursona-loaded"].toString()
+  }
+
   return (
     <ParallaxProvider>
       <section id={styles.hero}>
-        <div className={styles.fursona}>
-          <Parallax speed={-50} className={styles["fursona-wrapper"]}>
-            <Image
-              src="/static/fursonas/comms/comm_for_davey_g2.png"
-              layout="fill"
-              objectFit="cover"
-              alt="skepfusky commission"
-              quality={69}
-              onLoadingComplete={() => alert("oof")}
-              priority
-            />
-          </Parallax>
-        </div>
         <div className={styles.container}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>
@@ -48,6 +46,19 @@ export default function HeaderHero() {
               </Link>
             ))}
           </div>
+        </div>
+        <div className={changeLoaded()}>
+          <Parallax speed={-50} className={styles["fursona-img-wrapper"]}>
+            <Image
+              src="/static/fursonas/comms/comm_for_davey_g2.png"
+              layout="fill"
+              objectFit="cover"
+              alt="skepfusky commission"
+              quality={69}
+              onLoadingComplete={() => setIsLoaded(true)}
+              priority
+            />
+          </Parallax>
         </div>
       </section>
     </ParallaxProvider>

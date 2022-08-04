@@ -35,6 +35,7 @@ export function ProjectItem({ title, description, image }: IProjectCardProps) {
           layout="fill"
           alt=""
           src={`/static/projects/${image}`}
+          loading="lazy"
         />
       </div>
       <article>

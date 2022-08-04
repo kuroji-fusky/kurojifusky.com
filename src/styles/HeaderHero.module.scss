@@ -7,18 +7,27 @@
 }
 
 .fursona {
-  @apply absolute inset-0 grid place-items-center -z-1 opacity-30;
+  @apply absolute inset-0 grid place-items-center -z-1 opacity-[42%] transition-all duration-[1s] before:content-[""] before:opacity-25 before:inset-0 before:absolute before:bg-gradient-to-bl before:from-sona-pale-800 before:via-sona-borahae-600 before:to-sona-borahaealt-800 before:transition-opacity;
+
+  .fursona-img-wrapper {
+    @apply opacity-0 -top-6;
+    transition: opacity 650ms, top 650ms;
+  }
 }
 
-.fursona-wrapper {
-  @apply relative lg:h-[50rem] lg:w-[50rem] md:h-[42rem] md:w-[42rem] h-[32rem] w-[32rem];
+.fursona-loaded {
+  @extend .fursona;
+
+  .fursona-img-wrapper {
+    @apply opacity-100 top-0 relative lg:h-[50rem] lg:w-[50rem] md:h-[42rem] md:w-[42rem] h-[32rem] w-[32rem];
+  }
 }
 
 .text {
   @apply lg:text-[5rem] lg:h-[80px] h-[60px] inline-block md:translate-y-1 translate-y-3  overflow-y-clip font-inter font-bold text-transparent animate-gradient-scroll;
 
   background: linear-gradient(
-  90deg,
+    90deg,
     theme("colors.sona-borahae.600"),
     theme("colors.sona-royalblue.500"),
     theme("colors.sona-borahae.600"),
