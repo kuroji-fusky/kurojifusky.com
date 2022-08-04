@@ -6,7 +6,7 @@ export default function OtherSection() {
   return (
     <section id={styles.divider}>
       <div className={styles.wrapper}>
-        <h1 className={styles["section-heading"]}>My Hobbies</h1>
+        <h1 className={styles["section-heading"]}>Stuff I do</h1>
         <ul className={styles["grid-container"]}>
           <OtherItem />
           <OtherItem />

@@ -1,5 +1,9 @@
 @use "mixins" as *;
 
+.root {
+  @apply relative;
+}
+
 .wrapper {
   @include contentWrapper();
 }
@@ -18,4 +22,13 @@
 
 .link-row {
   @apply flex md:justify-end justify-center lg:gap-x-9 gap-x-5;
+}
+
+.peek-a-boo {
+  @apply absolute bottom-0 h-[2rem] hover:h-[13rem] active:h-[18rem] w-fit overflow-y-hidden transition-all duration-500 ease-peek-cutie;
+  left: calc(50% - 18rem / 2);
+}
+
+.cutie {
+  @apply relative h-[18rem] w-[18rem] mx-auto inline-block;
 }

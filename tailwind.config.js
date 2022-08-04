@@ -144,6 +144,9 @@ module.exports = {
           "100%": { "background-position": "right" },
         }
       },
+      transitionTimingFunction: {
+        'peek-cutie': 'cubic-bezier(.37,.6,0,1)',
+      }
     }
   },
   plugins: [],

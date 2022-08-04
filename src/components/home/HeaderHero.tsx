@@ -12,7 +12,7 @@ export default function HeaderHero() {
             className={styles["fursona-wrapper"]}
           >
             <Image
-              src="/static/fursonas/comms/comm_for_davey_g2_catastrophe.jpg"
+              src="/static/fursonas/comms/comm_for_davey_g2.png"
               layout="fill"
               objectFit="cover"
               alt="skepfusky commission"
