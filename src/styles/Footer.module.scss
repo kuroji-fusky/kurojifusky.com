@@ -9,7 +9,7 @@
 }
 
 .container {
-  @apply mx-auto gap-y-3 py-6 w-full max-w-screen-xl 2xl:max-w-screen-2xl flex justify-between items-center flex-col md:flex-row relative;
+  @apply mx-auto gap-y-3 py-8 w-full max-w-screen-xl 2xl:max-w-screen-2xl flex justify-between items-center flex-col md:flex-row relative;
 
   .left {
     @apply flex gap-x-8;

@@ -2,6 +2,7 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Parallax, ParallaxProvider } from "react-scroll-parallax"
+import { isMobile } from "react-device-detect"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/HeaderHero.module.scss"
 import { socials } from "@/utils/Contents"
@@ -48,7 +49,7 @@ export default function HeaderHero() {
           </div>
         </div>
         <div className={changeLoaded()}>
-          <Parallax speed={-50} className={styles["fursona-img-wrapper"]}>
+          <Parallax speed={-50} disabled={isMobile} className={styles["fursona-img-wrapper"]}>
             <Image
               src="/static/fursonas/comms/comm_for_davey_g2.png"
               layout="fill"

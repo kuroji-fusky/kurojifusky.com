@@ -6,7 +6,7 @@
 
 .wrapper {
   @include contentWrapper();
-  @apply h-auto lg-others:h-[490px] flex flex-col justify-center;
+  @apply h-auto flex flex-col justify-center;
 
   h1.section-heading {
     @apply mt-16 lg-others:mt-10;
@@ -27,8 +27,8 @@
   translate-y-9  
   grid-cols-1
   gap-0
-  mx-24
-  sm:mx-[unset];
+  mx-0
+  md:mx-24;
 
   &:hover {
     .item:first-child,
@@ -43,19 +43,7 @@
   box-shadow: 4px 4px 0 theme("colors.neutral.300");
 
   article.content {
-    @apply p-4
-    flex
-    flex-col
-    items-center
-    absolute
-    w-full
-    z-1
-    inset-0
-    lg-others:static
-    lg-others:bg-neutral-900
-    lg-others:bg-opacity-60
-    lg-others:justify-center
-    text-center;
+    @apply p-4 flex flex-col items-center absolute w-full z-1 inset-0 lg-others:static bg-neutral-900 bg-opacity-60 justify-center text-center;
 
     h2 {
       @apply whitespace-nowrap;

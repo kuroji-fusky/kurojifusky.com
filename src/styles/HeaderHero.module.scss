@@ -7,7 +7,7 @@
 }
 
 .fursona {
-  @apply absolute inset-0 grid place-items-center -z-1 opacity-[42%] transition-all duration-[1s] before:content-[""] before:opacity-25 before:inset-0 before:absolute before:bg-gradient-to-bl before:from-sona-pale-800 before:via-sona-borahae-600 before:to-sona-borahaealt-800 before:transition-opacity;
+  @apply absolute overflow-x-hidden inset-0 flex justify-center items-center -z-1 opacity-[42%] transition-all duration-[1s] before:content-[""] before:opacity-25 before:inset-0 before:absolute before:bg-gradient-to-bl before:from-sona-pale-800 before:via-sona-borahae-600 before:to-sona-borahaealt-800 before:transition-opacity;
 
   .fursona-img-wrapper {
     @apply opacity-0 -top-6;

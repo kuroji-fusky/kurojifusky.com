@@ -23,7 +23,7 @@
   &:first-child,
   &:nth-child(2),
   &:last-child {
-    @apply translate-y-0 translate-x-0;
+    @apply translate-y-0 translate-x-0 scale-100;
   }
 
   h2 {

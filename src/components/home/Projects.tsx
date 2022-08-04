@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section id="projects" className={styles.divider} aria-label="Projects">
       <div className={styles.wrapper}>
-        <h1 className={styles["section-heading"]}>Projects</h1>
+        <h1 className={styles["section-heading"]}>Open Source Projects</h1>
         <div className={styles.container}>
           {CringeProjects.map((projects) => (
             <ProjectItem

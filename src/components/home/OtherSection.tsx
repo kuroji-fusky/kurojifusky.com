@@ -8,7 +8,6 @@ export default function OtherSection() {
     <section className={styles.divider} aria-label="Here's some stuff I do">
       <div className={styles.wrapper}>
         <h1 className={styles["section-heading"]}>Here's some stuff I do</h1>
-        <p className={styles["section-heading"]}>I'm a whole package baby</p>
         <ul className={styles["grid-container"]}>
           <OtherItem
             title="Videography"
@@ -26,7 +25,6 @@ export default function OtherSection() {
             image="fursonas/01.jpg"
           />
         </ul>
-        <h1>DIAMONDS</h1>
       </div>
     </section>
   )
