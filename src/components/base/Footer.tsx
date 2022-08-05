@@ -5,8 +5,6 @@ import Image from "next/image"
 import { socials } from "@/utils/Contents"
 
 export default function Footer() {
-  
-
   return (
     <div className={styles.root}>
       <footer className={styles.wrapper}>
@@ -33,7 +31,7 @@ export default function Footer() {
               </Link>
             </div>
             <span>
-              &copy; 2014-{new Date().getFullYear()} Fusky N Co., LLC. Written
+              &copy; 2014-{new Date().getFullYear()} Fusky N Co., LLC. Site written
               in{" "}
               <Link href="https://nextjs.org" passHref>
                 <a className="anchor">Next.js</a>

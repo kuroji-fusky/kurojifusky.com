@@ -1,25 +1,40 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import Link from "next/link"
-import { NavbarContext } from "@/utils/Context"
+import { NavbarMobileContext, NavbarScrollContext } from "@/utils/Context"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/Navbar.module.scss"
 
 export default function Navbar() {
-  const { open, isOpen } = useContext(NavbarContext)
+  const { scrolled } = useContext(NavbarScrollContext)
+  const { open, isOpen } = useContext(NavbarMobileContext)
 
-  const navCloset =
-    open === true
-      ? styles["nav-links-row"].toString()
-      : styles["nav-links-row-closed"].toString()
+  const navCloset = () => {
+    if (open !== true) {
+      return styles["nav-links-row-closed"].toString()
+    }
 
-  const backdropToggle =
-    open === true
-      ? styles.backdrop.toString()
-      : styles["backdrop-hidden"].toString()
+    return styles["nav-links-row"].toString()
+  }
+
+  const backdropToggle = () => {
+    if (open !== true) {
+      return styles["backdrop-hidden"].toString()
+    }
+
+    return styles.backdrop.toString()
+  }
+
+  const navbarToggle = () => {
+    if (scrolled !== true) {
+      return styles.opaque.toString()
+    }
+
+    return styles.transparent.toString()
+  }
 
   return (
-    <header className={styles.line}>
+    <header className={navbarToggle()}>
       <div className={styles.wrapper}>
         <Link href="/">
           <a className={styles.logo}>
@@ -35,8 +50,8 @@ export default function Navbar() {
           <FaIcon icon={faBars} />
         </button>
         <div className={styles["nav-wrapper"]}>
-          <div id={backdropToggle} onClick={() => isOpen(false)}></div>
-          <nav className={navCloset}>
+          <div id={backdropToggle()} onClick={() => isOpen(false)}></div>
+          <nav className={navCloset()}>
             <ul>
               <button
                 onClick={() => isOpen(false)}
@@ -48,20 +63,26 @@ export default function Navbar() {
                 <NavItem link="/#projects" name="Projects" />
               </li>
               <li>
+                <NavItem link="/portfolio" name="Portfolio" />
+              </li>
+              <li>
                 <NavItem link="/blog" name="Blog" />
               </li>
               <li>
-                <NavItem link="/about" name="About" />
-                <div className={styles.dropdown}>
+                <NavItem link="#" name="More" />
+                <div className={styles.dropdown.toString()}>
                   <ul>
+                    <li>
+                      <NavItem link="/about" name="About Me" />
+                    </li>
+                    <li>
+                      <NavItem link="/gallery" name="Artwork Gallery" />
+                    </li>
                     <li>
                       <NavItem link="/about/fursona" name="Fursona" />
                     </li>
                     <li>
                       <NavItem link="/about/technologies" name="Technologies" />
-                    </li>
-                    <li>
-                      <NavItem link="/archives" name="Archives lol" />
                     </li>
                   </ul>
                 </div>
@@ -75,7 +96,8 @@ export default function Navbar() {
 }
 
 export function NavItem({ link, name }: { link: string; name: string }) {
-  const { isOpen } = useContext(NavbarContext)
+  const { isOpen } = useContext(NavbarMobileContext)
+
   return (
     <Link href={link}>
       <a onClick={() => isOpen(false)} className={styles["nav-link"]}>

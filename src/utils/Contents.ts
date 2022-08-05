@@ -10,44 +10,69 @@ import {
 
 export const CringeProjects = [
   {
-    name: "Paco Drawing Stats",
+    name: "This website",
     description:
-      "A data visualization project that collects drawings from a furry artist and illustrator Paco Panda, written in TypeScript and Python",
-    image: "paco-stats-2022.png",
-    repoLink: "skepfusky/pacopanda-drawing-stats"
+      "This awful-looking website you're in is written in Next.js and Tailwind CSS",
+    image: "skepfusky logo.png",
+    repoLink: "skepfusky/skepfusky.xyz"
   },
-  // {
-  //   name: "Biro UI",
-  //   description: "My WIP design system",
-  //   image: "crimson-paw-icon.png"
-  // },
   {
     name: "Searchpets!",
     description:
-      "An open source search engine where you find characters and texts from the Housepets! web comic",
-    image: "searchpets-peanut-transparent.png"
+    "An open source search engine where you find characters and texts from the Housepets! web comic",
+    image: "searchpets-peanut-transparent.png",
+    repoLink: "openfurs/searchpets",
+    link: "https://searchpets.xyz"
   },
   {
-    name: "The Crimson Paw",
-    description: "A moderation Discord bot tailored for The Bad Guys server",
-    image: "crimson-paw-icon.png"
+    name: "Paco Panda Drawing Stats",
+    description:
+      "A data visualization project that collects drawings from a furry artist and illustrator Paco Panda, written in Next.js, TypeScript and Python",
+    image: "paco-stats-2022.png",
+    repoLink: "skepfusky/pacopanda-drawing-stats"
   },
   {
-    name: "Fren Time Tracker",
-    description: "A time tracking app lol",
-    image: "time.jpg"
+    name: "MyFursona",
+    description:
+      "A website where users can manage their artworks, ref sheets, and among other furry stuff",
+    image: "myfursona-icon.png",
+    repoLink: "MyFursona-Project/MyFursona",
+    link: "https://myfursona.art"
   },
-  // {
-  //   name: "Furry Trash API",
-  //   description: "A furry trash API written in the Go programming language",
-  //   image: "crimson-paw-icon.png"
-  // },
   {
     name: "Majira Strawberry VS Code Theme",
     description:
       "It's exactly what it sounds like, a Majira-themed VS Code theme",
-    image: "majira-vscode.png"
+    image: "majira-vscode.png",
+    repoLink: "skepfusky/majira-strawberry-vscode-theme"
   },
+  {
+    name: "Furry Trash API",
+    description:
+      "A furry trash API written in the Go programming language, inspired by kanye.rest",
+    image: "furry-trash-api-icon.png",
+    repoLink: "skepfusky/furry-trash-api"
+  },
+  {
+    name: "Biro UI",
+    description:
+      "My WIP custom design system inspired by Fandom and Vercel's Design, and WinUI - it's used on this website!",
+    image: "biro ui logo.png"
+  },
+  {
+    name: "Fren Time Tracker",
+    description:
+      "Track your friends' timezone if you live on the other side of the world",
+    image: "time.jpg",
+    repoLink: "skepfusky/fren-time-tracker"
+  },
+  {
+    name: "The Crimson Paw",
+    description:
+      "A WIP moderation Discord bot tailored for The Bad Guys server",
+    image: "crimson-paw-icon.png",
+    repoLink: "skepfusky/The-Crimson-Paw"
+  }
   // {
   //   name: "Tungsten",
   //   description: "A WIP social platform thingy",

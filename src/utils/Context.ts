@@ -1,11 +1,11 @@
 import { createContext } from "react"
 
-export type ContextType = {
-  open: boolean
-  isOpen: any
-}
-
-export const NavbarContext = createContext<ContextType>({
+export const NavbarMobileContext = createContext<NavbarMobileContextType>({
   open: false,
-  isOpen: () => {},
+  isOpen: () => {}
+})
+
+export const NavbarScrollContext = createContext<NavbarScrollContextType>({
+  scrolled: false,
+  isScrolled: () => {}
 })

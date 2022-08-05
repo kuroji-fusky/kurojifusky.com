@@ -1,5 +1,4 @@
 import Container from "@/components/base/Container"
-import { ITechItemProps } from "@/utils/Interface"
 import Image from "next/image"
 import styles from "@/styles/Technologies.module.scss"
 

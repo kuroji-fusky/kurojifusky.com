@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
+import { NavbarMobileContext, NavbarScrollContext } from "@/utils/Context"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import { ILayoutProps } from "@/utils/Interface"
-import { NavbarContext } from "@/utils/Context"
 
 export default function Layout({ children }: ILayoutProps) {
   const [open, isOpen] = useState(false)
+  const [scrolled, isScrolled] = useState(true)
 
   if (typeof window !== "undefined") {
     open === true
@@ -34,10 +34,12 @@ export default function Layout({ children }: ILayoutProps) {
   }, [isOpen])
 
   return (
-    <NavbarContext.Provider value={{ open, isOpen }}>
-      <Navbar />
-      {children}
-      <Footer />
-    </NavbarContext.Provider>
+    <NavbarScrollContext.Provider value={{ scrolled, isScrolled }}>
+      <NavbarMobileContext.Provider value={{ open, isOpen }}>
+        <Navbar />
+        {children}
+        <Footer />
+      </NavbarMobileContext.Provider>
+    </NavbarScrollContext.Provider>
   )
 }

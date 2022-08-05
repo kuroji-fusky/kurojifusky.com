@@ -1,5 +1,4 @@
 import Head from "next/head"
-import { IContainerProps } from "@/utils/Interface"
 import { useRouter } from "next/router"
 import styles from "@/styles/Layout.module.scss"
 
@@ -13,8 +12,10 @@ export default function Container({
   const router = useRouter()
 
   if (router.pathname === "/") {
-    title = "skepfusky"
-    description = "skepfusky's personal website"
+    title = "official skepfusky website"
+    image = "/static/banners/github-showcase.png"
+    description =
+      "A 20-year-old fox-husky hobbyist as a full-stack web developer, filmmaker, video editor, designer, and music producer from the Philippines!"
   }
 
   let url = `https://skepfusky.xyz${router.pathname}`
@@ -26,9 +27,8 @@ export default function Container({
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="portfoilo, skepfusky, Kokoro Husky, projects"
+          content="portfoilo, skepfusky, Kokoro Husky, projects, UI, stats"
         />
-        <meta name="theme-color" content="#bb3eed" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -47,8 +47,10 @@ export default function Container({
       </Head>
       {noWrapper ? (
         <main role="main">{children}</main>
-        ) : (
-        <main className={styles.wrapper} role="main">{children}</main>
+      ) : (
+        <main className={styles.wrapper} role="main">
+          {children}
+        </main>
       )}
     </>
   )

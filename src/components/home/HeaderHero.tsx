@@ -1,14 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { NavbarScrollContext } from "@/utils/Context"
 import { Parallax, ParallaxProvider } from "react-scroll-parallax"
 import { isMobile } from "react-device-detect"
+import { InView } from "react-intersection-observer"
+import { socials } from "@/utils/Contents"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/HeaderHero.module.scss"
-import { socials } from "@/utils/Contents"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
 export default function HeaderHero() {
+  const { isScrolled } = useContext(NavbarScrollContext)
   const [isLoaded, setIsLoaded] = useState(false)
 
   const fursonaLoaded = () => {
@@ -35,10 +38,13 @@ export default function HeaderHero() {
     return styles["container-loaded"].toString()
   }
 
-
   return (
     <ParallaxProvider>
-      <section id={styles.hero}>
+      <InView
+        as="section"
+        id={styles.hero}
+        onChange={(inView) => isScrolled(inView)}
+      >
         <div className={containerLoaded()}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>
@@ -47,8 +53,9 @@ export default function HeaderHero() {
         <article className={bioLoaded()}>
           <p>
             <span className={styles.heading}>
-              a 20-year-old hobbyist as a full-stack web developer, aspiring
-              filmmaker, video editor, designer, and music producer from the Philippines
+              A 20-year-old hobbyist as a full-stack web developer, aspiring
+              filmmaker, video editor, designer, and music producer from the
+              Philippines
             </span>
             <br />
             <span>
@@ -67,7 +74,7 @@ export default function HeaderHero() {
         </article>
         <div className={fursonaLoaded()}>
           <Parallax
-            speed={-50}
+            speed={-69}
             disabled={isMobile}
             className={styles["fursona-img-wrapper"]}
           >
@@ -82,7 +89,7 @@ export default function HeaderHero() {
             />
           </Parallax>
         </div>
-      </section>
+      </InView>
     </ParallaxProvider>
   )
 }

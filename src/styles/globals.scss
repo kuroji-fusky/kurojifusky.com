@@ -5,6 +5,19 @@
 @tailwind utilities;
 
 @layer base {
+  ::-webkit-scrollbar {
+    @apply h-2 w-2;
+
+    &-thumb {
+      @apply rounded-[0.45rem] bg-white border-[10px] border-neutral-900;
+    }
+
+    &-track {
+      @apply bg-neutral-900;
+    }
+  }
+
+
   ::selection {
     @apply bg-neutral-700 text-neutral-50;
   }

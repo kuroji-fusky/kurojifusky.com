@@ -3,7 +3,7 @@ import styles from "@/styles/MoreInfo.module.scss"
 
 export default function MoreInfo() {
   return (
-    <section className={styles.divider} aria-label="More about me">
+    <section className={styles.divider}>
       <div className={styles.wrapper}>
         <h2 className="mt-8 mb-2">More about me</h2>
         <div className="grid grid-cols-3"></div>

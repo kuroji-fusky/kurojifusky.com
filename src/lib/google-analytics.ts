@@ -1,5 +1,3 @@
-import { IEventProps } from "@/utils/Interface"
-
 declare global {
   interface Window {
     gtag: any

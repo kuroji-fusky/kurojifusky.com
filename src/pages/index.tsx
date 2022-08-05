@@ -1,4 +1,5 @@
 import Container from "@/components/base/Container"
+import Codefusky from "@/components/home/Codefusky"
 import HeaderHero from "@/components/home/HeaderHero"
 import Hobbies from "@/components/home/Hobbies"
 import MoreInfo from "@/components/home/MoreInfo"
@@ -9,6 +10,7 @@ export default function Home() {
     <Container noWrapper>
       <HeaderHero />
       <Hobbies />
+      {/* <Codefusky /> */}
       {/* <MoreInfo /> */}
       <Projects />
     </Container>

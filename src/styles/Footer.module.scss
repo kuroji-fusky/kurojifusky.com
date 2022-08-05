@@ -25,7 +25,7 @@
 }
 
 .peek-a-boo {
-  @apply absolute bottom-0 h-[2rem] hover:h-[13rem] active:h-[18rem] w-fit overflow-y-hidden transition-all duration-500 ease-peek-cutie;
+  @apply z-mosttop absolute bottom-0 h-[2rem] hover:h-[13rem] active:h-[18rem] w-fit overflow-y-hidden transition-all duration-500 ease-peek-cutie;
   left: calc(50% - 18rem / 2);
 }
 

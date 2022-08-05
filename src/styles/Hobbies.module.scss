@@ -6,7 +6,8 @@
 
 .wrapper {
   @include contentWrapper();
-  @apply h-auto flex flex-col justify-center;
+
+  @apply h-auto flex flex-col justify-center relative;
 
   h1.section-heading {
     @apply mt-16 lg-others:mt-10;
@@ -18,9 +19,22 @@
 }
 
 .grid-container {
-  @apply z-3 grid lg-others:grid-cols-3 lg-others:gap-3 lg-others:place-items-center lg-others:mx-3 place-items-stretch translate-y-9   grid-cols-1 gap-0 mx-0 md:mx-24;
+  @apply grid lg-others:grid-cols-3 lg-others:gap-3 lg-others:place-items-center lg-others:mx-3 place-items-stretch translate-y-9 grid-cols-1 gap-0 mx-0 md:mx-24;
+
+  --gradient-expand-deez-nuts: 85%;
+
+  &::before {
+    @apply content-[""] absolute bottom-10 w-[var(--gradient-expand-deez-nuts)] h-20 bg-gradient-to-r from-sona-royalblue-500 to-sona-borahaealt-600 blur-[100px] transition-all duration-300;
+    left: calc(50% - var(--gradient-expand-deez-nuts) / 2);
+  }
 
   &:hover {
+    @media only screen and (min-width: 768px) {
+      --gradient-expand-deez-nuts: 100%;
+    }
+
+    --gradient-expand-deez-nuts: 85%;
+
     .item:first-child,
     .item:last-child {
       @apply translate-x-0;
@@ -36,7 +50,7 @@
     @apply p-4 flex flex-col items-center absolute w-full z-1 inset-0 lg-others:static bg-neutral-900 bg-opacity-60 justify-center text-center;
 
     h2 {
-      @apply whitespace-nowrap;
+      @apply whitespace-normal md:whitespace-nowrap;
     }
   }
 
@@ -46,15 +60,15 @@
   }
 
   &:first-child {
-    @apply lg-others:translate-x-10 translate-x-0 lg-others:-translate-y-6;
+    @apply lg-others:translate-x-10 translate-x-0 lg-others:-translate-y-6 bg-gradient-to-tr from-sona-pale-600 to-sona-yellow-800;
   }
 
   &:last-child {
-    @apply lg-others:-translate-x-10 translate-x-0 lg-others:-translate-y-6;
+    @apply lg-others:-translate-x-10 translate-x-0 lg-others:-translate-y-6 bg-gradient-to-bl from-sona-skycyan-600 to-sona-royalblue-600;
   }
 
   &:nth-child(2) {
-    @apply z-1 lg-others:translate-y-3 translate-y-0;
+    @apply z-1 lg-others:translate-y-3 translate-y-0 bg-gradient-to-br from-sona-royalblue-900 via-sona-borahaealt-700 to-sona-magenta-700;
   }
 
   &:hover {

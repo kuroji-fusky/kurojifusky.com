@@ -1,12 +1,19 @@
 .button {
-  @apply px-3 py-[0.28rem] rounded-md border-2 border-white transition-all duration-[320ms] select-none;
+  @apply px-3 py-[0.28rem] rounded-md border-2 border-white transition-all duration-[220ms] select-none;
 
   box-shadow: 2px 2px 0 #fff;
 
-  &:hover,
-  &:focus {
+  &:hover {
     @apply translate-x-[2px] translate-y-[2px] border-transparent bg-white text-neutral-900;
 
     box-shadow: 0 0 0 #fff;
+  }
+  &:active {
+    @apply bg-neutral-200;
+  }
+
+  &-disabled {
+    @apply cursor-not-allowed px-3 py-[0.28rem] rounded-md border-2 border-neutral-300 text-neutral-300;
+    box-shadow: 2px 2px 0 theme("colors.neutral.300");
   }
 }

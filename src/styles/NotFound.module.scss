@@ -1,14 +1,14 @@
 .wrapper {
   @apply grid place-items-center relative overflow-x-hidden;
-  height: calc(100vh - 8.5rem);
+  height: calc(100vh - 9rem);
 
   @media only screen and (min-width: 768px) {
-    height: calc(100vh - 4.5rem);
+    height: calc(100vh - 5.5rem);
   }
 }
 
 .container {
-  @apply relative top-10 mx-5 text-center px-5 py-16 rounded-xl max-w-[40rem] lg:max-w-[52.5rem] flex flex-col gap-y-5 bg-neutral-900 bg-opacity-50 select-none;
+  @apply relative top-10 mx-5 text-center px-5 py-16 rounded-xl max-w-[40rem] lg:max-w-[52.5rem] flex flex-col gap-y-5 bg-neutral-900 select-none;
 
   &::before {
     @apply content-[""] absolute -top-4 -left-12 w-[80%] h-24 -z-4 blur-[205px] animate-pulse animate-gradient-scroll;
