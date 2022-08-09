@@ -7,7 +7,7 @@ export default function Hobbies() {
     <>
       <section className={styles.divider}>
         <div className={styles.wrapper}>
-          <h1 className={styles["section-heading"]}>Here's some stuff I do</h1>
+          <h1 className={styles["section-heading"]}>What I do</h1>
           <ul className={styles["grid-container"]}>
             <OtherItem
               title="Video editing"

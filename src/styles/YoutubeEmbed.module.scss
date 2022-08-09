@@ -1,3 +1,7 @@
 .container {
   @apply aspect-video w-full;
+
+  &-rounded {
+    @apply aspect-video w-full rounded-xl overflow-hidden;
+  }
 }

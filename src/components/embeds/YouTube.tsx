@@ -2,10 +2,12 @@ import styles from "@/styles/YoutubeEmbed.module.scss"
 
 export default function YouTube({
   id,
-  playlist
+  playlist,
+  rounded
 }: {
   id?: string
   playlist?: string
+  rounded?: boolean
 }) {
   return (
     <iframe
@@ -13,11 +15,11 @@ export default function YouTube({
       src={
         playlist
           ? `https://www.youtube-nocookie.com/embed/videoseries?list=${playlist}&cc_load_policy=1`
-          : `https://www.youtube-nocookie.com/embed/${id}&cc_load_policy=1`
+          : `https://www.youtube-nocookie.com/embed/${id}`
       }
       frameBorder="0"
       allow="accelerometer; encrypted-media; autoplay"
-      className={styles.container}
+      className={rounded !== undefined ? styles["container-rounded"].toString() : styles.container.toString()}
     />
   )
 }
