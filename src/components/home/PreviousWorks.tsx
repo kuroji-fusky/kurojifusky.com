@@ -1,5 +1,5 @@
 import styles from "@/styles/PreviousWorks.module.scss"
-import { useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import YouTube from "../embeds/YouTube"
 
 export default function PreviousWorks() {
@@ -24,29 +24,34 @@ export default function PreviousWorks() {
 
 export function WorksItem() {
   const [isOpen, setIsOpen] = useState(true)
+  const [currentHeight, setCurrentHeight] = useState(96)
   const heightRef = useRef<HTMLDivElement>(null)
 
   const tall = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     !isOpen
-      ? (heightRef.current!.style.height = "50px")
-      : heightRef.current?.offsetHeight
-
+      ? setCurrentHeight(heightRef.current?.clientHeight)
+      : setCurrentHeight(96)
   }, [isOpen])
 
   return (
-    <div
-      className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden"
-      ref={heightRef}
-    >
-      <strong className="font-inter text-xl block" onClick={tall}>
-        Heading
-      </strong>
-      <div className="text-sm">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium,
-        eveniet?
-      </div>
+    <div suppressHydrationWarning>
+      {typeof window && (
+        <div
+          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden"
+          ref={heightRef}
+          style={{ height: currentHeight }}
+        >
+          <strong className="font-inter text-xl block" onClick={tall}>
+            Heading
+          </strong>
+          <div className="text-sm">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Accusantium, eveniet? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi molestias maxime quaerat.
+          </div>
+        </div>
+      )}
     </div>
   )
 }
