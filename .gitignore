@@ -36,4 +36,6 @@ yarn-error.log*
 
 public/static/meta/index.html
 
-skepfusky-cms
+# Ignore lock files
+yarn.lock
+package-lock.json
