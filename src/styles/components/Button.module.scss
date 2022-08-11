@@ -12,8 +12,14 @@
     @apply bg-neutral-200;
   }
 
-  &-disabled {
+  &-disabled,
+  &[disabled] {
     @apply cursor-not-allowed px-3 py-[0.28rem] rounded-md border-2 border-neutral-300 text-neutral-300;
     box-shadow: 2px 2px 0 theme("colors.neutral.300");
+
+    &:hover,
+    &:active {
+      @apply px-3 py-[0.28rem] rounded-md border-2 border-neutral-300 text-neutral-300;
+    }
   }
 }

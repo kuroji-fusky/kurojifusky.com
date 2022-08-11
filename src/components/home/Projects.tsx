@@ -1,6 +1,5 @@
 import styles from "@/styles/Projects.module.scss"
 import Image from "next/image"
-import compStyles from "@/styles/Components.module.scss"
 import Link from "next/link"
 import { CringeProjects } from "@/utils/Contents"
 import { useRef } from "react"
@@ -11,6 +10,7 @@ import {
   faExternalLink
 } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import Button from "../base/Button"
 
 export default function Projects() {
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -38,7 +38,9 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className={styles.wrapper}>
-        <h1 className={styles["section-heading"]}>Open Source Projects on GitHub</h1>
+        <h1 className={styles["section-heading"]}>
+          Open Source Projects on GitHub
+        </h1>
         <div className={styles["card-carousel"]} ref={carouselRef}>
           {CringeProjects.map((projects) => (
             <ProjectItem
@@ -52,12 +54,12 @@ export default function Projects() {
           ))}
         </div>
         <div className={styles["nav-button-container"]}>
-          <button className={compStyles.button} onClick={scrollLeft}>
+          <Button onClick={scrollLeft}>
             <FontAwesomeIcon icon={faAngleLeft} />
-          </button>
-          <button className={compStyles.button} onClick={scrollRight}>
+          </Button>
+          <Button onClick={scrollRight}>
             <FontAwesomeIcon icon={faAngleRight} />
-          </button>
+          </Button>
         </div>
       </div>
     </section>
@@ -93,30 +95,21 @@ export function ProjectItem({
       </article>
       <div className={styles["btn-wrapper"]}>
         {repoLink && (
-          <Link href={`https://github.com/${repoLink}`}>
-            <a className={compStyles.button} role="button" target="_blank">
-              <FontAwesomeIcon icon={faGithub} />
-              <span>Code</span>
-            </a>
-          </Link>
+          <Button link={`https://github.com/${repoLink}`} newTab>
+            <FontAwesomeIcon icon={faGithub} />
+            <span>Code</span>
+          </Button>
         )}
         {link ? (
-          <Link href={link}>
-            <a className={compStyles.button} role="button" target="_blank">
-              <FontAwesomeIcon icon={faExternalLink} size="sm" />
-              <span>View project</span>
-            </a>
-          </Link>
-        ) : (
-          <a
-            className={compStyles["button-disabled"]}
-            aria-disabled="true"
-            role="button"
-            target="_blank"
-          >
+          <Button link={link} newTab>
             <FontAwesomeIcon icon={faExternalLink} size="sm" />
             <span>View project</span>
-          </a>
+          </Button>
+        ) : (
+          <Button link="#projects" disabled>
+            <FontAwesomeIcon icon={faExternalLink} size="sm" />
+            <span>View project</span>
+          </Button>
         )}
       </div>
     </div>

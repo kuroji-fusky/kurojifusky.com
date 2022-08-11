@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-
 export default function YouTubeThumbnail({id, alt}: ({id: string, alt?:string})) {
   return (
       <Image

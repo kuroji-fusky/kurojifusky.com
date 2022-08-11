@@ -1,4 +1,4 @@
-import styles from "@/styles/YoutubeEmbed.module.scss"
+import styles from "@/styles/components/YoutubeEmbed.module.scss"
 
 export default function YouTube({
   id,

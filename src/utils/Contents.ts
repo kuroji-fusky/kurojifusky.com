@@ -66,13 +66,6 @@ export const CringeProjects = [
     image: "time.jpg",
     repoLink: "skepfusky/fren-time-tracker"
   },
-  {
-    name: "The Crimson Paw",
-    description:
-      "A WIP moderation Discord bot tailored for The Bad Guys server",
-    image: "crimson-paw-icon.png",
-    repoLink: "skepfusky/The-Crimson-Paw"
-  }
   // {
   //   name: "Tungsten",
   //   description: "A WIP social platform thingy",

@@ -1,5 +1,5 @@
 import styles from "@/styles/PreviousWorks.module.scss"
-import { useEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 import YouTube from "../embeds/YouTube"
 
 export default function PreviousWorks() {
@@ -29,26 +29,26 @@ export function WorksItem() {
 
   const tall = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     !isOpen
       ? setCurrentHeight(96)
-      : setCurrentHeight(heightRef.current?.offsetHeight || 96)
+      : setCurrentHeight(heightRef.current?.clientHeight || 96)
 
     console.log(currentHeight)
   }, [isOpen, currentHeight])
 
   return (
-    <div suppressHydrationWarning>
+    <div suppressHydrationWarning={true}>
       {typeof window && (
-        <div className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden transition-all">
+        <div
+          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden transition-all"
+          ref={heightRef}
+          style={{ height: currentHeight }}
+        >
           <strong className="font-inter text-xl block" onClick={tall}>
             Heading
           </strong>
-          <div
-            className="text-sm"
-            ref={heightRef}
-            style={{ height: currentHeight }}
-          >
+          <div className="text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
             voluptates ex quod totam! Distinctio corporis error, omnis voluptas
             excepturi tempora saepe cum deleniti qui, reiciendis facere iusto
