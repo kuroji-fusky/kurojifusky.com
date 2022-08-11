@@ -24,22 +24,24 @@ export default function PreviousWorks() {
 
 export function WorksItem() {
   const [isOpen, setIsOpen] = useState(true)
-  const [currentHeight, setCurrentHeight] = useState(96)
+  const [currentHeight, setCurrentHeight] = useState(50)
   const heightRef = useRef<HTMLDivElement>(null)
 
   const tall = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
   useEffect(() => {
     !isOpen
-      ? setCurrentHeight(heightRef.current?.clientHeight)
-      : setCurrentHeight(96)
+      ? setCurrentHeight(50)
+      : setCurrentHeight(heightRef.current?.offsetWidth ?? 50)
+
+    console.log(heightRef.current?.offsetWidth)
   }, [isOpen])
 
   return (
     <div suppressHydrationWarning>
       {typeof window && (
         <div
-          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden"
+          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden transition-all"
           ref={heightRef}
           style={{ height: currentHeight }}
         >
@@ -47,8 +49,7 @@ export function WorksItem() {
             Heading
           </strong>
           <div className="text-sm">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Accusantium, eveniet? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi molestias maxime quaerat.
+            asdasdasd
           </div>
         </div>
       )}
