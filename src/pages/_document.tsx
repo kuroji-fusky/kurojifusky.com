@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps
 } from "next/document"
+import Script from "next/script"
 
 export default class ShitApp extends Document {
   static async getInitialProps(
@@ -25,10 +26,11 @@ export default class ShitApp extends Document {
         />
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" type="image/x-icon" href="/favicon.ico" />
-        <script
+        <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
-        ></script>
+          strategy="worker"
+        ></Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
