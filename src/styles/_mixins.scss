@@ -1,11 +1,11 @@
 @mixin contentWrapper($maxScreen: "2xl") {
   @apply max-w-screen-2xl mx-auto px-7;
 
-  :is(h1, p).section-heading {
+  :is(h1, h2, p).section-heading {
     @apply my-7 text-center;
   }
 
-  h1.section-heading {
+  .section-heading {
     @apply text-[2.8rem];
   }
 }
