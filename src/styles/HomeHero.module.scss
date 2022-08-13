@@ -67,3 +67,11 @@
 .socials {
   @apply flex gap-x-9;
 }
+
+.buttons {
+  @apply flex gap-x-2 -translate-y-1;
+
+  .btn-item {
+    @apply shadow-none border-none;
+  }
+}

@@ -1,8 +1,12 @@
 .wrapper {
-  @apply pb-4;
+  @apply pb-4 relative;
 
   h1.section-heading {
     @apply my-10 text-center;
+  }
+
+  &::after {
+    @apply content-[""] absolute -bottom-10 right-0 h-[3.5rem] w-[75%] bg-gradient-to-r from-sona-magenta-600 to-orange-600 -z-1 blur-[100px];
   }
 }
 
@@ -50,8 +54,7 @@
     @apply mr-[9rem];
   }
 
-
-  &:is(:first-child ,:nth-child(2),:last-child) {
+  &:is(:first-child, :nth-child(2), :last-child) {
     @apply from-neutral-500 to-neutral-500;
   }
 }
@@ -81,4 +84,8 @@
 
 .nav-button-container {
   @apply max-w-screen-2xl px-7 flex gap-x-2 py-4 justify-end mx-auto;
+}
+
+.project-btn {
+  @apply bg-neutral-900 bg-opacity-25;
 }

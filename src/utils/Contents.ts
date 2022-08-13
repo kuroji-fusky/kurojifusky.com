@@ -10,13 +10,6 @@ import {
 
 export const CringeProjects = [
   {
-    name: "This website",
-    description:
-      "This awful-looking website you're in is written in Next.js and Tailwind CSS",
-    image: "skepfusky logo.png",
-    repoLink: "skepfusky/skepfusky.xyz"
-  },
-  {
     name: "Searchpets!",
     description:
     "An open source search engine where you find characters and texts from the Housepets! web comic",

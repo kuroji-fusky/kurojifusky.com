@@ -1,7 +1,8 @@
-import { faHeart } from "@fortawesome/free-solid-svg-icons"
+import { faExternalLinkAlt, faHeart } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/WhatsMade.module.scss"
 import Link from "next/link"
+import Button from "../base/Button"
 
 export default function WhatsMade() {
   return (
@@ -34,6 +35,16 @@ export default function WhatsMade() {
             name="TypeScript"
             link="https://www.typescriptlang.org/"
           />
+        </div>
+        <div className="mx-auto mt-10">
+          <Button newTab link="https://github.com/skepfusky/skepfusky.xyz">
+            View source code on GitHub
+            <FontAwesomeIcon
+              icon={faExternalLinkAlt}
+              size="sm"
+              style={{ marginLeft: "0.5rem" }}
+            />
+          </Button>
         </div>
       </div>
     </section>

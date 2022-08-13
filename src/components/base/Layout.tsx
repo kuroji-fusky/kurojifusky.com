@@ -14,21 +14,15 @@ export default function Layout({ children }: ILayoutProps) {
   }
 
   useEffect(() => {
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      isOpen(false)
-    }
+    if (window.matchMedia("(min-width: 768px)").matches) isOpen(false)
 
     window.addEventListener("resize", () => {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        isOpen(false)
-      }
+      if (window.matchMedia("(min-width: 768px)").matches) isOpen(false)
     })
 
     return () => {
       window.removeEventListener("resize", () => {
-        if (window.matchMedia("(min-width: 768px)").matches) {
-          isOpen(true)
-        }
+        if (window.matchMedia("(min-width: 768px)").matches) isOpen(true)
       })
     }
   }, [isOpen])

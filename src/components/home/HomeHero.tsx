@@ -9,6 +9,7 @@ import { socials } from "@/utils/Contents"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import styles from "@/styles/HomeHero.module.scss"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
+import Button from "../base/Button"
 
 export default function HomeHero() {
   const { isScrolled } = useContext(NavbarScrollContext)
@@ -53,6 +54,12 @@ export default function HomeHero() {
               artwork by: <FaIcon icon={faDiscord} /> catastrophe#6282
             </span>
           </p>
+          <div className={styles.buttons}>
+            <Button className={styles["btn-item"]} link="#projects">Projects</Button>
+            <Button className={styles["btn-item"]} link="/resume">Resume</Button>
+            <Button className={styles["btn-item"]} link="/blog">Blog</Button>
+            <Button className={styles["btn-item"]} link="/artworks">Gallery</Button>
+          </div>
           <div className={styles.socials}>
             {socials.map(({ icon, link }) => (
               <Link key={link} href={link} passHref>
@@ -65,7 +72,7 @@ export default function HomeHero() {
         </article>
         <div className={fursonaLoaded()}>
           <Parallax
-            speed={-69}
+            speed={-150}
             disabled={isMobile}
             className={styles["fursona-img-wrapper"]}
           >

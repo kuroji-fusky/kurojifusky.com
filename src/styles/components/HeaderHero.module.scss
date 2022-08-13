@@ -1,7 +1,16 @@
 .header-hero {
-  @apply py-10 border-b-2 border-b-neutral-300;
+  @apply pb-[4.5rem] pt-[6.75rem] border-b-2 border-b-neutral-300;
 }
 
 .header-hero-wrapped {
   @extend .header-hero;
+
+  h1,
+  h2 {
+    @apply max-w-screen-2xl px-8 mx-auto text-center;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
 }

@@ -54,10 +54,13 @@ export default function Projects() {
           ))}
         </div>
         <div className={styles["nav-button-container"]}>
-          <Button onClick={scrollLeft}>
+          <Button link="/portfolio" className={styles["project-btn"]}>
+            View portfolio
+          </Button>
+          <Button onClick={scrollLeft} className={styles["project-btn"]}>
             <FontAwesomeIcon icon={faAngleLeft} />
           </Button>
-          <Button onClick={scrollRight}>
+          <Button onClick={scrollRight} className={styles["project-btn"]}>
             <FontAwesomeIcon icon={faAngleRight} />
           </Button>
         </div>
