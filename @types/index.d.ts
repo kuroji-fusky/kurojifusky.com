@@ -24,7 +24,7 @@ declare interface IContainerProps extends ILayoutProps {
   title?: string
   image?: string
   description?: string
-  noWrapper?: true
+  wrap?: boolean
 }
 
 declare interface IOtherCardProps {

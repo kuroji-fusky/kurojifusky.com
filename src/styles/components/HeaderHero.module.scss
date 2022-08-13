@@ -1,0 +1,7 @@
+.header-hero {
+  @apply py-10 border-b-2 border-b-neutral-300;
+}
+
+.header-hero-wrapped {
+  @extend .header-hero;
+}

@@ -7,7 +7,7 @@ export default function Container({
   description,
   image,
   children,
-  noWrapper
+  wrap
 }: IContainerProps) {
   const router = useRouter()
 
@@ -45,12 +45,12 @@ export default function Container({
         <meta name="twitter:url" content={url} />
         <link rel="canonical" href={url} />
       </Head>
-      {noWrapper ? (
-        <main role="main">{children}</main>
-      ) : (
+      {wrap ? (
         <main className={styles.wrapper} role="main">
           {children}
         </main>
+      ) : (
+        <main role="main">{children}</main>
       )}
     </>
   )

@@ -4,7 +4,7 @@ declare global {
   }
 }
 
-export const pageView = (url: string) => {
+export const pageView = (url: any) => {
   window.gtag("config", process.env.GA, {
     page_path: url
   })

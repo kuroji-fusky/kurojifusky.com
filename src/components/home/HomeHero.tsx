@@ -7,34 +7,25 @@ import { isMobile } from "react-device-detect"
 import { InView } from "react-intersection-observer"
 import { socials } from "@/utils/Contents"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
-import styles from "@/styles/HeaderHero.module.scss"
+import styles from "@/styles/HomeHero.module.scss"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
-export default function HeaderHero() {
+export default function HomeHero() {
   const { isScrolled } = useContext(NavbarScrollContext)
   const [isLoaded, setIsLoaded] = useState(false)
 
   const fursonaLoaded = () => {
-    if (isLoaded !== true) {
-      return styles.fursona.toString()
-    }
-
+    if (isLoaded !== true) return styles.fursona.toString()
     return styles["fursona-loaded"].toString()
   }
 
   const bioLoaded = () => {
-    if (isLoaded !== true) {
-      return styles.bio.toString()
-    }
-
+    if (isLoaded !== true) return styles.bio.toString()
     return styles["bio-loaded"].toString()
   }
 
   const containerLoaded = () => {
-    if (isLoaded !== true) {
-      return styles.container.toString()
-    }
-
+    if (isLoaded !== true) return styles.container.toString()
     return styles["container-loaded"].toString()
   }
 
