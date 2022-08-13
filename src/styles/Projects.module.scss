@@ -25,6 +25,8 @@
   composes: item from "./Hobbies.module.scss";
   @apply p-4 flex lg-others:grid w-[330px] lg-others:w-[520px] items-center text-center gap-3 scroll-px-10;
 
+  box-shadow: 4px 4px 0 #7c728396;
+
   grid-template-columns: min-content 1fr 1fr;
 
   grid-template-areas:
@@ -37,14 +39,12 @@
   &:first-child,
   &:nth-child(2),
   &:last-child {
-    @apply translate-y-0 translate-x-0 scale-100;
+    @apply translate-y-0 translate-x-0 scale-100 from-neutral-500 to-neutral-500;
   }
 
   h2 {
     @apply text-2xl;
   }
-
-  $item-spacing: 9rem;
 
   &:first-child {
     @apply ml-[9rem];
@@ -52,10 +52,6 @@
 
   &:last-child {
     @apply mr-[9rem];
-  }
-
-  &:is(:first-child, :nth-child(2), :last-child) {
-    @apply from-neutral-500 to-neutral-500;
   }
 }
 

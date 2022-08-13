@@ -1,12 +1,15 @@
 import Container from "@/components/base/Container"
 import Image from "next/image"
 import styles from "@/styles/Technologies.module.scss"
+import HeaderHero from "@/components/HeaderHero"
 
 export default function Technologies() {
   return (
     <Container>
-      <h1>Technologies/Software I use</h1>
-      <section>
+      <HeaderHero wrapContent>
+        <h1>Technologies/Software I use</h1>
+      </HeaderHero>
+      <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Programming</h2>
         <h3>Code editors/IDEs</h3>
         <div className={styles["stack-grid"]}>
@@ -24,7 +27,7 @@ export default function Technologies() {
           <TechItem name="Sass" />
         </div>
       </section>
-      <section>
+      <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Filmmaking/video editing</h2>
         <div className={styles["stack-grid"]}>
           <TechItem name="Photoshop" />
@@ -42,7 +45,7 @@ export default function Technologies() {
           <TechItem name="Red Giant Universe" />
         </div>
       </section>
-      <section>
+      <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Music</h2>
         <div className={styles["stack-grid"]}>
           <TechItem name="FL Studio 20" />
@@ -50,7 +53,7 @@ export default function Technologies() {
           <TechItem name="Melodyne" />
         </div>
       </section>
-      <section>
+      <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Design</h2>
         <div className={styles["stack-grid"]}>
           <TechItem name="Figma" />
@@ -58,7 +61,7 @@ export default function Technologies() {
           <TechItem name="Illustrator" />
         </div>
       </section>
-      <section>
+      <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Equipment</h2>
         <div className={styles["stack-grid"]}>
           <TechItem name="Canon EOS M50" />
