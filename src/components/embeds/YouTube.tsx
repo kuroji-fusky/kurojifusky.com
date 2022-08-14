@@ -1,14 +1,6 @@
 import styles from "@/styles/components/YoutubeEmbed.module.scss"
 
-export default function YouTube({
-  id,
-  playlist,
-  rounded
-}: {
-  id?: string
-  playlist?: string
-  rounded?: boolean
-}) {
+export default function YouTube({ id, playlist, rounded }: IYouTubeProps) {
   return (
     <iframe
       title="YouTube Video Player"
@@ -19,7 +11,11 @@ export default function YouTube({
       }
       frameBorder="0"
       allow="accelerometer; encrypted-media; autoplay"
-      className={rounded !== undefined ? styles["container-rounded"].toString() : styles.container.toString()}
+      className={
+        rounded !== undefined
+          ? styles["container-rounded"].toString()
+          : styles.container.toString()
+      }
     />
   )
 }

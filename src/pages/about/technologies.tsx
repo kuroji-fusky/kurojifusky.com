@@ -1,14 +1,14 @@
 import Container from "@/components/base/Container"
 import Image from "next/image"
 import styles from "@/styles/Technologies.module.scss"
-import HeaderHero from "@/components/HeaderHero"
+import HeaderHeroItem from "@/components/items/HeaderHeroItem"
 
 export default function Technologies() {
   return (
     <Container>
-      <HeaderHero wrapContent>
+      <HeaderHeroItem wrap>
         <h1>Technologies/Software I use</h1>
-      </HeaderHero>
+      </HeaderHeroItem>
       <section className="max-w-screen-2xl px-8 mx-auto">
         <h2>Programming</h2>
         <h3>Code editors/IDEs</h3>

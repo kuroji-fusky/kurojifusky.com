@@ -1,13 +1,3 @@
-interface IComponentButtonProps {
-  children?: React.ReactNode
-  disabled?: boolean
-  className?: string
-  style?: React.CSSProperties
-  link?: string
-  newTab?: boolean
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
-}
-
 import styles from "@/styles/components/Button.module.scss"
 import Link from "next/link"
 

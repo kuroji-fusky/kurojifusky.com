@@ -14,9 +14,7 @@ export default function ShitApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      ga.pageView(url)
-    }
+    const handleRouteChange = (url: string) => ga.pageView(url)
 
     router.events.on("routeChangeComplete", handleRouteChange)
     return () => router.events.off("routeChangeComplete", handleRouteChange)

@@ -1,35 +1,27 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import Link from "next/link"
 import { NavbarMobileContext, NavbarScrollContext } from "@/utils/Context"
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import styles from "@/styles/Navbar.module.scss"
+import NavItem from "../items/NavItem"
 
 export default function Navbar() {
   const { scrolled } = useContext(NavbarScrollContext)
   const { open, isOpen } = useContext(NavbarMobileContext)
 
   const navCloset = () => {
-    if (open !== true) {
-      return styles["nav-links-row-closed"].toString()
-    }
-
+    if (open !== true) return styles["nav-links-row-closed"].toString()
     return styles["nav-links-row"].toString()
   }
 
   const backdropToggle = () => {
-    if (open !== true) {
-      return styles["backdrop-hidden"].toString()
-    }
-
+    if (open !== true) return styles["backdrop-hidden"].toString()
     return styles.backdrop.toString()
   }
 
   const navbarToggle = () => {
-    if (scrolled !== true) {
-      return styles.opaque.toString()
-    }
-
+    if (scrolled !== true) return styles.opaque.toString()
     return styles.transparent.toString()
   }
 
@@ -92,17 +84,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
-}
-
-export function NavItem({ link, name }: { link: string; name: string }) {
-  const { isOpen } = useContext(NavbarMobileContext)
-
-  return (
-    <Link href={link}>
-      <a onClick={() => isOpen(false)} className={styles["nav-link"]}>
-        {name}
-      </a>
-    </Link>
   )
 }

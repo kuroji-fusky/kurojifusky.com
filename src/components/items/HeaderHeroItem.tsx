@@ -1,14 +1,11 @@
 import styles from "@/styles/components/HeaderHero.module.scss"
 
-export default function HeaderHero({
+export default function HeaderHeroItem({
   children,
-  wrapContent
-}: {
-  children: React.ReactNode
-  wrapContent?: boolean
-}) {
+  wrap
+}: IHeaderHeroItemProps) {
   const contentWrapped = () => {
-    if (!wrapContent) return styles["header-hero"].toString()
+    if (!wrap) return styles["header-hero"].toString()
     return styles["header-hero-wrapped"].toString()
   }
 

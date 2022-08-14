@@ -7,8 +7,8 @@ import { isMobile } from "react-device-detect"
 import { InView } from "react-intersection-observer"
 import { socials } from "@/utils/Contents"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
-import styles from "@/styles/HomeHero.module.scss"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
+import styles from "@/styles/HomeHero.module.scss"
 import Button from "../base/Button"
 
 export default function HomeHero() {
@@ -55,10 +55,18 @@ export default function HomeHero() {
             </span>
           </p>
           <div className={styles.buttons}>
-            <Button className={styles["btn-item"]} link="#projects">Projects</Button>
-            <Button className={styles["btn-item"]} link="/resume">Resume</Button>
-            <Button className={styles["btn-item"]} link="/blog">Blog</Button>
-            <Button className={styles["btn-item"]} link="/artworks">Gallery</Button>
+            <Button className={styles["btn-item"]} link="#projects">
+              Projects
+            </Button>
+            <Button className={styles["btn-item"]} link="/resume">
+              Resume
+            </Button>
+            <Button className={styles["btn-item"]} link="/blog">
+              Blog
+            </Button>
+            <Button className={styles["btn-item"]} link="/artworks">
+              Gallery
+            </Button>
           </div>
           <div className={styles.socials}>
             {socials.map(({ icon, link }) => (
