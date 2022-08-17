@@ -1,6 +1,6 @@
 import Container from "@/components/base/Container"
 import Image from "next/image"
-import styles from "@/styles/Technologies.module.scss"
+import styles from "@/styles/pages/Technologies.module.scss"
 import HeaderHeroItem from "@/components/items/HeaderHeroItem"
 
 export default function Technologies() {
