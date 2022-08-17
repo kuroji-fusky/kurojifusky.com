@@ -1,4 +1,4 @@
-import styles from "@/styles/Projects.module.scss"
+import styles from "@/styles/sections/Projects.module.scss"
 import { CringeProjects } from "@/utils/Contents"
 import { useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

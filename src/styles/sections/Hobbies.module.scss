@@ -1,4 +1,4 @@
-@use "mixins" as *;
+@use "../mixins" as *;
 
 .divider {
   @apply border-t-2 border-neutral-300 pb-10 bg-neutral-900;

@@ -137,10 +137,11 @@ module.exports = {
         full: "50%"
       },
       animation: {
-        "gradient-scroll": "gradient-scroll-slow 9s linear infinite"
+        "gradient-scroll": "gradient-scroll-root 9s linear infinite",
+        "gradient-scroll-fast": "gradient-scroll-root 1650ms linear infinite",
       },
       keyframes: {
-        "gradient-scroll-slow": {
+        "gradient-scroll-root": {
           "0%": { "background-position": "left" },
           "100%": { "background-position": "right" },
         }

@@ -1,0 +1,19 @@
+.wrapper {
+  --cube-size: 85px;
+  @apply h-[var(--cube-size)] w-[var(--cube-size)] rounded-2xl relative overflow-hidden border-[5px] border-sona-borahae-200;
+}
+
+.gradient {
+  @apply absolute inset-[0.25rem] rounded-xl animate-gradient-scroll-fast;
+
+  background: linear-gradient(
+    45deg,
+    theme("colors.sona-borahae.400"),
+    theme("colors.sona-royalblue.500"),
+    theme("colors.sona-borahae.400"),
+    theme("colors.sona-royalblue.500")
+  );
+
+  background-size: 500% 100%;
+
+}

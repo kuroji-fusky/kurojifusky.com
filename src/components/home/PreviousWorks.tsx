@@ -1,4 +1,4 @@
-import styles from "@/styles/PreviousWorks.module.scss"
+import styles from "@/styles/sections/PreviousWorks.module.scss"
 import { useLayoutEffect, useRef, useState } from "react"
 import YouTube from "../embeds/YouTube"
 

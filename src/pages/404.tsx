@@ -1,6 +1,4 @@
-import styles from "@/styles/NotFound.module.scss"
-import componentStyles from "@/styles/Components.module.scss"
-import Link from "next/link"
+import styles from "@/styles/pages/NotFound.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons"
 import Button from "@/components/base/Button"

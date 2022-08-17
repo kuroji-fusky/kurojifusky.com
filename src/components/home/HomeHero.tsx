@@ -8,8 +8,9 @@ import { InView } from "react-intersection-observer"
 import { socials } from "@/utils/Contents"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
-import styles from "@/styles/HomeHero.module.scss"
+import styles from "@/styles/sections/HomeHero.module.scss"
 import Button from "../base/Button"
+import LoadingCube from "../base/LoadingCube"
 
 export default function HomeHero() {
   const { isScrolled } = useContext(NavbarScrollContext)
@@ -36,7 +37,9 @@ export default function HomeHero() {
         as="section"
         id={styles.hero}
         onChange={(inView) => isScrolled(inView)}
+        rootMargin="-120px 0px 0px 0px"
       >
+        <LoadingCube />
         <div className={containerLoaded()}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>

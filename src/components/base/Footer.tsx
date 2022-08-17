@@ -1,6 +1,6 @@
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
-import styles from "@/styles/Footer.module.scss"
+import styles from "@/styles/base/Footer.module.scss"
 import Image from "next/image"
 import { socials } from "@/utils/Contents"
 

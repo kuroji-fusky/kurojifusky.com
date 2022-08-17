@@ -1,7 +1,7 @@
 import { NavbarMobileContext } from "@/utils/Context"
 import Link from "next/link"
 import { useContext } from "react"
-import styles from "@/styles/Navbar.module.scss"
+import styles from "@/styles/base/Navbar.module.scss"
 
 export default function NavItem({ link, name }: INavItemProps) {
   const { isOpen } = useContext(NavbarMobileContext)

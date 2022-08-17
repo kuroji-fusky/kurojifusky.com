@@ -1,4 +1,4 @@
-import styles from "@/styles/Hobbies.module.scss"
+import styles from "@/styles/sections/Hobbies.module.scss"
 import Image from "next/image"
 
 export function HobbiesItem({ title, description, image }: IHobbiesCardProps) {

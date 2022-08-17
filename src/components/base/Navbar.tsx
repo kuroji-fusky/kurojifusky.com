@@ -3,7 +3,7 @@ import Link from "next/link"
 import { NavbarMobileContext, NavbarScrollContext } from "@/utils/Context"
 import { FontAwesomeIcon as FaIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
-import styles from "@/styles/Navbar.module.scss"
+import styles from "@/styles/base/Navbar.module.scss"
 import NavItem from "../items/NavItem"
 
 export default function Navbar() {

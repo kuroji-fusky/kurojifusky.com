@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "@/styles/WhatsMade.module.scss"
+import styles from "@/styles/sections/WhatsMade.module.scss"
 
 export default function WhatsMadeItem({ icon, name, link }: IWhatsMadeItemProps) {
   return (

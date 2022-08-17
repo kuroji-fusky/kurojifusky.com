@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Button from "../base/Button"
-import styles from "@/styles/Projects.module.scss"
+import styles from "@/styles/sections/Projects.module.scss"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

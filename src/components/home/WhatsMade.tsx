@@ -1,6 +1,6 @@
 import { faExternalLinkAlt, faHeart } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import styles from "@/styles/WhatsMade.module.scss"
+import styles from "@/styles/sections/WhatsMade.module.scss"
 import Button from "../base/Button"
 import WhatsMadeItem from "../items/WhatsMadeItem"
 
