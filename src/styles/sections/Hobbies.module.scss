@@ -19,13 +19,15 @@
 }
 
 .grid-container {
-  @apply grid lg-others:grid-cols-3 lg-others:gap-3 lg-others:place-items-center lg-others:mx-3 place-items-stretch translate-y-9 grid-cols-1 gap-0 mx-0 md:mx-24;
+  @apply z-2 grid lg-others:grid-cols-3 lg-others:gap-3 lg-others:place-items-center lg-others:mx-3 place-items-stretch translate-y-9 grid-cols-1 gap-0 mx-0 md:mx-24;
 
   --gradient-expand-deez-nuts: 85%;
 
-  &::before {
-    @apply content-[""] absolute bottom-10 w-[var(--gradient-expand-deez-nuts)] h-20 bg-gradient-to-r from-sona-royalblue-500 to-sona-borahaealt-600 blur-[100px] transition-all duration-300;
+  &::after {
+    @apply content-[""] lg-others:block hidden absolute bottom-10 w-[var(--gradient-expand-deez-nuts)] h-20 bg-gradient-to-r from-sona-royalblue-500 to-sona-borahaealt-600 blur-[100px] transition-all duration-300 -z-1;
     left: calc(50% - var(--gradient-expand-deez-nuts) / 2);
+    $clipHeight: 155%;
+    clip-path: polygon(-100% -150%, 200% -175%, 150% $clipHeight, -50% $clipHeight);
   }
 
   &:hover {

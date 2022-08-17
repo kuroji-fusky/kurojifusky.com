@@ -1,3 +1,7 @@
+.divider {
+  @apply border-t-2 border-neutral-300;
+}
+
 .wrapper {
   @apply pb-4 relative;
 
@@ -57,7 +61,7 @@
 
 .img-wrapper {
   grid-area: card-img;
-  @apply relative mx-auto rounded-xl overflow-hidden lg-others:w-[127px] w-[150px] lg-others:h-[127px] h-[150px];
+  @apply relative mx-auto rounded-xl grid place-items-center overflow-hidden lg-others:w-[127px] w-[150px] lg-others:h-[127px] h-[150px];
 }
 
 .info-wrapper {

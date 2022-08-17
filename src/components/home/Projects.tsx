@@ -30,7 +30,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects">
+    <section id="projects" className={styles.divider}>
       <div className={styles.wrapper}>
         <h1 className={styles["section-heading"]}>
           Open Source Projects on GitHub

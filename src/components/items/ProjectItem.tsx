@@ -4,6 +4,8 @@ import styles from "@/styles/sections/Projects.module.scss"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faExternalLink } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
+import LoadingCube from "../base/LoadingCube"
 
 export default function ProjectItem({
   title,
@@ -12,6 +14,8 @@ export default function ProjectItem({
   link,
   repoLink
 }: IProjectCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false)
+
   return (
     <div
       className={styles.item}
@@ -22,11 +26,13 @@ export default function ProjectItem({
         <Image
           objectFit="cover"
           layout="fill"
-          alt=""
+          alt={`Image for ${title}: ${description}`}
           src={`/static/projects/${image}`}
           loading="lazy"
           itemType="https://schema.org/ImageObject"
+          onLoadingComplete={() => setIsLoaded(true)}
         />
+        <LoadingCube hidden={!isLoaded ? false : true} />
       </div>
       <article className={styles["info-wrapper"]}>
         <h2 itemType="https://schema.org/name">{title}</h2>

@@ -17,17 +17,17 @@ export default function HomeHero() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const fursonaLoaded = () => {
-    if (isLoaded !== true) return styles.fursona.toString()
+    if (!isLoaded) return styles.fursona.toString()
     return styles["fursona-loaded"].toString()
   }
 
   const bioLoaded = () => {
-    if (isLoaded !== true) return styles.bio.toString()
+    if (!isLoaded) return styles.bio.toString()
     return styles["bio-loaded"].toString()
   }
 
   const containerLoaded = () => {
-    if (isLoaded !== true) return styles.container.toString()
+    if (!isLoaded) return styles.container.toString()
     return styles["container-loaded"].toString()
   }
 
@@ -39,12 +39,12 @@ export default function HomeHero() {
         onChange={(inView) => isScrolled(inView)}
         rootMargin="-120px 0px 0px 0px"
       >
-        <LoadingCube />
         <div className={containerLoaded()}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>
           <span>&#47;&gt;</span>
         </div>
+        <LoadingCube hidden={!isLoaded ? false : true} />
         <article className={bioLoaded()}>
           <p>
             <span className={styles.heading}>
