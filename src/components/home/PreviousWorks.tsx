@@ -9,7 +9,7 @@ export default function PreviousWorks() {
         <h1 className="mt-8 mb-2">Previous Works</h1>
         <div className="grid grid-cols-5 gap-2 w-[80%]">
           <div className="col-span-3 p-4">
-            {/* <YouTube id="S2knoMlP1rw" rounded /> */}
+            <YouTube id="S2knoMlP1rw" rounded />
           </div>
           <aside className="col-span-2 flex flex-col gap-y-3 overflow-x-hidden p-3 bg-neutral-400">
             <WorksItem />
@@ -23,16 +23,16 @@ export default function PreviousWorks() {
 }
 
 export function WorksItem() {
-  const [isOpen, setIsOpen] = useState(true)
-  const [currentHeight, setCurrentHeight] = useState(96)
+  const [isOpen, setIsOpen] = useState(false)
+  const [currentHeight, setCurrentHeight] = useState(50)
   const heightRef = useRef<HTMLDivElement>(null)
 
   const tall = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
   useLayoutEffect(() => {
     !isOpen
-      ? setCurrentHeight(96)
-      : setCurrentHeight(heightRef.current?.clientHeight || 96)
+      ? setCurrentHeight(50)
+      : setCurrentHeight(heightRef.current?.scrollHeight || 50)
 
     console.log(currentHeight)
   }, [isOpen, currentHeight])

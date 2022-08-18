@@ -6,7 +6,8 @@
   @extend .header-hero;
 
   h1,
-  h2 {
+  h2,
+  p {
     @apply max-w-screen-2xl px-8 mx-auto text-center;
   }
 

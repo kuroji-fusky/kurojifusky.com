@@ -1,0 +1,23 @@
+.wrapper {
+  @apply flex flex-col rounded-md;
+
+  img {
+    @apply transition-all duration-300;
+  }
+
+  &:hover img {
+    @apply scale-105;
+  }
+}
+
+.info-container {
+  @apply px-4 py-3 bg-neutral-400 rounded-bl-md rounded-br-md;
+}
+
+.heading {
+  @apply flex justify-between items-center;
+}
+
+.read-more {
+  @apply px-3 py-0 h-[1.75rem] text-sm flex items-center gap-x-1.5;
+}

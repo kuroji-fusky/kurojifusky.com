@@ -10,7 +10,7 @@ export default function Home() {
     <Container>
       <HomeHero />
       <Hobbies />
-      {/* <PreviousWorks /> */}
+      <PreviousWorks />
       <Projects />
       <WhatsMade />
     </Container>
