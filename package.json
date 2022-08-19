@@ -1,41 +1,5 @@
 {
-  "name": "skepfusky-v6-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@builder.io/partytown": "^0.6.4",
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@react-three/fiber": "^8.2.2",
-    "autoprefixer": "^10.4.7",
-    "next": "12.2.3",
-    "postcss": "^8.4.14",
-    "react": "18.2.0",
-    "react-device-detect": "^2.2.2",
-    "react-dom": "18.2.0",
-    "react-intersection-observer": "^9.3.5",
-    "react-scroll-parallax": "^3.2.0",
-    "sass": "^1.53.0",
-    "sharp": "^0.30.7",
-    "tailwindcss": "^3.1.6",
-    "three": "^0.143.0"
-  },
-  "devDependencies": {
-    "@types/node": "18.0.6",
-    "@types/react": "18.0.15",
-    "@types/react-dom": "18.0.6",
-    "cssnano": "^5.1.12",
-    "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3",
-    "prettier": "^2.7.1",
-    "typescript": "4.7.4"
-  }
+	"name": "skepfusky-monorepo",
+	"private": true,
+	"workspaces": ["skepfusky-v6-next"]
 }

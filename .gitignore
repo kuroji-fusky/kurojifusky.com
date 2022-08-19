@@ -9,15 +9,14 @@
 /coverage
 
 # next.js
-/.next/
-/out/
+app/.next/
+app/out/
 
 # production
-/build
+app/build
 
 # misc
-.DS_Store
-*.pem
+app/*.pem
 
 # debug
 npm-debug.log*
@@ -34,8 +33,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-public/static/meta/index.html
+app/public/static/meta/index.html
 
 # Ignore lock files
-yarn.lock
-package-lock.json
+yarn.lock*
+package-lock.json*
