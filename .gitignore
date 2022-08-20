@@ -9,14 +9,14 @@ node_modules*
 /coverage
 
 # next.js
-app/.next/
-app/out/
+frontend/.next*
+frontend/out/
 
 # production
-app/build
+frontend/build
 
 # misc
-app/*.pem
+frontend/*.pem
 
 # debug
 npm-debug.log*
