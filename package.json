@@ -1,5 +1,15 @@
 {
-	"name": "skepfusky-monorepo",
-	"private": true,
-	"workspaces": ["skepfusky-v6-next"]
+  "name": "skepfusky-monorepo",
+  "private": true,
+  "workspaces": [
+    "skepfusky-v6-next",
+    "skepfusky-cms"
+  ],
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "prettier": "^2.7.1"
+  },
+  "scripts": {
+    "init": "concurrently \"yarn --cwd ./skepfusky-v6-next install\" \"yarn --cwd ./skepfusky-cms install\""
+  }
 }
