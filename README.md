@@ -1,12 +1,10 @@
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/94678583/182994583-ebdf9b49-57d4-4d99-841b-45f8d024502e.png">
+  <img alt="skepfusky website source code" src="https://user-images.githubusercontent.com/94678583/185732205-d1e64414-7fe8-4bb0-97e1-4f1570b7a9b7.png">
   <br>
   <a href="https://skepfusky.xyz">skepfusky.xyz</a>
 </h1>
 
-<p align="center">
 The source code of my personal website written in Next.js! Deployed on Vercel.
-</p>
 
 ## Running the thing
 
