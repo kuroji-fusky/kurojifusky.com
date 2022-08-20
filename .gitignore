@@ -33,7 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-app/public/static/meta/index.html
+*.html
 
 # Ignore lock files
 yarn.lock*
