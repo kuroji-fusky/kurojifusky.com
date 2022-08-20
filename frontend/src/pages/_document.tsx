@@ -58,14 +58,13 @@ export default class ShitApp extends Document {
           }}
         />
         <body>
-          <Main />
-          <NextScript />
           <noscript
             dangerouslySetInnerHTML={{
-              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GTM}"
-              height="0" width="0" style="display:none;visibility:hidden"></iframe>`
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             }}
           ></noscript>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )
