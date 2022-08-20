@@ -20,10 +20,6 @@
       "type": "richtext",
       "required": true
     },
-    "published_date": {
-      "type": "date",
-      "required": true
-    },
     "cover": {
       "type": "media",
       "multiple": false,

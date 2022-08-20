@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.9",
     "@builder.io/partytown": "^0.6.4",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
@@ -16,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-three/fiber": "^8.2.2",
     "autoprefixer": "^10.4.7",
+    "graphql": "^16.6.0",
     "next": "12.2.3",
     "postcss": "^8.4.14",
     "react": "18.2.0",
