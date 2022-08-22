@@ -31,13 +31,13 @@ export default function Blog({ articles }: any) {
 
 export async function getStaticProps() {
   const client = new ApolloClient({
-    uri: "http://localhost:1337/graphql",
+    uri: `${process.env.STRAPI_URL}/graphql`,
     cache: new InMemoryCache()
   })
 
   const { data } = await client.query({
     query: gql`
-      query getArticles {
+      query {
         articles {
           data {
             attributes {

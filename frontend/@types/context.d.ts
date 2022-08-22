@@ -1,9 +1,9 @@
 declare type NavbarMobileContextType = {
   open: boolean
-  isOpen: any
+  isOpen: (open: boolean) => void
 }
 
 declare type NavbarScrollContextType = {
   scrolled: boolean
-  isScrolled: any
+  isScrolled: (scrolled: boolean) => void
 }

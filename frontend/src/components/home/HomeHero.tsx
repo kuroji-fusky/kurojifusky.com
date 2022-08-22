@@ -16,20 +16,17 @@ export default function HomeHero() {
   const { isScrolled } = useContext(NavbarScrollContext)
   const [isLoaded, setIsLoaded] = useState(false)
 
-  const fursonaLoaded = () => {
-    if (!isLoaded) return styles.fursona.toString()
-    return styles["fursona-loaded"].toString()
-  }
+  const fursonaLoaded = !isLoaded
+    ? styles.fursona.toString()
+    : styles["fursona-loaded"].toString()
 
-  const bioLoaded = () => {
-    if (!isLoaded) return styles.bio.toString()
-    return styles["bio-loaded"].toString()
-  }
+  const bioLoaded = !isLoaded
+    ? styles.bio.toString()
+    : styles["bio-loaded"].toString()
 
-  const containerLoaded = () => {
-    if (!isLoaded) return styles.container.toString()
-    return styles["container-loaded"].toString()
-  }
+  const containerLoaded = !isLoaded
+    ? styles.container.toString()
+    : styles["container-loaded"].toString()
 
   return (
     <ParallaxProvider>
@@ -39,13 +36,13 @@ export default function HomeHero() {
         onChange={(inView) => isScrolled(inView)}
         rootMargin="-120px 0px 0px 0px"
       >
-        <div className={containerLoaded()}>
+        <div className={containerLoaded}>
           <span>&lt;</span>
           <span className={styles.text}>skepfusky</span>
           <span>&#47;&gt;</span>
         </div>
         <LoadingCube hidden={!isLoaded ? false : true} />
-        <article className={bioLoaded()}>
+        <article className={bioLoaded}>
           <p>
             <span className={styles.heading}>
               A 20-year-old hobbyist as a full-stack web developer, aspiring
@@ -81,7 +78,7 @@ export default function HomeHero() {
             ))}
           </div>
         </article>
-        <div className={fursonaLoaded()}>
+        <div className={fursonaLoaded}>
           <Parallax
             speed={-150}
             disabled={isMobile}

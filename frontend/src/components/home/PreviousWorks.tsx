@@ -12,9 +12,36 @@ export default function PreviousWorks() {
             <YouTube id="S2knoMlP1rw" rounded />
           </div>
           <aside className="col-span-2 flex flex-col gap-y-3 overflow-x-hidden p-3 bg-neutral-400">
-            <WorksItem />
-            <WorksItem />
-            <WorksItem />
+            <WorksItem title="ey">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium repudiandae natus illum a placeat quo sint
+                asperiores officia. Ut doloremque tempore animi error
+                cupiditate. Accusantium, ipsa consequuntur! Expedita, blanditiis
+                tempore.
+              </p>
+            </WorksItem>
+            <WorksItem title="ey">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium repudiandae natus illum a placeat quo sint
+                asperiores officia. Ut doloremque tempore animi error
+                cupiditate. Accusantium, ipsa consequuntur! Expedita, blanditiis
+                tempore.
+              </p>
+            </WorksItem>
+            <WorksItem title="ey">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+                quas minus cumque corporis ea praesentium consequatur, debitis
+                obcaecati deserunt voluptatem commodi quo dolores adipisci
+                laborum illo quia culpa. Optio nulla totam quasi aliquam
+                laboriosam quia sint quod minus atque, dolore cumque iste eaque
+                delectus obcaecati nostrum illum voluptate suscipit sapiente
+                tenetur? Eos sequi, voluptates blanditiis pariatur et quia
+                consectetur!
+              </p>
+            </WorksItem>
           </aside>
         </div>
       </div>
@@ -22,42 +49,41 @@ export default function PreviousWorks() {
   )
 }
 
-export function WorksItem() {
+export function WorksItem({
+  title,
+  children
+}: {
+  title: string
+  children: React.ReactNode
+}) {
   const [isOpen, setIsOpen] = useState(false)
   const [currentHeight, setCurrentHeight] = useState(50)
   const heightRef = useRef<HTMLDivElement>(null)
 
-  const tall = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
+  const expandItem = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
   useLayoutEffect(() => {
     !isOpen
       ? setCurrentHeight(50)
-      : setCurrentHeight(heightRef.current?.scrollHeight || 50)
-
-    console.log(currentHeight)
-  }, [isOpen, currentHeight])
+      : setCurrentHeight(heightRef.current!.scrollHeight)
+  }, [isOpen])
 
   return (
-    <div suppressHydrationWarning={true}>
+    <div suppressHydrationWarning>
       {typeof window && (
         <div
-          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden transition-all"
           ref={heightRef}
+          className="text-left ml-6 p-3 bg-neutral-900 rounded-md overflow-y-hidden transition-all"
           style={{ height: currentHeight }}
+          aria-label={title}
         >
-          <strong className="font-inter text-xl block" onClick={tall}>
-            Heading
+          <strong
+            className="font-inter text-xl block cursor-default select-none"
+            onClick={expandItem}
+          >
+            {title}
           </strong>
-          <div className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            voluptates ex quod totam! Distinctio corporis error, omnis voluptas
-            excepturi tempora saepe cum deleniti qui, reiciendis facere iusto
-            alias soluta laudantium molestias atque eaque fuga odio dolores
-            illo? Quibusdam corrupti aspernatur porro saepe odio natus non
-            exlorem ipsum dolor sit amet consectetur adipisicing elit.
-            Recusandae Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur error quae culpa et dolorum?
-          </div>
+          <div className="text-sm">{children}</div>
         </div>
       )}
     </div>

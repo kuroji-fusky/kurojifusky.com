@@ -31,9 +31,9 @@ export default function Layout({ children }: ILayoutProps) {
     <NavbarScrollContext.Provider value={{ scrolled, isScrolled }}>
       <NavbarMobileContext.Provider value={{ open, isOpen }}>
         <Navbar />
-        {children}
-        <Footer />
       </NavbarMobileContext.Provider>
+      {children}
+      <Footer />
     </NavbarScrollContext.Provider>
   )
 }
