@@ -7,8 +7,6 @@ export default function Blog({ articles }: any) {
   const title = "Blog"
   const description = "My crappy blog"
 
-  console.log(articles)
-
   return (
     <Container title={title} description={description}>
       <HeaderHeroItem wrap>

@@ -10,23 +10,21 @@ export default function Navbar() {
   const { scrolled } = useContext(NavbarScrollContext)
   const { open, isOpen } = useContext(NavbarMobileContext)
 
-  const navCloset = () => {
-    if (open !== true) return styles["nav-links-row-closed"].toString()
-    return styles["nav-links-row"].toString()
-  }
+  const navCloset =
+    open !== true
+      ? styles["nav-links-row-closed"].toString()
+      : styles["nav-links-row"].toString()
 
-  const backdropToggle = () => {
-    if (open !== true) return styles["backdrop-hidden"].toString()
-    return styles.backdrop.toString()
-  }
+  const backdropToggle =
+    open !== true
+      ? styles["backdrop-hidden"].toString()
+      : styles.backdrop.toString()
 
-  const navbarToggle = () => {
-    if (scrolled !== true) return styles.opaque.toString()
-    return styles.transparent.toString()
-  }
+  const navbarToggle =
+    scrolled !== true ? styles.opaque.toString() : styles.transparent.toString()
 
   return (
-    <header className={navbarToggle()}>
+    <header className={navbarToggle}>
       <div className={styles.wrapper}>
         <Link href="/">
           <a className={styles.logo}>
@@ -42,8 +40,8 @@ export default function Navbar() {
           <FaIcon icon={faBars} />
         </button>
         <div className={styles["nav-wrapper"]}>
-          <div id={backdropToggle()} onClick={() => isOpen(false)}></div>
-          <nav className={navCloset()}>
+          <div id={backdropToggle} onClick={() => isOpen(false)}></div>
+          <nav className={navCloset}>
             <ul>
               <button
                 onClick={() => isOpen(false)}
@@ -52,29 +50,36 @@ export default function Navbar() {
                 <FaIcon icon={faTimes} />
               </button>
               <li>
-                <NavItem link="/#projects" name="Projects" />
-              </li>
-              <li>
-                <NavItem link="/portfolio" name="Portfolio" />
-              </li>
-              <li>
                 <NavItem link="/blog" name="Blog" />
               </li>
               <li>
-                <NavItem link="#" name="More" />
+                <NavItem link="/portfolio" name="Portfolio" />
                 <div className={styles.dropdown.toString()}>
                   <ul>
                     <li>
-                      <NavItem link="/about" name="About Me" />
+                      <NavItem link="/projects" name="Open source projects" />
                     </li>
                     <li>
-                      <NavItem link="/gallery" name="Artwork Gallery" />
+                      <NavItem link="/discography" name="Music" />
                     </li>
+                    <li>
+                      <NavItem link="/films" name="Filmography" />
+                    </li>
+                    <li>
+                      <NavItem link="/gallery" name="Gallery" />
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <NavItem link="#" name="About" />
+                <div className={styles.dropdown.toString()}>
+                  <ul>
                     <li>
                       <NavItem link="/about/fursona" name="Fursona" />
                     </li>
                     <li>
-                      <NavItem link="/about/technologies" name="Technologies" />
+                      <NavItem link="/about/roadmap" name="Roadmap" />
                     </li>
                   </ul>
                 </div>

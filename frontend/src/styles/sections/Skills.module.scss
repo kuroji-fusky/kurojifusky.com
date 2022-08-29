@@ -1,0 +1,14 @@
+@use "../mixins" as *;
+
+.divider {
+  @apply border-t-2 border-neutral-300 pb-10;
+}
+
+.wrapper {
+  @include contentWrapper("1280px");
+  @apply text-center flex flex-col items-center;
+
+  h1.section-heading {
+    @apply pt-[1rem];
+  }
+}

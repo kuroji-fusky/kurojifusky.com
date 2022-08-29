@@ -58,9 +58,6 @@ export default function HomeHero() {
             <Button className={styles["btn-item"]} link="#projects">
               Projects
             </Button>
-            <Button className={styles["btn-item"]} link="/resume">
-              Resume
-            </Button>
             <Button className={styles["btn-item"]} link="/blog">
               Blog
             </Button>
