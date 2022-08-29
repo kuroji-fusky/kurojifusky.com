@@ -34,6 +34,7 @@ export default class ShitApp extends Document {
           strategy="worker"
         ></Script>
         <Script
+          id="ga"
           strategy="worker"
           dangerouslySetInnerHTML={{
             __html: `
@@ -47,6 +48,7 @@ export default class ShitApp extends Document {
           }}
         />
         <Script
+          id="gtm"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

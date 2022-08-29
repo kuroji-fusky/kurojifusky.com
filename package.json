@@ -10,6 +10,12 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "init": "concurrently \"yarn --cwd ./skepfusky-v6-next install\" \"yarn --cwd ./skepfusky-cms install\""
+    "init": "concurrently \"yarn --cwd ./frontend install\" \"yarn --cwd ./backend install\"",
+    "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn strapi:develop\"",
+    "strapi:develop": "yarn --cwd ./backend develop",
+    "strapi:start": "yarn --cwd ./backend start",
+    "strapi:build": "yarn --cwd ./backend build",
+    "dev:next": "yarn --cwd ./frontend dev",
+    "dev:build": "yarn --cwd ./frontend build"
   }
 }

@@ -16,7 +16,7 @@ export default function Blog({ articles }: any) {
         <p>A place where I catalog my progress and my uninteresting life</p>
       </HeaderHeroItem>
       <div>{/* Filter by tags */}</div>
-      <div className="grid grid-cols-3 gap-4 max-w-screen-2xl px-7 pt-7 mx-auto">
+      {/* <div className="grid grid-cols-3 gap-4 max-w-screen-2xl px-7 pt-7 mx-auto">
         {articles.map((article: any) => (
           <BlogItem
             key={article.id}
@@ -24,44 +24,44 @@ export default function Blog({ articles }: any) {
             description={article.attributes.body}
           />
         ))}
-      </div>
+      </div> */}
     </Container>
   )
 }
 
-export async function getStaticProps() {
-  const client = new ApolloClient({
-    uri: `${process.env.STRAPI_URL}/graphql`,
-    cache: new InMemoryCache()
-  })
+// export async function getStaticProps() {
+//   const client = new ApolloClient({
+//     uri: `${process.env.STRAPI_URL}/graphql`,
+//     cache: new InMemoryCache()
+//   })
 
-  const { data } = await client.query({
-    query: gql`
-      query {
-        articles {
-          data {
-            attributes {
-              createdAt
-              cover {
-                data {
-                  attributes {
-                    url
-                  }
-                }
-              }
-              title
-              excerpt
-              body
-            }
-          }
-        }
-      }
-    `
-  })
+//   const { data } = await client.query({
+//     query: gql`
+//       query {
+//         articles {
+//           data {
+//             attributes {
+//               createdAt
+//               cover {
+//                 data {
+//                   attributes {
+//                     url
+//                   }
+//                 }
+//               }
+//               title
+//               excerpt
+//               body
+//             }
+//           }
+//         }
+//       }
+//     `
+//   })
 
-  return {
-    props: {
-      articles: data.articles.data.attributes
-    }
-  }
-}
+//   return {
+//     props: {
+//       articles: data.articles.data.attributes
+//     }
+//   }
+// }
