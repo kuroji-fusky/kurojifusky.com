@@ -1,1 +1,3 @@
+* text=auto
+*.env.local.example linguist-detectable=True
 *.env.local.example linguist-language=Shell

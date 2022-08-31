@@ -1,5 +1,5 @@
 {
-  "name": "skepfusky-monorepo",
+  "name": "skepfusky-website-monorepo",
   "private": true,
   "workspaces": [
     "skepfusky-v6-next",
@@ -14,8 +14,11 @@
     "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn dev:strapi\"",
     "dev:strapi": "yarn --cwd ./backend develop",
     "start:strapi": "yarn --cwd ./backend start",
-    "build:strapi": "yarn --cwd ./backend build",
     "dev:next": "yarn --cwd ./frontend dev",
     "build:next": "yarn --cwd ./frontend build"
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x.x"
   }
 }

@@ -38,3 +38,4 @@ yarn-error.log*
 # Ignore lock files
 yarn.lock*
 package-lock.json*
+!backend/yarn.lock
