@@ -37,7 +37,10 @@
     "blogtype": {
       "type": "enumeration",
       "enum": [
-        "developer",
+        "dev log",
+        "furry stuff",
+        "the making",
+        "experiences",
         "others"
       ]
     }

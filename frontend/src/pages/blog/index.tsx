@@ -60,6 +60,7 @@ export default function Blog({ articles }: any) {
             title={article.attributes.title}
             img={article.attributes.cover.data.attributes.url}
             description={article.attributes.description}
+            blogtype={article.attributes.blogtype}
             link={article.attributes.slug}
           />
         ))}

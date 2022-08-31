@@ -5,10 +5,12 @@
 .header-hero-wrapped {
   @extend .header-hero;
 
-  h1,
-  h2,
-  p {
+  :is(h1, h2, p) {
     @apply max-w-screen-2xl px-8 mx-auto text-center;
+  }
+
+  p {
+    @apply mt-3;
   }
 
   h1 {

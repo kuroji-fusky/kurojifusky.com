@@ -10,14 +10,38 @@
   }
 }
 
-.info-container {
-  @apply px-4 py-3 bg-neutral-400 rounded-bl-md rounded-br-md;
+.img-link {
+  @apply relative h-[250px] rounded-tl-md rounded-tr-md overflow-hidden;
 }
 
-.heading {
-  @apply flex justify-between items-center;
+.cube-wrapper {
+  @apply grid place-items-center h-full;
+}
+
+.info-container {
+  @apply relative px-4 py-3 bg-neutral-500 rounded-bl-md rounded-br-md flex flex-col gap-y-1 overflow-hidden;
+
+  :is(h3, p, .read-more) {
+    @apply z-4;
+  }
+
+  &::after {
+    @apply content-[""] block absolute bottom-0 -right-2 h-[35%] w-[90%] blur-3xl opacity-60;
+  }
+}
+
+[data-blogtype="furry-stuff"] .info-container::after {
+  @apply bg-purple-600;
+}
+
+[data-blogtype="others"] .info-container::after {
+  @apply bg-orange-600;
 }
 
 .read-more {
-  @apply px-3 py-0 h-[1.75rem] text-sm flex items-center gap-x-1.5;
+  @apply px-4 py-4 h-[1.75rem] mt-2 text-sm flex items-center gap-x-1.5 mr-auto;
+}
+
+.blogtype {
+  @apply uppercase text-sm p-0.5 rounded-md mr-auto font-semibold;
 }

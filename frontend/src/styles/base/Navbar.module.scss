@@ -4,7 +4,7 @@ header.transparent {
 }
 
 .opaque {
-  @apply fixed z-mosttop w-full bg-neutral-900;
+  @apply fixed top-0 z-mosttop w-full bg-neutral-900;
 
   &::before {
     @apply transition-all content-[""] absolute h-1 bottom-0 left-0 right-0 bg-gradient-to-r from-sona-borahae-500 to-sona-royalblue-400;

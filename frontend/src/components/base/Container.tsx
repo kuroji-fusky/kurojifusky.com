@@ -18,7 +18,7 @@ export default function Container({
       "A 20-year-old fox-husky hobbyist as a full-stack web developer, filmmaker, video editor, designer, and music producer from the Philippines!"
   }
 
-  let url = `https://skepfusky.xyz${router.pathname}`
+  let url = `https://skepfusky.xyz${router.asPath}`
 
   return (
     <>

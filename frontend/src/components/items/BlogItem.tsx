@@ -12,21 +12,26 @@ export default function BlogItem({
   description,
   link,
   img = "",
-  tag
+  blogtype
 }: {
   title?: string
   description?: string
   link?: string
+  blogtype?: string
   img?: string
-  tag?: string
 }) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <div className={styles.wrapper}>
-      <LoadingCube hidden={!isLoaded ? false : true} />
-      <Link href="#" passHref>
-        <a className="relative h-[250px] rounded-tl-md rounded-tr-md overflow-hidden">
+    <div
+      className={styles.wrapper}
+      data-blogtype={blogtype?.replace(/_/g, "-")}
+    >
+      <Link href={`/blog/${link}`} passHref>
+        <a className={styles["img-link"]}>
+          <div className={styles["cube-wrapper"]}>
+            <LoadingCube hidden={!isLoaded ? false : true} />
+          </div>
           <Image
             src={img}
             alt={`Thumbnail for ${title}: ${description}`}
@@ -38,13 +43,12 @@ export default function BlogItem({
         </a>
       </Link>
       <article className={styles["info-container"]}>
-        <div className={styles.heading}>
-          <h2>{title}</h2>
-          <Button className={styles["read-more"]} link={`/blog/${link}`}>
-            Read more BINCH <FontAwesomeIcon icon={faArrowRight} />
-          </Button>
-        </div>
+        <span className={styles.blogtype}>{blogtype?.replace(/_/g, " ")}</span>
+        <h3>{title}</h3>
         <p>{description}</p>
+        <Button className={styles["read-more"]} link={`/blog/${link}`}>
+          Read more <FontAwesomeIcon icon={faArrowRight} />
+        </Button>
       </article>
     </div>
   )
