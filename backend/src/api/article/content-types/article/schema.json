@@ -23,13 +23,23 @@
     "cover": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
-    "excerpt": {
-      "type": "text"
+    "description": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "blogtype": {
+      "type": "enumeration",
+      "enum": [
+        "developer",
+        "others"
+      ]
     }
   }
 }

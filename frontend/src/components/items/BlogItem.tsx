@@ -10,13 +10,15 @@ import styles from "@/styles/components/BlogItem.module.scss"
 export default function BlogItem({
   title,
   description,
-  img = "/static/fursonas/08.png",
-  tags
+  link,
+  img = "",
+  tag
 }: {
   title?: string
   description?: string
+  link?: string
   img?: string
-  tags?: string[]
+  tag?: string
 }) {
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -38,8 +40,8 @@ export default function BlogItem({
       <article className={styles["info-container"]}>
         <div className={styles.heading}>
           <h2>{title}</h2>
-          <Button className={styles["read-more"]} link="#">
-            Read more <FontAwesomeIcon icon={faArrowRight} />
+          <Button className={styles["read-more"]} link={`/blog/${link}`}>
+            Read more BINCH <FontAwesomeIcon icon={faArrowRight} />
           </Button>
         </div>
         <p>{description}</p>

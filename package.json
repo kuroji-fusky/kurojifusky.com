@@ -11,11 +11,11 @@
   },
   "scripts": {
     "init": "concurrently \"yarn --cwd ./frontend install\" \"yarn --cwd ./backend install\"",
-    "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn strapi:develop\"",
-    "strapi:develop": "yarn --cwd ./backend develop",
-    "strapi:start": "yarn --cwd ./backend start",
-    "strapi:build": "yarn --cwd ./backend build",
+    "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn dev:strapi\"",
+    "dev:strapi": "yarn --cwd ./backend develop",
+    "start:strapi": "yarn --cwd ./backend start",
+    "build:strapi": "yarn --cwd ./backend build",
     "dev:next": "yarn --cwd ./frontend dev",
-    "dev:build": "yarn --cwd ./frontend build"
+    "build:next": "yarn --cwd ./frontend build"
   }
 }

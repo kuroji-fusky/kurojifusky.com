@@ -31,11 +31,9 @@ export default class ShitApp extends Document {
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
-          strategy="worker"
         ></Script>
         <Script
           id="ga"
-          strategy="worker"
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];

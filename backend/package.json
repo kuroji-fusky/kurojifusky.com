@@ -2,7 +2,7 @@
   "name": "skepfusky-cms",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "Shit",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -12,11 +12,12 @@
   "dependencies": {
     "@strapi/plugin-graphql": "4.3.4",
     "@strapi/plugin-i18n": "4.3.4",
+    "@strapi/plugin-seo": "^1.7.4",
     "@strapi/plugin-users-permissions": "4.3.4",
-    "@strapi/strapi": "4.3.4",
+    "@strapi/provider-upload-cloudinary": "^4.3.6",
+    "@strapi/strapi": "4.3.6",
     "better-sqlite3": "7.4.6",
-    "strapi-plugin-measurement-protocol": "^1.0.1",
-    "strapi-plugin-react-editorjs": "^2.0.1"
+    "strapi-plugin-measurement-protocol": "^1.0.1"
   },
   "author": {
     "name": "Kerby Keith Aquino"

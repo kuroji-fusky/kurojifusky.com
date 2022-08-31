@@ -1,18 +1,16 @@
 // @ts-check
 
 /**
- *  @type {import('next').NextConfig} 
+ *  @type {import('next').NextConfig}
  **/
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   compress: true,
-  experimental: {
-    nextScriptWorkers: true,
-  },
   images: {
     domains: [
-      "i3.ytimg.com"
+      "i3.ytimg.com",
+			"res.cloudinary.com"
     ]
   }
 }
