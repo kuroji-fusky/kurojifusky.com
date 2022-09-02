@@ -11,7 +11,7 @@
 }
 
 .img-link {
-  @apply relative h-[250px] rounded-tl-md rounded-tr-md overflow-hidden;
+  @apply relative h-[250px] rounded-tl-md rounded-tr-md overflow-hidden bg-neutral-600;
 }
 
 .cube-wrapper {
@@ -19,7 +19,7 @@
 }
 
 .info-container {
-  @apply relative px-4 py-3 bg-neutral-500 rounded-bl-md rounded-br-md flex flex-col gap-y-1 overflow-hidden;
+  @apply relative px-5 py-4 bg-neutral-500 rounded-bl-md rounded-br-md flex flex-col gap-y-1 overflow-hidden;
 
   :is(h3, p, .read-more) {
     @apply z-4;
@@ -27,6 +27,12 @@
 
   &::after {
     @apply content-[""] block absolute bottom-0 -right-2 h-[35%] w-[90%] blur-3xl opacity-60;
+  }
+
+  h3 {
+    &:hover {
+      @apply underline underline-offset-2;
+    }
   }
 }
 
@@ -38,10 +44,22 @@
   @apply bg-orange-600;
 }
 
-.read-more {
-  @apply px-4 py-4 h-[1.75rem] mt-2 text-sm flex items-center gap-x-1.5 mr-auto;
+[data-blogtype="updates"] .info-container::after {
+  @apply bg-blue-600;
 }
 
-.blogtype {
+[data-blogtype="experiences"] .info-container::after {
+  @apply bg-green-600;
+}
+
+.header {
   @apply uppercase text-sm p-0.5 rounded-md mr-auto font-semibold;
 }
+
+.blog-date {
+  &::before {
+    content: "/";
+    @apply ml-1.5 mr-1.5 opacity-30;
+  }
+}
+

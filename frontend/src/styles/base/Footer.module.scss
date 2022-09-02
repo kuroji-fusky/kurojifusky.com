@@ -12,11 +12,11 @@
   @apply mx-auto gap-y-3 py-8 w-full max-w-screen-xl 2xl:max-w-screen-2xl flex justify-between items-center flex-col md:flex-row relative;
 
   .left {
-    @apply flex gap-x-8;
+    @apply flex gap-x-7 gap-y-1 justify-end lg:flex-row flex-col text-sm;
   }
 
   .right {
-    @apply flex gap-x-7 gap-y-1 justify-end lg:flex-row flex-col text-sm;
+    @apply flex gap-x-6;
   }
 }
 

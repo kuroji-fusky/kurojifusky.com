@@ -1,10 +1,14 @@
-import Container from "@/components/base/Container"
-import { NavbarScrollContext } from "@/utils/Context"
-import { ApolloClient, gql, InMemoryCache } from "@apollo/client"
+import { useContext } from "react"
 import Image from "next/image"
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client"
+import { NavbarScrollContext } from "@/utils/Context"
+import Container from "@/components/base/Container"
 import { InView } from "react-intersection-observer"
 import ReactMarkdown from "react-markdown"
-import { useContext } from "react"
+import styles from "@/styles/pages/BlogPage.module.scss"
+import { format, parseISO } from "date-fns"
+// @ts-ignore
+import remarkHeadingId from "remark-heading-id"
 
 const url = process.env.STRAPI_URL
 
@@ -22,8 +26,8 @@ export default function BlogContent({ attributes }: any) {
       title={`${attributes.title} | skepfusky blog`}
       description={attributes.description}
     >
-      <div className="max-w-[1000px] mx-auto">
-        <div className="absolute top-0 left-0 h-[69%] w-full -z-1 blur-3xl opacity-40">
+      <div className={styles.wrapper}>
+        <div className={styles.backdrop}>
           <Image
             src={attributes.cover.data.attributes.url}
             alt={attributes.cover.data.attributes.caption}
@@ -34,8 +38,7 @@ export default function BlogContent({ attributes }: any) {
         </div>
         <InView
           onChange={(inView) => isScrolled(inView)}
-          rootMargin="-145px 0px 0px 0px"
-          className="relative w-full h-[350px] mt-20 rounded-xl overflow-hidden"
+          className={styles["image-wrapper"]}
         >
           <Image
             src={attributes.cover.data.attributes.url}
@@ -44,24 +47,22 @@ export default function BlogContent({ attributes }: any) {
             objectFit="cover"
           />
         </InView>
-        <article className="my-5 flex flex-col gap-y-5">
+        <header className={styles.info}>
+          <div className={styles.details}>
+            <span>{attributes.blogtype.replace(/_/g, " ")}</span>
+            <span className={styles["blog-date"]}>
+              {format(parseISO(attributes.publishDate), "iiii MMMM d, yyyy")}
+            </span>
+          </div>
           <h1>{attributes.title}</h1>
           <p>{attributes.description}</p>
-          <span className="uppercase text-sm inline-block">
-            {attributes.blogtype.replace(/_/g, " ")}
-          </span>
-        </article>
+        </header>
         <hr />
-        <ReactMarkdown
-          components={{
-            h2: ({ node, ...props }) => <h2 className="my-3" {...props} />,
-            p: ({ node, ...props }) => (
-              <p className="leading-[1.75rem] mb-3" {...props} />
-            )
-          }}
-        >
-          {attributes.body}
-        </ReactMarkdown>
+        <article className={styles["article-parser"]}>
+          <ReactMarkdown remarkPlugins={[remarkHeadingId]}>
+            {attributes.body}
+          </ReactMarkdown>
+        </article>
       </div>
     </Container>
   )
@@ -77,6 +78,7 @@ export async function getStaticProps({ params }: any) {
               title
               description
               blogtype
+              publishDate
               cover {
                 data {
                   attributes {

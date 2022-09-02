@@ -1,5 +1,5 @@
 import styles from "@/styles/sections/PreviousWorks.module.scss"
-import { useLayoutEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import YouTube from "../embeds/YouTube"
 
 export default function PreviousWorks() {
@@ -62,14 +62,14 @@ export function WorksItem({
 
   const expandItem = () => (!isOpen ? setIsOpen(true) : setIsOpen(false))
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     !isOpen
       ? setCurrentHeight(50)
       : setCurrentHeight(heightRef.current!.scrollHeight)
   }, [isOpen])
 
   return (
-    <div suppressHydrationWarning>
+    <div>
       {typeof window && (
         <div
           ref={heightRef}

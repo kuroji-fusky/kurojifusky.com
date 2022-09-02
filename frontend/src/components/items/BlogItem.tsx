@@ -12,13 +12,15 @@ export default function BlogItem({
   description,
   link,
   img = "",
-  blogtype
+  blogtype,
+  date
 }: {
   title?: string
   description?: string
   link?: string
   blogtype?: string
   img?: string
+  date?: string
 }) {
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -43,12 +45,14 @@ export default function BlogItem({
         </a>
       </Link>
       <article className={styles["info-container"]}>
-        <span className={styles.blogtype}>{blogtype?.replace(/_/g, " ")}</span>
-        <h3>{title}</h3>
+        <div className={styles.header}>
+          <span>{blogtype?.replace(/_/g, " ")}</span>
+          <span className={styles["blog-date"]}>{date}</span>
+        </div>
+        <h3>
+          <Link href={`/blog/${link}`}>{title}</Link>
+        </h3>
         <p>{description}</p>
-        <Button className={styles["read-more"]} link={`/blog/${link}`}>
-          Read more <FontAwesomeIcon icon={faArrowRight} />
-        </Button>
       </article>
     </div>
   )

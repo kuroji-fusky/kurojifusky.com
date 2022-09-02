@@ -29,20 +29,28 @@
       ]
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "blogtype": {
       "type": "enumeration",
       "enum": [
-        "dev log",
+        "dev stuff",
         "furry stuff",
-        "the making",
+        "updates",
         "experiences",
         "others"
-      ]
+      ],
+      "required": true,
+      "default": "others"
+    },
+    "publishDate": {
+      "type": "date",
+      "required": true
     }
   }
 }
