@@ -5,10 +5,6 @@
     "skepfusky-v6-next",
     "skepfusky-cms"
   ],
-  "devDependencies": {
-    "concurrently": "^7.3.0",
-    "prettier": "^2.7.1"
-  },
   "scripts": {
     "init": "concurrently \"yarn --cwd ./frontend install\" \"yarn --cwd ./backend install\"",
     "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn dev:strapi\"",
@@ -17,8 +13,8 @@
     "dev:next": "yarn --cwd ./frontend dev",
     "build:next": "yarn --cwd ./frontend build"
   },
-  "engines": {
-    "node": "16.x",
-    "npm": "8.x.x"
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "prettier": "^2.7.1"
   }
 }

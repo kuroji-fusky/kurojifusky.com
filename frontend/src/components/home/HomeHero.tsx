@@ -82,11 +82,11 @@ export default function HomeHero() {
             className={styles["fursona-img-wrapper"]}
           >
             <Image
-              src="/static/fursonas/comms/comm_for_davey_g2.png"
+              src="https://res.cloudinary.com/skepfusky-dookie/image/upload/v1662460286/comm_for_davey_g2_yhlxyb.png"
               layout="fill"
               objectFit="cover"
               alt="skepfusky commission"
-              quality={69}
+              quality={50}
               onLoadingComplete={() => setIsLoaded(true)}
               priority
             />

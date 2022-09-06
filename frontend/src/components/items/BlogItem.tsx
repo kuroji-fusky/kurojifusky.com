@@ -14,14 +14,7 @@ export default function BlogItem({
   img = "",
   blogtype,
   date
-}: {
-  title?: string
-  description?: string
-  link?: string
-  blogtype?: string
-  img?: string
-  date?: string
-}) {
+}: IBlogItemProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (

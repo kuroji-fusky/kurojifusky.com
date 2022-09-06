@@ -31,3 +31,12 @@ declare interface IWhatsMadeItemProps {
 declare interface IHeaderHeroItemProps extends ILayoutProps {
   wrap?: boolean
 }
+
+declare interface IBlogItemProps {
+  title?: string
+  description?: string
+  link?: string
+  blogtype?: string
+  img?: string
+  date?: string
+}
