@@ -4,7 +4,7 @@
   <a href="https://skepfusky.xyz">skepfusky.xyz</a>
 </h1>
 
-The source code of my personal and website written in Next.js! Content managed by Strapi, deployed on Vercel and Heroku.
+The source code of my personal and website written in Nuxt 3! Content managed by Strapi and Cloudinary, deployed on Vercel.
 
 ## Running the thing
 
@@ -14,20 +14,14 @@ Fork and clone the repo and install the garbage
 yarn install
 ```
 
-Install both `frontend/` and `backend/`
+Start dev server:
 
 ```console
-yarn init
+yarn dev
 ```
 
-Start the Next.js with:
+Build the abomination:
 
 ```console
-yarn dev:next
-```
-
-Start Strapi (the backend) with:
-
-```console
-yarn dev:strapi
+yarn build
 ```

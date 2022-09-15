@@ -1,20 +1,19 @@
 {
-  "name": "skepfusky-website-monorepo",
   "private": true,
-  "workspaces": [
-    "skepfusky-v6-next",
-    "skepfusky-cms"
-  ],
   "scripts": {
-    "init": "concurrently \"yarn --cwd ./frontend install\" \"yarn --cwd ./backend install\"",
-    "dev": "concurrently -k -n next,strapi \"yarn dev:next\" \"yarn dev:strapi\"",
-    "dev:strapi": "yarn --cwd ./backend develop",
-    "start:strapi": "yarn --cwd ./backend start",
-    "dev:next": "yarn --cwd ./frontend dev",
-    "build:next": "yarn --cwd ./frontend build"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "concurrently": "^7.3.0",
-    "prettier": "^2.7.1"
+    "@nuxtjs/tailwindcss": "^5.3.3",
+    "nuxt": "3.0.0-rc.9"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/vue-fontawesome": "^3.0.1"
   }
 }

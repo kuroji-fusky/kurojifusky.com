@@ -1,41 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-node_modules*
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# next.js
-frontend/.next*
-frontend/out/
-
-# production
-frontend/build
-
-# misc
-frontend/*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-
-*.html
-
-# Ignore lock files
-yarn.lock*
-package-lock.json*
-!backend/yarn.lock
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
