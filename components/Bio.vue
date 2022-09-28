@@ -8,10 +8,7 @@
       aria-label="Hi, I'm skepfusky!"
     >
       Hi, I'm
-      <span
-        class="bg-gradient-to-r bg-clip-text text-transparent from-sona-borahae-500 to-sona-skycyan-600"
-        >skepfusky</span
-      >!
+
     </h2>
     <p>
       I'm a 20-year-old self-taught hobbyist as a video editor, web developer,
