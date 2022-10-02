@@ -1,0 +1,15 @@
+#provider {
+  @apply blur-[100px] absolute rounded-full;
+}
+
+.heading-left {
+  @apply scale-[2] opacity-20 top-[21%] -left-5 w-[50rem] h-[24%] -rotate-6 bg-sona-royalblue-400;
+}
+
+.heading-right {
+  @apply scale-[2] opacity-20 top-[21%] -right-5 w-[50rem] h-[18%] rotate-6 bg-sona-borahae-600;
+}
+
+.footer-center {
+  @apply -bottom-[2rem] opacity-75 left-[5%] right-[15%] h-[7rem] w-[85%] bg-sona-borahaealt-600;
+}

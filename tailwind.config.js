@@ -2,11 +2,29 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
-	content: ['app.vue'],
+	content: [
+		"./src/components/**/*.{ts,tsx}",
+		"./src/pages/**/*.{ts,tsx}",
+	],
 	theme: {
 		fontFamily: {
 			"inter": ["Inter", ...defaultTheme.fontFamily.sans],
 			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
+			"ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono]
+		},
+		screens: {
+			sm: "640px",
+			md: "768px",
+			lg: "1024px",
+			xl: "1366px",
+			"2xl": "1536px"
+		},
+		zIndex: {
+			1: "1",
+			2: "2",
+			3: "3",
+			4: "4",
+			mosttop: "9999"
 		},
 		extend: {
 			colors: {
@@ -110,9 +128,24 @@ module.exports = {
 					400: "#4E4752",
 					500: "#211E23",
 					600: "#1C1A1E"
+				}
+			},
+			borderRadius: {
+				sm: ".125rem",
+				md: "6px",
+				full: "50%"
+			},
+			animation: {
+				"gradient-scroll": "gradient-scroll-root 9s linear infinite",
+				"gradient-scroll-fast": "gradient-scroll-root 1650ms linear infinite",
+			},
+			keyframes: {
+				"gradient-scroll-root": {
+					"0%": { "background-position": "left" },
+					"100%": { "background-position": "right" },
 				},
 			},
-		},
-		plugins: [],
-	}
+		}
+	},
+	plugins: [],
 }

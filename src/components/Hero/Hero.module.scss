@@ -1,0 +1,26 @@
+.wrapper {
+  @apply flex flex-col-reverse lg:flex-row place-items-center px-10 justify-center lg:translate-x-8 translate-x-0;
+}
+
+.img {
+  @apply relative pointer-events-none select-none;
+  @apply w-[25rem] h-[25rem];
+  @apply xl:w-[30rem] xl:h-[30rem];
+  @apply 2xl:w-[35rem] 2xl:h-[35rem];
+}
+
+.content {
+  @apply flex flex-col lg:items-start items-center gap-y-5 -translate-y-5 w-full lg:w-[50%] text-center lg:text-left;
+}
+
+.gradient-wm {
+  &-wrapper {
+    @apply flex flex-wrap items-center gap-x-1 text-5xl lg:text-6xl 2xl:text-7xl;
+  }
+
+  @apply h-[1.6ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent from-sona-borahae-500 to-sona-skycyan-600;
+}
+
+.subheading {
+  @apply text-2xl 2xl:text-3xl;
+}
