@@ -1,24 +1,24 @@
 #content {
-	@apply relative z-1;
+  @apply relative z-1;
 }
 
 #content-wrap {
-	@extend #content;
-	@apply max-w-screen-2xl mx-auto px-7;
+  @extend #content;
+  @apply max-w-screen-2xl mx-auto px-7;
 }
 
 .backdrop-lock {
-	@apply h-[24rem] w-full absolute bottom-0 overflow-hidden;
+  @apply h-[24rem] w-full absolute bottom-0 overflow-hidden;
 
-	> .footer-contents {
-		@apply hidden;
-	}
+  > .footer-contents {
+    @apply hidden;
+  }
 }
 
 #backdrop-container {
-	@apply h-[24rem] w-full absolute bottom-0 overflow-hidden;
+  @apply h-[24rem] w-full absolute bottom-0 overflow-hidden;
 }
 
 .footer-contents {
-	@apply mx-auto max-w-screen-2xl z-1 absolute p-6 bottom-0 left-0 right-0;
+  @apply mx-auto max-w-screen-2xl z-1 absolute p-6 bottom-0 left-0 right-0;
 }

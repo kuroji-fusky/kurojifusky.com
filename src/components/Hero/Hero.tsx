@@ -1,15 +1,15 @@
-import Image from "next/image";
-import { BtnLink } from "../Buttons";
-import Backdrop from "../Backdrop";
-import styles from "./Hero.module.scss";
-import backdropStyles from "../Backdrop/Backdrop.module.scss";
+import Image from "next/image"
+import { BtnLink } from "../Buttons"
+import Backdrop from "../Backdrop"
+import styles from "./Hero.module.scss"
+import backdropStyles from "../Backdrop/Backdrop.module.scss"
 
 export default function Hero() {
   return (
     <>
       <Backdrop className={backdropStyles["heading-left"]} />
       <Backdrop className={backdropStyles["heading-right"]} />
-      <div className={styles.wrapper}>
+      <section className={styles.wrapper}>
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
             Hi, I'm&nbsp;
@@ -21,10 +21,10 @@ export default function Hero() {
             A 20-year-old self-taught and self-employed hobbyist from the
             Philippines
           </h3>
-          <div role="list" className="flex flex-wrap flex-col gap-x-4 gap-y-3 md:flex-row md:w-auto w-[75%] text-base lg:text-lg">
+          <div role="list" className={styles["btn-row"]}>
             <BtnLink link="/portfolio" name="🗂️ Portfolio" />
             <BtnLink link="/fursona" name="🦊 Fursona" />
-            <BtnLink link="#" name="🧑‍💻 About this idiot" />
+            <BtnLink link="#" name="🤵 About me" />
           </div>
         </div>
         <div className={styles.img}>
@@ -36,7 +36,7 @@ export default function Hero() {
             priority
           />
         </div>
-      </div>
+      </section>
     </>
-  );
+  )
 }

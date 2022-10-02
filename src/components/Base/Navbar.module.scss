@@ -1,0 +1,66 @@
+.header {
+  @apply w-full fixed top-0 px-9;
+  @apply z-mosttop #{!important};
+}
+
+.container {
+  @apply  mx-auto max-w-screen-2xl flex justify-between items-center;
+}
+
+.logo {
+  @apply py-5 px-2 font-ubuntu-mono font-bold text-2xl select-none;
+  @apply bg-gradient-to-r bg-clip-text text-transparent from-sona-borahae-500 to-sona-skycyan-600;
+
+  &::before {
+    @apply content-["<"];
+  }
+
+  &::after {
+    @apply content-["/>"];
+  }
+
+  &::before,
+  &::after {
+    @apply text-neutral-200 font-normal;
+  }
+}
+
+#menu-btn {
+  @apply relative px-2 py-3 h-[3.5rem] w-[3.75rem] rounded-md;
+}
+
+:is(.closed, .open) {
+  &::before,
+  &::after {
+    @apply content-[""] translate-x-[0.35rem] -translate-y-0.5 w-[1.95rem] block border-b-2 transition-all duration-300;
+  }
+}
+
+.closed {
+  &::before {
+		@apply absolute -rotate-45 top-8;
+  }
+  &::after {
+    @apply absolute rotate-45 top-8;
+  }
+}
+
+.open {
+  &:hover {
+    &::before {
+      @apply absolute rotate-0 top-[1.45rem];
+    }
+
+    &::after {
+      @apply absolute rotate-0 top-[2.25rem];
+    }
+  }
+
+  &::before {
+    @apply absolute rotate-0 top-[1.35rem];
+  }
+
+  &::after {
+    @apply absolute rotate-0 top-[2.35rem];
+  }
+}
