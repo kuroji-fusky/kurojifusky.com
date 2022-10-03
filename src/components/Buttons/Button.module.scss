@@ -7,7 +7,7 @@
 
   &::before {
     content: attr(data-text);
-    @apply opacity-0 transition-opacity duration-500 absolute grid place-items-center inset-0 bg-gradient-to-tr from-sona-skycyan-700 to-sona-borahaealt-700 rounded-[inherit];
+    @apply opacity-0 transition-opacity duration-500 absolute px-4 py-2 inset-0 bg-gradient-to-tr from-sona-skycyan-700 to-sona-borahaealt-700 rounded-[inherit];
   }
 
   &:hover::before {

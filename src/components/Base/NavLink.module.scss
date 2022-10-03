@@ -1,0 +1,18 @@
+.link {
+	@apply text-sona-borahaealt-200 inline-block relative w-fit;
+
+	&:hover {
+		@apply text-sona-borahaealt-300;
+	}
+
+	&::after {
+		@apply content-[""] bg-sona-borahaealt-300 absolute bottom-0 left-0 w-full h-[1px];
+		transform: scaleX(0);
+		transform-origin: bottom left;
+		transition: transform 150ms ease-out;
+	}
+
+	&:hover::after {
+		transform: scaleX(1);
+	}
+}

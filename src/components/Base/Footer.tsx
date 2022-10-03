@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <div className={styles["footer-contents"]}>
         <span id="copyright" className="text-sm">
-          {`©  2014-${new Date().getFullYear()} Fusky & Co., LLC`}
+          {`©  2014-${new Date().getFullYear()} Kerby Keith Aquino`}
         </span>
       </div>
       <div id={styles["backdrop-container"]}>

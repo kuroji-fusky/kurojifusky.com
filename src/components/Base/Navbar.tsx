@@ -1,7 +1,10 @@
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { fa0, faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 import { useState } from "react"
-import { BtnLink } from "../Buttons"
 import styles from "./Navbar.module.scss"
+import NavLink from "./NavLink"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(false)
@@ -17,26 +20,68 @@ export default function Navbar() {
           id={styles["menu-btn"]}
           className={styles[!expand ? "closed" : "open"]}
         ></button>
-        <div className="absolute top-[4.35rem] left-0 right-0 px-9">
-          <div className="mx-auto max-w-screen-2xl rounded-md bg-neutral-600 grid grid-cols-4 grid-flow-col">
-            <div className="px-5 py-5" style={{ gridColumn: "1 / 3"}}>
-              <h2 className="uppercase text-lg pb-2">Portfolio</h2>
-              <div role="list" className="grid gap-y-2">
-                <BtnLink name="Item 1" link="#" />
-                <BtnLink name="Item 2" link="#" />
+        <div
+          className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+        >
+          <nav className={styles["dd-wrapper"]}>
+            <div className={styles["dd-col"]}>
+              <h2 className={styles["nav-heading"]}>
+                <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
+                <span id={styles["gradient-heading"]}>Portfolio</span>
+              </h2>
+              <div
+                role="list"
+                className="grid gap-2 grid-cols-1 lg:grid-cols-2"
+              >
+                <NavLink name="Projects I've Contributed" link="#" />
+                <NavLink name="Personal Dev Projects" link="#" />
+                <NavLink name="Discography" link="#" />
+                <NavLink name="Filmography" link="#" />
+                <NavLink name="Archived Works" link="#" />
               </div>
             </div>
-            <div className="px-5 py-5">
-              <h2 className="uppercase text-lg pb-2">More on this idiot</h2>
-              <div role="list" className="grid gap-y-2">
-                <BtnLink name="Item 2" link="#" />
-                <BtnLink name="Item 2" link="#" />
+            <div className={styles["dd-col"]}>
+              <h2 className={styles["nav-heading"]}>
+                <span id={styles["gradient-heading"]}>
+                  More about this idiot
+                </span>
+              </h2>
+              <div
+                role="list"
+                className="grid gap-2 grid-cols-1 lg:grid-cols-2"
+              >
+                <NavLink name="Fursona" link="#" />
+                <NavLink name="Milestones" link="#" />
+                <NavLink name="Artworks" link="#" />
+                <NavLink name="codefusky" link="#" />
               </div>
             </div>
-            <div className="px-5 py-5 bg-neutral-500">
-              socials and contact stuff
+            <div className={styles["dd-col-grid"]}>
+              <div id={styles["dd-col-item"]} className={styles["blog-item"]}>
+                <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
+                Blog
+              </div>
+              <div id={styles["dd-col-item"]} className={styles["about-item"]}>
+                <FontAwesomeIcon icon={faGlasses} id={styles["dd-fa-icon"]} />
+                About
+              </div>
+              <div className={styles["lower-third"]}>
+                <ul className="flex gap-x-2">
+                  <li>
+                    <Link href="#">
+                      <a target="_blank" rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faGithub} size="lg" />
+                      </a>
+                    </Link>
+                  </li>
+                </ul>
+                <span>
+                  Site written in{" "}
+                  <NavLink name="Next.js" link="https://nextjs.org" />!
+                </span>
+              </div>
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
