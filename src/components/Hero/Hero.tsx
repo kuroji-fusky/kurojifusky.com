@@ -24,6 +24,7 @@ export default function Hero() {
           <div role="list" className={styles["btn-row"]}>
             <BtnLink link="/portfolio" name="🗂️ Portfolio" />
             <BtnLink link="/fursona" name="🦊 Fursona" />
+            <BtnLink link="/blog" name="📝 Blog Posts" />
             <BtnLink link="#" name="🤵 About me" />
           </div>
         </div>

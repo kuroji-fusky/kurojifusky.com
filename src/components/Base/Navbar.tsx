@@ -1,38 +1,14 @@
-import { useContext, useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
 import socials from "./Socials"
 import styles from "./Navbar.module.scss"
-import nlStyles from "./NavLink.module.scss"
 import { DropdownContext } from "@/utils/Context"
-import ClientSide from "@/utils/ClientSide"
+import { NavLink } from "./NavLink"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
-
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    // Get the current height of the navbar element to achieve
-    // that cool wipe animation
-    let currentHeight = `${dropdownRef.current!.scrollHeight}px`
-
-    const setHeight = (h: string) => {
-      return (dropdownRef.current!.style.height = h)
-    }
-
-    if (!expand) {
-      setHeight(currentHeight)
-      return
-    }
-
-    setHeight("50px")
-
-    const resizeNav = (e: any) => setHeight(currentHeight)
-
-    ClientSide && window.addEventListener("resize", () => resizeNav)
-  }, [expand])
 
   return (
     <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
@@ -47,7 +23,6 @@ export default function Navbar() {
             className={styles[!expand ? "open" : "closed"]}
           ></button>
           <div
-            ref={dropdownRef}
             className={styles[!expand ? "dd-container" : "dd-container-closed"]}
           >
             <nav className={styles["dd-wrapper"]}>
@@ -120,22 +95,5 @@ export default function Navbar() {
         </div>
       </header>
     </DropdownContext.Provider>
-  )
-}
-
-interface NavLinkProps {
-  link?: string
-  name?: string
-}
-
-export function NavLink({ link = "", name }: NavLinkProps) {
-  const { expand, isExpanded } = useContext(DropdownContext)
-
-  return (
-    <Link href={link}>
-      <a className={nlStyles.link} onClick={() => isExpanded(!expand)}>
-        {name}
-      </a>
-    </Link>
   )
 }
