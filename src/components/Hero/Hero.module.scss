@@ -1,3 +1,7 @@
+#hero {
+	@apply h-screen;
+}
+
 .wrapper {
   @apply flex flex-col-reverse lg:flex-row place-items-center px-10 justify-center lg:translate-x-8 translate-x-0;
 }

@@ -1,8 +1,8 @@
 import styles from "./Projects.module.scss"
 
-export default function Projects() {
+export function Projects() {
   return (
-    <section>
+    <section className={styles.wrapper}>
       <h2>Projects</h2>
     </section>
   )

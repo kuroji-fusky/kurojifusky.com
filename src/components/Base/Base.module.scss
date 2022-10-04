@@ -20,5 +20,5 @@
 }
 
 .footer-contents {
-  @apply mx-auto max-w-screen-2xl z-1 absolute p-6 bottom-0 left-0 right-0;
+  @apply mx-auto max-w-screen-2xl flex justify-between z-4 absolute p-6 bottom-0 left-0 right-0;
 }

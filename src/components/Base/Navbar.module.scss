@@ -37,15 +37,6 @@
 }
 
 .closed {
-  &::before {
-    @apply absolute -rotate-45 top-8;
-  }
-  &::after {
-    @apply absolute rotate-45 top-8;
-  }
-}
-
-.open {
   &:hover {
     &::before {
       @apply absolute rotate-0 top-[1.45rem];
@@ -62,6 +53,15 @@
 
   &::after {
     @apply absolute rotate-0 top-[2.35rem];
+  }
+}
+
+.open {
+  &::before {
+    @apply absolute -rotate-45 top-8;
+  }
+  &::after {
+    @apply absolute rotate-45 top-8;
   }
 }
 
@@ -90,13 +90,13 @@
 }
 
 .dd-container {
-  @apply absolute top-[4.35rem] left-0 right-0 px-9 duration-[250ms];
-	transition-property: top, opacity
+  @apply absolute z-[auto] top-[4.35rem] left-0 right-0 px-9 duration-[250ms] overflow-x-hidden;
+  transition-property: top, opacity, height;
 }
 
 .dd-container-closed {
-	@extend .dd-container;
-	@apply top-[4rem] opacity-0;
+  @extend .dd-container;
+  @apply top-[4rem] opacity-0 pointer-events-none;
 }
 
 .dd-wrapper {
@@ -116,7 +116,11 @@
 }
 
 .dd-col {
-  @apply px-7 py-6;
+  @apply px-7 py-6 duration-[310ms];
+  transition-property: transform, opacity;
+  transition-delay: 120ms, 70ms;
+  transition-timing-function: cubic-bezier(0, 0.17, 0, 1);
+
   &:nth-child(1) {
     grid-area: list-portfolio;
   }
@@ -128,7 +132,7 @@
 .dd-col-grid {
   @apply grid;
   grid-area: misc;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1.75fr 1fr;
   grid-template-areas:
     "blog-item about-item"
     "lower-third lower-third";

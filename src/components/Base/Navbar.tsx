@@ -1,89 +1,141 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { fa0, faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useContext, useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { useState } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
+import socials from "./Socials"
 import styles from "./Navbar.module.scss"
-import NavLink from "./NavLink"
+import nlStyles from "./NavLink.module.scss"
+import { DropdownContext } from "@/utils/Context"
+import ClientSide from "@/utils/ClientSide"
 
 export default function Navbar() {
-  const [expand, setExpand] = useState(false)
+  const [expand, setExpand] = useState(true)
+
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    // Get the current height of the navbar element to achieve
+    // that cool wipe animation
+    let currentHeight = `${dropdownRef.current!.scrollHeight}px`
+
+    const setHeight = (h: string) => {
+      return (dropdownRef.current!.style.height = h)
+    }
+
+    if (!expand) {
+      setHeight(currentHeight)
+      return
+    }
+
+    setHeight("50px")
+
+    const resizeNav = (e: any) => setHeight(currentHeight)
+
+    ClientSide && window.addEventListener("resize", () => resizeNav)
+  }, [expand])
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <Link href="/">
-          <a className={styles.logo}>skepfusky</a>
-        </Link>
-        <button
-          onClick={() => setExpand(!expand)}
-          id={styles["menu-btn"]}
-          className={styles[!expand ? "closed" : "open"]}
-        ></button>
-        <div
-          className={styles[!expand ? "dd-container" : "dd-container-closed"]}
-        >
-          <nav className={styles["dd-wrapper"]}>
-            <div className={styles["dd-col"]}>
-              <h2 className={styles["nav-heading"]}>
-                <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
-                <span id={styles["gradient-heading"]}>Portfolio</span>
-              </h2>
-              <div
-                role="list"
-                className="grid gap-2 grid-cols-1 lg:grid-cols-2"
-              >
-                <NavLink name="Projects I've Contributed" link="#" />
-                <NavLink name="Personal Dev Projects" link="#" />
-                <NavLink name="Discography" link="#" />
-                <NavLink name="Filmography" link="#" />
-                <NavLink name="Archived Works" link="#" />
-              </div>
-            </div>
-            <div className={styles["dd-col"]}>
-              <h2 className={styles["nav-heading"]}>
-                <span id={styles["gradient-heading"]}>
-                  More about this idiot
-                </span>
-              </h2>
-              <div
-                role="list"
-                className="grid gap-2 grid-cols-1 lg:grid-cols-2"
-              >
-                <NavLink name="Fursona" link="#" />
-                <NavLink name="Milestones" link="#" />
-                <NavLink name="Artworks" link="#" />
-                <NavLink name="codefusky" link="#" />
-              </div>
-            </div>
-            <div className={styles["dd-col-grid"]}>
-              <div id={styles["dd-col-item"]} className={styles["blog-item"]}>
-                <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
-                Blog
-              </div>
-              <div id={styles["dd-col-item"]} className={styles["about-item"]}>
-                <FontAwesomeIcon icon={faGlasses} id={styles["dd-fa-icon"]} />
-                About
-              </div>
-              <div className={styles["lower-third"]}>
-                <ul className="flex gap-x-2">
-                  <li>
-                    <Link href="#">
-                      <a target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faGithub} size="lg" />
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-                <span>
-                  Site written in{" "}
-                  <NavLink name="Next.js" link="https://nextjs.org" />!
-                </span>
-              </div>
-            </div>
-          </nav>
+    <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <Link href="/">
+            <a className={styles.logo}>skepfusky</a>
+          </Link>
+          <button
+            onClick={() => setExpand(!expand)}
+            id={styles["menu-btn"]}
+            className={styles[!expand ? "open" : "closed"]}
+          ></button>
+          <div
+            ref={dropdownRef}
+            className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+          >
+            <nav className={styles["dd-wrapper"]}>
+              <section className={styles["dd-col"]}>
+                <h2 className={styles["nav-heading"]}>
+                  <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
+                  <span id={styles["gradient-heading"]}>Portfolio</span>
+                </h2>
+                <div
+                  role="list"
+                  className="grid gap-2 grid-cols-1 lg:grid-cols-2"
+                >
+                  <NavLink name="Projects I've Contributed" link="#" />
+                  <NavLink name="Personal Dev Projects" link="#" />
+                  <NavLink name="Discography" link="#" />
+                  <NavLink name="Filmography" link="#" />
+                  <NavLink name="Archived Works" link="#" />
+                </div>
+              </section>
+              <section className={styles["dd-col"]}>
+                <h2 className={styles["nav-heading"]}>
+                  <span id={styles["gradient-heading"]}>
+                    More about this idiot
+                  </span>
+                </h2>
+                <div
+                  role="list"
+                  className="grid gap-2 grid-cols-1 lg:grid-cols-2"
+                >
+                  <NavLink name="Fursona" link="#" />
+                  <NavLink name="Milestones" link="#" />
+                  <NavLink name="Artworks" link="#" />
+                  <NavLink name="codefusky" link="#" />
+                </div>
+              </section>
+              <section className={styles["dd-col-grid"]}>
+                <div id={styles["dd-col-item"]} className={styles["blog-item"]}>
+                  <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
+                  Blog
+                </div>
+                <div
+                  id={styles["dd-col-item"]}
+                  className={styles["about-item"]}
+                >
+                  <FontAwesomeIcon icon={faGlasses} id={styles["dd-fa-icon"]} />
+                  About
+                </div>
+                <div className={styles["lower-third"]}>
+                  <div role="list" className="flex gap-x-5 py-2">
+                    {socials.map((item, i) => (
+                      <Link key={i} href={item.link}>
+                        <a
+                          role="listitem"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FontAwesomeIcon icon={item.icon} size="lg" />
+                        </a>
+                      </Link>
+                    ))}
+                  </div>
+                  <span>
+                    Site written in{" "}
+                    <NavLink name="Next.js" link="https://nextjs.org" />!
+                  </span>
+                </div>
+              </section>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </DropdownContext.Provider>
+  )
+}
+
+interface NavLinkProps {
+  link?: string
+  name?: string
+}
+
+export function NavLink({ link = "", name }: NavLinkProps) {
+  const { expand, isExpanded } = useContext(DropdownContext)
+
+  return (
+    <Link href={link}>
+      <a className={nlStyles.link} onClick={() => isExpanded(!expand)}>
+        {name}
+      </a>
+    </Link>
   )
 }

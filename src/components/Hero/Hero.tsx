@@ -9,7 +9,7 @@ export default function Hero() {
     <>
       <Backdrop className={backdropStyles["heading-left"]} />
       <Backdrop className={backdropStyles["heading-right"]} />
-      <section className={styles.wrapper}>
+      <section id={styles.hero} className={styles.wrapper}>
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
             Hi, I'm&nbsp;
