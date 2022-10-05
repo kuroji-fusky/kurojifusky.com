@@ -9,7 +9,7 @@ export default function Hero() {
     <>
       <Backdrop className={backdropStyles["heading-left"]} />
       <Backdrop className={backdropStyles["heading-right"]} />
-      <section id={styles.hero} className={styles.wrapper}>
+      <section id={styles.hero} className={styles["hero-wrapper"]}>
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
             Hi, I'm&nbsp;
@@ -18,8 +18,8 @@ export default function Hero() {
             </span>
           </h2>
           <h3 className={styles.subheading}>
-            A 20-year-old self-taught and self-employed hobbyist from the
-            Philippines
+            A 20-year-old self-taught and self-employed fox-husky Filipino
+            hobbyist from the Philippines
           </h3>
           <div role="list" className={styles["btn-row"]}>
             <BtnLink link="/portfolio" name="🗂️ Portfolio" />

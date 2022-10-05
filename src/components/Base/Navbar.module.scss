@@ -138,6 +138,10 @@
     "lower-third lower-third";
 }
 
+#dd-col-list {
+	@apply grid gap-2 grid-cols-1 lg:grid-cols-2
+}
+
 #dd-col-item {
   @apply flex flex-col justify-center items-center gap-2;
 }
@@ -159,4 +163,8 @@
 .lower-third {
   @apply bg-neutral-500 px-5 py-3;
   grid-area: lower-third;
+}
+
+.lt-socials {
+	@apply flex gap-x-5 py-2;
 }

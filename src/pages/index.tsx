@@ -1,9 +1,10 @@
 import { Container } from "@/components/Base"
-import Hero, { Projects } from "@/components/Hero"
+import Hero, { Projects, Hobbies } from "@/components/Hero"
 
 export default function Home() {
   const title = "skepfusky"
   const description = "yeet"
+
   return (
     <Container
       className="overflow-hidden"
@@ -11,6 +12,7 @@ export default function Home() {
       description={description}
     >
       <Hero />
+      <Hobbies />
       <Projects />
     </Container>
   )

@@ -31,10 +31,7 @@ export default function Navbar() {
                   <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
                   <span id={styles["gradient-heading"]}>Portfolio</span>
                 </h2>
-                <div
-                  role="list"
-                  className="grid gap-2 grid-cols-1 lg:grid-cols-2"
-                >
+                <div role="list" id={styles["dd-col-list"]}>
                   <NavLink name="Projects I've Contributed" link="#" />
                   <NavLink name="Personal Dev Projects" link="#" />
                   <NavLink name="Discography" link="#" />
@@ -48,10 +45,7 @@ export default function Navbar() {
                     More about this idiot
                   </span>
                 </h2>
-                <div
-                  role="list"
-                  className="grid gap-2 grid-cols-1 lg:grid-cols-2"
-                >
+                <div role="list" id={styles["dd-col-list"]}>
                   <NavLink name="Fursona" link="#" />
                   <NavLink name="Milestones" link="#" />
                   <NavLink name="Artworks" link="#" />
@@ -71,7 +65,7 @@ export default function Navbar() {
                   About
                 </div>
                 <div className={styles["lower-third"]}>
-                  <div role="list" className="flex gap-x-5 py-2">
+                  <div role="list" className={styles["lt-socials"]}>
                     {socials.map((item, i) => (
                       <Link key={i} href={item.link}>
                         <a

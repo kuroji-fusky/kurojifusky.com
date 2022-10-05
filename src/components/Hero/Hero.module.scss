@@ -2,8 +2,17 @@
 	@apply h-screen;
 }
 
-.wrapper {
+.hero-wrapper {
   @apply flex flex-col-reverse lg:flex-row place-items-center px-10 justify-center lg:translate-x-8 translate-x-0;
+}
+
+/** SHARED **/
+.wrapper {
+  @apply max-w-screen-2xl mx-auto px-10;
+
+	> h2 {
+		@apply py-4;
+	}
 }
 
 .img {
