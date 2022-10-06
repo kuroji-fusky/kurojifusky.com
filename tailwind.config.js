@@ -24,12 +24,12 @@ module.exports = {
 			2: "2",
 			3: "3",
 			4: "4",
+			5: "5",
 			mosttop: "9999"
 		},
 		extend: {
 			colors: {
 				'sona-royalblue': {
-					DEFAULT: "#2076C5",
 					50: "#E4F0FB",
 					100: "#CEE4F8",
 					200: "#9DC8F0",
@@ -42,7 +42,6 @@ module.exports = {
 					900: "#061A2D"
 				},
 				'sona-skycyan': {
-					DEFAULT: "#48DDF7",
 					50: "#EBFCFE",
 					100: "#DCF9FE",
 					200: "#B5F2FD",
@@ -55,7 +54,6 @@ module.exports = {
 					900: "#023741"
 				},
 				'sona-pale': {
-					DEFAULT: "#FCE392",
 					50: "#FFFBF5",
 					100: "#FFF7EB",
 					200: "#FEEFD2",
@@ -68,7 +66,6 @@ module.exports = {
 					900: "#3C2701"
 				},
 				'sona-yellow': {
-					DEFAULT: "#F8D817",
 					50: "#FFFBE6",
 					100: "#FEF8D2",
 					200: "#FDEFA0",
@@ -81,7 +78,6 @@ module.exports = {
 					900: "#372F01"
 				},
 				'sona-borahae': {
-					DEFAULT: "#BB3EED",
 					50: "#F9ECFE",
 					100: "#F2D9FC",
 					200: "#E4AFF8",
@@ -94,7 +90,6 @@ module.exports = {
 					900: "#2A0439"
 				},
 				'sona-borahaealt': {
-					DEFAULT: "#B266ED",
 					50: "#F8F1FE",
 					100: "#EFDFFC",
 					200: "#E1C3F9",
@@ -107,7 +102,6 @@ module.exports = {
 					900: "#25063C"
 				},
 				'sona-magenta': {
-					DEFAULT: "#FFABFF",
 					50: "#FFF5FF",
 					100: "#FFF0FF",
 					200: "#FFDBFF",
@@ -120,14 +114,16 @@ module.exports = {
 					900: "#570057"
 				},
 				neutral: {
-					DEFAULT: "#211E23",
-					50: "#E8E7E9",
-					100: "#D4D2D6",
-					200: "#A7A1AB",
-					300: "#7C7283",
-					400: "#4E4752",
-					500: "#211E23",
-					600: "#1C1A1E"
+					"50": "#E0E1DF",
+					"100": "#CECFCE",
+					"200": "#B0AFB1",
+					"300": "#918995",
+					"400": "#716477",
+					"500": "#514557",
+					"600": "#3F3842",
+					"700": "#2C292E",
+					"800": "#1A191A",
+					"900": "#080808"
 				}
 			},
 			borderRadius: {
@@ -136,7 +132,8 @@ module.exports = {
 				full: "50%"
 			},
 			animation: {
-				"gradient-scroll": "gradient-scroll-root 9s linear infinite",
+				"gradient-scroll-slow": "gradient-scroll-root 9s linear infinite",
+				"gradient-scroll-mid": "gradient-scroll-root 4s linear infinite",
 				"gradient-scroll-fast": "gradient-scroll-root 1650ms linear infinite",
 			},
 			keyframes: {

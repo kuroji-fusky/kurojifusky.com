@@ -100,7 +100,7 @@
 }
 
 .dd-wrapper {
-  @apply overflow-hidden mx-auto max-w-screen-2xl rounded-md bg-neutral-600 grid grid-flow-col;
+  @apply overflow-hidden mx-auto max-w-screen-2xl rounded-md bg-neutral-800 grid grid-flow-col;
 
   grid-template-areas: "list-portfolio" "list-others" "misc";
 
@@ -161,7 +161,7 @@
 }
 
 .lower-third {
-  @apply bg-neutral-500 px-5 py-3;
+  @apply bg-neutral-900 px-5 py-3;
   grid-area: lower-third;
 }
 

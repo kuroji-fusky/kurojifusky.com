@@ -1,3 +1,11 @@
+.wrapper {
+	@apply px-5 py-4 border-2 border-sona-borahaealt-500 rounded-md flex flex-col gap-y-1 items-center;
+
+	p {
+		@apply mb-auto text-center;
+	}
+}
+
 .heading {
 	@apply text-center;
 }
@@ -13,4 +21,8 @@
   background-repeat: no-repeat;
   background-size: 100% 32%;
   background-position: 0 88%;
+}
+
+.separator {
+	@apply border border-sona-borahaealt-700 w-[20%] mx-auto my-1;
 }

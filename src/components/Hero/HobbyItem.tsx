@@ -3,7 +3,7 @@ import styles from "./HobbyItem.module.scss"
 
 interface HobbyItemProps {
   title: string
-  description: string
+  description: React.ReactElement
   link?: string
   linkName?: string
 }
@@ -15,12 +15,18 @@ export default function HobbyItem({
   linkName
 }: HobbyItemProps) {
   return (
-    <article className="px-5 py-4 border-2 border-sona-borahaealt-500 rounded-md flex flex-col gap-y-1 items-center">
+    <article className={styles.wrapper}>
       <h2 className={styles.heading}>
         <span className={styles["heading-inline"]}>{title}</span>
       </h2>
       <p>{description}</p>
-      {link && <LinkGradient name={linkName ?? "View this shit"} link="#" />}
+
+      {link && (
+        <>
+          <hr className={styles.separator} />
+          <LinkGradient name={linkName ?? "View Projects"} link="#" />
+        </>
+      )}
     </article>
   )
 }

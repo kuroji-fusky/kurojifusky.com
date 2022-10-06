@@ -12,7 +12,7 @@ export default function Hero() {
       <section id={styles.hero} className={styles["hero-wrapper"]}>
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
-            Hi, I'm&nbsp;
+            Hi, I'm
             <span>
               <span className={styles["gradient-wm"]}>skepfusky</span>!
             </span>

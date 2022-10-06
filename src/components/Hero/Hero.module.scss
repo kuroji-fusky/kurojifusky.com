@@ -1,5 +1,5 @@
 #hero {
-	@apply h-screen;
+  @apply h-screen;
 }
 
 .hero-wrapper {
@@ -10,9 +10,9 @@
 .wrapper {
   @apply max-w-screen-2xl mx-auto px-10;
 
-	> h2 {
-		@apply py-4;
-	}
+  > h2 {
+    @apply py-4;
+  }
 }
 
 .img {
@@ -28,10 +28,19 @@
 
 .gradient-wm {
   &-wrapper {
-    @apply flex flex-wrap items-center gap-x-1 text-5xl lg:text-6xl 2xl:text-7xl;
+    @apply relative flex flex-wrap items-center gap-x-1 text-5xl lg:text-6xl 2xl:text-7xl;
   }
 
-  @apply h-[1.6ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent from-sona-borahae-500 to-sona-skycyan-600;
+  @apply h-[1.6ch] ml-[0.2ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent animate-gradient-scroll-mid;
+
+  background-image: linear-gradient(
+    75deg,
+    theme("colors.sona-skycyan.600"),
+    theme("colors.sona-borahaealt.500"),
+    theme("colors.sona-skycyan.600"),
+    theme("colors.sona-borahaealt.500")
+  );
+	background-size: 310% 100%;
 }
 
 .subheading {
@@ -39,5 +48,5 @@
 }
 
 .btn-row {
-	@apply flex flex-wrap flex-col gap-x-4 gap-y-3 md:flex-row md:w-auto w-[75%] text-base lg:text-lg;
+  @apply flex flex-wrap flex-col gap-x-4 gap-y-3 md:flex-row md:w-auto w-[75%] text-base lg:text-lg;
 }
