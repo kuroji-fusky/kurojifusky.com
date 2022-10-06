@@ -1,6 +1,11 @@
-.header {
-  @apply w-full fixed top-0 px-9;
+#header {
+  @apply w-full fixed top-0 px-9 py-1 transition-colors duration-300;
   @apply z-mosttop #{!important};
+
+  &-scrolled {
+    @extend #header;
+    @apply bg-neutral-800;
+  }
 }
 
 .container {
@@ -23,6 +28,24 @@
   &::after {
     @apply text-neutral-200 font-normal;
   }
+}
+
+@mixin logo-white {
+  @apply text-neutral-50;
+
+  &::before,
+  &::after {
+    @apply text-neutral-50;
+  }
+}
+
+#header-scrolled .logo {
+  @include logo-white;
+}
+
+.logo-white {
+  @extend .logo;
+  @include logo-white;
 }
 
 #menu-btn {
@@ -58,10 +81,10 @@
 
 .open {
   &::before {
-    @apply absolute -rotate-45 top-8;
+    @apply absolute -rotate-45 top-[1.9rem];
   }
   &::after {
-    @apply absolute rotate-45 top-8;
+    @apply absolute rotate-45 top-[1.9rem];
   }
 }
 
@@ -90,17 +113,26 @@
 }
 
 .dd-container {
-  @apply absolute z-[auto] top-[4.35rem] left-0 right-0 px-9 duration-[250ms] overflow-x-hidden;
-  transition-property: top, opacity, height;
+  @apply absolute z-[auto] top-0 left-0 right-0 px-9 bg-neutral-800 duration-[320ms];
+  transition-property: height;
+}
+
+.dd-container,
+.dd-wrapper {
+  @apply overflow-hidden;
 }
 
 .dd-container-closed {
   @extend .dd-container;
-  @apply top-[4rem] opacity-0 pointer-events-none;
+  @apply pointer-events-none;
+
+  .dd-wrapper {
+    @apply translate-y-5;
+  }
 }
 
 .dd-wrapper {
-  @apply overflow-hidden mx-auto max-w-screen-2xl rounded-md bg-neutral-800 grid grid-flow-col;
+  @apply transition-transform duration-[350ms] mt-5 overflow-hidden mx-auto max-w-screen-2xl bg-neutral-800 grid grid-flow-col;
 
   grid-template-areas: "list-portfolio" "list-others" "misc";
 
@@ -116,7 +148,7 @@
 }
 
 .dd-col {
-  @apply px-7 py-6 duration-[310ms];
+  @apply pl-0 pr-7 py-6 duration-[310ms];
   transition-property: transform, opacity;
   transition-delay: 120ms, 70ms;
   transition-timing-function: cubic-bezier(0, 0.17, 0, 1);
@@ -124,6 +156,7 @@
   &:nth-child(1) {
     grid-area: list-portfolio;
   }
+
   &:nth-child(2) {
     grid-area: list-others;
   }
@@ -139,7 +172,7 @@
 }
 
 #dd-col-list {
-	@apply grid gap-2 grid-cols-1 lg:grid-cols-2
+  @apply grid gap-2 grid-cols-1 lg:grid-cols-2;
 }
 
 #dd-col-item {
@@ -166,5 +199,5 @@
 }
 
 .lt-socials {
-	@apply flex gap-x-5 py-2;
+  @apply flex gap-x-5 py-2;
 }

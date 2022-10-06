@@ -1,30 +1,47 @@
-import { useState } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
 import socials from "./Socials"
 import styles from "./Navbar.module.scss"
-import { DropdownContext } from "@/utils/Context"
+import { DropdownContext, NavbarScrollContext } from "@/utils/Context"
 import { NavLink } from "./NavLink"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
+  const { scrolled } = useContext(NavbarScrollContext)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ddHeight = (h: number | undefined) => {
+      return (dropdownRef.current!.style.height = `${h}px`)
+    }
+
+    const currentHeight = dropdownRef.current?.scrollHeight
+    const cliHeight = dropdownRef.current?.clientHeight
+
+    expand ? ddHeight(0) : ddHeight(currentHeight)
+
+    window.addEventListener("resize", () => ddHeight(expand ? 0 : cliHeight))
+  }, [expand])
 
   return (
-    <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <Link href="/">
-            <a className={styles.logo}>skepfusky</a>
-          </Link>
+    <header id={styles[!scrolled ? "header" : "header-scrolled"]}>
+      <div className={styles.container}>
+        <Logo />
+        <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
           <button
             onClick={() => setExpand(!expand)}
             id={styles["menu-btn"]}
             className={styles[!expand ? "open" : "closed"]}
           ></button>
           <div
+            ref={dropdownRef}
             className={styles[!expand ? "dd-container" : "dd-container-closed"]}
           >
+            <div className="max-w-screen-2xl mx-auto px-0 pt-6">
+              <Logo white />
+            </div>
             <nav className={styles["dd-wrapper"]}>
               <section className={styles["dd-col"]}>
                 <h2 className={styles["nav-heading"]}>
@@ -86,8 +103,16 @@ export default function Navbar() {
               </section>
             </nav>
           </div>
-        </div>
-      </header>
-    </DropdownContext.Provider>
+        </DropdownContext.Provider>
+      </div>
+    </header>
+  )
+}
+
+export function Logo({ white }: { white?: boolean }) {
+  return (
+    <Link href="/">
+      <a className={styles[!white ? "logo" : "logo-white"]}>skepfusky</a>
+    </Link>
   )
 }

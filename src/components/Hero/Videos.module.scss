@@ -11,7 +11,7 @@
 	}
 
   &::before {
-    @apply content-[""] absolute -left-0.5 top-1.5 w-[17rem] h-16 opacity-50 duration-500 blur-xl rounded-full;
+    @apply content-[""] absolute -left-2 top-1.5 w-[17rem] h-16 opacity-50 duration-500 blur-xl rounded-full;
     transition-property: width, background;
   }
 
@@ -34,21 +34,22 @@
 }
 
 :is(.vc-visible, .vc-out, .vc-in) {
-  transition-property: opacity, transform;
+	@apply relative;
+  transition-property: opacity, top;
   transition-duration: 250ms;
 }
 
 .vc {
   &-visible {
-    @apply opacity-100 translate-y-0;
+    @apply opacity-100 top-0;
   }
 
   &-out {
-    @apply opacity-0 translate-y-4;
+    @apply opacity-0 top-5;
   }
 
   &-in {
-    @apply opacity-0 -translate-y-5;
+    @apply opacity-0 -top-10;
   }
 }
 
