@@ -1,3 +1,18 @@
+import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons"
+
+const FursonaHero = [
+  {
+    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png",
+    artist: "catastrophe#6282",
+    social: faDiscord
+  },
+  {
+    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1665117048/fursonas/blushy_virgin_trans_ebbkdj.png",
+    artist: "skepfusky",
+    social: faTwitter
+  }
+]
+
 const HobbyItems = [
   {
     title: "Video editing & Film",
@@ -94,4 +109,4 @@ const VideoItems = [
   }
 ]
 
-export { HobbyItems as hobbies, VideoItems as videos }
+export { FursonaHero as sonas, HobbyItems as hobbies, VideoItems as videos }

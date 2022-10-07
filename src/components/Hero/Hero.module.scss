@@ -1,9 +1,9 @@
-#hero {
-  @apply h-screen;
+.hero-wrapper {
+  @apply h-screen grid place-items-center overflow-hidden;
 }
 
-.hero-wrapper {
-  @apply flex flex-col-reverse lg:flex-row place-items-center px-10 justify-center lg:translate-x-8 translate-x-0;
+.hero-parallax-wrapper {
+  @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 lg:translate-x-8 translate-x-0;
 }
 
 /** SHARED **/
@@ -40,7 +40,7 @@
     theme("colors.sona-skycyan.600"),
     theme("colors.sona-borahaealt.500")
   );
-	background-size: 310% 100%;
+  background-size: 310% 100%;
 }
 
 .subheading {

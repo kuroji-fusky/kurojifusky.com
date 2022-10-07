@@ -5,6 +5,7 @@ import Head from "next/head"
 import Script from "next/script"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
+import { ParallaxProvider } from "react-scroll-parallax"
 
 config.autoAddCss = false
 
@@ -18,9 +19,11 @@ export default function ShootMe({ Component, pageProps }: AppProps) {
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ParallaxProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ParallaxProvider>
     </>
   )
 }

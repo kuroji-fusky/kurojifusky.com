@@ -1,7 +1,7 @@
-import styles from "./Backdrop.module.scss";
+import styles from "./Backdrop.module.scss"
 
 interface BackdropProps {
-  className: string;
+  className: string
 }
 
 export default function Backdrop(props: BackdropProps) {
@@ -11,5 +11,5 @@ export default function Backdrop(props: BackdropProps) {
       id={styles.provider}
       className={props.className}
     ></div>
-  );
+  )
 }

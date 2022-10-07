@@ -7,9 +7,9 @@ export function Hobbies() {
     <section className={styles.wrapper}>
       <h2>What Hobbies I do</h2>
       <div className="grid grid-cols-3 gap-4">
-        {hobbies.map((hobby, i) => (
+        {hobbies.map((hobby, index) => (
           <HobbyItem
-            key={i}
+            key={index}
             title={hobby.title}
             description={hobby.description}
             link={hobby.link}
