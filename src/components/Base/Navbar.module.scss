@@ -1,11 +1,6 @@
 #header {
   @apply w-full fixed top-0 px-9 py-1 transition-colors duration-300;
   @apply z-mosttop #{!important};
-
-  &-scrolled {
-    @extend #header;
-    @apply bg-neutral-800;
-  }
 }
 
 .container {
@@ -136,7 +131,7 @@
 }
 
 .dd-wrapper {
-  @apply transition-transform duration-[350ms] mt-5 overflow-hidden mx-auto max-w-screen-2xl bg-neutral-800 grid grid-flow-col;
+  @apply transition-transform duration-[350ms] mt-5 overflow-hidden mx-auto max-w-screen-2xl grid grid-flow-col;
 
   grid-template-areas: "list-portfolio" "list-others" "misc";
 
@@ -152,7 +147,7 @@
 }
 
 .dd-col {
-  @apply 2xl:pt-6 pt-0 pl-0 pr-7 py-6 duration-[310ms];
+  @apply xl:pt-0 pt-6 pl-0 pr-7 py-6 duration-[310ms];
   transition-property: transform, opacity;
   transition-delay: 120ms, 70ms;
   transition-timing-function: cubic-bezier(0, 0.17, 0, 1);
@@ -198,7 +193,7 @@
 }
 
 .lower-third {
-  @apply bg-neutral-900 px-5 py-3;
+  @apply bg-neutral-700 px-5 py-3;
   grid-area: lower-third;
 }
 

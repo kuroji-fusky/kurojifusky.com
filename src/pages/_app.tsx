@@ -6,6 +6,7 @@ import Script from "next/script"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { ParallaxProvider } from "react-scroll-parallax"
+import NextNProgress from "nextjs-progressbar"
 
 config.autoAddCss = false
 
@@ -19,6 +20,7 @@ export default function ShootMe({ Component, pageProps }: AppProps) {
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
       />
+      <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
       <ParallaxProvider>
         <Layout>
           <Component {...pageProps} />
