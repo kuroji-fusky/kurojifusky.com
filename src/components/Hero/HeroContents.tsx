@@ -1,4 +1,4 @@
-import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faDiscord, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 
 const FursonaHero = [
   {
@@ -8,8 +8,17 @@ const FursonaHero = [
   },
   {
     img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1665117048/fursonas/blushy_virgin_trans_ebbkdj.png",
-    artist: "skepfusky",
-    social: faTwitter
+    artist: "me lol"
+  },
+  {
+    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/v1665155943/fursonas/JAKEmegaSNAKE_l61xfu.png",
+    artist: "JAKEmegaSNAKE",
+    social: faDiscord
+  },
+  {
+    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_crop,h_789,w_1395,x_491,y_0/v1665156704/fursonas/ZAMBOY_orig_u7xxed.png",
+    artist: "ZAMBOYYT",
+    social: faYoutube
   }
 ]
 

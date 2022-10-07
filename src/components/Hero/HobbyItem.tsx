@@ -1,4 +1,4 @@
-import LinkGradient from "../Buttons/LinkGradient"
+import { LinkGradient } from "../Links/LinkGradient"
 import styles from "./HobbyItem.module.scss"
 
 interface HobbyItemProps {

@@ -1,0 +1,15 @@
+.root {
+  @apply relative mt-[11.5rem];
+}
+
+.footer-contents {
+  @apply mx-auto max-w-screen-2xl flex justify-between z-4 absolute p-6 bottom-0 left-0 right-0;
+}
+
+#copyright {
+  @apply text-sm;
+}
+
+.social-row {
+  @apply flex gap-x-6;
+}

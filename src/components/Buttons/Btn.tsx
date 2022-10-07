@@ -1,14 +1,25 @@
-import { SharedBtnProps } from "./SharedBtnProps";
-import styles from "./Button.module.scss";
+import { SharedBtnProps } from "../../utils/SharedBtnProps"
+import styles from "./Button.module.scss"
 
 interface BtnProps extends SharedBtnProps {
-  onClick?: () => void;
+  emojiFix?: boolean
 }
 
 export function Btn(props: BtnProps) {
   return (
-    <button onClick={props.onClick} id={styles.style1} data-text={props.name}>
+    <button
+      onClick={props.onClick}
+      id={styles.style1}
+      data-text={props.name}
+      style={
+        {
+          "--text-padding-hover": !props.emojiFix
+            ? "var(--default-btn)"
+            : "var(--emoji-fix)"
+        } as React.CSSProperties
+      }
+    >
       {props.name}
     </button>
-  );
+  )
 }

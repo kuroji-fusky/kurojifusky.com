@@ -28,29 +28,45 @@ export default function Navbar() {
 
     handleHeight()
 
+    // Listen to keyboard events and clicking of other elements
+    const closeKeyboard = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        if (!expand) {
+          setExpand(true)
+        }
+      }
+    }
+
     window.addEventListener("resize", handleHeight)
-    return () => window.removeEventListener("resize", handleHeight)
+
+    document.addEventListener("keydown", closeKeyboard)
+
+    return () => {
+      window.removeEventListener("resize", handleHeight)
+
+      document.removeEventListener("keydown", closeKeyboard)
+    }
   }, [expand, height, scrolled])
 
   return (
-    <header id={styles["header"]}>
+    <header id={styles.header}>
       <div className={styles.container}>
         <Logo />
-        <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
-          <button
-            onClick={() => setExpand(!expand)}
-            id={styles["menu-btn"]}
-            className={styles[!expand ? "open" : "closed"]}
-          ></button>
-          <div
-            ref={dropdownRef}
-            className={styles[!expand ? "dd-container" : "dd-container-closed"]}
-            style={{ height: "0px" }}
-          >
-            <div className={styles["logo-wrapper"]}>
-              <Logo white />
-            </div>
-            <nav className={styles["dd-wrapper"]}>
+        <button
+          onClick={() => setExpand(!expand)}
+          id={styles["menu-btn"]}
+          className={styles[!expand ? "open" : "closed"]}
+        ></button>
+        <div
+          ref={dropdownRef}
+          className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+          style={{ height: "0px" }}
+        >
+          <div className={styles["logo-wrapper"]}>
+            <Logo white />
+          </div>
+          <nav className={styles["dd-wrapper"]}>
+            <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
               <section className={styles["dd-col"]}>
                 <h2 className={styles["nav-heading"]}>
                   <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
@@ -109,9 +125,9 @@ export default function Navbar() {
                   </span>
                 </div>
               </section>
-            </nav>
-          </div>
-        </DropdownContext.Provider>
+            </DropdownContext.Provider>
+          </nav>
+        </div>
       </div>
     </header>
   )

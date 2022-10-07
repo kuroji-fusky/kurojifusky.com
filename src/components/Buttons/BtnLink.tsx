@@ -1,13 +1,28 @@
-import Link from "next/link";
-import styles from "./Button.module.scss";
-import { SharedBtnProps } from "./SharedBtnProps";
+import Link from "next/link"
+import styles from "./Button.module.scss"
+import { SharedBtnProps } from "@/utils/SharedBtnProps"
 
-export function BtnLink(props: SharedBtnProps) {
+interface BtnLinkProps extends SharedBtnProps {
+  emojiFix?: boolean
+  ariaList?: boolean
+}
+
+export function BtnLink(props: BtnLinkProps) {
   return (
-    <Link href={props.link}>
-      <a id={styles.style1} data-text={props.name}>
+    <Link href={props.link ?? ""}>
+      <a
+        id={styles.style1}
+        data-text={props.name}
+        onClick={props.onClick}
+        role={!props.ariaList ? undefined : "list"}
+        style={
+          {
+            "--text-padding-hover": !props.emojiFix ? "" : "var(--emoji-fix)"
+          } as React.CSSProperties
+        }
+      >
         {props.name}
       </a>
     </Link>
-  );
+  )
 }

@@ -18,7 +18,3 @@
 #backdrop-container {
   @apply h-[24rem] w-full absolute bottom-0 overflow-hidden;
 }
-
-.footer-contents {
-  @apply mx-auto max-w-screen-2xl flex justify-between z-4 absolute p-6 bottom-0 left-0 right-0;
-}

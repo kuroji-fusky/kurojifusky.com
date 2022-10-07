@@ -2,7 +2,7 @@
   @apply h-screen grid place-items-center overflow-hidden;
 }
 
-.hero-parallax-wrapper {
+.parallax-wrapper {
   @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 lg:translate-x-8 translate-x-0;
 }
 

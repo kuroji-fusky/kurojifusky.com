@@ -1,5 +1,9 @@
 #style1 {
-  @apply  select-none transition-all duration-300 font-inter relative px-4 py-2 shadow-2xl bg-gradient-to-tr from-sona-royalblue-800 to-sona-borahaealt-800 rounded-md;
+  --emoji-fix: 0.5rem;
+  --default: 0.55ch;
+  --default-btn: 0.9ch;
+
+  @apply select-none transition-all duration-300 font-inter relative px-4 py-2 shadow-2xl bg-gradient-to-tr from-sona-royalblue-800 to-sona-borahaealt-800 rounded-md;
 
   &:hover {
     @apply -translate-y-0.5 shadow-sona-skycyan-800;
@@ -7,7 +11,10 @@
 
   &::before {
     content: attr(data-text);
-    @apply opacity-0 transition-opacity duration-500 absolute px-4 py-2 inset-0 bg-gradient-to-tr from-sona-skycyan-700 to-sona-borahaealt-700 rounded-[inherit];
+    @apply opacity-0 transition-opacity duration-500 absolute px-4 inset-0 bg-gradient-to-tr from-sona-skycyan-700 to-sona-borahaealt-700 rounded-[inherit];
+
+    padding-top: var(--text-padding-hover, var(--default));
+    padding-bottom: var(--text-padding-hover, var(--default));
   }
 
   &:hover::before {

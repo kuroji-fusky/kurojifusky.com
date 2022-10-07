@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import Link from "next/link"
-import nlStyles from "./NavLink.module.scss"
+import styles from "../Links/LinkUnderline.module.scss"
 import { DropdownContext } from "@/utils/Context"
 
 interface NavLinkProps {
@@ -8,13 +8,13 @@ interface NavLinkProps {
   name?: string
 }
 
-export function NavLink({ link = "", name }: NavLinkProps) {
+export function NavLink(props: NavLinkProps) {
   const { expand, isExpanded } = useContext(DropdownContext)
 
   return (
-    <Link href={link}>
-      <a className={nlStyles.link} onClick={() => isExpanded(!expand)}>
-        {name}
+    <Link href={props.link ?? ""}>
+      <a className={styles.link} onClick={() => isExpanded(!expand)}>
+        {props.name}
       </a>
     </Link>
   )

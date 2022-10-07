@@ -152,7 +152,7 @@
 }
 
 .dd-col {
-  @apply pl-0 pr-7 py-6 duration-[310ms];
+  @apply 2xl:pt-6 pt-0 pl-0 pr-7 py-6 duration-[310ms];
   transition-property: transform, opacity;
   transition-delay: 120ms, 70ms;
   transition-timing-function: cubic-bezier(0, 0.17, 0, 1);
