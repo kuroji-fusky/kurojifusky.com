@@ -9,24 +9,31 @@ import { NavLink } from "./NavLink"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
+
   const { scrolled } = useContext(NavbarScrollContext)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
+  const [height, setHeight] = useState(0)
+
   useEffect(() => {
-    const ddHeight = (h: number | undefined) => {
-      return (dropdownRef.current!.style.height = `${h}px`)
+    dropdownRef.current!.style.height = `${height ?? 0}px`
+
+    const scrolledDefault = !scrolled ? 0 : 80
+
+    const currentHeight = dropdownRef.current?.scrollHeight ?? scrolledDefault
+
+    const handleHeight = () => {
+      !expand ? setHeight(currentHeight) : setHeight(scrolledDefault)
     }
 
-    const currentHeight = dropdownRef.current?.scrollHeight
-    const cliHeight = dropdownRef.current?.clientHeight
+    handleHeight()
 
-    expand ? ddHeight(0) : ddHeight(currentHeight)
-
-    window.addEventListener("resize", () => ddHeight(expand ? 0 : cliHeight))
-  }, [expand])
+    window.addEventListener("resize", handleHeight)
+    return () => window.removeEventListener("resize", handleHeight)
+  }, [expand, height, scrolled])
 
   return (
-    <header id={styles[!scrolled ? "header" : "header-scrolled"]}>
+    <header id={styles["header"]}>
       <div className={styles.container}>
         <Logo />
         <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
@@ -38,8 +45,9 @@ export default function Navbar() {
           <div
             ref={dropdownRef}
             className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+            style={{ height: "0px" }}
           >
-            <div className="max-w-screen-2xl mx-auto px-0 pt-6">
+            <div className={styles["logo-wrapper"]}>
               <Logo white />
             </div>
             <nav className={styles["dd-wrapper"]}>

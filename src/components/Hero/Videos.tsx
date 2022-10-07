@@ -66,7 +66,7 @@ export function Videos() {
           />
           <article id={styles.content} className={scrollCSS}>
             <h2>{videoInfo?.title}</h2>
-            <span>{videoInfo?.desc}</span>
+            <p>{videoInfo?.desc}</p>
           </article>
         </aside>
       </div>

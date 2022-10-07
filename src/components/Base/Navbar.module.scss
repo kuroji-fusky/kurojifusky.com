@@ -88,6 +88,10 @@
   }
 }
 
+.logo-wrapper {
+	@apply max-w-screen-2xl mx-auto px-0 pt-6;
+}
+
 /*** DROPDOWN ***/
 
 .nav-heading {
