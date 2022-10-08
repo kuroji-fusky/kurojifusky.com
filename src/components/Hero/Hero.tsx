@@ -24,7 +24,7 @@ export default function Hero() {
   const { isScrolled } = useContext(NavbarScrollContext)
 
   const { ref: intersectRef } = useInView({
-    rootMargin: "-150px 250px 0px 0px",
+    rootMargin: "-55px 150px 0px 0px",
     onChange(inView) {
       isScrolled(!inView)
     }
@@ -49,8 +49,8 @@ export default function Hero() {
             <span className={styles["gradient-wm"]}>skepfusky</span>!
           </h2>
           <h3 className={styles.subheading}>
-            A 20-year-old self-taught and self-employed fox-husky Filipino
-            hobbyist from the Philippines
+            A 20-year-old self-taught, self-employed, and independent fox-husky
+            Filipino hobbyist from the Philippines
           </h3>
           <div role="list" className={styles["btn-row"]}>
             <BtnLink emojiFix ariaList link="/portfolio" name="🗂️ Portfolio" />
@@ -84,6 +84,7 @@ export default function Hero() {
           />
         </div>
       </Parallax>
+      <div className={styles["gradient-transition"]} aria-hidden="true"></div>
     </section>
   )
 }

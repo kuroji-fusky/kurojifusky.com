@@ -1,4 +1,8 @@
-import { faDiscord, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
+import {
+  faDiscord,
+  faTwitter,
+  faYoutube
+} from "@fortawesome/free-brands-svg-icons"
 
 const FursonaHero = [
   {
@@ -24,28 +28,39 @@ const FursonaHero = [
 
 const HobbyItems = [
   {
-    title: "Video editing & Film",
+    title: "Video editing & filmography",
+    subtitle:
+      "5+ years experience in Adobe products — Premiere Pro, After Effects, Audition, and Photoshop",
     description: (
       <>
-        With nearly a decade of experience editing videos and getting into the
-        VFX and filmography scene with complex motion graphics.
+        With nearly a decade of experience editing videos, migrating from Sony
+        Vegas to Premiere Pro, and getting more into the VFX and filmography
+        scene with complex motion graphics; it's safe to say that I have honed
+        my video editing skills.
+        <br />
+        From making Minecraft videos, to SFM animations, and to vlogs and other
+        stuff!
       </>
     ),
     link: "#"
   },
   {
     title: "Music production",
+    subtitle: "Fair amount of experience in FL Studio and Adobe Audition",
     description: (
       <>
-        I do self-produce mostly indie and mostly experimental music - releasing
-        2 albums and 5 EPs since 2017!
+        Going under the stage name <em>Kokoro Husky</em>, I do self-produce
+        mostly indie and mostly experimental music - releasing 2 albums and 5
+        EPs since 2017!
       </>
     ),
     linkName: "View Discography",
     link: "#"
   },
   {
-    title: "Web development",
+    title: "Web design & web development",
+    subtitle:
+      "Fair amount of back-end development, Intermediate experience in ES6 JavaScript and TypeScript",
     description: (
       <>
         A recent interest of mine that has taken me over a year to get decent
@@ -63,8 +78,10 @@ const HobbyItems = [
         with every single detail of it - including its functionality.
       </>
     )
-  },
+  }
+]
 
+const HobbySubsectionItems = [
   {
     title: "Data science",
     description: (

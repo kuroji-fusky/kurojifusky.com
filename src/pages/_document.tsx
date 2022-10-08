@@ -6,6 +6,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps
 } from "next/document"
+import Script from "next/script"
 
 export default class _ extends Document {
   static async getInitialProps(
@@ -37,6 +38,10 @@ export default class _ extends Document {
         `
             }}
           />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
+          ></script>
         </Head>
         <body>
           <Main />

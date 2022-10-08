@@ -84,7 +84,7 @@
 }
 
 .logo-wrapper {
-	@apply max-w-screen-2xl mx-auto px-0 pt-6;
+  @apply max-w-screen-2xl mx-auto px-0 pt-6;
 }
 
 /*** DROPDOWN ***/
@@ -112,7 +112,7 @@
 }
 
 .dd-container {
-  @apply absolute z-[auto] top-0 left-0 right-0 px-9 bg-neutral-800 duration-[320ms];
+  @apply absolute z-[auto] top-0 left-0 right-0 px-9 bg-neutral-900 duration-[320ms];
   transition-property: height;
 }
 
@@ -162,7 +162,7 @@
 }
 
 .dd-col-grid {
-  @apply grid;
+  @apply grid rounded-md overflow-hidden;
   grid-area: misc;
   grid-template-rows: 1.75fr 1fr;
   grid-template-areas:
@@ -193,7 +193,7 @@
 }
 
 .lower-third {
-  @apply bg-neutral-700 px-5 py-3;
+  @apply bg-sona-borahaealt-900 px-5 py-3;
   grid-area: lower-third;
 }
 

@@ -1,9 +1,9 @@
 .hero-wrapper {
-  @apply h-screen grid place-items-center overflow-hidden;
+  @apply relative h-screen grid place-items-center overflow-hidden bg-gradient-to-tr from-sona-royalblue-900 to-sona-borahae-900;
 }
 
 .parallax-wrapper {
-  @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 lg:translate-x-8 translate-x-0;
+  @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 relative lg:left-8 left-0;
 }
 
 /** SHARED **/
@@ -49,4 +49,8 @@
 
 .btn-row {
   @apply flex flex-wrap flex-col gap-x-4 gap-y-3 md:flex-row md:w-auto w-[75%] text-base lg:text-lg;
+}
+
+.gradient-transition {
+  @apply pointer-events-none absolute w-full bottom-0 left-0 right-0 h-[12.5rem] bg-gradient-to-b from-transparent to-[var(--root-theme)];
 }

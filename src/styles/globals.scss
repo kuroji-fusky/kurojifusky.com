@@ -26,7 +26,9 @@
   }
 
   body {
-    @apply font-open-sans bg-gradient-to-tr from-sona-royalblue-900 to-sona-borahae-900 text-neutral-50;
+    --root-theme: #110d17;
+    @apply font-open-sans text-neutral-50;
+    background-color: var(--root-theme);
 
     * {
       // outline: 2px solid cyan;

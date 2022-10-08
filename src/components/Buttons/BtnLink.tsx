@@ -14,7 +14,7 @@ export function BtnLink(props: BtnLinkProps) {
         id={styles.style1}
         data-text={props.name}
         onClick={props.onClick}
-        role={!props.ariaList ? undefined : "list"}
+        role={!props.ariaList ? undefined : "listitem"}
         style={
           {
             "--text-padding-hover": !props.emojiFix ? "" : "var(--emoji-fix)"

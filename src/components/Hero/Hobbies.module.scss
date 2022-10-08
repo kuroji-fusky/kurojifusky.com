@@ -1,3 +1,65 @@
 .wrapper {
   composes: wrapper from "./Hero.module.scss";
+  @apply max-w-[1200px] 2xl:max-w-screen-2xl;
+}
+
+#hobby-section {
+  @apply grid gap-5 items-center;
+  grid-template-columns: repeat(8, 1fr);
+
+  --left-col: 1/5;
+  --right-col: 5/9;
+
+  --extrude-pos: 1.75rem;
+
+  .hs-container {
+    grid-column: var(--left-col);
+  }
+
+  .gradient-border {
+    top: var(--extrude-pos);
+    left: calc(var(--extrude-pos) * -1);
+    bottom: calc(var(--extrude-pos) * -1);
+    right: var(--extrude-pos);
+  }
+
+  > article {
+    grid-column: var(--right-col);
+  }
+
+  &:nth-child(even) {
+    @apply grid-flow-dense;
+
+    .hs-container {
+      grid-column: var(--right-col);
+    }
+
+    .gradient-border {
+      top: var(--extrude-pos);
+      left: var(--extrude-pos);
+      bottom: calc(var(--extrude-pos) * -1);
+      right: calc(var(--extrude-pos) * -1);
+    }
+
+    > article {
+      grid-column: var(--left-col);
+    }
+  }
+}
+
+.hs-container {
+  @apply relative;
+}
+
+.hs-img-wrapper {
+  @apply relative z-5 w-full h-[375px] overflow-hidden rounded-md;
+}
+
+.gradient-border {
+  @apply rounded-md absolute inset-0;
+	background-color: var(--root-theme);
+
+  &::before {
+    @apply content-[""] rounded-[inherit] absolute -z-1 inset-0 -m-[2px] bg-gradient-to-tr from-sona-yellow-600 to-sona-royalblue-400;
+  }
 }
