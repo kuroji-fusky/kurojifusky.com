@@ -52,13 +52,7 @@ export default function Hero() {
             A 20-year-old self-taught, self-employed, and independent fox-husky
             Filipino hobbyist from the Philippines
           </h3>
-          <div role="list" className={styles["btn-row"]}>
-            <BtnLink emojiFix ariaList link="/portfolio" name="🗂️ Portfolio" />
-            <BtnLink emojiFix ariaList link="/fursona" name="🦊 Fursona" />
-            <BtnLink emojiFix ariaList link="/blog" name="📝 Blog Posts" />
-            <BtnLink emojiFix ariaList link="#" name="🤵 About me" />
-          </div>
-          <div className="flex flex-col gap-4">
+          <div className={styles.artwork}>
             <span>
               Art by{" "}
               {currentArt!.social && (
@@ -66,11 +60,12 @@ export default function Hero() {
               )}{" "}
               <strong>{currentArt!.artist}</strong>
             </span>
-            <div>
+            <div className="flex gap-4">
               <Btn
                 name="Change artwork"
                 onClick={() => setCurrentArt(randomArt)}
               />
+              <BtnLink emojiFix ariaList link="/about" name="🤵 About me" />
             </div>
           </div>
         </div>

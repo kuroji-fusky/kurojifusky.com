@@ -7,6 +7,8 @@ import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import { ParallaxProvider } from "react-scroll-parallax"
 import NextNProgress from "nextjs-progressbar"
+import { MDXProvider } from "@mdx-js/react"
+import Notification from "@/components/Notification"
 
 config.autoAddCss = false
 
@@ -17,10 +19,21 @@ export default function ShootMe({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
+      <Notification
+        heading="Website under construction"
+        content={
+          <>
+            Most of the content is either missing or incomplete, and is
+            currently in the process of being added!
+          </>
+        }
+      />
       <ParallaxProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <MDXProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </MDXProvider>
       </ParallaxProvider>
     </>
   )

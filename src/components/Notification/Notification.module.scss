@@ -1,0 +1,17 @@
+#wrapper {
+  @apply bg-red-900 px-6 py-3 rounded-md fixed bottom-8 z-mosttop;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title {
+  @apply flex justify-between items-center mb-1;
+
+  h2 {
+    @apply text-[2.55ch];
+  }
+
+  button {
+    @apply px-3 py-2;
+  }
+}
