@@ -17,6 +17,10 @@ export default function ShootMe({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
       <Notification
