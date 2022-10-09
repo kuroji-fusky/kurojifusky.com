@@ -13,7 +13,7 @@
     }
 
     &-track {
-      @apply bg-neutral-900;
+      background: var(--root-theme);
     }
   }
 
@@ -23,10 +23,14 @@
 
   html {
     @apply scroll-smooth scroll-pt-20 overflow-y-auto overflow-x-hidden;
+    --borahae-dark: 17 13 23;
+
+    --root-theme: rgb(var(--borahae-dark) / 1);
+    --root-theme-transparent: rgb(var(--borahae-dark) / 0.65);
+    scrollbar-color: theme("colors.sona-borahae.600"), var(--root-theme);
   }
 
   body {
-    --root-theme: #110d17;
     @apply font-open-sans text-neutral-50;
     background-color: var(--root-theme);
 

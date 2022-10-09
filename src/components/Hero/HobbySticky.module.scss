@@ -1,0 +1,8 @@
+#wrapper {
+  @apply px-10 sticky top-[5rem] z-[10] py-7 backdrop-blur-xl bg-opacity-50;
+	background-color: var(--root-theme-transparent);
+}
+
+#row {
+	@apply flex justify-center gap-x-10 font-inter text-lg;
+}

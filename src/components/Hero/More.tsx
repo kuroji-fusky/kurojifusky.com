@@ -1,10 +1,10 @@
-import styles from "./Projects.module.scss"
+import styles from "./More.module.scss"
 import WIPFiller from "./WIPFiller"
 
-export function Projects() {
+export function More() {
   return (
     <section className={styles.wrapper}>
-      <h2>Projects</h2>
+      <h2>More</h2>
       <WIPFiller />
     </section>
   )

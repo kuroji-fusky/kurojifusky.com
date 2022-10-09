@@ -40,8 +40,6 @@ export default function Hero() {
 
   return (
     <section ref={intersectRef} className={styles["hero-wrapper"]}>
-      <Backdrop className={bdStyles["heading-left"]} />
-      <Backdrop className={bdStyles["heading-right"]} />
       <Parallax speed={-250} className={styles["parallax-wrapper"]}>
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
@@ -80,6 +78,8 @@ export default function Hero() {
         </div>
       </Parallax>
       <div className={styles["gradient-transition"]} aria-hidden="true"></div>
+      <Backdrop className={bdStyles["heading-left"]} />
+      <Backdrop className={bdStyles["heading-right"]} />
     </section>
   )
 }

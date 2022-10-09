@@ -1,26 +1,39 @@
+.heading-wrapper {
+	@apply max-w-[1200px] 2xl:max-w-screen-2xl mx-auto py-5 text-center;
+}
+
 .wrapper {
   composes: wrapper from "./Hero.module.scss";
   @apply max-w-[1200px] 2xl:max-w-screen-2xl;
-}
-
-#hobby-section {
-  @apply grid gap-5 items-center;
-  grid-template-columns: repeat(8, 1fr);
-
   --left-col: 1/5;
   --right-col: 5/9;
 
-  --extrude-pos: 1.75rem;
+  --extrude-pos: 2.25rem;
+  --extrude-pos-hidden: calc(var(--extrude-pos) / 2);
+}
+
+#hobby-section {
+  &-hidden {
+    --extrude-state: var(--extrude-pos-hidden);
+  }
+
+  --extrude-state: var(--extrude-pos);
+
+  @apply grid gap-5 items-center;
+  grid-template-columns: repeat(8, 1fr);
 
   .hs-container {
     grid-column: var(--left-col);
   }
 
   .gradient-border {
-    top: var(--extrude-pos);
-    left: calc(var(--extrude-pos) * -1);
-    bottom: calc(var(--extrude-pos) * -1);
-    right: var(--extrude-pos);
+    transition-property: top, left, bottom, right;
+    transition-duration: 350ms;
+
+    top: var(--extrude-state);
+    left: calc(var(--extrude-state) * -1);
+    bottom: calc(var(--extrude-state) * -1);
+    right: var(--extrude-state);
   }
 
   > article {
@@ -35,10 +48,10 @@
     }
 
     .gradient-border {
-      top: var(--extrude-pos);
-      left: var(--extrude-pos);
-      bottom: calc(var(--extrude-pos) * -1);
-      right: calc(var(--extrude-pos) * -1);
+      top: var(--extrude-state);
+      left: var(--extrude-state);
+      bottom: calc(var(--extrude-state) * -1);
+      right: calc(var(--extrude-state) * -1);
     }
 
     > article {
@@ -57,7 +70,7 @@
 
 .gradient-border {
   @apply rounded-md absolute inset-0;
-	background-color: var(--root-theme);
+  background-color: var(--root-theme);
 
   &::before {
     @apply content-[""] rounded-[inherit] absolute -z-1 inset-0 -m-[2px] bg-gradient-to-tr from-sona-yellow-600 to-sona-royalblue-400;

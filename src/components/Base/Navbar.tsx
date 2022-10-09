@@ -64,6 +64,11 @@ export default function Navbar() {
         >
           <div className={styles["logo-wrapper"]}>
             <Logo white />
+            <span className={styles["keyboard-notice"]}>
+              Tip: Press
+              <kbd>ESC</kbd>
+              to close menu
+            </span>
           </div>
           <nav className={styles["dd-wrapper"]}>
             <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>

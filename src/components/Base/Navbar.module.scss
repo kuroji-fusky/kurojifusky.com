@@ -84,7 +84,21 @@
 }
 
 .logo-wrapper {
-  @apply max-w-screen-2xl mx-auto px-0 pt-6;
+  @apply max-w-screen-2xl mx-auto px-0 pt-1 flex items-center justify-between;
+}
+
+.keyboard-notice {
+  @apply hidden md:flex gap-x-1.5 mr-20 relative top-0.5 text-neutral-300;
+	transition-duration: 300ms;
+  transition-property: opacity, transform;
+}
+
+.dd-container-closed .keyboard-notice {
+  @apply opacity-0 translate-x-1 pointer-events-none #{!important};
+}
+
+.dd-container .keyboard-notice {
+  @apply opacity-100;
 }
 
 /*** DROPDOWN ***/
