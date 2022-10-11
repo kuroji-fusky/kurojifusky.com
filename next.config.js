@@ -9,9 +9,9 @@ module.exports = async (phase) => {
 		compress: true,
 		images: {
 			domains: [
-				"res.cloudinary.com"
+				"res.cloudinary.com",
+				"img.youtube.com"
 			],
-			formats: ["image/webp"]
 		}
 	}
 

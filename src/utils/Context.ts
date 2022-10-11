@@ -19,3 +19,13 @@ export const NavbarScrollContext = createContext<NavbarScrollProps>({
   scrolled: false,
   isScrolled: () => {}
 })
+
+type YTPlayerProps = {
+  loadPlayer: boolean
+  setLoadPlayer: (loadPlayer: boolean) => void
+}
+
+export const YTPlayerContext = createContext<YTPlayerProps>({
+  loadPlayer: false,
+  setLoadPlayer: () => {}
+})

@@ -1,6 +1,6 @@
 #header {
   @apply w-full fixed top-0 px-9 py-1 transition-colors duration-300;
-  @apply z-mosttop #{!important};
+  @apply z-[10] #{!important};
 }
 
 .container {

@@ -9,18 +9,26 @@ import { ParallaxProvider } from "react-scroll-parallax"
 import NextNProgress from "nextjs-progressbar"
 import { MDXProvider } from "@mdx-js/react"
 import Notification from "@/components/Notification"
+import { useRouter } from "next/router"
+import { useEffect } from "react"
+import * as ga from "@/utils/ga"
 
 config.autoAddCss = false
 
 export default function ShootMe({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const routeChange = (url: string) => ga.pageView(url)
+
+    router.events.on("routeChangeComplete", routeChange)
+    return () => router.events.off("routeChangeComplete", routeChange)
+  }, [router.events])
+
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
       <Notification

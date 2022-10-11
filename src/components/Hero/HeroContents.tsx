@@ -108,29 +108,30 @@ const VideoItems = [
     title: "YTPs",
     description: <>One of the dumbest things I've put a lot of effort in</>,
     id: "7ubbQKBQyg4",
-    videoTitle: "YouTube Poops",
-    videoDesc: "Yeah this is dumb lmao"
+    cardTitle: "YouTube Poops",
+    cardDesc: "Yeah this is dumb lmao"
   },
   {
-    title: "Vlogs/Edits",
+    title: "Vlogs/IRL Edits",
     description: <>Vlogs and edits during vacations or my senior years</>,
-    id: "4uUjRlgUEnY",
-    videoTitle: "Vlogs & Edits",
-    videoDesc: "Stuff for family vacations and other stuff"
+    id: "WfeLfeTvf9E",
+    cardTitle: "Vlogs & Edits",
+    cardDesc: "Stuff for family vacations and other stuff"
   },
   {
     title: "Music videos",
     description: <>Music videos from my shitty music lol</>,
-    id: "vioAgEgk2O0",
-    videoTitle: "Music Videos",
-    videoDesc: "Something to accompany to my music works, I guess lol"
+    id: "Z2KV_Lag7bE",
+    cardTitle: "Music Videos",
+    cardDesc: "Something to accompany to my music works, I guess lol"
   },
   {
     title: "School projects",
     description: <>Some school projects also from my high school years</>,
     id: "zIPay0PwumY",
-    videoTitle: "School projects",
-    videoDesc:
+    videoTitle: '"Tourism Video" School Project',
+    cardTitle: "School projects",
+    cardDesc:
       "These are videos that I've made for end of the year highlights or just group projects I've submitted"
   }
 ]

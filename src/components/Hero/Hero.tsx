@@ -21,7 +21,7 @@ type RandomArtTypes = {
 } & {}
 
 export default function Hero() {
-  const { isScrolled } = useContext(NavbarScrollContext)
+  const { scrolled, isScrolled } = useContext(NavbarScrollContext)
 
   const { ref: intersectRef } = useInView({
     rootMargin: "-55px 150px 0px 0px",
@@ -40,7 +40,11 @@ export default function Hero() {
 
   return (
     <section ref={intersectRef} className={styles["hero-wrapper"]}>
-      <Parallax speed={-250} className={styles["parallax-wrapper"]}>
+      <Parallax
+        disabled={scrolled}
+        speed={-250}
+        className={styles["parallax-wrapper"]}
+      >
         <div className={styles.content}>
           <h2 className={styles["gradient-wm-wrapper"]}>
             Hi, I'm

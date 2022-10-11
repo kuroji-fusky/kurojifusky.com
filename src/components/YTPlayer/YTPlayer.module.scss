@@ -1,3 +1,7 @@
+.preloaded {
+	@apply block relative aspect-video w-full rounded-xl overflow-hidden cursor-pointer;
+}
+
 #embed {
-	@apply aspect-video overflow-hidden rounded-xl block;
+	@apply aspect-video overflow-hidden rounded-xl block bg-neutral-700;
 }

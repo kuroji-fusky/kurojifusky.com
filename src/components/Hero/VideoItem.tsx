@@ -3,26 +3,20 @@ import styles from "./Videos.module.scss"
 interface VideoItemProps {
   title?: string
   description?: React.ReactElement
-  onClick?: () => any
+  onClick?: () => any | undefined
   active?: boolean
 }
 
-export default function VideoItem({
-  title,
-  description,
-  onClick,
-  active
-}: VideoItemProps) {
+export default function VideoItem(props: VideoItemProps) {
   return (
     <button
-      id="item"
-      className={styles[!active ? "item" : "item-selected"]}
-      onClick={onClick}
+      className={styles[!props.active ? "item" : "item-selected"]}
+      onClick={props.onClick}
     >
       <strong role="heading" aria-level={2}>
-        {title}
+        {props.title}
       </strong>
-      <p>{description}</p>
+      <p>{props.description}</p>
     </button>
   )
 }

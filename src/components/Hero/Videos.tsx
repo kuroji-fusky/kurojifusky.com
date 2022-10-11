@@ -3,17 +3,48 @@ import { videos } from "./HeroContents"
 import YTPlayer from "../YTPlayer"
 import VideoItem from "./VideoItem"
 import styles from "./Videos.module.scss"
+import { YTPlayerContext } from "@/utils/Context"
+import { InView, useInView } from "react-intersection-observer"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlay } from "@fortawesome/free-solid-svg-icons"
+
+interface VideoInfoProps {
+  title: string
+  videoTitle?: string
+  desc: string
+  id: string
+}
 
 export function Videos() {
   const [activeVideoIndex, setActiveVideoIndex] = useState(0)
-  const [videoInfo, setVideoInfo] = useState<{ title: string; desc: string }>()
+  const [videoInfo, setVideoInfo] = useState<VideoInfoProps>()
   const [scrollCSS, setScrollCSS] = useState(styles["vc-visible"])
 
+  const [loadPlayer, setLoadPlayer] = useState(false)
+
+  const videoHandler = (input: number) => {
+    setActiveVideoIndex(input)
+    setScrollCSS(styles["vc-out"])
+
+    activeVideoIndex !== input
+      ? setScrollCSS(styles["vc-out"])
+      : setScrollCSS(styles["vc-visible"])
+  }
+
   useEffect(() => {
+    /**
+     * Whenever a user clicks an items, it will set a 250ms delay
+     * in order to create a seamless transition, then show the content
+     * for additional 150ms later.
+     */
     setTimeout(() => {
+      // Revert to showing thumbnail when item changes to save network and performance.
+      setLoadPlayer(false)
       setVideoInfo({
-        title: videos[activeVideoIndex].videoTitle,
-        desc: videos[activeVideoIndex].videoDesc
+        title: videos[activeVideoIndex].cardTitle,
+        videoTitle: videos[activeVideoIndex].videoTitle,
+        desc: videos[activeVideoIndex].cardDesc,
+        id: videos[activeVideoIndex].id
       })
       setScrollCSS(styles["vc-in"])
     }, 250)
@@ -23,15 +54,19 @@ export function Videos() {
     }, 350)
   }, [activeVideoIndex])
 
+  const { ref } = useInView({
+    rootMargin: "-55px 150px 0px 0px",
+    onChange(inView) {
+      setLoadPlayer(false)
+    }
+  })
+
   return (
     <section className={styles.wrapper}>
-      <h1>Videos</h1>
-      <div id="video-showcase" className="py-10 flex justify-around gap-10">
-        <div
-          id="video-list-picker"
-          className="px-5 py-6 border rounded-xl flex flex-col gap-y-2.5"
-        >
+      <YTPlayerContext.Provider value={{ loadPlayer, setLoadPlayer }}>
+        <div className={styles["content-wrapper"]}>
           <article>
+            <h1>Videos</h1>
             <p>
               After watching YouTube videos since 2010, I've always wanted to
               dabble on editing videos ever since, and I've persued that
@@ -41,39 +76,46 @@ export function Videos() {
               We all start from somewhere, I started from Minecraft videos in
               2015 to full-on blogs with higher production quality!
             </p>
+            <p>
+              Just please... don't look back at my old Minecraft videos, I can
+              guarantee you <em>will</em> lose braincells. It's that bad lol
+            </p>
           </article>
-          {videos.map((video, index) => (
-            <VideoItem
-              key={index}
-              title={video.title}
-              description={video.description}
-              onClick={() => {
-                setActiveVideoIndex(index)
-                setScrollCSS(styles["vc-out"])
-
-                activeVideoIndex === index
-                  ? setScrollCSS(styles["vc-visible"])
-                  : setScrollCSS(styles["vc-out"])
-              }}
-              active={index === activeVideoIndex}
-            />
-          ))}
+          <div className={styles.list}>
+            {videos.map((video, index) => (
+              <VideoItem
+                key={index}
+                title={video.title}
+                description={video.description}
+                onClick={() => videoHandler(index)}
+                active={index === activeVideoIndex}
+              />
+            ))}
+          </div>
         </div>
-        <aside>
-          <YTPlayer
-            link={videos[activeVideoIndex].id}
-            style={{ width: "var(--yt-width-responsive, 640px)" }}
-          />
-          <article id={styles.content} className={scrollCSS}>
+        <aside
+          ref={ref}
+          id={styles["yt-player-section"]}
+          className={scrollCSS}
+          style={{
+            width: "calc(100% * var(--player-width-responsive, 1.025))"
+          }}
+          data-player-loaded={!loadPlayer ? undefined : "true"}
+        >
+          <YTPlayer link={videoInfo?.id} style={{ width: "100%" }} />
+          <strong
+            className={styles["play-notice"]}
+            onClick={() => setLoadPlayer(true)}
+          >
+            <FontAwesomeIcon icon={faPlay} />
+            Clicc to play
+          </strong>
+          <article id={styles.content}>
             <h2>{videoInfo?.title}</h2>
             <p>{videoInfo?.desc}</p>
           </article>
         </aside>
-      </div>
-      <p>
-        Just please... don't look back at my old Minecraft videos, I can
-        guarantee you <em>will</em> lose braincells. It's that bad lol
-      </p>
+      </YTPlayerContext.Provider>
     </section>
   )
 }

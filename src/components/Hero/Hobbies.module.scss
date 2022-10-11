@@ -1,5 +1,6 @@
 .heading-wrapper {
-	@apply max-w-[1200px] 2xl:max-w-screen-2xl mx-auto py-5 text-center;
+	@apply max-w-[1200px] 2xl:max-w-screen-2xl mx-auto mt-6 py-5 text-center;
+	@apply text-5xl;
 }
 
 .wrapper {
