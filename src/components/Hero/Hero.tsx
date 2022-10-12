@@ -38,6 +38,8 @@ export default function Hero() {
     return cutie
   }
 
+	console.warn("I am very aware that there are minified hydration errors on my site xd")
+
   return (
     <section ref={intersectRef} className={styles["hero-wrapper"]}>
       <Parallax
@@ -63,10 +65,7 @@ export default function Hero() {
               <strong>{currentArt!.artist}</strong>
             </span>
             <div className="flex gap-4">
-              <Btn
-                name="Change artwork"
-                onClick={() => setCurrentArt(randomArt)}
-              />
+              <BtnLink emojiFix ariaList link="/about" name="🦊 About this character" />
               <BtnLink emojiFix ariaList link="/about" name="🤵 About me" />
             </div>
           </div>

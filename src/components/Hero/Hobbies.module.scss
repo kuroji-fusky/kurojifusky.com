@@ -1,6 +1,6 @@
 .heading-wrapper {
-	@apply max-w-[1200px] 2xl:max-w-screen-2xl mx-auto mt-6 py-5 text-center;
-	@apply text-5xl;
+  @apply max-w-[1200px] 2xl:max-w-screen-2xl mx-auto mt-6 py-5 text-center;
+  @apply text-5xl;
 }
 
 .wrapper {
@@ -11,6 +11,10 @@
 
   --extrude-pos: 2.25rem;
   --extrude-pos-hidden: calc(var(--extrude-pos) / 2);
+}
+
+.container {
+	@apply mt-[8rem] flex flex-col gap-[12.5rem];
 }
 
 #hobby-section {
@@ -58,15 +62,41 @@
     > article {
       grid-column: var(--left-col);
     }
+
+		.caption {
+			@apply left-[3.25rem];
+		}
+  }
+
+  * {
+    @apply transition-all duration-[320ms];
   }
 }
 
 .hs-container {
   @apply relative;
+
+  &:hover {
+    img {
+      @apply scale-[1.03];
+    }
+
+		.blend-on-hover {
+			@apply opacity-100;
+		}
+  }
 }
 
 .hs-img-wrapper {
-  @apply relative z-5 w-full h-[375px] overflow-hidden rounded-md;
+  @apply relative z-2 w-full h-[375px] overflow-hidden rounded-md;
+}
+
+.blend-on-hover {
+  @apply opacity-0 absolute inset-0 block bg-gradient-to-tr from-sona-skycyan-500 to-sona-yellow-500 z-3 mix-blend-overlay;
+}
+
+.caption {
+	@apply relative z-1 top-2.5;
 }
 
 .gradient-border {

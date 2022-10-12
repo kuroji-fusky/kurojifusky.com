@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ReactMarkdown from "react-markdown"
 import { hobbies } from "./HeroContents"
 import styles from "./Hobbies.module.scss"
 import HobbyItem from "./HobbyItem"
@@ -7,23 +8,35 @@ import HobbySticky from "./HobbySticky"
 export function Hobbies() {
   return (
     <>
-      <h2 className={styles["heading-wrapper"]}>What hobbies, or side hussles I do</h2>
+      <h2 className={styles["heading-wrapper"]}>
+        What hobbies, or side hussles I do
+      </h2>
       <HobbySticky />
       <section className={styles.wrapper}>
-        <div className="flex flex-col gap-[6.5rem]">
+        <div className={styles.container}>
           {hobbies.map((hobby, index) => (
             <section key={index} id={styles["hobby-section"]}>
-              <div className={styles["hs-container"]}>
+              <figure className={styles["hs-container"]}>
                 <div className={styles["hs-img-wrapper"]}>
+                  <div className={styles["blend-on-hover"]}></div>
                   <Image
-                    src="https://res.cloudinary.com/skepfusky-dookie/image/upload/v1665156812/sample.jpg"
+                    src={
+                      hobby.img ??
+                      "https://res.cloudinary.com/skepfusky-dookie/image/upload/v1665156812/sample.jpg"
+                    }
                     layout="fill"
                     objectFit="cover"
-                    alt=""
+                    alt={hobby.imgAlt ?? "Placeholder image"}
+                    loading="lazy"
                   />
                 </div>
+                <figcaption className={styles.caption}>
+                  <ReactMarkdown>
+                    {hobby.imgAlt ?? "Placeholder image"}
+                  </ReactMarkdown>
+                </figcaption>
                 <div className={styles["gradient-border"]}></div>
-              </div>
+              </figure>
               <HobbyItem
                 title={hobby.title}
                 subtitle={hobby.subtitle}

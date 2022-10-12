@@ -16,8 +16,8 @@ export default function HobbySticky(props: HobbyStickyProps) {
   ]
 
   return (
-    <aside id={styles.wrapper}>
-      <ul id={styles.row} role="navigation">
+    <nav id={styles.wrapper}>
+      <ul id={styles.row}>
         {hobbyItems.map((items, index) => (
           <HobbyStickyItem
             key={index}
@@ -26,7 +26,7 @@ export default function HobbySticky(props: HobbyStickyProps) {
           />
         ))}
       </ul>
-    </aside>
+    </nav>
   )
 }
 

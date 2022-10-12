@@ -54,6 +54,7 @@ export default function Navbar() {
         <Logo />
         <button
           onClick={() => setExpand(!expand)}
+					aria-label="Open/close menu"
           id={styles["menu-btn"]}
           className={styles[!expand ? "open" : "closed"]}
         ></button>
@@ -64,7 +65,10 @@ export default function Navbar() {
         >
           <div className={styles["logo-wrapper"]}>
             <Logo white />
-            <span className={styles["keyboard-notice"]}>
+            <span
+              className={styles["keyboard-notice"]}
+              aria-label="Press Escape to close menu"
+            >
               Tip: Press
               <kbd>ESC</kbd>
               to close menu

@@ -1,5 +1,5 @@
 .wrapper {
-  @apply border-2 border-sona-borahaealt-500 rounded-md flex flex-col gap-y-1;
+  @apply border-2 border-sona-borahaealt-500 rounded-md flex flex-col gap-y-3;
 	@apply px-5 py-4;
 	@apply 2xl:px-7 2xl:py-6;
 
@@ -10,6 +10,11 @@
 
 .heading {
   @apply text-left 2xl:text-4xl;
+}
+
+.subheading p {
+	@apply uppercase text-neutral-200 opacity-75 pt-1;
+	@apply leading-[1.35rem] text-base #{!important};
 }
 
 .heading-inline {
