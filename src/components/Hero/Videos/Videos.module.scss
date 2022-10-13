@@ -1,5 +1,5 @@
 .wrapper {
-  composes: wrapper from "./Hero.module.scss";
+  composes: wrapper from "../Hero.module.scss";
   @apply flex mt-[7rem] gap-x-10 items-center;
 
   h1 {

@@ -1,0 +1,11 @@
+#provider {
+	@apply absolute inset-0;
+}
+
+.loading {
+	@extend #provider;
+}
+
+.loaded {
+	@extend #provider;
+}

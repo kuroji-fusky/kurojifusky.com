@@ -1,5 +1,5 @@
 import styles from "./More.module.scss"
-import WIPFiller from "./WIPFiller"
+import WIPFiller from "../WIPFiller"
 
 export function More() {
   return (

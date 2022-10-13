@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { videos } from "./HeroContents"
-import YTPlayer from "../YTPlayer"
+import { videos } from "../HeroContents"
+import YTPlayer from "../../YTPlayer"
 import VideoItem from "./VideoItem"
 import styles from "./Videos.module.scss"
 import { YTPlayerContext } from "@/utils/Context"

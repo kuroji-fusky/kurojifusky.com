@@ -1,5 +1,5 @@
 #provider {
-  @apply blur-[45px] absolute rounded-full pointer-events-none;
+  @apply z-1 blur-[45px] absolute rounded-full pointer-events-none;
 }
 
 .heading-left {

@@ -1,5 +1,5 @@
 import styles from "./Projects.module.scss"
-import WIPFiller from "./WIPFiller"
+import WIPFiller from "../WIPFiller"
 
 export function Projects() {
   return (

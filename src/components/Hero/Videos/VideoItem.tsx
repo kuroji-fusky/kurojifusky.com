@@ -2,7 +2,7 @@ import styles from "./Videos.module.scss"
 
 interface VideoItemProps {
   title?: string
-  description?: React.ReactElement
+  description?: string
   onClick?: () => any | undefined
   active?: boolean
 }

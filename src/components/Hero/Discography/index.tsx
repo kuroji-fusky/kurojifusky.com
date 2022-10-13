@@ -1,5 +1,5 @@
 import styles from "./Discography.module.scss"
-import WIPFiller from "./WIPFiller"
+import WIPFiller from "../WIPFiller"
 
 export function Discography() {
   return (

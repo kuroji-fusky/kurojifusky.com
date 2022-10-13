@@ -1,6 +1,13 @@
-import { faDiscord, faYoutube } from "@fortawesome/free-brands-svg-icons"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import { faDiscord, faYoutube, IconDefinition } from "@fortawesome/free-brands-svg-icons"
 
-const FursonaHero = [
+interface SonaType {
+  img: string
+  artist: string
+  social?: IconDefinition | any
+}
+
+const FursonaHero: SonaType[] = [
   {
     img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png",
     artist: "catastrophe#6282",
@@ -8,7 +15,7 @@ const FursonaHero = [
   },
   {
     img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1665117048/fursonas/blushy_virgin_trans_ebbkdj.png",
-    artist: "me lol"
+    artist: "me lol",
   },
   {
     img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/v1665155943/fursonas/JAKEmegaSNAKE_l61xfu.png",

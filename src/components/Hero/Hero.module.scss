@@ -16,14 +16,14 @@
 }
 
 .img {
-  @apply relative pointer-events-none select-none;
+  @apply relative pointer-events-none select-none z-5;
   @apply w-[25rem] h-[25rem];
   @apply xl:w-[30rem] xl:h-[30rem];
   @apply 2xl:w-[35rem] 2xl:h-[35rem];
 }
 
 .content {
-  @apply flex flex-col lg:items-start items-center gap-y-5 -translate-y-5 w-full lg:w-[50%] text-center lg:text-left;
+  @apply flex flex-col lg:items-start items-center gap-y-6 -translate-y-4 w-full lg:w-[50%] text-center lg:text-left;
 }
 
 .gradient-wm {
@@ -31,7 +31,7 @@
     @apply relative flex flex-wrap items-center gap-x-1 text-5xl lg:text-6xl 2xl:text-7xl;
   }
 
-  @apply h-[1.6ch] ml-[0.2ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent animate-gradient-scroll-mid;
+  @apply h-[1.6ch] -ml-[0.1ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent animate-gradient-scroll-mid;
 
   background-image: linear-gradient(
     75deg,
@@ -48,7 +48,7 @@
 }
 
 .artwork {
-	@apply flex flex-col gap-4;
+  @apply flex flex-col gap-4;
 }
 
 .gradient-transition {

@@ -1,5 +1,5 @@
-import styles from "./BlogPost.module.scss"
-import WIPFiller from "./WIPFiller"
+import styles from "./BlogPosts.module.scss"
+import WIPFiller from "../WIPFiller"
 
 export function BlogPost() {
   return (

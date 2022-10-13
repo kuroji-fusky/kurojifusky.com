@@ -1,0 +1,19 @@
+.heading-wrapper {
+
+  @apply max-w-[1320px] 2xl:max-w-screen-2xl mx-auto mt-[7.5rem] py-5 text-center;
+  @apply text-5xl;
+}
+
+.wrapper {
+  composes: wrapper from "../Hero.module.scss";
+  @apply max-w-[1320px] 2xl:max-w-screen-2xl;
+  --left-col: 1/5;
+  --right-col: 5/9;
+
+  --extrude-pos: 2.25rem;
+  --extrude-pos-hidden: calc(var(--extrude-pos) / 2);
+}
+
+.container {
+	@apply mt-[5rem] flex flex-col gap-[12.5rem];
+}
