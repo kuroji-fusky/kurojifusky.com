@@ -1,12 +1,11 @@
-import { useContext, useState, useEffect } from "react"
+import { useContext } from "react"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { Parallax } from "react-scroll-parallax"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { NavbarScrollContext } from "@/utils/Context"
 import { BtnLink } from "../Buttons"
-import { Btn } from "../Buttons/Btn"
-import { sonas } from "./HeroContents"
 import Backdrop from "../Backdrop"
 import styles from "./Hero.module.scss"
 import bdStyles from "../Backdrop/Backdrop.module.scss"
@@ -21,10 +20,10 @@ export default function Hero() {
     }
   })
 
-  const [artIndex, setArtIndex] = useState(0)
-
-  const iterateCuties = () => {
-    setArtIndex(Math.floor(Math.random() * sonas.length))
+  const sonas = {
+    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png",
+    artist: "catastrophe#6282",
+    icon: faDiscord
   }
 
   return (
@@ -44,29 +43,23 @@ export default function Hero() {
             Filipino hobbyist from the Philippines
           </h3>
           <div className={styles.artwork}>
-            <span>
-              Art by{" "}
-              {sonas[artIndex]!.social && (
-                <FontAwesomeIcon icon={sonas[artIndex]!.social} />
-              )}{" "}
-              <strong>{sonas[artIndex]!.artist}</strong>
+            <span
+              className="flex gap-x-1.5 items-center"
+              aria-label={`Art by ${sonas.artist}`}
+            >
+              Art by <FontAwesomeIcon icon={sonas.icon} />
+              <strong>{sonas.artist}</strong>
             </span>
             <div className="flex gap-4">
-              <Btn onClick={iterateCuties} name="Change this shit" />
-              <BtnLink
-                emojiFix
-                ariaList
-                link="/about"
-                name="🦊 About this character"
-              />
+              <BtnLink emojiFix ariaList link="/fursona" name="🦊 Fursona" />
               <BtnLink emojiFix ariaList link="/about" name="🤵 About me" />
             </div>
           </div>
         </div>
         <div className={styles.img}>
           <Image
-            src={sonas[artIndex]!.img}
-            alt={`Drawn by ${sonas[artIndex]!.artist}`}
+            src={sonas.img}
+            alt={`Drawn by ${sonas.artist}`}
             layout="fill"
             objectFit="cover"
             priority

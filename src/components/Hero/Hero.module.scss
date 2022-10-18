@@ -3,14 +3,14 @@
 }
 
 .parallax-wrapper {
-  @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 relative lg:left-8 left-0;
+  @apply flex flex-col-reverse lg:flex-row justify-center items-center px-10 relative z-2 lg:left-8 left-0;
 }
 
 /** SHARED **/
 .wrapper {
   @apply max-w-screen-2xl mx-auto px-10;
 
-  > h2 {
+  > :is(h1, h2) {
     @apply py-4;
   }
 }
@@ -52,5 +52,5 @@
 }
 
 .gradient-transition {
-  @apply pointer-events-none absolute w-full bottom-0 left-0 right-0 h-[12.5rem] bg-gradient-to-b from-transparent to-[var(--root-theme)];
+  @apply pointer-events-none absolute w-full bottom-0 left-0 right-0 h-[12.5rem] bg-gradient-to-b from-transparent to-[var(--root-theme)] z-3;
 }

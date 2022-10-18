@@ -19,7 +19,6 @@ export default function Navbar() {
     dropdownRef.current!.style.height = `${height ?? 0}px`
 
     const scrolledDefault = !scrolled ? 0 : 80
-
     const currentHeight = dropdownRef.current?.scrollHeight ?? scrolledDefault
 
     const handleHeight = () => {
@@ -54,7 +53,7 @@ export default function Navbar() {
         <Logo />
         <button
           onClick={() => setExpand(!expand)}
-					aria-label="Open/close menu"
+          aria-label="Open/close menu"
           id={styles["menu-btn"]}
           className={styles[!expand ? "open" : "closed"]}
         ></button>
@@ -96,8 +95,8 @@ export default function Navbar() {
                   </span>
                 </h2>
                 <div role="list" id={styles["dd-col-list"]}>
-                  <NavLink name="Fursona" link="#" />
-                  <NavLink name="Milestones" link="#" />
+                  <NavLink name="Fursona" link="/fursona" />
+                  <NavLink name="Roadmap" link="/roadmap" />
                   <NavLink name="Artworks" link="#" />
                   <NavLink name="codefusky" link="#" />
                 </div>
@@ -107,13 +106,18 @@ export default function Navbar() {
                   <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
                   Blog
                 </div>
-                <div
-                  id={styles["dd-col-item"]}
-                  className={styles["about-item"]}
-                >
-                  <FontAwesomeIcon icon={faGlasses} id={styles["dd-fa-icon"]} />
-                  About
-                </div>
+                <Link href="/about">
+                  <a
+                    id={styles["dd-col-item"]}
+                    className={styles["about-item"]}
+                  >
+                    <FontAwesomeIcon
+                      icon={faGlasses}
+                      id={styles["dd-fa-icon"]}
+                    />
+                    About
+                  </a>
+                </Link>
                 <div className={styles["lower-third"]}>
                   <div role="list" className={styles["lt-socials"]}>
                     {socials.map((item, i) => (
@@ -129,8 +133,11 @@ export default function Navbar() {
                     ))}
                   </div>
                   <span>
-                    Site written in{" "}
-                    <NavLink name="Next.js" link="https://nextjs.org" />!
+                    View this website's{" "}
+                    <NavLink
+                      name="source code on GitHub"
+                      link="https://github.com/skepfusky/skepfusky.xyz"
+                    ></NavLink>
                   </span>
                 </div>
               </section>

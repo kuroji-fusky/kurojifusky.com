@@ -1,1 +1,2 @@
-export { BtnLink } from "./BtnLink";
+export { BtnLink } from "./BtnLink"
+export { Btn } from "./Btn"

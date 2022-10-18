@@ -76,10 +76,6 @@ export function Videos() {
               We all start from somewhere, I started from Minecraft videos in
               2015 to full-on blogs with higher production quality!
             </p>
-            <p>
-              Just please... don't look back at my old Minecraft videos, I can
-              guarantee you <em>will</em> lose braincells. It's that bad lol
-            </p>
           </article>
           <div className={styles.list}>
             {videos.map((video, index) => (

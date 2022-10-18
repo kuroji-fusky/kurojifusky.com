@@ -6,7 +6,7 @@ import HobbySticky from "./HobbySticky"
 export function Hobbies() {
   return (
     <>
-      <h2 className={styles["heading-wrapper"]}>
+      <h2 className="text-5xl max-w-[1320px] 2xl:max-w-screen-2xl mx-auto mt-[7.5rem] py-5 text-center">
         What hobbies, or side hussles I do
       </h2>
       <HobbySticky />

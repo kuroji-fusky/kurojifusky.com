@@ -1,34 +1,3 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { faDiscord, faYoutube, IconDefinition } from "@fortawesome/free-brands-svg-icons"
-
-interface SonaType {
-  img: string
-  artist: string
-  social?: IconDefinition | any
-}
-
-const FursonaHero: SonaType[] = [
-  {
-    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png",
-    artist: "catastrophe#6282",
-    social: faDiscord
-  },
-  {
-    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/w_720/v1665117048/fursonas/blushy_virgin_trans_ebbkdj.png",
-    artist: "me lol",
-  },
-  {
-    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/v1665155943/fursonas/JAKEmegaSNAKE_l61xfu.png",
-    artist: "JAKEmegaSNAKE",
-    social: faDiscord
-  },
-  {
-    img: "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_crop,h_789,w_1395,x_491,y_0/v1665156704/fursonas/ZAMBOY_orig_u7xxed.png",
-    artist: "ZAMBOYYT",
-    social: faYoutube
-  }
-]
-
 const HobbyItems = [
   {
     title: "Video editing & filmography",
@@ -53,11 +22,6 @@ const HobbyItems = [
       "Fair amount of back-end development, Intermediate experience in ES6 JavaScript and TypeScript",
     description: `A recent interest of mine that has taken me over a year to get decent grasp at in terms of design and fair understanding of back-end development.`,
     link: "#"
-  },
-  {
-    title: "UI/UX design",
-    description: `I've been always entrigued with user interfaces since at a young age,
-			with every single detail of it - including its functionality.`
   }
 ]
 
@@ -74,13 +38,6 @@ const HobbySubsectionItems = [
 ]
 
 const VideoItems = [
-  {
-    title: "YTPs",
-    description: `One of the dumbest things I've put a lot of effort in`,
-    id: "7ubbQKBQyg4",
-    cardTitle: "YouTube Poops",
-    cardDesc: "Yeah this is dumb lmao"
-  },
   {
     title: "Vlogs/IRL Edits",
     description: `Vlogs and edits during vacations or my senior years`,
@@ -106,4 +63,4 @@ const VideoItems = [
   }
 ]
 
-export { FursonaHero as sonas, HobbyItems as hobbies, VideoItems as videos }
+export { HobbyItems as hobbies, VideoItems as videos }

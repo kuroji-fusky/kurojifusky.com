@@ -1,11 +1,6 @@
 import Link from "next/link"
-import styles from "./HobbySticky.module.scss"
 
-interface HobbyStickyProps {
-  active?: boolean
-}
-
-export default function HobbySticky(props: HobbyStickyProps) {
+export default function HobbySticky(props: { active?: boolean }) {
   const hobbyItems = [
     "Overview",
     "Videos",
@@ -16,8 +11,8 @@ export default function HobbySticky(props: HobbyStickyProps) {
   ]
 
   return (
-    <nav id={styles.wrapper}>
-      <ul id={styles.row}>
+    <nav className="theme-transparent px-10 sticky top-[5rem] z-[10] py-7 mb-[7.5rem] backdrop-blur-xl bg-opacity-25">
+      <ul className="flex justify-center gap-x-10 font-inter text-lg">
         {hobbyItems.map((items, index) => (
           <HobbyStickyItem
             key={index}

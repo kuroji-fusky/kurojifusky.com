@@ -1,9 +1,3 @@
-.heading-wrapper {
-
-  @apply max-w-[1320px] 2xl:max-w-screen-2xl mx-auto mt-[7.5rem] py-5 text-center;
-  @apply text-5xl;
-}
-
 .wrapper {
   composes: wrapper from "../Hero.module.scss";
   @apply max-w-[1320px] 2xl:max-w-screen-2xl;

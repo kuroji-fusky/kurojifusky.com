@@ -45,3 +45,9 @@
     }
   }
 }
+
+@layer components {
+	.theme-transparent {
+		background: var(--root-theme-transparent);
+	}
+}
