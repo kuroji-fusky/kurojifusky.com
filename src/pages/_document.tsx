@@ -22,6 +22,7 @@ export default class _ extends Document {
 				<Head>
 					<link rel="icon" href="./favicon.ico" />
 					<Script
+						id="penis"
 						strategy="lazyOnload">{`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function gtag(){window.dataLayer.push(arguments);}
