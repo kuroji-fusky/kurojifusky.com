@@ -1,11 +1,10 @@
-import styles from "./Projects.module.scss"
 import WIPFiller from "../WIPFiller"
+import { HomeSection } from "@/components/Sections"
 
 export function Projects() {
-  return (
-    <section className={styles.wrapper}>
-      <h2>Projects</h2>
-      <WIPFiller />
-    </section>
-  )
+	return (
+		<HomeSection id="projects" title="Projects">
+			<WIPFiller />
+		</HomeSection>
+	)
 }

@@ -21,17 +21,21 @@
     @apply bg-sona-borahae-600 text-neutral-50;
   }
 
-  html {
-    @apply scroll-smooth scroll-pt-20 overflow-y-auto overflow-x-hidden;
-    --borahae-dark: 17 13 23;
+	:root {
+		--borahae-dark: 17 13 23;
 
     --root-theme: rgb(var(--borahae-dark) / 1);
     --root-theme-transparent: rgb(var(--borahae-dark) / 0.65);
+	}
+
+  html {
+    @apply scroll-smooth scroll-pt-[10.85rem] overflow-y-auto overflow-x-hidden;
+    
     scrollbar-color: theme("colors.sona-borahae.600"), var(--root-theme);
   }
 
   body {
-    @apply font-open-sans text-neutral-50;
+    @apply font-open-sans text-neutral-50 antialiased;
     background-color: var(--root-theme);
 
     * {
@@ -47,7 +51,19 @@
 }
 
 @layer components {
+	.theme-root {
+		background: var(--root-theme);
+	}
 	.theme-transparent {
 		background: var(--root-theme-transparent);
+	}
+
+	.scrollbar-none {
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 }

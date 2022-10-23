@@ -1,17 +1,22 @@
 declare global {
-  interface Window {
-    gtag: any
-  }
+	interface Window {
+		gtag: any
+	}
 }
 
-export const pageView = (url: string) => {
-  if (typeof window.gtag !== "undefined") {
-    window.gtag("config", process.env.GA, {
-      page_path: url
-    })
-  }
+export const pageView = (url: string): void => {
+	if (typeof window.gtag !== "undefined") {
+		window.gtag("config", process.env.GA, {
+			page_path: url
+		})
+	}
 }
 
-export const event = ({ action, params }: any) => {
-  window.gtag("event", action, params)
+type GTagEvent = {
+	action: string
+	params: any
+}
+
+export const event = ({ action, params }: GTagEvent): void => {
+	window.gtag("event", action, params)
 }

@@ -14,38 +14,38 @@ import * as ga from "@/utils/ga"
 
 config.autoAddCss = false
 
-export default function ShootMe({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+export default function Cutie({ Component, pageProps }: AppProps) {
+	const router = useRouter()
 
-  useEffect(() => {
-    const routeChange = (url: string) => ga.pageView(url)
+	useEffect(() => {
+		const routeChange = (url: string) => ga.pageView(url)
 
-    router.events.on("routeChangeComplete", routeChange)
-    return () => router.events.off("routeChangeComplete", routeChange)
-  }, [router.events])
+		router.events.on("routeChangeComplete", routeChange)
+		return () => router.events.off("routeChangeComplete", routeChange)
+	}, [router.events])
 
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
-      <Notification
-        heading="Website under construction"
-        content={
-          <>
-            Most of the content is either missing or incomplete, and is
-            currently in the process of being added!
-          </>
-        }
-      />
-      <ParallaxProvider>
-        <MDXProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </MDXProvider>
-      </ParallaxProvider>
-    </>
-  )
+	return (
+		<>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			</Head>
+			<NextNProgress color="#9427E7" options={{ showSpinner: false }} />
+			<Notification
+				heading="Website under construction"
+				content={
+					<>
+						Most of the content is either missing or incomplete, and is
+						currently in the process of being added!
+					</>
+				}
+			/>
+			<ParallaxProvider>
+				<MDXProvider>
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</MDXProvider>
+			</ParallaxProvider>
+		</>
+	)
 }

@@ -1,5 +1,5 @@
 .hero-wrapper {
-  @apply relative h-screen grid place-items-center overflow-hidden bg-gradient-to-tr from-sona-royalblue-900 to-sona-borahae-900;
+  @apply overflow-hidden relative h-screen grid place-items-center bg-gradient-to-tr from-sona-royalblue-900 to-sona-borahae-900;
 }
 
 .parallax-wrapper {
@@ -8,7 +8,7 @@
 
 /** SHARED **/
 .wrapper {
-  @apply max-w-screen-2xl mx-auto px-10;
+  @apply max-w-screen-2xl mx-auto px-10 ;
 
   > :is(h1, h2) {
     @apply py-4;
@@ -31,7 +31,7 @@
     @apply relative flex flex-wrap items-center gap-x-1 text-5xl lg:text-6xl 2xl:text-7xl;
   }
 
-  @apply h-[1.6ch] -ml-[0.1ch] translate-y-3 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent animate-gradient-scroll-mid;
+  @apply h-[1.6ch] -ml-[0.1ch] translate-y-0.5 md:translate-y-0.5 font-inter font-bold text-center bg-gradient-to-r bg-clip-text text-transparent animate-gradient-scroll-mid;
 
   background-image: linear-gradient(
     75deg,
