@@ -12,7 +12,7 @@ export function NavLink(props: NavLinkProps) {
   const { expand, isExpanded } = useContext(DropdownContext)
 
   return (
-    <Link href={props.link ?? ""}>
+    <Link href={props.link ?? ""} passHref>
       <a className={styles.link} onClick={() => isExpanded(!expand)}>
         {props.name}
       </a>

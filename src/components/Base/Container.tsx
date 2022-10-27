@@ -7,6 +7,7 @@ interface ContainerProps extends LayoutProps {
   description: string
   className?: string
   wrap?: boolean
+	style?: React.CSSProperties
 }
 
 export function Container(props: ContainerProps) {
@@ -36,9 +37,10 @@ export function Container(props: ContainerProps) {
       <main
         className={
           !props.wrap
-            ? "relative z-1"
-            : "relative z-1 max-w-screen-2xl mx-auto px-7"
+            ? `relative z-1 ${props.className ?? ""}`
+            : `relative z-1 max-w-screen-2xl mx-auto px-7 ${props.className ?? ""}`
         }
+				style={props.style ?? undefined}
       >
         {props.children}
       </main>

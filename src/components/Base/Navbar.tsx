@@ -106,7 +106,7 @@ export default function Navbar() {
                   <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
                   Blog
                 </div>
-                <Link href="/about">
+                <Link href="/about" passHref>
                   <a
                     id={styles["dd-col-item"]}
                     className={styles["about-item"]}
@@ -121,7 +121,7 @@ export default function Navbar() {
                 <div className={styles["lower-third"]}>
                   <div role="list" className={styles["lt-socials"]}>
                     {socials.map((item, i) => (
-                      <Link key={i} href={item.link}>
+                      <Link key={i} href={item.link} passHref>
                         <a
                           role="listitem"
                           target="_blank"
@@ -151,7 +151,7 @@ export default function Navbar() {
 
 export function Logo({ white }: { white?: boolean }) {
   return (
-    <Link href="/">
+    <Link href="/" passHref>
       <a className={styles[!white ? "logo" : "logo-white"]}>skepfusky</a>
     </Link>
   )
