@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,7 +13,7 @@
     }
 
     &-track {
-      background: var(--root-theme);
+      @apply bg-borahae-dark;
     }
   }
 
@@ -21,22 +21,14 @@
     @apply bg-sona-borahae-600 text-neutral-50;
   }
 
-	:root {
-		--borahae-dark: 17 13 23;
-
-    --root-theme: rgb(var(--borahae-dark) / 1);
-    --root-theme-transparent: rgb(var(--borahae-dark) / 0.65);
-	}
-
   html {
-    @apply scroll-smooth scroll-pt-[10.85rem] overflow-y-auto overflow-x-hidden;
-    
-    scrollbar-color: theme("colors.sona-borahae.600"), var(--root-theme);
+    @apply scroll-smooth scroll-pt-[10.85rem] antialiased;
+
+    scrollbar-color: theme("colors.sona-borahae.600"), theme("colors.borahae-dark");
   }
 
   body {
-    @apply font-open-sans text-neutral-50 antialiased;
-    background-color: var(--root-theme);
+    @apply font-open-sans text-neutral-50 bg-borahae-dark;
 
     * {
       // outline: 2px solid cyan;
@@ -51,19 +43,34 @@
 }
 
 @layer components {
-	.theme-root {
-		background: var(--root-theme);
-	}
-	.theme-transparent {
-		background: var(--root-theme-transparent);
-	}
+  .scrollbar-none {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 
-	.scrollbar-none {
-		-webkit-overflow-scrolling: touch;
-		scrollbar-width: none;
-		
-		&::-webkit-scrollbar {
-			display: none;
-		}
-	}
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .vaporwave-wrap {
+    perspective: 210px;
+  }
+
+  .vaporwave {
+    transform: rotateX(45deg);
+  }
+
+  .animate-rows {
+    animation: scroll 6s linear infinite;
+  }
+
+  @keyframes scroll {
+    from {
+      @apply top-0;
+    }
+
+    to {
+      @apply -top-[43px];
+    }
+  }
 }

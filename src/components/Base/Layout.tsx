@@ -7,7 +7,7 @@ export interface LayoutProps {
   children?: React.ReactNode
 }
 
-export default function Layout(props: LayoutProps) {
+export function Layout(props: LayoutProps) {
   const [scrolled, isScrolled] = useState<boolean>()
   const NavbarCtxValue = { scrolled, isScrolled }
 
