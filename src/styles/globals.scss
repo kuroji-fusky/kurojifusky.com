@@ -24,7 +24,8 @@
   html {
     @apply scroll-smooth scroll-pt-[10.85rem] antialiased;
 
-    scrollbar-color: theme("colors.sona-borahae.600"), theme("colors.borahae-dark");
+    scrollbar-color: theme("colors.sona-borahae.600"),
+      theme("colors.borahae-dark");
   }
 
   body {
@@ -53,15 +54,16 @@
   }
 
   .vaporwave-wrap {
-    perspective: 210px;
+    perspective: 320px;
   }
 
   .vaporwave {
     transform: rotateX(45deg);
   }
 
-  .animate-rows {
-    animation: scroll 6s linear infinite;
+  .scroll-rows {
+    animation: scroll 25s linear infinite reverse;
+		animation-play-state: var(--scroll-animation-state, running);
   }
 
   @keyframes scroll {
@@ -70,7 +72,7 @@
     }
 
     to {
-      @apply -top-[43px];
+      @apply -top-[765px];
     }
   }
 }

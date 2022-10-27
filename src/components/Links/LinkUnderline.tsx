@@ -9,7 +9,7 @@ interface LinkUnderlineProps extends SharedBtnProps {
 
 export function LinkUnderline(props: LinkUnderlineProps) {
   return (
-    <Link href={props.link ?? ""}>
+    <Link href={props.link ?? ""} passHref>
       <a
         className={styles.link}
         onClick={props.onClick}
