@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SharedBtnProps } from "../../utils/SharedBtnProps"
+import { SharedBtnProps } from "@/utils/SharedBtnProps"
 import styles from "./LinkUnderline.module.scss"
 
 interface LinkUnderlineProps extends SharedBtnProps {

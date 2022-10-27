@@ -1,7 +1,0 @@
-export { default } from "./Hero"
-export { Hobbies } from "./Hobbies"
-export { Videos } from "./Videos"
-export { Discography } from "./Discography"
-export { Projects } from "./Projects"
-export { BlogPost } from "./BlogPosts"
-export { More } from "./More"
