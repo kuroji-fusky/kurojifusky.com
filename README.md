@@ -4,7 +4,8 @@
   <a href="https://skepfusky.xyz">skepfusky.xyz</a>
 </h1>
 
-The source code of my personal website written in Next.js! Deployed on Vercel.
+The source code of my personal website using the Nextwind stack, Next.js +
+TailwindCSS! Deployed on Vercel.
 
 ## Running the abomination
 
@@ -14,7 +15,7 @@ Fork and clone the repo and install the garbage
 yarn install
 ```
 
-Start Next.js lol:
+Start Next.js:
 
 ```console
 yarn dev

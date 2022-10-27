@@ -1,6 +1,5 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import styles from "./Base.module.scss"
 import { LayoutProps } from "./Layout"
 
 interface ContainerProps extends LayoutProps {
@@ -20,6 +19,7 @@ export function Container(props: ContainerProps) {
   return (
     <>
       <Head>
+        <title>{title}</title>
         <meta name="description" content={props.description} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={props.description} />
@@ -29,12 +29,16 @@ export function Container(props: ContainerProps) {
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />
         <meta name="twitter:url" content={url} />
+        <meta name="twitter:site" content="@skepfuskyjs" />
+        <meta name="twitter:creator" content="@skepfuskyjs" />
         <link rel="canonical" href={url} />
-        <title>{title}</title>
       </Head>
       <main
-        id={styles[!props.wrap ? "content" : "content-wrap"]}
-        className={props.className}
+        className={
+          !props.wrap
+            ? "relative z-1"
+            : "relative z-1 max-w-screen-2xl mx-auto px-7"
+        }
       >
         {props.children}
       </main>

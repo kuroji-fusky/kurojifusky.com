@@ -3,7 +3,7 @@ import Link from "next/link"
 import Backdrop from "../Backdrop"
 import backdropStyles from "../Backdrop/Backdrop.module.scss"
 import { LinkUnderline } from "../Links"
-import styles from "./Base.module.scss"
+import MovingGrid from "../MovingGrid"
 import socials from "./Socials"
 
 export default function Footer() {
@@ -20,15 +20,12 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex flex-col items-center gap-y-1">
-          <span>
-            Built using the Nextwind stack, Next.js with TypeScript and Tailwind
-            CSS.
-          </span>
+          <span>Built using the Nextwind stack, Next.js and Tailwind CSS.</span>
           <span className="text-sm">
             <LinkUnderline
               external
               link="https://github.com/skepfusky/skepfusky.xyz"
-              name="View source code to this website"
+              name="View source code to this god-awful website"
             />
           </span>
         </div>
@@ -36,8 +33,13 @@ export default function Footer() {
           {`©  2014-${new Date().getFullYear()} Kerby Keith Aquino`}
         </span>
       </div>
-      <div id={styles["backdrop-container"]}>
-        <Backdrop className={backdropStyles["footer-center"]} />
+      <div className="h-[24rem] w-full absolute bottom-0 overflow-hidden">
+        <Backdrop className="-bottom-[1rem] -left-4 opacity-25 rotate-4 h-[11rem] w-[60%] bg-sona-royalblue-700" />
+        <Backdrop className="-bottom-[2rem] opacity-50 left-[30%] h-[10rem] w-[40%] bg-sona-borahaealt-800" />
+        <Backdrop className="-bottom-[1rem] -right-4 opacity-25 -rotate-4 h-[11rem] w-[60%] bg-sona-skycyan-800" />
+			</div>
+      <div className="absolute bottom-0 scrollbar-none">
+        <MovingGrid />
       </div>
     </footer>
   )

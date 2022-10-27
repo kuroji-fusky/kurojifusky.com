@@ -29,7 +29,7 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				'borahae-dark': 'rgb(var(--borahae-dark) / 1)',
+				'borahae-dark': '#110D17',
 				'sona-royalblue': {
 					50: "#E4F0FB",
 					100: "#CEE4F8",
