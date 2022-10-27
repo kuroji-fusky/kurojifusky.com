@@ -1,12 +1,4 @@
 import { Container } from "@/components/Base"
-import Hero, {
-	Projects,
-	Hobbies,
-	Videos,
-	More,
-	Discography,
-	BlogPost
-} from "@/components/Hero"
 
 export default function Home() {
 	const t = "skepfusky"
@@ -15,13 +7,6 @@ export default function Home() {
 
 	return (
 		<Container title={t} description={d}>
-			<Hero />
-			<Hobbies />
-			<Videos />
-			<Discography />
-			<Projects />
-			<BlogPost />
-			<More />
 		</Container>
 	)
 }

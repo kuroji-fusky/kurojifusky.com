@@ -4,12 +4,20 @@ import {
   faSoundcloud,
   faSpotify,
   faTwitter,
-  faYoutube
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
+
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
+
+export interface SocialTypes {
+	name: string
+	link: string
+	icon: IconDefinition
+}
 
 const socials = [
   {
-    name: "Youtube",
+    name: "YouTube",
     link: "https://www.youtube.com/skepfusky97",
     icon: faYoutube
   },
@@ -30,6 +38,6 @@ const socials = [
     link: "https://music.apple.com/us/artist/kokoro-husky/1521326000",
     icon: faItunesNote
   }
-]
+] as SocialTypes[]
 
 export default socials
