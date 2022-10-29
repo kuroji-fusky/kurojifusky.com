@@ -5,7 +5,7 @@ import Image from "next/image"
 import { LinkUnderline } from "../Links"
 import { HomeSection } from "../Sections"
 
-export default function Hero() {
+export function Hero() {
   return (
     <HomeSection
       id="hero"

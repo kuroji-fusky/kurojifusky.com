@@ -1,7 +1,5 @@
 import { Container } from "@/components/Base"
-import dynamic from "next/dynamic"
-
-const Hero = dynamic(() => import("@/components/Hero"), { ssr: false })
+import { Hero, Projects } from "@/components/Hero"
 
 export default function Home() {
   const t = "skepfusky"
@@ -10,7 +8,7 @@ export default function Home() {
 
   return (
     <Container title={t} description={d}>
-      <Hero />
+			<Hero />
     </Container>
   )
 }

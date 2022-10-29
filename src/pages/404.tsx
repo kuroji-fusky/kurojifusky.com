@@ -18,12 +18,12 @@ export default function PageNotFound() {
           <h1 className="text-9xl bg-gradient-to-bl from-sona-royalblue-500 to-pink-500 bg-clip-text text-transparent">
             404
           </h1>
-          <span className="max-w-[800px] text-lg">
+          <p className="max-w-[800px] text-lg">
             Oof looks like you've stumbled on a typical 404 page - this website
             is still under construction, so most of the links will redirect you
             to this page. Either I'm working on it or I'm just lazy and couldn't
             be bothered to work on it... mostly lol
-          </span>
+          </p>
           <div className="flex justify-center gap-5">
             <BtnLink name="Main page" link="/" emojiFix />
             <Btn name="Go back to your mom and cry" onClick={goBack} />
