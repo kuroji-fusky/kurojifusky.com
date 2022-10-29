@@ -1,22 +1,27 @@
 <h1 align="center">
-  <img alt="skepfusky website source code" src="https://user-images.githubusercontent.com/94678583/185732205-d1e64414-7fe8-4bb0-97e1-4f1570b7a9b7.png">
-  <br>
+  <img alt="skepfusky website source code" src="https://user-images.githubusercontent.com/94678583/198828532-a6441fa4-696b-472b-bbac-2866d9dbd5f6.png">
   <a href="https://skepfusky.xyz">skepfusky.xyz</a>
 </h1>
 
 The source code of my personal website using the Nextwind stack, Next.js +
-TailwindCSS! Deployed on Vercel.
+Tailwind CSS! Deployed in Vercel.
 
 ## Running the abomination
 
-Fork and clone the repo and install the garbage
+Fork and clone the repo and install the bloated garbage
 
-```console
+```sh
 yarn install
 ```
 
-Start Next.js:
+Start a local server lmao
 
-```console
+```sh
 yarn dev
+```
+
+BUILD THE ABOMINATION
+
+```sh
+yarn build
 ```
