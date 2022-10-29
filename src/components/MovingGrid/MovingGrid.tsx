@@ -15,7 +15,7 @@ export default function MovingGrid({ gridState = "running" }: MovingGridProps) {
       style={{ "--scroll-animation-state": gridState } as React.CSSProperties}
     >
       <div className="absolute top-0 left-0 right-0 z-3 w-screen h-[10rem] bg-gradient-to-b from-borahae-dark to-transparent"></div>
-      <div className="relative vaporwave opacity-50">
+      <div className="relative z-1 vaporwave opacity-50">
         <div className="scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[9rem] h-screen">
           {[...Array(col)].map((_, i) => (
             <div
@@ -24,7 +24,14 @@ export default function MovingGrid({ gridState = "running" }: MovingGridProps) {
             ></div>
           ))}
         </div>
-        <div className="scrollbar-none scroll-rows absolute inset-0 flex flex-col gap-[5rem]">
+        <div
+          className="scrollbar-none scroll-rows absolute inset-0 flex flex-col gap-[5rem]"
+          style={
+            {
+              "--calculated": `calc(var(--scroll-initial) * ${row})`
+            } as React.CSSProperties
+          }
+        >
           {[...Array(row)].map((_, i) => (
             <div
               key={i}

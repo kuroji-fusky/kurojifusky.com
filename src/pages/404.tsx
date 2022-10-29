@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { Container } from "@/components/Base"
-import { Btn } from "@/components/Buttons"
+import { Btn, BtnLink } from "@/components/Buttons"
 
 export default function PageNotFound() {
   const router = useRouter()
@@ -18,15 +18,15 @@ export default function PageNotFound() {
           <h1 className="text-9xl bg-gradient-to-bl from-sona-royalblue-500 to-pink-500 bg-clip-text text-transparent">
             404
           </h1>
-          <hr className="mx-[10rem]" />
           <p className="max-w-[800px] text-lg">
             Oof looks like you've stumbled on a typical 404 page - this website
             is still under construction, so most of the links will redirect you
             to this page. Either I'm working on it or I'm just lazy and couldn't
             be bothered to work on it... mostly lol
           </p>
-          <div>
-            <Btn name="Go back to your mom and cry about it" onClick={goBack} />
+          <div className="flex justify-center gap-5">
+            <BtnLink name="Main page" link="/" emojiFix />
+            <Btn name="Go back to your mom and cry" onClick={goBack} />
           </div>
         </div>
       </div>
