@@ -16,7 +16,7 @@ export default function MovingGrid({ gridState = "running" }: MovingGridProps) {
     >
       <div className="absolute top-0 left-0 right-0 z-3 w-screen h-[10rem] bg-gradient-to-b from-borahae-dark to-transparent"></div>
       <div className="relative z-1 vaporwave opacity-50">
-        <div className="scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[9rem] h-screen">
+        <div className="scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen">
           {[...Array(col)].map((_, i) => (
             <div
               key={i}

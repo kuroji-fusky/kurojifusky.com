@@ -11,11 +11,13 @@ export default function Footer() {
     <footer className="relative mt-[15rem]">
       <div className="mx-auto max-w-screen-2xl flex md:flex-row justify-between items-center gap-y-5 px-12 z-4 absolute p-6 pb-[4.5rem] bottom-0 left-0 right-0 text-center">
         <div className="text-left flex flex-col gap-3.5">
-          <strong className="text-lg font-inter">Stalk my ass here</strong>
+          <strong className="text-lg font-jetbrains-mono font-extrabold">
+            I'm in these places
+          </strong>
           <div role="list" className="flex gap-x-8">
             {socials.map((items, index) => (
               <Link key={index} href={items.link} passHref>
-                <a role="listitem" target="_blank" rel="noopener noreferrer">
+                <a role="listitem" target="_blank" rel="noopener noreferrer" className="hover:text-sona-borahae-400">
                   <FontAwesomeIcon icon={items.icon} size="lg" />
                 </a>
               </Link>
@@ -23,7 +25,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div id="other-shit" className="flex flex-col gap-y-3 items-end">
+        <div
+          id="other-shit"
+          className="font-jetbrains-mono flex flex-col gap-y-3 items-end"
+        >
           <div className="flex flex-col items-center gap-y-2">
             <div className="flex gap-4 text-sm">
               <LinkUnderline
@@ -32,7 +37,7 @@ export default function Footer() {
                 name="Website source code"
               />
               <LinkUnderline link="/contact" name="Contact" />
-              <span className="flex gap-x-1 items-center text-sm">
+              <span className="flex gap-x-1.5 items-center text-sm opacity-75">
                 <FontAwesomeIcon icon={faEnvelope} />
                 <p>hello@skepfusky.dev</p>
               </span>
@@ -43,12 +48,15 @@ export default function Footer() {
           </span>
         </div>
       </div>
-      <div className="h-[24rem] w-full absolute bottom-0 overflow-hidden">
+      <div
+        id="backdrop"
+        className="h-[24rem] w-full absolute bottom-0 overflow-hidden"
+      >
         <Backdrop className="-bottom-[1rem] -left-4 opacity-10 rotate-4 h-[11rem] w-[60%] bg-sona-skycyan-700" />
         <Backdrop className="-bottom-[2rem] opacity-10 left-[30%] h-[10rem] w-[40%] bg-sona-borahaealt-800" />
         <Backdrop className="-bottom-[1rem] -right-4 opacity-10 -rotate-4 h-[11rem] w-[60%] bg-sona-magenta-800" />
       </div>
-      <div className="absolute bottom-0 scrollbar-none">
+      <div id="moving-grid" className="absolute bottom-0 scrollbar-none">
         <MovingGrid gridState="running" />
       </div>
     </footer>

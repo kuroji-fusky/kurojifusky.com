@@ -1,3 +1,5 @@
+@use "footer";
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 @tailwind base;
@@ -31,7 +33,7 @@
   body {
     @apply font-open-sans text-neutral-50 bg-borahae-dark;
 
-    * {
+    div#__next * {
       // outline: 2px solid cyan;
     }
   }
@@ -53,28 +55,16 @@
     }
   }
 
-  .vaporwave-wrap {
-    perspective: 320px;
-  }
-
-  .vaporwave {
-		--footer-grid-transform: rotateX(45deg); 
-    transform: var(--footer-grid-transform);
-  }
-
-  .scroll-rows {
-		--scroll-initial: -60px;
-    animation: scroll 21s linear infinite reverse;
-		animation-play-state: var(--scroll-animation-state, running);
-  }
-
-  @keyframes scroll {
-    from {
-      top: var(--scroll-initial);
+  .anchor-underline {
+    &::before {
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 150ms ease-out;
     }
 
-    to {
-      top: var(--calculated);
+    &:hover::before {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 }
