@@ -1,17 +1,18 @@
 import Link from "next/link"
 import { SharedBtnProps } from "@/utils/SharedBtnProps"
-import styles from "./LinkUnderline.module.scss"
 
 interface LinkUnderlineProps extends SharedBtnProps {
-  children?: string
-  external?: boolean
+  children: string
+  external: boolean
 }
 
-export function LinkUnderline(props: LinkUnderlineProps) {
+export function LinkUnderline(props: Partial<LinkUnderlineProps>) {
   return (
     <Link href={props.link ?? ""} passHref>
       <a
-        className={styles.link}
+        className="anchor-underline text-sona-borahaealt-200 inline-block relative w-fit
+				hover:text-sona-borahaealt-300
+				before:content-[''] before:bg-sona-borahaealt-300 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px]"
         onClick={props.onClick}
         target={!props.external ? undefined : "_blank"}
         rel={!props.external ? undefined : "noopener noreferrer"}

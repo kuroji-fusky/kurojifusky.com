@@ -1,0 +1,24 @@
+.vaporwave-wrap {
+  perspective: 320px;
+}
+
+.vaporwave {
+  --footer-grid-transform: rotateX(45deg);
+  transform: var(--footer-grid-transform);
+}
+
+.scroll-rows {
+  --scroll-initial: -60px;
+  animation: scroll 21s linear infinite reverse;
+  animation-play-state: var(--scroll-animation-state, running);
+}
+
+@keyframes scroll {
+  from {
+    top: var(--scroll-initial);
+  }
+
+  to {
+    top: var(--calculated);
+  }
+}
