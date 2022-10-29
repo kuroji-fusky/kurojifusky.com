@@ -8,7 +8,7 @@ export interface LayoutProps {
 }
 
 export function Layout(props: LayoutProps) {
-  const [scrolled, isScrolled] = useState<boolean>()
+  const [scrolled, isScrolled] = useState(false)
   const NavbarCtxValue = { scrolled, isScrolled }
 
   return (

@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import "@/styles/globals.scss"
 import { useEffect } from "react"
 import type { AppProps } from "next/app"
@@ -5,14 +6,12 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 
 import { MDXProvider } from "@mdx-js/react"
-import { ParallaxProvider } from "react-scroll-parallax"
 import NextNProgress from "nextjs-progressbar"
 import { Layout } from "@/components/Base"
 import Notification from "@/components/Notification"
 import * as ga from "@/utils/ga"
 
 import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
@@ -32,13 +31,9 @@ export default function Cutie({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
-      <ParallaxProvider>
-        <MDXProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </MDXProvider>
-      </ParallaxProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

@@ -43,6 +43,8 @@ export function Hero() {
               alt="Art by catastrophe#6282 on Discord"
               layout="fill"
               objectFit="contain"
+              priority
+              onLoadingComplete={() => console.log("HEE HEE")}
             />
           </div>
         </aside>
