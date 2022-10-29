@@ -39,7 +39,7 @@ export default function Footer() {
               <LinkUnderline link="/contact" name="Contact" />
               <span className="flex gap-x-1.5 items-center text-sm opacity-75">
                 <FontAwesomeIcon icon={faEnvelope} />
-                <p>hello@skepfusky.dev</p>
+                <span>hello@skepfusky.dev</span>
               </span>
             </div>
           </div>

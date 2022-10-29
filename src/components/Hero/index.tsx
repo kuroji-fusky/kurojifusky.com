@@ -1,2 +1,2 @@
-export { Hero } from "./Hero"
+export { default } from "./Hero"
 export { Projects } from "./Projects"
