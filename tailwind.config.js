@@ -10,7 +10,8 @@ module.exports = {
 		fontFamily: {
 			"inter": ["Inter", ...defaultTheme.fontFamily.sans],
 			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
-			"ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono]
+			"ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
+			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
 		},
 		screens: {
 			sm: "640px",
