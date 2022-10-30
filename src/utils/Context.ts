@@ -10,6 +10,11 @@ type NavbarScrollProps = {
   isScrolled: (scrolled: boolean) => void
 }
 
+type HeroImgTypes = {
+  loaded: boolean
+  isLoaded: (loaded: boolean) => void
+}
+
 export const DropdownContext = createContext<DropdownTypes>({
   expand: true,
   isExpanded: () => {}
@@ -18,4 +23,9 @@ export const DropdownContext = createContext<DropdownTypes>({
 export const NavbarScrollContext = createContext<NavbarScrollProps>({
   scrolled: false,
   isScrolled: () => {}
+})
+
+export const HeroImgContext = createContext<HeroImgTypes>({
+  loaded: false,
+  isLoaded: () => {}
 })

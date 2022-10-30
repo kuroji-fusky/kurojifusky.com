@@ -1,29 +1,28 @@
 import Document, {
-	Html,
-	Head,
-	Main,
-	NextScript,
-	DocumentContext,
-	DocumentInitialProps
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+  DocumentInitialProps
 } from "next/document"
 import Script from "next/script"
 
 export default class _ extends Document {
-	static async getInitialProps(
-		ctx: DocumentContext
-	): Promise<DocumentInitialProps> {
-		const initialProps = await Document.getInitialProps(ctx)
-		return initialProps
-	}
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx)
+    return initialProps
+  }
 
-	render() {
-		return (
-			<Html lang="en">
-				<Head>
-					<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-					<Script
-						id="penis"
-						strategy="lazyOnload">{`
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+          <Script id="ga" strategy="lazyOnload">
+            {`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -32,18 +31,21 @@ export default class _ extends Document {
                 page_path: window.location.pathname,
             });
         `}
-					</Script>
-
-					<Script
-						strategy="lazyOnload"
-						src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
-					></Script>
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</Html>
-		)
-	}
+          </Script>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+          />
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA}`}
+          ></Script>
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
+  }
 }

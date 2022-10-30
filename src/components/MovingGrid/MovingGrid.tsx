@@ -2,9 +2,15 @@ import React from "react"
 
 interface MovingGridProps {
   gridState: "running" | "paused"
+  gridTransform?: string
+  gridPerspective?: string
 }
 
-export default function MovingGrid({ gridState = "running" }: MovingGridProps) {
+export default function MovingGrid({
+  gridState = "running",
+  gridTransform,
+  gridPerspective
+}: MovingGridProps) {
   const col = 15
   const row = 14
 
@@ -12,11 +18,17 @@ export default function MovingGrid({ gridState = "running" }: MovingGridProps) {
     <div
       aria-hidden="true"
       className="block relative w-screen overflow-hidden h-[250px] vaporwave-wrap"
-      style={{ "--scroll-animation-state": gridState } as React.CSSProperties}
+      style={
+        {
+          "--scroll-animation-state": gridState,
+          "--grid-transform": gridTransform ?? undefined,
+          "--grid-perspective": gridPerspective ?? undefined
+        } as React.CSSProperties
+      }
     >
       <div className="absolute top-0 left-0 right-0 z-3 w-screen h-[10rem] bg-gradient-to-b from-borahae-dark to-transparent"></div>
       <div className="relative z-1 vaporwave opacity-50">
-        <div className="scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen">
+        <div className="scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen transition-all duration-300">
           {[...Array(col)].map((_, i) => (
             <div
               key={i}

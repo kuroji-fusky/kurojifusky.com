@@ -1,10 +1,13 @@
+:is(.vaporwave-wrap, .vaporwave) {
+	@apply transition-all duration-700;
+}
+
 .vaporwave-wrap {
-  perspective: 320px;
+  perspective: var(--grid-perspective, 320px);
 }
 
 .vaporwave {
-  --footer-grid-transform: rotateX(45deg);
-  transform: var(--footer-grid-transform);
+  transform: var(--grid-transform, rotateX(45deg));
 }
 
 .scroll-rows {
