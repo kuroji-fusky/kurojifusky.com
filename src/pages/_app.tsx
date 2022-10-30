@@ -5,7 +5,6 @@ import type { AppProps } from "next/app"
 import { useRouter } from "next/router"
 import Head from "next/head"
 
-import { MDXProvider } from "@mdx-js/react"
 import NextNProgress from "nextjs-progressbar"
 import { Layout } from "@/components/Base"
 import Notification from "@/components/Notification"
