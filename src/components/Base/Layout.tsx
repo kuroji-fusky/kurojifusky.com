@@ -20,7 +20,7 @@ export function Layout(props: LayoutProps) {
     if (router.pathname !== "/") {
       isLoaded(true)
     }
-  }, [])
+  }, [router.pathname])
 
   const HeroImgCtxValue = { loaded, isLoaded }
 

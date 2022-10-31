@@ -25,7 +25,7 @@
   }
 
   body {
-    @apply font-open-sans text-neutral-50 bg-borahae-dark;
+    @apply overflow-x-hidden font-open-sans text-neutral-50 bg-borahae-dark;
 
     div#__next * {
       // outline: 2px solid cyan;

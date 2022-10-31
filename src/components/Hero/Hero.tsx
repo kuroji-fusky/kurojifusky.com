@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { CLOUDINARY_URL } from "@/utils/global"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
+import { cloudinary } from "@/utils/global"
 import { LinkUnderline } from "../Links"
 import { HomeSection } from "../Sections"
 import { HeroImgContext } from "@/utils/Context"
@@ -41,8 +41,16 @@ export function Hero() {
             Filipino hobbyist from the Philippines
           </h3>
           <div className="font-jetbrains-mono flex justify-center lg:justify-start gap-8 gap-y-4 flex-wrap">
-            <LinkUnderline name="Change artwork" link="#" />
-            <LinkUnderline name="Projects" link="/projects" />
+            <LinkUnderline
+              name="Change artwork"
+              link="#"
+              onClick={() =>
+                alert(
+                  "I'm lazy to make things work, writing a website from scratch with code is definitely not the easiest thing to achieve lol"
+                )
+              }
+            />
+            <LinkUnderline name="Portfolio" link="/portfolio" />
             <LinkUnderline name="About this cutie" link="/about" />
           </div>
           <span
@@ -58,7 +66,7 @@ export function Hero() {
         <aside className="w-full lg:w-[750px] xl:w-[800px] 2xl:w-[825px] grid place-items-center relative select-none h-[45%] lg:h-screen">
           <div className="w-full h-full relative">
             <Image
-              src={`${CLOUDINARY_URL}/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png`}
+              src={cloudinary("/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png")}
               alt="Art by catastrophe#6282 on Discord"
               layout="fill"
               objectFit="contain"
