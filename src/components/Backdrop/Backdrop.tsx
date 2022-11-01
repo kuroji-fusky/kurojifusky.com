@@ -1,8 +1,14 @@
-export default function Backdrop(props: { className: string }) {
-	return (
-		<div
-			aria-hidden="true"
-			className={`${props.className} z-1 blur-[45px] absolute rounded-full pointer-events-none`}
-		></div>
-	)
+export default function Backdrop(props: {
+  className: string
+  fixed?: boolean
+}) {
+  return (
+    <div
+      id="gradient-decorator"
+      aria-hidden="true"
+      className={`${props.className} ${
+        props.fixed ? "fixed" : "absolute"
+      } z-1 blur-[45px] rounded-full pointer-events-none`}
+    ></div>
+  )
 }

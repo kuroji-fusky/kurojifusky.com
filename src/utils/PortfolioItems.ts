@@ -2,20 +2,38 @@ import { PortfolioItemProps } from "@/components/PortfolioItem"
 import { cloudinary, ytImg } from "./global"
 
 export const PortfolioItems: PortfolioItemProps[] = [
-	{
-		img: ytImg("Z2KV_Lag7bE"),
+  {
+    img: cloudinary(
+      "/v1667239374/sf-website/projects/paco-drawing-stats_khjf7s.png"
+    ),
+    category: "dev project",
+    title: "Paco Drawing Stats",
+    description:
+      "A data visualization project which shows the number of species and characters drawn by a furry artist - written in TypeScript and Python"
+  },
+  {
+    img: cloudinary("/v1667239416/sf-website/projects/searchpets_jl5uaf.png"),
+    category: "dev project",
+    title: "Searchpets!",
+    description:
+      "A search engine website for querying chapters, comics, and characters from the Housepets! web comic"
+  },
+  {
+    img: ytImg("Z2KV_Lag7bE"),
     category: "discography",
     title: '"A New Beginning"',
     description:
-		"A music video for my debut album *Horizon*, filmed in various dates before and during the pandemic"
+      "A music video for my debut album *Horizon*, filmed in various dates before and during the pandemic"
   },
-	{
-		img: cloudinary("/v1666532578/sf-website/album-covers/ALBUM_A-New-Life_bofney.png"),
-		category: "discography",
-		title: '"Dreaming"',
-		description:
-			"Reguarding as one of my favorite single produced, it also appears on track 2 of my second self-published album *A New Life*"
-	},
+  {
+    img: cloudinary(
+      "/v1666532578/sf-website/album-covers/ALBUM_A-New-Life_bofney.png"
+    ),
+    category: "discography",
+    title: '"Dreaming"',
+    description:
+      "Reguarding as one of my favorite single produced, it also appears on track 2 of my second self-published album *A New Life*"
+  },
   {
     img: ytImg("5SybfjVntTw"),
     category: "film",
@@ -36,22 +54,6 @@ export const PortfolioItems: PortfolioItemProps[] = [
     title: "Jin Woo's Adventure",
     description:
       "A bunch of my then senior collegues promoting the school by sending flyers or cleaning garbage on the streets"
-  },
-  {
-    img: cloudinary(
-      "/v1667239374/sf-website/projects/paco-drawing-stats_khjf7s.png"
-    ),
-    category: "dev project",
-    title: "Paco Drawing Stats",
-    description:
-      "A data visualization project which shows the number of species and characters drawn by a furry artist - written in TypeScript and Python"
-  },
-  {
-    img: cloudinary("/v1667239416/sf-website/projects/searchpets_jl5uaf.png"),
-    category: "dev project",
-    title: "Searchpets!",
-    description:
-      "A search engine website for querying chapters, comics, and characters from the Housepets! web comic"
   },
   {
     img: ytImg("8nbMVrNRRCM"),

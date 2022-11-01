@@ -22,6 +22,15 @@ export function Layout(props: LayoutProps) {
     }
   }, [router.pathname])
 
+  useEffect(() => {
+    const handleNavbarScroll = () => {
+      window.scrollY > 150 ? isScrolled(true) : isScrolled(false)
+    }
+
+    window.addEventListener("scroll", handleNavbarScroll)
+    return () => window.removeEventListener("scroll", handleNavbarScroll)
+  }, [])
+
   const HeroImgCtxValue = { loaded, isLoaded }
 
   return (

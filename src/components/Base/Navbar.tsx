@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useContext } from "react"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFilePen, faGlasses } from "@fortawesome/free-solid-svg-icons"
-import socials from "./Socials"
 import styles from "./Navbar.module.scss"
 import { DropdownContext, NavbarScrollContext } from "@/utils/Context"
 import { NavLink } from "./NavLink"
@@ -118,28 +117,6 @@ export default function Navbar() {
                     About
                   </a>
                 </Link>
-                <div className={styles["lower-third"]}>
-                  <div role="list" className={styles["lt-socials"]}>
-                    {socials.map((item, i) => (
-                      <Link key={i} href={item.link} passHref>
-                        <a
-                          role="listitem"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FontAwesomeIcon icon={item.icon} size="lg" />
-                        </a>
-                      </Link>
-                    ))}
-                  </div>
-                  <span>
-                    View this website's{" "}
-                    <NavLink
-                      name="source code on GitHub"
-                      link="https://github.com/skepfusky/skepfusky.xyz"
-                    ></NavLink>
-                  </span>
-                </div>
               </section>
             </DropdownContext.Provider>
           </nav>
