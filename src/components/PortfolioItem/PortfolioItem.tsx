@@ -6,7 +6,13 @@ import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/global"
 
 export interface PortfolioItemProps {
-  category: "website" | "school project" | "discography" | "others" | "dev project"
+  category:
+    | "website"
+    | "school project"
+    | "film"
+    | "discography"
+    | "others"
+    | "dev project"
   link?: string
   title?: string
   description?: string
@@ -47,7 +53,7 @@ export default function PortfolioItem(props: PortfolioItemProps) {
       }}
       onMouseLeave={() => set({ xy: [0, 0] })}
     >
-      <div className="relative w-full h-[14.5rem] overflow-hidden rounded-tl-lg rounded-tr-lg">
+      <div className="relative w-full h-[15rem] overflow-hidden rounded-tl-lg rounded-tr-lg">
         <LazyImg
           src={props.img ?? cloudinary("/v1665156812/sample.jpg")}
           objectFit="cover"

@@ -51,6 +51,7 @@ export function Hero() {
               }
             />
             <LinkUnderline name="Portfolio" link="/portfolio" />
+            <LinkUnderline name="Experiences" link="/resume" />
             <LinkUnderline name="About this cutie" link="/about" />
           </div>
           <span
