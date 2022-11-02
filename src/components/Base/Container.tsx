@@ -1,9 +1,8 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import { GenericInfo, Components } from "@/utils/Types"
+import { ContainerAlias } from "@/utils/Types"
 
-type HelpMe = Pick<GenericInfo, "title" | "description"> & Omit<Components, "id">
-interface ContainerProps extends HelpMe {
+interface ContainerProps extends ContainerAlias {
   wrap?: boolean
 }
 
@@ -35,9 +34,11 @@ export function Container(props: ContainerProps) {
         className={
           !props.wrap
             ? `relative z-1${props.className ? " " + props.className : ""}`
-            : `relative z-1 max-w-screen-2xl mx-auto px-7${props.className ?? ""}`
+            : `relative z-1 max-w-screen-2xl mx-auto px-7${
+                props.className ?? ""
+              }`
         }
-				style={props.style ?? undefined}
+        style={props.style ?? undefined}
       >
         {props.children}
       </main>

@@ -1,3 +1,4 @@
+import { SocialTypes } from "@/utils/Types"
 import {
   faGithub,
   faGitlab,
@@ -10,15 +11,7 @@ import {
   faYoutube
 } from "@fortawesome/free-brands-svg-icons"
 
-import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
-
-export interface SocialTypes {
-  name: string
-  link: string
-  icon: IconDefinition
-}
-
-const socials = [
+const socials: SocialTypes[] = [
   {
     name: "YouTube",
     link: "https://www.youtube.com/skepfusky97",
@@ -52,6 +45,6 @@ const socials = [
     link: "https://music.apple.com/us/artist/kokoro-husky/1521326000",
     icon: faItunesNote
   }
-] as SocialTypes[]
+]
 
 export default socials

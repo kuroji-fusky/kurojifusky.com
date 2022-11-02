@@ -1,50 +1,62 @@
-export type Components = Partial<{
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
+
+export type Components = {
   children: React.ReactNode
+  style: React.CSSProperties
   className: string
   id: string
-  style: React.CSSProperties
-}>
+}
 
-export type GenericInfo = Partial<{
+export type GenericInfo = {
   title: string
   name: string
   link: string
   description: string
   img: string
-}>
-
-export type ChildrenOnly = Pick<Components, "children">
+}
 
 // ======================
-// Buttons
-export interface SharedBtnProps extends Pick<GenericInfo, "name" | "link"> {
+// Type mutations
+export type ChildrenOnly = Pick<Partial<Components>, "children">
+export type NameLinkOnly = Pick<GenericInfo, "name" | "link">
+export type ContainerAlias = Pick<Partial<GenericInfo>, "title" | "description"> & Omit<Partial<Components>, "id">
+
+// ======================
+// Buttons & Links
+export interface SharedBtnProps extends Partial<NameLinkOnly> {
   disabled?: boolean
   onClick?: () => any
 }
 
 // ======================
-//  Portfolio Item
-export enum CategoryTags {
+// Social crap
+export interface SocialTypes extends NameLinkOnly {
+  icon: IconDefinition
+}
+
+// ======================
+// Portfolio Item
+enum CategoryTags {
   DevProject = "Dev Project",
   SchoolProject = "School Project",
   Website = "Website",
   Film = "Film",
   Music = "Discography",
-  Others = "Others / Miscellaneous"
+  Others = "Others / Miscellaneous",
+	All = ""
 }
 
+export { CategoryTags as C }
+
 type PortfolioLinks = Partial<{
-  // Regular trash type definitions
   githubLink: string
   websiteLink: string
   youtubeId: string
-  // Trash music type definitions
   soundcloud: string
   itunes: string
   spotify: string
 }>
 
-// prettier-ignore
-export interface PortfolioItemTypes extends PortfolioLinks, Omit<GenericInfo, "name"> {
+export interface PortfolioItemTypes extends Omit<Partial<GenericInfo>, "name">, PortfolioLinks {
   category: CategoryTags
 }

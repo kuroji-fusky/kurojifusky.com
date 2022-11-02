@@ -1,3 +1,4 @@
+import { useState } from "react"
 import dynamic from "next/dynamic"
 import { Container } from "@/components/Base"
 import { PortfolioItemSkeleton } from "@/components/PortfolioItem"
@@ -23,9 +24,8 @@ export default function Portfolio() {
         </h1>
         <p className="text-base xl:text-xl w-full md:w-[50%] px-5">
           All of my public and open source works of videos, music, and web apps
-          neatly categorized - you can choose to filter them
         </p>
-        <div className="flex flex-wrap justify-center gap-4 font-jetbrains-mono text-sm">
+        {/* <div className="flex flex-wrap justify-center gap-4 font-jetbrains-mono text-sm">
           <span className="rounded-md py-1 px-3 bg-red-700">Film</span>
           <span className="rounded-md py-1 px-3 bg-sona-royalblue-600">
             Dev Project
@@ -39,7 +39,7 @@ export default function Portfolio() {
           <span className="rounded-md py-1 px-3 bg-neutral-500">
             Others / Miscellaneous
           </span>
-        </div>
+        </div> */}
       </section>
       <div
         role="list"

@@ -1,7 +1,7 @@
-import { GenericInfo } from "@/utils/Types"
+import { NameLinkOnly } from "@/utils/Types"
 import Link from "next/link"
 
-export function LinkGradient(props: Pick<GenericInfo, "link" | "name">) {
+export function LinkGradient(props: NameLinkOnly) {
   return (
     <Link href={props.link ?? ""}>
       <a

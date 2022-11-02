@@ -1,4 +1,4 @@
-import { Components, GenericInfo } from "@/utils/Types"
+import { GenericInfo, Components } from "@/utils/Types"
 
 type YTPlayerProps = Pick<GenericInfo, "link"> & Pick<Components, "style">
 

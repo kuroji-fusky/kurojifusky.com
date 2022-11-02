@@ -9,7 +9,7 @@ import { NavLink } from "./NavLink"
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
 
-  const { scrolled } = useContext(NavbarScrollContext)
+  const { scrolled, isScrolled } = useContext(NavbarScrollContext)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const [height, setHeight] = useState(0)
@@ -49,7 +49,7 @@ export default function Navbar() {
   return (
     <header id={styles.header}>
       <div className={styles.container}>
-        <Logo />
+        <Logo onClicc={() => isScrolled(false)} />
         <button
           onClick={() => setExpand(!expand)}
           aria-label="Open/close menu"
@@ -62,7 +62,7 @@ export default function Navbar() {
           style={{ height: "0px" }}
         >
           <div className={styles["logo-wrapper"]}>
-            <Logo white />
+            <Logo white onClicc={() => isScrolled(false)} />
             <span
               className={styles["keyboard-notice"]}
               aria-label="Press Escape to close menu"
@@ -95,13 +95,17 @@ export default function Navbar() {
                 </h2>
                 <div role="list" id={styles["dd-col-list"]}>
                   <NavLink name="Fursona" link="/fursona" />
+                  <NavLink name="Resume" link="/resume" />
                   <NavLink name="Roadmap" link="/roadmap" />
-                  <NavLink name="Artworks" link="#" />
-                  <NavLink name="codefusky" link="#" />
+                  <NavLink name="Artworks" link="/artworks" />
                 </div>
               </section>
               <section className={styles["dd-col-grid"]}>
-                <div id={styles["dd-col-item"]} className={styles["blog-item"]}>
+                <div
+                  id={styles["dd-col-item"]}
+                  className={styles["blog-item"]}
+                  onClick={() => isScrolled(false)}
+                >
                   <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
                   Blog
                 </div>
@@ -109,6 +113,7 @@ export default function Navbar() {
                   <a
                     id={styles["dd-col-item"]}
                     className={styles["about-item"]}
+                    onClick={() => isScrolled(false)}
                   >
                     <FontAwesomeIcon
                       icon={faGlasses}
@@ -126,10 +131,18 @@ export default function Navbar() {
   )
 }
 
-export function Logo({ white }: { white?: boolean }) {
+export function Logo({
+  white,
+  onClicc
+}: {
+  white?: boolean
+  onClicc: () => any
+}) {
   return (
     <Link href="/" passHref>
-      <a className={styles[!white ? "logo" : "logo-white"]}>skepfusky</a>
+      <a className={styles[!white ? "logo" : "logo-white"]} onClick={onClicc}>
+        skepfusky
+      </a>
     </Link>
   )
 }

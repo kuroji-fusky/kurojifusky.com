@@ -1,10 +1,10 @@
-import { useRef } from "react"
+import { useState, useRef } from "react"
 import { useSpring, animated } from "react-spring"
+import { InView } from "react-intersection-observer"
 import ReactMarkdown from "react-markdown"
 import { LinkUnderline } from "../Links"
 import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/global"
-import { InView } from "react-intersection-observer"
 import { PortfolioItemTypes as PortfolioItemProps } from "@/utils/Types"
 
 const calc = (x: number, y: number, rect: any) => [
@@ -16,6 +16,7 @@ const trans = (x: number, y: number) =>
   `perspective(850px) rotateX(${x}deg) rotateY(${y}deg)`
 
 export default function PortfolioItem(props: PortfolioItemProps) {
+	const [appear, setAppear] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   const config = {
@@ -36,7 +37,7 @@ export default function PortfolioItem(props: PortfolioItemProps) {
       <animated.div
         ref={ref}
         role="listitem"
-        className="group relative bg-gradient-to-br from-sona-borahaealt-900 to-borahae-dark rounded-lg
+        className="group h-full relative bg-gradient-to-br from-sona-borahaealt-900 to-borahae-dark rounded-lg
 				before:content-[''] before:rounded-lg before:block before:absolute before:inset-0 before:-z-1 before:bg-gradient-to-tr
 				before:from-sona-borahae-800 before:to-sona-royalblue-800
 				before:opacity-0 before:hover:opacity-100 before:transition-opacity before:duration-500"
