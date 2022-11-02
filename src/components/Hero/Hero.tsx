@@ -67,7 +67,9 @@ export function Hero() {
         <aside className="w-full lg:w-[750px] xl:w-[800px] 2xl:w-[825px] grid place-items-center relative select-none h-[45%] lg:h-screen">
           <div className="w-full h-full relative">
             <Image
-              src={cloudinary("/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png")}
+              src={cloudinary(
+                "/w_720/v1662975456/fursonas/comm_for_davey_g2_i3nmhp.png"
+              )}
               alt="Art by catastrophe#6282 on Discord"
               layout="fill"
               objectFit="contain"

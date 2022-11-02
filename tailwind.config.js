@@ -17,7 +17,7 @@ module.exports = {
 			sm: "640px",
 			md: "768px",
 			lg: "1024px",
-			xl: "1366px",
+			xl: "1367px",
 			"2xl": "1536px"
 		},
 		zIndex: {

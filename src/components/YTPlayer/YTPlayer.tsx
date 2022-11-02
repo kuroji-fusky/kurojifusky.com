@@ -1,10 +1,9 @@
-interface YTPlayerProps {
-	link?: string
-	style?: React.CSSProperties
-}
+import { Components, GenericInfo } from "@/utils/Types"
+
+type YTPlayerProps = Pick<GenericInfo, "link"> & Pick<Components, "style">
 
 export default function YTPlayer(props: YTPlayerProps) {
-	return (
+  return (
     <iframe
       className="aspect-video overflow-hidden rounded-xl block bg-neutral-700"
       style={props.style}

@@ -1,7 +1,6 @@
-export default function Backdrop(props: {
-  className: string
-  fixed?: boolean
-}) {
+import { Components } from "@/utils/Types";
+
+export default function Backdrop(props: { fixed?: boolean } & Pick<Components, "className">) {
   return (
     <div
       id="gradient-decorator"

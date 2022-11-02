@@ -1,13 +1,10 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import { LayoutProps } from "./Layout"
+import { GenericInfo, Components } from "@/utils/Types"
 
-interface ContainerProps extends LayoutProps {
-  title: string
-  description: string
-  className?: string
+type HelpMe = Pick<GenericInfo, "title" | "description"> & Omit<Components, "id">
+interface ContainerProps extends HelpMe {
   wrap?: boolean
-	style?: React.CSSProperties
 }
 
 export function Container(props: ContainerProps) {
@@ -37,8 +34,8 @@ export function Container(props: ContainerProps) {
       <main
         className={
           !props.wrap
-            ? `relative z-1 ${props.className ?? ""}`
-            : `relative z-1 max-w-screen-2xl mx-auto px-7 ${props.className ?? ""}`
+            ? `relative z-1${props.className ? " " + props.className : ""}`
+            : `relative z-1 max-w-screen-2xl mx-auto px-7${props.className ?? ""}`
         }
 				style={props.style ?? undefined}
       >

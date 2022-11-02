@@ -4,20 +4,8 @@ import ReactMarkdown from "react-markdown"
 import { LinkUnderline } from "../Links"
 import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/global"
-
-export interface PortfolioItemProps {
-  category:
-    | "website"
-    | "school project"
-    | "film"
-    | "discography"
-    | "others"
-    | "dev project"
-  link?: string
-  title?: string
-  description?: string
-  img?: string
-}
+import { InView } from "react-intersection-observer"
+import { PortfolioItemTypes as PortfolioItemProps } from "@/utils/Types"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,
@@ -32,25 +20,26 @@ export default function PortfolioItem(props: PortfolioItemProps) {
 
   const config = {
     mass: 1,
-    tension: 250,
+    tension: 350,
     friction: 35
   }
 
   const [springProps, set] = useSpring(() => ({ xy: [0, 0], config }))
 
   return (
-    <div
+    <InView
+      onChange={(inView) => console.log(inView)}
       className="relative before:content-[''] before:absolute before:inset-1 before:opacity-0 before:hover:opacity-75
 			before:transition-opacity before:duration-700
-		before:bg-gradient-to-tr before:from-sona-borahae-800 before:to-sona-skycyan-700 before:blur-2xl before:-z-1"
+			before:bg-gradient-to-tr before:from-sona-borahae-800 before:to-sona-skycyan-700 before:blur-2xl before:-z-1"
     >
       <animated.div
         ref={ref}
         role="listitem"
         className="group relative bg-gradient-to-br from-sona-borahaealt-900 to-borahae-dark rounded-lg
-			before:content-[''] before:rounded-lg before:block before:absolute before:inset-0 before:-z-1 before:bg-gradient-to-tr
-			before:from-sona-borahae-800 before:to-sona-royalblue-800
-			before:opacity-0 before:hover:opacity-100 before:transition-opacity before:duration-500"
+				before:content-[''] before:rounded-lg before:block before:absolute before:inset-0 before:-z-1 before:bg-gradient-to-tr
+				before:from-sona-borahae-800 before:to-sona-royalblue-800
+				before:opacity-0 before:hover:opacity-100 before:transition-opacity before:duration-500"
         style={{ transform: springProps.xy.to(trans) }}
         onMouseMove={(e) => {
           const rect = ref.current?.getBoundingClientRect()
@@ -72,8 +61,8 @@ export default function PortfolioItem(props: PortfolioItemProps) {
           <h2
             data-text={props.title}
             className="relative before:content-[attr(data-text)] before:absolute before:top-0 before:left-0 before:right-0
-				before:bg-gradient-to-r before:from-sona-borahae-500 before:to-sona-skycyan-600 before:bg-clip-text before:z-5 before:text-transparent
-				before:group-hover:opacity-0 before:transition-opacity before:duration-500"
+						before:bg-gradient-to-r before:from-sona-borahae-500 before:to-sona-skycyan-600 before:bg-clip-text before:z-5 before:text-transparent
+						before:group-hover:opacity-0 before:transition-opacity before:duration-500"
           >
             {props.title}
           </h2>
@@ -85,7 +74,7 @@ export default function PortfolioItem(props: PortfolioItemProps) {
           />
         </article>
       </animated.div>
-    </div>
+    </InView>
   )
 }
 

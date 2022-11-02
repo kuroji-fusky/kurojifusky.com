@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { HeroImgContext, NavbarScrollContext } from "@/utils/Context"
+import { ChildrenOnly as LayoutProps } from "@/utils/Types"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
-
-export interface LayoutProps {
-  children?: React.ReactNode
-}
 
 export function Layout(props: LayoutProps) {
   const router = useRouter()

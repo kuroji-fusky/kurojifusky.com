@@ -1,10 +1,9 @@
 import Link from "next/link"
-import { SharedBtnProps } from "@/utils/SharedBtnProps"
+import { SharedBtnProps, Components } from "@/utils/Types"
 
-interface LinkUnderlineProps extends SharedBtnProps {
+interface LinkUnderlineProps extends Pick<Components, "className">, SharedBtnProps {
   children: string
   external: boolean
-  className: string
 }
 
 export function LinkUnderline(props: Partial<LinkUnderlineProps>) {

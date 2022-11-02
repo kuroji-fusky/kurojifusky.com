@@ -17,8 +17,11 @@ export function Breadcrumbs({ lists, rootDir }: BreadcrumbProps) {
       <ul className="flex gap-2.5">
         {lists.map((item, index) => (
           <li key={index}>
-            {router.pathname !== item.link ? (
-              <LinkUnderline name={item.name} link={item.link} />
+            {router.pathname !== rootDir ?? "" + item.link ? (
+              <LinkUnderline
+                name={item.name}
+                link={rootDir ?? "" + item.link}
+              />
             ) : (
               <span>{item.name}</span>
             )}

@@ -1,4 +1,4 @@
-import { LayoutProps } from "../Base/Layout"
+import { ChildrenOnly as LayoutProps } from "@/utils/Types"
 
 interface HomeSectionProps extends LayoutProps {
   className: string
