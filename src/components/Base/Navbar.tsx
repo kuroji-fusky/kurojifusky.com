@@ -50,7 +50,7 @@ export default function Navbar() {
     <header id={styles.header}>
       <div className={styles.container}>
         <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
-          <Logo onClicc={() => setExpand(false)} />
+          <Logo onClicc={() => setExpand(!expand)} />
           <button
             onClick={() => setExpand(!expand)}
             aria-label="Open/close menu"
@@ -63,7 +63,7 @@ export default function Navbar() {
             style={{ height: "0px" }}
           >
             <div className={styles["logo-wrapper"]}>
-              <Logo white onClicc={() => setExpand(false)} />
+              <Logo white onClicc={() => setExpand(!expand)} />
               <span
                 className={styles["keyboard-notice"]}
                 aria-label="Press Escape to close menu"
