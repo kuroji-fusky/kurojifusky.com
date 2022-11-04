@@ -49,31 +49,31 @@ export default function Navbar() {
   return (
     <header id={styles.header}>
       <div className={styles.container}>
-        <Logo onClicc={() => isScrolled(false)} />
-        <button
-          onClick={() => setExpand(!expand)}
-          aria-label="Open/close menu"
-          id={styles["menu-btn"]}
-          className={styles[!expand ? "open" : "closed"]}
-        ></button>
-        <div
-          ref={dropdownRef}
-          className={styles[!expand ? "dd-container" : "dd-container-closed"]}
-          style={{ height: "0px" }}
-        >
-          <div className={styles["logo-wrapper"]}>
-            <Logo white onClicc={() => isScrolled(false)} />
-            <span
-              className={styles["keyboard-notice"]}
-              aria-label="Press Escape to close menu"
-            >
-              Tip: Press
-              <kbd>ESC</kbd>
-              to close menu
-            </span>
-          </div>
-          <nav className={styles["dd-wrapper"]}>
-            <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
+        <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
+          <Logo onClicc={() => setExpand(false)} />
+          <button
+            onClick={() => setExpand(!expand)}
+            aria-label="Open/close menu"
+            id={styles["menu-btn"]}
+            className={styles[!expand ? "open" : "closed"]}
+          ></button>
+          <div
+            ref={dropdownRef}
+            className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+            style={{ height: "0px" }}
+          >
+            <div className={styles["logo-wrapper"]}>
+              <Logo white onClicc={() => setExpand(false)} />
+              <span
+                className={styles["keyboard-notice"]}
+                aria-label="Press Escape to close menu"
+              >
+                Tip: Press
+                <kbd>ESC</kbd>
+                to close menu
+              </span>
+            </div>
+            <nav className={styles["dd-wrapper"]}>
               <section className={styles["dd-col"]}>
                 <h2 className={styles["nav-heading"]}>
                   <span id={styles["hot-garbage"]}>Hot Garbage</span>{" "}
@@ -123,9 +123,9 @@ export default function Navbar() {
                   </a>
                 </Link>
               </section>
-            </DropdownContext.Provider>
-          </nav>
-        </div>
+            </nav>
+          </div>
+        </DropdownContext.Provider>
       </div>
     </header>
   )
