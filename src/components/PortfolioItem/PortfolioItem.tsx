@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import { LinkUnderline } from "../Links"
 import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/global"
-import { PortfolioItemTypes as PortfolioItemProps } from "@/utils/Types"
+import { PortfolioItemTypes as PortfolioItemProps } from "@/types/Portfolio"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,
@@ -16,7 +16,7 @@ const trans = (x: number, y: number) =>
   `perspective(850px) rotateX(${x}deg) rotateY(${y}deg)`
 
 export default function PortfolioItem(props: PortfolioItemProps) {
-	const [appear, setAppear] = useState(false)
+  const [appear, setAppear] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
   const config = {
@@ -50,7 +50,9 @@ export default function PortfolioItem(props: PortfolioItemProps) {
       >
         <div className="relative w-full h-[15rem] overflow-hidden rounded-tl-lg rounded-tr-lg">
           <LazyImg
-            src={props.img ?? cloudinary("/v1665156812/sample.jpg")}
+            src={
+              props.img ?? cloudinary({ rootDir: "", fileName: "sample.jpg" })
+            }
             objectFit="cover"
             lazy
           />

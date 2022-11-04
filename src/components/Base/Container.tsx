@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import { ContainerAlias } from "@/utils/Types"
+import { ContainerAlias } from "@/types/Mutations"
 
 interface ContainerProps extends ContainerAlias {
   wrap?: boolean

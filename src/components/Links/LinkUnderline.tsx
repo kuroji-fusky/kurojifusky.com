@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { SharedBtnProps, Components } from "@/utils/Types"
+import { Components } from "@/types/Mutations"
+import { SharedBtnProps } from "@/types/Buttons"
 
 interface LinkUnderlineProps extends Pick<Components, "className">, SharedBtnProps {
   children: string

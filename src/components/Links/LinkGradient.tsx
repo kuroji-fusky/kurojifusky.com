@@ -1,4 +1,4 @@
-import { NameLinkOnly } from "@/utils/Types"
+import { NameLinkOnly } from "@/types/Mutations"
 import Link from "next/link"
 
 export function LinkGradient(props: NameLinkOnly) {

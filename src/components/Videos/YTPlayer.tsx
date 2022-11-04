@@ -1,8 +1,8 @@
-import { GenericInfo, Components } from "@/utils/Types"
+import { GenericInfo, Components } from "@/types/Mutations"
 
 type YTPlayerProps = Pick<GenericInfo, "link"> & Pick<Components, "style">
 
-export default function YTPlayer(props: YTPlayerProps) {
+export function YTPlayer(props: YTPlayerProps) {
   return (
     <iframe
       className="aspect-video overflow-hidden rounded-xl block bg-neutral-700"

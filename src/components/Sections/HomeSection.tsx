@@ -1,11 +1,7 @@
-import { ChildrenOnly as LayoutProps } from "@/utils/Types"
+import { Components, GenericInfo } from "@/types/Mutations"
 
-interface HomeSectionProps extends LayoutProps {
-  className: string
-  id: string
-  title: string
+interface HomeSectionProps extends Components, Pick<GenericInfo, "title"> {
   expandContent: boolean
-  style: React.CSSProperties
 }
 
 export function HomeSection(props: Partial<HomeSectionProps>) {
