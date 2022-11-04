@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { HeroImgContext, NavbarScrollContext } from "@/utils/Context"
-import { ChildrenOnly as LayoutProps } from "@/utils/Types"
+import { ChildrenOnly as LayoutProps } from "@/types/Mutations"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 

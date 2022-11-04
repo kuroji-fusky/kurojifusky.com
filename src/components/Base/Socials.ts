@@ -1,4 +1,4 @@
-import { SocialTypes } from "@/utils/Types"
+import { SocialTypes } from "@/types/Socials"
 import {
   faGithub,
   faGitlab,

@@ -1,4 +1,4 @@
-import { SharedBtnProps } from "@/utils/Types"
+import { SharedBtnProps } from "@/types/Buttons"
 import styles from "./Button.module.scss"
 
 interface BtnProps extends SharedBtnProps {
