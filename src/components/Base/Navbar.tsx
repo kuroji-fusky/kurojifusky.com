@@ -9,7 +9,7 @@ import { NavLink } from "./NavLink"
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
 
-  const { scrolled, isScrolled } = useContext(NavbarScrollContext)
+  const { scrolled } = useContext(NavbarScrollContext)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const [height, setHeight] = useState(0)
