@@ -50,7 +50,7 @@ export default function Navbar() {
     <header id={styles.header}>
       <div className={styles.container}>
         <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
-          <Logo onClicc={() => setExpand(!expand)} />
+          <Logo onClicc={() => setExpand(true)} />
           <button
             onClick={() => setExpand(!expand)}
             aria-label="Open/close menu"
@@ -104,7 +104,7 @@ export default function Navbar() {
                 <div
                   id={styles["dd-col-item"]}
                   className={styles["blog-item"]}
-                  onClick={() => isScrolled(false)}
+                  onClick={() => setExpand(true)}
                 >
                   <FontAwesomeIcon icon={faFilePen} id={styles["dd-fa-icon"]} />
                   Blog
@@ -113,7 +113,7 @@ export default function Navbar() {
                   <a
                     id={styles["dd-col-item"]}
                     className={styles["about-item"]}
-                    onClick={() => isScrolled(false)}
+                    onClick={() => setExpand(true)}
                   >
                     <FontAwesomeIcon
                       icon={faGlasses}
