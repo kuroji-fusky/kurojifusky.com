@@ -1,5 +1,5 @@
 import { Container } from "@/components/Base"
-import { cloudinary } from "@/utils/global"
+import { cloudinary } from "@/utils/ImgProviders"
 
 export default function About() {
   const title = "About me"

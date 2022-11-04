@@ -1,6 +1,7 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
-import { NameLinkOnly } from "./Mutations"
 
-export interface SocialTypes extends NameLinkOnly {
+export interface SocialTypes {
+	name: string
+	link: string
   icon: IconDefinition
 }

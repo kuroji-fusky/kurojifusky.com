@@ -1,9 +1,12 @@
-import { ICloudinary } from "@/types/Cloudinary"
-
-const CLOUDINARY_IMG =
-  "https://res.cloudinary.com/skepfusky-dookie/image/upload"
-
-export const cloudinaryImg = (url: string) => CLOUDINARY_IMG + url
+export interface ICloudinary {
+  type?: "image" | "video"
+  rootDir?: "sf-website" | "fursonas" | ""
+  dir?: string
+  fileName?: string
+  transform?: {
+    width?: number
+  }
+}
 
 export const cloudinary = ({
   type = "image",

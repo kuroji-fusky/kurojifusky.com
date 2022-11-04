@@ -1,2 +1,2 @@
 export { YTPlayer } from "./YTPlayer"
-export { CloudinaryVideo } from "./CloudinaryVideo"
+export { CldVideo } from "./CldVideo"

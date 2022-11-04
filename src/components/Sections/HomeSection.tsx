@@ -1,6 +1,5 @@
-import { Components, GenericInfo } from "@/types/Mutations"
-
-interface HomeSectionProps extends Components, Pick<GenericInfo, "title"> {
+interface HomeSectionProps extends Components {
+  title?: string
   expandContent: boolean
 }
 

@@ -1,9 +1,8 @@
 import { useContext } from "react"
 import { DropdownContext } from "@/utils/Context"
 import { LinkUnderline } from "../Links"
-import { NameLinkOnly } from "@/types/Mutations"
 
-export function NavLink(props: NameLinkOnly) {
+export function NavLink(props: Omit<ISharedBtnProps, "onClick">) {
   const { expand, isExpanded } = useContext(DropdownContext)
 
   return (

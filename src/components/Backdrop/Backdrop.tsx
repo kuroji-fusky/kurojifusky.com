@@ -1,6 +1,6 @@
-import { Components } from "@/types/Mutations";
-
-export default function Backdrop(props: { fixed?: boolean } & Pick<Components, "className">) {
+export default function Backdrop(
+  props: { fixed?: boolean } & Pick<Components, "className">
+) {
   return (
     <div
       id="gradient-decorator"

@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint && tsc --noEmit"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.2.0",

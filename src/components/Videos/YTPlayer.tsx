@@ -1,6 +1,4 @@
-import { GenericInfo, Components } from "@/types/Mutations"
-
-type YTPlayerProps = Pick<GenericInfo, "link"> & Pick<Components, "style">
+type YTPlayerProps = { link: string } & Pick<Components, "style">
 
 export function YTPlayer(props: YTPlayerProps) {
   return (

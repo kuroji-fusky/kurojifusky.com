@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { HeroImgContext, NavbarScrollContext } from "@/utils/Context"
-import { ChildrenOnly as LayoutProps } from "@/types/Mutations"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 
-export function Layout(props: LayoutProps) {
+export function Layout(props: ChildrenOnly) {
   const router = useRouter()
 
   const [scrolled, isScrolled] = useState(false)

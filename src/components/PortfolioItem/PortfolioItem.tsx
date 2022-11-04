@@ -4,8 +4,8 @@ import { InView } from "react-intersection-observer"
 import ReactMarkdown from "react-markdown"
 import { LinkUnderline } from "../Links"
 import LazyImg from "../LazyImg"
-import { cloudinary } from "@/utils/global"
-import { PortfolioItemTypes as PortfolioItemProps } from "@/types/Portfolio"
+import { cloudinary } from "@/utils/ImgProviders"
+import { PortfolioItemTypes } from "@/utils/PortfolioItems"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,
@@ -15,7 +15,7 @@ const calc = (x: number, y: number, rect: any) => [
 const trans = (x: number, y: number) =>
   `perspective(850px) rotateX(${x}deg) rotateY(${y}deg)`
 
-export default function PortfolioItem(props: PortfolioItemProps) {
+export default function PortfolioItem(props: PortfolioItemTypes) {
   const [appear, setAppear] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 

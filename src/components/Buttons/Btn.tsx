@@ -1,7 +1,6 @@
-import { SharedBtnProps } from "@/types/Buttons"
 import styles from "./Button.module.scss"
 
-interface BtnProps extends SharedBtnProps {
+interface BtnProps extends ISharedBtnProps {
   emojiFix?: boolean
 }
 

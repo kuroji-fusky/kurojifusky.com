@@ -1,8 +1,9 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import { ContainerAlias } from "@/types/Mutations"
 
-interface ContainerProps extends ContainerAlias {
+interface ContainerProps extends Omit<Partial<Components>, "id"> {
+  title?: string
+  description?: string
   wrap?: boolean
 }
 

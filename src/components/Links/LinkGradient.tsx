@@ -1,7 +1,11 @@
-import { NameLinkOnly } from "@/types/Mutations"
 import Link from "next/link"
 
-export function LinkGradient(props: NameLinkOnly) {
+interface LinkGradientProps {
+	name?: string
+	link?: string
+}
+
+export function LinkGradient(props: LinkGradientProps) {
   return (
     <Link href={props.link ?? ""}>
       <a

@@ -1,7 +1,13 @@
-import { CloudinaryVideoProps } from "@/types/Cloudinary"
-import { cloudinary } from "@/utils/global"
+import { cloudinary, ICloudinary } from "@/utils/ImgProviders"
 
-export function CloudinaryVideo(props: CloudinaryVideoProps) {
+interface CldVideoProps extends Pick<ICloudinary, "dir"> {
+  size?: string | number
+  height?: string | number
+  width?: string | number
+  src?: string
+}
+
+export function CldVideo(props: CldVideoProps) {
   return (
     <video
       height={props.height ?? props.size}
