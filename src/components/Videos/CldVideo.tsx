@@ -4,7 +4,7 @@ interface CldVideoProps extends Pick<ICloudinary, "dir"> {
   size?: string | number
   height?: string | number
   width?: string | number
-  src?: string
+  src: string
 }
 
 export function CldVideo(props: CldVideoProps) {

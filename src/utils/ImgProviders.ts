@@ -20,7 +20,12 @@ export const cloudinary = ({
 
   const transforms = [transform?.width ? `w_${transform.width}` : undefined]
 
-  const parser = [baseUrl, cloudName, type, "upload", ...transforms, rootDir]
+  let parser: (string | undefined)[]
+
+  if (transform?.width !== undefined) {
+    parser = [baseUrl, cloudName, type, "upload", ...transforms, rootDir]
+  }
+  parser = [baseUrl, cloudName, type, "upload", rootDir]
 
   const withDir = [...parser, dir, fileName]
   const withoutDir = [...parser, fileName]
