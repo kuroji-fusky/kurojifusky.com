@@ -69,9 +69,7 @@ export function Hero() {
             <Image
               src={cloudinary({
                 rootDir: "fursonas",
-                transform: {
-                  width: 720
-                },
+                width: 720,
                 fileName: "comm_for_davey_g2_i3nmhp.png"
               })}
               alt="Art by catastrophe#6282 on Discord"

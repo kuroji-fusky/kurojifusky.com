@@ -3,9 +3,8 @@ export interface ICloudinary {
   rootDir?: "sf-website" | "fursonas" | ""
   dir?: string
   fileName?: string
-  transform?: {
-    width?: number
-  }
+  quality?: "auto" | string | number
+  width?: number
 }
 
 export const cloudinary = ({
@@ -13,27 +12,25 @@ export const cloudinary = ({
   rootDir = "sf-website",
   dir = "",
   fileName,
-  transform
+  width,
+  quality
 }: ICloudinary) => {
   const baseUrl = "https://res.cloudinary.com"
   const cloudName = "skepfusky-dookie"
 
-  const transforms = [transform?.width ? `w_${transform.width}` : undefined]
+  const transforms = [
+    width ? `w_${width}` : undefined,
+    quality
+      ? `q_${quality}${type === "video" ? ",ac_none,vc_vp9" : undefined}`
+      : undefined
+  ].filter((e) => e !== undefined)
 
-  let parser: (string | undefined)[]
+  const parseUrl = [baseUrl, cloudName, type, "upload", ...transforms, rootDir]
 
-  if (transform?.width !== undefined) {
-    parser = [baseUrl, cloudName, type, "upload", ...transforms, rootDir]
-  }
-  parser = [baseUrl, cloudName, type, "upload", rootDir]
+  const withDir = [...parseUrl, dir, fileName]
+  const withoutDir = [...parseUrl, fileName]
 
-  const withDir = [...parser, dir, fileName]
-  const withoutDir = [...parser, fileName]
-
-  if (dir !== "") {
-    return withDir.join("/")
-  }
-
+  if (dir !== "") return withDir.join("/")
   return withoutDir.join("/")
 }
 
