@@ -1,5 +1,6 @@
 import "@fortawesome/fontawesome-svg-core/styles.css"
 import "@/styles/globals.scss"
+import { Analytics } from "@vercel/analytics/react"
 import { useEffect } from "react"
 import type { AppProps } from "next/app"
 import { useRouter } from "next/router"
@@ -33,6 +34,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </>
   )
 }
