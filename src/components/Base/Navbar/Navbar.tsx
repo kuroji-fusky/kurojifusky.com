@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useContext } from "react"
-import styles from "./Navbar.module.scss"
 import { DropdownContext, NavbarScrollContext } from "@/utils/Context"
 import { Logo } from "./Logo"
 import { More, Portfolio, Summary } from "./DropdownSection"
@@ -42,6 +41,7 @@ export default function Navbar() {
   }, [expand, height, scrolled])
 
   const btnHandle = !expand ? "menu-btn-open" : "menu-btn-close"
+  const dropdownHandle = !expand ? "" : " pointer-events-none"
 
   return (
     <header className="w-full fixed top-0 px-9 py-1 transition-colors duration-300 !z-[10]">
@@ -51,18 +51,21 @@ export default function Navbar() {
           <button
             onClick={() => setExpand(!expand)}
             aria-label="Open/close menu"
-            id={styles["menu-btn"]}
             className={`${btnHandle} relative px-2 py-3 h-[3.5rem] w-[3.75rem] rounded-md z-3`}
           ></button>
           <div
             ref={dropdownRef}
-            className={styles[!expand ? "dd-container" : "dd-container-closed"]}
+            id="menu-container"
+            className={`overflow-hidden absolute z-[auto] top-0 left-0 right-0 px-9 bg-neutral-900 duration-[320ms]${dropdownHandle}`}
             style={{ height: "0px" }}
           >
             <div className="max-w-screen-2xl mx-auto px-0 pt-1 flex items-center">
               <Logo white />
             </div>
-            <nav className={styles["dd-wrapper"]}>
+            <nav
+              id="menu-contents"
+              className="transition-transform duration-[350ms] mt-2 overflow-hidden mx-auto max-w-screen-2xl grid grid-flow-col"
+            >
               <Summary />
               <Portfolio />
               <More />

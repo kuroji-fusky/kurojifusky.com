@@ -33,3 +33,11 @@
     @apply absolute rotate-45 top-[1.9rem];
   }
 }
+
+#menu-container {
+  transition-property: height;
+
+  &.pointer-events-none #menu-contents {
+    @apply translate-y-5;
+  }
+}
