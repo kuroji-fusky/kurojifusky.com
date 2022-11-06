@@ -2,7 +2,7 @@ import { useState } from "react"
 import dynamic from "next/dynamic"
 import { Container } from "@/components/Base"
 import { PortfolioItemSkeleton } from "@/components/PortfolioItem"
-import { PortfolioItems as portfolio } from "@/utils/PortfolioItems"
+import { PortfolioItems as portfolio } from "contents/PortfolioItems"
 import Backdrop from "@/components/Backdrop"
 
 const PortfolioItem = dynamic(() => import("@/components/PortfolioItem"), {

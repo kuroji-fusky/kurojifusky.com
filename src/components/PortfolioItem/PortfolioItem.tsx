@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown"
 import { LinkUnderline } from "../Links"
 import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/ImgProviders"
-import { PortfolioItemTypes } from "@/utils/PortfolioItems"
+import { PortfolioItemTypes } from "contents/PortfolioItems"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,

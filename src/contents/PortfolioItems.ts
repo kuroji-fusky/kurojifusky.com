@@ -1,4 +1,4 @@
-import { cloudinary, ytImg } from "./ImgProviders"
+import { cloudinary, ytImg } from "../utils/ImgProviders"
 
 type Category =
   | "Dev Project"

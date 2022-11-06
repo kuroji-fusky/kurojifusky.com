@@ -1,3 +1,6 @@
+@use "fonts";
+@use "branding";
+@use "navbar";
 @use "footer";
 
 @layer base {
@@ -26,10 +29,6 @@
 
   body {
     @apply overflow-x-hidden font-open-sans text-neutral-50 bg-borahae-dark;
-
-    div#__next * {
-      // outline: 2px solid cyan;
-    }
   }
 
   @each $i, $s in [ 1 "4xl", 2 "3xl", 3 "2xl", 4 "xl", 5 "lg" ] {

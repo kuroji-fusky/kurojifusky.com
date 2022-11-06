@@ -1,12 +1,12 @@
 import { useContext } from "react"
 import { DropdownContext } from "@/utils/Context"
-import { LinkUnderline } from "../Links"
+import { LinkUnderline } from "../../Links"
 
 export function NavLink(props: Omit<ISharedBtnProps, "onClick">) {
-  const { expand, isExpanded } = useContext(DropdownContext)
+  const { isExpanded } = useContext(DropdownContext)
 
   return (
-    <LinkUnderline link={props.link} onClick={() => isExpanded(!expand)}>
+    <LinkUnderline link={props.link} onClick={() => isExpanded(true)}>
       {props.name}
     </LinkUnderline>
   )

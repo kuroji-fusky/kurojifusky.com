@@ -1,0 +1,35 @@
+:is(.menu-btn-close, .menu-btn-open) {
+  &::before,
+  &::after {
+    @apply content-[""] translate-x-[0.35rem] -translate-y-0.5 w-[1.95rem] block border-b-2 transition-all duration-300;
+  }
+}
+
+.menu-btn-close {
+  &:hover {
+    &::before {
+      @apply absolute rotate-0 top-[1.45rem];
+    }
+
+    &::after {
+      @apply absolute rotate-0 top-[2.25rem];
+    }
+  }
+
+  &::before {
+    @apply absolute rotate-0 top-[1.35rem];
+  }
+
+  &::after {
+    @apply absolute rotate-0 top-[2.35rem];
+  }
+}
+
+.menu-btn-open {
+  &::before {
+    @apply absolute -rotate-45 top-[1.9rem];
+  }
+  &::after {
+    @apply absolute rotate-45 top-[1.9rem];
+  }
+}

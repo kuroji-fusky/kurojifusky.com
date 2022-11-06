@@ -8,10 +8,10 @@ import Head from "next/head"
 
 import NextNProgress from "nextjs-progressbar"
 import { Layout } from "@/components/Base"
-import Notification from "@/components/Notification"
 import * as ga from "@/utils/ga"
 
 import { config } from "@fortawesome/fontawesome-svg-core"
+import { disableOnDev } from "@/utils/envHandler"
 
 config.autoAddCss = false
 
@@ -19,10 +19,12 @@ export default function Cutie({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   useEffect(() => {
-    const routeChange = (url: string) => ga.pageView(url)
+    if (disableOnDev) {
+      const routeChange = (url: string) => ga.pageView(url)
 
-    router.events.on("routeChangeComplete", routeChange)
-    return () => router.events.off("routeChangeComplete", routeChange)
+      router.events.on("routeChangeComplete", routeChange)
+      return () => router.events.off("routeChangeComplete", routeChange)
+    }
   }, [router.events])
 
   return (
@@ -34,7 +36,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Analytics />
+      {disableOnDev && <Analytics />}
     </>
   )
 }
