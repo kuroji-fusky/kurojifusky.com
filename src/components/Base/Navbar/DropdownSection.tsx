@@ -10,7 +10,7 @@ import { NavLink } from "./NavLink"
 interface DropdownListItemProps {
   name: string
   link: string
-  icon?: IconDefinition
+  icon: IconDefinition
   description?: string
   gradStart?: string
   gradEnd?: string
@@ -25,11 +25,11 @@ function DropdownListItem(props: DropdownListItemProps) {
       {props.description ? (
         <Link href={props.link} passHref>
           <a
-            className="flex items-center gap-4 border rounded-md pl-5 pr-3 py-3"
+            className="flex items-center gap-4 rounded-md pl-5 pr-3 py-3"
             onClick={() => isExpanded(true)}
           >
-            <div className="w-6 grid place-items-center">
-              <FontAwesomeIcon icon={props.icon ?? faPoo} size="lg" />
+            <div className="border-2 rounded-md p-4 aspect-square w-[3.5rem] grid place-items-center">
+              <FontAwesomeIcon icon={props.icon} />
             </div>
             <div>
               <strong>{props.name}</strong>
@@ -51,13 +51,13 @@ interface IDropdownSection {
 
 function DropdownSection(props: IDropdownSection) {
   return (
-    <div className="pt-1.5 pl-0 pr-7 py-6 duration-[310ms]">
+    <div id="dropdown-section" className="pt-1.5 pl-0 pr-7 py-6 duration-[310ms]">
       {props.heading && (
         <h2 className="relative uppercase text-2xl pb-2">
           <span className="gradient-header">{props.heading}</span>
         </h2>
       )}
-      <div role="list" className="flex flex-col gap-y-2">
+      <div role="list" className="prevent-blocked-list">
         {props.section?.map((item, i) => (
           <DropdownListItem
             key={i}
@@ -77,9 +77,9 @@ export function Summary() {
 }
 
 export function Portfolio() {
-  return <DropdownSection heading="Portfolio" section={n.portfolio} />
+  return <DropdownSection heading="Creative Works" section={n.portfolio} />
 }
 
 export function More() {
-  return <DropdownSection heading="More about this autist" section={n.autist} />
+  return <DropdownSection heading="More" section={n.autist} />
 }

@@ -41,3 +41,11 @@
     @apply translate-y-5;
   }
 }
+
+.prevent-blocked-list {
+  @apply grid grid-cols-1 gap-y-1;
+
+  &:not(:first-child) {
+    @apply lg:grid-cols-2;
+  }
+}

@@ -19,10 +19,10 @@ export const cloudinary = ({
   const cloudName = "skepfusky-dookie"
 
   const transforms = [
-    width ? `w_${width}` : undefined,
     quality
-      ? `q_${quality}${type === "video" ? ",ac_none,vc_vp9" : undefined}`
-      : undefined
+      ? `q_${quality}${type === "video" ? ",ac_none,vc_vp9" : ""}`
+      : undefined,
+    width ? `w_${width}` : undefined,
   ].filter((e) => e !== undefined)
 
   const parseUrl = [baseUrl, cloudName, type, "upload", ...transforms, rootDir]

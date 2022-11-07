@@ -8,7 +8,12 @@ export function Logo({ white }: { white?: boolean }) {
 
   return (
     <Link href="/" passHref>
-      <a className={alternateLogos} onClick={() => isExpanded(true)}>
+      <a
+        className={alternateLogos}
+        onClick={() => isExpanded(true)}
+        aria-label="skepfusky"
+        aria-hidden={!white ? undefined : "true"}
+      >
         skepfusky
       </a>
     </Link>

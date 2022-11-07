@@ -29,11 +29,19 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
 
   return (
     <InView
-      onChange={(inView) => console.log(inView)}
+      itemScope
+      itemType="http://schema.org/CreativeWork"
+      // onChange={(inView) => console.log(inView)}
       className="relative before:content-[''] before:absolute before:inset-1 before:opacity-0 before:hover:opacity-75
 			before:transition-opacity before:duration-700
 			before:bg-gradient-to-tr before:from-sona-borahae-800 before:to-sona-skycyan-700 before:blur-2xl before:-z-1"
     >
+      <meta
+        itemProp="image"
+        content={
+          props.img ?? cloudinary({ rootDir: "", fileName: "sample.jpg" })
+        }
+      />
       <animated.div
         ref={ref}
         role="listitem"
@@ -51,9 +59,15 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
         <div className="relative w-full h-[15rem] overflow-hidden rounded-tl-lg rounded-tr-lg">
           <LazyImg
             src={
-              props.img ?? cloudinary({ rootDir: "", fileName: "sample.jpg" })
+              props.img ??
+              cloudinary({
+                rootDir: "",
+                quality: "auto",
+                fileName: "sample.jpg"
+              })
             }
             objectFit="cover"
+            alt={`Thumbail for ${props.title} - ${props.description}`}
             lazy
           />
         </div>
@@ -66,10 +80,13 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
             className="relative before:content-[attr(data-text)] before:absolute before:top-0 before:left-0 before:right-0
 						before:bg-gradient-to-r before:from-sona-borahae-500 before:to-sona-skycyan-600 before:bg-clip-text before:z-5 before:text-transparent
 						before:group-hover:opacity-0 before:transition-opacity before:duration-500"
+            itemProp="name"
           >
             {props.title}
           </h2>
-          <ReactMarkdown>{props.description ?? ""}</ReactMarkdown>
+          <div itemProp="description">
+            <ReactMarkdown>{props.description ?? ""}</ReactMarkdown>
+          </div>
           <LinkUnderline
             link={props.link ?? ""}
             name="View project"

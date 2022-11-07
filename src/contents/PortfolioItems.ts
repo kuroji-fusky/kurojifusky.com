@@ -26,7 +26,7 @@ export interface PortfolioItemTypes extends Partial<PortfolioLinks> {
 }
 
 const cImg = (fileName: string) =>
-  cloudinary({ dir: "projects", fileName: fileName })
+  cloudinary({ dir: "projects", quality: "auto", fileName: fileName })
 
 export const PortfolioItems: PortfolioItemTypes[] = [
   {

@@ -1,8 +1,10 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 import {
+	faBriefcase,
   faCode,
   faFolder,
   faLightbulb,
+  faPencil,
   faPenSquare
 } from "@fortawesome/free-solid-svg-icons"
 
@@ -40,14 +42,20 @@ export const NavItems: INavItems = {
       link: "/blog",
       name: "Blog",
       description: "Sharing my sad life to people",
-      icon: faPenSquare
+      icon: faPencil
     },
     {
-      link: "/knowledge",
-      name: "Knowledge Base",
-      description: "Stuff I know a thing but interactive",
-      icon: faLightbulb
+      link: "/resume",
+      name: "Resume",
+      description: "All my skills and experiences",
+      icon: faBriefcase
     },
+    // {
+    //   link: "/knowledge",
+    //   name: "Knowledge Base",
+    //   description: "Stuff I know a thing but interactive",
+    //   icon: faLightbulb
+    // },
     {
       link: "/about",
       name: "About Me",

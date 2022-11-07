@@ -31,6 +31,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="HandheldFriendly" content="true" />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
       <Layout>

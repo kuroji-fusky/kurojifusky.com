@@ -12,6 +12,7 @@ const PortfolioItem = dynamic(() => import("@/components/PortfolioItem"), {
 export default function Portfolio() {
   const t = "Portfolio"
   const d = "All works created by skepfusky"
+
   return (
     <Container title={t} description={d}>
       <Backdrop
@@ -22,9 +23,10 @@ export default function Portfolio() {
         <h1 className="text-5xl xl:text-6xl bg-gradient-to-br from-sona-borahaealt-300 to-white bg-clip-text text-transparent">
           Portfolio
         </h1>
-        <p className="text-base xl:text-xl w-full md:w-[50%] px-5">
-          All of my public and open source works of videos, music, and web apps
-        </p>
+        <article className="text-base xl:text-xl w-full md:w-[50%] px-5 flex flex-col gap-y-2">
+          <p>All of my public and open source works of videos, music, and web apps</p>
+          <p>Since I do myriad of things, organization is still work in progress!</p>
+        </article>
         {/* <div className="flex flex-wrap justify-center gap-4 font-jetbrains-mono text-sm">
           <span className="rounded-md py-1 px-3 bg-red-700">Film</span>
           <span className="rounded-md py-1 px-3 bg-sona-royalblue-600">
