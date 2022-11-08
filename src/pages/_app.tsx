@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import "@/styles/globals.scss"
 import { Analytics } from "@vercel/analytics/react"
 import { useEffect } from "react"
@@ -11,7 +12,6 @@ import * as ga from "@/utils/ga"
 
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { disableOnDev } from "@/utils/envHandler"
-import "@fortawesome/fontawesome-svg-core/styles.css"
 
 config.autoAddCss = false
 
