@@ -6,6 +6,15 @@
 The source code of my personal website using the Nextwind stack, Next.js +
 Tailwind CSS! Deployed in Vercel.
 
+## Tech stack
+- Next.js + TypeScript
+- Framer Motion
+- Tailwind CSS
+- Sass
+- Redis
+- Strapi CMS
+- Cloudinary
+
 ## Running the abomination
 
 Fork and clone the repo and install the bloated garbage

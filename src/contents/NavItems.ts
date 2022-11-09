@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 import {
-	faBriefcase,
+  faBriefcase,
   faCode,
   faFolder,
   faLightbulb,
@@ -33,6 +33,12 @@ const dirParser = (name: string) => {
 export const NavItems: INavItems = {
   summary: [
     {
+      link: "/about",
+      name: "About Me",
+      description: "I'm a big idiot",
+      icon: faCode
+    },
+    {
       link: "/portfolio",
       name: "Portfolio",
       description: "My crappy projects",
@@ -43,25 +49,13 @@ export const NavItems: INavItems = {
       name: "Blog",
       description: "Sharing my sad life to people",
       icon: faPencil
-    },
-    {
-      link: "/resume",
-      name: "Resume",
-      description: "All my skills and experiences",
-      icon: faBriefcase
-    },
+    }
     // {
     //   link: "/knowledge",
     //   name: "Knowledge Base",
     //   description: "Stuff I know a thing but interactive",
     //   icon: faLightbulb
     // },
-    {
-      link: "/about",
-      name: "About Me",
-      description: "I'm a big idiot",
-      icon: faCode
-    }
   ],
   portfolio: [
     { link: "#", name: "Projects I've Contributed" },

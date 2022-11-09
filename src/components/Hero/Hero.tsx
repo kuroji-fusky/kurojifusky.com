@@ -51,8 +51,7 @@ export function Hero() {
               }
             />
             <LinkUnderline name="Portfolio" link="/portfolio" />
-            <LinkUnderline name="Resume" link="/resume" />
-            <LinkUnderline name="About this cutie" link="/about" />
+            <LinkUnderline name="About Me" link="/about" />
           </div>
           <span
             className="font-jetbrains-mono opacity-75 text-sm"
