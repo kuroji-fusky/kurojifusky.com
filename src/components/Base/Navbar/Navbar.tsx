@@ -45,13 +45,32 @@ export default function Navbar() {
   const btnHandle = !expand ? "menu-btn-open" : "menu-btn-close"
   const dropdownHandle = !expand ? "" : " pointer-events-none"
 
+  const nameShow = () => {
+    if (!expand) {
+      return { opacity: 1, top: 0 }
+    }
+
+    if (!scrolled) {
+      return { opacity: 0, top: -10 }
+    }
+
+    return { opacity: 1, top: 0 }
+  }
+
   return (
     <header className="w-full fixed top-0 px-9 py-1 transition-colors duration-300 !z-[10]">
       <div className="mx-auto max-w-screen-2xl px-0 pt-2 flex justify-between items-center">
         <NavbarContext.Provider value={NavbarValues}>
           <div>
             <Logo />
-            <motion.span>
+            <motion.span
+              initial={{ opacity: 0, top: -10 }}
+              animate={nameShow()}
+              transition={{ duration: 0.25 }}
+              className={`relative z-[100] ${
+                !scrolled ? "pointer-events-none" : "pointer-events-auto"
+              }`}
+            >
               <NavPageName />
             </motion.span>
           </div>

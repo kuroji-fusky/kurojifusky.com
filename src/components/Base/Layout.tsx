@@ -28,10 +28,10 @@ export function Layout(props: ChildrenOnly) {
     return () => window.removeEventListener("scroll", handleNavbarScroll)
   }, [])
 
-  const HeroImgValue = { loaded, isLoaded }
+  const HomeHeroImgValue = { loaded, isLoaded }
 
   return (
-    <HomeHeroImgContext.Provider value={HeroImgValue}>
+    <HomeHeroImgContext.Provider value={HomeHeroImgValue}>
       <NavbarContext.Provider value={NavbarValues}>
         <Navbar />
         {props.children}

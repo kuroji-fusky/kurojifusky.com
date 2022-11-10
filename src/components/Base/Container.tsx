@@ -18,7 +18,12 @@ export function Container(props: ContainerProps) {
   const title =
     router.pathname == "/" ? props.title : `${props.title} | skepfusky`
 
-  setPageName(props.title as string)
+  const detect404 =
+    props.title === "404 Not Found"
+      ? "My website is still incomplete, deal with it"
+      : props.title
+
+  setPageName(detect404 as string)
 
   return (
     <>
