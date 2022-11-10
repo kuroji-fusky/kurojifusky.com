@@ -1,5 +1,7 @@
 import { createContext } from "react"
 
+type PickRequired<T, K extends keyof T> = Required<Pick<T, K>>
+
 type NavbarContextTypes = {
   expand: boolean
   scrolled: boolean
@@ -9,8 +11,8 @@ type NavbarContextTypes = {
   setPageName: (pageName: string) => void
 }
 
-export type isExpandedOnly = Required<Pick<NavbarContextTypes, "isExpanded">>
-export type setPageNameOnly = Required<Pick<NavbarContextTypes, "setPageName">>
+export type isExpandedOnly = PickRequired<NavbarContextTypes, "isExpanded">
+export type setPageNameOnly = PickRequired<NavbarContextTypes, "setPageName">
 
 export const NavbarContext = createContext<Partial<NavbarContextTypes>>({
   expand: true,
