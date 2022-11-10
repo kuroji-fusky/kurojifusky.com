@@ -12,7 +12,7 @@ export const skills = [
   {
     title: "Indie music producer",
     description:
-      "ave an okay-ish experience with FL Studio since 2017, especially for mastering, production, and a bit of audio engineerin"
+      "I do have an okay-ish experience with FL Studio since beginning in mid-2017, especially for mastering, production, and a bit of audio engineering during the pandemic"
   },
   {
     title: "SFM 3D animations",

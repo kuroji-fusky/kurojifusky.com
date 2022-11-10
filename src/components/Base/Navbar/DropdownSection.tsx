@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
 import Link from "next/link"
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
-import { faPoo } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { DropdownContext } from "@/utils/Context"
+import { isExpandedOnly, NavbarContext } from "@/utils/Context"
 import { NavItems as n } from "contents/NavItems"
 import { NavLink } from "./NavLink"
 
@@ -19,7 +18,7 @@ interface DropdownListItemProps {
 
 // TEMPLATE
 function DropdownListItem(props: DropdownListItemProps) {
-  const { isExpanded } = useContext(DropdownContext)
+  const { isExpanded } = useContext(NavbarContext) as isExpandedOnly
   return (
     <div role="listitem">
       {props.description ? (
@@ -51,7 +50,10 @@ interface IDropdownSection {
 
 function DropdownSection(props: IDropdownSection) {
   return (
-    <div id="dropdown-section" className="pt-1.5 pl-0 pr-7 py-6 duration-[310ms]">
+    <div
+      id="dropdown-section"
+      className="pt-1.5 pl-0 pr-7 py-6 duration-[310ms]"
+    >
       {props.heading && (
         <h2 className="relative uppercase text-2xl pb-2">
           <span className="gradient-header">{props.heading}</span>

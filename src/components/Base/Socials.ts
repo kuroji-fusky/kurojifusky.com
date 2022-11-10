@@ -24,7 +24,6 @@ const socials: SocialTypes[] = [
   //   icon: faInstagram
   // },
   { name: "Github", link: "https://github.com/skepfusky", icon: faGithub },
-  { name: "GitLab", link: "https://gitlab.com/skepfusky", icon: faGitlab },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/kerby-keith-aquino-434037238/",

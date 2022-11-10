@@ -21,12 +21,12 @@ export interface INavItems {
   autist: Pick<ItemTypes, "name" | "link">[]
 }
 
-const dirParser = (name: string) => {
-  const regexParse = name.toLowerCase().replace(/\s/g, "-")
+const dirParser = (page: string) => {
+  const regexParse = page.toLowerCase().replace(/\s/g, "-")
 
   return {
     link: `/${regexParse}`,
-    name: name
+    name: page
   }
 }
 
@@ -66,3 +66,10 @@ export const NavItems: INavItems = {
   ],
   autist: [dirParser("Timeline"), dirParser("Fursona"), dirParser("Artworks")]
 }
+
+export const NavShortcuts = [
+  { emoji: "📚", link: "/portfolio", name: "Portfolio" },
+  { emoji: "💡", link: "/knowledge-base", name: "Knowledge Base" },
+  { emoji: "📝", link: "/blog", name: "Blog" },
+  { emoji: "🦊", link: "/about", name: "About" }
+]

@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { HeroImgContext } from "@/utils/Context"
+import { HomeHeroImgContext } from "@/utils/Context"
 import Backdrop from "../Backdrop"
 import { LinkUnderline } from "../Links"
 import MovingGrid from "../MovingGrid"
@@ -11,7 +11,7 @@ import socials from "./Socials"
 
 export default function Footer() {
   const router = useRouter()
-  const { loaded } = useContext(HeroImgContext)
+  const { loaded } = useContext(HomeHeroImgContext)
 
   const hideFooterHero =
     router.pathname !== "/" ? "flex flex-col" : "hidden lg:flex"

@@ -1,5 +1,5 @@
 import { Container } from "@/components/Base"
-import { Hero } from "@/components/Hero"
+import { HomeHero } from "@/components/Heros"
 
 export default function Home() {
   const t = "skepfusky"
@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <Container title={t} description={d}>
-			<Hero />
+			<HomeHero />
     </Container>
   )
 }

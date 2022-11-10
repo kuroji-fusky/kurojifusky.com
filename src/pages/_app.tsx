@@ -12,6 +12,7 @@ import * as ga from "@/utils/ga"
 
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { disableOnDev } from "@/utils/envHandler"
+import { MotionConfig } from "framer-motion"
 
 config.autoAddCss = false
 
@@ -34,10 +35,12 @@ export default function Cutie({ Component, pageProps }: AppProps) {
         <meta name="HandheldFriendly" content="true" />
       </Head>
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      {disableOnDev && <Analytics />}
+      <MotionConfig reducedMotion="user">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        {disableOnDev && <Analytics />}
+      </MotionConfig>
     </>
   )
 }

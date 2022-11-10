@@ -5,10 +5,10 @@ import Image from "next/image"
 import { cloudinary } from "@/utils/ImgProviders"
 import { LinkUnderline } from "../Links"
 import { HomeSection } from "../Sections"
-import { HeroImgContext } from "@/utils/Context"
+import { HomeHeroImgContext } from "@/utils/Context"
 
-export function Hero() {
-  const { loaded, isLoaded } = useContext(HeroImgContext)
+export function HomeHero() {
+  const { loaded, isLoaded } = useContext(HomeHeroImgContext)
 
   const loadingIndicator = !loaded ? "block" : "hidden"
   const img = !loaded ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"

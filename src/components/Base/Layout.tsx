@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { HeroImgContext, NavbarScrollContext } from "@/utils/Context"
+import { HomeHeroImgContext, NavbarContext } from "@/utils/Context"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 
@@ -8,7 +8,8 @@ export function Layout(props: ChildrenOnly) {
   const router = useRouter()
 
   const [scrolled, isScrolled] = useState(false)
-  const NavbarCtxValue = { scrolled, isScrolled }
+	const [pageName, setPageName] = useState("")
+  const NavbarValues = { scrolled, isScrolled, pageName, setPageName }
 
   const [loaded, isLoaded] = useState(false)
 
@@ -27,15 +28,15 @@ export function Layout(props: ChildrenOnly) {
     return () => window.removeEventListener("scroll", handleNavbarScroll)
   }, [])
 
-  const HeroImgCtxValue = { loaded, isLoaded }
+  const HeroImgValue = { loaded, isLoaded }
 
   return (
-    <HeroImgContext.Provider value={HeroImgCtxValue}>
-      <NavbarScrollContext.Provider value={NavbarCtxValue}>
+    <HomeHeroImgContext.Provider value={HeroImgValue}>
+      <NavbarContext.Provider value={NavbarValues}>
         <Navbar />
         {props.children}
-      </NavbarScrollContext.Provider>
+      </NavbarContext.Provider>
       <Footer />
-    </HeroImgContext.Provider>
+    </HomeHeroImgContext.Provider>
   )
 }

@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef, useContext } from "react"
-import { DropdownContext, NavbarScrollContext } from "@/utils/Context"
+import { motion, useAnimation } from "framer-motion"
+import { NavbarContext } from "@/utils/Context"
 import { Logo } from "./Logo"
 import { More, Portfolio, Summary } from "./DropdownSection"
+import NavPageName from "./NavPageName"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
+  const { scrolled, pageName } = useContext(NavbarContext)
+  const NavbarValues = { expand, isExpanded: setExpand, pageName }
 
-  const { scrolled } = useContext(NavbarScrollContext)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
   const [height, setHeight] = useState(0)
 
   useEffect(() => {
@@ -45,9 +47,14 @@ export default function Navbar() {
 
   return (
     <header className="w-full fixed top-0 px-9 py-1 transition-colors duration-300 !z-[10]">
-      <div className="mx-auto max-w-screen-2xl flex justify-between items-center">
-        <DropdownContext.Provider value={{ expand, isExpanded: setExpand }}>
-          <Logo />
+      <div className="mx-auto max-w-screen-2xl px-0 pt-2 flex justify-between items-center">
+        <NavbarContext.Provider value={NavbarValues}>
+          <div>
+            <Logo />
+            <motion.span>
+              <NavPageName />
+            </motion.span>
+          </div>
           <button
             onClick={() => setExpand(!expand)}
             aria-label="Open/close menu"
@@ -71,7 +78,7 @@ export default function Navbar() {
               <More />
             </nav>
           </div>
-        </DropdownContext.Provider>
+        </NavbarContext.Provider>
       </div>
     </header>
   )

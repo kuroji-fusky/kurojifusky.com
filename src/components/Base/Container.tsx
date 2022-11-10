@@ -1,5 +1,7 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
+import { useContext } from "react"
+import { NavbarContext, setPageNameOnly } from "@/utils/Context"
 
 interface ContainerProps extends Omit<Partial<Components>, "id"> {
   title?: string
@@ -9,10 +11,14 @@ interface ContainerProps extends Omit<Partial<Components>, "id"> {
 
 export function Container(props: ContainerProps) {
   const router = useRouter()
+  const { setPageName } = useContext(NavbarContext) as setPageNameOnly
+
   const url = `https://skepfusky.xyz${router.asPath}`
 
   const title =
     router.pathname == "/" ? props.title : `${props.title} | skepfusky`
+
+  setPageName(props.title as string)
 
   return (
     <>

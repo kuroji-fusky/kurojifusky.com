@@ -1,31 +1,32 @@
 import { createContext } from "react"
 
-type DropdownTypes = {
+type NavbarContextTypes = {
   expand: boolean
-  isExpanded: (expand: boolean) => void
-}
-
-type NavbarScrollProps = {
   scrolled: boolean
+  pageName: string
   isScrolled: (scrolled: boolean) => void
+  isExpanded: (expand: boolean) => void
+  setPageName: (pageName: string) => void
 }
 
-type HeroImgTypes = {
+export type isExpandedOnly = Required<Pick<NavbarContextTypes, "isExpanded">>
+export type setPageNameOnly = Required<Pick<NavbarContextTypes, "setPageName">>
+
+export const NavbarContext = createContext<Partial<NavbarContextTypes>>({
+  expand: true,
+  scrolled: false,
+  pageName: "",
+  isExpanded: () => {},
+  isScrolled: () => {},
+  setPageName: () => {}
+})
+
+type HomeHeroImgTypes = {
   loaded: boolean
   isLoaded: (loaded: boolean) => void
 }
 
-export const DropdownContext = createContext<DropdownTypes>({
-  expand: true,
-  isExpanded: () => {}
-})
-
-export const NavbarScrollContext = createContext<NavbarScrollProps>({
-  scrolled: false,
-  isScrolled: () => {}
-})
-
-export const HeroImgContext = createContext<HeroImgTypes>({
+export const HomeHeroImgContext = createContext<HomeHeroImgTypes>({
   loaded: false,
   isLoaded: () => {}
 })

@@ -1,6 +1,5 @@
 @use "branding";
-@use "navbar";
-@use "footer";
+@use "components";
 
 @layer base {
   ::-webkit-scrollbar {
