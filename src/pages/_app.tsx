@@ -30,7 +30,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   useEffect(() => {
-    hotjar.initialize(3249416, 6)
+    hotjar.initialize(3249585, 6)
   }, [])
 
   return (
