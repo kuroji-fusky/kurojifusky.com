@@ -22,13 +22,3 @@ export const NavbarContext = createContext<Partial<NavbarContextTypes>>({
   isScrolled: () => {},
   setPageName: () => {}
 })
-
-type HomeHeroImgTypes = {
-  loaded: boolean
-  isLoaded: (loaded: boolean) => void
-}
-
-export const HomeHeroImgContext = createContext<HomeHeroImgTypes>({
-  loaded: false,
-  isLoaded: () => {}
-})

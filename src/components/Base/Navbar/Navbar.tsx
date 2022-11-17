@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react"
 import { motion, useAnimation } from "framer-motion"
-import { NavbarContext } from "@/utils/Context"
+import { NavbarContext } from "contexts"
 import { Logo } from "./Logo"
 import { More, Portfolio, Summary } from "./DropdownSection"
 import NavPageName from "./NavPageName"
@@ -91,6 +91,7 @@ export default function Navbar() {
             <nav
               id="menu-contents"
               className="transition-transform duration-[350ms] mt-2 overflow-hidden mx-auto max-w-screen-2xl grid grid-flow-col"
+              style={{ gridTemplateColumns: "25% 1fr 1fr" }}
             >
               <Summary />
               <Portfolio />

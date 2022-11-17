@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { isExpandedOnly, NavbarContext } from "@/utils/Context"
+import { isExpandedOnly, NavbarContext } from "contexts"
 import { LinkUnderline } from "../../Links"
 
 export function NavLink(props: Omit<ISharedBtnProps, "onClick">) {

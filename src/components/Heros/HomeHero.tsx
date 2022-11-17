@@ -1,32 +1,18 @@
-import { useContext } from "react"
 import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import { cloudinary } from "@/utils/ImgProviders"
 import { LinkUnderline } from "../Links"
 import { HomeSection } from "../Sections"
-import { HomeHeroImgContext } from "@/utils/Context"
 
 export function HomeHero() {
-  const { loaded, isLoaded } = useContext(HomeHeroImgContext)
-
-  const loadingIndicator = !loaded ? "block" : "hidden"
-  const img = !loaded ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"
-
   return (
     <HomeSection
       id="hero"
       style={{ height: "calc(100vh - 15rem" }}
       expandContent
     >
-      <div
-        className={`${loadingIndicator} absolute inset-0 grid place-items-center font-jetbrains-mono text-2xl w-screen h-screen`}
-      >
-        Loading...
-      </div>
-      <div
-        className={`${img} transition-all duration-500 fixed inset-0 flex flex-col-reverse lg:flex-row gap-0 lg:gap-10 items-center justify-center px-1.5 lg:px-10 mx-auto max-w-[90%] 2xl:max-w-[80%]`}
-      >
+      <div className="transition-all duration-500 fixed inset-0 flex flex-col-reverse lg:flex-row gap-0 lg:gap-10 items-center justify-center px-1.5 lg:px-10 mx-auto max-w-[90%] 2xl:max-w-[80%]">
         {/* Pointless info */}
         <article className="flex flex-col gap-8 text-center lg:text-left items-center lg:items-start">
           <h2 className="text-5xl md:text-6xl 2xl:text-7xl">
@@ -75,7 +61,6 @@ export function HomeHero() {
               layout="fill"
               objectFit="contain"
               priority
-              onLoadingComplete={() => isLoaded(true)}
             />
           </div>
         </aside>

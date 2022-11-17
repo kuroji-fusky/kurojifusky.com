@@ -24,6 +24,7 @@ export function AboutHero() {
           animate={anims.backdropAnimate}
           transition={{ duration: 1 }}
           style={{ willChange }}
+					aria-hidden="true"
         />
         <motion.div
           className="absolute blur-[45px] rounded-full -z-1 pointer-events-none bottom-0 right-5 h-[300px] bg-gradient-to-r from-sona-royalblue-600  to-sona-borahaealt-400 rotate-6"
@@ -31,6 +32,7 @@ export function AboutHero() {
           animate={anims.backdropAnimate}
           transition={{ duration: 1 }}
           style={{ willChange }}
+					aria-hidden="true"
         />
         <article className="flex flex-col items-center text-center gap-y-5 relative z-1">
           <motion.div
@@ -57,7 +59,7 @@ export function AboutHero() {
             transition={{ duration: 1, type: "spring", delay: 2 * 0.12 }}
             style={{ willChange }}
           >
-            I'm a hobbyist individual lol
+            I'm a hobbyist individual
           </motion.h1>
           <motion.p
             className="text-base md:text-xl w-[90%] md:w-[60%]"

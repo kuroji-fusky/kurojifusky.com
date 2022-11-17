@@ -30,6 +30,12 @@ const cImg = (fileName: string) =>
 
 export const PortfolioItems: PortfolioItemTypes[] = [
   {
+    img: cImg("skepfusky-xyz_enbdyq.png"),
+    category: "Website",
+    title: "skepfusky.xyz",
+    description: "Awful website covered with amazing UI"
+  },
+  {
     img: cImg("paco-drawing-stats_khjf7s.png"),
     category: "Website",
     title: "Paco Drawing Stats",
