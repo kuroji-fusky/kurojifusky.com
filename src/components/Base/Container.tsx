@@ -13,10 +13,10 @@ export function Container(props: ContainerProps) {
   const router = useRouter()
   const { setPageName } = useContext(NavbarContext) as setPageNameOnly
 
-  const url = `https://skepfusky.xyz${router.asPath}`
+  const url = `https://kurofusky.xyz${router.asPath}`
 
   const title =
-    router.pathname == "/" ? props.title : `${props.title} | skepfusky`
+    router.pathname == "/" ? props.title : `${props.title} | kurofusky`
 
   const detect404 =
     props.title === "404 Not Found"
@@ -47,7 +47,7 @@ export function Container(props: ContainerProps) {
           !props.wrap
             ? `relative z-1${props.className ? " " + props.className : ""}`
             : `relative z-1 max-w-screen-2xl mx-auto px-7${
-                props.className ?? ""
+						props.className ? " " + props.className : ""
               }`
         }
         style={props.style ?? undefined}

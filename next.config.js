@@ -9,6 +9,15 @@ const nextConfig = {
 			"res.cloudinary.com",
 			"img.youtube.com"
 		],
+	},
+	async redirects() {
+		return [
+			{
+				source: '/fursona',
+				destination: '/about/fursona',
+				permanent: true
+			}
+		]
 	}
 }
 

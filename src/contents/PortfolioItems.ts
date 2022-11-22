@@ -32,7 +32,7 @@ export const PortfolioItems: PortfolioItemTypes[] = [
   {
     img: cImg("skepfusky-xyz_enbdyq.png"),
     category: "Website",
-    title: "skepfusky.xyz",
+    title: "kurofusky.xyz",
     description: "Awful website covered with amazing UI"
   },
   {
@@ -70,37 +70,37 @@ export const PortfolioItems: PortfolioItemTypes[] = [
     description:
       "A music video for my debut album *Horizon*, filmed in various dates before and during the pandemic"
   },
-  {
-    img: cloudinary({
-      dir: "album-covers",
-      fileName: "ALBUM_A-New-Life_bofney.png"
-    }),
-    category: "Discography",
-    title: '"Dreaming"',
-    description:
-      "Reguarding as one of my favorite single produced, it also appears on track 2 of my second self-published album *A New Life*"
-  },
-  {
-    img: ytImg("5SybfjVntTw"),
-    category: "Film",
-    title: "DFCIS School Day 2019",
-    description:
-      "A school highlight film in various dates from the year 2019 - with upbeat music and fastpaced editing style!"
-  },
-  {
-    img: ytImg("480bhKCmTZg"),
-    category: "Film",
-    title: "DFCIS Field Trip Edit 2019",
-    description:
-      "Highlights from the school field trip, filmed on April 7, 2019 and shot on a GoPro and a mirrorless Canon camera"
-  },
-  {
-    img: ytImg("1GLQLNG_lpM"),
-    category: "Film",
-    title: "Jin Woo's Adventure",
-    description:
-      "A bunch of my then senior collegues promoting the school by sending flyers or cleaning garbage on the streets"
-  },
+  // {
+  //   img: cloudinary({
+  //     dir: "album-covers",
+  //     fileName: "ALBUM_A-New-Life_bofney.png"
+  //   }),
+  //   category: "Discography",
+  //   title: '"Dreaming"',
+  //   description:
+  //     "Reguarding as one of my favorite single produced, it also appears on track 2 of my second self-published album *A New Life*"
+  // },
+  // {
+  //   img: ytImg("5SybfjVntTw"),
+  //   category: "Film",
+  //   title: "DFCIS School Day 2019",
+  //   description:
+  //     "A school highlight film in various dates from the year 2019 - with upbeat music and fastpaced editing style!"
+  // },
+  // {
+  //   img: ytImg("480bhKCmTZg"),
+  //   category: "Film",
+  //   title: "DFCIS Field Trip Edit 2019",
+  //   description:
+  //     "Highlights from the school field trip, filmed on April 7, 2019 and shot on a GoPro and a mirrorless Canon camera"
+  // },
+  // {
+  //   img: ytImg("1GLQLNG_lpM"),
+  //   category: "Film",
+  //   title: "Jin Woo's Adventure",
+  //   description:
+  //     "A bunch of my then senior collegues promoting the school by sending flyers or cleaning garbage on the streets"
+  // },
   {
     img: ytImg("8nbMVrNRRCM"),
     category: "School Project",

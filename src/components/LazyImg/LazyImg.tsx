@@ -21,7 +21,7 @@ export default function LazyImg(props: ImgLoadingProps) {
     <>
       <div
         className={`absolute inset-0 bg-sona-borahaealt-600 ${isLoaded} ${
-          props.className ?? undefined
+          props.className ?? ""
         }`}
         aria-hidden="true"
       ></div>
