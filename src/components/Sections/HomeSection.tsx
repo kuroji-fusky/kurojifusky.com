@@ -5,7 +5,7 @@ interface HomeSectionProps extends Components {
 
 export function HomeSection(props: Partial<HomeSectionProps>) {
   const expandClasses = !props.expandContent
-    ? "max-w-screen-2xl mx-auto px-10"
+    ? "max-w-screen-2xl mx-auto px-4 md:px-10"
     : ""
   const headingClasses = !props.expandContent
     ? "text-5xl my-4"
