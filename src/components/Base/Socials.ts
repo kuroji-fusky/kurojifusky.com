@@ -1,7 +1,6 @@
 import { SocialTypes } from "@/types/Socials"
 import {
   faGithub,
-  faGitlab,
   faInstagram,
   faItunesNote,
   faLinkedin,

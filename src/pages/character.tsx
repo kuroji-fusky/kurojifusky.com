@@ -4,8 +4,8 @@ import { LinkUnderline } from "@/components/Links"
 import Notice from "@/components/Notice"
 import { cloudinary } from "@/utils/ImgProviders"
 
-export default function Fursona() {
-  const t = "Fursona"
+export default function Character() {
+  const t = "Character"
   const d = "I'm not cute"
 
   const fursonaColors = [

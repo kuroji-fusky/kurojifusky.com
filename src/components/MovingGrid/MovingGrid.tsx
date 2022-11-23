@@ -11,8 +11,8 @@ export default function MovingGrid({
   gridTransform,
   gridPerspective
 }: MovingGridProps) {
-  const col = 15
-  const row = 14
+  const col = 19
+  const row = 20
 
   return (
     <div

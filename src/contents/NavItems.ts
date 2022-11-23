@@ -64,7 +64,7 @@ export const NavItems: INavItems = {
 		dirParser("Discography"),
 		{ link: "#", name: "Archived works" }
 	],
-	autist: [dirParser("Timeline"), { link: "/about/fursona", name: "Fursona" }, dirParser("Artworks")]
+	autist: [dirParser("Timeline"), { link: "/character", name: "The fox-husky character" }, dirParser("Artworks")]
 }
 
 export const NavShortcuts = [

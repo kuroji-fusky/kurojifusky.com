@@ -41,6 +41,12 @@ export default function Footer() {
                 link="https://github.com/skepfusky/skepfusky.xyz"
                 name="Website source code"
               />
+              <LinkUnderline
+                external
+                link="https://ko-fi.com/skepfusky"
+                name="Support me on Ko-Fi"
+              />
+
               {/* <LinkUnderline link="/contact" name="Contact" />
               <span className="flex gap-x-1.5 items-center text-sm opacity-75">
                 <FontAwesomeIcon icon={faEnvelope} />
@@ -61,7 +67,7 @@ export default function Footer() {
       </div>
       {/* Moving grid */}
       <div className="opacity-100 transition-all duration-500 absolute bottom-0 scrollbar-none">
-        <MovingGrid gridState="running" />
+        <MovingGrid gridState="paused" />
       </div>
     </footer>
   )
