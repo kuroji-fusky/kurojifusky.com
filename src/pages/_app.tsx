@@ -43,19 +43,11 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       </Head>
       {disableOnDev && (
         <Script
-          id="ga"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-					window.dataLayer = window.dataLayer || [];
-					window.gtag = function gtag(){window.dataLayer.push(arguments);}
-					gtag('js', new Date());
-					
-					gtag('config', '${process.env.GA}', { 
-						page_path: window.location.pathname,
-					});
-					`
-          }}
+          id="umami"
+          async
+          defer
+          data-website-id={process.env.UMAMI_ID}
+          src="https://umami-production-3adf.up.railway.app/umami.js"
         />
       )}
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
