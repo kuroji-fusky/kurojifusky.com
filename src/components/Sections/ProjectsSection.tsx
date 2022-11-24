@@ -14,10 +14,17 @@ const projects = [
     spotlight: true,
     title: "Art & Biro Site Redesign",
     image: cImg("anb-redesign_gwrupe.png"),
-		width: 900,
+    width: 900,
     description:
-      "A faithful redesign from a webcomic that's more lively design-wise to reflect more from the first chapter of the comic. Written in Next 13 with TypeScript, Tailwind CSS, Framer Motion, and Three.js. Still work in progress!",
+      "A faithful redesign from a webcomic that's more lively design-wise to reflect more from the first chapter of the comic. Written in Next.js 13 with TypeScript, Tailwind CSS, Framer Motion, and Three.js. Still work in progress!",
     repo: "skepfusky/art-biro-redesign"
+  },
+  {
+    title: "Paco Drawing Stats",
+    image: cImg("paco-drawing-stats_khjf7s.png"),
+    description:
+      "A data visualization project that collects drawing data from characters, styles, etc. from a furry artist Paco Panda. Written in Python and MIT Licensed. Still work in progress!",
+    repo: "skepfusky/pacopanda-drawing-stats"
   },
   {
     title: "Searchpets!",
@@ -28,11 +35,11 @@ const projects = [
     project: "https://v2.searchpets.xyz/search"
   },
   {
-    title: "Paco Drawing Stats",
-    image: cImg("paco-drawing-stats_khjf7s.png"),
+    title: "Biro Design System",
+    image: cImg("Biro-Design-Banner_kqbrih.png"),
     description:
-      "A data visualization project that collects drawing data from characters, styles, etc. from a furry artist Paco Panda. Written in Python and MIT Licensed. Still work in progress!",
-    repo: "skepfusky/pacopanda-drawing-stats"
+      "A UI library and work-in-progress design language I've created, heavily inspired by Fandom Wiki, Microsoft, Apple, and Google's Material UI",
+    repo: "biro-design-system",
   }
 ]
 
@@ -42,7 +49,7 @@ export function ProjectsSection() {
       id="projects"
       className="flex flex-col items-center gap-y-16 py-12"
     >
-      <h1 className="text-4xl xl:text-5xl">Projects</h1>
+      <h1 className="text-4xl xl:text-5xl">Open-Source Projects</h1>
       <div className="flex flex-col lg:grid grid-cols-2 gap-5 w-full">
         {projects.map((item, i) => (
           <ProjectItem
@@ -97,7 +104,7 @@ function ProjectItem(props: ProjectItemProps) {
           />
         </div>
       </div>
-      <aside className="w-full md:w-[65%] lg:w-full xl:w-[65%] flex flex-col gap-y-4 lg:h-auto xl:h-full">
+      <aside className="w-full md:w-[65%] lg:w-full xl:w-[65%] flex flex-col gap-y-1 lg:gap-y-3 lg:h-auto xl:h-full">
         <h2
           className={`text-2xl ${
             !props.spotlight ? "lg:text-3xl" : "lg:text-3xl xl:text-[2.35rem]"

@@ -1,3 +1,5 @@
 export { HomeSection } from "./HomeSection"
 export { ProjectsSection } from "./ProjectsSection"
 export { AboutMeSection } from "./AboutMeSection"
+export { FAQSection } from "./FAQSection"
+export { SupportSection } from "./SupportSection"
