@@ -1,6 +1,11 @@
 import { Container } from "@/components/Base"
 import { HomeHero } from "@/components/Heros"
-import { AboutMeSection, ProjectsSection, SupportSection } from "@/components/Sections"
+import {
+  AboutMeSection,
+  FAQSection,
+  ProjectsSection,
+  SupportSection
+} from "@/components/Sections"
 
 export default function Home() {
   const t = "kurofusky"
@@ -9,10 +14,11 @@ export default function Home() {
 
   return (
     <Container title={t} description={d}>
-			<HomeHero />
-			{/* <AboutMeSection /> */}
-			<ProjectsSection />
-			<SupportSection />
+      <HomeHero />
+      {/* <AboutMeSection /> */}
+      <ProjectsSection />
+      <FAQSection />
+      <SupportSection />
     </Container>
   )
 }
