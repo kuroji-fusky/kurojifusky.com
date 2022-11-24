@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 import { LinkUnderline } from "../Links"
+import Link from "next/link"
 
 interface FAQProps {
   question: string
@@ -49,12 +50,14 @@ export default function FAQItem(props: FAQProps) {
           className="px-6 pt-0 pb-5 text-base lg:text-lg flex flex-col gap-3"
           components={{
             a: ({ node, ...props }) => (
-              <a
-                className="anchor-underline text-sona-borahaealt-200 inline-block relative w-fit
-				hover:text-sona-borahaealt-300
-				before:content-[''] before:bg-sona-borahaealt-300 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px]"
-                {...props}
-              ></a>
+              <Link href={props.href ?? ""} passHref>
+                <a
+                  {...props}
+                  className="anchor-underline text-sona-borahaealt-200 inline-block relative w-fit
+								hover:text-sona-borahaealt-300
+								before:content-[''] before:bg-sona-borahaealt-300 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px]"
+                ></a>
+              </Link>
             )
           }}
         >
