@@ -1,5 +1,5 @@
-import "@fortawesome/fontawesome-svg-core/styles.css"
 import "@/styles/globals.scss"
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import { Analytics } from "@vercel/analytics/react"
 import { useEffect } from "react"
 import type { AppProps } from "next/app"

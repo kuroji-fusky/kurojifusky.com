@@ -1,7 +1,12 @@
 const FAQ = [
   {
+    q: "Where can I find your ref sheet?",
+    a: "You can find my character's ref sheet [here](/character)!"
+  },
+  { q: "Why are you so cute?", a: "I'm not cute, stop calling me a cutie lol" },
+  {
     q: "Are you considering opening a Patreon?",
-    a: "Well, *sort of...* I personally think that Patreon might be an overkill as it's focused on one thing and that one thing only. Unless if it's an ambious project that's worth sharing or complete, then yes, I am considering open a Pateron page in the future!\n\nBut for now, I use Ko-fi as a lightweight and direct way to support my work!"
+    a: "Well, *sort of...* I personally think that Patreon might be an overkill as it's focused on one thing and that one thing only. Unless if it's an ambious project that's worth sharing or complete, then yes, I am considering open a Pateron page in the future!\n\nBut for now, I use Ko-fi as a easy and direct way to support my work!"
   },
   {
     q: "Was this website written from scratch?",
@@ -17,7 +22,7 @@ const FAQ = [
   },
   {
     q: "How'd you manage to make the subtitles scroll/look differently!?",
-    a: "It's a part of Premiere Pro's legacy subtitling feature before it was stripped away following the 2020 releases, which is a bummer.\n\nBasically, there is an option for a CEA-608 (Line 21) and CEA-708, with the first one probably for VHS videos or something and with the latter having more options for colors and positioning."
+    a: "It's a part of Premiere Pro's legacy subtitling feature before it was stripped away following the 2020 releases, which is a bummer.\n\n**Nerd explanation:** basically, there is an option for a CEA-608 (Line 21) and CEA-708, with the first one probably for VHS videos or something and with the latter having more options for colors and positioning."
   },
   {
     q: "Can I remix and/or use your songs in my video?",
@@ -26,12 +31,7 @@ const FAQ = [
   {
     q: "Why did you change your name from Skep to Kuroji?",
     a: "It's a long story... I couldn't explain it in full just yet."
-  },
-  {
-    q: "Where can I find your ref sheet?",
-    a: "You can find my character's ref sheet [here](/character)!"
-  },
-  { q: "Why are you so cute?", a: "I'm not cute, stop calling me a cutie lol" }
+  }
 ]
 
 export default FAQ

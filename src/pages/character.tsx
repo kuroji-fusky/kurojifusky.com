@@ -27,7 +27,7 @@ export default function Character() {
     <Container title={t} description={d} wrap className="mt-20">
       <Notice
         type="warning"
-        content="This page isn't complete and are subject to change. I might be lazy to add or update something in this page lol"
+        content="This page isn't complete and is subject to change. I might be lazy to add or update something in this page lol"
       />
       <section className="flex flex-col items-center gap-y-5 my-10">
         <div
