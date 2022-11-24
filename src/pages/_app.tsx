@@ -31,9 +31,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   useEffect(() => {
-    if (disableOnDev) {
-      hotjar.initialize(3249585, 6)
-    }
+    if (disableOnDev) hotjar.initialize(3249585, 6)
   }, [])
 
   return (
@@ -47,7 +45,7 @@ export default function Cutie({ Component, pageProps }: AppProps) {
           async
           defer
           data-website-id={process.env.UMAMI_ID}
-          src="https://umami-production-3adf.up.railway.app/umami.js"
+          src="https://umami.kurofusky.xyz/umami.js"
         />
       )}
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
