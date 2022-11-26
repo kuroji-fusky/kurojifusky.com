@@ -22,7 +22,7 @@ const socials: SocialTypes[] = [
   //   link: "https://instagram.com/skepfusky",
   //   icon: faInstagram
   // },
-  { name: "Github", link: "https://github.com/skepfusky", icon: faGithub },
+  { name: "Github", link: "https://github.com/kuroji-fusky", icon: faGithub },
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/kerby-keith-aquino-434037238/",

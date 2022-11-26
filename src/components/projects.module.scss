@@ -1,0 +1,12 @@
+.grid-container {
+  @apply flex flex-col lg:grid grid-cols-2 gap-5 w-full;
+}
+
+.item-spotlight {
+  @apply bg-borahae-dark border-2 border-sona-borahae-700 rounded-xl gap-5 p-5 flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem];
+  grid-column: 1 / span 2;
+}
+
+.item {
+  @apply bg-borahae-dark border-2 border-sona-borahae-700 rounded-xl gap-5 p-5 flex flex-col md:flex-row lg:flex-col xl:flex-row;
+}

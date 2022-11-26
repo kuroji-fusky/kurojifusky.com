@@ -1,0 +1,21 @@
+#wrapper {
+  @apply block relative w-screen overflow-hidden h-[250px];
+  perspective: 420px;
+}
+
+.gradient-blanket {
+	@apply absolute top-0 left-0 right-0 z-3 w-screen h-[10rem] bg-gradient-to-b from-borahae-dark;
+}
+
+.skew-pov {
+	@apply relative z-1 opacity-50;
+  transform: rotateX(62deg);
+}
+
+.horizontal-grid-wrapper {
+	@apply scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen;
+}
+
+.vertical-grid-wrapper {
+	@apply scrollbar-none absolute inset-0 flex flex-col gap-[5rem];
+}

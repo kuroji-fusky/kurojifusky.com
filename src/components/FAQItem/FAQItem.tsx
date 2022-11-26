@@ -28,10 +28,10 @@ export default function FAQItem(props: FAQProps) {
       }`}
     >
       <button
-        className="p-5 lg:p-6 w-full flex justify-between items-center"
+        className="p-5 xl:p-6 w-full flex justify-between items-center"
         onClick={() => setToggle(!toggle)}
       >
-        <h2 className="text-2xl lg:text-[1.75rem] text-left mr-4">
+        <h2 className="text-2xl xl:text-[1.75rem] text-left mr-4">
           {props.question}
         </h2>
         <FontAwesomeIcon
@@ -49,7 +49,7 @@ export default function FAQItem(props: FAQProps) {
         transition={{ duration: 0.2 }}
       >
         <ReactMarkdown
-          className="px-6 pt-0 pb-3 text-base lg:text-lg flex flex-col gap-3"
+          className="px-6 pt-0 pb-3 text-base xl:text-lg flex flex-col gap-3"
           components={{
             a: ({ node, ...props }) => (
               <Link href={props.href ?? ""} passHref>

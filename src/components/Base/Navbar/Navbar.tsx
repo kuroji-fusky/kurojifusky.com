@@ -58,7 +58,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="w-full fixed top-0 px-9 py-1 transition-colors duration-300 !z-[10]">
+    <div className="w-full fixed top-0 px-9 py-1 transition-colors duration-300 !z-[10]">
       <div className="mx-auto max-w-screen-2xl px-0 pt-2 flex justify-between items-center">
         <NavbarContext.Provider value={NavbarValues}>
           <div>
@@ -100,6 +100,6 @@ export default function Navbar() {
           </div>
         </NavbarContext.Provider>
       </div>
-    </header>
+    </div>
   )
 }

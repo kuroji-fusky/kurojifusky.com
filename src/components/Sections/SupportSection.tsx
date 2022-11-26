@@ -1,13 +1,13 @@
 import { RoundedBtn } from "../Buttons"
 import { HomeSection } from "./HomeSection"
+import styles from "./sections.module.scss"
 
 export function SupportSection() {
   return (
     <HomeSection
-      id="support-my-ass"
-      className="flex flex-col items-center gap-y-10 py-12"
+      className={styles["info-wrapper"]}
     >
-      <h1 className="text-4xl xl:text-5xl">Support</h1>
+      <h1 className={styles["info-heading"]}>Support</h1>
       <div className="text-center text-base lg:text-xl w-[72.5%] flex flex-col gap-y-4 lg:gap-y-6">
         <p className="leading-8">
           Yes - despite currently being 20 years old, I don't and will refuse to

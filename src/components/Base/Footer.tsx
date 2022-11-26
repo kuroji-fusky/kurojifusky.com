@@ -1,9 +1,7 @@
 import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import Backdrop from "../Backdrop"
 import { LinkUnderline } from "../Links"
-import MovingGrid from "../MovingGrid"
 import socials from "./Socials"
 
 export default function Footer() {
@@ -38,7 +36,7 @@ export default function Footer() {
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <LinkUnderline
                 external
-                link="https://github.com/skepfusky/skepfusky.xyz"
+                link="https://github.com/kuroji-fusky/kurofusky.xyz"
                 name="Website source code"
               />
               <LinkUnderline
@@ -46,12 +44,6 @@ export default function Footer() {
                 link="https://ko-fi.com/skepfusky"
                 name="Support me on Ko-Fi"
               />
-
-              {/* <LinkUnderline link="/contact" name="Contact" />
-              <span className="flex gap-x-1.5 items-center text-sm opacity-75">
-                <FontAwesomeIcon icon={faEnvelope} />
-                <p>hello@kurofusky.dev</p>
-              </span> */}
             </div>
           </div>
           <span id="copyright" className="text-sm mt-1">
@@ -64,10 +56,6 @@ export default function Footer() {
         <Backdrop className="-bottom-[1rem] -left-4 opacity-10 rotate-4 h-[11rem] w-[60%] bg-sona-skycyan-700" />
         <Backdrop className="-bottom-[2rem] opacity-10 left-[30%] h-[10rem] w-[40%] bg-sona-borahaealt-800" />
         <Backdrop className="-bottom-[1rem] -right-4 opacity-10 -rotate-4 h-[11rem] w-[60%] bg-sona-magenta-800" />
-      </div>
-      {/* Moving grid */}
-      <div className="opacity-100 transition-all duration-500 absolute bottom-0 scrollbar-none">
-        <MovingGrid gridState="paused" />
       </div>
     </footer>
   )

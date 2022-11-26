@@ -1,0 +1,19 @@
+.info-wrapper {
+  @apply flex flex-col items-center gap-y-10 py-12;
+}
+
+.info-heading {
+  @apply text-4xl xl:text-5xl;
+}
+
+.screen-limit {
+  @apply max-w-screen-2xl mx-auto px-4 md:px-10;
+}
+
+.hero {
+  @apply relative h-screen flex justify-center overflow-hidden;
+}
+
+.projects {
+	@apply flex flex-col items-center gap-y-16 py-12;
+}

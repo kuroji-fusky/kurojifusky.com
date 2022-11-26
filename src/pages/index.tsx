@@ -1,10 +1,11 @@
 import { Container } from "@/components/Base"
-import { HomeHero } from "@/components/Heros"
 import {
+  HeroSection,
   AboutMeSection,
   FAQSection,
   ProjectsSection,
-  SupportSection
+  SupportSection,
+  TechStackSection
 } from "@/components/Sections"
 
 export default function Home() {
@@ -14,10 +15,11 @@ export default function Home() {
 
   return (
     <Container title={t} description={d}>
-      <HomeHero />
+      <HeroSection />
       <ProjectsSection />
       <FAQSection />
       <SupportSection />
+      <TechStackSection />
     </Container>
   )
 }

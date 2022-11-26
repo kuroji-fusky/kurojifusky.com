@@ -36,7 +36,7 @@ export const PortfolioItems: PortfolioItemTypes[] = [
     description: "Awful website covered with amazing UI"
   },
   {
-    img: cImg("paco-drawing-stats_khjf7s.png"),
+    img: cImg("paco-drawing-stats_m0e91x.png"),
     category: "Website",
     title: "Paco Drawing Stats",
     description:

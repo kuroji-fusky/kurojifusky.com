@@ -10,7 +10,7 @@ const FAQ = [
   },
   {
     q: "Was this website written from scratch?",
-    a: "Well, yes! In fact, feel free to look at the source code for [this website](https://github.com/skepfusky/kurofusky.xyz)!"
+    a: "Well, yes! In fact, feel free to look at the source code for [this website](https://github.com/kuroji-fusky/kurofusky.xyz)!"
   },
   {
     q: "What platforms do you host your projects?",
