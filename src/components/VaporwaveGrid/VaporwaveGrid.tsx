@@ -10,25 +10,19 @@ export default function VaporwaveGrid() {
     <div id={styles.wrapper} aria-hidden>
       <div className={styles["gradient-blanket"]}></div>
       <div className={styles["skew-pov"]}>
-        <div className={styles["horizontal-grid-wrapper"]}>
+        <div className={styles["horizontal-line-wrapper"]}>
           {[...Array(col)].map((_, i) => (
-            <div
-              key={i}
-              className="border-2 border-transparent border-r-sona-borahaealt-500"
-            ></div>
+            <div key={i} className={styles["horizontal-line"]}></div>
           ))}
         </div>
         <motion.div
-          className={styles["vertical-grid-wrapper"]}
+          className={styles["vertical-line-wrapper"]}
           style={{ y: 0, willChange: "transform" }}
           animate={{ y: 83 }}
           transition={{ ease: "linear", duration: 2.75, repeat: Infinity }}
         >
           {[...Array(row)].map((_, i) => (
-            <div
-              key={i}
-              className="border-2 border-transparent border-b-sona-borahaealt-500"
-            ></div>
+            <div key={i} className={styles["vertical-line"]}></div>
           ))}
         </motion.div>
       </div>

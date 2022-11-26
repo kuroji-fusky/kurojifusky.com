@@ -1,6 +1,6 @@
 // Root stuff
 export { HeroSection } from "./HeroSection"
-export { ProjectsSection } from "./ProjectsSection"
+export { ProjectsSection } from "./Projects/ProjectsSection"
 export { AboutMeSection } from "./AboutMeSection"
 export { FAQSection } from "./FAQSection"
 export { SupportSection } from "./SupportSection"

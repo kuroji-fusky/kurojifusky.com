@@ -1,12 +1,7 @@
 import { cloudinary } from "@/utils/ImgProviders"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "next/link"
-import { SectionContainer } from "./SectionContainer"
-import styles from "./SectionContainer.module.scss"
-import projStyles from "../projects.module.scss"
+import { SectionContainer } from "../SectionContainer"
 import { ProjectItem } from "./ProjectItem"
+import styles from "./ProjectsSection.module.scss"
 
 const cImg = (fileName: string) =>
   cloudinary({ dir: "projects", quality: "auto", fileName: fileName })
@@ -47,9 +42,9 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <SectionContainer className={styles.projects}>
+    <SectionContainer className={styles.wrapper}>
       <h1 className={styles["info-heading"]}>Open-Source Projects</h1>
-      <div className={projStyles["grid-container"]}>
+      <div className={styles["grid-container"]}>
         {projects.map((item, i) => (
           <ProjectItem
             key={i}
@@ -63,35 +58,5 @@ export function ProjectsSection() {
         ))}
       </div>
     </SectionContainer>
-  )
-}
-
-interface FlatBtnProps {
-  type: "source" | "deployment"
-  link?: string
-}
-
-export function FlatBtn(props: FlatBtnProps) {
-  return (
-    <Link href={props.link ?? "#"} passHref>
-      <a
-        className="flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:bg-sona-borahae-600 hover:bg-opacity-50 transition-colors duration-300"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        {props.type == "source" && (
-          <>
-            <FontAwesomeIcon icon={faGithub} />
-            <span className="text-[80%]">Source code</span>
-          </>
-        )}
-        {props.type == "deployment" && (
-          <>
-            <span className="text-[80%]">View project</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
-          </>
-        )}
-      </a>
-    </Link>
   )
 }

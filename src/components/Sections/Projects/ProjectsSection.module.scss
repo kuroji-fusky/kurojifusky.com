@@ -1,0 +1,7 @@
+.wrapper {
+  @apply flex flex-col items-center gap-y-16 py-12;
+}
+
+.grid-container {
+  @apply flex flex-col lg:grid grid-cols-2 gap-5 w-full;
+}

@@ -57,7 +57,6 @@ export function HeroSection() {
       <div
         id="moving-grid-wrapper"
         className="absolute bottom-0 left-0 right-0"
-        aria-hidden
       >
         <VaporwaveGrid />
       </div>

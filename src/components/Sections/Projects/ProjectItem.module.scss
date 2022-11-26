@@ -1,0 +1,67 @@
+@mixin itemContainer($a) {
+  @apply bg-borahae-dark border-2 border-sona-borahae-700 rounded-xl gap-5 p-5 #{$a};
+}
+
+@mixin imgWrapperContainer($a) {
+  @apply w-full md:w-[35%] lg:w-full xl:w-[35%] h-[15rem] md:h-auto xl:h-auto #{$a};
+}
+
+.item {
+  @include itemContainer("flex flex-col md:flex-row lg:flex-col xl:flex-row");
+
+  #img-wrapper {
+    @include imgWrapperContainer("lg:h-[15rem]");
+  }
+
+  .content-heading {
+    @apply lg:text-3xl;
+  }
+
+  .content-description {
+    @apply h-full;
+  }
+}
+
+.item-spotlight {
+  @include itemContainer(
+    "flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem]"
+  );
+  grid-column: 1 / span 2;
+
+  #img-wrapper {
+    @include imgWrapperContainer("lg:h-full");
+  }
+
+  .content-heading {
+    @apply lg:text-3xl xl:text-[2.35rem];
+  }
+
+  .content-description {
+    @apply text-base xl:text-lg mt-1.5 h-full;
+  }
+}
+
+.cover {
+  @apply overflow-hidden rounded-lg;
+}
+
+.contents {
+  @apply w-full md:w-[65%] lg:w-full xl:w-[65%] flex flex-col gap-y-1 lg:gap-y-3 lg:h-auto xl:h-full;
+}
+
+.img-responsive {
+  @apply relative h-full w-full;
+}
+
+.button-wrapper {
+  @apply flex gap-4;
+}
+
+/** FLAT BUTTON **/
+.flat-button {
+  @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:bg-sona-borahae-600 hover:bg-opacity-50 transition-colors duration-300;
+
+	> span {
+		@apply text-[80%];
+	}
+}

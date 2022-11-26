@@ -12,10 +12,18 @@
   transform: rotateX(62deg);
 }
 
-.horizontal-grid-wrapper {
+.horizontal-line-wrapper {
 	@apply scrollbar-none absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen;
 }
 
-.vertical-grid-wrapper {
+.horizontal-line {
+	@apply border-2 border-transparent border-r-sona-borahaealt-500;
+}
+
+.vertical-line-wrapper {
 	@apply scrollbar-none absolute inset-0 flex flex-col gap-[5rem];
+}
+
+.vertical-line {
+	@apply border-2 border-transparent border-b-sona-borahaealt-500;
 }

@@ -13,7 +13,3 @@
 .hero {
   @apply relative h-screen flex justify-center overflow-hidden;
 }
-
-.projects {
-	@apply flex flex-col items-center gap-y-16 py-12;
-}
