@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useContext } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { NavbarContext } from "contexts"
 import { Logo } from "./Logo"
-import { More, Portfolio, Summary } from "./DropdownSection"
+import { More, Portfolio, Summary } from "./Dropdowns/DropdownSection"
 import NavPageName from "./NavPageName"
 
 export default function Navbar() {

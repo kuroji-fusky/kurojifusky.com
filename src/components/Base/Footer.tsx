@@ -9,9 +9,6 @@ export default function Footer() {
     <footer className="relative mt-[15rem]">
       <div className="mx-auto max-w-screen-2xl flex flex-col lg:flex-row justify-between items-center gap-y-5 px-12 z-4 absolute p-6 pb-[2.75rem] lg:pb-[4.5rem] bottom-0 left-0 right-0 text-center">
         <div className="translate-y-0 opacity-100 transition-all duration-500 text-left flex flex-col gap-3.5">
-          <strong className="text-lg font-jetbrains-mono font-extrabold hidden lg:block">
-            I'm in these places
-          </strong>
           <div role="list" className="flex gap-8 flex-wrap justify-center">
             {socials.map((items, index) => (
               <Link key={index} href={items.link} passHref>

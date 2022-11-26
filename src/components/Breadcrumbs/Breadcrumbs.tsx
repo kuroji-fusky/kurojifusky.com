@@ -1,26 +1,26 @@
 import { useRouter } from "next/router"
 import { LinkUnderline } from "../Links"
 
-type BreadcrumbProps = {
+interface BreadcrumbProps {
   rootDir?: string
-  lists: {
+  lists: Array<{
     link: string
     name: string
-  }[]
+  }>
 }
 
-export function Breadcrumbs({ lists, rootDir }: BreadcrumbProps) {
+export function Breadcrumbs(props: BreadcrumbProps) {
   const router = useRouter()
 
   return (
     <nav>
       <ul className="flex gap-2.5">
-        {lists.map((item, index) => (
+        {props.lists.map((item, index) => (
           <li key={index}>
-            {router.pathname !== rootDir ?? "" + item.link ? (
+            {router.pathname !== props.rootDir ?? "" + item.link ? (
               <LinkUnderline
                 name={item.name}
-                link={rootDir ?? "" + item.link}
+                link={props.rootDir ?? "" + item.link}
               />
             ) : (
               <span>{item.name}</span>

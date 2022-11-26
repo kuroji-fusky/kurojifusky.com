@@ -1,10 +1,10 @@
 import { RoundedBtn } from "../Buttons"
-import { HomeSection } from "./HomeSection"
-import styles from "./sections.module.scss"
+import { SectionContainer } from "./SectionContainer"
+import styles from "./SectionContainer.module.scss"
 
 export function SupportSection() {
   return (
-    <HomeSection
+    <SectionContainer
       className={styles["info-wrapper"]}
     >
       <h1 className={styles["info-heading"]}>Support</h1>
@@ -31,6 +31,6 @@ export function SupportSection() {
           Watch my funnies
         </RoundedBtn>
       </div>
-    </HomeSection>
+    </SectionContainer>
   )
 }

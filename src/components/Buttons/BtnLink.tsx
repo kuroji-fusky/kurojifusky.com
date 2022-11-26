@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "./Button.module.scss"
+import styles from "./btn.module.scss"
 
 interface BtnLinkProps extends ISharedBtnProps {
   emojiFix?: boolean

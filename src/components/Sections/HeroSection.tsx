@@ -2,14 +2,14 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import { cloudinary } from "@/utils/ImgProviders"
-import { HomeSection } from "./HomeSection"
+import { SectionContainer } from "./SectionContainer"
 import { RoundedBtn } from "../Buttons"
-import MovingGrid from "../MovingGrid"
-import styles from "./sections.module.scss"
+import VaporwaveGrid from "../VaporwaveGrid"
+import styles from "./SectionContainer.module.scss"
 
 export function HeroSection() {
   return (
-    <HomeSection className={styles.hero} expandContent>
+    <SectionContainer className={styles.hero} expandContent>
       <div className="px-1.5 py-10 h-full relative z-2 flex flex-col items-center justify-center">
         {/* Image container */}
         <div className="w-full grid place-items-center relative select-none h-[27.5rem]">
@@ -59,8 +59,8 @@ export function HeroSection() {
         className="absolute bottom-0 left-0 right-0"
         aria-hidden
       >
-        <MovingGrid />
+        <VaporwaveGrid />
       </div>
-    </HomeSection>
+    </SectionContainer>
   )
 }

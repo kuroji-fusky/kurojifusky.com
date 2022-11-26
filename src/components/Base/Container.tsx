@@ -25,6 +25,11 @@ export function Container(props: ContainerProps) {
 
   setPageName(detect404 as string)
 
+  const detectClassNames = !props.className ? "" : ` ${props.className}`
+  const wrapContents = !props.wrap
+    ? `relative z-1${detectClassNames}`
+    : `relative z-1 max-w-screen-2xl mx-auto px-7${detectClassNames}`
+
   return (
     <>
       <Head>
@@ -42,16 +47,7 @@ export function Container(props: ContainerProps) {
         <meta name="twitter:creator" content="@skepfuskyjs" />
         <link rel="canonical" href={url} />
       </Head>
-      <main
-        className={
-          !props.wrap
-            ? `relative z-1${props.className ? " " + props.className : ""}`
-            : `relative z-1 max-w-screen-2xl mx-auto px-7${
-						props.className ? " " + props.className : ""
-              }`
-        }
-        style={props.style ?? undefined}
-      >
+      <main className={wrapContents} style={props.style ?? undefined}>
         {props.children}
       </main>
     </>

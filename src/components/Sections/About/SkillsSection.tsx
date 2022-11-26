@@ -1,7 +1,7 @@
 import { skills } from "contents/AboutMe"
-import SkillsItem from "./SkillsItem"
+import SkillsItem from "../../SkillItem/SkillsItem"
 
-export default function Skills() {
+export function SkillsSection() {
   return (
     <section
       id="skills"

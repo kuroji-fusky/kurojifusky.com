@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss"
+import styles from "./btn.module.scss"
 
 interface BtnProps extends ISharedBtnProps {
   emojiFix?: boolean

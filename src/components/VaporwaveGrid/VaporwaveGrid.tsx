@@ -1,8 +1,8 @@
 import React from "react"
 import { motion } from "framer-motion"
-import styles from "./3d-grid.module.scss"
+import styles from "./VaporwaveGrid.module.scss"
 
-export default function MovingGrid() {
+export default function VaporwaveGrid() {
   const col = 20
   const row = 5
 

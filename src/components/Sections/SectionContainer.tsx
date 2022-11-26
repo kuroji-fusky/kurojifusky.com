@@ -1,10 +1,10 @@
-import styles from "./sections.module.scss"
+import styles from "./SectionContainer.module.scss"
 
-interface HomeSectionProps extends Components {
+interface SectionContainerProps extends Components {
   expandContent: boolean
 }
 
-export function HomeSection(props: Partial<HomeSectionProps>) {
+export function SectionContainer(props: Partial<SectionContainerProps>) {
   const expandClasses = !props.expandContent ? `${styles["screen-limit"]} ` : ""
   const containClass = !props.className ? "" : props.className
 
