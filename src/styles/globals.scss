@@ -1,6 +1,10 @@
 @use "branding";
 @use "components";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   ::-webkit-scrollbar {
     @apply h-2 w-2;
@@ -36,7 +40,7 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .scrollbar-none {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -59,7 +63,3 @@
     }
   }
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
