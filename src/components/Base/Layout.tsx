@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { NavbarContext } from "contexts"
 import Footer from "./Footer"
 import Navbar from "./Navbar"
+import CommandPalette from "../CommandPalette"
 
 export function Layout(props: ChildrenOnly) {
   const [scrolled, isScrolled] = useState(false)
@@ -20,6 +21,7 @@ export function Layout(props: ChildrenOnly) {
   return (
     <>
       <NavbarContext.Provider value={NavbarValues}>
+				{/* <CommandPalette /> */}
         <Navbar />
         {props.children}
       </NavbarContext.Provider>

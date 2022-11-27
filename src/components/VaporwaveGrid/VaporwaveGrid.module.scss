@@ -1,15 +1,5 @@
-#wrapper {
-  @apply block relative w-screen overflow-hidden h-[250px];
-  perspective: 420px;
-}
-
-.gradient-blanket {
-  @apply absolute top-0 left-0 right-0 z-3 w-screen h-[10rem] bg-gradient-to-b from-borahae-dark;
-}
-
-.skew-pov {
-  @apply relative z-1 opacity-50;
-  transform: rotateX(62deg);
+@mixin blanket($a) {
+  @apply absolute left-0 right-0 z-3 w-screen h-[10rem] #{$a} from-borahae-dark;
 }
 
 @mixin tempFixForNoScrollBars() {
@@ -19,6 +9,24 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+#wrapper {
+  @apply block relative w-screen overflow-hidden h-[300px];
+  perspective: 420px;
+}
+
+.gradient-blanket-top {
+  @include blanket("top-0 bg-gradient-to-b");
+}
+
+.gradient-blanket-bottom {
+  @include blanket("bottom-0 bg-gradient-to-t");
+}
+
+.skew-pov {
+  @apply relative z-1 opacity-50;
+  transform: rotateX(62deg);
 }
 
 .horizontal-line-wrapper {

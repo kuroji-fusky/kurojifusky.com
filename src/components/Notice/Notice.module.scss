@@ -1,0 +1,22 @@
+#wrapper {
+  @apply px-6 py-4 flex gap-x-4 items-center rounded-md border bg-opacity-20;
+}
+
+.warn {
+  @apply bg-yellow-500 border-yellow-300;
+}
+
+.error {
+  @apply bg-red-500 border-red-300;
+}
+
+.info {
+  @apply bg-sona-royalblue-500 border-sona-royalblue-300;
+}
+
+#content {
+  @apply flex flex-col gap-y-0.5;
+  > strong {
+    @apply block;
+  }
+}

@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <Container title={t} description={d}>
       <HeroSection />
+			<AboutMeSection />
       <ProjectsSection />
       <FAQSection />
       <SupportSection />

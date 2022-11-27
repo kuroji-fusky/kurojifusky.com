@@ -3,7 +3,7 @@
 }
 
 .info-heading {
-  @apply text-4xl xl:text-5xl;
+  @apply text-4xl xl:text-5xl relative z-2;
 }
 
 .screen-limit {
@@ -11,5 +11,5 @@
 }
 
 .hero {
-  @apply relative h-screen flex justify-center overflow-hidden;
+  @apply relative h-screen flex justify-center;
 }

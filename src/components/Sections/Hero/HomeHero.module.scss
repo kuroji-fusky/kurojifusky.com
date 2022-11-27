@@ -1,0 +1,40 @@
+.wrapper-responsive {
+  @apply px-1.5 py-10 h-full relative z-2 flex flex-col items-center justify-center;
+}
+
+.img-wrapper {
+  @apply w-full grid place-items-center relative select-none h-[27.5rem] 2xl:h-[32.5rem];
+}
+
+.img-fix {
+  @apply w-full h-full relative;
+}
+
+.info-wrapper {
+  @apply flex flex-col gap-5 text-center items-center;
+}
+
+.heading {
+  @apply text-3xl md:text-4xl 2xl:text-[2.85rem] w-[75%];
+  @apply 2xl:leading-[3.75rem] #{!important};
+}
+
+.name-gradient {
+  @apply font-bold text-transparent bg-clip-text bg-gradient-to-tr from-sona-magenta-700 to-sona-skycyan-600;
+}
+
+.grid-button-wrapper {
+  @apply grid place-items-center grid-cols-1 lg:grid-cols-2 lg:justify-start gap-4 z-2 relative;
+}
+
+.artwork-credit {
+  @apply font-jetbrains-mono opacity-75 text-sm;
+
+  > strong {
+    @apply font-extrabold;
+  }
+}
+
+.vaporwave-grid {
+  @apply absolute -bottom-[5.75rem] left-0 right-0;
+}

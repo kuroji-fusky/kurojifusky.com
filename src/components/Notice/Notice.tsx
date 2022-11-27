@@ -1,42 +1,47 @@
-import { faInfoCircle, faTimesCircle, faW, faWarning } from "@fortawesome/free-solid-svg-icons"
+import {
+  faInfoCircle,
+  faTimesCircle,
+  faWarning
+} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "./Notice.module.scss"
 
 interface NoticeProps {
-	title?: string
-	content?: string
-	type?: "warning" | "error"
+  title?: string
+  content?: string
+  type?: "warning" | "error"
 }
 
 export default function Notice(props: NoticeProps) {
-	const states = () => {
-		const statesObj = {
-			info: {
-				CSS: "bg-sona-royalblue-500 border-sona-royalblue-300",
-				icon: faInfoCircle
-			},
-			warning: {
-				CSS: "bg-yellow-500 border-yellow-300",
-				icon: faWarning
-			},
-			error: {
-				CSS: "bg-red-500 border-red-300",
-				icon: faTimesCircle
-			},
-		}
+  const states = () => {
+    const statesObj = {
+      info: {
+        CSS: styles["info"],
+        icon: faInfoCircle
+      },
+      warning: {
+        CSS: styles["warn"],
+        icon: faWarning
+      },
+      error: {
+        CSS: styles["error"],
+        icon: faTimesCircle
+      }
+    }
 
-		return statesObj[props.type ?? "info"]
-	}
+    return statesObj[props.type ?? "info"]
+  }
 
-	return (
-		<div
-			id="notice"
-			className={`px-6 py-4 flex gap-x-4 items-center rounded-md border bg-opacity-20 ${states().CSS}`}
-		>
-			<FontAwesomeIcon icon={states().icon} size={props.title !== undefined ? "xl" : undefined} />
-			<div className="flex flex-col gap-y-0.5">
-				<strong className="block">{props.title}</strong>
-				<span>{props.content}</span>
-			</div>
-		</div>
-	)
+  return (
+    <div id={styles["wrapper"]} className={states().CSS}>
+      <FontAwesomeIcon
+        icon={states().icon}
+        size={props.title !== undefined ? "xl" : undefined}
+      />
+      <div id={styles["content"]}>
+        {props.title && <strong>{props.title}</strong>}
+        <span>{props.content}</span>
+      </div>
+    </div>
+  )
 }
