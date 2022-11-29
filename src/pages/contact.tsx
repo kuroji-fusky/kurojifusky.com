@@ -2,11 +2,11 @@ import Backdrop from "@/components/Backdrop"
 import { Container } from "@/components/Base"
 
 export default function About() {
-  const title = "Contact"
-  const description = "lol"
+  const t = "Contact"
+  const d = "lol"
 
   return (
-    <Container title={title} description={description} className="h-[70vh]">
+    <Container title={t} description={d} className="h-[70vh]">
       <Backdrop className="top-0 right-12 h-[21rem] bg-gradient-to-r from-sona-skycyan-500 via-sona-magenta-500 to-sona-royalblue-600 w-[69%] -rotate-[4deg] opacity-40" />
       <section className="relative z-2 mt-[7em] mb-10 max-w-screen-2xl text-center items-center mx-auto px-5 flex flex-col gap-y-3">
         <h1 className="text-5xl xl:text-6xl bg-gradient-to-br from-sona-borahaealt-300 to-white bg-clip-text text-transparent">

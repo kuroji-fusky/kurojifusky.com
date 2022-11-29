@@ -1,11 +1,11 @@
 import { useRouter } from "next/router"
 import Head from "next/head"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { NavbarContext, setPageNameOnly } from "contexts"
 
 interface ContainerProps extends Omit<Partial<Components>, "id"> {
-  title?: string
-  description?: string
+  title: string
+  description: string
   wrap?: boolean
 }
 
@@ -14,18 +14,17 @@ export function Container(props: ContainerProps) {
   const { setPageName } = useContext(NavbarContext) as setPageNameOnly
 
   const url = `https://kurofusky.xyz${router.asPath}`
+  const basePath = router.pathname === "/"
+  const title = basePath ? props.title : `${props.title} | kurofusky`
 
-  const title =
-    router.pathname == "/" ? props.title : `${props.title} | kurofusky`
+  useEffect(() => {
+    const detect404 = props.title === "404 Not Found" ? "404 Page" : props.title
 
-  const detect404 =
-    props.title === "404 Not Found"
-      ? "My website is still incomplete, deal with it"
-      : props.title
-
-  setPageName(detect404 as string)
+    setPageName(detect404)
+  }, [])
 
   const detectClassNames = !props.className ? "" : ` ${props.className}`
+	
   const wrapContents = !props.wrap
     ? `relative z-1${detectClassNames}`
     : `relative z-1 max-w-screen-2xl mx-auto px-7${detectClassNames}`
