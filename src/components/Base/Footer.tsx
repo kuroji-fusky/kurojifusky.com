@@ -2,7 +2,7 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Backdrop from "../Backdrop"
 import { LinkUnderline } from "../Links"
-import socials from "./Socials"
+import socials from "../../contents/Socials"
 
 export default function Footer() {
   return (

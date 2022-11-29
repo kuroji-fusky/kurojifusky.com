@@ -1,6 +1,7 @@
 import styles from "./SectionContainer.module.scss"
 
 interface SectionContainerProps extends Components {
+	title?: string
   expandContent: boolean
 }
 
@@ -9,7 +10,8 @@ export function SectionContainer(props: Partial<SectionContainerProps>) {
   const containClass = !props.className ? "" : props.className
 
   return (
-    <section className={`${expandClasses}${containClass}`} style={props.style}>
+    <section id={props.id} className={`${expandClasses}${containClass}`} style={props.style}>
+			{props.title && <h1 className={styles["info-heading"]}>{props.title}</h1>}
       {props.children}
     </section>
   )

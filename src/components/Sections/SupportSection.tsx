@@ -6,14 +6,14 @@ export function SupportSection() {
   return (
     <SectionContainer
       className={styles["info-wrapper"]}
+      title="I need your help!"
     >
-      <h1 className={styles["info-heading"]}>Support</h1>
       <div className="text-center text-base lg:text-xl w-[72.5%] flex flex-col gap-y-4 lg:gap-y-6">
         <p className="leading-8">
-          Yes - despite currently being 20 years old, I don't and will refuse to
-          have a typical 9-5 job. My only source of income comes from YouTube
-          revenue for my crappy YTPs, from music streams (just barely), and Kofi
-          donations (usually attached on all of my open-source projects).
+          I'm currently 20 years old and I don't and never will have a typical
+          9-5 job. My only source of income comes from YouTube revenue for my
+          crappy YTPs, from music streams (just barely), and Kofi donations
+          (usually attached on all of my open-source projects).
         </p>
         <p className="leading-8">
           I'm not asking much at all, but if you are obligated or just to
@@ -25,10 +25,10 @@ export function SupportSection() {
       </div>
       <div className="flex flex-wrap gap-6">
         <RoundedBtn external link="https://ko-fi.com/skepfusky">
-          Feed me caffiene
+          I have Ko-Fi lol
         </RoundedBtn>
-        <RoundedBtn external link="https://ko-fi.com/skepfusky">
-          Watch my funnies
+        <RoundedBtn external link="https://youtu.be/49yExmMiMBM">
+          I also accept crypto!
         </RoundedBtn>
       </div>
     </SectionContainer>

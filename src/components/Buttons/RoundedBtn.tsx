@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 interface RoundedBtnProps {
-  children?: NonNullable<React.ReactNode> | string
+  children?: NonNullable<React.ReactNode>
   link?: string
   external?: boolean
 }

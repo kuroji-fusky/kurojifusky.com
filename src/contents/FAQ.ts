@@ -22,7 +22,7 @@ const FAQ = [
   },
   {
     q: "How'd you manage to make the subtitles scroll/look differently!?",
-    a: "It's a part of Premiere Pro's legacy subtitling feature before it was stripped away following the 2020 releases, which is a bummer.\n\n**Nerd explanation:** basically, there is an option for a CEA-608 (Line 21) and CEA-708, with the first one probably for VHS videos or something and with the latter having more options for colors and positioning."
+    a: "It's a part of Premiere Pro's legacy subtitling feature before it was stripped away following the 2020 releases, which is a bummer.\n\n**Here's a full-on nerd explanation:** basically, there is an option for a CEA-608 (Line 21) and CEA-708, with the first one probably for VHS videos or something and with the latter having more options for colors and positioning."
   },
   {
     q: "Can I remix and/or use your songs in my video?",

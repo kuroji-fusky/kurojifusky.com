@@ -35,13 +35,7 @@ export function HeroSection() {
             <span className={styles["name-gradient"]}>Kuroji Fusky</span>
             {"! A fox-husky abomination"}
           </h2>
-          <h3>Suffering from emotional damage</h3>
-          <div className={styles["grid-button-wrapper"]}>
-            <RoundedBtn link="/blog">Recent Blog Posts</RoundedBtn>
-            <RoundedBtn link="/character">
-              Character ref and artworks
-            </RoundedBtn>
-          </div>
+          <h3>My family disowned me for being a failure</h3>
           <span
             className={styles["artwork-credit"]}
             aria-label="Artwork by catastrophe#6282 on Discord"

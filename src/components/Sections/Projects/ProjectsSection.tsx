@@ -42,8 +42,7 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <SectionContainer className={styles.wrapper}>
-      <h1 className={styles["info-heading"]}>Open-Source Projects</h1>
+    <SectionContainer className={styles.wrapper} title="Open Source Projects">
       <div className={styles["grid-container"]}>
         {projects.map((item, i) => (
           <ProjectItem

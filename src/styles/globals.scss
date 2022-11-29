@@ -23,7 +23,7 @@
   }
 
   html {
-    @apply scroll-smooth scroll-pt-[10.85rem] antialiased;
+    @apply scroll-smooth scroll-pt-[5.85rem] antialiased overflow-scroll;
 
     scrollbar-color: theme("colors.sona-borahae.600"),
       theme("colors.borahae-dark");
