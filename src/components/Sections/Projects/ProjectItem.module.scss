@@ -6,35 +6,37 @@
   @apply w-full md:w-[35%] lg:w-full xl:w-[35%] h-[15rem] md:h-auto xl:h-auto #{$a};
 }
 
-.item {
-  @include itemContainer("flex flex-col md:flex-row lg:flex-col xl:flex-row");
+@mixin gradient-border($g1, $g2, $pos: top left) {
+  position: relative;
+  border: solid 2px transparent;
+  border-radius: theme("borderRadius.lg");
+  background-image: linear-gradient(
+      theme("colors.borahae-dark"),
+      theme("colors.borahae-dark")
+    ),
+    radial-gradient(circle at $pos, $g1, $g2);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 
-  #img-wrapper {
-    @include imgWrapperContainer("lg:h-[15rem]");
+  &::before {
+    @apply content-[""] absolute inset-0 bg-borahae-dark rounded-lg;
   }
+}
 
-  .content-heading {
-    @apply lg:text-3xl;
-  }
-
-  .content-description {
-    @apply h-full;
-  }
+:is(.item, .item-spotlight) * {
+  @apply relative z-1;
 }
 
 .item-spotlight {
   @include itemContainer(
-    "flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem]"
+    "flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem] relative"
   );
+  @include gradient-border(
+    theme("colors.sona-yellow.400"),
+    theme("colors.sona-borahaealt.500")
+  );
+
   grid-column: 1 / span 2;
-
-	--fuck: rgba(17 13 23 / 1);
-
-  border: solid 4px transparent;
-  border-radius: 8px;
-  background-image: linear-gradient(var(--fuck), var(--fuck)), radial-gradient(circle at top left, #f00,#3020ff);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
 
   #img-wrapper {
     @include imgWrapperContainer("lg:h-full");
@@ -46,6 +48,29 @@
 
   .content-description {
     @apply text-base xl:text-lg mt-1.5 h-full;
+  }
+}
+
+.item {
+  @include itemContainer("flex flex-col md:flex-row lg:flex-col xl:flex-row relative");
+  @include gradient-border(
+    theme("colors.sona-borahae.500"),
+    theme("colors.sona-borahaealt.900"),
+		top
+  );
+
+	box-shadow: 1.75rem 1.5rem 90px theme("colors.sona-borahaealt.900");
+
+  #img-wrapper {
+    @include imgWrapperContainer("lg:h-[15rem]");
+  }
+
+  .content-heading {
+    @apply lg:text-3xl;
+  }
+
+  .content-description {
+    @apply h-full;
   }
 }
 
@@ -67,7 +92,7 @@
 
 /** FLAT BUTTON **/
 .flat-button {
-  @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:bg-sona-borahae-600 hover:bg-opacity-50 transition-colors duration-300;
+  @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:border-cyan-400 transition-colors duration-300;
 
   > span {
     @apply text-[80%];

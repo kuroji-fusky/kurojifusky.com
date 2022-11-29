@@ -3,5 +3,5 @@
 }
 
 .grid-container {
-  @apply flex flex-col lg:grid grid-cols-2 gap-5 w-full;
+  @apply flex flex-col lg:grid grid-cols-2 gap-[1.75rem] w-full;
 }

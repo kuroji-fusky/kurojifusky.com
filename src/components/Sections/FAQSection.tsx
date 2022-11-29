@@ -1,6 +1,5 @@
 import FAQ from "contents/FAQ"
 import FAQItem from "../FAQItem"
-import { LinkGradient } from "../Links"
 import { SectionContainer } from "./SectionContainer"
 import styles from "./SectionContainer.module.scss"
 
