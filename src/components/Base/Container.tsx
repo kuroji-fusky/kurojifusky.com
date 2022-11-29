@@ -22,7 +22,7 @@ export function Container(props: ContainerProps) {
     const detect404 = props.title === "404 Not Found" ? "404 Page" : props.title
 
     setPageName(detect404)
-  }, [])
+  }, [props.title, setPageName])
 
   const detectClassNames = !props.className ? "" : ` ${props.className}`
 
