@@ -17,7 +17,7 @@ export function AboutMeSection() {
             and indie music production.
           </p>
           <p>
-            I mostly work on my own accord, handle everything on my own and rely
+            I usually work on my own accord, handle everything on my own and rely
             on other external sources to improve. I have a diverse portfolio
             ranging from my open-source projects, to other forms of art like
             videos and self-produced music all on my own!

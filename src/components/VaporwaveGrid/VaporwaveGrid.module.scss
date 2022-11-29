@@ -1,14 +1,7 @@
+@use "@/styles/mixins" as *;
+
 @mixin blanket($a) {
   @apply absolute left-0 right-0 z-3 w-screen h-[10rem] #{$a} from-borahae-dark;
-}
-
-@mixin tempFixForNoScrollBars() {
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 #wrapper {
@@ -31,7 +24,7 @@
 
 .horizontal-line-wrapper {
   @apply absolute top-0 left-0 right-0 flex justify-center gap-[4.5rem] lg:gap-[7rem] xl:gap-[9rem] h-screen;
-  @include tempFixForNoScrollBars();
+  @include no-scrollbar();
 }
 
 .horizontal-line {
@@ -40,7 +33,7 @@
 
 .vertical-line-wrapper {
   @apply absolute inset-0 flex flex-col gap-[5rem];
-  @include tempFixForNoScrollBars();
+  @include no-scrollbar();
   animation: scrollBaby 2.5s linear infinite;
 }
 

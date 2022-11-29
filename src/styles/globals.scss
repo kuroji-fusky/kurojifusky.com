@@ -1,5 +1,6 @@
 @use "branding";
 @use "components";
+@use "mixins" as *;
 
 @tailwind base;
 @tailwind components;
@@ -42,24 +43,7 @@
 
 @layer utilities {
   .scrollbar-none {
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-
-  .anchor-underline {
-    &::before {
-      transform: scaleX(0);
-      transform-origin: bottom right;
-      transition: transform 150ms ease-out;
-    }
-
-    &:hover::before {
-      transform: scaleX(1);
-      transform-origin: bottom left;
-    }
+		@include no-scrollbar;
   }
 }
+

@@ -37,8 +37,4 @@
 
 .scroll-down {
   @apply absolute bottom-0 z-1 pb-8 flex flex-col items-center gap-y-3 text-center opacity-75;
-
-  span {
-    @apply text-sm w-[80%];
-  }
 }

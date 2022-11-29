@@ -2,6 +2,7 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 import { useContext, useEffect } from "react"
 import { NavbarContext, setPageNameOnly } from "contexts"
+import styles from "./AppContainer.module.scss"
 
 interface ContainerProps extends Omit<Partial<Components>, "id"> {
   title: string
@@ -24,10 +25,10 @@ export function Container(props: ContainerProps) {
   }, [])
 
   const detectClassNames = !props.className ? "" : ` ${props.className}`
-	
+
   const wrapContents = !props.wrap
-    ? `relative z-1${detectClassNames}`
-    : `relative z-1 max-w-screen-2xl mx-auto px-7${detectClassNames}`
+    ? `${styles["no-wrap"]}${detectClassNames}`
+    : `${styles["wrap-contents"]}${detectClassNames}`
 
   return (
     <>

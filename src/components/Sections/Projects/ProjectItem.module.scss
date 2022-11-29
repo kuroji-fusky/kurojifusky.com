@@ -1,5 +1,5 @@
 @mixin itemContainer($a) {
-  @apply bg-borahae-dark border-2 border-sona-borahae-700 rounded-xl gap-5 p-5 #{$a};
+  @apply bg-borahae-dark rounded-xl gap-5 p-5 #{$a};
 }
 
 @mixin imgWrapperContainer($a) {
@@ -27,6 +27,14 @@
     "flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem]"
   );
   grid-column: 1 / span 2;
+
+	--fuck: rgba(17 13 23 / 1);
+
+  border: solid 4px transparent;
+  border-radius: 8px;
+  background-image: linear-gradient(var(--fuck), var(--fuck)), radial-gradient(circle at top left, #f00,#3020ff);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 
   #img-wrapper {
     @include imgWrapperContainer("lg:h-full");
@@ -61,7 +69,7 @@
 .flat-button {
   @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:bg-sona-borahae-600 hover:bg-opacity-50 transition-colors duration-300;
 
-	> span {
-		@apply text-[80%];
-	}
+  > span {
+    @apply text-[80%];
+  }
 }

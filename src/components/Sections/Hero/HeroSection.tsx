@@ -47,10 +47,9 @@ export function HeroSection() {
           </span>
         </article>
       </div>
-			<div className={styles["scroll-down"]}>
-				<FontAwesomeIcon icon={faChevronDown} />
-				<span>Scroll down for major disappointment</span>
-			</div>
+      <div className={styles["scroll-down"]}>
+        <FontAwesomeIcon icon={faChevronDown} />
+      </div>
       {/* Moving grid */}
       <div className={styles["vaporwave-grid"]}>
         <VaporwaveGrid />
