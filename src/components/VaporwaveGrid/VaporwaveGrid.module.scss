@@ -41,6 +41,16 @@
 .vertical-line-wrapper {
   @apply absolute inset-0 flex flex-col gap-[5rem];
   @include tempFixForNoScrollBars();
+  animation: scrollBaby 2.5s linear infinite;
+}
+
+@keyframes scrollBaby {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(5.25rem);
+  }
 }
 
 .vertical-line {

@@ -3,7 +3,7 @@
 }
 
 .img-wrapper {
-  @apply w-full grid place-items-center relative select-none h-[27.5rem] 2xl:h-[32.5rem];
+  @apply w-full grid place-items-center relative select-none h-[27.5rem] xl:h-[32.5rem];
 }
 
 .img-fix {
@@ -33,4 +33,12 @@
 
 .vaporwave-grid {
   @apply absolute -bottom-[5.75rem] left-0 right-0;
+}
+
+.scroll-down {
+  @apply absolute bottom-0 z-1 pb-8 flex flex-col items-center gap-y-3 text-center opacity-75;
+
+  span {
+    @apply text-sm w-[80%];
+  }
 }

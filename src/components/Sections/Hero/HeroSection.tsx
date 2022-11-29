@@ -7,6 +7,7 @@ import { RoundedBtn } from "../../Buttons"
 import VaporwaveGrid from "../../VaporwaveGrid"
 import sectionStyles from "../SectionContainer.module.scss"
 import styles from "./HomeHero.module.scss"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 export function HeroSection() {
   return (
@@ -46,6 +47,10 @@ export function HeroSection() {
           </span>
         </article>
       </div>
+			<div className={styles["scroll-down"]}>
+				<FontAwesomeIcon icon={faChevronDown} />
+				<span>Scroll down for major disappointment</span>
+			</div>
       {/* Moving grid */}
       <div className={styles["vaporwave-grid"]}>
         <VaporwaveGrid />

@@ -15,16 +15,13 @@ export default function VaporwaveGrid() {
             <div key={i} className={styles["horizontal-line"]}></div>
           ))}
         </div>
-        <motion.div
+        <div
           className={styles["vertical-line-wrapper"]}
-          style={{ y: 0, willChange: "transform" }}
-          animate={{ y: 79 }}
-          transition={{ ease: "linear", duration: 2.75, repeat: Infinity }}
         >
           {[...Array(row)].map((_, i) => (
             <div key={i} className={styles["vertical-line"]}></div>
           ))}
-        </motion.div>
+        </div>
       </div>
       <div className={styles["gradient-blanket-bottom"]}></div>
     </div>
