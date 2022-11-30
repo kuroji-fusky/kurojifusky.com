@@ -13,10 +13,10 @@ export function MiniNavItem(props: MiniNavItemsProps) {
   return (
     <Link href={props.link}>
       <a
-        className={`flex items-center gap-x-2 px-4 py-4 md:py-2.5 rounded-md transition-colors hover:bg-sona-borahae-600 hover:bg-opacity-50${lmao}`}
+        className={`flex items-center gap-x-2 px-4 py-4 lg:py-2.5 rounded-md transition-colors hover:bg-sona-borahae-600 hover:bg-opacity-50${lmao}`}
       >
         <FontAwesomeIcon icon={props.icon} />
-        <span className="hidden md:block">{props.name}</span>
+        <span className="hidden lg:block">{props.name}</span>
       </a>
     </Link>
   )

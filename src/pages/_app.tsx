@@ -39,15 +39,11 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      {disableOnDev && (
-        <Script
-          id="umami"
-          async
-          defer
-          data-website-id={process.env.UMAMI_ID}
-          src="https://umami.kurofusky.xyz/umami.js"
-        />
-      )}
+      <Script
+        data-website-id={process.env.UMAMI_ID}
+        src="https://umami.kurofusky.xyz/umami.js"
+        strategy="lazyOnload"
+      />
       <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
       <MotionConfig reducedMotion="user">
         <Layout>

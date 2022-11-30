@@ -13,6 +13,7 @@ export default function Navbar() {
   const NavbarValues = { expand, isExpanded: setExpand, pageName }
 
   const dropdownRef = useRef<HTMLDivElement>(null)
+
   const [height, setHeight] = useState(0)
 
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Navbar() {
   const nameShowInitial = { opacity: 0, top: -10 }
   const nameShowOpen = { opacity: 1, top: 0 }
 
-  const miniNavInitial = { opacity: 1, x: -12 }
+  const miniNavInitial = { opacity: 1, x: -6 }
   const miniNavHide = { opacity: 0, x: 0 }
 
   const nameShow = () => {
@@ -83,7 +84,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-x-1 relative z-3">
             <motion.div
-              className={`flex items-center gap-x-1 select-none ${
+              className={`hidden md:flex items-center gap-x-1 select-none ${
                 !expand ? "pointer-events-none" : "pointer-events-auto"
               }`}
               initial={miniNavInitial}
