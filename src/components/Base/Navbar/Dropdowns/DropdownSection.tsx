@@ -1,17 +1,7 @@
 import React from "react"
-import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
-import { NavItems as n } from "contents/NavItems"
+import { NavItems as section } from "contents/NavItems"
 import { DropdownListItem } from "./DropdownListItem"
-
-export interface DropdownListItemProps {
-  name: string
-  link: string
-  icon: IconDefinition
-  description?: string
-  gradStart?: string
-  gradEnd?: string
-  svg?: NonNullable<React.ReactElement>
-}
+import styles from "./Dropdown.module.scss"
 
 interface IDropdownSection {
   heading?: string
@@ -20,16 +10,13 @@ interface IDropdownSection {
 
 function DropdownSection(props: IDropdownSection) {
   return (
-    <div
-      id="dropdown-section"
-      className="pt-1.5 pl-0 pr-7 py-6 duration-[310ms]"
-    >
+    <div className={styles["section"]}>
       {props.heading && (
         <h2 className="relative uppercase text-2xl pb-2">
           <span className="gradient-header">{props.heading}</span>
         </h2>
       )}
-      <div role="list" className="prevent-blocked-list">
+      <div role="list" className={styles["block-list"]}>
         {props.section?.map((item, i) => (
           <DropdownListItem
             key={i}
@@ -45,13 +32,15 @@ function DropdownSection(props: IDropdownSection) {
 }
 
 export function Summary() {
-  return <DropdownSection section={n.summary} />
+  return <DropdownSection section={section.summary} />
 }
 
 export function Portfolio() {
-  return <DropdownSection heading="Creative Works" section={n.portfolio} />
+  return (
+    <DropdownSection heading="Creative Works" section={section.portfolio} />
+  )
 }
 
 export function More() {
-  return <DropdownSection heading="More" section={n.autist} />
+  return <DropdownSection heading="More" section={section.autist} />
 }

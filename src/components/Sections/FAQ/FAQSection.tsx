@@ -1,7 +1,7 @@
 import FAQ from "contents/FAQ"
-import FAQItem from "../FAQItem"
-import { SectionContainer } from "./SectionContainer"
-import styles from "./SectionContainer.module.scss"
+import FAQItem from "./FAQItem"
+import { SectionContainer } from "../SectionContainer"
+import styles from "../SectionContainer.module.scss"
 
 export function FAQSection() {
   return (

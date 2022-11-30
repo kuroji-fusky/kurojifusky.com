@@ -1,0 +1,27 @@
+.link-wrapper {
+  @apply flex items-center gap-4 rounded-md pl-5 pr-3 py-3;
+
+  &:hover .border {
+    @apply border-sona-borahae-200;
+  }
+
+  span {
+    @apply text-sm;
+  }
+}
+
+@mixin border-item($a) {
+  @apply border-2 rounded-md p-4 aspect-square w-[3.5rem] grid place-items-center #{$a};
+}
+
+.border {
+  @include border-item("");
+
+  &-current {
+    @include border-item("border-sona-borahae-400");
+  }
+}
+
+.link-content {
+  @apply flex flex-col;
+}

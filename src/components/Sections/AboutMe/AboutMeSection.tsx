@@ -1,9 +1,9 @@
-import { SectionContainer } from "./SectionContainer"
+import { SectionContainer } from "../SectionContainer"
 import styles from "./AboutMe.module.scss"
-import { RoundedBtn } from "../Buttons"
+import { RoundedBtn } from "../../Buttons"
 import { cloudinary } from "@/utils/ImgProviders"
 import Image from "next/image"
-import { LinkUnderline } from "../Links"
+import { LinkUnderline } from "../../Links"
 
 export function AboutMeSection() {
   return (
@@ -17,10 +17,10 @@ export function AboutMeSection() {
             and indie music production.
           </p>
           <p>
-            I usually work on my own accord, handle everything on my own and rely
-            on other external sources to improve. I have a diverse portfolio
-            ranging from my open-source projects, to other forms of art like
-            videos and self-produced music all on my own!
+            I usually work on my own accord, handle everything on my own and
+            rely on other external sources to improve. I have a diverse
+            portfolio ranging from my open-source projects, to other forms of
+            art like videos and self-produced music all on my own!
           </p>
           <p>
             If there are any questions that you're just curious about, check the{" "}

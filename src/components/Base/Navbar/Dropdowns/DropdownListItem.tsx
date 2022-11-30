@@ -1,10 +1,21 @@
 import React, { useContext } from "react"
 import Link from "next/link"
+import { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useRouter } from "next/router"
 import { isExpandedOnly, NavbarContext } from "contexts"
 import { NavLink } from "../NavLink"
-import { useRouter } from "next/router"
-import { DropdownListItemProps } from "./DropdownSection"
+import styles from "./DropdownListItem.module.scss"
+
+interface DropdownListItemProps {
+  name: string
+  link: string
+  icon: IconDefinition
+  description?: string
+  gradStart?: string
+  gradEnd?: string
+  svg?: NonNullable<React.ReactElement>
+}
 
 // TEMPLATE
 export function DropdownListItem(props: DropdownListItemProps) {
@@ -18,19 +29,15 @@ export function DropdownListItem(props: DropdownListItemProps) {
       {props.description ? (
         <Link href={props.link} passHref>
           <a
-            className="group flex items-center gap-4 rounded-md pl-5 pr-3 py-3"
+            className={styles["link-wrapper"]}
             onClick={() => isExpanded(true)}
           >
-            <div
-              className={`border-2 rounded-md p-4 aspect-square w-[3.5rem] grid place-items-center group-hover:border-sona-borahae-200 ${
-                currentDir && "!border-sona-borahae-400"
-              }`}
-            >
+            <div className={styles[!currentDir ? "border" : "border-current"]}>
               <FontAwesomeIcon icon={props.icon} />
             </div>
-            <div>
+            <div className={styles["link-content"]}>
               <strong>{props.name}</strong>
-              <div className="text-sm">{props.description}</div>
+              <span>{props.description}</span>
             </div>
           </a>
         </Link>

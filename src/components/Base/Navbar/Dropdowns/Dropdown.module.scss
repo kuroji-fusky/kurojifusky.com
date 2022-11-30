@@ -1,0 +1,10 @@
+.section {
+	@apply pt-1.5 pl-0 pr-7 py-6 duration-[310ms];
+}
+.block-list {
+  @apply grid grid-cols-1 gap-y-1;
+
+  &:not(:first-child) {
+    @apply lg:grid-cols-2;
+  }
+}

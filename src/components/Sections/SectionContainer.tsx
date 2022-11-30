@@ -6,7 +6,7 @@ interface SectionContainerProps extends Components {
 }
 
 export function SectionContainer(props: Partial<SectionContainerProps>) {
-  const expandClasses = !props.expandContent ? `${styles["screen-limit"]} ` : ""
+  const expandClasses = !props.expandContent ? `${styles["margin-set"]} ` : ""
   const containClass = !props.className ? "" : props.className
 
   return (

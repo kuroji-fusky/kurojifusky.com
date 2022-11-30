@@ -45,16 +45,13 @@ export default function Navbar() {
   const btnHandle = !expand ? "menu-btn-open" : "menu-btn-close"
   const dropdownHandle = !expand ? "" : " pointer-events-none"
 
+  const nameShowInitial = { opacity: 0, top: -10 }
+  const nameShowOpen = { opacity: 1, top: 0 }
+
   const nameShow = () => {
-    if (!expand) {
-      return { opacity: 1, top: 0 }
-    }
-
-    if (!scrolled) {
-      return { opacity: 0, top: -10 }
-    }
-
-    return { opacity: 1, top: 0 }
+    if (!expand) return nameShowOpen
+    if (!scrolled) return nameShowInitial
+    return nameShowOpen
   }
 
   return (
@@ -64,7 +61,7 @@ export default function Navbar() {
           <div>
             <Logo />
             <motion.span
-              initial={{ opacity: 0, top: -10 }}
+              initial={nameShowInitial}
               animate={nameShow()}
               transition={{ duration: 0.25 }}
               className={`relative z-[100] ${

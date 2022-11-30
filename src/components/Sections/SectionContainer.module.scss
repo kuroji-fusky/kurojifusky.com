@@ -3,10 +3,10 @@
 }
 
 .info-heading {
-  @apply text-4xl xl:text-5xl relative z-2;
+  @apply text-4xl xl:text-5xl relative z-2 text-center;
 }
 
-.screen-limit {
+.margin-set {
   @apply max-w-screen-2xl mx-auto px-4 md:px-10;
 }
 
