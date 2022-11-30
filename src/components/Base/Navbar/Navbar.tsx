@@ -4,6 +4,8 @@ import { NavbarContext } from "contexts"
 import { Logo } from "./Logo"
 import { More, Portfolio, Summary } from "./Dropdowns/DropdownSection"
 import NavPageName from "./NavPageName"
+import { NavItems as nav } from "contents/NavItems"
+import { MiniNavItems } from "./MiniNavItems"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
@@ -71,11 +73,24 @@ export default function Navbar() {
               <NavPageName />
             </motion.span>
           </div>
-          <button
-            onClick={() => setExpand(!expand)}
-            aria-label="Open/close menu"
-            className={`${btnHandle} relative px-2 py-3 h-[3.5rem] w-[3.75rem] rounded-md z-3`}
-          ></button>
+          <div className="flex items-center gap-x-1 relative z-3">
+            <div className="flex items-center gap-x-1">
+              {nav.summary.map((items, i) => (
+                <MiniNavItems
+                  key={i}
+                  icon={items.icon}
+                  name={items.name}
+                  link={items.link}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() => setExpand(!expand)}
+              aria-label="Open/close menu"
+              className={`${btnHandle} relative px-2 py-3 h-[3.5rem] w-[3.75rem] rounded-md z-3`}
+            ></button>
+          </div>
+
           <div
             ref={dropdownRef}
             id="menu-container"

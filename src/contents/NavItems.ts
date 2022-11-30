@@ -8,7 +8,7 @@ import {
 	faPenSquare
 } from "@fortawesome/free-solid-svg-icons"
 
-interface ItemTypes {
+export interface ItemTypes {
 	link: string
 	name: string
 	description: string
