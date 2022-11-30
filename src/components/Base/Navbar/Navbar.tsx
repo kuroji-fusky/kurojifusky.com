@@ -5,7 +5,7 @@ import { Logo } from "./Logo"
 import { More, Portfolio, Summary } from "./Dropdowns/DropdownSection"
 import NavPageName from "./NavPageName"
 import { NavItems as nav } from "contents/NavItems"
-import { MiniNavItems } from "./MiniNavItems"
+import { MiniNavItem } from "./MiniNavItem"
 
 export default function Navbar() {
   const [expand, setExpand] = useState(true)
@@ -50,10 +50,18 @@ export default function Navbar() {
   const nameShowInitial = { opacity: 0, top: -10 }
   const nameShowOpen = { opacity: 1, top: 0 }
 
+  const miniNavInitial = { opacity: 1, x: -12 }
+  const miniNavHide = { opacity: 0, x: 0 }
+
   const nameShow = () => {
     if (!expand) return nameShowOpen
     if (!scrolled) return nameShowInitial
     return nameShowOpen
+  }
+
+  const miniNav = () => {
+    if (!expand) return miniNavHide
+    return miniNavInitial
   }
 
   return (
@@ -74,16 +82,23 @@ export default function Navbar() {
             </motion.span>
           </div>
           <div className="flex items-center gap-x-1 relative z-3">
-            <div className="flex items-center gap-x-1">
+            <motion.div
+              className={`flex items-center gap-x-1 select-none ${
+                !expand ? "pointer-events-none" : "pointer-events-auto"
+              }`}
+              initial={miniNavInitial}
+              animate={miniNav()}
+              transition={{ duration: 0.25 }}
+            >
               {nav.summary.map((items, i) => (
-                <MiniNavItems
+                <MiniNavItem
                   key={i}
                   icon={items.icon}
                   name={items.name}
                   link={items.link}
                 />
               ))}
-            </div>
+            </motion.div>
             <button
               onClick={() => setExpand(!expand)}
               aria-label="Open/close menu"
