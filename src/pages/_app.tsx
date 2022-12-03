@@ -7,6 +7,7 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 
 import NextNProgress from "nextjs-progressbar"
+import { hotjar } from "react-hotjar"
 import { Layout } from "@/components/Base"
 import * as ga from "@/utils/ga"
 
@@ -28,6 +29,10 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       return () => router.events.off("routeChangeComplete", routeChange)
     }
   }, [router.events])
+	
+  useEffect(() => {
+    if (disableOnDev) hotjar.initialize(3249585, 6)
+  })
 
   return (
     <>
