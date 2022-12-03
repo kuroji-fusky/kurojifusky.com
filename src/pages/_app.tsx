@@ -29,21 +29,17 @@ export default function Cutie({ Component, pageProps }: AppProps) {
       return () => router.events.off("routeChangeComplete", routeChange)
     }
   }, [router.events])
-	
+
   useEffect(() => {
     if (disableOnDev) hotjar.initialize(3249585, 6)
-  })
+  }, [])
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Script
-        data-website-id={process.env.UMAMI_ID}
-        src="https://umami.kurofusky.xyz/umami.js"
-        strategy="lazyOnload"
-      />
+
       <Script
         id="hotjar"
         dangerouslySetInnerHTML={{
