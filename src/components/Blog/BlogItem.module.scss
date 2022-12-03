@@ -1,3 +1,7 @@
 .item {
-	@apply p-4 border rounded-md;
+	@apply p-[1.15rem] border rounded-md;
+}
+
+.contents {
+	@apply flex flex-col gap-y-2;
 }

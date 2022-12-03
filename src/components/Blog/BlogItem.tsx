@@ -1,12 +1,6 @@
 import { LinkUnderline } from "../Links"
 import styles from "./BlogItem.module.scss"
-
-interface BlogItemProps {
-  title: string
-  excerpt: string
-  tags: string[]
-  unique?: boolean
-}
+import { BlogItemProps } from "./BlogTypes"
 
 export function BlogItem(props: Partial<BlogItemProps>) {
   return (

@@ -15,8 +15,8 @@ export default function BlogMain() {
         <p className="text-base lg:text-lg">{d}</p>
       </header>
       <div className={styles["container"]}>
-        <BlogSection title="Recent Posts">
-          <BlogItem />
+        <BlogSection title="Recent Posts" heading>
+          <BlogItem heading/>
           <BlogItem />
           <BlogItem />
         </BlogSection>

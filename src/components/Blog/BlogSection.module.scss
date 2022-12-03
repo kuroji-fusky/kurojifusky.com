@@ -1,7 +1,20 @@
 .section-wrapper {
-	@apply mx-auto max-w-screen-2xl w-full px-10 2xl:px-0;
+	@apply flex flex-col gap-y-4;
 }
 
 .heading {
 	@apply font-jetbrains-mono font-bold text-3xl;
+}
+
+.contents {
+	:is(&-row, &-heading) {
+		@apply grid gap-4;
+	}
+
+	// .contents-row
+	&-row {
+		@apply grid-cols-3;
+	}
+	
+	// .contents-heading
 }
