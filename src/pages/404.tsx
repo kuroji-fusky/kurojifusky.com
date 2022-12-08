@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { Container } from "@/components/Base"
-import { Btn, BtnLink } from "@/components/Buttons"
+import { BtnLink } from "@/components/UI"
 
 export default function PageNotFound() {
   const router = useRouter()
@@ -25,8 +25,8 @@ export default function PageNotFound() {
             be bothered to work on it... mostly lol
           </p>
           <div className="flex justify-center gap-5">
-            <BtnLink name="Main page" link="/" emojiFix />
-            <Btn name="Go back to your mom and cry" onClick={goBack} />
+            <BtnLink name="Main page" link="/" />
+            <BtnLink name="Go back to your mom and cry" onClick={goBack} />
           </div>
         </div>
       </div>

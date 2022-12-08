@@ -1,7 +1,5 @@
 import { Container } from "@/components/Base"
-import LazyImg from "@/components/LazyImg"
-import { LinkUnderline } from "@/components/Links"
-import Notice from "@/components/Notice"
+import { LazyImg, LinkUnderline, Notice } from "@/components/UI"
 import { cloudinary } from "@/utils/ImgProviders"
 
 export default function Character() {

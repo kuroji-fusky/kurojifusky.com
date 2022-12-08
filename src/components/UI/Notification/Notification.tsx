@@ -9,7 +9,7 @@ interface NotificationProps {
   icon?: "error" | "warning" | "info"
 }
 
-export default function Notification(props: NotificationProps) {
+export function Notification(props: NotificationProps) {
   const [hide, setHide] = useState(false)
 
   return (

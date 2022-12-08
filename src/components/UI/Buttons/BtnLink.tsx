@@ -1,8 +1,7 @@
 import Link from "next/link"
-import styles from "./btn.module.scss"
+import styles from "./BtnLink.module.scss"
 
 interface BtnLinkProps extends ISharedBtnProps {
-  emojiFix?: boolean
   ariaList?: boolean
 }
 
@@ -14,11 +13,6 @@ export function BtnLink(props: BtnLinkProps) {
         data-text={props.name}
         onClick={props.onClick}
         role={!props.ariaList ? undefined : "listitem"}
-        style={
-          {
-            "--text-padding-hover": !props.emojiFix ? "" : "var(--emoji-fix)"
-          } as React.CSSProperties
-        }
       >
         {props.name}
       </a>

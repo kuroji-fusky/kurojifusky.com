@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import { LinkUnderline } from "../Links"
+import { LinkUnderline } from "./Links/LinkUnderline"
 
 interface BreadcrumbProps {
   rootDir?: string

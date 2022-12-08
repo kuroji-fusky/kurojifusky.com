@@ -2,10 +2,9 @@ import { useState, useRef } from "react"
 import { useSpring, animated } from "react-spring"
 import { InView } from "react-intersection-observer"
 import ReactMarkdown from "react-markdown"
-import { LinkUnderline } from "../Links"
-import LazyImg from "../LazyImg"
 import { cloudinary } from "@/utils/ImgProviders"
 import { PortfolioItemTypes } from "contents/PortfolioItems"
+import { LazyImg, LinkUnderline } from "../UI"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,

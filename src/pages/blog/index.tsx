@@ -1,7 +1,7 @@
 import { Container } from "@/components/Base"
 import { BlogItem } from "@/components/Blog/BlogItem"
 import { BlogSection } from "@/components/Blog/BlogSection"
-import Notice from "@/components/Notice"
+import { Notice } from "@/components/UI"
 import styles from "./BlogRoot.module.scss"
 
 export default function BlogMain() {
