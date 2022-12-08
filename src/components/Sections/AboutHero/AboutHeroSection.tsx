@@ -1,8 +1,8 @@
 import Image from "next/image"
-import { LazyMotion, domAnimation, motion, useWillChange } from "framer-motion"
+import { LazyMotion, domAnimation, m, useWillChange } from "framer-motion"
 import { cloudinary } from "@/utils/ImgProviders"
 
-export function AboutHeroSection() {
+export default function AboutHeroSection() {
   const willChange = useWillChange()
 
   const anims = {
@@ -15,7 +15,7 @@ export function AboutHeroSection() {
   return (
     <section className="relative h-screen grid place-items-center">
       <LazyMotion features={domAnimation}>
-        <motion.div
+        <m.div
           className="absolute blur-[45px] rounded-full -z-1 pointer-events-none -bottom-[12%] left-5 h-[320px] bg-gradient-to-r from-sona-yellow-600 via-sona-skycyan-400 to-sona-borahae-600 -rotate-6"
           initial={anims.backdropInitial}
           animate={anims.backdropAnimate}
@@ -23,7 +23,7 @@ export function AboutHeroSection() {
           style={{ willChange }}
           aria-hidden="true"
         />
-        <motion.div
+        <m.div
           className="absolute blur-[45px] rounded-full -z-1 pointer-events-none bottom-0 right-5 h-[300px] bg-gradient-to-r from-sona-royalblue-600  to-sona-borahaealt-400 rotate-6"
           initial={anims.backdropInitial}
           animate={anims.backdropAnimate}
@@ -32,7 +32,7 @@ export function AboutHeroSection() {
           aria-hidden="true"
         />
         <article className="flex flex-col items-center text-center gap-y-5 relative z-1">
-          <motion.div
+          <m.div
             className="relative w-[18.5rem] h-[18.5rem] mb-10 rounded-md overflow-hidden shadow-2xl shadow-sona-borahae-600"
             initial={anims.heroInitial}
             animate={anims.heroAnimate}
@@ -48,8 +48,8 @@ export function AboutHeroSection() {
               alt="Definitely not a cutie"
               priority
             />
-          </motion.div>
-          <motion.h1
+          </m.div>
+          <m.h1
             className="text-4xl md:text-5xl"
             initial={anims.heroInitial}
             animate={anims.heroAnimate}
@@ -57,8 +57,8 @@ export function AboutHeroSection() {
             style={{ willChange }}
           >
             I'm a hobbyist individual
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             className="text-base md:text-xl w-[90%] md:w-[60%]"
             initial={anims.heroInitial}
             animate={anims.heroAnimate}
@@ -70,7 +70,7 @@ export function AboutHeroSection() {
             currently 20 years old and I reside from the mountainous regions in
             the Philippines. My peers go by me as Kuroji Fusky (previously
             skepfusky).
-          </motion.p>
+          </m.p>
         </article>
       </LazyMotion>
     </section>

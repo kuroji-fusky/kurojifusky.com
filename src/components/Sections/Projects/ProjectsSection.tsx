@@ -40,7 +40,7 @@ const projects = [
   }
 ]
 
-export function ProjectsSection() {
+export default function ProjectsSection() {
   return (
     <SectionContainer className={styles.wrapper} title="Open Source Projects">
       <div className={styles["grid-container"]}>

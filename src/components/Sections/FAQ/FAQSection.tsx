@@ -3,7 +3,7 @@ import FAQItem from "./FAQItem"
 import { SectionContainer } from "../SectionContainer"
 import styles from "../SectionContainer.module.scss"
 
-export function FAQSection() {
+export default function FAQSection() {
   return (
     <SectionContainer
       id="faqs"

@@ -4,7 +4,7 @@ import { cloudinary } from "@/utils/ImgProviders"
 import Image from "next/image"
 import { LinkUnderline, RoundedBtn } from "@/components/UI"
 
-export function AboutMeSection() {
+export default function AboutMeSection() {
   return (
     <SectionContainer className={styles["wrapper"]}>
       <div className={styles["content-wrapper"]}>

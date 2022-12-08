@@ -1,12 +1,26 @@
+import dynamic from "next/dynamic"
 import { Container } from "@/components/Base"
-import {
-  HeroSection,
-  AboutMeSection,
-  FAQSection,
-  ProjectsSection,
-  SupportSection,
-  TechStackSection
-} from "@/components/Sections"
+import HeroSection from "@/components/Sections/Hero/HeroSection"
+
+const AboutMeSection = dynamic(
+  () => import("@/components/Sections/AboutMe/AboutMeSection"),
+  { suspense: true }
+)
+
+const ProjectsSection = dynamic(
+  () => import("@/components/Sections/Projects/ProjectsSection"),
+  { suspense: true }
+)
+
+const FAQSection = dynamic(
+  () => import("@/components/Sections/FAQ/FAQSection"),
+  { suspense: true }
+)
+
+const SupportSection = dynamic(
+  () => import("@/components/Sections/SupportSection"),
+  { suspense: true }
+)
 
 export default function Home() {
   const t = "kurofusky"
@@ -16,11 +30,10 @@ export default function Home() {
   return (
     <Container title={t} description={d}>
       <HeroSection />
-			<AboutMeSection />
+      <AboutMeSection />
       <ProjectsSection />
       <FAQSection />
       <SupportSection />
-      <TechStackSection />
     </Container>
   )
 }

@@ -2,7 +2,7 @@ import { RoundedBtn } from "../UI"
 import { SectionContainer } from "./SectionContainer"
 import styles from "./SectionContainer.module.scss"
 
-export function SupportSection() {
+export default function SupportSection() {
   return (
     <SectionContainer
       className={styles["info-wrapper"]}

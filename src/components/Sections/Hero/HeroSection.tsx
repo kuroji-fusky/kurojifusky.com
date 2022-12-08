@@ -8,7 +8,7 @@ import sectionStyles from "../SectionContainer.module.scss"
 import styles from "./HomeHero.module.scss"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
-export function HeroSection() {
+export default function HeroSection() {
   return (
     <SectionContainer className={sectionStyles.hero} expandContent>
       <div className={styles["wrapper-responsive"]}>
