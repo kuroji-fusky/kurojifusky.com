@@ -1,4 +1,4 @@
-import { LinkUnderline } from "../UI"
+import { LinkUnderline } from "@/components/UI"
 import styles from "./BlogItem.module.scss"
 import { BlogItemProps } from "./BlogTypes"
 

@@ -1,4 +1,4 @@
-import { RoundedBtn } from "../UI"
+import { RoundedBtn } from "@/components/UI"
 import { SectionContainer } from "./SectionContainer"
 import styles from "./SectionContainer.module.scss"
 

@@ -14,7 +14,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/fursona',
-				destination: '/about/fursona',
+				destination: '/character',
 				permanent: true
 			}
 		]

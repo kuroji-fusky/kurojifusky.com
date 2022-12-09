@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Backdrop from "../Backdrop"
 import socials from "../../contents/Socials"
 import styles from "./RootFooter.module.scss"
-import { LinkUnderline } from "../UI"
+import { LinkUnderline } from "@/components/UI"
 
 export default function Footer() {
   return (

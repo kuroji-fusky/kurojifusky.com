@@ -4,7 +4,7 @@ import { InView } from "react-intersection-observer"
 import ReactMarkdown from "react-markdown"
 import { cloudinary } from "@/utils/ImgProviders"
 import { PortfolioItemTypes } from "contents/PortfolioItems"
-import { LazyImg, LinkUnderline } from "../UI"
+import { LazyImg, LinkUnderline } from "@/components/UI"
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 50,
