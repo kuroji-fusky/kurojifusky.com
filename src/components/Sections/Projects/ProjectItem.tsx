@@ -1,5 +1,5 @@
+import { LazyImg } from "@/components/UI"
 import { cloudinary } from "@/utils/ImgProviders"
-import LazyImg from "../../LazyImg"
 import { FlatBtn } from "./FlatBtn"
 import styles from "./ProjectItem.module.scss"
 

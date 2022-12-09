@@ -12,7 +12,7 @@ interface NoticeProps {
   type?: "warning" | "error"
 }
 
-export default function Notice(props: NoticeProps) {
+export function Notice(props: NoticeProps) {
   const states = () => {
     const statesObj = {
       info: {

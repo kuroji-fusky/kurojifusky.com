@@ -3,13 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import { cloudinary } from "@/utils/ImgProviders"
 import { SectionContainer } from "../SectionContainer"
-import { RoundedBtn } from "../../Buttons"
 import VaporwaveGrid from "../../VaporwaveGrid"
 import sectionStyles from "../SectionContainer.module.scss"
 import styles from "./HomeHero.module.scss"
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
-export function HeroSection() {
+export default function HeroSection() {
   return (
     <SectionContainer className={sectionStyles.hero} expandContent>
       <div className={styles["wrapper-responsive"]}>

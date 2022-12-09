@@ -1,13 +1,14 @@
+import styles from "./Backdrop.module.scss"
+
 export default function Backdrop(
   props: { fixed?: boolean } & Pick<Components, "className">
 ) {
   return (
     <div
-      id="gradient-decorator"
-      aria-hidden="true"
+      aria-hidden
       className={`${props.className} ${
-        props.fixed ? "fixed" : "absolute"
-      } z-1 blur-[45px] rounded-full pointer-events-none`}
+        styles[props.fixed ? "bd-fixed" : "bd-absolute"]
+      }`}
     ></div>
   )
 }

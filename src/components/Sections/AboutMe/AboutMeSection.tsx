@@ -1,11 +1,10 @@
 import { SectionContainer } from "../SectionContainer"
 import styles from "./AboutMe.module.scss"
-import { RoundedBtn } from "../../Buttons"
 import { cloudinary } from "@/utils/ImgProviders"
 import Image from "next/image"
-import { LinkUnderline } from "../../Links"
+import { LinkUnderline, RoundedBtn } from "@/components/UI"
 
-export function AboutMeSection() {
+export default function AboutMeSection() {
   return (
     <SectionContainer className={styles["wrapper"]}>
       <div className={styles["content-wrapper"]}>
@@ -27,7 +26,7 @@ export function AboutMeSection() {
             <LinkUnderline link="#faqs">FAQs</LinkUnderline> section!
           </p>
           <div className={styles["btn-wrapper"]}>
-            <RoundedBtn link="/about">Learn More</RoundedBtn>
+            <RoundedBtn link="/about">Learn More About Me</RoundedBtn>
             <RoundedBtn link="/character">Character reference</RoundedBtn>
           </div>
         </article>

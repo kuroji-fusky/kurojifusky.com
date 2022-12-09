@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 import { useContext, useEffect } from "react"
 import { NavbarContext, setPageNameOnly } from "contexts"
-import styles from "./AppContainer.module.scss"
+import styles from "./Container.module.scss"
 
 interface ContainerProps extends Omit<Partial<Components>, "id"> {
   title: string

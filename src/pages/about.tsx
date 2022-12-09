@@ -1,5 +1,11 @@
+import dynamic from "next/dynamic"
 import { Container } from "@/components/Base"
-import { AboutHeroSection, SkillsSection } from "@/components/Sections"
+import { SkillsSection } from "@/components/Sections/AboutHero/SkillsSection"
+
+const AboutHeroSection = dynamic(
+  () => import("@/components/Sections/AboutHero/AboutHeroSection"),
+  { suspense: true }
+)
 
 export default function About() {
   const title = "About"

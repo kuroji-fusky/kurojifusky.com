@@ -11,7 +11,7 @@ interface ImgLoadingProps {
   objectFit?: "cover" | "contain"
 }
 
-export default function LazyImg(props: ImgLoadingProps) {
+export function LazyImg(props: ImgLoadingProps) {
   const [loaded, setLoaded] = useState(false)
 
   const classNameDetect = props.className ?? ""
