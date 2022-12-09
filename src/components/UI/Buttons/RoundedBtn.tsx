@@ -1,8 +1,7 @@
 import Link from "next/link"
 
-interface RoundedBtnProps {
+interface RoundedBtnProps extends ISharedBtnProps {
   children?: NonNullable<React.ReactNode>
-  link?: string
   external?: boolean
 }
 
@@ -16,6 +15,7 @@ export function RoundedBtn(props: RoundedBtnProps) {
         role="button"
         target={!props.external ? undefined : "_blank"}
         rel={!props.external ? undefined : "noopener noreferrer"}
+        onClick={props.onClick}
       >
         <div className="bg-borahae-dark px-5 py-2 rounded-[10rem] h-full m-[0.1rem] grid place-items-center select-none font-inter">
           {props.children}

@@ -1,5 +1,4 @@
 // Buttons
-export { BtnLink } from "./Buttons/BtnLink"
 export { RoundedBtn } from "./Buttons/RoundedBtn"
 
 // LazyImg

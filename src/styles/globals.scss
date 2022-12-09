@@ -2,10 +2,6 @@
 @use "components";
 @use "mixins" as *;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   ::-webkit-scrollbar {
     @apply h-2 w-2;
@@ -47,3 +43,6 @@
   }
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

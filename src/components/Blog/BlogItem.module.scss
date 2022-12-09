@@ -1,5 +1,5 @@
 .item {
-	@apply p-[1.15rem] border rounded-md;
+	@apply p-[1.15rem] border rounded-md flex flex-col gap-y-1.5;
 }
 
 .contents {

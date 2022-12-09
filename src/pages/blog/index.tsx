@@ -9,8 +9,8 @@ export default function BlogMain() {
   const d = "Sharing my sad, pathetic life to people"
   return (
     <Container title={t} description={d} wrap>
-      <header className="mt-24 px-12 2xl:px-0 text-center flex flex-col gap-y-3">
-        <Notice content="Blog page still under construction - keep in mind that I self-host everything on the cloud and it's not easy lol" />
+      <header className="my-24 px-12 2xl:px-0 text-center flex flex-col gap-y-4">
+        <Notice content="Blog page still under construction - I self-host everything and it takes a while for the juicy content to be shown lol" />
         <h1 className="text-4xl lg:text-5xl">{t}</h1>
         <p className="text-base lg:text-lg">{d}</p>
       </header>

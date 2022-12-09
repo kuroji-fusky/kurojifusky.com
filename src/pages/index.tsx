@@ -18,12 +18,12 @@ const ProjectsSection = dynamic(
 
 const FAQSection = dynamic(
   () => import("@/components/Sections/FAQ/FAQSection"),
-  { suspense: true, ssr: false }
+  { suspense: true }
 )
 
 const SupportSection = dynamic(
   () => import("@/components/Sections/SupportSection"),
-  { suspense: true, ssr: false }
+  { suspense: true }
 )
 
 export default function Home() {
