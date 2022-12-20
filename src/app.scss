@@ -1,0 +1,19 @@
+@layer base {
+	:root {
+		--font-open-sans: 'Open Sans', sans-serif;
+		--font-inter: 'Inter', sans-serif;
+		--font-jetbrains: 'JetBrains Mono', monospace;
+	}
+
+	body {
+		@apply font-open-sans bg-borahae-dark text-neutral-50;
+	}
+
+	:is(h1, h2, h3, h4) {
+		@apply font-inter;
+	}
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
