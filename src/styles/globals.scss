@@ -1,46 +1,11 @@
-@use "branding";
-@use "components";
-@use "mixins" as *;
-
 @layer base {
-  ::-webkit-scrollbar {
-    @apply h-2 w-2;
+	body {
+		@apply font-open-sans bg-borahae-dark text-neutral-50;
+	}
 
-    &-thumb {
-      @apply rounded-[0.45rem] bg-purple-800 border-[10px] border-neutral-900;
-    }
-
-    &-track {
-      @apply bg-borahae-dark;
-    }
-  }
-
-  ::selection {
-    @apply bg-sona-borahae-600 text-neutral-50;
-  }
-
-  html {
-    @apply scroll-smooth scroll-pt-[5.85rem] antialiased overflow-scroll;
-
-    scrollbar-color: theme("colors.sona-borahae.600"),
-      theme("colors.borahae-dark");
-  }
-
-  body {
-    @apply overflow-x-hidden font-open-sans text-neutral-50 bg-borahae-dark;
-  }
-
-  @each $i, $s in [ 1 "4xl", 2 "3xl", 3 "2xl", 4 "xl", 5 "lg" ] {
-    h#{$i} {
-      @apply font-semibold font-inter text-#{$s};
-    }
-  }
-}
-
-@layer utilities {
-  .scrollbar-none {
-		@include no-scrollbar;
-  }
+  #__next {
+		@apply min-h-screen max-w-full overflow-x-hidden;
+	}
 }
 
 @tailwind base;

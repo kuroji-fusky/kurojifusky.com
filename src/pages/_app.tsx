@@ -1,45 +1,50 @@
-// Usual React shit
-import { useEffect } from "react"
-import { useRouter } from "next/router"
+import "../styles/globals.scss"
 import type { AppProps } from "next/app"
-import Head from "next/head"
-
-// Analytics
-import { Analytics } from "@vercel/analytics/react"
-import { hotjar } from "react-hotjar"
 import { Layout } from "@/components/Base"
 
-// Stuff for dev and configs
-import { config } from "@fortawesome/fontawesome-svg-core"
-import { disableOnDev } from "@/utils/envHandler"
+import {
+  Inter,
+  JetBrains_Mono,
+  Open_Sans,
+  Ubuntu_Mono,
+} from "@next/font/google"
 
-// Components
-import NextNProgress from "nextjs-progressbar"
-import { MotionConfig } from "framer-motion"
+import useAppendHTMLClass from "@/hooks/useAppendHTMLClass"
 
-// Styles
-import "@/styles/globals.scss"
-import "@fortawesome/fontawesome-svg-core/styles.css"
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  preload: true,
+})
 
-config.autoAddCss = false
+const sans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+  preload: true,
+})
 
-export default function Cutie({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    if (disableOnDev) hotjar.initialize(3249585, 6)
-  }, [])
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+})
+
+const uboontu = Ubuntu_Mono({
+  variable: "--font-ubuntu",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+})
+
+export default function App({ Component, pageProps }: AppProps) {
+  useAppendHTMLClass(
+    inter.variable,
+    sans.variable,
+    jetbrains.variable,
+    uboontu.variable
+  )
 
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <NextNProgress color="#9427E7" options={{ showSpinner: false }} />
-      <MotionConfig reducedMotion="user">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        {disableOnDev && <Analytics />}
-      </MotionConfig>
-    </>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }

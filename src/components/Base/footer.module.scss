@@ -1,0 +1,40 @@
+.content-container {
+  @apply py-6 mx-8 flex justify-between;
+}
+
+#links-col {
+  @apply p-2;
+
+  h2 {
+    @apply font-inter font-bold uppercase text-3xl;
+  }
+}
+
+#loop-strip-container {
+  @apply bg-sona-yellow-500 select-none overflow-hidden;
+  --outline-color: #fff;
+  --outline-stroke: 1.25px;
+  --invert-outline: calc(var(--outline-stroke) * -1);
+}
+
+.text-strip {
+  @apply relative right-[23rem] text-5xl grid grid-flow-col gap-3.5 items-center overflow-x-visible;
+
+  animation: strip-scroll 3.5s linear reverse infinite;
+}
+
+.text-loop-item {
+  @apply block w-max font-inter font-extrabold text-sona-yellow-500 italic uppercase leading-[2.65rem];
+
+  text-shadow: var(--invert-outline) var(--invert-outline) 0
+      var(--outline-color),
+    var(--outline-stroke) var(--invert-outline) 0 var(--outline-color),
+    var(--invert-outline) var(--outline-stroke) 0 var(--outline-color),
+    var(--outline-stroke) var(--outline-stroke) 0 var(--outline-color);
+}
+
+@keyframes strip-scroll {
+  from {
+    right: 46rem;
+  }
+}

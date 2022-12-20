@@ -1,0 +1,26 @@
+$font-dynamic-small: 1.85rem;
+$nav-link-size: 0.7rem;
+$font-dynamic-base: 2.35vw;
+
+#fixed-wrapper {
+  @apply mx-8 my-3 fixed top-0 left-0 right-0 font-inter z-[10];
+}
+
+.responsive-container {
+  @apply flex justify-between items-center;
+}
+
+.logo {
+  font-size: max($font-dynamic-small, $font-dynamic-base);
+  @apply font-extrabold uppercase italic;
+}
+
+.nav-links {
+  $font-dynamic-base: 1.5vw;
+  font-size: max(
+    calc($font-dynamic-small - $nav-link-size),
+    calc($font-dynamic-base - $nav-link-size + 0.1rem)
+  );
+  gap: 2.5vw;
+  @apply flex;
+}

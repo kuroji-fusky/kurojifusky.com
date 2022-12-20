@@ -1,32 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme")
-
 module.exports = {
 	content: [
-		"./src/components/**/*.{js,jsx,ts,tsx}",
-		"./src/pages/**/*.{js,jsx,ts,tsx}",
+		"./src/pages/**/*.{js,ts,jsx,tsx}",
+		"./src/components/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		fontFamily: {
-			"inter": ["Inter", ...defaultTheme.fontFamily.sans],
-			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
-			"ubuntu-mono": ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
-			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
-		},
-		screens: {
-			sm: "640px",
-			md: "768px",
-			lg: "1024px",
-			xl: "1367px",
-			"2xl": "1536px"
-		},
-		zIndex: {
-			1: "1",
-			2: "2",
-			3: "3",
-			4: "4",
-			5: "5",
-			mosttop: "9999"
+			"inter": ["var(--font-inter)"],
+			"open-sans": ["var(--font-open-sans)"],
+			"ubuntu-mono": ["var(--font-ubuntu)"],
+			"jetbrains-mono": ["var(--font-jetbrains)"]
 		},
 		extend: {
 			colors: {
@@ -126,25 +109,14 @@ module.exports = {
 					"700": "#2C292E",
 					"800": "#1A191A",
 					"900": "#080808"
-				}
-			},
-			borderRadius: {
-				sm: ".125rem",
-				md: "6px",
-				full: "50%"
-			},
-			animation: {
-				"gradient-scroll-slow": "gradient-scroll-root 9s linear infinite",
-				"gradient-scroll-mid": "gradient-scroll-root 4s linear infinite",
-				"gradient-scroll-fast": "gradient-scroll-root 1650ms linear infinite",
-			},
-			keyframes: {
-				"gradient-scroll-root": {
-					"0%": { "background-position": "left" },
-					"100%": { "background-position": "right" },
 				},
-			},
-		}
-	},
-	plugins: [],
+				borderRadius: {
+					sm: ".125rem",
+					md: "6px",
+					full: "50%"
+				},
+			}
+		},
+		plugins: [],
+	}
 }
