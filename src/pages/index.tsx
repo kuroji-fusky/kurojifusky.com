@@ -1,11 +1,3 @@
-import BgWrapper from "@/components/Background"
-import Container from "@/components/Base/Container"
-
-export default function Home() {
-  return (
-    <Container t="Kuroji Fusky" d="lol">
-      <div>YEAHH</div>
-			<BgWrapper />
-    </Container>
-  )
+export default function HomePage() {
+  return <main className="h-screen"></main>
 }

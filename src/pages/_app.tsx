@@ -1,50 +1,45 @@
 import "../styles/globals.scss"
+
 import type { AppProps } from "next/app"
-import { Layout } from "@/components/Base"
+import Head from "next/head"
+import { useEffect } from "react"
+import { Inter, JetBrains_Mono, Open_Sans } from "@next/font/google"
 
-import {
-  Inter,
-  JetBrains_Mono,
-  Open_Sans,
-  Ubuntu_Mono,
-} from "@next/font/google"
+import Layout from "../components/layout"
 
-import useAppendHTMLClass from "@/hooks/useAppendHTMLClass"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  preload: true,
-})
+import { Analytics } from "@vercel/analytics/react"
 
-const sans = Open_Sans({
+const inter = Inter({ variable: "--font-inter" })
+const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains-mono" })
+
+const openSans = Open_Sans({
   variable: "--font-open-sans",
-  subsets: ["latin"],
-  preload: true,
-})
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-})
-
-const uboontu = Ubuntu_Mono({
-  variable: "--font-ubuntu",
-  weight: ["400", "700"],
-  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-  useAppendHTMLClass(
-    inter.variable,
-    sans.variable,
-    jetbrains.variable,
-    uboontu.variable
-  )
+  useAppendHTMLClass(inter.variable, openSans.variable, jetbrains.variable)
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Analytics mode="auto" />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
+}
+
+function useAppendHTMLClass(...className: string[]) {
+  useEffect(() => {
+    const htmlRoot = document.documentElement
+    htmlRoot.classList.add(...className)
+  }, [className])
 }

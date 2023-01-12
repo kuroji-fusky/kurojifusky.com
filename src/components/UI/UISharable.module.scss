@@ -1,0 +1,23 @@
+/*** BUTTON AND LINKS ***/
+.button {
+}
+
+.button-fill {
+}
+
+.link {
+  @apply relative opacity-75 duration-200 transition-opacity;
+
+  &::before {
+    content: "";
+    @apply absolute bg-sona-borahaealt-400 -bottom-0.5 left-0 h-[2px] w-0 transition-all duration-200;
+  }
+
+  &:hover {
+    @apply opacity-100;
+  }
+
+  &:hover::before {
+    @apply w-full;
+  }
+}

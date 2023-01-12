@@ -1,1 +1,0 @@
-export const clientOnly = typeof window !== "undefined"
