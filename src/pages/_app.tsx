@@ -1,19 +1,16 @@
 // Usual React shit
-import { useEffect } from "react"
-import { useRouter } from "next/router"
 import type { AppProps } from "next/app"
 import Head from "next/head"
 
 // Analytics
 import { Analytics } from "@vercel/analytics/react"
-import { hotjar } from "react-hotjar"
-import { Layout } from "@/components/Base"
 
 // Stuff for dev and configs
 import { config } from "@fortawesome/fontawesome-svg-core"
 import { disableOnDev } from "@/utils/envHandler"
 
 // Components
+import { Layout } from "@/components/Base"
 import NextNProgress from "nextjs-progressbar"
 import { MotionConfig } from "framer-motion"
 
@@ -24,10 +21,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
 
 export default function Cutie({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    if (disableOnDev) hotjar.initialize(3249585, 6)
-  }, [])
-
   return (
     <>
       <Head>
