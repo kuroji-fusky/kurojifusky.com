@@ -7,7 +7,7 @@ import {
   faSpotify,
   faSteam,
   faTwitter,
-  faYoutube,
+  faYoutube
 } from "@fortawesome/free-brands-svg-icons"
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons"
 
@@ -20,6 +20,20 @@ interface IFooterLink {
   }>
 }
 
+// TODO connect this stuff to the notion API
+const routeParser = (basePath: string, slug: string) => {
+	return !basePath ? `/${slug}` : `/${basePath}/${slug}`
+}
+
+export const NavLinks = [
+  { heading: "Projects", links: [{ link: "/projects/archives", text: "Archives" }] },
+  { heading: "About Me", links: [{ link: "/about/roadmap", text: "Roadmap" }] },
+  {
+    heading: "Miscellaneous",
+    links: [{ link: "/about/roadmap", text: "Roadmap" }]
+  }
+]
+
 export const FooterLinks: IFooterLink[] = [
   {
     heading: "Explore My Trash",
@@ -29,8 +43,8 @@ export const FooterLinks: IFooterLink[] = [
       { link: "", text: "Fanart" },
       { link: "", text: "Roadmap" },
       { link: "", text: "FAQs" },
-      { link: "", text: "About this idiot" },
-    ],
+      { link: "", text: "About this idiot" }
+    ]
   },
   // {
   //   heading: "Portfolio",
@@ -63,7 +77,7 @@ export const FooterLinks: IFooterLink[] = [
       { link: "", icon: faLinkedin, text: "LinkedIn" },
       { link: "", icon: faSoundcloud, text: "SoundCloud" },
       { link: "", icon: faSpotify, text: "Spotify" },
-      { link: "", icon: faItunesNote, text: "Apple Music" },
-    ],
-  },
+      { link: "", icon: faItunesNote, text: "Apple Music" }
+    ]
+  }
 ]

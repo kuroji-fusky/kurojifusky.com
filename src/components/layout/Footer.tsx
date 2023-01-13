@@ -20,7 +20,7 @@ function BrandingColumn() {
   return (
     <div className={style["branding-col"]}>
       <div className="flex flex-col items-start gap-y-2">
-        <h1 className={style["branding-wordmark"]}>Kuroji Fusky</h1>
+        <h1 className={style["wordmark"]}>Kuroji Fusky</h1>
         <Button>Contact Meh</Button>
         <div
           style={{

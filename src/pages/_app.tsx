@@ -18,7 +18,7 @@ const jetbrains = JetBrains_Mono({ variable: "--font-jetbrains-mono" })
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
-  weight: ["400", "600", "700", "800"],
+  weight: ["400", "600", "700", "800"]
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="manifest" href="./manifest.json" />
       </Head>
       <Analytics mode="auto" />
       <Layout>
