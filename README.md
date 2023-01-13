@@ -7,28 +7,40 @@ The source code of my personal website using the Nextwind stack, Next.js +
 Tailwind CSS! Deployed in Vercel.
 
 ## Tech stack
+
 - Next.js + TypeScript
 - GSAP
 - Tailwind CSS
 - Cloudinary
 - Notion
 
-## Running the abomination
+## Running the abomination locally
+
+This project uses [Yarn](https://yarnpkg.com) to install dependencies.
 
 Fork and clone the repo and install the bloated garbage
 
 ```sh
-yarn install
+$ yarn
 ```
+
+Clone the required environment variables
+
+```sh
+$ cp .env.local.example .env.local
+```
+
+> **Note** This'll require both Notion and the Cloudflare Turnstile secret tokens for
+rendering contents and for form validation respectively.
 
 Start a local server lmao
 
 ```sh
-yarn dev
+$ yarn dev
 ```
 
 BUILD THE ABOMINATION
 
 ```sh
-yarn build
+$ yarn build
 ```
