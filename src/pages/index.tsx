@@ -1,3 +1,9 @@
+import Container from "@/ui/Container"
+
 export default function HomePage() {
-  return <main className="h-screen"></main>
+  return (
+    <Container t="HOME" className="h-screen">
+      lol
+    </Container>
+  )
 }

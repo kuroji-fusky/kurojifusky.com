@@ -10,13 +10,15 @@ export function Button(props: ButtonProps) {
   const { uiType = "minimal" } = props
 
   const BUTTON_STYLES = {
-    default: style["default"],
-    fill: style["fill"],
-    minimal: style["minimal"],
-    "link-minimal": style["link-minimal"],
+    "default": style["default"],
+    "fill": style["fill"],
+    "minimal": style["minimal"],
+    "link-minimal": style["link-minimal"]
   }
 
-  const parseStyles = BUTTON_STYLES[uiType]
+  const parseStyles = !props.className
+    ? BUTTON_STYLES[uiType]
+    : `${BUTTON_STYLES[uiType]} ${props.className}`
 
   return (
     <button className={parseStyles} onClick={props.onClick}>

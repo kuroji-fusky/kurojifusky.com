@@ -1,6 +1,6 @@
+import { FooterLinks } from "@/constants/NavLinks"
 import { faChevronRight, faHeart } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { FooterLinks } from "../../constants"
 import { Anchor, Button } from "../ui"
 import style from "./Footer.module.scss"
 
@@ -24,8 +24,7 @@ function BrandingColumn() {
         <Button>Contact Meh</Button>
         <div
           style={{
-            fontSize:
-              "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))",
+            fontSize: "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))"
           }}
           className="font-inter"
         >
@@ -42,7 +41,7 @@ function BrandingColumn() {
 
       <div
         style={{
-          fontSize: "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))",
+          fontSize: "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))"
         }}
       >
         <div id="copyright">
