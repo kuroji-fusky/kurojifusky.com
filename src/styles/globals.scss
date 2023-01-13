@@ -8,7 +8,7 @@
 
   @each $k, $v in $dynamic-sizes {
     h#{$k} {
-      @apply font-inter;
+      @apply font-inter font-bold;
       font-size: max(calc(2.75rem * #{$v}), calc(0.25rem + 2.25vw * #{$v}));
     }
 

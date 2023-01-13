@@ -1,0 +1,60 @@
+.form-wrapper {
+  @apply mx-auto w-5/6 relative;
+}
+
+.form-grid-container {
+  @apply grid gap-4 p-8;
+
+  @media (min-width: 1024px) {
+    grid-template-areas:
+      "name email"
+      "paragraph paragraph"
+      "submit submit";
+  }
+
+  grid-template-areas:
+    "name"
+    "email"
+    "paragraph"
+    "submit";
+}
+
+.form-text-input {
+  @apply px-5 py-3 rounded-md bg-black w-full outline-none border border-sona-borahae-500;
+
+  &[type="name"] {
+    grid-area: name;
+  }
+
+  &[type="email"] {
+    grid-area: email;
+  }
+}
+
+.form-label {
+  @apply font-inter font-bold pb-1.5 block;
+}
+
+.form-submit {
+  grid-area: submit;
+	box-shadow: 0 0 2px inherit;
+
+  @apply mt-5 ml-auto border border-white px-5 py-3.5 rounded-md w-1/6 text-center cursor-pointer transition-all font-semibold;
+
+  [type="submit"] {
+    @apply cursor-pointer;
+  }
+
+  &:hover {
+    @apply border-sona-borahae-600 bg-sona-borahae-600;
+    box-shadow: 0 0 32px theme("colors.sona-borahae.500");
+  }
+}
+
+.paragraph-input {
+  grid-area: paragraph;
+}
+
+textarea.form-text-input {
+  @apply grid px-5 py-4 w-full;
+}
