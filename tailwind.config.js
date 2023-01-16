@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin")
+const pluginBaseCustom = require("tailwindcss/plugin")
 
 module.exports = {
   content: [
@@ -7,19 +7,23 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}"
   ],
   plugins: [
-    plugin(({ addBase, addComponents, theme }) => {
+    pluginBaseCustom(({ addBase, addComponents, theme }) => {
       addBase({
-        html: {
-          "scrollBehavior": "smooth",
-          "overflowX": "hidden",
+        "html": {
+          "scroll-behavior": "smooth",
           "@media (prefers-reduced-motion)": {
-            scrollBehavior: "auto"
+            "scroll-behavior": "auto"
           }
         },
-        body: {
+        "body": {
           fontFamily: theme("fontFamily.open-sans"),
           backgroundColor: theme("colors.borahae-dark"),
           color: theme("colors.gray.200")
+        },
+        "#__next": {
+          minWidth: "100%",
+          minHeight: "100vh",
+          overflowX: "hidden,"
         }
       })
       addComponents({
