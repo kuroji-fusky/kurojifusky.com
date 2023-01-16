@@ -3,7 +3,10 @@ import style from "./ContactSection.module.scss"
 export default function ContactSection() {
   return (
     <section>
-      <h2>contact me lol</h2>
+      <article className="my-10 text-center flex flex-col gap-y-3.5">
+        <h2>contact me lol</h2>
+        <p>If you got any questions, hit me up for some shit lol</p>
+      </article>
       <div className={style["form-wrapper"]}>
         <form className={style["form-grid-container"]}>
           <InputField type="name" label="Name" placeholder="Deez Nuts" />
