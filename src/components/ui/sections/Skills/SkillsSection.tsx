@@ -1,4 +1,4 @@
-export default function SkillsSection() {
+export function SkillsSection() {
   return (
     <section>
       <h2 className="text-center">Skills lmfao</h2>

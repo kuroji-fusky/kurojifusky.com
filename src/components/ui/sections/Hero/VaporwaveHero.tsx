@@ -1,4 +1,4 @@
-export default function VaporwaveHero() {
+export function VaporwaveHero() {
   return (
     <section className="h-screen m-auto max-w-screen-2xl">
       <div className="flex items-center justify-center h-full gap-x-6">

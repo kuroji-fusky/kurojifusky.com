@@ -11,20 +11,20 @@ type HTMLInputExtends = React.DetailedHTMLProps<
     HTMLTextAreaElement
   >
 
-interface YummyData {
+interface IForm {
   name: string
   email: string
   message: string
 }
 
-const gimmeYourData: SubmitHandler<YummyData> = (data) => console.log(data)
+const gimmeYourData: SubmitHandler<IForm> = (data) => console.log(data)
 
-export default function ContactSection() {
+export function ContactSection() {
   const {
     register,
     formState: { errors },
     handleSubmit
-  } = useForm<YummyData>()
+  } = useForm<IForm>()
 
   const formStuff: HTMLInputExtends = {
     spellCheck: "false",
