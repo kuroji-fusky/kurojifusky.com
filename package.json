@@ -21,8 +21,10 @@
 		"@vercel/analytics": "^0.1.6",
 		"gsap": "^3.11.4",
 		"next": "13.1.1",
+		"prismjs": "^1.29.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
+		"react-hook-form": "^7.42.0",
 		"react-intersection-observer": "^9.4.1",
 		"react-markdown": "^8.0.4",
 		"typescript": "4.9.4"

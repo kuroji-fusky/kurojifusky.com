@@ -24,7 +24,7 @@ function BrandingColumn() {
         <Button>Contact Meh</Button>
         <div
           style={{
-            fontSize: "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))"
+            fontSize: "max(calc(2.75rem * 0.35), calc(0.25rem + 2.25vw * 0.29))"
           }}
           className="font-inter"
         >
@@ -41,7 +41,7 @@ function BrandingColumn() {
 
       <div
         style={{
-          fontSize: "max(calc(2.75rem * 0.27), calc(0.25rem + 2.25vw * 0.29))"
+          fontSize: "max(calc(2.75rem * 0.35), calc(0.25rem + 2.25vw * 0.29))"
         }}
       >
         <div id="copyright">

@@ -1,6 +1,38 @@
+import { useForm, SubmitHandler } from "react-hook-form"
+
 import style from "./ContactSection.module.scss"
 
+type HTMLInputExtends = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> &
+  React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  >
+
+interface YummyData {
+  name: string
+  email: string
+  message: string
+}
+
+const gimmeYourData: SubmitHandler<YummyData> = (data) => console.log(data)
+
 export default function ContactSection() {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit
+  } = useForm<YummyData>()
+
+  const formStuff: HTMLInputExtends = {
+    spellCheck: "false",
+    autoCapitalize: "false",
+    autoComplete: "false",
+    autoCorrect: "off"
+  }
+
   return (
     <section>
       <article className="my-10 text-center flex flex-col gap-y-3.5">
@@ -8,68 +40,46 @@ export default function ContactSection() {
         <p>If you got any questions, hit me up for some shit lol</p>
       </article>
       <div className={style["form-wrapper"]}>
-        <form className={style["form-grid-container"]}>
-          <InputField type="name" label="Name" placeholder="Deez Nuts" />
-          <InputField
-            type="email"
-            label="Email"
-            placeholder="name@domain.com"
+        <form
+          className={style["form-grid-container"]}
+          onSubmit={handleSubmit(gimmeYourData)}
+        >
+          <input
+            {...formStuff}
+            {...register("name", { required: true })}
+            className={style["form-input-name"]}
+            type="text"
+            placeholder="Name"
           />
-          <ParagraphField />
+          {errors.name && "What is your goddamn name"}
+          <input
+            {...formStuff}
+            {...register("email", { required: true })}
+            className={style["form-input-email"]}
+            type="email"
+            placeholder="Email"
+          />
+          {errors.email && "BRUH YOUR EMAIL"}
+
+          <textarea
+            className={style["form-paragraph-input"]}
+            {...register("message", { required: true })}
+            {...formStuff}
+            id="forms-pfield"
+            rows={6}
+            maxLength={1750}
+            placeholder="Your message here, you can tell me how much of a cutie I am (Max. 1750 characters)"
+          />
+          {errors.message && "WOT THE HAILLL"}
+
           <div className={style["form-submit"]}>
-            <input type="submit" value="Submit" />
+            <span className={style["form-sub-label"]}>
+              *All fields are required.
+            </span>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </div>
     </section>
-  )
-}
-
-interface InputFieldProps {
-  type: "email" | "name"
-  label: string
-  placeholder: string
-}
-
-function InputField(props: InputFieldProps) {
-  return (
-    <label htmlFor={`forms-${props.type}`}>
-      <span className={style["form-label"]}>{props.label}</span>
-      <input
-        className={style["form-text-input"]}
-        aria-label={props.label}
-        autoCapitalize="false"
-        autoComplete="false"
-        autoCorrect="off"
-        spellCheck="false"
-        required
-        type={props.type}
-        name={props.type}
-        id={`forms-${props.type}`}
-        placeholder={props.placeholder}
-        maxLength={40}
-      />
-    </label>
-  )
-}
-
-function ParagraphField() {
-  return (
-    <label htmlFor="forms-pfield" className={style["paragraph-input"]}>
-      <span className={style["form-label"]}>Details</span>
-      <textarea
-        className={style["form-text-input"]}
-        id="forms-pfield"
-        autoCapitalize="false"
-        autoComplete="false"
-        required
-        autoCorrect="off"
-        spellCheck="false"
-        rows={6}
-        maxLength={1750}
-        style={{ resize: "none" }}
-        placeholder="Tell me how much of a cutie I am (Max. 1750 characters)"
-      />
-    </label>
   )
 }
