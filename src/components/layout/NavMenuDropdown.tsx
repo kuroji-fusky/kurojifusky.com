@@ -4,7 +4,7 @@ import gsap from "gsap"
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect"
 
 export default function NavMenuDropdown({ state }: { state: boolean }) {
-	// 1. add ref to hook the html
+  // 1. add ref to hook the html
   const elementRoot = useRef<HTMLDivElement>(null)
   const [tl, setTl] = useState<gsap.core.Timeline>()
 
@@ -19,7 +19,7 @@ export default function NavMenuDropdown({ state }: { state: boolean }) {
   }, [])
 
   // !!! ISOLATE HOOK - useGsapTlCallback
-  const useGsapAddAnimCallback = useCallback(
+  const addAnimation = useCallback(
     (animation: gsap.core.Tween, index: number) => {
       tl && tl.add(animation, index * 0.1)
     },
@@ -35,11 +35,11 @@ export default function NavMenuDropdown({ state }: { state: boolean }) {
     let ctx = gsap.context(() => {
       const animation = gsap.to(elementRoot.current, { height: "100vh" })
 
-      useGsapAddAnimCallback(animation, 0)
+      addAnimation(animation, 0)
     })
 
     return () => ctx.revert()
-  }, [useGsapAddAnimCallback])
+  }, [addAnimation])
 
   return (
     <div ref={elementRoot} className="fixed top-0 left-0 right-0 bg-red-700">
