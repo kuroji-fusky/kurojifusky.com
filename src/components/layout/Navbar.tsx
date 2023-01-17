@@ -5,6 +5,7 @@ import style from "./Navbar.module.scss"
 
 import { gsap } from "gsap/dist/gsap"
 import useIsomorphicLayoutEffect from "@/hooks/useIsomorphicLayoutEffect"
+import NavMenuDropdown from "./NavMenuDropdown"
 
 export default function Navbar() {
   const rootRef = useRef<HTMLDivElement>(null)
@@ -20,9 +21,10 @@ export default function Navbar() {
           onClick={() => setIsExpanded(!isExpanded)}
           className="relative w-[3.25rem] h-[3.25rem]"
         >
-          <AnimatedBurger state={isExpanded} />
+          <AnimatedBurger state={!isExpanded} />
         </Button>
       </header>
+      <NavMenuDropdown state={!isExpanded} />
       <div
         aria-hidden
         id="blur-toggle-handler"
@@ -38,8 +40,8 @@ function AnimatedBurger({ state }: { state: boolean }) {
 
   useIsomorphicLayoutEffect(() => {
     let ctx = gsap.context(() => {
-			// tl.current && tl.current.progress(0).kill()
-		}, svgRoot)
+      // tl.current && tl.current.progress(0).kill()
+    }, svgRoot)
 
     return () => ctx.revert()
   }, [])
