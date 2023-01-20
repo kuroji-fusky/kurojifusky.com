@@ -2,29 +2,31 @@ import { useForm, SubmitHandler } from "react-hook-form"
 
 import style from "./ContactSection.module.scss"
 
-type HTMLInputExtends = React.DetailedHTMLProps<
+type HTMLInput = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
-> &
-  React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  >
+>
+type HTMLTextArea = React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+>
 
-interface IForm {
+type HTMLInputExtends = HTMLInput & HTMLTextArea
+
+interface FormDetails {
   name: string
   email: string
   message: string
 }
 
-const gimmeYourData: SubmitHandler<IForm> = (data) => console.log(data)
+const gimmeYourData: SubmitHandler<FormDetails> = (data) => console.log(data)
 
 export function ContactSection() {
   const {
     register,
     formState: { errors },
     handleSubmit
-  } = useForm<IForm>()
+  } = useForm<FormDetails>()
 
   const formStuff: HTMLInputExtends = {
     spellCheck: "false",
