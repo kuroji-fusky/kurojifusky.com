@@ -9,13 +9,13 @@ export function VaporwaveHero() {
               Hi I'm <span>kuro</span> lmao
             </p>
             <p>
-              I'm an independent developer and creative artist from the
-              Philippines
+              I'm an independent developer and a diverse creative
+              artist from the Philippines
             </p>
           </article>
           <div className="grid gap-3">
             <button className="p-4 text-left border border-white rounded-md">
-              Projects
+              Portfolio
             </button>
             <button className="p-4 text-left border border-white rounded-md">
               About me
