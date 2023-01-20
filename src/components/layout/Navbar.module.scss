@@ -1,0 +1,4 @@
+.nav-wordmark {
+  @apply branding-wordmark text-borahae-dark;
+  font-size: max(calc(2.75rem * 0.9), calc(0.25rem + 2.25vw * 1));
+}

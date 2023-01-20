@@ -1,0 +1,41 @@
+{
+	"name": "kurofusky",
+	"short_name": "kurofusky",
+	"icons": [
+		{
+			"type": "image/png",
+			"sizes": "16x16",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_16,q_100:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "32x32",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_32,q_100:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "64x64",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_64,q_100:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "128x128",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_128,q_100:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "256x256",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_256,q_80:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "512x512",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/c_scale,h_512,q_80:444/fursonas/kuro-bg-modified_q7hf51.png"
+		},
+		{
+			"type": "image/png",
+			"sizes": "1024x1024",
+			"src": "https://res.cloudinary.com/skepfusky-dookie/image/upload/q_80:444/fursonas/kuro-bg-modified_q7hf51.png"
+		}
+	]
+}

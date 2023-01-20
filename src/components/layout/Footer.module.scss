@@ -1,0 +1,59 @@
+#root {
+  @apply px-8 py-10 relative overflow-hidden;
+
+  &::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-0.5 bg-sona-borahae-800;
+    background-image: linear-gradient(
+      90deg,
+      rgba(63, 251, 241, 1) 0%,
+      rgba(63, 251, 241, 1) 10%,
+      rgba(91, 205, 222, 0) 20%,
+      rgba(168, 80, 171, 0) 75%,
+      rgba(176, 44, 230, 1) 90%,
+      rgba(176, 44, 230, 1) 100%
+    );
+  }
+}
+
+#grid-wrapper {
+  @apply grid gap-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-3;
+}
+
+.branding-col {
+  grid-row: 1 / span 2;
+  @apply flex flex-col items-start justify-between gap-y-2 p-0 md:p-4 border-r-0 md:border-r-2 border-neutral-300;
+
+  .wordmark {
+    @apply branding-wordmark text-borahae-dark;
+  }
+}
+
+.links-col {
+  @apply p-2.5;
+  h2 {
+    @apply font-bold font-inter mb-2 w-fit;
+    @apply bg-gradient-to-r from-sona-skycyan-800 to-sona-borahaealt-700;
+
+    font-size: max(calc(2.75rem * 0.75), calc(0.25rem + 2.25vw * 0.8));
+    background-position: 0 88%;
+    background-size: 100% 32%;
+    background-repeat: no-repeat;
+  }
+
+  ul {
+    @apply font-jetbrains-mono;
+  }
+}
+
+.link-container-flex {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-2;
+}
+
+.align-icons-center {
+  @apply inline-flex items-center gap-x-1.5;
+}
+
+#blob-decorator {
+  @apply opacity-20 pointer-events-none -z-1 absolute top-1/4 bottom-1/4 right-20 -rotate-12 w-2/4 h-1/2 rounded-full bg-gradient-to-r from-sona-yellow-400 to-sona-borahae-500 blur-3xl;
+}

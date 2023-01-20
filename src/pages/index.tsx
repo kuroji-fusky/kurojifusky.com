@@ -1,39 +1,28 @@
 import dynamic from "next/dynamic"
-import { Container } from "@/components/Base"
-import HeroSection from "@/components/Sections/Hero/HeroSection"
 
-const t = "kurofusky"
-const d =
-  "A 20-year-old self-taught and independent hobbyist from the Philippines"
+import Container from "@/ui/Container"
 
-const AboutMeSection = dynamic(
-  () => import("@/components/Sections/AboutMe/AboutMeSection"),
-  { suspense: true }
+const VaporwaveHero = dynamic(() =>
+  import("@/ui/sections").then((c) => c.VaporwaveHero)
 )
 
-const ProjectsSection = dynamic(
-  () => import("@/components/Sections/Projects/ProjectsSection"),
-  { suspense: true }
+const SkillsSection = dynamic(() =>
+  import("@/ui/sections").then((c) => c.SkillsSection)
+)
+const ProjectsSection = dynamic(() =>
+  import("@/ui/sections").then((c) => c.ProjectsSection)
+)
+const ContactSection = dynamic(() =>
+  import("@/ui/sections").then((c) => c.ContactSection)
 )
 
-const FAQSection = dynamic(
-  () => import("@/components/Sections/FAQ/FAQSection"),
-  { suspense: true }
-)
-
-const SupportSection = dynamic(
-  () => import("@/components/Sections/SupportSection"),
-  { suspense: true }
-)
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <Container title={t} description={d}>
-      <HeroSection />
-      <AboutMeSection />
+    <Container t="kurofusky">
+      <VaporwaveHero />
+      <SkillsSection />
       <ProjectsSection />
-      <FAQSection />
-      <SupportSection />
+      <ContactSection />
     </Container>
   )
 }
