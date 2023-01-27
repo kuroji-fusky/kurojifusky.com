@@ -8,7 +8,7 @@ Tailwind CSS! Deployed in Vercel.
 
 ## Tech stack
 
-- Next.js + TypeScript
+- Nuxt 3
 - Tailwind CSS
 - Cloudinary
 - Notion
