@@ -9,6 +9,10 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
+    fontFamily: {
+        "inter": ["Inter", "sans-serif"],
+        "open-sans": ["Open Sans", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [require("@tailwindcss/typography")],

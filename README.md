@@ -9,14 +9,13 @@ Tailwind CSS! Deployed in Vercel.
 ## Tech stack
 
 - Next.js + TypeScript
-- GSAP
 - Tailwind CSS
 - Cloudinary
 - Notion
 
 ## Running the abomination locally
 
-This project uses [Yarn](https://yarnpkg.com) to install dependencies.
+This project uses the [Yarn](https://yarnpkg.com) package manager to install dependencies.
 
 Fork and clone the repo and install the bloated garbage
 
