@@ -16,7 +16,7 @@ export const cloudinary = ({
   quality
 }: ICloudinary) => {
   const baseUrl = "https://res.cloudinary.com"
-  const cloudName = "skepfusky-dookie"
+  const cloudName = "kuroji-fusky-s3"
 
   const transforms = [
     quality
