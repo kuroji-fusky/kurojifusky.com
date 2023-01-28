@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const basePlugin = require("tailwindcss/plugin")
+
 module.exports = {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -15,5 +17,13 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    basePlugin(({addBase, theme}) => {
+        addBase({
+            body: {
+                fontFamily: theme("fontFamily.open-sans")
+            }
+        })
+    }),
+    require("@tailwindcss/typography")],
 }
