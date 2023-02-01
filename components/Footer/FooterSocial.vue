@@ -1,11 +1,11 @@
 <template>
 	<NuxtLink
 		:to="props.link"
-		rel="noopener noreferrer"
 		target="_blank"
 		class="social-link"
-        :aria-label="props.name"
-        :title="props.name"
+    external
+		:aria-label="`${props.name} logo`"
+		:title="props.name"
 	>
 		<slot />
 	</NuxtLink>
@@ -15,5 +15,4 @@
 const props = defineProps<{ name?: string; link?: string }>()
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
