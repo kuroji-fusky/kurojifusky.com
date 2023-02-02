@@ -11,7 +11,7 @@ export default function AboutMeSection() {
         <article className={styles["bio-container"]}>
           <p>
             I'm a 20-year-old independent self-taught hobbyist individual in the
-            Phlippines with a wide range set of skills, working on modern web
+            Philippines with a wide range set of skills, working on modern web
             technologies, UI/UX design. As well as video editing, filmmaking,
             and indie music production.
           </p>
