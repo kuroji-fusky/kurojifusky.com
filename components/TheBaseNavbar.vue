@@ -1,28 +1,17 @@
 <template>
-	<header
-		class="fixed top-0 left-0 right-0"
-	>
+	<header class="fixed top-0 left-0 right-0">
 		<div class="top-nav-wrapper">
 			<NuxtLink to="/" id="logo" role="img" aria-label="Kuroji Fusky"
 				>Kuroji Fusky</NuxtLink
 			>
-			<!-- <nav>
-			<ul class="flex gap-x-9">
-				<li v-for="(rootItem, index) in navItems" :key="index">
-					<NuxtLink :to="rootItem.link">
-						{{ rootItem.text }}
-					</NuxtLink>
-				</li>
-			</ul>
-		</nav> -->
 			<button
 				class="px-4 py-1.5 border border-gray-500 rounded-md"
 				@click="isNavOpen = !isNavOpen"
 			>
-				Clicc ME
+				Clicc
 			</button>
 		</div>
-        <div :class="['nav-items-container' , isNavOpen ? 'open' : '']"></div>
+		<div class="nav-items-container"></div>
 	</header>
 </template>
 
@@ -51,18 +40,14 @@ function woot() {
 
 <style lang="scss" scoped>
 .top-nav-wrapper {
-    @apply flex items-center justify-between px-12 py-4 relative z-[1];
+	@apply flex items-center justify-between px-12 py-4 relative z-[6];
 }
 
 #logo {
-	@apply font-inter text-3xl uppercase font-extrabold select-none;
+	@apply font-inter text-3xl uppercase font-extrabold select-none z-[5];
 }
 
 .nav-items-container {
-    @apply h-[0%] fixed top-0 left-0 right-0 bg-red-300 transition-all duration-300;
-    
-    &.open {
-        @apply h-full;
-    }
+	@apply h-[0%] fixed top-0 left-0 right-0 bg-red-700 transition-all duration-300 z-[5];
 }
 </style>

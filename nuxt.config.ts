@@ -17,4 +17,9 @@ export default defineNuxtConfig({
 			link: [{ href: "./favicon.png" }],
 		},
 	},
+  image: {
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/kuroji-fusky-s3/image/upload/'
+    }
+  }
 })

@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import {
+	IconYoutube,
+	IconTwitter,
+	IconGithub,
+	IconSoundcloud,
+	IconSpotify,
+	IconItunesNote,
+} from "@iconify-prerendered/vue-fa6-brands"
+
+const currentYear = new Date().getFullYear()
+</script>
+
 <template>
 	<footer class="grid-container">
 		<div class="g-socials">
@@ -41,19 +54,6 @@
 	</footer>
 </template>
 
-<script setup lang="ts">
-import {
-	IconYoutube,
-	IconTwitter,
-	IconGithub,
-	IconSoundcloud,
-	IconSpotify,
-	IconItunesNote,
-} from "@iconify-prerendered/vue-fa6-brands"
-
-const currentYear = new Date().getFullYear()
-</script>
-
 <style lang="scss" scoped>
 .grid-container {
 	@apply grid grid-cols-2 grid-rows-2 gap-3.5 px-12;
@@ -65,7 +65,7 @@ const currentYear = new Date().getFullYear()
 
 .g {
 	&-socials {
-		@apply flex text-xl gap-6 items-center;
+		@apply flex text-xl gap-8 items-center;
 		grid-area: socials;
 	}
 
@@ -79,7 +79,7 @@ const currentYear = new Date().getFullYear()
 
 	&-links,
 	&-copyright {
-		@apply text-sm flex justify-end gap-3 font-inter;
+		@apply text-sm flex justify-end gap-3;
 	}
 }
 </style>
