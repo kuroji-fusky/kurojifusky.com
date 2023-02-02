@@ -6,7 +6,6 @@ import Head from "next/head"
 
 // Analytics
 import { Analytics } from "@vercel/analytics/react"
-import { hotjar } from "react-hotjar"
 import { Layout } from "@/components/Base"
 
 // Stuff for dev and configs
@@ -24,10 +23,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 config.autoAddCss = false
 
 export default function Cutie({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    if (disableOnDev) hotjar.initialize(3249585, 6)
-  }, [])
-
   return (
     <>
       <Head>
