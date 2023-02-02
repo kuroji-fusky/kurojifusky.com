@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ["@nuxt/image-edge", "@vueuse/motion/nuxt"],
+	modules: ["@nuxt/image-edge"],
+	build: {
+		transpile: ["gsap"],
+	},
 	css: ["~/assets/css/main.scss"],
 	typescript: {
 		shim: false,
@@ -17,9 +20,9 @@ export default defineNuxtConfig({
 			link: [{ href: "./favicon.png" }],
 		},
 	},
-  image: {
-    cloudinary: {
-      baseURL: 'https://res.cloudinary.com/kuroji-fusky-s3/image/upload/'
-    }
-  }
+	image: {
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
+		},
+	},
 })
