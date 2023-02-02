@@ -20,26 +20,26 @@ This project uses the [Yarn](https://yarnpkg.com) package manager to install dep
 Fork and clone the repo and install the bloated garbage
 
 ```sh
-$ yarn
+yarn
 ```
 
 Clone the required environment variables
 
 ```sh
-$ cp .env.local.example .env.local
+cp .env.local.example .env.local
 ```
 
-> **Note** This'll require both Notion and the Cloudflare Turnstile secret tokens for
+> **Note** This'll require both Notion secret tokens for
 rendering contents and for form validation respectively.
 
 Start a local server lmao
 
 ```sh
-$ yarn dev
+yarn dev
 ```
 
 BUILD THE ABOMINATION
 
 ```sh
-$ yarn build
+yarn build
 ```
