@@ -1,7 +1,7 @@
 <template>
   <article>
     <h2>About Me<span id="gradient-block"></span></h2>
-      <img id="lang-showcase" src="https://github-readme-stats.vercel.app/api/top-langs/?username=skepfusky&layout=compact&langs_count=10&theme=dark">
+      <img id="lang-showcase" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kuroji-fusky&layout=compact&langs_count=10&theme=dark">
     <p>
       I'm a self-taught individual as a music producer, video editor, filmmaker
       and somewhat profient in front-end web development and because of this;
