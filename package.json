@@ -13,7 +13,7 @@
     "@tailwindcss/typography": "^0.5.9",
     "@vueuse/core": "^9.11.0",
     "autoprefixer": "^10.4.13",
-    "nuxt": "3.0.0",
+    "nuxt": "^3.1.0",
     "postcss": "^8.4.19",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",

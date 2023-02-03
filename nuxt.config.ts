@@ -6,7 +6,6 @@ export default defineNuxtConfig({
 	},
 	css: ["~/assets/css/main.scss"],
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-
 	app: {
 		head: {
 			link: [{ href: "./favicon.png" }],
@@ -26,5 +25,5 @@ export default defineNuxtConfig({
 			tailwindcss: {},
 			autoprefixer: {},
 		},
-	},
+	}
 })
