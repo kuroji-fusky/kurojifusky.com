@@ -5,16 +5,8 @@ export default defineNuxtConfig({
 		transpile: ["gsap"],
 	},
 	css: ["~/assets/css/main.scss"],
-	typescript: {
-		shim: false,
-		strict: true,
-	},
-	postcss: {
-		plugins: {
-			tailwindcss: {},
-			autoprefixer: {},
-		},
-	},
+	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
+
 	app: {
 		head: {
 			link: [{ href: "./favicon.png" }],
@@ -23,6 +15,16 @@ export default defineNuxtConfig({
 	image: {
 		cloudinary: {
 			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
+		},
+	},
+	typescript: {
+		shim: false,
+		strict: true,
+	},
+	postcss: {
+		plugins: {
+			tailwindcss: {},
+			autoprefixer: {},
 		},
 	},
 })
