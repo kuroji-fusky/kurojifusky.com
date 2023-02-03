@@ -29,10 +29,7 @@ Clone the required environment variables
 cp .env.local.example .env.local
 ```
 
-> **Note** This'll require both Notion secret tokens for
-rendering contents and for form validation respectively.
-
-Start a local server lmao
+Start the local server lmao
 
 ```sh
 yarn dev
