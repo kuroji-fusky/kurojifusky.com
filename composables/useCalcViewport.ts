@@ -9,12 +9,12 @@ export default function useCalcViewport() {
 
 		const htmlRoot = document.documentElement
 
-		htmlRoot.style.setProperty("--g-vw", `${Vw}px`)
-		htmlRoot.style.setProperty("--g-vh", `${Vh}px`)
+		htmlRoot.style.setProperty("--vw", `${Vw}px`)
+		htmlRoot.style.setProperty("--vh", `${Vh}px`)
 	}
 
 	onBeforeMount(() => handleResize())
 
 	onMounted(() => window.addEventListener("resize", handleResize))
-	onUnmounted(() => window.addEventListener("resize", handleResize))
+	onUnmounted(() => window.removeEventListener("resize", handleResize))
 }

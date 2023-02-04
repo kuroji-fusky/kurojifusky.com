@@ -1,7 +1,7 @@
 <template>
-	<section class="px-12">
+	<section class="px-12 bg-green-900">
 		<article
-			class="prose-h2:text-5xl space-y-6 text-center grid place-items-center"
+			class="grid space-y-6 text-center prose-h2:text-5xl place-items-center"
 		>
 			<h2>Learning more about me</h2>
 			<p>no</p>

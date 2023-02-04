@@ -1,6 +1,6 @@
 <template>
-	<section class="px-12">
-		<article class="prose-h2:text-5xl space-y-6 text-center grid place-items-center">
+	<section class="px-12 bg-lime-900">
+		<article class="grid space-y-6 text-center prose-h2:text-5xl place-items-center">
 			<h2>All of this sounds impressive... but here's the catch</h2>
 			<p>
 				I'm just a broke individual from the Phililppines who works on projects

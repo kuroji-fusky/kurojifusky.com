@@ -1,20 +1,12 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
 	<section class="hero-section">
 		<div class="flex flex-col gap-y-6">
 			<article class="flex flex-col text-center gap-y-5 md:text-left">
-				<h2>Hello, I'm <span class="gradient-hl">Kuroji Fusky</span>!</h2>
-				<p>
-					I'm just a dumb idiot who nerds about stuff about programming and
-					among other things!
-				</p>
+				<h2 class="gradient-hl">Kuroji Fusky</h2>
+				<p>Building abominations since 2015</p>
 			</article>
-			<div class="flex gap-x-5">
-				<LandingHeroButton title="Projects" link="/project" />
-				<LandingHeroButton title="Discography" link="/discography" />
-			</div>
 		</div>
 		<aside class="relative -z-[1]">
 			<NuxtImg
