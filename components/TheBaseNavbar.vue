@@ -3,20 +3,30 @@ import gsap from "gsap"
 
 const ctx = ref()
 const tl = ref()
-const navWrap = ref()
+const headerWrap = ref<HTMLElement>()
 
 const { isScrolled } = useNavbarScroll()
 
 function toggleTl() {
 	tl.value.reversed(!tl.value.reversed())
+
+	let htmlRoot = document.documentElement
+
+	!tl.value.reversed()
+		? (htmlRoot.style.overflow = "hidden")
+		: (htmlRoot.style.overflow = "auto")
 }
 
 onMounted(() => {
 	ctx.value = gsap.context((self) => {
-		const navies = self.selector!("#curtain-toggle")
+		const curtain = self.selector!(".nav-items-wrapper")
 
-		tl.value = gsap.timeline().to(navies, { x: -20 }).reverse()
-	}, navWrap.value)
+		tl.value = gsap
+			.timeline()
+			// .reverse()
+			.to(curtain, { height: "100vh" }, "<")
+			.duration(0.15)
+	}, headerWrap.value)
 })
 
 onUnmounted(() => ctx.value.revert())
@@ -24,7 +34,7 @@ onUnmounted(() => ctx.value.revert())
 
 <template>
 	<header
-		ref="navWrap"
+		ref="headerWrap"
 		:class="[
 			'fixed top-0 left-0 right-0 transition-colors duration-300',
 			isScrolled ? 'bg-red-500' : 'bg-transparent',
@@ -42,7 +52,9 @@ onUnmounted(() => ctx.value.revert())
 				heehee
 			</button>
 		</div>
-		<div class="nav-items-container"></div>
+		<div class="nav-items-wrapper">
+      <div class="nav-items-list"></div>
+    </div>
 	</header>
 </template>
 
@@ -58,7 +70,7 @@ onUnmounted(() => ctx.value.revert())
 	--wordmark-size: 5;
 
 	@media (min-width: 768px) {
-		--wordmark-size: 4.5;
+		--wordmark-size: 3.75;
 	}
 
 	@media (min-width: 1280px) {
@@ -66,7 +78,7 @@ onUnmounted(() => ctx.value.revert())
 	}
 }
 
-.nav-items-container {
-	@apply h-[0%] fixed top-0 left-0 right-0 bg-red-700 transition-all duration-300 z-[5];
+.nav-items-wrapper {
+	@apply h-[0%] fixed top-0 left-0 right-0 bg-sona-borahaealt-900 transition-all duration-300 z-[5] overflow-hidden;
 }
 </style>

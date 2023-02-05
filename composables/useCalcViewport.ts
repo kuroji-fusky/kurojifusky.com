@@ -4,13 +4,11 @@
  */
 export function useCalcViewport() {
 	function handleResize() {
-		const Vw = (window.innerWidth / 100).toString(),
-			Vh = (window.innerHeight / 100).toString()
+		const Vw = (window.innerWidth / 100).toString()
 
 		const htmlRoot = document.documentElement
 
 		htmlRoot.style.setProperty("--vw", `${Vw}px`)
-		htmlRoot.style.setProperty("--vh", `${Vh}px`)
 	}
 
 	onBeforeMount(() => handleResize())
