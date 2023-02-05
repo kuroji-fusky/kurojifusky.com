@@ -23,7 +23,7 @@ onMounted(() => {
 
 		tl.value = gsap
 			.timeline()
-			// .reverse()
+			.reverse()
 			.to(curtain, { height: "100vh" }, "<")
 			.duration(0.15)
 	}, headerWrap.value)
