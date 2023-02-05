@@ -2,7 +2,7 @@
  * Inspired by basement.studio's way of calculating viewport height and width
  * Originally written in React, re-written in Vue by @kuroji-fusky
  */
-export default function useCalcViewport() {
+export function useCalcViewport() {
 	function handleResize() {
 		const Vw = (window.innerWidth / 100).toString(),
 			Vh = (window.innerHeight / 100).toString()

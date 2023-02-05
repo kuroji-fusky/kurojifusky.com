@@ -1,33 +1,30 @@
 <script setup lang="ts">
-const isNavOpen = ref(false)
+import gsap from "gsap"
 
-const navItems = [
-	{
-		link: "#",
-		text: "Creative works",
-		dropdown: [
-			{ link: "#", text: "Discography" },
-			{ link: "#", text: "Filmography" },
-			{ link: "#", text: "Archives" },
-		],
-	},
-	{ link: "#", text: "Projects" },
-	{ link: "#", text: "Blogs" },
-	{ link: "#", text: "About" },
-]
+const ctx = ref()
+const tl = ref()
+const navWrap = ref()
 
-const isScrolled = ref(false)
+const { isScrolled } = useNavbarScroll()
 
-function handleNavScroll() {
-	isScrolled.value = window.scrollY < 30 ? false : true
+function toggleTl() {
+	tl.value.reversed(!tl.value.reversed())
 }
-onBeforeMount(() => window.addEventListener("scroll", handleNavScroll))
-onMounted(() => window.addEventListener("scroll", handleNavScroll))
-onUnmounted(() => window.removeEventListener("scroll", handleNavScroll))
+
+onMounted(() => {
+	ctx.value = gsap.context((self) => {
+		const navies = self.selector!("#curtain-toggle")
+
+		tl.value = gsap.timeline().to(navies, { x: -20 }).reverse()
+	}, navWrap.value)
+})
+
+onUnmounted(() => ctx.value.revert())
 </script>
 
 <template>
 	<header
+		ref="navWrap"
 		:class="[
 			'fixed top-0 left-0 right-0 transition-colors duration-300',
 			isScrolled ? 'bg-red-500' : 'bg-transparent',
@@ -38,10 +35,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleNavScroll))
 				>Kuroji Fusky</NuxtLink
 			>
 			<button
+				id="curtain-toggle"
 				class="px-4 py-1.5 border border-gray-200 rounded-md"
-				@click="isNavOpen = !isNavOpen"
+				@click="toggleTl"
 			>
-				{{ isNavOpen ? "open" : "close" }}
+				heehee
 			</button>
 		</div>
 		<div class="nav-items-container"></div>

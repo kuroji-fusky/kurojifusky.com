@@ -16,7 +16,8 @@
 				alt="Artwork by @MintyChipMocha on Etsy"
 				fit="inside"
 				class="aspect-[12/16]"
-				quality="80"
+				quality="90"
+        loading="lazy"
 				sizes="md:50vw lg:450px"
 			/>
 		</aside>
@@ -38,6 +39,6 @@ article {
 }
 
 .gradient-hl {
-	@apply bg-gradient-to-tr from-sona-borahaealt-600 to-sona-skycyan-600 bg-clip-text text-transparent;
+	@apply bg-gradient-to-tr from-sona-magenta-700 to-sona-skycyan-600 bg-clip-text text-transparent;
 }
 </style>
