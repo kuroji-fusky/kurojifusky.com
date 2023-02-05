@@ -1,9 +1,3 @@
-<template>
-	<main>
-		<slot />
-	</main>
-</template>
-
 <script setup lang="ts">
 const props = defineProps<{ title: string; description?: string }>()
 
@@ -28,5 +22,11 @@ useHead({
 	],
 })
 </script>
+
+<template>
+	<main>
+		<slot />
+	</main>
+</template>
 
 <style scoped></style>

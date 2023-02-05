@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
 	<section class="hero-section">
 		<div class="flex flex-col gap-y-6">

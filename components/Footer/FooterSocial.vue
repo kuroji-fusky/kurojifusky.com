@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const props = defineProps<{ name?: string; link?: string }>()
+</script>
+
 <template>
 	<NuxtLink
 		:to="props.link"
@@ -10,9 +14,5 @@
 		<slot />
 	</NuxtLink>
 </template>
-
-<script setup lang="ts">
-const props = defineProps<{ name?: string; link?: string }>()
-</script>
 
 <style lang="scss"></style>
