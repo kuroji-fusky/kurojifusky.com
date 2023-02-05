@@ -25,7 +25,7 @@ onMounted(() => {
 			.timeline()
 			.reverse()
 			.to(curtain, { height: "100vh" }, "<")
-			.duration(0.15)
+			.duration(0.12)
 	}, headerWrap.value)
 })
 
@@ -33,13 +33,7 @@ onUnmounted(() => ctx.value.revert())
 </script>
 
 <template>
-	<header
-		ref="headerWrap"
-		:class="[
-			'fixed top-0 left-0 right-0 transition-colors duration-300',
-			isScrolled ? 'bg-red-500' : 'bg-transparent',
-		]"
-	>
+	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
 		<div class="top-nav-wrapper">
 			<NuxtLink to="/" id="logo" role="img" aria-label="Kuroji Fusky"
 				>Kuroji Fusky</NuxtLink
@@ -53,12 +47,23 @@ onUnmounted(() => ctx.value.revert())
 			</button>
 		</div>
 		<div class="nav-items-wrapper">
-      <div class="nav-items-list"></div>
-    </div>
+			<div class="nav-items-list"></div>
+		</div>
 	</header>
 </template>
 
 <style lang="scss" scoped>
+header {
+	@apply fixed top-0 left-0 right-0 bg-transparent border-0 border-transparent;
+
+	transition-property: border, background;
+  transition-duration: 300ms;
+}
+
+.scrolled {
+	@apply bg-borahae-dark bg-opacity-75 backdrop-blur-lg border-b border-neutral-100;
+}
+
 .top-nav-wrapper {
 	@apply flex items-center justify-between px-12 py-4 relative z-[6];
 }

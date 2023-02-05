@@ -1,26 +1,30 @@
 <script setup lang="ts">
-const props = defineProps<{ title: string; description?: string }>()
+import { UseSeoMetaInput } from '@unhead/vue';
 
+const props = defineProps<{ title: string; description?: string }>()
 const router = useRoute()
 const fullUrl = `https://kurofusky.xyz${router.fullPath}`
 
 useHead({
-	title: props.title,
 	link: [{ rel: "canonical", href: fullUrl }],
-	meta: [
-		{ name: "description", content: props.description },
-		{ name: "twitter:title", content: props.title },
-		{ name: "twitter:description", content: props.description },
-		{ name: "twitter:site", content: "@kurojifusky" },
-		{ name: "twitter:creator", content: "@kurojifusky" },
-		{ name: "twitter:card", content: "summary_large_image" },
-		{ name: "twitter:url", content: fullUrl },
-		{ property: "og:url", content: fullUrl },
-		{ property: "og:description", content: props.description },
-		{ property: "og:site_name", content: "Kuroji Dump" },
-		{ property: "og:type", content: "website" },
-	],
 })
+
+const yourMom: UseSeoMetaInput = {
+  title: props.title,
+  description: props.description,
+  ogTitle: props.title,
+  ogDescription: props.description,
+  ogSiteName: "Kuroji Dump",
+  ogType: "website",
+  ogUrl: fullUrl,
+  twitterTitle: props.title,
+  twitterDescription: props.description,
+  twitterCard: "summary",
+  twitterSite: "@kurojifusky",
+  twitterCreator: "@kurojifusky",
+}
+
+useSeoMeta(yourMom)
 </script>
 
 <template>
@@ -28,5 +32,3 @@ useHead({
 		<slot />
 	</main>
 </template>
-
-<style scoped></style>

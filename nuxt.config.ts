@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	modules: ["@nuxt/image-edge"],
 	build: {
 		transpile: ["gsap"],
 	},
 	css: ["~/assets/css/main.scss"],
-	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	app: {
 		head: {
-			link: [{ href: "./favicon.ico" }],
+			link: [{ rel: "icon", href: "./favicon.ico" }],
 		},
 	},
 	image: {
@@ -17,13 +17,17 @@ export default defineNuxtConfig({
 		},
 	},
 	typescript: {
-		shim: false,
 		strict: true,
+	},
+	runtimeConfig: {
+		public: {
+			dev: process.env.NODE_ENV !== "production",
+		},
 	},
 	postcss: {
 		plugins: {
 			tailwindcss: {},
 			autoprefixer: {},
 		},
-	}
+	},
 })
