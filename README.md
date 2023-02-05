@@ -3,13 +3,15 @@
   <a href="https://kurofusky.xyz">kurofusky.xyz</a>
 </h1>
 
-The source code of my personal website using the Nextwind stack, Next.js +
+The source code of my personal website using the Nuxt 3 and
 Tailwind CSS! Deployed in Vercel.
 
 ## Tech stack
 
 - Nuxt 3
+- TypeScript
 - Tailwind CSS
+- GSAP
 - Cloudinary
 - Notion
 
