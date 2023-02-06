@@ -3,20 +3,23 @@ import gsap from "gsap"
 
 const gsapCtx = ref(),
 	contentsTl = ref(),
-	topTl = ref(),
+	navTl = ref(),
 	headerWrap = ref<HTMLElement>(),
 	isNavCurtainOpen = ref(false)
 
 const { isScrolled } = useNavbarScroll()
 
-function toggleTl() {
-	const tlRev = contentsTl.value
+function toggleTls() {
+	const curtainVal = contentsTl.value
+	const navVal = navTl.value
 	const htmlRoot = document.documentElement
 
-	tlRev.reversed(!tlRev.reversed())
-	isNavCurtainOpen.value = !tlRev.reversed()
+	isNavCurtainOpen.value = !curtainVal.reversed()
 
-	!tlRev.reversed()
+	curtainVal.reversed(!curtainVal.reversed())
+	navVal.reversed(!navVal.reversed())
+
+	!curtainVal.reversed() && !navVal.reversed()
 		? (htmlRoot.style.overflow = "hidden")
 		: (htmlRoot.style.overflow = "auto")
 }
@@ -27,13 +30,39 @@ onMounted(() => {
 		const svgBurger = self.selector!("#Burger")
 		const svgClose = self.selector!("#Close")
 
+		const burgerTweens: gsap.TweenVars = {
+			duration: "3",
+			ease: "expo.inOut",
+			x: -460,
+		}
+
+		const closeTweens: gsap.TweenVars = {
+			duration: "3",
+			x: 400,
+		}
+
+		const curtainTweens: gsap.TweenVars = {
+			duration: "0.1",
+			ease: "sine.inOut",
+		}
+
+		// prettier-ignore
+		navTl.value = gsap
+			.timeline()
+			.reverse()
+			.to(svgBurger[0], burgerTweens, "<-=8%")
+			.to(svgBurger[2], burgerTweens, "<-=12%")
+			.to(svgBurger[1], burgerTweens, "<-=24%")
+			.from(svgClose[1], { ...closeTweens, y: -400 }, ">-=20%")
+			.from(svgClose[0], { ...closeTweens, y: 400 }, "<")
+			.duration(0.6)
+
 		contentsTl.value = gsap
 			.timeline()
-			.timeScale(0.2)
 			.reverse()
-			.from(curtain, { ease: "sine.inOut", height: "0vh" })
-			.to(curtain, { ease: "sine.inOut", height: "100vh" })
-			.duration(0.17)
+			.from(curtain, { ...curtainTweens, height: "0vh" })
+			.to(curtain, { ...curtainTweens, height: "100vh" })
+			.duration(0.2)
 	}, headerWrap.value)
 })
 
@@ -43,10 +72,12 @@ onUnmounted(() => gsapCtx.value.revert())
 <template>
 	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
 		<div class="top-nav-wrapper">
-			<NuxtLink to="/" id="logo" role="img" aria-label="Kuroji Fusky"
-				>Kuroji Fusky</NuxtLink
-			>
-			<button class="px-2 py-1" @click="toggleTl" aria-label="Toggle dropdown">
+			<div class="!overflow-hidden">
+				<NuxtLink to="/" id="logo" role="img" aria-label="Kuroji Fusky"
+					>Kuroji Fusky</NuxtLink
+				>
+			</div>
+			<button class="px-2 py-1" @click="toggleTls" aria-label="Toggle dropdown">
 				<svg
 					aria-hidden="false"
 					role="img"
@@ -87,7 +118,7 @@ header {
 }
 
 .top-nav-wrapper {
-	@apply flex items-center justify-between px-12 py-4 relative z-[6];
+	@apply flex items-center justify-between px-12 py-5 relative z-[6];
 }
 
 #logo {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import gsap from "gsap";
+import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,3 +12,21 @@ useCalcViewport()
 		<NuxtPage />
 	</NuxtLayout>
 </template>
+
+<style lang="scss">
+.link-underline {
+	@apply text-sona-borahaealt-200 inline-block relative w-fit
+				hover:text-sona-borahaealt-300
+				before:content-[''] before:bg-sona-borahaealt-300 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px];
+
+	&::before {
+		transform: scaleX(0);
+		transform-origin: bottom left;
+		transition: transform 150ms ease-out;
+	}
+
+	&:hover::before {
+		transform: scaleX(1);
+	}
+}
+</style>
