@@ -24,8 +24,9 @@ onMounted(() => {
 		tl.value = gsap
 			.timeline()
 			.reverse()
+			.from(curtain, { height: "0vh" })
 			.to(curtain, { height: "100vh" }, "<")
-			.duration(0.12)
+			.duration(0.15)
 	}, headerWrap.value)
 })
 
@@ -40,10 +41,10 @@ onUnmounted(() => ctx.value.revert())
 			>
 			<button
 				id="curtain-toggle"
-				class="px-4 py-1.5 border border-gray-200 rounded-md"
+				class="px-4 py-3 border border-gray-500 rounded-md"
 				@click="toggleTl"
 			>
-				heehee
+				lOl
 			</button>
 		</div>
 		<div class="nav-items-wrapper">
@@ -54,10 +55,10 @@ onUnmounted(() => ctx.value.revert())
 
 <style lang="scss" scoped>
 header {
-	@apply fixed top-0 left-0 right-0 bg-transparent border-0 border-transparent;
+	@apply fixed z-[9999] top-0 left-0 right-0 bg-transparent border-0 border-transparent;
 
 	transition-property: border, background;
-  transition-duration: 300ms;
+	transition-duration: 300ms;
 }
 
 .scrolled {
@@ -75,11 +76,11 @@ header {
 	--wordmark-size: 5;
 
 	@media (min-width: 768px) {
-		--wordmark-size: 3.75;
+		--wordmark-size: 3.5;
 	}
 
 	@media (min-width: 1280px) {
-		--wordmark-size: 2.15;
+		--wordmark-size: 2;
 	}
 }
 

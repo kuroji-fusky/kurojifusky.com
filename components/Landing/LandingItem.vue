@@ -1,5 +1,3 @@
-
-
 <template>
 	<div
 		itemscope
@@ -9,8 +7,8 @@
 	>
 		<meta itemtype="creator" content="Kuroji Fusky" />
 		<span class="sr-only">Project title</span>
-		<article class="prose-h2:text-3xl prose-p:text-lg space-y-1">
-			<h2 itemprop="name">Project title</h2>
+		<article class="space-y-1 prose-h2:text-3xl prose-p:text-lg">
+			<h2 class="font-inter" itemprop="name">Project title</h2>
 			<p itemprop="description">Project description</p>
 			<div class="flex gap-3">
 				<NuxtLink itemprop="url" to="#">Link source</NuxtLink>

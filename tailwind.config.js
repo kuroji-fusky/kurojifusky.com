@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme")
 const basePlugin = require("tailwindcss/plugin")
 
 module.exports = {
@@ -12,8 +13,9 @@ module.exports = {
 	],
 	theme: {
 		fontFamily: {
-			inter: ["Inter", "sans-serif"],
-			"open-sans": ["Open Sans", "sans-serif"],
+			inter: ["Inter", ...defaultTheme.fontFamily.sans],
+			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
+			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extend: {
 			colors: {
@@ -118,19 +120,21 @@ module.exports = {
 		},
 	},
 	plugins: [
-		basePlugin(({ addBase, theme }) => {
+		require("@tailwindcss/typography"),
+		basePlugin(({ addBase, addComponents, theme }) => {
+			// prettier-ignore
+			addComponents({}),
 			addBase({
 				html: {
 					overflowX: "hidden",
-          scrollBehavior: "auto",
+					scrollBehavior: "auto",
 				},
 				body: {
 					fontFamily: theme("fontFamily.open-sans"),
-          backgroundColor: theme("colors.borahae-dark"),
-          color: theme("colors.gray.50")
+					backgroundColor: theme("colors.borahae-dark"),
+					color: theme("colors.gray.50"),
 				},
 			})
 		}),
-		require("@tailwindcss/typography"),
 	],
 }
