@@ -5,9 +5,9 @@
 	>
 		<LandingHero />
 		<LandingIntro />
+		<LandingEndevors />
 		<LandingProjects />
 		<LandingPrevWorks />
-		<LandingEndevors />
 		<LandingMore />
 	</Container>
 </template>

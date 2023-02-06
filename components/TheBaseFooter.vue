@@ -12,8 +12,8 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-	<footer class="grid-container">
-		<div class="g-socials">
+	<footer>
+		<div class="socials">
 			<FooterSocial link="https://youtube.com/@kurojifusky" name="YouTube">
 				<IconYoutube />
 			</FooterSocial>
@@ -36,11 +36,16 @@ const currentYear = new Date().getFullYear()
 				<IconItunesNote />
 			</FooterSocial>
 		</div>
-		<div class="g-links">
-			<NuxtLink to="https://ko-fi.com/kuroji_fusky" target="_blank" external
+		<div class="links">
+			<NuxtLink
+				class="link-underline"
+				to="https://ko-fi.com/kuroji_fusky"
+				target="_blank"
+				external
 				>Support my broke ass</NuxtLink
 			>
 			<NuxtLink
+				class="link-underline"
 				to="https://github.com/kuroji-fusky/kurofusky.xyz"
 				target="_blank"
 				external
@@ -48,38 +53,36 @@ const currentYear = new Date().getFullYear()
 				Website source code
 			</NuxtLink>
 		</div>
-		<span id="copyright" class="g-copyright">
+		<span id="copyright">
 			&copy; 2014-{{ currentYear }} Kerby Keith Aquino</span
 		>
 	</footer>
 </template>
 
 <style lang="scss" scoped>
-.grid-container {
-	@apply grid grid-cols-2 grid-rows-2 gap-3.5 px-12;
+footer {
+	@apply grid grid-cols-2 grid-rows-2 gap-3.5 px-12 py-8;
 
 	grid-template-areas:
 		"socials links"
 		"socials copyright";
 }
 
-.g {
-	&-socials {
-		@apply flex text-xl gap-8 items-center;
-		grid-area: socials;
-	}
+.socials {
+	@apply flex text-xl gap-8 items-center;
+	grid-area: socials;
+}
 
-	&-copyright {
-		grid-area: copyright;
-	}
+#copyright {
+	grid-area: copyright;
+}
 
-	&-links {
-		grid-area: links;
-	}
+.links {
+	grid-area: links;
+  @apply font-jetbrains-mono;
+}
 
-	&-links,
-	&-copyright {
-		@apply text-sm flex justify-end gap-3;
-	}
+:is(.links, #copyright) {
+	@apply text-sm flex justify-end gap-3;
 }
 </style>

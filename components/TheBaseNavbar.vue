@@ -1,36 +1,43 @@
 <script setup lang="ts">
 import gsap from "gsap"
 
-const ctx = ref()
-const tl = ref()
-const headerWrap = ref<HTMLElement>()
+const gsapCtx = ref(),
+	contentsTl = ref(),
+	topTl = ref(),
+	headerWrap = ref<HTMLElement>(),
+	isNavCurtainOpen = ref(false)
 
 const { isScrolled } = useNavbarScroll()
 
 function toggleTl() {
-	tl.value.reversed(!tl.value.reversed())
+	const tlRev = contentsTl.value
+	const htmlRoot = document.documentElement
 
-	let htmlRoot = document.documentElement
+	tlRev.reversed(!tlRev.reversed())
+	isNavCurtainOpen.value = !tlRev.reversed()
 
-	!tl.value.reversed()
+	!tlRev.reversed()
 		? (htmlRoot.style.overflow = "hidden")
 		: (htmlRoot.style.overflow = "auto")
 }
 
 onMounted(() => {
-	ctx.value = gsap.context((self) => {
+	gsapCtx.value = gsap.context((self) => {
 		const curtain = self.selector!(".nav-items-wrapper")
+		const svgBurger = self.selector!("#Burger")
+		const svgClose = self.selector!("#Close")
 
-		tl.value = gsap
+		contentsTl.value = gsap
 			.timeline()
+			.timeScale(0.2)
 			.reverse()
-			.from(curtain, { height: "0vh" })
-			.to(curtain, { height: "100vh" }, "<")
-			.duration(0.15)
+			.from(curtain, { ease: "sine.inOut", height: "0vh" })
+			.to(curtain, { ease: "sine.inOut", height: "100vh" })
+			.duration(0.17)
 	}, headerWrap.value)
 })
 
-onUnmounted(() => ctx.value.revert())
+onUnmounted(() => gsapCtx.value.revert())
 </script>
 
 <template>
@@ -39,15 +46,29 @@ onUnmounted(() => ctx.value.revert())
 			<NuxtLink to="/" id="logo" role="img" aria-label="Kuroji Fusky"
 				>Kuroji Fusky</NuxtLink
 			>
-			<button
-				id="curtain-toggle"
-				class="px-4 py-3 border border-gray-500 rounded-md"
-				@click="toggleTl"
-			>
-				lOl
+			<button class="px-2 py-1" @click="toggleTl" aria-label="Toggle dropdown">
+				<svg
+					aria-hidden="false"
+					role="img"
+					focusable="false"
+					width="50"
+					height="50"
+					viewBox="0 0 512 512"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<!-- prettier-ignore -->
+					<g>
+						<line id="Burger" x1="59.5" y1="125" x2="452.5" y2="125" stroke="white" stroke-width="15"/>
+						<line id="Burger" x1="59.5" y1="371" x2="452.5" y2="371" stroke="white" stroke-width="15"/>
+						<line id="Burger" x1="59.5" y1="243.195" x2="452.5" y2="243.195" stroke="white" stroke-width="15"/>
+						<line id="Close" x1="122.657" y1="111.343" x2="400.55" y2="389.236" stroke="white" stroke-width="15"/>
+						<line id="Close" x1="111.45" y1="389.343" x2="389.343" y2="111.45" stroke="white" stroke-width="15"/>
+					</g>
+				</svg>
 			</button>
 		</div>
-		<div class="nav-items-wrapper">
+		<div class="nav-items-wrapper" :aria-hidden="!isNavCurtainOpen">
 			<div class="nav-items-list"></div>
 		</div>
 	</header>

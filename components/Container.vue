@@ -5,7 +5,7 @@ const props = defineProps<{ title: string; description?: string }>()
 const router = useRoute()
 const fullUrl = `https://kurofusky.xyz${router.fullPath}`
 
-const runtime = useRuntimeConfig().public
+const runtimeEnv = useRuntimeConfig().public
 
 useHead({
 	link: [{ rel: "canonical", href: fullUrl }],
@@ -26,7 +26,7 @@ const metaTags: UseSeoMetaInput = {
 	twitterCreator: "@kurojifusky",
 }
 
-runtime.dev ? useSeoMeta(metaTags) : useServerSeoMeta(metaTags)
+runtimeEnv.dev ? useSeoMeta(metaTags) : useServerSeoMeta(metaTags)
 </script>
 
 <template>
