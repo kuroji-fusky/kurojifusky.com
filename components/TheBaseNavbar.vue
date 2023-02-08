@@ -62,9 +62,8 @@ onMounted(() => {
 		contentsTl.value = gsap
 			.timeline()
 			.reverse()
-			.from(curtain, { ...curtainTweens, height: "0vh" })
-			.to(curtain, { ...curtainTweens, height: "100vh" })
-			.to(wordmark, { ease: "expo.inOut", y: 100 })
+			.fromTo(curtain, { height: "0vh" }, { ...curtainTweens, height: "100vh" })
+			.fromTo(wordmark, { y: 0}, { ease: "expo.inOut", y: 100 })
 			.duration(0.2)
 	}, headerWrap.value)
 })
