@@ -24,7 +24,7 @@
     "@fontsource/jetbrains-mono": "^4.5.12",
     "@fontsource/open-sans": "^4.5.14",
     "@iconify-prerendered/vue-fa6-brands": "^0.18.1662097805",
-    "@vercel/analytics": "^0.1.8",
+    "@vercel/analytics": "^0.1.7",
     "gsap": "^3.11.4"
   }
 }
