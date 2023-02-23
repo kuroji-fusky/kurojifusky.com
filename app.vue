@@ -14,6 +14,18 @@ useCalcViewport()
 </template>
 
 <style lang="scss">
+html {
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+	}
+	&::-webkit-scrollbar-track {
+		@apply border-8 border-red-500;
+	}
+	&::-webkit-scrollbar-thumb {
+		@apply bg-sona-borahaealt-700 rounded-xl border-8 border-red-500;
+	}
+}
+
 .link-underline {
 	@apply text-sona-borahaealt-200 inline-block relative w-fit
 				hover:text-sona-borahaealt-300

@@ -8,12 +8,12 @@ export default defineNuxtConfig({
 	css: ["~/assets/css/main.scss"],
 	app: {
 		head: {
-      htmlAttrs: {
-        lang: 'en',
-      },
-			link: [{ rel: "icon", href: "./favicon.ico" }],
+			htmlAttrs: {
+				lang: "en",
+			},
+			link: [{ rel: "icon", href: "/favicon.ico" }],
 		},
-    rootId: "__kuro"
+		rootId: "__kuro",
 	},
 	image: {
 		cloudinary: {
