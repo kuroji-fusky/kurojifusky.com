@@ -12,7 +12,7 @@ const { isScrolled } = useNavbarScroll()
 function toggleTls() {
 	const curtainVal = contentsTl.value
 	const navVal = navTl.value
-	const htmlRoot = document.documentElement
+	const $html = document.documentElement
 
 	isNavCurtainOpen.value = !curtainVal.reversed()
 
@@ -20,8 +20,8 @@ function toggleTls() {
 	navVal.reversed(!navVal.reversed())
 
 	!curtainVal.reversed() && !navVal.reversed()
-		? (htmlRoot.style.overflow = "hidden")
-		: (htmlRoot.style.overflow = "auto")
+		? ($html.classList.add("overflow-y-hidden"))
+		: ($html.classList.remove("overflow-y-hidden"))
 }
 
 onMounted(() => {
@@ -63,7 +63,7 @@ onMounted(() => {
 			.timeline()
 			.reverse()
 			.fromTo(curtain, { height: "0vh" }, { ...curtainTweens, height: "100vh" })
-			.fromTo(wordmark, { y: 0}, { ease: "expo.inOut", y: 100 })
+			.fromTo(wordmark, { y: 0 }, { ease: "expo.inOut", y: 100 })
 			.duration(0.2)
 	}, headerWrap.value)
 })

@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       },
 			link: [{ rel: "icon", href: "./favicon.ico" }],
 		},
+    rootId: "__kuro"
 	},
 	image: {
 		cloudinary: {
