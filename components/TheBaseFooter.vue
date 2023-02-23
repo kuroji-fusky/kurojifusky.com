@@ -54,7 +54,9 @@ const currentYear = new Date().getFullYear()
 			</NuxtLink>
 		</div>
 		<span id="copyright">
-			&copy; 2014-{{ currentYear }} Kerby Keith Aquino</span
+			&copy; 2013-{{ currentYear }} Kerby Keith Aquino,
+			<abbr title="Doing business as">d/b/a</abbr> Fusky & Co.,
+			LLC</span
 		>
 	</footer>
 </template>
@@ -75,11 +77,12 @@ footer {
 
 #copyright {
 	grid-area: copyright;
+  @apply gap-1 #{!important};
 }
 
 .links {
 	grid-area: links;
-  @apply font-jetbrains-mono;
+	@apply font-jetbrains-mono;
 }
 
 :is(.links, #copyright) {

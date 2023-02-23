@@ -7,9 +7,9 @@ const gsapCtx = ref(),
 onMounted(() => {
 	gsapCtx.value = gsap.context((self) => {
 		const orbit = self.selector!(".cursor-orbit")
-		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
-    
-		const mouse = { x: pos.x, y: pos.y }
+		const _defaultPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+
+		const mouse = { x: _defaultPos.x, y: _defaultPos.y }
 		const speed = 0.1
 
 		const xSet = gsap.quickSetter(orbit, "x", "px")
@@ -20,17 +20,28 @@ onMounted(() => {
 			mouse.y = y
 		})
 
-		gsap.ticker.add(() => {
-			const deltaRatio = gsap.ticker.deltaRatio()
-
+		const handleCursorPos = () => {
 			// adjust speed for higher refresh monitors
+			const deltaRatio = gsap.ticker.deltaRatio()
 			const dt = 1.0 - Math.pow(1.0 - speed, deltaRatio)
 
-			pos.x += (mouse.x - pos.x) * dt
-			pos.y += (mouse.y - pos.y) * dt
-			xSet(pos.x)
-			ySet(pos.y)
+			_defaultPos.x += (mouse.x - _defaultPos.x) * dt
+			_defaultPos.y += (mouse.y - _defaultPos.y) * dt
+			xSet(_defaultPos.x)
+			ySet(_defaultPos.y)
+		}
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) {
+					gsap.ticker.remove(handleCursorPos)
+				} else {
+					gsap.ticker.add(handleCursorPos)
+				}
+			})
 		})
+
+		observer.observe(sectionRoot.value!)
 	}, sectionRoot.value)
 })
 onUnmounted(() => gsapCtx.value.revert())
@@ -42,7 +53,7 @@ onUnmounted(() => gsapCtx.value.revert())
 			<h1 id="kuro-wordmark" class="font-bold font-inter">Kuroji Fusky</h1>
 			<p>Making abominations since 2014</p>
 		</article>
-		<div class="pointer-events-none cursor-orbit" aria-hidden="true"></div>
+		<div class="cursor-orbit" aria-hidden="true"></div>
 		<div class="grid-wrapper" aria-hidden="true"></div>
 	</section>
 </template>
@@ -61,7 +72,7 @@ p {
 }
 
 :is(.grid-wrapper, .cursor-orbit) {
-	@apply absolute;
+	@apply absolute pointer-events-none;
 }
 
 .cursor-orbit {
