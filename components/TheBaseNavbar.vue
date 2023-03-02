@@ -73,7 +73,7 @@ onUnmounted(() => gsapCtx.value.revert())
 
 <template>
 	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
-		<div class="flex items-center justify-between px-12 py-3.5 relative z-[6]">
+		<div class="top-nav-wrapper">
 			<div class="overflow-hidden">
 				<NuxtLink to="/" id="wordmark" role="img" aria-label="Kuroji Fusky"
 					>Kuroji Fusky</NuxtLink
@@ -106,10 +106,7 @@ onUnmounted(() => gsapCtx.value.revert())
 				</svg>
 			</button>
 		</div>
-		<div
-			class="h-[0%] fixed top-0 left-0 right-0 bg-sona-borahaealt-900 transition-all duration-300 z-[5] overflow-hidden"
-			:aria-hidden="!isNavCurtainOpen"
-		>
+		<div class="nav-items-wrapper" :aria-hidden="!isNavCurtainOpen">
 			<div class="nav-items-list"></div>
 		</div>
 	</header>
@@ -127,6 +124,10 @@ header {
 	@apply bg-borahae-dark bg-opacity-75 backdrop-blur-lg border-b border-neutral-100;
 }
 
+.top-nav-wrapper {
+	@apply flex items-center justify-between px-12 py-3.5 relative z-[6];
+}
+
 #wordmark {
 	@apply font-inter uppercase font-extrabold select-none z-[5];
 	font-size: calc(var(--vw) * var(--wordmark-size));
@@ -140,5 +141,9 @@ header {
 	@media (min-width: 1280px) {
 		--wordmark-size: 2;
 	}
+}
+
+.nav-items-wrapper {
+	@apply h-[0%] fixed top-0 left-0 right-0 bg-sona-borahaealt-900 transition-all duration-300 z-[5] overflow-hidden;
 }
 </style>

@@ -8,12 +8,10 @@ useCalcViewport()
 </script>
 
 <template>
-	<div>
-		<NuxtLoadingIndicator />
-		<NuxtLayout>
-			<NuxtPage />
-		</NuxtLayout>
-	</div>
+	<NuxtLoadingIndicator />
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="kurofusky">
 		<TheBaseNavbar />
 		<main>
 			<slot />
