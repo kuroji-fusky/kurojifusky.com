@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 				{ name: "robots", content: "noindex,nofollow" },
 				{ property: "og:site:name", content: "Kuroji's Dump" },
 			],
-			link: [{ rel: "icon", href: "/favicon.ico" }],
+			link: [{ rel: "icon", href: "/favicon.png", type: "image/png" }],
 		},
 	},
 	typescript: {

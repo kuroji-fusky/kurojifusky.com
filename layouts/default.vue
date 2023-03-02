@@ -1,5 +1,9 @@
 <template>
-	<TheBaseNavbar />
-	<slot />
-	<TheBaseFooter />
+	<div>
+		<TheBaseNavbar />
+		<main>
+			<slot />
+		</main>
+		<TheBaseFooter />
+	</div>
 </template>

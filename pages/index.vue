@@ -1,7 +1,13 @@
+<script setup lang="ts">
+const t = "Kuroji Fusky - Building abominations since 2015"
+const d =
+	"A terrible website with mind-blowing visuals, created by a furry btw lol"
+
+usePageMeta({ title: t, description: d })
+</script>
+
 <template>
-	<Container
-		title="Kuroji Fusky - Building abominations since 2015"
-		description="A terrible website with mind-blowing visuals, created by a furry btw lol"
-	>
-	</Container>
+  <div class="h-screen">
+    <span>I'm working very hard right now lol</span>
+  </div>
 </template>
