@@ -1,23 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-	modules: ["@nuxt/image-edge"],
+	modules: ["@nuxt/image-edge", "@nuxt/content"],
+	css: ["~/assets/css/main.scss"],
 	build: {
 		transpile: ["gsap"],
 	},
-	css: ["~/assets/css/main.scss"],
 	app: {
 		head: {
 			htmlAttrs: {
 				lang: "en",
 			},
+			meta: [
+				{ name: "robots", content: "noindex,nofollow" },
+				{ property: "og:site:name", content: "Kuroji's Dump" },
+			],
 			link: [{ rel: "icon", href: "/favicon.ico" }],
-		},
-		rootId: "__kuro",
-	},
-	image: {
-		cloudinary: {
-			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
 		},
 	},
 	typescript: {
@@ -32,6 +30,17 @@ export default defineNuxtConfig({
 		plugins: {
 			tailwindcss: {},
 			autoprefixer: {},
+			...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
 		},
+	},
+	// @nuxt/image
+	image: {
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
+		},
+	},
+	// @nuxt/content
+	content: {
+		documentDriven: true,
 	},
 })

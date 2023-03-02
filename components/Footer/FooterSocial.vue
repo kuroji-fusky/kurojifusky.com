@@ -1,17 +1,23 @@
 <script setup lang="ts">
-const props = defineProps<{ name?: string; link?: string }>()
+interface FooterIconsProp {
+	name?: string
+	link?: string
+	icon?: VNode
+}
+
+defineProps<FooterIconsProp>()
 </script>
 
 <template>
 	<NuxtLink
-		:to="props.link"
+		:to="link"
 		target="_blank"
 		class="social-link"
-    external
-		:aria-label="`${props.name} logo`"
-		:title="props.name"
+		external
+		:aria-label="`${name} logo`"
+		:title="name"
 	>
-		<slot />
+		<component :is="icon" />
 	</NuxtLink>
 </template>
 

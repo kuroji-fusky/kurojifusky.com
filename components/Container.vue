@@ -11,12 +11,16 @@ useHead({
 	link: [{ rel: "canonical", href: fullUrl }],
 })
 
+const SITE_NAME = "Kuroji Fusky"
+
+const parseTitle =
+	router.fullPath !== "/" ? `${props.title}  - ${SITE_NAME}` : props.title
+
 const metaTags: UseSeoMetaInput = {
-	title: props.title,
+	title: parseTitle,
 	description: props.description,
 	ogTitle: props.title,
 	ogDescription: props.description,
-	ogSiteName: "Kuroji Dump",
 	ogType: "website",
 	ogUrl: fullUrl,
 	twitterTitle: props.title,

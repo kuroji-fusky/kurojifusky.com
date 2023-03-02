@@ -1,49 +1,24 @@
 <script setup lang="ts">
-import {
-	IconYoutube,
-	IconTwitter,
-	IconGithub,
-	IconSoundcloud,
-	IconSpotify,
-	IconItunesNote,
-} from "@iconify-prerendered/vue-fa6-brands"
-
+import { footerLinks } from "./Socials"
 const currentYear = new Date().getFullYear()
+const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
 </script>
 
 <template>
 	<footer>
-		<div class="socials">
-			<FooterSocial link="https://youtube.com/@kurojifusky" name="YouTube">
-				<IconYoutube />
-			</FooterSocial>
-			<FooterSocial link="https://twitter.com/kurojifusky" name="Twitter">
-				<IconTwitter />
-			</FooterSocial>
-			<FooterSocial link="https://github.com/kuroji-fusky" name="Github">
-				<IconGithub />
-			</FooterSocial>
-			<FooterSocial
-				link="https://soundcloud.com/kuroji-fusky"
-				name="SoundCloud"
-			>
-				<IconSoundcloud />
-			</FooterSocial>
-			<FooterSocial link="https://youtube.com/@kurojifusky" name="Spotify">
-				<IconSpotify />
-			</FooterSocial>
-			<FooterSocial link="https://youtube.com/@kurojifusky" name="iTunes">
-				<IconItunesNote />
-			</FooterSocial>
-		</div>
+		<ul class="socials">
+			<li v-for="(item, index) in footerLinks" :key="index">
+				<FooterSocial :name="item.name" :link="item.link" :icon="item.icon" />
+			</li>
+		</ul>
 		<div class="links">
 			<NuxtLink
 				class="link-underline"
 				to="https://ko-fi.com/kuroji_fusky"
 				target="_blank"
 				external
-				>Support my broke ass</NuxtLink
-			>
+				>Support my broke ass
+			</NuxtLink>
 			<NuxtLink
 				class="link-underline"
 				to="https://github.com/kuroji-fusky/kurofusky.xyz"
@@ -53,11 +28,7 @@ const currentYear = new Date().getFullYear()
 				Website source code
 			</NuxtLink>
 		</div>
-		<span id="copyright">
-			&copy; 2013-{{ currentYear }} Kerby Keith Aquino,
-			<abbr title="Doing business as">d/b/a</abbr> Fusky & Co.,
-			LLC</span
-		>
+		<span id="copyright"> {{ copyright }}</span>
 	</footer>
 </template>
 
@@ -77,7 +48,7 @@ footer {
 
 #copyright {
 	grid-area: copyright;
-  @apply gap-1 #{!important};
+	@apply gap-1 #{!important};
 }
 
 .links {
