@@ -38,5 +38,6 @@ onMounted(() => {
 	<div class="min-h-screen">
 		<LandingHero />
     <LandingWhoAmI />
+    <LandingProjects />
 	</div>
 </template>

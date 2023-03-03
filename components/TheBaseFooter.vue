@@ -18,9 +18,9 @@ const footerLinks = [
 
 <template>
 	<footer class="flex gap-3.5 px-10 py-12 font-inter">
-		<ul class="w-full grid grid-flow-col gap-6">
+		<ul class="grid w-full grid-flow-col gap-6">
 			<li
-				class="border-r border-r-sona-borahaealt-500 text-opacity-75 text-sona-borahaealt-50"
+				class="text-opacity-75 border-r border-r-sona-borahaealt-500 text-sona-borahaealt-50"
 			>
 				<p>
 					{{ copyright }}<br />
@@ -29,23 +29,16 @@ const footerLinks = [
 			</li>
 			<li>
 				<p>
-					Reach me out directly:<br>
-					<NuxtLink
-						class="text-sona-borahaealt-100 hover:text-opacity-100 text-opacity-75 transition-colors"
-						to="mailto:hello@kurofusky.xyz"
-						>hello@kurofusky.xyz</NuxtLink
+					Reach me out directly:<br />
+					<BiroLink href="mailto:hello@kurofusky.xyz"
+						>hello@kurofusky.xyz</BiroLink
 					>
 				</p>
 			</li>
 			<li v-for="item in footerLinks">
-				<NuxtLink
-					class="text-sona-borahaealt-100 hover:text-opacity-100 text-opacity-75 transition-colors"
-					:to="item.link"
-					:target="`${!item.external ? '' : '_blank'}`"
-					:rel="`${!item.external ? undefined : 'noreferrer'}`"
-				>
+				<BiroLink :to="item.link" :external="!item.external">
 					{{ item.text }}
-				</NuxtLink>
+				</BiroLink>
 			</li>
 		</ul>
 	</footer>
