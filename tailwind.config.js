@@ -127,12 +127,14 @@ module.exports = {
 			addBase({
 				html: {
 					overflowX: "hidden",
-					scrollBehavior: "auto",
+					scrollBehavior: "initial",
 				},
 				body: {
 					fontFamily: theme("fontFamily.open-sans"),
 					backgroundColor: theme("colors.borahae-dark"),
 					color: theme("colors.gray.50"),
+          minHeight: '100%',
+          height: 'auto'
 				},
 			})
 		}),

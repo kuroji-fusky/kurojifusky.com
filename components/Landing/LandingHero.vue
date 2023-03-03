@@ -14,11 +14,11 @@ onMounted(() => {
 
 <template>
 	<section class="grid h-screen place-items-center" ref="sectRoot">
-		<div class="flex flex-col justify-center text-center select-none">
+		<div class="flex flex-col justify-center text-center select-none gap-y-4">
 			<h2 class="font-extrabold font-inter" aria-label="Kuroji Fusky">
-				<span class="relative z-[1] text-green-300">Kuroji Fusky</span>
+				<span class="relative z-[1] text-sona-borahae-300">Kuroji Fusky</span>
 			</h2>
-			<p>This hero banner looking basic as shit</p>
+			<p class="font-medium">Building abominations since 2013</p>
 		</div>
 	</section>
 </template>

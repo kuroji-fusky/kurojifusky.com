@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="kuroji fusky website source code" src="https://user-images.githubusercontent.com/94678583/198828532-a6441fa4-696b-472b-bbac-2866d9dbd5f6.png">
+  <img alt="kuroji fusky website source code" src="https://user-images.githubusercontent.com/94678583/222631031-6444bc47-39c4-4e5b-b36c-47c247478d08.png">
   <a href="https://kurofusky.xyz">kurofusky.xyz</a>
 </h1>
 
@@ -9,36 +9,36 @@ Tailwind CSS! Deployed in Vercel.
 ## Tech stack
 
 - Nuxt 3
-- TypeScript
 - Tailwind CSS
 - GSAP
+- [Lenis](https://github.com/studio-freight/lenis)
 - Cloudinary
 - Notion
 
 ## Running the abomination locally
 
-This project uses the [Yarn](https://yarnpkg.com) package manager to install dependencies.
+This project uses the [pnpm](https://pnpm.io/) package manager to install dependencies.
 
 Fork and clone the repo and install the bloated garbage
 
-```sh
-yarn
+```console
+pnpm i
 ```
 
 Clone the required environment variables
 
-```sh
+```console
 cp .env.local.example .env.local
 ```
 
 Start the local server lmao
 
-```sh
-yarn dev
+```console
+pnpm dev
 ```
 
 BUILD THE ABOMINATION
 
-```sh
-yarn build
+```console
+pnpm build
 ```

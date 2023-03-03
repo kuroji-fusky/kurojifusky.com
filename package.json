@@ -26,6 +26,7 @@
     "@fontsource/jetbrains-mono": "^4.5.12",
     "@fontsource/open-sans": "^4.5.14",
     "@iconify-prerendered/vue-fa6-brands": "^0.21.1675839446",
+    "@studio-freight/lenis": "1.0.0-dev.7",
     "@vercel/analytics": "^0.1.7",
     "gsap": "^3.11.4",
     "prismjs": "^1.29.0"
