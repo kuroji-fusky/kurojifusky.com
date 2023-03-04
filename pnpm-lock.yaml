@@ -17,6 +17,7 @@ specifiers:
   autoprefixer: ^10.4.13
   cssnano: ^5.1.15
   gsap: ^3.11.4
+  lucide-vue-next: ^0.121.0
   nuxt: ^3.2.0
   postcss: ^8.4.19
   prismjs: ^1.29.0
@@ -34,6 +35,7 @@ dependencies:
   '@studio-freight/lenis': 0.2.28
   '@vercel/analytics': 0.1.11
   gsap: 3.11.4
+  lucide-vue-next: 0.121.0
   prismjs: 1.29.0
 
 devDependencies:
@@ -4169,6 +4171,12 @@ packages:
     resolution: {integrity: sha512-8/HcIENyQnfUTCDizRu9rrDyG6XG/21M4X7/YEGZeD76ZJilFPAUVb/2zysFf7VVO1LEjCDFyHp8pMMvozIrvg==}
     engines: {node: '>=12'}
     dev: true
+
+  /lucide-vue-next/0.121.0:
+    resolution: {integrity: sha512-IhsWbf6z94mGIpxGbaZwmOkHZu1D6OGTkiKsFsxOId8bpbW2x4dH5T5QCSMZcrFx0KgkP7hLsSANjTzR8Xkfvg==}
+    peerDependencies:
+      vue: '>=3.0.1'
+    dev: false
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}

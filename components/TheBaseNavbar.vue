@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import gsap from "gsap"
+import { getHeapSnapshot } from "v8"
 
 const gsapCtx = ref(),
 	contentsTl = ref(),
@@ -26,7 +27,7 @@ function toggleTls() {
 
 onMounted(() => {
 	gsapCtx.value = gsap.context((self) => {
-		const wordmark = self.selector!("#wordmark")
+		const wordmark = self.selector!("a.wordmark")
 		const svgBurger = self.selector!("#Burger")
 		const svgClose = self.selector!("#Close")
 
@@ -63,8 +64,7 @@ onMounted(() => {
 			.timeline()
 			.reverse()
 			.fromTo(curtain, { height: "0vh" }, { ...curtainTweens, height: "100vh" })
-			.fromTo(wordmark, { y: 0 }, { ease: "expo.inOut", y: 100 })
-			.duration(0.2)
+			.duration(0.25)
 	}, headerWrap.value)
 })
 
@@ -75,7 +75,7 @@ onUnmounted(() => gsapCtx.value.revert())
 	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
 		<div class="top-nav-wrapper">
 			<div class="overflow-hidden">
-				<NuxtLink to="/" id="wordmark" role="img" aria-label="Kuroji Fusky"
+				<NuxtLink to="/" class="wordmark" role="img" aria-label="Kuroji Fusky"
 					>Kuroji Fusky</NuxtLink
 				>
 			</div>
@@ -128,7 +128,7 @@ header {
 	@apply flex items-center justify-between px-12 py-3.5 relative z-[6];
 }
 
-#wordmark {
+.wordmark {
 	@apply font-inter uppercase font-extrabold select-none z-[5];
 	font-size: calc(var(--vw) * var(--wordmark-size));
 
@@ -144,6 +144,6 @@ header {
 }
 
 .nav-items-wrapper {
-	@apply h-[0%] fixed top-0 left-0 right-0 bg-sona-borahaealt-900 transition-all duration-300 z-[5] overflow-hidden;
+	@apply h-[0%] fixed top-0 left-0 right-0 backdrop-blur-md  bg-sona-borahaealt-900 transition-all duration-300 z-[5] overflow-hidden;
 }
 </style>

@@ -31,6 +31,7 @@
     "@studio-freight/lenis": "0.2.28",
     "@vercel/analytics": "^0.1.11",
     "gsap": "^3.11.4",
+    "lucide-vue-next": "^0.121.0",
     "prismjs": "^1.29.0"
   }
 }
