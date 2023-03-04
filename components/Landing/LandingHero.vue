@@ -54,7 +54,7 @@ onMounted(() => {
 		</article>
 		<div
 			aria-hidden="true"
-			class="absolute left-[calc(50%-17rem)] top-[calc(50%-15rem)] opacity-60 blur-[420px] scale-[1.5]"
+			class="absolute left-[calc(50%-17rem)] top-[calc(50%-15rem)] opacity-60 blur-[75px] scale-[1.5]"
 		>
 			<div
 				class="full-rotate-anim h-[10rem] w-[35rem] absolute -left-[8rem] top-[4rem] bg-gradient-to-tr from-sona-borahaealt-200 to-sona-yellow-500 rounded-full"
