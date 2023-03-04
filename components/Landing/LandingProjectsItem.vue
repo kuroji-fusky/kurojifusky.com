@@ -7,6 +7,8 @@ interface ProjectItemProps {
 	name: string
 	description: string
 	product?: string
+	svg?: VNode
+	img?: string
 	sourceCode: string
 	projectType?: string
 	gradientStart?: string
@@ -21,33 +23,37 @@ defineProps<ProjectItemProps>()
 		class="grid grid-flow-col md:grid-flow-row grid-rows-2 md:grid-rows-1 grid-cols-8 gap-8"
 	>
 		<aside
-			class="bg-red-900 col-span-8 md:col-span-3 lg:col-span-2 grid place-items-center text-center h-[16.5rem]"
+			class="col-span-8 md:col-span-3 lg:col-span-2 grid place-items-center text-center h-[16.5rem] relative"
 			:class="[!reversed ? 'order-1' : 'order-1 md:order-2']"
 		>
-			image
+			<component v-if="svg" :is="svg" />
+			<div
+				class="absolute w-[32rem] h-[8rem] bg-red-600 blur-[127px]"
+				:class="[!reversed ? 'rotate-[32deg]' : '-rotate-[32deg]']"
+				aria-hidden="true"
+			/>
 		</aside>
 		<article
-			class="col-span-8 md:col-span-5 lg:col-span-6 flex flex-col justify-center gap-y-3"
+			class="relative z-[2] col-span-8 md:col-span-5 lg:col-span-6 flex flex-col justify-center"
 			:class="[!reversed ? 'order-2' : 'order-2 md:order-1']"
 		>
-			<h2 class="font-inter font-bold text-4xl">{{ name }}</h2>
-			<p>{{ description }}</p>
 			<p
-				class="flex gap-x-2 uppercase"
+				class="flex gap-x-2 uppercase text-sona-borahae-50 text-opacity-70"
 				:aria-label="`Project type: ${projectType}`"
 			>
-				<span class="text-sona-borahae-50 text-opacity-75">Type</span>
-				<span class="text-sona-borahae-50">{{ projectType }}</span>
+				{{ projectType }}
 			</p>
-			<ul class="flex gap-4 flex-wrap">
+			<h2 class="font-inter font-bold text-4xl py-4">{{ name }}</h2>
+			<p>{{ description }}</p>
+			<ul class="flex gap-6 flex-wrap py-5">
 				<li v-if="product">
 					<BiroLink
 						:href="product"
 						external
 						class="flex gap-x-1.5 items-center"
 					>
-						<span>View project</span>
 						<ExternalLink :size="17" />
+						<span>View project</span>
 					</BiroLink>
 				</li>
 				<li>
@@ -57,8 +63,7 @@ defineProps<ProjectItemProps>()
 						class="flex gap-x-1.5 items-center"
 					>
 						<IconGithub />
-						<span>View source code</span>
-						<ExternalLink :size="17" />
+						<span>Source code</span>
 					</BiroLink>
 				</li>
 			</ul>

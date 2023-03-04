@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 			},
 			meta: [
 				{ name: "robots", content: "noindex,nofollow" },
-				{ property: "og:site:name", content: "Kuroji's Dump" },
+				{ property: "og:site_name", content: "Kuroji's Dump" },
 			],
 			link: [{ rel: "icon", href: "/favicon.png", type: "image/png" }],
 		},
@@ -34,10 +34,12 @@ export default defineNuxtConfig({
 		},
 	},
 	// @nuxt/image
+	// @ts-ignore
 	image: {
 		cloudinary: {
 			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
 		},
+		domains: ["res.cloudinary.com"],
 	},
 	// @nuxt/content
 	content: {

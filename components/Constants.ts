@@ -9,6 +9,8 @@ interface FeaturedProjects {
 	name: string
 	description: string
 	type: "Extension" | "Website" | "Library"
+	img?: string
+	svg?: unknown
 	product?: string
 	sourceCode: string
 }
@@ -40,6 +42,8 @@ export const featuredProjects: FeaturedProjects[] = [
 		description:
 			"Yes, really. This has got to be one of my dumbest projects I've ever made lmao",
 		type: "Extension",
+		product:
+			"https://marketplace.visualstudio.com/items?itemName=KurojiFusky.majira-strawberry-vscode",
 		sourceCode: "kuroji-fusky/majira-strawberry-vscode",
 	},
 ]

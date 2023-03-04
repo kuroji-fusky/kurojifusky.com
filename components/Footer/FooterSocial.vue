@@ -9,16 +9,9 @@ defineProps<FooterIconsProp>()
 </script>
 
 <template>
-	<NuxtLink
-		:to="link"
-		target="_blank"
-		class="social-link"
-		external
-		:aria-label="`${name} logo`"
-		:title="name"
-	>
+	<BiroLink :href="link" external :aria-label="`${name} logo`" :title="name">
 		<component :is="icon" />
-	</NuxtLink>
+	</BiroLink>
 </template>
 
 <style lang="scss"></style>
