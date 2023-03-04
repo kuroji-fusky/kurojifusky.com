@@ -1,49 +1,71 @@
 <script setup lang="ts">
-import { ExternalLink } from 'lucide-vue-next';
+import { Globe, Coffee } from "lucide-vue-next"
+import { socialLinks } from "./Constants"
 
 const currentYear = new Date().getFullYear()
 const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
 
 const footerLinks = [
 	{
+		icon: Coffee,
+		text: "Support me on Ko-fi",
 		link: "https://ko-fi.com/kuroji_fusky",
-		text: "Support my broke ass on Ko-fi",
-		external: true,
 	},
 	{
-		link: "https://github.com/kuroji-fusky/kurofusky.xyz",
+		icon: Globe,
 		text: "Website source code",
-		external: true,
+		link: "https://github.com/kuroji-fusky/kurofusky.xyz",
 	},
 ]
+
+const MoreSocials = () => {
+	alert("There's supposed to be something there, but I'm lazy as usual lol")
+}
 </script>
 
 <template>
-	<footer class="flex gap-3.5 px-10 py-12 font-inter">
-		<ul class="grid w-full grid-flow-col gap-6">
-			<li
-				class="text-opacity-75 border-r border-r-sona-borahaealt-500 text-sona-borahaealt-50"
+	<footer class="flex justify-between gap-3.5 px-20 py-14 font-inter">
+		<p>{{ copyright }}</p>
+		<div class="flex items-center">
+			<ul
+				class="flex gap-x-6 items-center border-r border-r-sona-borahaealt-500 pr-6"
 			>
-				<p>
-					{{ copyright }}<br />
-					All rights reserved.
-				</p>
-			</li>
-			<li>
-				<p>
-					Reach me out directly:<br />
-					<BiroLink href="mailto:hello@kurofusky.xyz"
-						>hello@kurofusky.xyz</BiroLink
+				<li v-for="item in footerLinks">
+					<BiroLink
+						:href="item.link"
+						external
+						class="flex items-center gap-x-2"
 					>
-				</p>
-			</li>
-			<li v-for="item in footerLinks">
-				<BiroLink :to="item.link" :external="!item.external" class="flex items-center gap-x-1">
-					{{ item.text }}
-          <ExternalLink :size="16" />
-				</BiroLink>
-			</li>
-		</ul>
+						<component :is="item.icon" class="w-[1.2rem] h-[1.2rem]" />
+						{{ item.text }}
+					</BiroLink>
+				</li>
+			</ul>
+			<ul class="flex gap-x-6 items-center pl-6">
+				<li v-for="social in socialLinks">
+					<template v-if="!social.button">
+						<BiroLink
+							external
+							:href="social.link"
+							:title="social.text"
+							:aria-label="`${social.text} logo`"
+						>
+							<component :is="social.icon" class="w-[1.2rem] h-[1.2rem]" />
+						</BiroLink>
+					</template>
+					<template v-else>
+						<button
+							class="text-opacity-75 transition-colors text-sona-borahaealt-100 hover:text-opacity-100 flex items-center"
+							@click="MoreSocials"
+							title="More"
+							aria-label="More social medias"
+						>
+							<component :is="social.icon" class="w-[1.2rem] h-[1.2rem]" />
+						</button>
+					</template>
+				</li>
+			</ul>
+		</div>
 	</footer>
 </template>
 

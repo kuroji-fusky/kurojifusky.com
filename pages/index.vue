@@ -2,7 +2,7 @@
 import Lenis from "@studio-freight/lenis"
 
 usePageMeta({
-	title: "Kuroji Fusky - building abominations since 2013",
+	title: "Kuroji Fusky: Building abominations since 2013",
 	description:
 		"A terrible website with mind-blowing visuals, created by a furry btw lol",
 })

@@ -5,6 +5,8 @@ import {
 	IconLinkedin,
 } from "@iconify-prerendered/vue-fa6-brands"
 
+import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
+
 interface FeaturedProjects {
 	name: string
 	description: string
@@ -48,9 +50,30 @@ export const featuredProjects: FeaturedProjects[] = [
 	},
 ]
 
-export const footerLinks = [
-	{ name: "YouTube", link: "#", icon: IconYoutube },
-	{ name: "Twitter", link: "#", icon: IconTwitter },
-	{ name: "GitHub", link: "#", icon: IconGithub },
-	{ name: "LinkedIn", link: "#", icon: IconLinkedin },
+export const socialLinks = [
+	{
+		text: "YouTube",
+		link: "https://www.youtube.com/@kurojifusky",
+		icon: IconYoutube,
+	},
+	{
+		text: "Twitter",
+		link: "https://twitter.com/@kurojifusky",
+		icon: IconTwitter,
+	},
+	{
+		text: "GitHub",
+		link: "https://www.github.com/kuroji-fusky",
+		icon: IconGithub,
+	},
+	{
+		text: "LinkedIn",
+		link: "https://www.linkedin.com/in/kerby-keith-aquino-434037238/",
+		icon: IconLinkedin,
+	},
+	{
+		button: true,
+		text: "More",
+		icon: IconEllipsis,
+	},
 ]
