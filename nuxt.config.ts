@@ -1,7 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-	modules: ["@nuxt/image-edge", "@nuxt/content"],
+	modules: [
+		"@nuxt/image-edge",
+		"@nuxt/content",
+		[
+			"@pinia/nuxt",
+			{
+				autoImports: ["defineStore", ["defineStore", "definePiniaStore"]],
+			},
+		],
+	],
 	css: ["~/assets/css/main.scss"],
 	build: {
 		transpile: ["gsap"],
@@ -17,6 +26,9 @@ export default defineNuxtConfig({
 			],
 			link: [{ rel: "icon", href: "/favicon.png", type: "image/png" }],
 		},
+	},
+	webpack: {
+		optimizeCSS: true,
 	},
 	typescript: {
 		strict: true,
