@@ -9,7 +9,7 @@ import { featuredProjects } from "../Constants"
 		>
 			<h1>Featured Projects</h1>
 		</div>
-		<div class="px-14 grid gap-y-20 mx-auto max-w-screen-2xl">
+		<div class="py-20 px-14 grid gap-y-28 mx-auto max-w-screen-xl">
 			<LandingProjectsItem
 				v-for="(item, index) in featuredProjects"
 				:reversed="!!(index % 2)"
