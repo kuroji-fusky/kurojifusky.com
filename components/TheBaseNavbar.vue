@@ -79,8 +79,8 @@ onUnmounted(() => gsapCtx.value.revert())
 					class="wordmark"
 					role="img"
 					aria-label="Kuroji Fusky"
-					exact-active-class=" "
-					active-class=" "
+					exact-active-class="&nbsp;"
+					active-class="&nbsp;"
 					>Kuroji Fusky</NuxtLink
 				>
 			</div>

@@ -15,7 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="h-screen grid place-items-center content-center">
+	<section class="grid content-center h-screen place-items-center">
 		<article
 			class="text-center prose-h2:text-[calc(var(--vw)*2.45)] prose-p:text-[calc(var(--vw)*1.15)] relative z-[1]"
 		>
@@ -35,10 +35,10 @@ onMounted(() => {
 				/>
 			</div>
 
-			<h2 class="my-5 font-inter font-bold">
+			<h2 class="my-5 font-bold font-inter">
 				Hi, I'm
 				<span
-					class="bg-gradient-to-tr from-sona-royalblue-400 to-sona-borahae-400 bg-clip-text text-transparent"
+					class="text-transparent bg-gradient-to-tr from-sona-royalblue-400 to-sona-borahae-400 bg-clip-text"
 					>Kuroji Fusky</span
 				>!
 			</h2>
@@ -54,38 +54,47 @@ onMounted(() => {
 		</article>
 		<div
 			aria-hidden="true"
-			class="absolute left-[calc(50%-17rem)] top-[calc(50%-15rem)] opacity-60 blur-[75px] scale-[1.5]"
+			class="absolute left-[calc(50%-17rem)] top-[calc(50%-15rem)] opacity-60 blur-[60px] scale-[1.5]"
 		>
 			<div
-				class="full-rotate-anim h-[10rem] w-[35rem] absolute -left-[8rem] top-[4rem] bg-gradient-to-tr from-sona-borahaealt-200 to-sona-yellow-500 rounded-full"
-				style="--offset: 1.3"
+				class="full-rotate-anim h-[10rem] w-[21rem] absolute -left-[8rem] top-[4rem] bg-gradient-to-tr from-sona-borahaealt-200 to-sona-yellow-500 rounded-full"
 			/>
 			<div
-				class="full-rotate-anim rotate-6 h-[12rem] w-[20rem] absolute -right-[18rem] top-[4rem] bg-gradient-to-tr from-sona-royalblue-400 to-sona-borahae-800"
-				style="--offset: 5"
+				class="full-rotate-anim rotate-6 h-[12rem] w-[20rem] absolute -right-[21rem] top-[4rem] bg-gradient-to-tr from-sona-royalblue-400 to-sona-borahae-800"
 			/>
 			<div
 				class="full-rotate-anim rotate-6 h-[12rem] w-[10rem] absolute -right-[18rem] -top-[5rem] bg-gradient-to-tr from-pink-400 to-sona-skycyan-500"
-				style="--offset: 2.7"
 			/>
 		</div>
 	</section>
 </template>
 
 <style lang="scss">
+$offsets: (1 -1 (50px -50px), 2 0.1 (309px -100px), 3 0.4 (-259px, -1255px));
+
 .full-rotate-anim {
-	animation: speen 69s linear infinite alternate-reverse;
+	animation: speen 60s linear infinite alternate-reverse;
+
+	@each $i, $offsets, $transform in $offsets {
+		&:nth-child(#{$i}) {
+			--blob-offset: #{$offsets};
+			--blob-transform: #{$transform};
+		}
+	}
 }
 
 @keyframes speen {
 	0% {
-		rotate: calc(720deg * var(--offset));
+		rotate: calc(720deg * var(--blob-offset));
+		translate: -150px 75px;
 	}
-	0% {
-		rotate: calc(0deg * var(--offset));
+	50% {
+		rotate: calc(0deg * var(--blob-offset));
+		translate: var(--blob-transform);
 	}
 	100% {
-		rotate: calc(720deg * var(--offset));
+		rotate: calc(720deg * var(--blob-offset));
+		translate: 50px -10px;
 	}
 }
 </style>
