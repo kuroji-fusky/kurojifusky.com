@@ -12,6 +12,7 @@ import { featuredProjects } from "../Constants"
 		<div class="grid max-w-screen-xl py-20 mx-auto px-14 gap-y-28">
 			<LandingProjectsItem
 				v-for="(item, index) in featuredProjects"
+        :key="index"
 				:reversed="!!(index % 2)"
 				:name="item.name"
 				:description="item.description"
