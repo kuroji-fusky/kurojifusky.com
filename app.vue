@@ -4,25 +4,25 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-useCalcViewport()
+useHTMLViewport()
 
 const loader = ref<HTMLDivElement>()
 
 onMounted(() => {
-	const redundancy = loader.value
-	redundancy?.classList.remove("bg-opacity-100")
-	redundancy?.classList.add("!pointer-events-none", "!bg-opacity-0")
+	const loaderEl = loader.value
+	loaderEl?.classList.remove("hydrating")
+	loaderEl?.classList.add("hydrated")
 
 	setTimeout(() => {
-		redundancy?.classList.add("!hidden")
+		loaderEl?.setAttribute("style", "display: none")
 	}, 1000)
 })
 </script>
 
 <template>
 	<Teleport to="body">
-		<div ref="loader" id="__kuro-initial-loader" class="bg-opacity-100">
-			<div>Logo here</div>
+		<div ref="loader" id="__kuro-initial-loader" class="hydrating">
+			<div>Loading your shit</div>
 		</div>
 	</Teleport>
 	<NuxtLoadingIndicator />
@@ -72,6 +72,14 @@ html {
 
 #__kuro-initial-loader {
 	@apply fixed inset-0 bg-borahae-dark z-[99999] grid place-items-center transition-all duration-500;
+
+	&.hydrating {
+		@apply bg-opacity-0;
+	}
+
+	&.hybdrated {
+		@apply pointer-events-none bg-opacity-0;
+	}
 }
 
 .link-underline {
