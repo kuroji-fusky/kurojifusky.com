@@ -5,8 +5,6 @@ import { socialLinks } from "./Constants"
 const currentYear = new Date().getFullYear()
 const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
 
-const { width } = useWidthViewport()
-
 const footerLinks = [
 	{
 		icon: Coffee,
