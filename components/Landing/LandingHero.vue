@@ -28,8 +28,8 @@ onMounted(() => {
 					:alt="`Artwork drawn by ${artworkCredit}`"
 					class="rounded-full select-none relative z-[1] h-[250px] w-[250px]"
 					format="webp"
-					sizes="lg:400px"
-					quality="80"
+					sizes="lg:320px"
+					quality="90"
 					loading="lazy"
 					preload
 				/>
