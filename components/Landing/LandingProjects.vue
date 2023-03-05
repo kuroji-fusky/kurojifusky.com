@@ -9,7 +9,7 @@ import { featuredProjects } from "../Constants"
 		>
 			<h1>Featured Projects</h1>
 		</div>
-		<div class="py-20 px-14 grid gap-y-28 mx-auto max-w-screen-xl">
+		<div class="grid max-w-screen-xl py-20 mx-auto px-14 gap-y-28">
 			<LandingProjectsItem
 				v-for="(item, index) in featuredProjects"
 				:reversed="!!(index % 2)"
@@ -18,6 +18,8 @@ import { featuredProjects } from "../Constants"
 				:product="item.product"
 				:project-type="item.type"
 				:source-code="item.sourceCode"
+				:gradient-start="item.cStart"
+				:gradient-end="item.cEnd"
 			/>
 		</div>
 	</section>

@@ -7,12 +7,13 @@ interface ProjectItemProps {
 	name: string
 	description: string
 	product?: string
-	svg?: VNode
 	img?: string
+	bgColor?: string
 	sourceCode: string
 	projectType?: string
 	gradientStart?: string
 	gradientEnd?: string
+  wip?: boolean
 }
 
 defineProps<ProjectItemProps>()
@@ -20,17 +21,29 @@ defineProps<ProjectItemProps>()
 
 <template>
 	<div
-		class="grid grid-flow-col md:grid-flow-row grid-rows-2 md:grid-rows-1 grid-cols-8 gap-8"
+		class="grid grid-flow-col grid-cols-8 grid-rows-2 gap-12 md:grid-flow-row md:grid-rows-1"
 	>
 		<aside
-			class="col-span-8 md:col-span-3 lg:col-span-2 grid place-items-center text-center h-[16.5rem] relative"
+			class="col-span-8 md:col-span-3 lg:col-span-2 grid place-items-center text-center h-[17.5rem] relative"
 			:class="[!reversed ? 'order-1' : 'order-1 md:order-2']"
 		>
-			<component v-if="svg" :is="svg" />
 			<div
-				class="absolute w-[32rem] h-[8rem] bg-red-600 blur-[127px]"
-				:class="[!reversed ? 'rotate-[32deg]' : '-rotate-[32deg]']"
+				:class="[bgColor ?? 'bg-sona-borahaealt-800']"
+				class="relative z-[1] rounded-xl aspect-square w-[calc(var(--vw)*13.5)] h-[calc(var(--vw)*13.5)]"
+			>
+				img stuff here
+			</div>
+			<div
 				aria-hidden="true"
+				class="absolute w-[32rem] h-[8rem] blur-[75px]"
+				:class="[
+					!reversed
+						? 'rotate-[32deg] bg-gradient-to-r'
+						: '-rotate-[32deg] bg-gradient-to-br',
+					,
+					gradientStart ?? 'from-red-500',
+					gradientEnd ?? 'to-blue-500',
+				]"
 			/>
 		</aside>
 		<article
@@ -38,14 +51,14 @@ defineProps<ProjectItemProps>()
 			:class="[!reversed ? 'order-2' : 'order-2 md:order-1']"
 		>
 			<p
-				class="flex gap-x-2 uppercase text-sona-borahae-50 text-opacity-70"
+				class="flex uppercase gap-x-2 text-sona-borahae-50 text-opacity-70"
 				:aria-label="`Project type: ${projectType}`"
 			>
 				{{ projectType }}
 			</p>
-			<h2 class="font-inter font-bold text-4xl py-4">{{ name }}</h2>
+			<h2 class="py-4 text-4xl font-bold font-inter">{{ name }}</h2>
 			<p>{{ description }}</p>
-			<ul class="flex gap-6 flex-wrap py-5">
+			<ul class="flex flex-wrap gap-6 py-5">
 				<li v-if="product">
 					<BiroLink
 						:href="product"

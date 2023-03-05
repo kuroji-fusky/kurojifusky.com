@@ -11,17 +11,14 @@ const name = "Kuroji Fusky"
 
 onMounted(() => {
 	const loaderEl = loader.value
-	loaderEl?.classList.remove("hydrating")
-	loaderEl?.classList.add("hydrated")
-	// setTimeout(() => {
-	// 	loaderEl?.setAttribute("style", "display: none")
-	// }, 1000)
+	loaderEl?.classList.remove("loading")
+	loaderEl?.classList.add("page-interactive")
 })
 </script>
 
 <template>
 	<Teleport to="body">
-		<div ref="loader" id="__kuro-loader" class="hydrating" aria-hidden="true">
+		<div ref="loader" id="__kuro-loader" class="loading" aria-hidden="true">
 			<div class="relative transition-all duration-700 select-none loader-text">
 				<span
 					class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold absolute top-0 bordered-text bordered-text text-borahae-dark clip-path-anim z-[5]"
@@ -84,11 +81,11 @@ html {
 
   --loader-play-state: running;
 
-	&.hydrating {
+	&.loading {
 		@apply bg-opacity-100;
 	}
 
-	&.hydrated {
+	&.page-interactive {
 		@apply pointer-events-none bg-opacity-0;
 
 		.loader-text {

@@ -43,7 +43,7 @@ onMounted(() => {
 				>!
 			</h2>
 			<p>
-				I'm a 20-year-old independent self-taught individual hobbyist from the
+				I'm a 20-year-old independent and self-taught hobbyist from the
 				Philippines!<br />
 				I usually work and handle everything on my own and rely on other
 				external sources to improve.
@@ -52,6 +52,7 @@ onMounted(() => {
 				Artwork drawn by {{ artworkCredit }}
 			</p>
 		</article>
+		<!-- TODO: Rewrite this crap into it's <canvas> element for performance concerns -->
 		<div
 			aria-hidden="true"
 			class="absolute left-[calc(50%-17rem)] top-[calc(50%-15rem)] opacity-60 blur-[60px] scale-[1.5]"
