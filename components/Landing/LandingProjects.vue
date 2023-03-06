@@ -12,15 +12,16 @@ import { featuredProjects } from "../Constants"
 		<div class="grid max-w-screen-xl py-20 mx-auto px-14 gap-y-28">
 			<LandingProjectsItem
 				v-for="(item, index) in featuredProjects"
-        :key="index"
+				:key="index"
 				:reversed="!!(index % 2)"
 				:name="item.name"
+				:img="item.img"
 				:description="item.description"
 				:product="item.product"
-				:project-type="item.type"
+				:project-type="item.projectType"
 				:source-code="item.sourceCode"
-				:gradient-start="item.cStart"
-				:gradient-end="item.cEnd"
+				:gradient-start="item.gradientStart"
+				:gradient-end="item.gradientEnd"
 			/>
 		</div>
 	</section>

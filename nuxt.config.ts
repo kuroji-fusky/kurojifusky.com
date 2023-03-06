@@ -46,7 +46,6 @@ export default defineNuxtConfig({
 		},
 	},
 	// @nuxt/image
-	// @ts-ignore
 	image: {
 		cloudinary: {
 			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",

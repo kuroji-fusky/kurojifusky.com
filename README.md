@@ -17,12 +17,12 @@ Tailwind CSS! Deployed in Vercel.
 
 ## Running the abomination locally
 
-This project uses the [pnpm](https://pnpm.io/) package manager to install dependencies.
+This project uses the Yarn package manager to install dependencies.
 
 Fork and clone the repo and install the bloated garbage
 
 ```console
-pnpm i
+yarn
 ```
 
 Clone the required environment variables
@@ -34,11 +34,11 @@ cp .env.local.example .env.local
 Start the local server lmao
 
 ```console
-pnpm dev
+yarn dev
 ```
 
 BUILD THE ABOMINATION
 
 ```console
-pnpm build
+yarn build
 ```

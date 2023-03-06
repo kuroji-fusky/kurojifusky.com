@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import { ExternalLink } from "lucide-vue-next"
 import { IconGithub } from "@iconify-prerendered/vue-fa6-brands"
+import { FeaturedProjects } from "../Interfaces"
 
-interface ProjectItemProps {
+interface ProjectItemProps extends FeaturedProjects {
 	reversed?: boolean
 	name: string
 	description: string
+	projectType: "Extension" | "Website" | "Library"
+	img: string
+	wip?: boolean
 	product?: string
-	img?: string
-	bgColor?: string
 	sourceCode: string
-	projectType?: string
-	gradientStart?: string
-	gradientEnd?: string
-  wip?: boolean
+	gradientStart: string
+	gradientEnd: string
+	bgColor?: string
 }
 
 defineProps<ProjectItemProps>()
@@ -28,10 +29,16 @@ defineProps<ProjectItemProps>()
 			:class="[!reversed ? 'order-1' : 'order-1 md:order-2']"
 		>
 			<div
-				:class="[bgColor ?? 'bg-sona-borahaealt-800']"
-				class="relative z-[1] rounded-xl aspect-square w-[calc(var(--vw)*13.5)] h-[calc(var(--vw)*13.5)]"
+				:class="[bgColor && 'bg-sona-borahaealt-800']"
+				class="relative z-[1] rounded-xl aspect-square w-[calc(var(--vw)*13.5)] h-[calc(var(--vw)*13.5)] my-0"
 			>
-				img stuff here
+				<NuxtImg
+					loading="lazy"
+					format="webp"
+					:src="img"
+					class="rounded-[inherit] aspect-square"
+					quality="80"
+				/>
 			</div>
 			<div
 				aria-hidden="true"
@@ -64,9 +71,15 @@ defineProps<ProjectItemProps>()
 						:href="product"
 						external
 						class="flex gap-x-1.5 items-center"
+						:title="
+							projectType !== 'Extension'
+								? 'View project'
+								: 'View in Visual Studio Marketplace'
+						"
 					>
 						<ExternalLink :size="17" />
-						<span>View project</span>
+						<span v-if="projectType !== 'Extension'">View project</span>
+						<span v-else>View in Visual Studio Marketplace</span>
 					</BiroLink>
 				</li>
 				<li>
@@ -74,6 +87,7 @@ defineProps<ProjectItemProps>()
 						:href="`https://github.com/${sourceCode}`"
 						external
 						class="flex gap-x-1.5 items-center"
+						title="Source code"
 					>
 						<IconGithub />
 						<span>Source code</span>
