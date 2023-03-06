@@ -39,7 +39,7 @@ export const featuredProjects: FeaturedProjects[] = [
 		description:
 			"A data visualization project that collects and parses drawing data from a furry artist and illustrator, Paco Panda; source code licensed under GPL-2.0.",
 		projectType: "Website",
-		sourceCode: "kuroji-fusky/pandapaco-drawing-stats",
+		sourceCode: "kuroji-fusky/pacopanda-drawing-stats",
 		gradientStart: "from-green-500",
 		gradientEnd: "to-sona-yellow-400",
 		bgColor: "bg-transparent",
