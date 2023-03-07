@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis"
-import Prism from "prismjs"
-import "prismjs/components/prism-python"
-import "prismjs/themes/prism-tomorrow.min.css"
 
 usePageMeta({
 	title: "Kuroji Fusky: Building abominations since 2013",
@@ -27,8 +24,6 @@ onMounted(() => {
 		requestAnimationFrame(raf)
 	}
 	requestAnimationFrame(raf)
-
-	Prism.highlightAll()
 })
 </script>
 
@@ -51,6 +46,6 @@ pre[class*="language-"] {
 }
 
 code[class*="language-"] {
-  @apply font-jetbrains-mono;
+	@apply font-jetbrains-mono;
 }
 </style>

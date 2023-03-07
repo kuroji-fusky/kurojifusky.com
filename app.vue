@@ -2,6 +2,12 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+import Prism from "prismjs"
+import "prismjs/themes/prism-tomorrow.min.css"
+import "prismjs/components/prism-python"
+import "prismjs/components/prism-javascript"
+import "prismjs/components/prism-typescript"
+
 gsap.registerPlugin(ScrollTrigger)
 
 useHTMLViewport()
@@ -14,7 +20,10 @@ const handleLoadingState = () => {
 	loader.value?.classList.add("page-interactive")
 }
 
-onMounted(() => handleLoadingState())
+onMounted(() => {
+	handleLoadingState()
+	Prism.highlightAll()
+})
 </script>
 
 <template>
@@ -22,7 +31,7 @@ onMounted(() => handleLoadingState())
 		<div ref="loader" id="__kuro-loader" class="loading" aria-hidden="true">
 			<div class="relative transition-all duration-700 select-none loader-text">
 				<span
-					class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold absolute top-0 bordered-text bordered-text text-borahae-dark clip-path-anim z-[5]"
+					class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold absolute top-0 bordered-text bordered-text text-borahae-dark loading-anim z-[5]"
 					>{{ name }}</span
 				>
 				<span
@@ -96,7 +105,7 @@ html {
 	}
 }
 
-.clip-path-anim {
+.loading-anim {
 	animation: loading-anim 1s cubic-bezier(0.86, 0, 0.07, 1) infinite
 		alternate-reverse;
 	animation-play-state: var(--loader-play-state);
