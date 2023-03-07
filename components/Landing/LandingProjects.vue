@@ -9,7 +9,7 @@ import { featuredProjects } from "../Constants"
 		>
 			<h1>Featured Projects</h1>
 		</div>
-		<div class="grid max-w-screen-xl py-20 mx-auto px-14 gap-y-28">
+		<div class="grid max-w-screen-xl py-20 mx-auto px-14 gap-y-[8rem]">
 			<LandingProjectsItem
 				v-for="(item, index) in featuredProjects"
 				:key="index"

@@ -74,7 +74,7 @@ onMounted(() => {
 $offsets: (1 -1 (50px -50px), 2 0.1 (309px -100px), 3 0.4 (-259px, -1255px));
 
 .full-rotate-anim {
-	animation: speen 60s linear infinite alternate-reverse;
+	animation: speen 50s linear infinite alternate-reverse;
 
 	@each $i, $offsets, $transform in $offsets {
 		&:nth-child(#{$i}) {

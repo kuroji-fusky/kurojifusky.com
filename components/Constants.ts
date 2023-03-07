@@ -13,7 +13,7 @@ export const featuredProjects: FeaturedProjects[] = [
 		name: "MyFursona",
 		img: "/img/myfursona.png",
 		description:
-			"A platform where you create, store, and manage your characters ref sheets, biography, and much more! Built entirely on open source technology from the ground up.",
+			"A platform where you create, store, and manage your characters' artworks, ref sheets, biographies, and much more! Built entirely on open source technology from the ground up.",
 		projectType: "Website",
 		sourceCode: "MyFursona-Project/MyFursona",
 		gradientStart: "from-purple-500",

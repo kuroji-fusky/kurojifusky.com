@@ -9,11 +9,12 @@ useHTMLViewport()
 const loader = ref<HTMLDivElement>()
 const name = "Kuroji Fusky"
 
-onMounted(() => {
-	const loaderEl = loader.value
-	loaderEl?.classList.remove("loading")
-	loaderEl?.classList.add("page-interactive")
-})
+const handleLoadingState = () => {
+	loader.value?.classList.remove("loading")
+	loader.value?.classList.add("page-interactive")
+}
+
+onMounted(() => handleLoadingState())
 </script>
 
 <template>
@@ -79,7 +80,7 @@ html {
 #__kuro-loader {
 	@apply fixed inset-0 bg-borahae-dark z-[99999] grid place-items-center transition-all duration-500 delay-150;
 
-  --loader-play-state: running;
+	--loader-play-state: running;
 
 	&.loading {
 		@apply bg-opacity-100;
@@ -89,15 +90,16 @@ html {
 		@apply pointer-events-none bg-opacity-0;
 
 		.loader-text {
-      --loader-play-state: paused;
+			--loader-play-state: paused;
 			@apply opacity-0 scale-0;
 		}
 	}
 }
 
 .clip-path-anim {
-	animation: loading-anim 1s cubic-bezier(0.86, 0, 0.07, 1) infinite alternate-reverse;
-  animation-play-state: var(--loader-play-state);
+	animation: loading-anim 1s cubic-bezier(0.86, 0, 0.07, 1) infinite
+		alternate-reverse;
+	animation-play-state: var(--loader-play-state);
 }
 
 @keyframes loading-anim {

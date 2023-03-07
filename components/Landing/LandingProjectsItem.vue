@@ -2,6 +2,7 @@
 import { ExternalLink } from "lucide-vue-next"
 import { IconGithub } from "@iconify-prerendered/vue-fa6-brands"
 import { FeaturedProjects } from "../Interfaces"
+import { Star } from "lucide-vue-next"
 
 interface ProjectItemProps extends FeaturedProjects {
 	reversed?: boolean
@@ -17,12 +18,41 @@ interface ProjectItemProps extends FeaturedProjects {
 	bgColor?: string
 }
 
-defineProps<ProjectItemProps>()
+const props = defineProps<ProjectItemProps>()
+
+const projectRef = ref<HTMLDivElement>()
+const isVisible = ref(false)
+
+onMounted(() => {
+	const el = projectRef.value
+
+	const io = new IntersectionObserver(
+		(entries) => {
+			entries.forEach(({ isIntersecting }) => {
+				if (!isIntersecting) {
+					isVisible.value = false
+				} else {
+					isVisible.value = true
+				}
+			})
+		},
+		{ rootMargin: "20% 0% -21.5% 0%" }
+	)
+
+	io.observe(el!)
+})
 </script>
 
 <template>
 	<div
-		class="grid grid-flow-col grid-cols-8 grid-rows-2 gap-12 md:grid-flow-row md:grid-rows-1"
+		ref="projectRef"
+		:class="[
+			!isVisible
+				? 'opacity-0 scale-95 translate-y-2 pointer-events-none'
+				: 'opacity-100 scale-100 translate-y-0 pointer-events-[all]',
+		]"
+		class="grid grid-flow-col grid-cols-8 grid-rows-2 gap-12 md:grid-flow-row md:grid-rows-1 duration-[400ms]"
+		style="transition-property: opacity, transform"
 	>
 		<aside
 			class="col-span-8 md:col-span-3 lg:col-span-2 grid place-items-center text-center h-[17.5rem] relative"
@@ -42,8 +72,9 @@ defineProps<ProjectItemProps>()
 			</div>
 			<div
 				aria-hidden="true"
-				class="absolute w-[32rem] h-[8rem] blur-[75px]"
+				class="absolute h-[8rem] blur-[69px] transition-[width] duration-500"
 				:class="[
+					!isVisible ? 'w-0' : 'w-[21rem]',
 					!reversed
 						? 'rotate-[32deg] bg-gradient-to-r'
 						: '-rotate-[32deg] bg-gradient-to-br',
@@ -98,4 +129,4 @@ defineProps<ProjectItemProps>()
 	</div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>
