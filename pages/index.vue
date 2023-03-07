@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis"
+import Prism from "prismjs"
+import "prismjs/components/prism-python"
+import "prismjs/themes/prism-tomorrow.min.css"
 
 usePageMeta({
 	title: "Kuroji Fusky: Building abominations since 2013",
@@ -24,6 +27,8 @@ onMounted(() => {
 		requestAnimationFrame(raf)
 	}
 	requestAnimationFrame(raf)
+
+	Prism.highlightAll()
 })
 </script>
 
@@ -32,5 +37,20 @@ onMounted(() => {
 		<LandingHero />
 		<LandingProficency />
 		<LandingProjects />
+		<pre><code class="language-python">def main():
+  print("Don't mind me, just testing this thing out lol")
+
+if __name__ == "__main__":
+  main()</code></pre>
 	</div>
 </template>
+
+<style>
+pre[class*="language-"] {
+	@apply m-0;
+}
+
+code[class*="language-"] {
+  @apply font-jetbrains-mono;
+}
+</style>
