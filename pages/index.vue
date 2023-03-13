@@ -10,10 +10,10 @@ usePageMeta({
 onMounted(() => {
 	const lenis = new Lenis({
 		duration: 1.125,
-		direction: "vertical",
-		gestureDirection: "vertical",
-		smooth: true,
-		mouseMultiplier: 1,
+		orientation: "vertical",
+		gestureOrientation: "vertical",
+		smoothWheel: true,
+		wheelMultiplier: 1,
 		smoothTouch: false,
 		touchMultiplier: 2,
 		infinite: false,
@@ -32,11 +32,6 @@ onMounted(() => {
 		<LandingHero />
 		<LandingProficency />
 		<LandingProjects />
-		<pre><code class="language-python">def main():
-  print("Don't mind me, just testing this thing out lol")
-
-if __name__ == "__main__":
-  main()</code></pre>
 	</div>
 </template>
 

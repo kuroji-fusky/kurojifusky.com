@@ -2,45 +2,38 @@
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-import Prism from "prismjs"
-import "prismjs/themes/prism-tomorrow.min.css"
-import "prismjs/components/prism-python"
-import "prismjs/components/prism-javascript"
-import "prismjs/components/prism-typescript"
-
 gsap.registerPlugin(ScrollTrigger)
-
-useHTMLViewport()
 
 const loader = ref<HTMLDivElement>()
 const name = "Kuroji Fusky"
 
-const handleLoadingState = () => {
-	loader.value?.classList.remove("loading")
-	loader.value?.classList.add("page-interactive")
-}
+useHTMLViewport()
+
+onBeforeMount(() => {
+	loader.value?.classList.add("loading")
+})
 
 onMounted(() => {
-	handleLoadingState()
-	Prism.highlightAll()
+	if (document.fonts.status == "loaded") {
+		loader.value?.classList.remove("loading")
+		loader.value?.classList.add("page-interactive")
+	}
 })
 </script>
 
 <template>
-	<Teleport to="body">
-		<div ref="loader" id="__kuro-loader" class="loading" aria-hidden="true">
-			<div class="relative transition-all duration-700 select-none loader-text">
-				<span
-					class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold absolute top-0 bordered-text bordered-text text-borahae-dark loading-anim z-[5]"
-					>{{ name }}</span
-				>
-				<span
-					class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold bordered-text"
-					>{{ name }}</span
-				>
-			</div>
+	<div ref="loader" id="__kuro-loader" aria-hidden="true">
+		<div class="relative transition-all duration-700 select-none loader-text">
+			<span
+				class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold absolute top-0 bordered-text bordered-text text-borahae-dark loading-anim z-[5]"
+				>{{ name }}</span
+			>
+			<span
+				class="uppercase font-inter text-[calc(var(--vw)*5)] font-extrabold bordered-text"
+				>{{ name }}</span
+			>
 		</div>
-	</Teleport>
+	</div>
 	<NuxtLoadingIndicator />
 	<NuxtLayout>
 		<NuxtPage />
