@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 useHTMLViewport()
+
+console.log("%cW A T E R", "color: royalblue")
 </script>
 
 <template>

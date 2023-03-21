@@ -7,9 +7,7 @@ interface PageMetaProps {
 
 export function usePageMeta({ title, description }: PageMetaProps) {
 	const router = useRoute()
-	const fullUrl = `https://kurofusky.xyz${router.fullPath}`
-
-	const runtimeEnv = useRuntimeConfig().public
+	const fullUrl = `https://kurojifusky.com${router.fullPath}`
 
 	useHead({
 		link: [{ rel: "canonical", href: fullUrl }],
@@ -17,8 +15,7 @@ export function usePageMeta({ title, description }: PageMetaProps) {
 
 	const SITE_NAME = "Kuroji Fusky"
 
-	const parseTitle =
-		router.fullPath !== "/" ? `${title} - ${SITE_NAME}` : title
+	const parseTitle = router.fullPath !== "/" ? `${title} - ${SITE_NAME}` : title
 
 	const metaTags: UseSeoMetaInput = {
 		title: parseTitle,
@@ -34,5 +31,5 @@ export function usePageMeta({ title, description }: PageMetaProps) {
 		twitterCreator: "@kurojifusky",
 	}
 
-	runtimeEnv.dev ? useSeoMeta(metaTags) : useServerSeoMeta(metaTags)
+	useSeoMeta(metaTags)
 }

@@ -6,6 +6,7 @@
 			<NuxtImg
 				provider="cloudinary"
 				role="presentation"
+				format="webp"
 				src="/fursonas/comms/MCM_headshot-comm.png"
 				sizes="md:200 lg:350 xl:420"
 				class="rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*18.5)]"
@@ -50,10 +51,10 @@
 				for the fun of it. Sometimes, I work on other projects for other people!
 			</p>
 			<p>
-				Despite not having a job, and I am by no means expert on the stuff I do daily—I
-				do have an aptitude for a wide range of skills entirely self-taught
-				ranging from writing <em>bad</em> code and making overedited videos on
-				YouTube as a hobby!
+				Despite not having a job, and I am by no means expert on the stuff I do
+				daily—I do have an aptitude for a wide range of skills entirely
+				self-taught ranging from writing <em>bad</em> code and making overedited
+				videos on YouTube as a hobby!
 			</p>
 		</article>
 	</section>
@@ -61,8 +62,7 @@
 
 <style lang="scss">
 .big-things-hl {
-	$dur: 20s;
-
+	$dur: 12.5s;
 	$cool-gradient: linear-gradient(
 		160deg,
 		rgba(181, 49, 252, 1) 0%,
@@ -74,6 +74,7 @@
 		rgba(181, 49, 252, 1) 85%,
 		rgba(255, 139, 0, 1) 100%
 	);
+
 	position: relative;
 
 	background: $cool-gradient;

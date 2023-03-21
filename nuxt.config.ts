@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	modules: [
+		"nuxt-security",
 		"@nuxt/image-edge",
 		"@nuxt/content",
 		[
@@ -33,9 +34,14 @@ export default defineNuxtConfig({
 	typescript: {
 		strict: true,
 	},
-	runtimeConfig: {
-		public: {
-			dev: process.env.NODE_ENV !== "production",
+	security: {
+		headers: {
+			hidePoweredBy: false,
+			xXSSProtection: "1",
+			contentSecurityPolicy: {
+				"img-src": ["'self'", "data:", "https://res.cloudinary.com"],
+			},
+			crossOriginEmbedderPolicy: "unsafe-none",
 		},
 	},
 	postcss: {
