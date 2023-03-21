@@ -1,25 +1,8 @@
-<script setup lang="ts">
-const artworkCredit = "me"
-
-const canvasRef = ref<HTMLElement | null>()
-
-const handleCanvasResize = () => {
-	let canvasWidth = window.innerWidth
-	let canvasHeight = window.innerHeight
-
-	canvasRef.value!.setAttribute("width", canvasWidth.toString())
-	canvasRef.value!.setAttribute("height", canvasHeight.toString())
-}
-
-onMounted(() => {
-	handleCanvasResize()
-	window.onresize = handleCanvasResize
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<section class="grid content-center h-screen place-items-center">
-		<canvas ref="canvasRef"></canvas>
+	<section>
+		<div class="grid content-center h-[60vh] place-items-center"></div>
 	</section>
 </template>
 

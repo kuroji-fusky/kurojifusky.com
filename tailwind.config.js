@@ -15,6 +15,7 @@ module.exports = {
 		fontFamily: {
 			inter: ["Inter", ...defaultTheme.fontFamily.sans],
 			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
+			unbounded: ["Unbounded", ...defaultTheme.fontFamily.sans],
 			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extend: {

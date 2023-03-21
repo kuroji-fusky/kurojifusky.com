@@ -26,9 +26,6 @@ const MoreSocials = () => {
 </script>
 
 <template>
-	<Teleport to="body">
-		<ModalContainer />
-	</Teleport>
 	<footer
 		class="flex justify-between gap-3.5 px-8 gap-y-6 md:px-16 py-6 md:py-14 font-inter text-left md:text-center flex-col-reverse md:flex-row"
 	>

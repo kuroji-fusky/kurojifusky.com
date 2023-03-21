@@ -72,17 +72,13 @@ onUnmounted(() => gsapCtx.value.revert())
 
 <template>
 	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
-		<div class="top-nav-wrapper">
+		<div
+			class="flex items-center justify-between px-12 py-3.5 md:py-[calc(var(--vw)*1.75)] lg:py-[calc(var(--vw)*0.9)] relative z-[6]"
+		>
 			<div class="overflow-hidden">
-				<NuxtLink
-					to="/"
-					class="wordmark"
-					role="img"
-					aria-label="Kuroji Fusky"
-					exact-active-class="&nbsp;"
-					active-class="&nbsp;"
-					>Kuroji Fusky</NuxtLink
-				>
+				<NuxtLink to="/" exact-active-class="&nbsp;" active-class="&nbsp;">
+					<Branding class="wordmark" role="img" aria-label="Kuroji Fusky" />
+				</NuxtLink>
 			</div>
 			<button
 				type="button"
@@ -111,7 +107,7 @@ onUnmounted(() => gsapCtx.value.revert())
 				</svg>
 			</button>
 		</div>
-		<div class="nav-items-wrapper" :aria-hidden="!isNavCurtainOpen">
+		<div class="nav-items-wrapper" :aria-hidden="isNavCurtainOpen">
 			<div class="nav-items-list"></div>
 		</div>
 	</header>
@@ -129,26 +125,21 @@ header {
 	@apply bg-borahae-dark bg-opacity-75 backdrop-blur-lg border-b border-neutral-100;
 }
 
-.top-nav-wrapper {
-	@apply flex items-center justify-between px-12 py-3.5 relative z-[6];
-}
-
 .wordmark {
-	@apply font-inter uppercase font-extrabold select-none z-[5];
-	font-size: calc(var(--vw) * var(--wordmark-size));
-
-	--wordmark-size: 5;
+	width: 16.5rem;
 
 	@media (min-width: 768px) {
-		--wordmark-size: 3.5;
+		width: calc(var(--vw) * var(--wordmark-size));
+		--wordmark-size: 28;
 	}
 
-	@media (min-width: 1280px) {
-		--wordmark-size: 2;
+	@media (min-width: 1024px) {
+		width: calc(var(--vw) * var(--wordmark-size));
+		--wordmark-size: 17;
 	}
 }
 
 .nav-items-wrapper {
-	@apply h-[0%] fixed top-0 left-0 right-0 backdrop-blur-md bg-opacity-75  bg-borahae-dark transition-all duration-300 z-[5] overflow-hidden;
+	@apply h-[0%] fixed top-0 left-0 right-0 bg-opacity-75 bg-sona-borahaealt-900 z-[5] overflow-hidden;
 }
 </style>

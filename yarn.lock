@@ -799,6 +799,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/open-sans/-/open-sans-4.5.14.tgz#b3e1665c0b3fdfc1f030ded2843749e3cf3a5900"
   integrity sha512-mBXIIETBlW8q/ocuUN0hyGow2iuf75hQEHQt8R/RJ/HcphVbLg8KB7pHYGbFGDqs75W+SWvTC7JkVeAjT65BuQ==
 
+"@fontsource/unbounded@^4.5.1":
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/unbounded/-/unbounded-4.5.1.tgz#8d563ef7aa76e748fae53da6c6bdcea61bb44d6c"
+  integrity sha512-IDC84Vp89QMe8IYqYufViSJ7jdBjA+yaaqb3b5d1pSc0oJFG5DAQksxIGf1U7cheSB2JDE/aFRztuT5H6/WMmQ==
+
 "@iconify-prerendered/vue-fa6-brands@^0.21.1675839446":
   version "0.21.1675839446"
   resolved "https://registry.yarnpkg.com/@iconify-prerendered/vue-fa6-brands/-/vue-fa6-brands-0.21.1675839446.tgz#1400b3698e5512605b201be6147992c9de48248d"

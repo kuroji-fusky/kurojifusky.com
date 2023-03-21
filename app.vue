@@ -9,7 +9,12 @@ useHTMLViewport()
 
 <template>
 	<NuxtLoadingIndicator />
-	<NuxtPage />
+	<!-- prettier-ignore -->
+	<div class="responsive-text selection:bg-sona-borahaealt-600">
+		<TheBaseNavbar />
+    <NuxtPage />
+		<TheBaseFooter />
+  </div>
 </template>
 
 <style lang="scss">
@@ -51,6 +56,30 @@ html {
 	&::-webkit-scrollbar-thumb {
 		@apply bg-sona-borahaealt-700 rounded-xl border-8 border-red-500;
 	}
+}
+
+* {
+  @apply selection:text-white;
+}
+
+.responsive-text {
+	--m-sub-p: 1.85;
+	--m-p: 1rem;
+	--m-h1: 1.9rem;
+	--m-h2: 1.75rem;
+	--m-h3: 1.55rem;
+
+	--d-lg-sub-p: 1.5;
+	--d-lg-p: 2;
+	--d-lg-h1: 3.5;
+	--d-lg-h2: 4;
+	--d-lg-h3: 2.15;
+
+	--d-xl-sub-p: 1;
+	--d-xl-p: 1.2;
+	--d-xl-h1: 3.5;
+	--d-xl-h2: 3;
+	--d-xl-h3: 2.15;
 }
 
 .link-underline {
