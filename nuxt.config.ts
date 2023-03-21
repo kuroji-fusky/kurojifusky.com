@@ -52,8 +52,4 @@ export default defineNuxtConfig({
 		},
 		domains: ["res.cloudinary.com"],
 	},
-	// @nuxt/content
-	content: {
-		documentDriven: true,
-	},
 })
