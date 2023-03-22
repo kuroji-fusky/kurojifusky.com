@@ -5,8 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 useHTMLViewport()
-
-console.log("%cW A T E R", "color: royalblue")
 </script>
 
 <template>
@@ -60,7 +58,7 @@ html {
 	}
 }
 
-* {
+body {
 	@apply selection:bg-sona-borahaealt-600;
 }
 
@@ -81,7 +79,7 @@ html {
 	--d-lg-h2: 4;
 	--d-lg-h3: 2.15;
 
-	--d-xl-sub-p: 1;
+	--d-xl-sub-p: 0.9;
 	--d-xl-p: 1.2;
 	--d-xl-h1: 3.5;
 	--d-xl-h2: 3;

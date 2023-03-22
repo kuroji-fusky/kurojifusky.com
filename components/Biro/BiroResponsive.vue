@@ -56,7 +56,7 @@ const buiMargins = [p.buiMbMobile || p.buiMbLg || p.buiMbXl ? "bui-r-mb" : ""]
 	</component>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @mixin bui-responsive($identifier, $rule) {
 	.bui-r-#{$identifier} {
 		#{$rule}: var(--bui-#{$identifier}-mobile, 0);

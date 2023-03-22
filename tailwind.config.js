@@ -15,7 +15,6 @@ module.exports = {
 		fontFamily: {
 			inter: ["Inter"],
 			unbounded: ["Unbounded"],
-			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
 			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extend: {
@@ -131,7 +130,7 @@ module.exports = {
 					scrollBehavior: "initial",
 				},
 				body: {
-					fontFamily: theme("fontFamily.open-sans"),
+					fontFamily: theme("fontFamily.inter"),
 					backgroundColor: theme("colors.borahae-dark"),
 					color: theme("colors.gray.50"),
           minHeight: '100%',

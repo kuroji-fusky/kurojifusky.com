@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis"
+import { Heart } from "lucide-vue-next"
 
 usePageMeta({
 	title: "Kuroji Fusky: Building abominations since 2013",
@@ -33,20 +34,22 @@ onMounted(() => {
 			<LandingHero />
 			<LandingIntro />
 			<BiroResponsive
-				class="sticky bottom-0 left-0 right-0 bg-red-200 -z-[1]"
+				class="sticky bottom-0 left-0 w-full right-0 bg-red-200 -z-[1]"
 				aria-hidden="true"
-			></BiroResponsive>
+			>
+				<GridBackdrop />
+			</BiroResponsive>
 		</div>
-		<LandingProjects />
+		<LandingSkills />
+		<LandingShowcase />
+		<section class="flex justify-center">
+			<BiroResponsive
+				bui-p
+				class="inline-flex items-center font-bold font-inter gap-x-2"
+				><span>Made with</span> <Heart :size="24" /><span>
+					by Kuro</span
+				></BiroResponsive
+			>
+		</section>
 	</div>
 </template>
-
-<style>
-pre[class*="language-"] {
-	@apply m-0;
-}
-
-code[class*="language-"] {
-	@apply font-jetbrains-mono;
-}
-</style>

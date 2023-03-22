@@ -1,15 +1,44 @@
+<script setup lang="ts">
+import { gsap } from "gsap"
+
+const sectionRef = ref()
+const ctx = ref()
+
+onMounted(() => {
+	ctx.value = gsap.context((self) => {
+		const avatar = self.selector!(".avatar-stagnate")
+		const wrapper = self.selector!("section")
+
+		gsap
+			.timeline({
+				scrollTrigger: {
+					trigger: wrapper,
+					start: "27% 90%",
+					end: "+=1900",
+					scrub: 0.45,
+				},
+			})
+			.to(avatar, { ease: "linear", y: 250 })
+	}, sectionRef.value)
+})
+
+onUnmounted(() => ctx.value.revert())
+</script>
+
 <template>
 	<section
-		class="grid px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*4.5)]"
+		ref="sectionRef"
+		class="grid px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*8.5)] mb-32"
 		bui-gap-y-mobile="2.5rem"
 		bui-gap-y-lg="4.5"
 	>
 		<figure
-			class="flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*1.25)]"
+			ref="wow"
+			class="avatar-stagnate flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*0.5)]"
 			bui-gap-mobile="1rem"
 			bui-gap-lg="1.25"
 		>
-			<BiroResponsive bui-w-md="27" bui-w-lg="18.5">
+			<BiroResponsive bui-w-md="27" bui-w-lg="18.5" class="relative">
 				<NuxtImg
 					provider="cloudinary"
 					role="presentation"
@@ -22,8 +51,9 @@
 					preload
 				/>
 			</BiroResponsive>
+
 			<BiroResponsive tag="figcaption" bui-sub-p>
-				<span class="opacity-50">{{ "Art by " }}</span>
+				<span class="opacity-50">{{ "Credits: " }}</span>
 				<BiroLink href="https://www.youtube.com/@MintyChipMocha" external>{{
 					"@MintyChipMocha"
 				}}</BiroLink>
@@ -41,6 +71,7 @@
 				bui-mb-lg="3.5"
 				bui-mb-mobile="1.75rem"
 				aria-label="Just a nerd floof dreaming of big things"
+				class="mix-blend-difference"
 			>
 				<div class="hidden scale-125 md:block" aria-hidden="true">
 					Just a nerd floof
@@ -54,9 +85,10 @@
 				</span>
 			</BiroResponsive>
 			<p>
-				I'm a 21-year-old independent and self-taught individual from the
-				Philippines—I usually work and handle everything on my own accord just
-				for the fun of it. Sometimes, I work on other projects for other people!
+				I'm Kerby Keith Aquino, a 21-year-old independent and self-taught
+				individual from the Philippines—I usually work and handle everything on
+				my own accord just for the fun of it. Sometimes, I work on other
+				projects for other people!
 			</p>
 			<p>
 				Despite currently not having a job, and I am by no means expert on the
