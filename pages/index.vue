@@ -40,7 +40,7 @@ onMounted(() => {
 				<GridBackdrop />
 			</BiroResponsive>
 		</div>
-		<LandingSkills />
+		<!-- <LandingSkills /> -->
 		<LandingShowcase />
 		<section class="flex justify-center">
 			<BiroResponsive

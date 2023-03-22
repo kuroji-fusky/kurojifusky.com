@@ -14,9 +14,25 @@
 			>Showcase</BiroResponsive
 		>
 		<ul>
-			<li>
-				<div>contents</div>
-				<div>img</div>
+			<li class="h-[120vh] bg-blue-700">
+				<BiroResponsive
+					tag="article"
+					class="sticky p-12 top-20 prose-h3:font-inter prose-h3:font-semibold"
+					bui-prose-h3
+				>
+					<h3>AFKJHSDFGKJHDSFGKJH</h3>
+					<p>Bigger than your mom</p>
+				</BiroResponsive>
+			</li>
+			<li class="h-[120vh] bg-green-700">
+				<BiroResponsive
+					tag="article"
+					class="sticky p-12 top-20 prose-h3:font-inter prose-h3:font-semibold"
+					bui-prose-h3
+				>
+					<h3>MySona</h3>
+					<p>Bigger than your mom</p></BiroResponsive
+				>
 			</li>
 		</ul>
 	</BiroResponsive>
