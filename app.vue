@@ -10,13 +10,13 @@ console.log("%cW A T E R", "color: royalblue")
 </script>
 
 <template>
-	<NuxtLoadingIndicator />
-	<!-- prettier-ignore -->
-	<div class="responsive-text selection:bg-sona-borahaealt-600">
+	<div class="responsive-text">
 		<TheBaseNavbar />
-    <NuxtPage />
+		<main>
+			<NuxtPage />
+		</main>
 		<TheBaseFooter />
-  </div>
+	</div>
 </template>
 
 <style lang="scss">
@@ -61,7 +61,11 @@ html {
 }
 
 * {
-  @apply selection:text-white;
+	@apply selection:bg-sona-borahaealt-600;
+}
+
+:is(h1, h2, h3, p) {
+	@apply selection:text-white #{!important};
 }
 
 .responsive-text {
@@ -82,21 +86,5 @@ html {
 	--d-xl-h1: 3.5;
 	--d-xl-h2: 3;
 	--d-xl-h3: 2.15;
-}
-
-.link-underline {
-	@apply text-sona-borahaealt-200 inline-block relative w-fit
-				hover:text-sona-borahaealt-300
-				before:content-[''] before:bg-sona-borahaealt-300 before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px];
-
-	&::before {
-		transform: scaleX(0);
-		transform-origin: bottom left;
-		transition: transform 150ms ease-out;
-	}
-
-	&:hover::before {
-		transform: scaleX(1);
-	}
 }
 </style>

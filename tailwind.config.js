@@ -13,9 +13,9 @@ module.exports = {
 	],
 	theme: {
 		fontFamily: {
-			inter: ["Inter", ...defaultTheme.fontFamily.sans],
+			inter: ["Inter"],
+			unbounded: ["Unbounded"],
 			"open-sans": ["Open Sans", ...defaultTheme.fontFamily.sans],
-			unbounded: ["Unbounded", ...defaultTheme.fontFamily.sans],
 			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extend: {

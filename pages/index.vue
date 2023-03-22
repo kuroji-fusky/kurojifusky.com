@@ -29,8 +29,14 @@ onMounted(() => {
 
 <template>
 	<div class="min-h-screen">
-		<LandingHero />
-		<LandingIntro />
+		<div>
+			<LandingHero />
+			<LandingIntro />
+			<BiroResponsive
+				class="sticky bottom-0 left-0 right-0 bg-red-200 -z-[1]"
+				aria-hidden="true"
+			></BiroResponsive>
+		</div>
 		<LandingProjects />
 	</div>
 </template>

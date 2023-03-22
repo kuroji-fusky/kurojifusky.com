@@ -1,37 +1,45 @@
 <template>
-	<section class="grid px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*4.5)]">
+	<section
+		class="grid px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*4.5)]"
+		bui-gap-y-mobile="2.5rem"
+		bui-gap-y-lg="4.5"
+	>
 		<figure
 			class="flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*1.25)]"
+			bui-gap-mobile="1rem"
+			bui-gap-lg="1.25"
 		>
-			<NuxtImg
-				provider="cloudinary"
-				role="presentation"
-				format="webp"
-				src="/fursonas/comms/MCM_headshot-comm.png"
-				sizes="md:200 lg:350 xl:420"
-				class="rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*18.5)]"
-				quality="90"
-				draggable="false"
-				preload
-			/>
-			<figcaption
-				class="text-[calc(var(--m-sub-p)] md:text-[calc(var(--vw)*var(--d-lg-sub-p))] lg:text-[calc(var(--vw)*var(--d-xl-sub-p))]"
-			>
-				<span class="opacity-50">Art by </span>
-				<NuxtLink
-					to="https://www.youtube.com/@MintyChipMocha"
-					external
-					target="_blank"
-					class="link-underline"
-					>@MintyChipMocha</NuxtLink
-				>
-			</figcaption>
+			<BiroResponsive bui-w-md="27" bui-w-lg="18.5">
+				<NuxtImg
+					provider="cloudinary"
+					role="presentation"
+					format="webp"
+					src="/fursonas/comms/MCM_headshot-comm.png"
+					sizes="md:200 lg:350 xl:420"
+					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*18.5)]"
+					quality="95"
+					draggable="false"
+					preload
+				/>
+			</BiroResponsive>
+			<BiroResponsive tag="figcaption" bui-sub-p>
+				<span class="opacity-50">{{ "Art by " }}</span>
+				<BiroLink href="https://www.youtube.com/@MintyChipMocha" external>{{
+					"@MintyChipMocha"
+				}}</BiroLink>
+			</BiroResponsive>
 		</figure>
-		<article
-			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] prose-p:text-[calc(var(--m-p))] md:prose-p:w-11/12 md:prose-p:text-[calc(var(--vw)*var(--d-lg-p))] lg:prose-p:w-9/12 lg:prose-p:text-[calc(var(--vw)*var(--d-xl-p))]"
+		<BiroResponsive
+			tag="article"
+			bui-prose-p
+			bui-prose-h2
+			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] md:prose-p:w-11/12 lg:prose-p:w-9/12"
 		>
-			<h2
-				class="mb-[calc(var(--vw)*2)] text-[calc(var(--m-h2))] md:text-[calc(var(--vw)*var(--d-lg-h2))] lg:text-[calc(var(--vw)*var(--d-xl-h2))]"
+			<BiroResponsive
+				tag="h2"
+				bui-mb-xl="3.15"
+				bui-mb-lg="3.5"
+				bui-mb-mobile="1.75rem"
 				aria-label="Just a nerd floof dreaming of big things"
 			>
 				<div class="hidden scale-125 md:block" aria-hidden="true">
@@ -44,25 +52,25 @@
 					Just a nerd floof dreaming of
 					<span class="big-things-hl">big things</span>
 				</span>
-			</h2>
+			</BiroResponsive>
 			<p>
 				I'm a 21-year-old independent and self-taught individual from the
 				Philippines—I usually work and handle everything on my own accord just
 				for the fun of it. Sometimes, I work on other projects for other people!
 			</p>
 			<p>
-				Despite not having a job, and I am by no means expert on the stuff I do
-				daily—I do have an aptitude for a wide range of skills entirely
-				self-taught ranging from writing <em>bad</em> code and making overedited
-				videos on YouTube as a hobby!
+				Despite currently not having a job, and I am by no means expert on the
+				stuff I do daily—I do have an aptitude for a wide range of skills
+				entirely self-taught ranging from writing <em>bad</em> code and making
+				overedited videos on YouTube as a hobby!
 			</p>
-		</article>
+		</BiroResponsive>
 	</section>
 </template>
 
 <style lang="scss">
 .big-things-hl {
-	$dur: 12.5s;
+	$dur: 15s;
 	$cool-gradient: linear-gradient(
 		160deg,
 		rgba(181, 49, 252, 1) 0%,
@@ -76,10 +84,8 @@
 	);
 
 	position: relative;
-
 	background: $cool-gradient;
-
-	color: hsla(0, 0%, 100%, 0.5);
+	color: hsla(0, 0%, 100%, 0.1);
 	background-clip: text;
 	background-size: 700% 700%;
 	animation: smooth-like-butter $dur infinite linear;
