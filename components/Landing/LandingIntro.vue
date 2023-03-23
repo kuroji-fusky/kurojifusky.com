@@ -17,7 +17,7 @@ onMounted(() => {
 				scrub: 0.45,
 			},
 			ease: "linear",
-			y: 250,
+			y: 190,
 		})
 	}, sectionRef.value)
 })

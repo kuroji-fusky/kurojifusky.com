@@ -10,18 +10,18 @@ import { FeaturedProjects } from "./Interfaces"
 
 export const featuredProjects: FeaturedProjects[] = [
 	{
-		name: "AnB Redesign",
-		description:
-			"A faithful and lively redesign for the artbirocomic.com website; a web comic series about a raccoon and a fox getting along each other with the bond of friendship.",
-		projectType: "Website",
-		imgGrids: [{}],
-	},
-	{
 		name: "MyFursona",
 		description:
 			"An open source platform where you create, store, and manage your characters' artworks, ref sheets, biographies, and much more! Built entirely on open source technology from the ground up.",
 		projectType: "Website",
 		sourceCode: "MyFursona-Project/MyFursona",
+	},
+	{
+		name: "Art and Biro Site Redesign",
+		description:
+			"A faithful and lively redesign for the artbirocomic.com website; a web comic series about a raccoon and a fox getting along each other with the bond of friendship.",
+		projectType: "Website",
+		imgGrids: [],
 	},
 	{
 		name: "School Trips and Highlights",
