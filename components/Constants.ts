@@ -10,31 +10,24 @@ import { FeaturedProjects } from "./Interfaces"
 
 export const featuredProjects: FeaturedProjects[] = [
 	{
-		name: "MyFursona",
-		img: "/img/myfursona.png",
+		name: "AnB Redesign",
 		description:
-			"A platform where you create, store, and manage your characters' artworks, ref sheets, biographies, and much more! Built entirely on open source technology from the ground up.",
+			"A faithful and lively redesign for the artbirocomic.com website; a web comic series about a raccoon and a fox getting along each other with the bond of friendship.",
+		projectType: "Website",
+		imgGrids: [{}],
+	},
+	{
+		name: "MyFursona",
+		description:
+			"An open source platform where you create, store, and manage your characters' artworks, ref sheets, biographies, and much more! Built entirely on open source technology from the ground up.",
 		projectType: "Website",
 		sourceCode: "MyFursona-Project/MyFursona",
-		wip: true,
 	},
 	{
-		name: "Paco Drawing Stats",
-		img: "/img/paco-pds.jpg",
+		name: "School Trips and Highlights",
 		description:
-			"A data visualization project that collects and parses drawing data from a furry artist and illustrator, Paco Panda; source code licensed under GPL-2.0.",
-		projectType: "Website",
-		sourceCode: "kuroji-fusky/pacopanda-drawing-stats",
-		wip: true,
-	},
-	{
-		name: "Biro UI",
-		img: "/img/biro-ui.png",
-		description:
-			"My home-grown, custom UI framework and design system! Built entirely fom scratch - inspired by various existing design systems such as Material UI, Apple, and Microsoft's Fluent Design System built with simplicity in mind. Used on my personal projects including MyFursona and this website you're on right now!",
+			"A collection of videos I've filmed during my 4 years at Disciples for Christ International School.",
 		projectType: "Library",
-		sourceCode: "kuroji-fusky/Biro-UI",
-		wip: true,
 	},
 ]
 

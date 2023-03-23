@@ -9,16 +9,16 @@ onMounted(() => {
 		const avatar = self.selector!(".avatar-stagnate")
 		const wrapper = self.selector!("section")
 
-		gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: wrapper,
-					start: "27% 90%",
-					end: "+=1900",
-					scrub: 0.45,
-				},
-			})
-			.to(avatar, { ease: "linear", y: 250 })
+		gsap.to(avatar, {
+			scrollTrigger: {
+				trigger: wrapper,
+				start: "13.5% 90%",
+				end: "+=1650",
+				scrub: 0.45,
+			},
+			ease: "linear",
+			y: 250,
+		})
 	}, sectionRef.value)
 })
 

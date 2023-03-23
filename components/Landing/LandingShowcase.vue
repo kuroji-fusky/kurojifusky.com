@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { featuredProjects } from "../Constants"
+</script>
 
 <template>
 	<BiroResponsive
@@ -13,9 +15,19 @@
 			class="px-12 text-center uppercase font-unbounded"
 			>Showcase</BiroResponsive
 		>
-		<ul>
-      <LandingShowcaseItem />
-      <LandingShowcaseItem />
+		<ul class="px-10">
+			<LandingShowcaseItem
+				v-for="(project, index) in featuredProjects"
+				:key="index"
+				:name="project.name"
+        :desc="project.description"
+			/>
 		</ul>
 	</BiroResponsive>
 </template>
+
+<style lang="scss" scoped>
+li:nth-child(even) {
+  @apply flex-row-reverse;
+}
+</style>
