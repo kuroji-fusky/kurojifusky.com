@@ -91,10 +91,10 @@ onUnmounted(() => ctx.value.revert())
 				projects for other people!
 			</p>
 			<p>
-				Despite currently not having a job, and I am by no means expert on the
-				stuff I do daily—I do have an aptitude for a wide range of skills
-				entirely self-taught ranging from writing <em>bad</em> code and making
-				overedited videos on YouTube as a hobby!
+				Despite currently not having a job, or work experience, or by no means
+				expert on the stuff I do whatsoever, I have an aptitude and passion for
+				wide range of skills entirely self-taught ranging from writing
+				<em>bad</em> code and making overedited videos on YouTube as a hobby!
 			</p>
 		</BiroResponsive>
 	</section>

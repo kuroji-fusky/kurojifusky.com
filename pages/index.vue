@@ -33,14 +33,13 @@ onMounted(() => {
 		<div>
 			<LandingHero />
 			<LandingIntro />
-			<BiroResponsive
+			<!-- <BiroResponsive
 				class="sticky bottom-0 left-0 w-full right-0 bg-red-200 -z-[1]"
 				aria-hidden="true"
 			>
 				<GridBackdrop />
-			</BiroResponsive>
+			</BiroResponsive> -->
 		</div>
-		<!-- <LandingSkills /> -->
 		<LandingShowcase />
 		<section class="flex justify-center">
 			<BiroResponsive

@@ -39,7 +39,12 @@ export default defineNuxtConfig({
 			hidePoweredBy: false,
 			xXSSProtection: "1",
 			contentSecurityPolicy: {
-				"img-src": ["'self'", "data:", "https://res.cloudinary.com"],
+				"img-src": [
+					"'self'",
+					"data:",
+					"https://res.cloudinary.com",
+					"https://images.unsplash.com",
+				],
 			},
 			crossOriginEmbedderPolicy: "unsafe-none",
 		},

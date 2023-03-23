@@ -6,7 +6,5 @@ export interface FeaturedProjects {
   	wip?: boolean
 	product?: string
 	sourceCode: string
-	gradientStart: string
-	gradientEnd: string
 	bgColor?: string
 }
