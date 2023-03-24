@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { CAPITALIZE } from "@vue/compiler-core"
 import { gsap } from "gsap"
 
 defineProps<{
@@ -8,6 +9,7 @@ defineProps<{
 
 const ctx = ref()
 const imgParallaxRoot = ref()
+const projDetailsRoot = ref()
 
 onMounted(() => {
 	ctx.value = gsap.context((self) => {
@@ -23,28 +25,48 @@ onMounted(() => {
 			objectPosition: "0% 2%",
 		})
 	}, imgParallaxRoot.value)
+
+	ctx.value = gsap.context((self) => {
+		const articleEl = self.selector!("article")
+
+		gsap
+			.timeline({
+				scrollTrigger: {
+					trigger: articleEl,
+					scrub: 0.75,
+					start: "-60% bottom",
+					end: "100% center",
+				},
+			})
+			.from(articleEl, { y: 175 })
+	}, projDetailsRoot.value)
 })
 
 onUnmounted(() => ctx.value.revert())
 </script>
 
 <template>
-	<li class="h-[130vh] bg-blue-900 flex" ref="imgParallaxRoot">
-		<BiroResponsive
-			tag="article"
-			class="sticky self-start p-12 top-16 prose-h3:font-unbounded prose-h3:font-semibold w-[35%] flex-shrink-0"
-			bui-prose-h3
-      bui-prose-p
-      bui-gap-y-mobile="2.5rem"
-      bui-gap-y-lg="4"
-      bui-gap-y-xl="6"
+	<li class="h-[130vh] flex gap-x-4" ref="imgParallaxRoot">
+		<div
+			ref="projDetailsRoot"
+			class="relative w-[35%] flex-shrink-0 rounded-xl"
 		>
-			<h3>{{ name }}</h3>
-			<p>
-				{{ desc }}
-			</p>
-		</BiroResponsive>
-		<aside class="grid w-full grid-cols-2 grid-rows-6">
+			<BuiResponsive
+				tag="article"
+				class="sticky self-start p-12 top-16 prose-h3:font-unbounded prose-h3:font-semibold"
+				bui-prose-h3
+				bui-prose-p
+				bui-gap-y-mobile="2.5rem"
+				bui-gap-y-lg="4"
+				bui-gap-y-xl="6"
+			>
+				<h3>{{ name }}</h3>
+				<p>
+					{{ desc }}
+				</p>
+			</BuiResponsive>
+		</div>
+		<aside class="grid w-full grid-cols-2 grid-rows-6 overflow-hidden rounded-2xl">
 			<NuxtImg
 				class="object-cover w-full h-full col-span-2 row-span-4 gsap-latch"
 				src="https://images.unsplash.com/photo-1678338712030-6b529c30bd41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=60"

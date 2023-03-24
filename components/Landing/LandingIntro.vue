@@ -38,7 +38,12 @@ onUnmounted(() => ctx.value.revert())
 			bui-gap-mobile="1rem"
 			bui-gap-lg="1.25"
 		>
-			<BiroResponsive bui-w-md="27" bui-w-lg="18.5" class="relative">
+			<BuiResponsive
+				bui-w-md="27"
+				bui-w-lg="18.5"
+				class="relative"
+				options="lg:w:18 mb:w:27"
+			>
 				<NuxtImg
 					provider="cloudinary"
 					role="presentation"
@@ -50,22 +55,22 @@ onUnmounted(() => ctx.value.revert())
 					draggable="false"
 					preload
 				/>
-			</BiroResponsive>
+			</BuiResponsive>
 
-			<BiroResponsive tag="figcaption" bui-sub-p>
+			<BuiResponsive tag="figcaption" bui-sub-p>
 				<span class="opacity-50">{{ "Credits: " }}</span>
-				<BiroLink href="https://www.youtube.com/@MintyChipMocha" external>{{
+				<BuiLink href="https://www.youtube.com/@MintyChipMocha" external>{{
 					"@MintyChipMocha"
-				}}</BiroLink>
-			</BiroResponsive>
+				}}</BuiLink>
+			</BuiResponsive>
 		</figure>
-		<BiroResponsive
+		<BuiResponsive
 			tag="article"
 			bui-prose-p
 			bui-prose-h2
 			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] md:prose-p:w-11/12 lg:prose-p:w-9/12"
 		>
-			<BiroResponsive
+			<BuiResponsive
 				tag="h2"
 				bui-mb-xl="3.15"
 				bui-mb-lg="3.5"
@@ -83,11 +88,12 @@ onUnmounted(() => ctx.value.revert())
 					Just a nerd floof dreaming of
 					<span class="big-things-hl">big things</span>
 				</span>
-			</BiroResponsive>
+			</BuiResponsive>
 			<p>
-				I'm Kerby Keith Aquino, a 21-year-old independent and self-taught
+				I'm Kerby Keith Aquino, but I usually go by my alias <b>Kuroji</b> or
+				just <b>Kuro</b>. I'm a 21-year-old independent and self-taught
 				individual from the Philippines—I usually work and handle everything on
-				my own accord just for the fun of it. Sometimes, I work on other
+				my own just for the fun of it; but sometimes, I work on external
 				projects for other people!
 			</p>
 			<p>
@@ -96,7 +102,7 @@ onUnmounted(() => ctx.value.revert())
 				wide range of skills entirely self-taught ranging from writing
 				<em>bad</em> code and making overedited videos on YouTube as a hobby!
 			</p>
-		</BiroResponsive>
+		</BuiResponsive>
 	</section>
 </template>
 
@@ -120,7 +126,7 @@ onUnmounted(() => ctx.value.revert())
 	color: hsla(0, 0%, 100%, 0.1);
 	background-clip: text;
 	background-size: 700% 700%;
-	animation: smooth-like-butter $dur infinite linear;
+	animation: sds $dur infinite linear;
 
 	&::after {
 		content: "";
@@ -128,14 +134,14 @@ onUnmounted(() => ctx.value.revert())
 		inset: 0;
 		background: $cool-gradient;
 		background-size: 700% 700%;
-		animation: smooth-like-butter $dur infinite linear;
+		animation: sds $dur infinite linear;
 		opacity: 0.2;
 		filter: blur(25px);
 		z-index: -1;
 	}
 }
 
-@keyframes smooth-like-butter {
+@keyframes sds {
 	from {
 		background-position: top left;
 	}

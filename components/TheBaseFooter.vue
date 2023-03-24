@@ -35,7 +35,7 @@ const MoreSocials = () => {
 				class="flex flex-col items-center pr-0 border-r-0 md:pr-6 md:border-r gap-y-5 md:flex-row gap-x-6 border-r-sona-borahaealt-500"
 			>
 				<li v-for="item in footerLinks">
-					<BiroLink
+					<BuiLink
 						external
 						class="flex items-center gap-x-2"
 						:href="item.link"
@@ -49,7 +49,7 @@ const MoreSocials = () => {
 						<span class="shortened-text">
 							{{ item.shortText }}
 						</span>
-					</BiroLink>
+					</BuiLink>
 				</li>
 			</ul>
 			<ul
@@ -57,7 +57,7 @@ const MoreSocials = () => {
 			>
 				<li v-for="social in socialLinks">
 					<template v-if="!social.button">
-						<BiroLink
+						<BuiLink
 							external
 							class="flex gap-x-1"
 							:href="social.link"
@@ -71,7 +71,7 @@ const MoreSocials = () => {
 							<span class="block md:hidden">
 								{{ social.text }}
 							</span>
-						</BiroLink>
+						</BuiLink>
 					</template>
 					<template v-else>
 						<button

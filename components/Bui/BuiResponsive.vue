@@ -3,7 +3,6 @@ const p = defineProps<{
 	tag?: keyof HTMLElementTagNameMap
 
 	// Responsive Proses
-	/////////////////////////
 	buiProseSubP?: boolean
 	buiProseP?: boolean
 	buiProseH1?: boolean
@@ -11,7 +10,6 @@ const p = defineProps<{
 	buiProseH3?: boolean
 
 	// Responsive Text
-	/////////////////////////
 	buiSubP?: boolean
 	buiP?: boolean
 	buiH1?: boolean
@@ -21,9 +19,13 @@ const p = defineProps<{
 	buiMbMobile?: string
 	buiMbLg?: string
 	buiMbXl?: string
+
+	buiGapMobile?: string
+	buiGapLg?: string
+	buiGapXl?: string
 }>()
 
-const buiResponsiveProses = [
+const classTextProses = [
 	p.buiProseSubP ? "bui-prose-r-sub-p" : "",
 	p.buiProseP ? "bui-prose-r-p" : "",
 	p.buiProseH1 ? "bui-prose-r-h1" : "",
@@ -31,7 +33,7 @@ const buiResponsiveProses = [
 	p.buiProseH3 ? "bui-prose-r-h3" : "",
 ]
 
-const buiTextResponsive = [
+const classTextResponsive = [
 	p.buiSubP ? "bui-r-sub-p" : "",
 	p.buiP ? "bui-r-p" : "",
 	p.buiH1 ? "bui-r-h1" : "",
@@ -40,16 +42,27 @@ const buiTextResponsive = [
 ]
 
 const buiMargins = [p.buiMbMobile || p.buiMbLg || p.buiMbXl ? "bui-r-mb" : ""]
+const buiGap = [p.buiGapMobile || p.buiGapLg || p.buiGapXl ? "bui-fg-gap" : ""]
 </script>
 
 <template>
 	<component
 		:is="tag ?? 'div'"
-		:class="[...buiResponsiveProses, ...buiTextResponsive, ...buiMargins]"
+		:class="[
+			...classTextProses,
+			...classTextResponsive,
+			...buiMargins,
+			...buiGap,
+		]"
+    
 		:style="[
 			buiMbMobile ? `--bui-mb-mobile: ${buiMbMobile}` : '',
 			buiMbLg ? `--bui-mb-lg: ${buiMbLg}` : '',
 			buiMbXl ? `--bui-mb-xl: ${buiMbXl}` : '',
+
+			buiGapMobile ? `--bui-gap-mobile: ${buiGapMobile}` : '',
+			buiGapLg ? `--bui-gap-lg: ${buiGapLg}` : '',
+			buiGapXl ? `--bui-gap-xl: ${buiGapXl}` : '',
 		]"
 	>
 		<slot />

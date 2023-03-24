@@ -27,7 +27,7 @@ onUnmounted(() => ctx.value.revert())
 
 <template>
 	<section ref="scrollDatShit" class="grid content-center w-screen h-screen mb-32 overflow-x-hidden">
-		<BiroResponsive bui-gap-mobile="1rem" bui-gap-lg="1.25">
+		<BuiResponsive bui-gap-mobile="1rem" bui-gap-lg="1.25">
 			<div class="relative flex branding-scroll w-fit gap-x-16 left-32">
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
@@ -38,7 +38,7 @@ onUnmounted(() => ctx.value.revert())
 					draggable="false"
 				/>
 			</div>
-			<BiroResponsive
+			<BuiResponsive
 				bui-prose-p
 				bui-gap-mobile="1rem"
 				bui-gap-lg="1.25"
@@ -46,7 +46,7 @@ onUnmounted(() => ctx.value.revert())
 			>
 				<p>Just a random blue fox-husky guy on the internet that makes cool things</p>
 				<div>social stuff</div>
-			</BiroResponsive>
-		</BiroResponsive>
+			</BuiResponsive>
+		</BuiResponsive>
 	</section>
 </template>
