@@ -44,7 +44,7 @@ onUnmounted(() => ctx.value.revert())
 				bui-gap-lg="1.25"
 				class="relative flex flex-col left-32 font-inter subheading"
 			>
-				<p>Just a random blue fox-husky guy on the internet that makes cool things</p>
+				<p>A random blue fox-husky guy on the internet that makes cool things</p>
 				<div>social stuff</div>
 			</BuiResponsive>
 		</BuiResponsive>

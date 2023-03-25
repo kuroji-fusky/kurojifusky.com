@@ -2,21 +2,31 @@
 import Lenis from "@studio-freight/lenis"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useNavbarOpenStore } from "./stores"
+import { storeToRefs } from "pinia"
 
 gsap.registerPlugin(ScrollTrigger)
 
 useHTMLViewport()
 
+const { isNavbarOpen } = storeToRefs(useNavbarOpenStore())
+
 onMounted(() => {
 	const lenis = new Lenis({
 		duration: 1.125,
 		orientation: "vertical",
-		gestureOrientation: "vertical",
 		smoothWheel: true,
 		wheelMultiplier: 1,
 		smoothTouch: false,
-		touchMultiplier: 2,
 		infinite: false,
+	})
+
+	watch(isNavbarOpen, (navOpen) => {
+		if (!navOpen) {
+			lenis.start()
+		} else {
+			lenis.stop()
+		}
 	})
 
 	const raf = (time: any) => {
@@ -34,53 +44,28 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="responsive-text">
+	<div>
 		<TheBaseNavbar />
 		<main>
 			<NuxtPage />
 		</main>
 		<TheBaseFooter />
 	</div>
+	<Teleport to="body">
+		<div id="preloader"></div>
+	</Teleport>
 </template>
 
 <style lang="scss">
+@use "/assets/css/mixins" as *;
+
+$screens: (768, 1024, 1280, 1366, 1536, 1640, 1920);
+
 html {
-	--vw: 6.4;
+	@include vwCalc(640, $mq: false);
 
-	@media (min-width: 768px) {
-		--vw: 7.68px;
-	}
-
-	@media (min-width: 1024px) {
-		--vw: 10.24px;
-	}
-
-	@media (min-width: 1280px) {
-		--vw: 12.8px;
-	}
-
-	@media (min-width: 1366px) {
-		--vw: 13.66px;
-	}
-
-	@media (min-width: 1536px) {
-		--vw: 15.3px;
-	}
-
-	@media (min-width: 1640px) {
-		--vw: 16.4px;
-	}
-
-	&::-webkit-scrollbar {
-		width: 0.5rem;
-	}
-
-	&::-webkit-scrollbar-track {
-		@apply border-8 border-red-500;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		@apply bg-sona-borahaealt-700 rounded-xl border-8 border-red-500;
+	@each $_ds in $screens {
+		@include vwCalc($_ds);
 	}
 }
 

@@ -1,0 +1,11 @@
+@mixin vwCalc($pixels, $mq: true) {
+	$_computed: calc($pixels / 100);
+
+	@if ($mq) {
+		@media (min-width: #{$pixels}px) {
+			--vw: #{$_computed}px;
+		}
+	} @else {
+		--vw: #{$_computed}px;
+	}
+}

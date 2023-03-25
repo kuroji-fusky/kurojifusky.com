@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import gsap from "gsap"
+import { useNavbarOpenStore } from "~~/stores"
 
 const gsapCtx = ref(),
 	contentsTl = ref(),
@@ -8,20 +9,16 @@ const gsapCtx = ref(),
 	isNavCurtainOpen = ref(false)
 
 const { isScrolled } = useNavbarScroll()
+const navStore = useNavbarOpenStore()
 
 function toggleTls() {
 	const curtainVal = contentsTl.value
 	const navVal = navTl.value
-	const $html = document.documentElement
 
 	isNavCurtainOpen.value = !curtainVal.reversed()
 
 	curtainVal.reversed(!curtainVal.reversed())
 	navVal.reversed(!navVal.reversed())
-
-	!curtainVal.reversed() && !navVal.reversed()
-		? $html.classList.add("overflow-y-hidden")
-		: $html.classList.remove("overflow-y-hidden")
 }
 
 onMounted(() => {
@@ -71,7 +68,11 @@ onUnmounted(() => gsapCtx.value.revert())
 </script>
 
 <template>
-	<header ref="headerWrap" :class="[isScrolled ? 'scrolled' : '']">
+	<header
+		ref="headerWrap"
+		:class="[isScrolled ? 'scrolled' : 'opaque']"
+		class="fixed z-[9999] top-0 left-0 right-0 bg-transparent border-0 border-transparent"
+	>
 		<div
 			class="flex items-center justify-between px-12 py-3.5 md:py-[calc(var(--vw)*1.75)] lg:py-[calc(var(--vw)*0.9)] relative z-[6]"
 		>
@@ -83,7 +84,12 @@ onUnmounted(() => gsapCtx.value.revert())
 			<button
 				type="button"
 				class="px-2 py-1"
-				@click="toggleTls"
+				@click="
+					() => {
+						toggleTls()
+            navStore.toggleNavbar()
+					}
+				"
 				aria-label="Toggle dropdown"
 			>
 				<svg
@@ -115,14 +121,12 @@ onUnmounted(() => gsapCtx.value.revert())
 
 <style lang="scss" scoped>
 header {
-	@apply fixed z-[9999] top-0 left-0 right-0 bg-transparent border-0 border-transparent;
-
 	transition-property: border, background;
 	transition-duration: 300ms;
 }
 
 .scrolled {
-	@apply bg-borahae-dark bg-opacity-75 backdrop-blur-lg border-b border-neutral-100;
+	@apply bg-borahae-dark bg-opacity-75 backdrop-blur-md border-b border-neutral-100;
 }
 
 .wordmark {

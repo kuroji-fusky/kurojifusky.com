@@ -25,47 +25,55 @@ interface BiroStyleAttributes {
 }
 
 const props = defineProps<{
-  tag?: keyof HTMLElementTagNameMap
+	tag?: keyof HTMLElementTagNameMap
 	options?: Partial<BiroStyleAttributes>
 }>()
 
-const styleParsed = ref<string[]>([])
-const classParsed = ref<string[]>([])
+let classListRaw: string[] = []
 
-for (const [identifier, fixedMedia] of Object.entries(
-	props.options as BiroStyleAttributes
-)) {
+for (const keyIdentifier of Object.keys(props.options as BiroStyleAttributes)) {
 	const isGap =
-		identifier == "gap" || identifier == "gap-x" || identifier == "gap-y"
+		keyIdentifier === "gap-x" ||
+		keyIdentifier === "gap-y" ||
+		keyIdentifier === "gap"
 
 	const isPadding =
-		identifier == "px" ||
-		identifier == "py" ||
-		identifier == "pt" ||
-		identifier == "pb"
+		keyIdentifier === "px" ||
+		keyIdentifier === "py" ||
+		keyIdentifier === "pt" ||
+		keyIdentifier === "pb"
 
 	const isMargin =
-		identifier == "mx" ||
-		identifier == "my" ||
-		identifier == "mt" ||
-		identifier == "mb"
+		keyIdentifier == "mx" ||
+		keyIdentifier == "my" ||
+		keyIdentifier == "mt" ||
+		keyIdentifier == "mb"
 
-	classParsed.value.push([
-		isMargin ? "bui-margin" : undefined,
-		isPadding ? "bui-padding" : undefined,
-		isGap ? "bui-gap" : undefined,
-	] as any)
+	classListRaw.push(
+		...[
+			isGap ? "bui-gap" : "",
+			isPadding ? "bui-padding" : "",
+			isMargin ? "bui-maegin" : "",
+		]
+	)
+}
 
+const styleParsed = ref<string[]>([])
+const classParsed = Array.from(new Set(classListRaw))
+
+for (const [id, fixedMedia] of Object.entries(
+	props.options as BiroStyleAttributes
+)) {
 	for (const [screen, val] of Object.entries(fixedMedia as FixedMedia)) {
-		styleParsed.value.push(`--bui-${identifier}-${screen}: ${val};`)
+		styleParsed.value.push(`--bui-${id}-${screen}:${val};`)
 	}
 }
 </script>
 
 <template>
-	<component :is="tag ?? 'div'" :class="classParsed" :style="styleParsed">
-    <slot />
-  </component>
+	<component data-bui-wrapper  :is="tag ?? 'div'" :class="classParsed" :style="styleParsed">
+		<slot />
+	</component>
 </template>
 
 <style lang="scss"></style>

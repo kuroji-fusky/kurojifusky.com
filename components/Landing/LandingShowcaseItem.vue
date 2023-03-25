@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { CAPITALIZE } from "@vue/compiler-core"
 import { gsap } from "gsap"
+import { AlertTriangle } from "lucide-vue-next"
 
 defineProps<{
 	name?: string
@@ -64,9 +64,15 @@ onUnmounted(() => ctx.value.revert())
 				<p>
 					{{ desc }}
 				</p>
+				<div id="wip" class="flex px-4 py-2.5 rounded-md flex-nowrap gap-x-2.5">
+					<AlertTriangle />
+					<span>Project is currently work in progress</span>
+				</div>
 			</BuiResponsive>
 		</div>
-		<aside class="grid w-full grid-cols-2 grid-rows-6 overflow-hidden rounded-2xl">
+		<aside
+			class="grid w-full grid-cols-2 grid-rows-6 overflow-hidden rounded-2xl"
+		>
 			<NuxtImg
 				class="object-cover w-full h-full col-span-2 row-span-4 gsap-latch"
 				src="https://images.unsplash.com/photo-1678338712030-6b529c30bd41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=60"
@@ -91,3 +97,23 @@ onUnmounted(() => ctx.value.revert())
 		</aside>
 	</li>
 </template>
+
+<style scoped>
+#wip {
+	background-image: linear-gradient(
+		145deg,
+		theme("colors.yellow.800") 25%,
+		theme("colors.yellow.700") 25%,
+		theme("colors.yellow.700") 50%,
+		theme("colors.yellow.800") 50%,
+		theme("colors.yellow.800") 75%,
+		theme("colors.yellow.700") 75%,
+		theme("colors.yellow.700") 100%
+	);
+	background-size: 111.58px 78.13px;
+}
+
+img {
+	@apply select-none;
+}
+</style>

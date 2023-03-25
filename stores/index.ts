@@ -9,7 +9,7 @@ export const useModalStateStore = defineStore("modal", {
 	},
 })
 
-export const useNavbarOpenStore = defineStore("navbarLol", {
+export const useNavbarOpenStore = defineStore("navbar", {
 	state: (): { isNavbarOpen: boolean } => ({ isNavbarOpen: false }),
 	actions: {
 		toggleNavbar() {

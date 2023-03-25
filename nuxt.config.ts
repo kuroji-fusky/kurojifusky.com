@@ -26,6 +26,9 @@ export default defineNuxtConfig({
 				{ property: "og:site_name", content: "Kuroji's Dump" },
 			],
 			link: [{ rel: "icon", href: "/favicon.png", type: "image/png" }],
+			bodyAttrs: {
+				class: ["responsive-text", "min-h-screen"],
+			},
 		},
 	},
 	webpack: {
