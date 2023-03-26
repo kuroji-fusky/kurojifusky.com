@@ -26,15 +26,22 @@ onUnmounted(() => ctx.value.revert())
 </script>
 
 <template>
-	<section ref="scrollDatShit" class="grid content-center w-screen h-screen mb-32 overflow-x-hidden">
+	<section
+		ref="scrollDatShit"
+		class="grid content-center w-screen h-screen mb-32 overflow-x-hidden"
+	>
 		<BuiResponsive bui-gap-mobile="1rem" bui-gap-lg="1.25">
 			<div class="relative flex branding-scroll w-fit gap-x-16 left-32">
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
+          role="img" 
+					name="branding"
 					draggable="false"
 				/>
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
+          role="img"
+					name="branding"
 					draggable="false"
 				/>
 			</div>
@@ -44,7 +51,9 @@ onUnmounted(() => ctx.value.revert())
 				bui-gap-lg="1.25"
 				class="relative flex flex-col left-32 font-inter subheading"
 			>
-				<p>A random blue fox-husky guy on the internet that makes cool things</p>
+				<p>
+					A random blue fox-husky guy on the internet that makes cool things
+				</p>
 				<div>social stuff</div>
 			</BuiResponsive>
 		</BuiResponsive>

@@ -8,6 +8,23 @@ import {
 import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
 import { FeaturedProjects } from "./Interfaces"
 
+interface HeadingLinks {
+	heading: string
+	bypassListRender: boolean
+	contents:
+		| {
+				text: string
+				link: string
+		  }[]
+		| never[]
+}
+
+export const headingLinks: HeadingLinks[] = [
+	{ heading: "Projects", contents: [], bypassListRender: false },
+	{ heading: "Creative Works", contents: [], bypassListRender: false },
+	{ heading: "More", contents: [], bypassListRender: true },
+]
+
 export const featuredProjects: FeaturedProjects[] = [
 	{
 		name: "MyFursona",

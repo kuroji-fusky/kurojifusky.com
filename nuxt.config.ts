@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	modules: [
-		"nuxt-security",
+    "nuxt-security",
 		"@nuxt/image-edge",
 		"@nuxt/content",
 		[
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 				{ name: "robots", content: "noindex,nofollow" },
 				{ property: "og:site_name", content: "Kuroji's Dump" },
 			],
-			link: [{ rel: "icon", href: "/favicon.png", type: "image/png" }],
+			link: [{ rel: "icon", href: "/favicon.png" }],
 			bodyAttrs: {
 				class: ["responsive-text", "min-h-screen"],
 			},
