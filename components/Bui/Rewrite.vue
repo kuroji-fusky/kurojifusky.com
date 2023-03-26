@@ -26,6 +26,11 @@ interface BiroStyleAttributes {
 	gap: FixedMedia
 	"gap-x": FixedMedia
 	"gap-y": FixedMedia
+
+	// size
+	w: FixedMedia
+	h: FixedMedia
+	size: FixedMedia
 }
 
 const props = defineProps<{
@@ -38,6 +43,8 @@ let classListRaw: string[] = []
 for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 	const isGap =
 		keyProperty === "gap-x" || keyProperty === "gap-y" || keyProperty === "gap"
+	const isSizes =
+		keyProperty === "w" || keyProperty === "h" || keyProperty === "sizes"
 
 	const isPadding =
 		keyProperty === "px" ||
@@ -59,7 +66,8 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 		...[
 			isGap ? "bui-gap" : "",
 			isPadding ? "bui-padding" : "",
-			isMargin ? "bui-maegin" : "",
+			isMargin ? "bui-margin" : "",
+      isSizes ? "bui-sizes": "",
 		]
 	)
 }

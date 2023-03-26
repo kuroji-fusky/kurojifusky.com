@@ -29,7 +29,15 @@ export const headingLinks: HeadingLinks[] = [
 		],
 		bypassListRender: false,
 	},
-	{ heading: "Creative Works", contents: [], bypassListRender: false },
+	{
+		heading: "Creative Works",
+		contents: [
+			{ link: "/works/discography", text: "Discography" },
+			{ link: "/works/filmography", text: "Filmography" },
+			{ link: "/archives", text: "Archives" },
+		],
+		bypassListRender: false,
+	},
 	{ heading: "More", contents: [], bypassListRender: true },
 ]
 

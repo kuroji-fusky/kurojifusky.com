@@ -29,7 +29,7 @@ const MoreSocials = () => {
 		<p v-once>{{ copyright }}</p>
 		<div class="flex flex-col items-start md:items-center md:flex-row gap-y-5">
 			<ul
-				class="flex flex-col items-center pr-0 border-r-0 md:pr-6 md:border-r gap-y-5 md:flex-row gap-x-6 border-r-sona-borahaealt-500"
+				class="flex flex-col items-center pr-0 border-r-0 md:pr-6 md:border-r gap-y-5 md:flex-row gap-x-6 border-r-kuro-lavender-500"
 			>
 				<li v-for="item in footerLinks">
 					<BuiLink
@@ -72,7 +72,7 @@ const MoreSocials = () => {
 					</template>
 					<template v-else>
 						<button
-							class="flex items-center text-opacity-75 transition-colors text-sona-borahaealt-100 hover:text-opacity-100"
+							class="flex items-center text-opacity-75 transition-colors text-kuro-lavender-100 hover:text-opacity-100"
 							@click="MoreSocials"
 							title="More"
 							aria-label="More social medias"

@@ -2,6 +2,7 @@
 import gsap from "gsap"
 import { useNavbarOpenStore } from "~~/stores"
 import { headingLinks, copyright } from "./Constants"
+import { storeToRefs } from "pinia"
 
 const ctx = ref(),
 	contentsTl = ref(),
@@ -12,7 +13,12 @@ const ctx = ref(),
 const { isScrolled } = useNavbarScroll()
 const navStore = useNavbarOpenStore()
 
-function toggleTls() {
+const { isNavbarOpen } = storeToRefs(navStore)
+
+function toggleNavs() {
+	navStore.toggleNavbar()
+
+	// gsap crap
 	const curtainVal = contentsTl.value
 	const navVal = navTl.value
 
@@ -31,48 +37,65 @@ onMounted(() => {
 		const svgBurger = self.selector!("#Burger"),
 			svgClose = self.selector!("#Close")
 
-		const burgerTweens: gsap.TweenVars = {
+		const burgerTw: gsap.TweenVars = {
 				duration: "3",
 				ease: "expo.inOut",
 				x: -460,
 			},
-			closeTweens: gsap.TweenVars = {
+			closeTw: gsap.TweenVars = {
 				duration: "3",
 				x: 400,
 			},
-			curtainTweens: gsap.TweenVars = {
-				duration: "50",
-				ease: "expo.inOut",
+			curtainTw: gsap.TweenVars = {
+				duration: "25",
+				ease: "expo.out",
 			}
 
 		// Button animation
 		navTl.value = gsap
 			.timeline()
 			.reverse()
-			.to(svgBurger[0], burgerTweens, "<-=8%")
-			.to(svgBurger[1], burgerTweens, "<-=20%")
-			.from(svgClose[0], { ...closeTweens, y: -400 }, ">-=21%")
-			.from(svgClose[1], { ...closeTweens, y: 400 }, "<")
+			.to(svgBurger[0], burgerTw, "<-=8%")
+			.to(svgBurger[1], burgerTw, "<-=20%")
+			.from(svgClose[0], { ...closeTw, y: -400 }, ">-=21%")
+			.from(svgClose[1], { ...closeTw, y: 400 }, "<")
 			.duration(0.5)
+		// Button animation
 
 		// Nav items animation
 		contentsTl.value = gsap
 			.timeline()
 			.reverse()
-			.fromTo(curtainTop, { top: "-40.11%" }, { ...curtainTweens, top: "0%" })
+			.fromTo(
+				curtainTop,
+				{ top: "-40.11%" },
+				{
+					...curtainTw,
+					top: "0%",
+				}
+			)
 			.fromTo(
 				curtainBtm,
-				{ bottom: "-60.11%" },
-				{ ...curtainTweens, bottom: "0%" },
+				{
+					bottom: "-60.11%",
+				},
+				{
+					...curtainTw,
+					bottom: "0%",
+				},
 				"<"
 			)
 			.fromTo(
 				curtainItems,
 				{ y: 550 },
-				{ stagger: -3, ...curtainTweens, y: 0 },
+				{
+					stagger: -5,
+					...curtainTw,
+					y: 0,
+				},
 				"-2"
 			)
-			.duration(0.9)
+			.duration(0.75)
 	}, headerWrap.value)
 })
 
@@ -84,7 +107,7 @@ onUnmounted(() => ctx.value.revert())
 		ref="headerWrap"
 		:class="[
 			isScrolled
-				? 'bg-borahae-dark border-b border-neutral-100'
+				? 'bg-kuro-dark border-b border-neutral-100'
 				: 'bg-transparent',
 		]"
 		class="fixed z-20 top-0 left-0 right-0 border-0 border-transparent duration-300 transition-[border,background-color]"
@@ -105,12 +128,7 @@ onUnmounted(() => ctx.value.revert())
 			<button
 				type="button"
 				class="px-2 py-1"
-				@click="
-					() => {
-						toggleTls()
-						navStore.toggleNavbar()
-					}
-				"
+				@click="toggleNavs()"
 				aria-label="Toggle dropdown"
 			>
 				<svg
@@ -135,11 +153,11 @@ onUnmounted(() => ctx.value.revert())
 		<div id="nav-slider-wrapper" :aria-hidden="isNavCurtainOpen">
 			<div
 				id="nav-slider-top"
-				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-sona-borahae-900"
+				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-kuro-violet-900 grid"
 			></div>
 			<div
 				id="nav-slider-bottom"
-				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-sona-borahae-900"
+				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-kuro-violet-900"
 			>
 				<div class="absolute inset-0 flex flex-col w-full pt-8">
 					<BuiRewrite
@@ -172,6 +190,11 @@ onUnmounted(() => ctx.value.revert())
 			</div>
 		</div>
 	</header>
+	<div
+		aria-hidden="true"
+		class="fixed inset-0 bg-black pointer-events-none z-[19] duration-[700ms] transition-opacity"
+		:class="[isNavbarOpen ? 'opacity-90' : 'opacity-0']"
+	></div>
 </template>
 
 <style lang="scss">

@@ -54,7 +54,6 @@ onUnmounted(() => ctx.value.revert())
 				<p class="max-w-[37ch]">
 					A random blue fox-husky guy on the internet that makes cool things
 				</p>
-				<div>social stuff</div>
 			</BuiResponsive>
 		</BuiResponsive>
 	</section>

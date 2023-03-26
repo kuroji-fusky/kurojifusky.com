@@ -19,8 +19,8 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				"borahae-dark": "#110D17",
-				"sona-royalblue": {
+				"kuro-dark": "#110D17",
+				"kuro-royalblue": {
 					50: "#E4F0FB",
 					100: "#CEE4F8",
 					200: "#9DC8F0",
@@ -32,7 +32,7 @@ module.exports = {
 					800: "#0D3254",
 					900: "#061A2D",
 				},
-				"sona-skycyan": {
+				"kuro-skycyan": {
 					50: "#EBFCFE",
 					100: "#DCF9FE",
 					200: "#B5F2FD",
@@ -44,7 +44,7 @@ module.exports = {
 					800: "#046E80",
 					900: "#023741",
 				},
-				"sona-pale": {
+				"kuro-pale": {
 					50: "#FFFBF5",
 					100: "#FFF7EB",
 					200: "#FEEFD2",
@@ -56,7 +56,7 @@ module.exports = {
 					800: "#916203",
 					900: "#3C2701",
 				},
-				"sona-yellow": {
+				"kuro-yellow": {
 					50: "#FFFBE6",
 					100: "#FEF8D2",
 					200: "#FDEFA0",
@@ -68,7 +68,7 @@ module.exports = {
 					800: "#695A02",
 					900: "#372F01",
 				},
-				"sona-borahae": {
+				"kuro-violet": {
 					50: "#F9ECFE",
 					100: "#F2D9FC",
 					200: "#E4AFF8",
@@ -80,7 +80,7 @@ module.exports = {
 					800: "#50096C",
 					900: "#2A0439",
 				},
-				"sona-borahaealt": {
+				"kuro-lavender": {
 					50: "#F8F1FE",
 					100: "#EFDFFC",
 					200: "#E1C3F9",
@@ -92,7 +92,7 @@ module.exports = {
 					800: "#4C0D7D",
 					900: "#25063C",
 				},
-				"sona-magenta": {
+				"kuro-magenta": {
 					50: "#FFF5FF",
 					100: "#FFF0FF",
 					200: "#FFDBFF",
@@ -129,7 +129,7 @@ module.exports = {
 				},
 				body: {
 					fontFamily: theme("fontFamily.inter"),
-					backgroundColor: theme("colors.borahae-dark"),
+					backgroundColor: theme("colors.kuro-dark"),
 					color: theme("colors.gray.50"),
 					minHeight: "100%",
 					height: "auto",

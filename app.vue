@@ -51,9 +51,6 @@ onMounted(() => {
 		</main>
 		<TheBaseFooter />
 	</div>
-	<Teleport to="body">
-		<div id="preloader"></div>
-	</Teleport>
 </template>
 
 <style lang="scss">
@@ -90,7 +87,7 @@ html {
 // Biro UI stuff
 
 body {
-	@apply selection:bg-sona-borahaealt-600;
+	@apply selection:bg-kuro-lavender-600;
 }
 
 :is(h1, h2, h3, p) {
