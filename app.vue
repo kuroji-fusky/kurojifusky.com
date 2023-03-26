@@ -62,12 +62,32 @@ onMounted(() => {
 $screens: (768, 1024, 1280, 1366, 1536, 1640, 1920);
 
 html {
-	@include vwCalc(640, $mq: false);
+	@include fallback-viewport(640, $mq: false);
 
 	@each $_ds in $screens {
-		@include vwCalc($_ds);
+		@include fallback-viewport($_ds);
 	}
 }
+
+// Biro UI stuff
+.bui {
+	&-padding {
+		@include shorthands("padding", "p");
+	}
+
+	&-margin {
+		@include shorthands("margin", "p");
+	}
+
+	&-sizes {
+		@include size-shorthands;
+	}
+
+	&-gap {
+		@include gap-shorthands;
+	}
+}
+// Biro UI stuff
 
 body {
 	@apply selection:bg-sona-borahaealt-600;

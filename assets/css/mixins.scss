@@ -1,4 +1,6 @@
-@mixin vwCalc($pixels, $mq: true) {
+$_vw: var(--vw);
+
+@mixin fallback-viewport($pixels, $mq: true) {
 	$_computed: calc($pixels / 100);
 
 	@if ($mq) {
@@ -7,5 +9,83 @@
 		}
 	} @else {
 		--vw: #{$_computed}px;
+	}
+}
+
+// Media queries
+@mixin mq-lg {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin mq-xl {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+// calc viewport width from something
+@mixin calc-vw-responsive($property, $variable, $fallback) {
+	@if ($fallback) {
+		#{$property}: calc(#{$_vw} * var(--bui-#{$variable}, #{$fallback}));
+	} @else {
+		#{$property}: calc(#{$_vw} * var(--bui-#{$variable}));
+	}
+}
+
+// shorthands to make my life easier
+@mixin shorthands($property, $letter) {
+	$fb-x-md: var(--bui-#{$letter}x-md, 0);
+	$fb-y-md: var(--bui-#{$letter}y-md, 0);
+	$fb-x-lg: var(--bui-#{$letter}x-lg, 0);
+	$fb-y-lg: var(--bui-#{$letter}y-lg, 0);
+	$fb-x-xl: var(--bui-#{$letter}x-xl, 0);
+	$fb-y-xl: var(--bui-#{$letter}y-xl, 0);
+
+	#{$property}: var(--bui-#{$letter}t-md, $fb-y-md)
+		var(--bui-#{$letter}r-md, $fb-x-md) var(--bui-#{$letter}b-md, $fb-y-md)
+		var(--bui-#{$letter}l-md, $fb-x-md);
+
+	@include mq-lg {
+		#{$property}: calc(#{$_vw} * var(--bui-#{$letter}t-lg, #{$fb-y-lg}))
+			calc(#{$_vw} * var(--bui-#{$letter}r-lg, #{$fb-x-lg}))
+			calc(#{$_vw} * var(--bui-#{$letter}b-lg, #{$fb-y-lg}))
+			calc(#{$_vw} * var(--bui-#{$letter}l-lg, #{$fb-x-lg}));
+	}
+
+	@include mq-xl {
+		#{$property}: calc(#{$_vw} * var(--bui-#{$letter}t-xl, #{$fb-y-xl}))
+			calc(#{$_vw} * var(--bui-#{$letter}r-xl, #{$fb-x-xl}))
+			calc(#{$_vw} * var(--bui-#{$letter}b-xl, #{$fb-y-xl}))
+			calc(#{$_vw} * var(--bui-#{$letter}l-xl, #{$fb-x-xl}));
+	}
+}
+@mixin gap-shorthands {
+	gap: var(--bui-gap-y-md, 0) var(--bui-gap-x-md, 0);
+
+	@include mq-lg {
+		gap: calc(#{$_vw} * var(--bui-gap-y-lg, 0))
+			calc(#{$_vw} * var(--bui-gap-x-lg, 0));
+	}
+
+	@include mq-xl {
+		gap: calc(#{$_vw} * var(--bui-gap-y-xl, 0))
+			calc(#{$_vw} * var(--bui-gap-x-xl, 0));
+	}
+}
+@mixin size-shorthands {
+	$fallback-variable: var(--bui-fixed-size);
+
+	width: var(--bui-width, $fallback-variable);
+	height: var(--bui-height, $fallback-variable);
+
+	@include mq-lg {
+		@include calc-vw-responsive("width", "width-lg", $fallback-variable);
+		@include calc-vw-responsive("height", "height-lg", $fallback-variable);
+	}
+
+	@include mq-xl {
+		@include calc-vw-responsive("width", "width-xl", $fallback-variable);
+		@include calc-vw-responsive("height", "height-xl", $fallback-variable);
 	}
 }

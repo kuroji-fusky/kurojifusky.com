@@ -3,7 +3,7 @@
 		id="nav-list-container"
 		class="p-4 border border-b-0 rounded-tl-lg rounded-tr-lg"
 	>
-		<h2>{{ heading }}</h2>
+		<h2 class="uppercase select-none font-unbounded">{{ heading }}</h2>
 		<slot />
 	</div>
 </template>

@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { Globe, Coffee } from "lucide-vue-next"
-import { socialLinks } from "./Constants"
-
-const currentYear = new Date().getFullYear()
-const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
+import { socialLinks, copyright } from "./Constants"
 
 const footerLinks = [
 	{

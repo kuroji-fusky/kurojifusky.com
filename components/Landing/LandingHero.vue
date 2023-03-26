@@ -34,13 +34,13 @@ onUnmounted(() => ctx.value.revert())
 			<div class="relative flex branding-scroll w-fit gap-x-16 left-32">
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
-          role="img" 
+					role="img"
 					name="branding"
 					draggable="false"
 				/>
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
-          role="img"
+					role="img"
 					name="branding"
 					draggable="false"
 				/>
@@ -51,7 +51,7 @@ onUnmounted(() => ctx.value.revert())
 				bui-gap-lg="1.25"
 				class="relative flex flex-col left-32 font-inter subheading"
 			>
-				<p>
+				<p class="max-w-[37ch]">
 					A random blue fox-husky guy on the internet that makes cool things
 				</p>
 				<div>social stuff</div>

@@ -8,19 +8,27 @@ import {
 import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
 import { FeaturedProjects } from "./Interfaces"
 
+const currentYear = new Date().getFullYear()
+export const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
+
 interface HeadingLinks {
 	heading: string
 	bypassListRender: boolean
-	contents:
-		| {
-				text: string
-				link: string
-		  }[]
-		| never[]
+	contents: {
+		text: string
+		link: string
+	}[]
 }
 
 export const headingLinks: HeadingLinks[] = [
-	{ heading: "Projects", contents: [], bypassListRender: false },
+	{
+		heading: "Projects",
+		contents: [
+			{ text: "MyFursona", link: "/projects/myfursona" },
+			{ text: "Panda Paco Drawing Stats", link: "/projects/pds" },
+		],
+		bypassListRender: false,
+	},
 	{ heading: "Creative Works", contents: [], bypassListRender: false },
 	{ heading: "More", contents: [], bypassListRender: true },
 ]

@@ -9,14 +9,6 @@ usePageMeta({
 </script>
 
 <template>
-	<BuiRewrite
-		:options="{
-			'gap-x': { xl: 5, lg: 10, md: '2rem' },
-			py: { xl: 12, lg: 15, md: '1rem' },
-			px: { xl: 12, lg: 15, md: '1rem' },
-		}"
-	/>
-	<BuiRewrite :options="{ px: { xl: 5, lg: 10, md: '2rem' } }" />
 	<div>
 		<LandingHero />
 		<LandingIntro />

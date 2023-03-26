@@ -1,7 +1,7 @@
 <script setup lang="tsx">
 import gsap from "gsap"
 import { useNavbarOpenStore } from "~~/stores"
-import { headingLinks } from "./Constants"
+import { headingLinks, copyright } from "./Constants"
 
 const ctx = ref(),
 	contentsTl = ref(),
@@ -24,8 +24,9 @@ function toggleTls() {
 
 onMounted(() => {
 	ctx.value = gsap.context((self) => {
-		const curtainTop = self.selector!("#nav-drawer-top"),
-			curtainBtm = self.selector!("#nav-drawer-bottom")
+		const curtainTop = self.selector!("#nav-slider-top"),
+			curtainBtm = self.selector!("#nav-slider-bottom"),
+			curtainItems = self.selector!("#nav-list-container")
 
 		const svgBurger = self.selector!("#Burger"),
 			svgClose = self.selector!("#Close")
@@ -54,7 +55,7 @@ onMounted(() => {
 			.from(svgClose[1], { ...closeTweens, y: 400 }, "<")
 			.duration(0.5)
 
-    // Nav items animation
+		// Nav items animation
 		contentsTl.value = gsap
 			.timeline()
 			.reverse()
@@ -65,7 +66,13 @@ onMounted(() => {
 				{ ...curtainTweens, bottom: "0%" },
 				"<"
 			)
-			.duration(0.8)
+			.fromTo(
+				curtainItems,
+				{ y: 550 },
+				{ stagger: -3, ...curtainTweens, y: 0 },
+				"-2"
+			)
+			.duration(0.9)
 	}, headerWrap.value)
 })
 
@@ -80,7 +87,7 @@ onUnmounted(() => ctx.value.revert())
 				? 'bg-borahae-dark border-b border-neutral-100'
 				: 'bg-transparent',
 		]"
-		class="fixed z-[9999] top-0 left-0 right-0 border-0 border-transparent duration-300 transition-[border,background-color]"
+		class="fixed z-20 top-0 left-0 right-0 border-0 border-transparent duration-300 transition-[border,background-color]"
 	>
 		<div
 			class="flex items-center justify-between px-12 py-3.5 md:py-[calc(var(--vw)*1.75)] lg:py-[calc(var(--vw)*0.9)] relative z-[6]"
@@ -125,25 +132,42 @@ onUnmounted(() => ctx.value.revert())
 				</svg>
 			</button>
 		</div>
-		<div :aria-hidden="isNavCurtainOpen">
+		<div id="nav-slider-wrapper" :aria-hidden="isNavCurtainOpen">
 			<div
-				id="nav-drawer-top"
-				class="h-[40%] fixed top-0 left-0 right-0 bg-sona-borahae-800 z-[5] overflow-hidden"
+				id="nav-slider-top"
+				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-sona-borahae-900"
 			></div>
 			<div
-				id="nav-drawer-bottom"
-				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-sona-borahae-800"
+				id="nav-slider-bottom"
+				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-sona-borahae-900"
 			>
 				<div class="absolute inset-0 flex flex-col w-full pt-8">
-					<nav class="grid h-full grid-cols-3 px-12 gap-x-5">
+					<BuiRewrite
+						tag="nav"
+						:options="{
+							px: { xl: 4, lg: 6 },
+							'gap-x': { xl: 2, lg: 7.5 },
+						}"
+						class="grid h-full grid-cols-3 gap-x-5"
+					>
 						<NavbarWrapperItem
-							v-for="(OwO, index) of headingLinks"
+							v-for="(containerItem, index) of headingLinks"
 							:key="index"
-							:heading="OwO.heading"
+							:heading="containerItem.heading"
 						>
-							<div v-if="OwO.bypassListRender">Hey contact my ass</div>
+							<div v-if="containerItem.bypassListRender">
+								<span id="copyright" class="mt-auto">{{ copyright }}</span>
+							</div>
+							<ul>
+								<li
+									v-for="(listItem, index) of containerItem.contents"
+									:key="index"
+								>
+									{{ listItem.text }}
+								</li>
+							</ul>
 						</NavbarWrapperItem>
-					</nav>
+					</BuiRewrite>
 				</div>
 			</div>
 		</div>
@@ -151,6 +175,10 @@ onUnmounted(() => ctx.value.revert())
 </template>
 
 <style lang="scss">
+#nav-slider-wrapper [aria-hidden="true"] {
+	@apply pointer-events-none;
+}
+
 .wordmark {
 	width: 16.5rem;
 

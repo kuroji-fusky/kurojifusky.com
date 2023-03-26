@@ -2,7 +2,7 @@
 interface FixedMedia {
 	xl: number
 	lg: number
-	md: string
+	md?: string
 }
 
 interface BiroStyleAttributes {
@@ -64,25 +64,20 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 	)
 }
 
-const styleParsed: string[] = []
-const classParsed = Array.from(new Set(classListRaw))
+const styleParsed = ref<string[]>([])
+const classParsed = ref(Array.from(new Set(classListRaw)))
 
 for (const [id, fixedMedia] of Object.entries(
 	props.options as BiroStyleAttributes
 )) {
 	for (const [screen, val] of Object.entries(fixedMedia as FixedMedia)) {
-		styleParsed.push(`--bui-${id}-${screen}:${val};`)
+		styleParsed.value.push(`--bui-${id}-${screen}:${val};`)
 	}
 }
 </script>
 
 <template>
-	<component
-		data-bui-wrapper
-		:is="tag ?? 'div'"
-		:class="classParsed"
-		:style="styleParsed"
-	>
+	<component :is="tag ?? 'div'" :class="classParsed" :style="styleParsed">
 		<slot />
 	</component>
 </template>

@@ -122,8 +122,6 @@ module.exports = {
 	plugins: [
 		require("@tailwindcss/typography"),
 		basePlugin(({ addBase, addComponents, theme }) => {
-			// prettier-ignore
-			addComponents({}),
 			addBase({
 				html: {
 					overflowX: "hidden",
@@ -133,8 +131,8 @@ module.exports = {
 					fontFamily: theme("fontFamily.inter"),
 					backgroundColor: theme("colors.borahae-dark"),
 					color: theme("colors.gray.50"),
-          minHeight: '100%',
-          height: 'auto'
+					minHeight: "100%",
+					height: "auto",
 				},
 			})
 		}),
