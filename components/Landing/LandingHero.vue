@@ -1,24 +1,29 @@
 <script setup lang="ts">
-import { gsap as g } from "gsap"
+import { MOBILE_SCREEN } from "../Constants"
+import { gsap } from "gsap"
 
 const ctx = ref()
 const scrollDatShit = ref<HTMLDivElement>()
 
 onMounted(() => {
-	let gsapMedia = g.matchMedia("(min-width: 768px)")
+	const mm = gsap.matchMedia()
 
-	ctx.value = g.context((self) => {
+	ctx.value = gsap.context((self) => {
 		const svgScroll = self.selector!(".branding-scroll")
 		const wrap = self.selector!("section")
 
-		g.timeline({
-			scrollTrigger: {
-				trigger: wrap,
-				start: "top top",
-				end: "+=1100",
-				scrub: 0.45,
-			},
-		}).to(svgScroll, { x: -350 })
+		mm.add(MOBILE_SCREEN, () => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: wrap,
+						start: "top top",
+						end: "+=1100",
+						scrub: 0.45,
+					},
+				})
+				.to(svgScroll, { x: -375 })
+		})
 	}, scrollDatShit.value)
 })
 
@@ -30,7 +35,10 @@ onUnmounted(() => ctx.value.revert())
 		ref="scrollDatShit"
 		class="grid content-center w-screen h-screen mb-32 overflow-x-hidden"
 	>
-		<BuiResponsive bui-gap-mobile="1rem" bui-gap-lg="1.25">
+		<BuiRewrite
+			:options="{ 'gap-y': { xl: 1.25, lg: 1.25, md: '1rem' } }"
+			class="grid"
+		>
 			<div class="relative flex branding-scroll w-fit gap-x-16 left-32">
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
@@ -45,16 +53,12 @@ onUnmounted(() => ctx.value.revert())
 					draggable="false"
 				/>
 			</div>
-			<BuiResponsive
-				bui-prose-p
-				bui-gap-mobile="1rem"
-				bui-gap-lg="1.25"
-				class="relative flex flex-col left-32 font-inter subheading"
+			<BuiText
+				class="max-w-[37ch] relative flex flex-col left-32 font-inter subheading"
 			>
-				<p class="max-w-[37ch]">
-					A random blue fox-husky guy on the internet that makes cool things
-				</p>
-			</BuiResponsive>
-		</BuiResponsive>
+				An independent blue fox-husky floof on the internet that makes cool
+				things
+			</BuiText>
+		</BuiRewrite>
 	</section>
 </template>

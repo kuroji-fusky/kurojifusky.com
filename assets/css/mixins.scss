@@ -24,6 +24,20 @@ $_vw: var(--vw);
 	}
 }
 
+@mixin responsive-text($identifier, $rule) {
+	.bui-text-#{$identifier} {
+		#{$rule}: var(--bui-#{$identifier}-mobile, 0);
+
+		@include mq-lg {
+			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-lg, 0));
+		}
+
+		@include mq-xl {
+			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-xl, 0));
+		}
+	}
+}
+
 // calc viewport width from something
 @mixin calc-vw-responsive($property, $variable, $fallback) {
 	@if ($fallback) {
@@ -87,5 +101,55 @@ $_vw: var(--vw);
 	@include mq-xl {
 		@include calc-vw-responsive("width", "width-xl", $fallback-variable);
 		@include calc-vw-responsive("height", "height-xl", $fallback-variable);
+	}
+}
+
+@mixin tw-rs-packed($prose: false) {
+	&-sub-p {
+		@if $prose {
+			@apply prose-p:text-[calc(var(--m-sub-p))] 
+      md:prose-p:text-[calc(var(--vw)*var(--d-lg-sub-p))]
+      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-sub-p))];
+		} @else {
+			@apply text-[calc(var(--m-sub-p))] 
+      md:text-[calc(var(--vw)*var(--d-lg-sub-p))]
+      lg:text-[calc(var(--vw)*var(--d-xl-sub-p))];
+		}
+	}
+
+	&-p {
+		@if $prose {
+			@apply prose-p:text-[calc(var(--m-p))] 
+      md:prose-p:text-[calc(var(--vw)*var(--d-lg-p))]
+      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-p))];
+		} @else {
+			@apply text-[calc(var(--m-p))] 
+      md:text-[calc(var(--vw)*var(--d-lg-p))]
+      lg:text-[calc(var(--vw)*var(--d-xl-p))];
+		}
+	}
+
+	&-h2 {
+		@if $prose {
+			@apply prose-h2:text-[calc(var(--m-h2))]
+      md:prose-h2:text-[calc(var(--vw)*var(--d-lg-h2))]
+      lg:prose-h2:text-[calc(var(--vw)*var(--d-xl-h2))];
+		} @else {
+			@apply text-[calc(var(--m-h2))]
+      md:text-[calc(var(--vw)*var(--d-lg-h2))]
+      lg:text-[calc(var(--vw)*var(--d-xl-h2))];
+		}
+	}
+
+	&-h3 {
+		@if $prose {
+			@apply prose-h3:text-[calc(var(--m-h3))]
+      md:prose-h3:text-[calc(var(--vw)*var(--d-lg-h3))]
+      lg:prose-h3:text-[calc(var(--vw)*var(--d-xl-h3))];
+		} @else {
+			@apply text-[calc(var(--m-h3))]
+      md:text-[calc(var(--vw)*var(--d-lg-h3))]
+      lg:text-[calc(var(--vw)*var(--d-xl-h3))];
+		}
 	}
 }

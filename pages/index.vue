@@ -14,7 +14,6 @@ usePageMeta({
 		<LandingIntro />
 	</div>
 	<LandingShowcase />
-	<LandingIRLSlider />
 	<section class="flex justify-center">
 		<BuiResponsive
 			bui-p

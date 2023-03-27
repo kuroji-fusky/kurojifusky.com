@@ -1,14 +1,13 @@
-<script setup lang="tsx">
+<script setup lang="ts">
 import gsap from "gsap"
 import { useNavbarOpenStore } from "~~/stores"
-import { headingLinks, copyright } from "./Constants"
+import { headingLinks } from "./Constants"
 import { storeToRefs } from "pinia"
 
 const ctx = ref(),
 	contentsTl = ref(),
 	navTl = ref(),
-	headerWrap = ref<HTMLElement>(),
-	isNavCurtainOpen = ref(false)
+	headerWrap = ref<HTMLElement>()
 
 const { isScrolled } = useNavbarScroll()
 const navStore = useNavbarOpenStore()
@@ -22,7 +21,7 @@ function toggleNavs() {
 	const curtainVal = contentsTl.value
 	const navVal = navTl.value
 
-	isNavCurtainOpen.value = !curtainVal.reversed()
+	isNavbarOpen.value = !!curtainVal.reversed()
 
 	curtainVal.reversed(!curtainVal.reversed())
 	navVal.reversed(!navVal.reversed())
@@ -32,70 +31,53 @@ onMounted(() => {
 	ctx.value = gsap.context((self) => {
 		const curtainTop = self.selector!("#nav-slider-top"),
 			curtainBtm = self.selector!("#nav-slider-bottom"),
-			curtainItems = self.selector!("#nav-list-container")
-
-		const svgBurger = self.selector!("#Burger"),
+			curtainItems = self.selector!("#nav-list-container"),
+			svgBurger = self.selector!("#Burger"),
 			svgClose = self.selector!("#Close")
 
-		const burgerTw: gsap.TweenVars = {
-				duration: "3",
+		const menuDuration = { duration: "3" },
+			burgerTw: gsap.TweenVars = {
+				...menuDuration,
 				ease: "expo.inOut",
 				x: -460,
 			},
 			closeTw: gsap.TweenVars = {
-				duration: "3",
+				...menuDuration,
 				x: 400,
 			},
 			curtainTw: gsap.TweenVars = {
 				duration: "25",
-				ease: "expo.out",
+				ease: "expo.inOut",
 			}
 
 		// Button animation
 		navTl.value = gsap
 			.timeline()
 			.reverse()
-			.to(svgBurger[0], burgerTw, "<-=8%")
-			.to(svgBurger[1], burgerTw, "<-=20%")
+			.to(svgBurger, { ...burgerTw, stagger: -0.9 }, "<-=8%")
 			.from(svgClose[0], { ...closeTw, y: -400 }, ">-=21%")
 			.from(svgClose[1], { ...closeTw, y: 400 }, "<")
-			.duration(0.5)
+			.duration(0.65)
 		// Button animation
 
 		// Nav items animation
 		contentsTl.value = gsap
 			.timeline()
 			.reverse()
-			.fromTo(
-				curtainTop,
-				{ top: "-40.11%" },
-				{
-					...curtainTw,
-					top: "0%",
-				}
-			)
+			.fromTo(curtainTop, { top: "-40.11%" }, { ...curtainTw, top: "0%" })
 			.fromTo(
 				curtainBtm,
-				{
-					bottom: "-60.11%",
-				},
-				{
-					...curtainTw,
-					bottom: "0%",
-				},
+				{ bottom: "-60.11%" },
+				{ ...curtainTw, bottom: "0%" },
 				"<"
 			)
 			.fromTo(
 				curtainItems,
 				{ y: 550 },
-				{
-					stagger: -5,
-					...curtainTw,
-					y: 0,
-				},
+				{ stagger: -5, ...curtainTw, y: 0 },
 				"-2"
 			)
-			.duration(0.75)
+			.duration(1)
 	}, headerWrap.value)
 })
 
@@ -105,11 +87,6 @@ onUnmounted(() => ctx.value.revert())
 <template>
 	<header
 		ref="headerWrap"
-		:class="[
-			isScrolled
-				? 'bg-kuro-dark border-b border-neutral-100'
-				: 'bg-transparent',
-		]"
 		class="fixed z-20 top-0 left-0 right-0 border-0 border-transparent duration-300 transition-[border,background-color]"
 	>
 		<div
@@ -128,7 +105,7 @@ onUnmounted(() => ctx.value.revert())
 			<button
 				type="button"
 				class="px-2 py-1"
-				@click="toggleNavs()"
+				@click="toggleNavs"
 				aria-label="Toggle dropdown"
 			>
 				<svg
@@ -150,14 +127,14 @@ onUnmounted(() => ctx.value.revert())
 				</svg>
 			</button>
 		</div>
-		<div id="nav-slider-wrapper" :aria-hidden="isNavCurtainOpen">
+		<div id="nav-slider-wrapper" :aria-hidden="isNavbarOpen">
 			<div
 				id="nav-slider-top"
-				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-kuro-violet-900 grid"
+				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-kuro-lavender-900 grid"
 			></div>
 			<div
 				id="nav-slider-bottom"
-				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-kuro-violet-900"
+				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-kuro-lavender-900"
 			>
 				<div class="absolute inset-0 flex flex-col w-full pt-8">
 					<BuiRewrite
@@ -174,12 +151,13 @@ onUnmounted(() => ctx.value.revert())
 							:heading="containerItem.heading"
 						>
 							<div v-if="containerItem.bypassListRender">
-								<span id="copyright" class="mt-auto">{{ copyright }}</span>
+								<NavbarMoreWrapper />
 							</div>
 							<ul>
 								<li
 									v-for="(listItem, index) of containerItem.contents"
 									:key="index"
+									class="bui-text-p"
 								>
 									{{ listItem.text }}
 								</li>
@@ -190,11 +168,6 @@ onUnmounted(() => ctx.value.revert())
 			</div>
 		</div>
 	</header>
-	<div
-		aria-hidden="true"
-		class="fixed inset-0 bg-black pointer-events-none z-[19] duration-[700ms] transition-opacity"
-		:class="[isNavbarOpen ? 'opacity-90' : 'opacity-0']"
-	></div>
 </template>
 
 <style lang="scss">

@@ -67,6 +67,9 @@ html {
 }
 
 // Biro UI stuff
+@include responsive-text("mb", "margin-bottom");
+@include responsive-text("mt", "margin-top");
+
 .bui {
 	&-padding {
 		@include shorthands("padding", "p");
@@ -82,6 +85,14 @@ html {
 
 	&-gap {
 		@include gap-shorthands;
+	}
+
+	&-prose-text {
+		@include tw-rs-packed($prose: true);
+	}
+
+	&-text {
+		@include tw-rs-packed($prose: false);
 	}
 }
 // Biro UI stuff

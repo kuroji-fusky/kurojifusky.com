@@ -9,7 +9,9 @@ import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
 import { FeaturedProjects } from "./Interfaces"
 
 const currentYear = new Date().getFullYear()
+
 export const copyright = `© 2013-${currentYear} Kerby Keith Aquino`
+export const MOBILE_SCREEN = "(min-width: 768px)"
 
 interface HeadingLinks {
 	heading: string
@@ -25,7 +27,12 @@ export const headingLinks: HeadingLinks[] = [
 		heading: "Projects",
 		contents: [
 			{ text: "MyFursona", link: "/projects/myfursona" },
+			{ text: "Biro UI", link: "/projects/biro-ui" },
 			{ text: "Panda Paco Drawing Stats", link: "/projects/pds" },
+			{ text: "Majira VS Code Theme", link: "/projects/majira-vscode" },
+			{ text: "Searchpets!", link: "/projects/searchpets" },
+			{ text: "Yet Another JSON Generator", link: "/projects/yajg" },
+			{ text: "The Foxington Vault", link: "/projects/foxington-vault" },
 		],
 		bypassListRender: false,
 	},
@@ -48,13 +55,6 @@ export const featuredProjects: FeaturedProjects[] = [
 			"An open source platform where you create, store, and manage your characters' artworks, ref sheets, biographies, and much more! Built entirely on open source technology from the ground up.",
 		projectType: "Website",
 		sourceCode: "MyFursona-Project/MyFursona",
-	},
-	{
-		name: "Art and Biro Site Redesign",
-		description:
-			"A faithful and lively redesign for the artbirocomic.com website; a web comic series about a raccoon and a fox getting along each other with the bond of friendship.",
-		projectType: "Website",
-		imgGrids: [],
 	},
 	{
 		name: "School Trips and Highlights",

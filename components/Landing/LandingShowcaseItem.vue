@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 import { AlertTriangle } from "lucide-vue-next"
 
@@ -7,38 +8,44 @@ defineProps<{
 	desc?: string
 }>()
 
-const ctx = ref()
-const imgParallaxRoot = ref()
-const projDetailsRoot = ref()
+const ctx = ref(),
+	imgParallaxRoot = ref(),
+	projDetailsRoot = ref()
 
 onMounted(() => {
+	const mm = gsap.matchMedia()
+
 	ctx.value = gsap.context((self) => {
 		const imgParallax = self.selector!(".gsap-latch")
 
-		gsap.to(imgParallax, {
-			scrollTrigger: {
-				trigger: imgParallax,
-				start: "2% bottom",
-				end: "+=1170 top",
-				scrub: 0.45,
-			},
-			objectPosition: "0% 2%",
+		mm.add(MOBILE_SCREEN, () => {
+			gsap.to(imgParallax, {
+				scrollTrigger: {
+					trigger: imgParallax,
+					start: "2% bottom",
+					end: "+=1170 top",
+					scrub: 0.45,
+				},
+				objectPosition: "0% 2%",
+			})
 		})
 	}, imgParallaxRoot.value)
 
 	ctx.value = gsap.context((self) => {
 		const articleEl = self.selector!("article")
 
-		gsap
-			.timeline({
-				scrollTrigger: {
-					trigger: articleEl,
-					scrub: 0.75,
-					start: "-60% bottom",
-					end: "100% center",
-				},
-			})
-			.from(articleEl, { y: 175 })
+		mm.add(MOBILE_SCREEN, () => {
+			gsap
+				.timeline({
+					scrollTrigger: {
+						trigger: articleEl,
+						scrub: 0.75,
+						start: "-60% bottom",
+						end: "100% center",
+					},
+				})
+				.from(articleEl, { y: 175 })
+		})
 	}, projDetailsRoot.value)
 })
 
@@ -60,7 +67,7 @@ onUnmounted(() => ctx.value.revert())
 				bui-gap-y-lg="4"
 				bui-gap-y-xl="6"
 			>
-				<h3>{{ name }}</h3>
+				<BuiHeading :level="3" tag="h3">{{ name }}</BuiHeading>
 				<p>
 					{{ desc }}
 				</p>

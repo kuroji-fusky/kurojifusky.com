@@ -1,28 +1,40 @@
 <script setup lang="ts">
+import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 
-const sectionRef = ref()
-const ctx = ref()
+const sectionRef = ref(),
+	ctx = ref(),
+	artAuthor = "@MintyChipMocha"
 
 onMounted(() => {
-	ctx.value = gsap.context((self) => {
-		const avatar = self.selector!(".avatar-stagnate")
-		const wrapper = self.selector!("section")
+	const mm = gsap.matchMedia()
 
-		gsap.to(avatar, {
-			scrollTrigger: {
-				trigger: wrapper,
-				start: "13.5% 90%",
-				end: "+=1650",
-				scrub: 0.45,
-			},
-			ease: "linear",
-			y: 190,
+	ctx.value = gsap.context((self) => {
+		const avatar = self.selector!(".avatar-stagnate"),
+			wrapper = self.selector!("section")
+
+		mm.add(MOBILE_SCREEN, () => {
+			gsap.to(avatar, {
+				scrollTrigger: {
+					trigger: wrapper,
+					start: "13.5% 90%",
+					end: "+=1650",
+					scrub: 0.45,
+				},
+				ease: "linear",
+				y: 190,
+			})
 		})
 	}, sectionRef.value)
 })
 
 onUnmounted(() => ctx.value.revert())
+
+const gapAll = {
+	xl: 1.25,
+	lg: 1.25,
+	md: "1rem",
+}
 </script>
 
 <template>
@@ -32,11 +44,13 @@ onUnmounted(() => ctx.value.revert())
 		bui-gap-y-mobile="2.5rem"
 		bui-gap-y-lg="4.5"
 	>
-		<figure
-			ref="wow"
+		<BuiRewrite
+			tag="figure"
 			class="avatar-stagnate flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*0.5)]"
-			bui-gap-mobile="1rem"
-			bui-gap-lg="1.25"
+			:options="{
+				'gap-x': gapAll,
+				'gap-y': gapAll,
+			}"
 		>
 			<BuiResponsive
 				bui-w-md="27"
@@ -46,32 +60,29 @@ onUnmounted(() => ctx.value.revert())
 			>
 				<NuxtImg
 					provider="cloudinary"
-					role="presentation"
 					format="webp"
 					src="/fursonas/comms/MCM_headshot-comm.png"
 					sizes="md:200 lg:350 xl:420"
 					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*18.5)]"
 					quality="95"
+					:alt="`Artwork drawn by ${artAuthor}`"
 					draggable="false"
 					preload
 				/>
 			</BuiResponsive>
-
-			<BuiResponsive tag="figcaption" bui-sub-p>
+			<BuiText tag="figcaption" overrides="sub-p">
 				<span class="opacity-50">{{ "Credits: " }}</span>
 				<BuiLink href="https://www.youtube.com/@MintyChipMocha" external>{{
-					"@MintyChipMocha"
+					artAuthor
 				}}</BuiLink>
-			</BuiResponsive>
-		</figure>
-		<BuiResponsive
-			tag="article"
-			bui-prose-p
-			bui-prose-h2
+			</BuiText>
+		</BuiRewrite>
+		<BuiArticle
+			prose-p
 			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] md:prose-p:w-11/12 lg:prose-p:w-9/12"
 		>
-			<BuiResponsive
-				tag="h2"
+			<BuiHeading
+				:level="2"
 				bui-mb-xl="3.15"
 				bui-mb-lg="3.5"
 				bui-mb-mobile="1.75rem"
@@ -88,7 +99,7 @@ onUnmounted(() => ctx.value.revert())
 					Just a nerd floof dreaming of
 					<span class="big-things-hl">big things</span>
 				</span>
-			</BuiResponsive>
+			</BuiHeading>
 			<p>
 				I'm Kerby Keith Aquino, but I usually go by my alias <b>Kuroji</b> or
 				just <b>Kuro</b>. I'm a 21-year-old independent and self-taught
@@ -102,7 +113,7 @@ onUnmounted(() => ctx.value.revert())
 				wide range of skills entirely self-taught ranging from writing
 				<em>bad</em> code and making overedited videos on YouTube as a hobby!
 			</p>
-		</BuiResponsive>
+		</BuiArticle>
 	</section>
 </template>
 

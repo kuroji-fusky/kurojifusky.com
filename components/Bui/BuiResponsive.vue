@@ -19,10 +19,6 @@ const p = defineProps<{
 	buiMbMobile?: string
 	buiMbLg?: string
 	buiMbXl?: string
-
-	buiGapMobile?: string
-	buiGapLg?: string
-	buiGapXl?: string
 }>()
 
 const classTextProses = [
@@ -34,114 +30,26 @@ const classTextProses = [
 ]
 
 const classTextResponsive = [
-	p.buiSubP ? "bui-r-sub-p" : "",
-	p.buiP ? "bui-r-p" : "",
-	p.buiH1 ? "bui-r-h1" : "",
-	p.buiH2 ? "bui-r-h2" : "",
-	p.buiH3 ? "bui-r-h3" : "",
+	p.buiSubP ? "bui-text-sub-p" : "",
+	p.buiP ? "bui-text-p" : "",
+	p.buiH1 ? "bui-text-h1" : "",
+	p.buiH2 ? "bui-text-h2" : "",
+	p.buiH3 ? "bui-text-h3" : "",
 ]
 
-const buiMargins = [p.buiMbMobile || p.buiMbLg || p.buiMbXl ? "bui-r-mb" : ""]
-const buiGap = [p.buiGapMobile || p.buiGapLg || p.buiGapXl ? "bui-fg-gap" : ""]
+const buiMargins = [p.buiMbMobile || p.buiMbLg || p.buiMbXl ? "bui-text-mb" : ""]
 </script>
 
 <template>
 	<component
 		:is="tag ?? 'div'"
-		:class="[
-			...classTextProses,
-			...classTextResponsive,
-			...buiMargins,
-			...buiGap,
-		]"
-    
+		:class="[...classTextProses, ...classTextResponsive, ...buiMargins]"
 		:style="[
 			buiMbMobile ? `--bui-mb-mobile: ${buiMbMobile}` : '',
 			buiMbLg ? `--bui-mb-lg: ${buiMbLg}` : '',
 			buiMbXl ? `--bui-mb-xl: ${buiMbXl}` : '',
-
-			buiGapMobile ? `--bui-gap-mobile: ${buiGapMobile}` : '',
-			buiGapLg ? `--bui-gap-lg: ${buiGapLg}` : '',
-			buiGapXl ? `--bui-gap-xl: ${buiGapXl}` : '',
 		]"
 	>
 		<slot />
 	</component>
 </template>
-
-<style lang="scss">
-@mixin bui-responsive($identifier, $rule) {
-	.bui-r-#{$identifier} {
-		#{$rule}: var(--bui-#{$identifier}-mobile, 0);
-
-		@media (min-width: 768px) {
-			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-lg, 0));
-		}
-
-		@media (min-width: 1024px) {
-			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-xl, 0));
-		}
-	}
-}
-
-@include bui-responsive("mb", "margin-bottom");
-@include bui-responsive("mt", "margin-top");
-
-@mixin tw-rs-packed($prose: false) {
-	&-sub-p {
-		@if $prose {
-			@apply prose-p:text-[calc(var(--m-sub-p))] 
-      md:prose-p:text-[calc(var(--vw)*var(--d-lg-sub-p))]
-      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-sub-p))];
-		} @else {
-			@apply text-[calc(var(--m-sub-p))] 
-      md:text-[calc(var(--vw)*var(--d-lg-sub-p))]
-      lg:text-[calc(var(--vw)*var(--d-xl-sub-p))];
-		}
-	}
-
-	&-p {
-		@if $prose {
-			@apply prose-p:text-[calc(var(--m-p))] 
-      md:prose-p:text-[calc(var(--vw)*var(--d-lg-p))]
-      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-p))];
-		} @else {
-			@apply text-[calc(var(--m-p))] 
-      md:text-[calc(var(--vw)*var(--d-lg-p))]
-      lg:text-[calc(var(--vw)*var(--d-xl-p))];
-		}
-	}
-
-	&-h2 {
-		@if $prose {
-			@apply prose-h2:text-[calc(var(--m-h2))]
-      md:prose-h2:text-[calc(var(--vw)*var(--d-lg-h2))]
-      lg:prose-h2:text-[calc(var(--vw)*var(--d-xl-h2))];
-		} @else {
-			@apply text-[calc(var(--m-h2))]
-      md:text-[calc(var(--vw)*var(--d-lg-h2))]
-      lg:text-[calc(var(--vw)*var(--d-xl-h2))];
-		}
-	}
-
-	&-h3 {
-		@if $prose {
-			@apply prose-h3:text-[calc(var(--m-h3))]
-      md:prose-h3:text-[calc(var(--vw)*var(--d-lg-h3))]
-      lg:prose-h3:text-[calc(var(--vw)*var(--d-xl-h3))];
-		} @else {
-			@apply text-[calc(var(--m-h3))]
-      md:text-[calc(var(--vw)*var(--d-lg-h3))]
-      lg:text-[calc(var(--vw)*var(--d-xl-h3))];
-		}
-	}
-}
-
-.bui-prose-r {
-	@include tw-rs-packed($prose: true);
-}
-
-.bui-r {
-	@include tw-rs-packed($prose: false);
-}
-</style>
