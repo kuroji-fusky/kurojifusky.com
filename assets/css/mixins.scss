@@ -107,49 +107,60 @@ $_vw: var(--vw);
 @mixin tw-rs-packed($prose: false) {
 	&-sub-p {
 		@if $prose {
-			@apply prose-p:text-[calc(var(--m-sub-p))] 
-      md:prose-p:text-[calc(var(--vw)*var(--d-lg-sub-p))]
-      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-sub-p))];
+			@apply prose-p:text-[calc(var(--mobile-sub-p))] 
+      md:prose-p:text-[calc(var(--vw)*var(--desktop-lg-sub-p))]
+      lg:prose-p:text-[calc(var(--vw)*var(--desktop-xl-sub-p))];
 		} @else {
-			@apply text-[calc(var(--m-sub-p))] 
-      md:text-[calc(var(--vw)*var(--d-lg-sub-p))]
-      lg:text-[calc(var(--vw)*var(--d-xl-sub-p))];
+			@apply text-[calc(var(--mobile-sub-p))] 
+      md:text-[calc(var(--vw)*var(--desktop-lg-sub-p))]
+      lg:text-[calc(var(--vw)*var(--desktop-xl-sub-p))];
 		}
 	}
 
 	&-p {
 		@if $prose {
-			@apply prose-p:text-[calc(var(--m-p))] 
-      md:prose-p:text-[calc(var(--vw)*var(--d-lg-p))]
-      lg:prose-p:text-[calc(var(--vw)*var(--d-xl-p))];
+			@apply prose-p:text-[calc(var(--mobile-p))] 
+      md:prose-p:text-[calc(var(--vw)*var(--desktop-lg-p))]
+      lg:prose-p:text-[calc(var(--vw)*var(--desktop-xl-p))];
 		} @else {
-			@apply text-[calc(var(--m-p))] 
-      md:text-[calc(var(--vw)*var(--d-lg-p))]
-      lg:text-[calc(var(--vw)*var(--d-xl-p))];
+			@apply text-[calc(var(--mobile-p))] 
+      md:text-[calc(var(--vw)*var(--desktop-lg-p))]
+      lg:text-[calc(var(--vw)*var(--desktop-xl-p))];
 		}
 	}
 
+	&-h1 {
+		@if $prose {
+			@apply prose-h1:text-[calc(var(--mobile-h1))]
+      md:prose-h1:text-[calc(var(--vw)*var(--desktop-lg-h1))]
+      lg:prose-h1:text-[calc(var(--vw)*var(--desktop-xl-h1))];
+		} @else {
+			@apply text-[calc(var(--mobile-h1))]
+      md:text-[calc(var(--vw)*var(--desktop-lg-h1))]
+      lg:text-[calc(var(--vw)*var(--desktop-xl-h1))];
+		}
+	}
 	&-h2 {
 		@if $prose {
-			@apply prose-h2:text-[calc(var(--m-h2))]
-      md:prose-h2:text-[calc(var(--vw)*var(--d-lg-h2))]
-      lg:prose-h2:text-[calc(var(--vw)*var(--d-xl-h2))];
+			@apply prose-h2:text-[calc(var(--mobile-h2))]
+      md:prose-h2:text-[calc(var(--vw)*var(--desktop-lg-h2))]
+      lg:prose-h2:text-[calc(var(--vw)*var(--desktop-xl-h2))];
 		} @else {
-			@apply text-[calc(var(--m-h2))]
-      md:text-[calc(var(--vw)*var(--d-lg-h2))]
-      lg:text-[calc(var(--vw)*var(--d-xl-h2))];
+			@apply text-[calc(var(--mobile-h2))]
+      md:text-[calc(var(--vw)*var(--desktop-lg-h2))]
+      lg:text-[calc(var(--vw)*var(--desktop-xl-h2))];
 		}
 	}
 
 	&-h3 {
 		@if $prose {
-			@apply prose-h3:text-[calc(var(--m-h3))]
-      md:prose-h3:text-[calc(var(--vw)*var(--d-lg-h3))]
-      lg:prose-h3:text-[calc(var(--vw)*var(--d-xl-h3))];
+			@apply prose-h3:text-[calc(var(--mobile-h3))]
+      md:prose-h3:text-[calc(var(--vw)*var(--desktop-lg-h3))]
+      lg:prose-h3:text-[calc(var(--vw)*var(--desktop-xl-h3))];
 		} @else {
-			@apply text-[calc(var(--m-h3))]
-      md:text-[calc(var(--vw)*var(--d-lg-h3))]
-      lg:text-[calc(var(--vw)*var(--d-xl-h3))];
+			@apply text-[calc(var(--mobile-h3))]
+      md:text-[calc(var(--vw)*var(--desktop-lg-h3))]
+      lg:text-[calc(var(--vw)*var(--desktop-xl-h3))];
 		}
 	}
 }

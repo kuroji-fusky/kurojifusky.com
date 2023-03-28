@@ -3,30 +3,27 @@ import { featuredProjects } from "../Constants"
 </script>
 
 <template>
-	<BuiResponsive
-		tag="section"
-		class="grid content-center"
-		bui-gap-mobile="1rem"
-		bui-gap-lg="1.25"
-	>
-		<BuiResponsive
+	<BuiRes BuiRes class="grid content-center" :options="{}">
+		<BuiHeading
 			tag="h2"
 			bui-h2
-      bui-py-mobile="1.5rem"
-      bui-py-lg="3.5"
-      bui-py-xl="3"
+			:options="{ py: { xl: 3, lg: 3.5, md: '1.5rem' } }"
 			class="px-12 text-center uppercase font-unbounded"
-			>Showcase</BuiResponsive
+			>Showcase</BuiHeading
 		>
-		<BuiResponsive tag="ul" class="grid px-10 gap-y-10" bui-gap-y-mobile="1.75rem" bui-gap-y-xl="2.5" bui-gap-y-lg="3">
+		<BuiRes
+			tag="ul"
+			class="grid px-10 gap-y-10"
+			:options="{ 'gap-y': { xl: 2.5, lg: 3, md: '1.75rem' } }"
+		>
 			<LandingShowcaseItem
 				v-for="(project, index) in featuredProjects"
 				:key="index"
 				:name="project.name"
 				:desc="project.description"
 			/>
-		</BuiResponsive>
-	</BuiResponsive>
+		</BuiRes>
+	</BuiRes>
 </template>
 
 <style lang="scss" scoped>

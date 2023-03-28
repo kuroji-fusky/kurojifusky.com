@@ -6,7 +6,7 @@ import {
 } from "@iconify-prerendered/vue-fa6-brands"
 
 import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
-import { FeaturedProjects } from "./Interfaces"
+import { ShowcaseItem } from "./Interfaces"
 
 const currentYear = new Date().getFullYear()
 
@@ -48,7 +48,7 @@ export const headingLinks: HeadingLinks[] = [
 	{ heading: "More", contents: [], bypassListRender: true },
 ]
 
-export const featuredProjects: FeaturedProjects[] = [
+export const featuredProjects: ShowcaseItem[] = [
 	{
 		name: "MyFursona",
 		description:

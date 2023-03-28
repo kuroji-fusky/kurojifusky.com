@@ -46,7 +46,7 @@ onMounted(() => {
 <template>
 	<div>
 		<TheBaseNavbar />
-		<main>
+		<main class="min-h-screen">
 			<NuxtPage />
 		</main>
 		<TheBaseFooter />
@@ -95,6 +95,40 @@ html {
 		@include tw-rs-packed($prose: false);
 	}
 }
+
+*,
+::before,
+::after {
+	--desktop-xl-sub-p: 0.9;
+	--desktop-xl-p: 1.2;
+	--desktop-xl-h1: 4;
+	--desktop-xl-h2: 3.25;
+	--desktop-xl-h3: 2.85;
+
+	--desktop-lg-sub-p: 1.5;
+	--desktop-lg-p: 2;
+	--desktop-lg-h1: 3.5;
+	--desktop-lg-h2: 2.95;
+	--desktop-lg-h3: 2.15;
+
+	--mobile-sub-p: 1.85;
+	--mobile-p: 1rem;
+	--mobile-h1: 1.9rem;
+	--mobile-h2: 1.75rem;
+	--mobile-h3: 1.55rem;
+}
+
+.bui-desktop-only {
+	@media (max-width: 767px) {
+		display: none;
+	}
+}
+
+.bui-mobile-only {
+	@include mq-lg {
+		display: none;
+	}
+}
 // Biro UI stuff
 
 body {
@@ -103,25 +137,5 @@ body {
 
 :is(h1, h2, h3, p) {
 	@apply selection:text-white #{!important};
-}
-
-.responsive-text {
-	--m-sub-p: 1.85;
-	--m-p: 1rem;
-	--m-h1: 1.9rem;
-	--m-h2: 1.75rem;
-	--m-h3: 1.55rem;
-
-	--d-lg-sub-p: 1.5;
-	--d-lg-p: 2;
-	--d-lg-h1: 3.5;
-	--d-lg-h2: 4;
-	--d-lg-h3: 2.15;
-
-	--d-xl-sub-p: 0.9;
-	--d-xl-p: 1.2;
-	--d-xl-h1: 3.5;
-	--d-xl-h2: 3;
-	--d-xl-h3: 2.15;
 }
 </style>

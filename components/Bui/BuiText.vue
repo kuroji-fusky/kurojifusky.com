@@ -1,22 +1,16 @@
 <script setup lang="ts">
-const props = defineProps<{
-	tag?: keyof HTMLElementTagNameMap | "sub-p"
-	overrides?: keyof HTMLElementTagNameMap | "sub-p"
-}>()
-
-const classFont = {
-	p: "bui-text-p",
-	"sub-p": "bui-text-sub-p",
+interface _Props {
+	tag?: keyof HTMLElementTagNameMap
+	subP?: boolean
 }
+
+const props = defineProps<_Props>()
 </script>
 
 <template>
 	<component
 		:is="tag ?? 'p'"
-		:class="[
-			// @ts-ignore
-			overrides ? classFont[overrides] : '',
-		]"
+		:class="[!props.subP ? 'bui-text-p' : 'bui-text-sub-p']"
 	>
 		<slot />
 	</component>

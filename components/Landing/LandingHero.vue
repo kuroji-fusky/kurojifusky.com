@@ -9,7 +9,7 @@ onMounted(() => {
 	const mm = gsap.matchMedia()
 
 	ctx.value = gsap.context((self) => {
-		const svgScroll = self.selector!(".branding-scroll")
+		const svgScroll = self.selector!("#wordmark-scroll")
 		const wrap = self.selector!("section")
 
 		mm.add(MOBILE_SCREEN, () => {
@@ -35,11 +35,14 @@ onUnmounted(() => ctx.value.revert())
 		ref="scrollDatShit"
 		class="grid content-center w-screen h-screen mb-32 overflow-x-hidden"
 	>
-		<BuiRewrite
-			:options="{ 'gap-y': { xl: 1.25, lg: 1.25, md: '1rem' } }"
+		<BuiRes
 			class="grid"
+			:options="{ 'gap-y': { xl: 1.25, lg: 1.25, md: '1rem' } }"
 		>
-			<div class="relative flex branding-scroll w-fit gap-x-16 left-32">
+			<div
+				id="wordmark-scroll"
+				class="relative flex pointer-events-none w-fit gap-x-16 left-32 bui-desktop-only"
+			>
 				<Branding
 					class="w-[calc(var(--vw)*64)] select-none"
 					role="img"
@@ -59,6 +62,6 @@ onUnmounted(() => ctx.value.revert())
 				An independent blue fox-husky floof on the internet that makes cool
 				things
 			</BuiText>
-		</BuiRewrite>
+		</BuiRes>
 	</section>
 </template>

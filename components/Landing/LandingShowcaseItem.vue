@@ -58,11 +58,10 @@ onUnmounted(() => ctx.value.revert())
 			ref="projDetailsRoot"
 			class="relative w-[35%] flex-shrink-0 rounded-xl"
 		>
-			<BuiResponsive
-				tag="article"
+			<BuiArticle
 				class="sticky self-start p-12 top-16 prose-h3:font-unbounded prose-h3:font-semibold"
-				bui-prose-h3
-				bui-prose-p
+				prose-h3
+				prose-p
 				bui-gap-y-mobile="2.5rem"
 				bui-gap-y-lg="4"
 				bui-gap-y-xl="6"
@@ -75,7 +74,7 @@ onUnmounted(() => ctx.value.revert())
 					<AlertTriangle />
 					<span>Project is currently work in progress</span>
 				</div>
-			</BuiResponsive>
+			</BuiArticle>
 		</div>
 		<aside
 			class="grid w-full grid-cols-2 grid-rows-6 overflow-hidden rounded-2xl"

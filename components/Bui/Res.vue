@@ -67,13 +67,15 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 			isGap ? "bui-gap" : "",
 			isPadding ? "bui-padding" : "",
 			isMargin ? "bui-margin" : "",
-      isSizes ? "bui-sizes": "",
+			isSizes ? "bui-sizes" : "",
 		]
 	)
 }
 
 const styleParsed = ref<string[]>([])
 const classParsed = ref(Array.from(new Set(classListRaw)))
+
+console.log(Object.keys(props.options as BiroStyleAttributes))
 
 for (const [id, fixedMedia] of Object.entries(
 	props.options as BiroStyleAttributes
@@ -85,7 +87,7 @@ for (const [id, fixedMedia] of Object.entries(
 </script>
 
 <template>
-	<component :is="tag ?? 'div'" :class="classParsed" :style="styleParsed">
+	<component :is="tag ?? 'div'" :class="classParsed ?? ''" :style="styleParsed">
 		<slot />
 	</component>
 </template>

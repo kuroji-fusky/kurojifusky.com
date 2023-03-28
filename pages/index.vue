@@ -15,12 +15,8 @@ usePageMeta({
 	</div>
 	<LandingShowcase />
 	<section class="flex justify-center">
-		<BuiResponsive
-			bui-p
-			class="inline-flex items-center font-bold font-inter gap-x-2"
-			><span>Made with</span> <Heart :size="24" /><span>
-				by Kuro</span
-			></BuiResponsive
+		<BuiText class="inline-flex items-center font-bold font-inter gap-x-2"
+			><span>Made with</span> <Heart :size="24" /><span> by Kuro</span></BuiText
 		>
 	</section>
 </template>

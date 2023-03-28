@@ -6,7 +6,7 @@ const props = defineProps<{
 </script>
 
 <template>
-	<component :is="tag ?? 'h2'" :class="[`bui-text-h${level ?? 2}`]">
+	<component :is="tag ?? `h${level}`" :class="[`bui-text-h${level ?? 2}`]">
 		<slot />
 	</component>
 </template>

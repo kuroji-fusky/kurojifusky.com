@@ -127,7 +127,11 @@ onUnmounted(() => ctx.value.revert())
 				</svg>
 			</button>
 		</div>
-		<div id="nav-slider-wrapper" :aria-hidden="isNavbarOpen">
+		<div
+			id="nav-slider-wrapper"
+			class="bui-desktop-only"
+			:aria-hidden="!isNavbarOpen"
+		>
 			<div
 				id="nav-slider-top"
 				class="-top-[40%] h-[40%] fixed left-0 right-0 bg-kuro-lavender-900 grid"
@@ -137,7 +141,7 @@ onUnmounted(() => ctx.value.revert())
 				class="fixed -bottom-[60%] left-0 right-0 h-[60%] bg-kuro-lavender-900"
 			>
 				<div class="absolute inset-0 flex flex-col w-full pt-8">
-					<BuiRewrite
+					<BuiRes
 						tag="nav"
 						:options="{
 							px: { xl: 4, lg: 6 },
@@ -163,7 +167,7 @@ onUnmounted(() => ctx.value.revert())
 								</li>
 							</ul>
 						</NavbarWrapperItem>
-					</BuiRewrite>
+					</BuiRes>
 				</div>
 			</div>
 		</div>

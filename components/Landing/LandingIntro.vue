@@ -44,7 +44,7 @@ const gapAll = {
 		bui-gap-y-mobile="2.5rem"
 		bui-gap-y-lg="4.5"
 	>
-		<BuiRewrite
+		<BuiRes
 			tag="figure"
 			class="avatar-stagnate flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*0.5)]"
 			:options="{
@@ -52,12 +52,7 @@ const gapAll = {
 				'gap-y': gapAll,
 			}"
 		>
-			<BuiResponsive
-				bui-w-md="27"
-				bui-w-lg="18.5"
-				class="relative"
-				options="lg:w:18 mb:w:27"
-			>
+			<div bui-w-md="27" bui-w-lg="18.5" class="relative">
 				<NuxtImg
 					provider="cloudinary"
 					format="webp"
@@ -69,14 +64,14 @@ const gapAll = {
 					draggable="false"
 					preload
 				/>
-			</BuiResponsive>
+			</div>
 			<BuiText tag="figcaption" overrides="sub-p">
 				<span class="opacity-50">{{ "Credits: " }}</span>
 				<BuiLink href="https://www.youtube.com/@MintyChipMocha" external>{{
 					artAuthor
 				}}</BuiLink>
 			</BuiText>
-		</BuiRewrite>
+		</BuiRes>
 		<BuiArticle
 			prose-p
 			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] md:prose-p:w-11/12 lg:prose-p:w-9/12"
