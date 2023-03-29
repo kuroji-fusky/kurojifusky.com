@@ -33,7 +33,7 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
       // onChange={(inView) => console.log(inView)}
       className="relative before:content-[''] before:absolute before:inset-1 before:opacity-0 before:hover:opacity-75
 			before:transition-opacity before:duration-700
-			before:bg-gradient-to-tr before:from-sona-borahae-800 before:to-sona-skycyan-700 before:blur-2xl before:-z-1"
+			before:bg-gradient-to-tr before:from-kuro-purple-800 before:to-kuro-skycyan-700 before:blur-2xl before:-z-1"
     >
       <meta
         itemProp="image"
@@ -44,9 +44,9 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
       <animated.div
         ref={ref}
         role="listitem"
-        className="group h-full relative bg-gradient-to-br from-sona-borahaealt-900 to-borahae-dark rounded-lg
+        className="group h-full relative bg-gradient-to-br from-kuro-lavender-900 to-kuro-dark rounded-lg
 				before:content-[''] before:rounded-lg before:block before:absolute before:inset-0 before:-z-1 before:bg-gradient-to-tr
-				before:from-sona-borahae-800 before:to-sona-royalblue-800
+				before:from-kuro-purple-800 before:to-kuro-royalblue-800
 				before:opacity-0 before:hover:opacity-100 before:transition-opacity before:duration-500"
         style={{ transform: springProps.xy.to(trans) }}
         onMouseMove={(e) => {
@@ -77,7 +77,7 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
           <h2
             data-text={props.title}
             className="relative before:content-[attr(data-text)] before:absolute before:top-0 before:left-0 before:right-0
-						before:bg-gradient-to-r before:from-sona-borahae-500 before:to-sona-skycyan-600 before:bg-clip-text before:z-5 before:text-transparent
+						before:bg-gradient-to-r before:from-kuro-purple-500 before:to-kuro-skycyan-600 before:bg-clip-text before:z-5 before:text-transparent
 						before:group-hover:opacity-0 before:transition-opacity before:duration-500"
             itemProp="name"
           >
@@ -100,22 +100,22 @@ export default function PortfolioItem(props: PortfolioItemTypes) {
 export function PortfolioItemSkeleton() {
   return (
     <div
-      className="bg-gradient-to-br from-sona-borahaealt-900 to-borahae-dark rounded-lg"
+      className="bg-gradient-to-br from-kuro-lavender-900 to-kuro-dark rounded-lg"
       aria-hidden="true"
     >
       <div
         id="img"
-        className="block bg-sona-borahae-700 animate-pulse w-full h-[15rem] overflow-hidden rounded-tl-lg rounded-tr-lg"
+        className="block bg-kuro-purple-700 animate-pulse w-full h-[15rem] overflow-hidden rounded-tl-lg rounded-tr-lg"
       ></div>
       <div
         id="article"
         className="px-6 py-5 cursor-default flex flex-col gap-y-1.5"
       >
-        <span className="bg-sona-borahae-700 animate-pulse h-4 w-20 rounded-md"></span>
-        <span className="bg-sona-borahae-700 animate-pulse h-8 w-[75%] rounded-md mb-2"></span>
-        <span className="bg-sona-borahae-700 animate-pulse h-5 rounded-md"></span>
-        <span className="bg-sona-borahae-700 animate-pulse h-5 w-[45%] rounded-md"></span>
-        <span className="bg-sona-borahae-700 animate-pulse h-4 w-20 rounded-md mt-3"></span>
+        <span className="bg-kuro-purple-700 animate-pulse h-4 w-20 rounded-md"></span>
+        <span className="bg-kuro-purple-700 animate-pulse h-8 w-[75%] rounded-md mb-2"></span>
+        <span className="bg-kuro-purple-700 animate-pulse h-5 rounded-md"></span>
+        <span className="bg-kuro-purple-700 animate-pulse h-5 w-[45%] rounded-md"></span>
+        <span className="bg-kuro-purple-700 animate-pulse h-4 w-20 rounded-md mt-3"></span>
       </div>
     </div>
   )

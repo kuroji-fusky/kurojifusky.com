@@ -19,7 +19,7 @@ export default function HeroSection() {
               src={cloudinary({
                 rootDir: "fursonas",
                 width: 720,
-                fileName: "comm_for_davey_g2_i3nmhp.png"
+                fileName: "comms/comm_for_davey_g2_i3nmhp.png"
               })}
               alt="Art by catastrophe#6282 on Discord"
               layout="fill"

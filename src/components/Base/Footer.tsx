@@ -12,18 +12,17 @@ export default function Footer() {
         <div className={styles["social-wrapper"]}>
           <div role="list" className={styles["container-list"]}>
             {socials.map((items, index) => (
-              <Link key={index} href={items.link} passHref>
-                <a
-                  role="listitem"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles["icon"]}
-                >
-                  <FontAwesomeIcon icon={items.icon} size="lg" />
-                  <span className={styles["icon-name-mobile"]}>
-                    {items.name}
-                  </span>
-                </a>
+              <Link
+                key={index}
+                href={items.link}
+                passHref
+                role="listitem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles["icon"]}
+              >
+                <FontAwesomeIcon icon={items.icon} size="lg" />
+                <span className={styles["icon-name-mobile"]}>{items.name}</span>
               </Link>
             ))}
           </div>

@@ -27,19 +27,19 @@ export function DropdownListItem(props: DropdownListItemProps) {
   return (
     <div role="listitem">
       {props.description ? (
-        <Link href={props.link} passHref>
-          <a
-            className={styles["link-wrapper"]}
-            onClick={() => isExpanded(true)}
-          >
-            <div className={styles[!currentDir ? "border" : "border-current"]}>
-              <FontAwesomeIcon icon={props.icon} />
-            </div>
-            <div className={styles["link-content"]}>
-              <strong>{props.name}</strong>
-              <span>{props.description}</span>
-            </div>
-          </a>
+        <Link
+          href={props.link}
+          passHref
+          className={styles["link-wrapper"]}
+          onClick={() => isExpanded(true)}
+        >
+          <div className={styles[!currentDir ? "border" : "border-current"]}>
+            <FontAwesomeIcon icon={props.icon} />
+          </div>
+          <div className={styles["link-content"]}>
+            <strong>{props.name}</strong>
+            <span>{props.description}</span>
+          </div>
         </Link>
       ) : (
         <NavLink link={props.link} name={props.name} />

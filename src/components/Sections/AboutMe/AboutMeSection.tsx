@@ -10,7 +10,7 @@ export default function AboutMeSection() {
       <div className={styles["content-wrapper"]}>
         <article className={styles["bio-container"]}>
           <p>
-            I'm a 20-year-old independent self-taught hobbyist individual in the
+            I'm a 21-year-old independent self-taught hobbyist individual in the
             Philippines with a wide range set of skills, working on modern web
             technologies, UI/UX design. As well as video editing, filmmaking,
             and indie music production.
@@ -31,14 +31,17 @@ export default function AboutMeSection() {
           </div>
         </article>
         <aside className={styles["img-group-proximity"]}>
-          <ImgWrapper className={styles["img-main"]} src="Skep3D_bgod2l.png" />
+          <ImgWrapper
+            className={styles["img-main"]}
+            src="comms/Skep3D_bgod2l.png"
+          />
           <ImgWrapper
             className={styles["img-small-1"]}
-            src="blushy_virgin_trans_ebbkdj.png"
+            src="self-sketches/kuroji_2023.png"
           />
           <ImgWrapper
             className={styles["img-small-2"]}
-            src="JAKEmegaSNAKE_l61xfu.png"
+            src="comms/MCM_headshot-comm.png"
           />
         </aside>
       </div>
@@ -58,11 +61,11 @@ function ImgWrapper(props: ImgWrapperProps) {
         <Image
           src={cloudinary({
             rootDir: "fursonas",
-            quality: 90,
+            quality: 80,
             fileName: props.src
           })}
           layout="fill"
-          objectFit="contain"
+          role="presentation"
           alt=""
         />
       </div>

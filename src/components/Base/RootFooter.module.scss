@@ -15,12 +15,12 @@
 }
 
 .icon {
-  @apply hover:text-white md:hover:text-sona-borahae-400
+  @apply hover:text-white md:hover:text-kuro-purple-400
 					rounded-lg
 					flex md:block
 					items-center gap-x-2.5
 					py-2.5 px-5 md:p-0
-					border border-sona-borahae-500 md:border-none;
+					border border-kuro-purple-500 md:border-none;
 }
 
 .icon-name-mobile {
@@ -48,12 +48,12 @@
     @apply opacity-100 h-[24rem] w-full absolute bottom-0 overflow-hidden;
   }
   &-1 {
-    @apply -bottom-[1rem] -left-4 opacity-10 rotate-[4deg] h-[11rem] w-[60%] bg-sona-skycyan-700;
+    @apply -bottom-[1rem] -left-4 opacity-10 rotate-[4deg] h-[11rem] w-[60%] bg-kuro-skycyan-700;
   }
   &-2 {
-    @apply -bottom-[2rem] opacity-10 left-[30%] h-[10rem] w-[40%] bg-sona-borahaealt-800;
+    @apply -bottom-[2rem] opacity-10 left-[30%] h-[10rem] w-[40%] bg-kuro-lavender-800;
   }
   &-3 {
-    @apply -bottom-[1rem] -right-4 opacity-10 -rotate-[4deg] h-[11rem] w-[60%] bg-sona-magenta-800;
+    @apply -bottom-[1rem] -right-4 opacity-10 -rotate-[4deg] h-[11rem] w-[60%] bg-kuro-magenta-800;
   }
 }

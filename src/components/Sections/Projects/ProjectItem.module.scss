@@ -1,5 +1,5 @@
 @mixin itemContainer($a) {
-  @apply bg-borahae-dark rounded-xl gap-5 p-5 #{$a};
+  @apply bg-kuro-dark rounded-xl gap-5 p-5 #{$a};
 }
 
 @mixin imgWrapperContainer($a) {
@@ -11,15 +11,15 @@
   border: solid 2px transparent;
   border-radius: theme("borderRadius.lg");
   background-image: linear-gradient(
-      theme("colors.borahae-dark"),
-      theme("colors.borahae-dark")
+      theme("colors.kuro-dark"),
+      theme("colors.kuro-dark")
     ),
     radial-gradient(circle at $pos, $g1, $g2);
   background-origin: border-box;
   background-clip: content-box, border-box;
 
   &::before {
-    @apply content-[""] absolute inset-0 bg-borahae-dark rounded-lg;
+    @apply content-[""] absolute inset-0 bg-kuro-dark rounded-lg;
   }
 }
 
@@ -32,8 +32,8 @@
     "flex flex-col md:flex-row xl:flex-row lg:p-7 lg:h-[21rem] relative"
   );
   @include gradient-border(
-    theme("colors.sona-yellow.400"),
-    theme("colors.sona-borahaealt.500")
+    theme("colors.kuro-yellow.400"),
+    theme("colors.kuro-lavender.500")
   );
 
   grid-column: 1 / span 2;
@@ -54,12 +54,12 @@
 .item {
   @include itemContainer("flex flex-col md:flex-row lg:flex-col xl:flex-row relative");
   @include gradient-border(
-    theme("colors.sona-borahae.500"),
-    theme("colors.sona-borahaealt.900"),
+    theme("colors.kuro-purple.500"),
+    theme("colors.kuro-lavender.900"),
 		top
   );
 
-	box-shadow: 1.75rem 1.5rem 90px theme("colors.sona-borahaealt.900");
+	box-shadow: 1.75rem 1.5rem 90px theme("colors.kuro-lavender.900");
 
   #img-wrapper {
     @include imgWrapperContainer("lg:h-[15rem]");
@@ -92,7 +92,7 @@
 
 /** FLAT BUTTON **/
 .flat-button {
-  @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-sona-borahae-600 hover:border-cyan-400 transition-colors duration-300;
+  @apply flex items-center gap-x-2 px-3 py-1.5 rounded-md font-jetbrains-mono border border-kuro-purple-600 hover:border-cyan-400 transition-colors duration-300;
 
   > span {
     @apply text-[80%];

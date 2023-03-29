@@ -7,7 +7,7 @@ export default function Character() {
   const d = "I'm not cute"
 
   const fursonaColors = [
-    { name: "Brown lol", bgHex: "6d390d", fgHex: "ffe9d7" },
+    { name: "Brown", bgHex: "6d390d", fgHex: "ffe9d7" },
     { name: "Vibrant Orchid", bgHex: "BB3EED", fgHex: "F9ECFE" },
     { name: "Royal Blue", bgHex: "2076C5", fgHex: "E4F0FB" },
     { name: "Sky Cyan", bgHex: "48DDF7", fgHex: "023741" },
@@ -27,7 +27,7 @@ export default function Character() {
         type="warning"
         content="This page isn't complete and is subject to change. I might be lazy to add or update something in this page lol"
       />
-      <section className="flex flex-col items-center gap-y-5 my-10">
+      <section className="flex flex-col items-center my-10 gap-y-5">
         <div
           className="
 				relative
@@ -76,8 +76,8 @@ export default function Character() {
           ))}
         </div>
       </section>
-      <section className="mx-auto max-w-screen-lg">
-        <article className="flex flex-col gap-y-3 my-3 leading-7 text-base lg:leading-8 lg:text-lg">
+      <section className="max-w-screen-lg mx-auto">
+        <article className="flex flex-col my-3 text-base leading-7 gap-y-3 lg:leading-8 lg:text-lg">
           <p>
             <strong>Kuroji</strong> is a blue and yellow fox-husky hybrid or
             fusky; and was originally a husky. Wearing thick black glasses and a

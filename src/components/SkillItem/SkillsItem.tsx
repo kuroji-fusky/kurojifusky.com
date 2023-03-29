@@ -38,10 +38,10 @@ export default function SkillsItem(props: SkillItemProps) {
       initial="hidden"
       variants={slideEm}
       style={{ willChange }}
-      className="h-full relative rounded-lg flex flex-col gap-2 m-0.5 w-full shadow-2xl shadow-sona-royalblue-900
-			-z-1 bg-gradient-to-tl from-sona-borahae-500 to-sona-skycyan-700"
+      className="h-full relative rounded-lg flex flex-col gap-2 m-0.5 w-full shadow-2xl shadow-kuro-royalblue-900
+			-z-1 bg-gradient-to-tl from-kuro-purple-500 to-kuro-skycyan-700"
     >
-      <div className="bg-borahae-dark p-7 rounded-lg h-full m-[0.1rem]">
+      <div className="bg-kuro-dark p-7 rounded-lg h-full m-[0.1rem]">
         <strong className="text-xl font-inter">{props.title}</strong>
         <ReactMarkdown>{props.description}</ReactMarkdown>
       </div>

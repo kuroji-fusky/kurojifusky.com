@@ -4,7 +4,7 @@ import HeroSection from "@/components/Sections/Hero/HeroSection"
 
 const t = "kurofusky"
 const d =
-  "A 20-year-old self-taught and independent hobbyist from the Philippines"
+  "A 21-year-old self-taught and independent hobbyist from the Philippines"
 
 const AboutMeSection = dynamic(
   () => import("@/components/Sections/AboutMe/AboutMeSection"),

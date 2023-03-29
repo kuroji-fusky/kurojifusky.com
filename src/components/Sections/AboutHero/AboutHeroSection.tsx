@@ -16,7 +16,7 @@ export default function AboutHeroSection() {
     <section className="relative h-screen grid place-items-center">
       <LazyMotion features={domAnimation}>
         <m.div
-          className="absolute blur-[45px] rounded-full -z-1 pointer-events-none -bottom-[12%] left-5 h-[320px] bg-gradient-to-r from-sona-yellow-600 via-sona-skycyan-400 to-sona-borahae-600 -rotate-6"
+          className="absolute blur-[45px] rounded-full -z-1 pointer-events-none -bottom-[12%] left-5 h-[320px] bg-gradient-to-r from-kuro-yellow-600 via-kuro-skycyan-400 to-kuro-purple-600 -rotate-6"
           initial={anims.backdropInitial}
           animate={anims.backdropAnimate}
           transition={{ duration: 1 }}
@@ -24,7 +24,7 @@ export default function AboutHeroSection() {
           aria-hidden="true"
         />
         <m.div
-          className="absolute blur-[45px] rounded-full -z-1 pointer-events-none bottom-0 right-5 h-[300px] bg-gradient-to-r from-sona-royalblue-600  to-sona-borahaealt-400 rotate-6"
+          className="absolute blur-[45px] rounded-full -z-1 pointer-events-none bottom-0 right-5 h-[300px] bg-gradient-to-r from-kuro-royalblue-600  to-kuro-lavender-400 rotate-6"
           initial={anims.backdropInitial}
           animate={anims.backdropAnimate}
           transition={{ duration: 1 }}
@@ -33,7 +33,7 @@ export default function AboutHeroSection() {
         />
         <article className="flex flex-col items-center text-center gap-y-5 relative z-1">
           <m.div
-            className="relative w-[18.5rem] h-[18.5rem] mb-10 rounded-md overflow-hidden shadow-2xl shadow-sona-borahae-600"
+            className="relative w-[18.5rem] h-[18.5rem] mb-10 rounded-md overflow-hidden shadow-2xl shadow-kuro-purple-600"
             initial={anims.heroInitial}
             animate={anims.heroAnimate}
             transition={{ duration: 1, type: "spring", delay: 1 * 0.12 }}

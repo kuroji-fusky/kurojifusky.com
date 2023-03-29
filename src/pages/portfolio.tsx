@@ -17,10 +17,10 @@ export default function Portfolio() {
     <Container title={t} description={d}>
       <Backdrop
         fixed
-        className="top-[12.5rem] left-5 h-[21rem] bg-gradient-to-r from-sona-royalblue-600 via-sona-borahae-400 to-sona-yellow-600 w-[75%] -rotate-6 opacity-40"
+        className="top-[12.5rem] left-5 h-[21rem] bg-gradient-to-r from-kuro-royalblue-600 via-kuro-purple-400 to-kuro-yellow-600 w-[75%] -rotate-6 opacity-40"
       />
       <section className="relative z-2 mt-[7em] mb-10 max-w-screen-2xl text-center items-center mx-auto px-5 flex flex-col gap-y-3">
-        <h1 className="text-5xl xl:text-6xl bg-gradient-to-br from-sona-borahaealt-300 to-white bg-clip-text text-transparent">
+        <h1 className="text-5xl xl:text-6xl bg-gradient-to-br from-kuro-lavender-300 to-white bg-clip-text text-transparent">
           Portfolio
         </h1>
         <article className="text-base xl:text-xl w-full md:w-[50%] px-5 flex flex-col gap-y-2">
@@ -29,10 +29,10 @@ export default function Portfolio() {
         </article>
         {/* <div className="flex flex-wrap justify-center gap-4 font-jetbrains-mono text-sm">
           <span className="rounded-md py-1 px-3 bg-red-700">Film</span>
-          <span className="rounded-md py-1 px-3 bg-sona-royalblue-600">
+          <span className="rounded-md py-1 px-3 bg-kuro-royalblue-600">
             Dev Project
           </span>
-          <span className="rounded-md py-1 px-3 bg-sona-magenta-800">
+          <span className="rounded-md py-1 px-3 bg-kuro-magenta-800">
             Discography
           </span>
           <span className="rounded-md py-1 px-3 bg-emerald-600">

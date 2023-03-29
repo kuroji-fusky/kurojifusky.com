@@ -9,15 +9,15 @@ export function Logo({ white }: { white?: boolean }) {
   const name = "kurofusky"
 
   return (
-    <Link href="/" passHref>
-      <a
-        className={alternateLogos}
-        onClick={() => isExpanded(true)}
-        aria-label={name}
-        aria-hidden={!white ? undefined : "true"}
-      >
-        {name}
-      </a>
+    <Link
+      href="/"
+      passHref
+      className={alternateLogos}
+      onClick={() => isExpanded(true)}
+      aria-label={name}
+      aria-hidden={!white ? undefined : "true"}
+    >
+      {name}
     </Link>
   )
 }

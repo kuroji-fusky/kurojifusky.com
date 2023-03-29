@@ -24,9 +24,7 @@ export default function FAQItem(props: FAQProps) {
   return (
     <div
       id={styles["wrapper"]}
-      className={
-        !toggle ? "border-sona-borahae-600" : "border-sona-skycyan-400"
-      }
+      className={!toggle ? "border-kuro-purple-600" : "border-kuro-skycyan-400"}
     >
       <button
         className={styles["question-toggle"]}
@@ -51,9 +49,12 @@ export default function FAQItem(props: FAQProps) {
           className={styles["md-wrapper"]}
           components={{
             a: ({ node, ...props }) => (
-              <Link href={props.href ?? ""} passHref>
-                <a {...props} className={styles["md-links"]}></a>
-              </Link>
+              <Link
+                href={props.href ?? ""}
+                passHref
+                {...props}
+                className={styles["md-links"]}
+              ></Link>
             )
           }}
         >

@@ -28,7 +28,7 @@
   &::before {
     @apply content-[""] h-[60%] -z-3
 		absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]
-		bg-gradient-to-br from-sona-borahaealt-700 to-sona-skycyan-400
+		bg-gradient-to-br from-kuro-lavender-700 to-kuro-skycyan-400
 		blur-[100px];
     width: 175%;
     opacity: 0.5;
@@ -41,8 +41,8 @@
 
 .img-main {
   @apply 
-	h-[375px] w-[375px]
-	md:h-[425px] md:w-[425px] relative z-2;
+	h-[375px] w-[355px]
+	md:h-[425px] md:w-[405px] relative z-2;
 }
 
 .img-small {
@@ -52,7 +52,7 @@
   }
 
   &-1 {
-    @apply -top-3 -right-[2rem] bg-gradient-to-br from-sona-skycyan-700 to-sona-borahaealt-700;
+    @apply -top-3 -right-[2rem] bg-gradient-to-br from-kuro-skycyan-700 to-kuro-lavender-700;
   }
 
   &-2 {

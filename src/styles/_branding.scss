@@ -2,7 +2,7 @@
 
 .branding {
   @apply py-5 px-2 font-ubuntu-mono font-bold text-2xl select-none;
-  @apply bg-gradient-to-r bg-clip-text text-transparent from-sona-borahae-500 to-sona-skycyan-600;
+  @apply bg-gradient-to-r bg-clip-text text-transparent from-kuro-purple-500 to-kuro-skycyan-600;
 
   &::before {
     content: "<";

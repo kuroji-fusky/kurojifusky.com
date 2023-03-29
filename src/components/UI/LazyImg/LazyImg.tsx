@@ -23,12 +23,12 @@ export function LazyImg(props: ImgLoadingProps) {
   return (
     <>
       <div
-        className={`absolute inset-0 bg-sona-borahaealt-600 ${isLoaded} ${classNameDetect}`}
+        className={`absolute inset-0 bg-kuro-lavender-600 ${isLoaded} ${classNameDetect}`}
         aria-hidden
       ></div>
       <Image
         src={props.src}
-        alt={props.alt ?? undefined}
+        alt={props.alt ?? ''}
         className={props.className ?? undefined}
         layout="fill"
         objectFit={props.objectFit ?? undefined}

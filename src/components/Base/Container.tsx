@@ -14,7 +14,7 @@ export function Container(props: ContainerProps) {
   const router = useRouter()
   const { setPageName } = useContext(NavbarContext) as setPageNameOnly
 
-  const url = `https://kurofusky.xyz${router.asPath}`
+  const url = `https://kurojifusky.com${router.asPath}`
   const basePath = router.pathname === "/"
   const title = basePath ? props.title : `${props.title} | kurofusky`
 

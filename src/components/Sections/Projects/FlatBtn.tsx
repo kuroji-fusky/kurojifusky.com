@@ -11,26 +11,26 @@ interface FlatBtnProps {
 
 export function FlatBtn(props: FlatBtnProps) {
   return (
-    <Link href={props.link ?? "#"} passHref>
-      <a
-        role="button"
-        className={styles["flat-button"]}
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        {props.type == "source" && (
-          <>
-            <FontAwesomeIcon icon={faGithub} />
-            <span>Source code</span>
-          </>
-        )}
-        {props.type == "deployment" && (
-          <>
-            <span>View project</span>
-            <FontAwesomeIcon icon={faExternalLinkAlt} />
-          </>
-        )}
-      </a>
+    <Link
+      href={props.link ?? "#"}
+      passHref
+      role="button"
+      className={styles["flat-button"]}
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      {props.type == "source" && (
+        <>
+          <FontAwesomeIcon icon={faGithub} />
+          <span>Source code</span>
+        </>
+      )}
+      {props.type == "deployment" && (
+        <>
+          <span>View project</span>
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
+        </>
+      )}
     </Link>
   )
 }

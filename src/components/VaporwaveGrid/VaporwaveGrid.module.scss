@@ -1,7 +1,7 @@
 @use "@/styles/mixins" as *;
 
 @mixin blanket($a) {
-  @apply absolute left-0 right-0 z-3 w-screen h-[10rem] #{$a} from-borahae-dark;
+  @apply absolute left-0 right-0 z-3 w-screen h-[10rem] #{$a} from-kuro-dark;
 }
 
 #wrapper {
@@ -28,7 +28,7 @@
 }
 
 .horizontal-line {
-  @apply border-2 border-transparent border-r-sona-borahaealt-500;
+  @apply border-2 border-transparent border-r-kuro-lavender-500;
 }
 
 .vertical-line-wrapper {
@@ -47,5 +47,5 @@
 }
 
 .vertical-line {
-  @apply border-2 border-transparent border-b-sona-borahaealt-500;
+  @apply border-2 border-transparent border-b-kuro-lavender-500;
 }
