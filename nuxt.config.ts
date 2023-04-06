@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	modules: [
-    "nuxt-security",
+		"nuxt-security",
 		"@nuxt/image-edge",
 		"@nuxt/content",
 		[

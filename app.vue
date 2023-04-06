@@ -61,8 +61,8 @@ $screens: (768, 1024, 1280, 1366, 1536, 1640, 1920);
 html {
 	@include fallback-viewport(640, $mq: false);
 
-	@each $_ds in $screens {
-		@include fallback-viewport($_ds);
+	@each $screen-size in $screens {
+		@include fallback-viewport($screen-size);
 	}
 }
 

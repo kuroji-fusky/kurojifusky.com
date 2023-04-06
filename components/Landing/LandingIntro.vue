@@ -3,10 +3,11 @@ import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 
 const sectionRef = ref(),
+	changeArtworkHoverRef = ref(),
+	avatarRef = ref(),
 	ctx = ref(),
 	artAuthor = "@MintyChipMocha",
-	changeArtworkHoverRef = ref(),
-	calcRectBounds = ref<{ x: number; y: number }>({
+	calcRectBounds = ref({
 		x: 0,
 		y: 0,
 	})
@@ -24,7 +25,7 @@ onMounted(() => {
 				scrollTrigger: {
 					trigger: wrapper,
 					start: "20% 96%",
-					end: "+=1999",
+					end: "+=2000",
 					scrub: 0.45,
 				},
 				ease: "linear",
@@ -33,35 +34,53 @@ onMounted(() => {
 		})
 	}, sectionRef.value)
 
+	gsap.set("#aw-tooltip", { x: 0, y: 0 })
 	// Avatar hover stuff
-	const picElement: HTMLDivElement = sectionRef.value.children[0].children[0]
+	const figureElement: HTMLDivElement = sectionRef.value
 
+	// Get bounding rect from root section
 	const getDemRektsBaby = () => {
-		const rect = picElement.getBoundingClientRect()
-		calcRectBounds.value!.x = rect.left
-		calcRectBounds.value!.y = rect.top
+		const rect = figureElement.getBoundingClientRect()
+		calcRectBounds.value.x = rect.left
+		calcRectBounds.value.y = rect.top
 	}
 
 	getDemRektsBaby()
 
-	const rektEventListeners = ["resize", "scroll"]
+	const rectEventListeners = ["resize", "scroll"]
 
-	rektEventListeners.map((ev) => {
+	rectEventListeners.map((ev) => {
 		window.addEventListener(ev, getDemRektsBaby)
 	})
 
-	picElement.onmousemove = (e) => {
-		const calcPosition = {
-			x: e.x - calcRectBounds.value.x - 144,
-			y: e.y - calcRectBounds.value.y - 25,
+	const avatarElement: HTMLImageElement = avatarRef.value.$el,
+		hoverTooltip: HTMLDivElement = changeArtworkHoverRef.value
+
+	const hoverRect = hoverTooltip.getBoundingClientRect(),
+		hoverRectWidth = hoverRect.width,
+		hoverRectHeight = hoverRect.height
+
+	const coordEasings = { duration: 0.5, ease: "power3" },
+		scaleEasings = { duration: 0.25, ease: "power1" }
+
+	let xSet = gsap.quickTo(hoverTooltip, "x", coordEasings),
+		ySet = gsap.quickTo(hoverTooltip, "y", coordEasings),
+		scaleXSet = gsap.quickTo(hoverTooltip, "scaleX", scaleEasings),
+		scaleYSet = gsap.quickTo(hoverTooltip, "scaleY", scaleEasings)
+
+	figureElement.onmousemove = (e) => {
+		const isAvatarHovered = e.target === avatarElement
+
+		const pp = {
+			x: e.x - calcRectBounds.value.x - hoverRectWidth / 2,
+			y: e.y - calcRectBounds.value.y - hoverRectHeight / 2,
+			scale: isAvatarHovered ? 1 : 0,
 		}
 
-		const hoverTooltip: HTMLDivElement = changeArtworkHoverRef.value
-
-		hoverTooltip.style.setProperty("--x", `${calcPosition.x}px`)
-		hoverTooltip.style.setProperty("--y", `${calcPosition.y}px`)
-
-		console.log(calcPosition)
+		xSet(pp.x)
+		ySet(pp.y)
+		scaleXSet(pp.scale)
+		scaleYSet(pp.scale)
 	}
 })
 
@@ -77,10 +96,18 @@ const gapAll = {
 <template>
 	<section
 		ref="sectionRef"
-		class="grid px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*8.5)] mb-32"
+		class="grid relative px-8 sm:px-12 gap-y-10 md:gap-y-[calc(var(--vw)*8.5)] mb-32"
 		bui-gap-y-mobile="2.5rem"
 		bui-gap-y-lg="4.5"
 	>
+		<div
+			id="aw-tooltip"
+			class="absolute top-0 left-0 z-10 px-5 py-3 uppercase border-4 rounded-md pointer-events-none select-none bg-kuro-dark border-kuro-lavender-800 w-max"
+			aria-hidden="true"
+			ref="changeArtworkHoverRef"
+		>
+			Randomize artwork
+		</div>
 		<BuiRes
 			tag="figure"
 			class="avatar-stagnate flex flex-col items-center gap-4 md:gap-[calc(var(--vw)*0.5)]"
@@ -89,17 +116,10 @@ const gapAll = {
 				'gap-y': gapAll,
 			}"
 		>
-			<div bui-w-md="27" bui-w-lg="18.5" class="relative group">
-				<div
-					id="hover-artwork-tooltip"
-					class="absolute px-5 py-3 transition-transform scale-0 rounded-md pointer-events-none select-none group-hover:scale-100 bg-kuro-lavender-800 w-max"
-					aria-hidden="true"
-					ref="changeArtworkHoverRef"
-				>
-					CLICC TO CHANGE ARTWORK
-				</div>
+			<div bui-w-md="27" bui-w-lg="18.5" class="group">
 				<NuxtImg
 					provider="cloudinary"
+					ref="avatarRef"
 					format="webp"
 					src="/fursonas/comms/MCM_headshot-comm.png"
 					sizes="md:300 lg:350 xl:600"
@@ -189,11 +209,6 @@ const gapAll = {
 		filter: blur(25px);
 		z-index: -1;
 	}
-}
-
-#hover-artwork-tooltip {
-	top: calc(var(--y, 0));
-	left: calc(var(--x, 0));
 }
 
 @keyframes gradient-scroll {
