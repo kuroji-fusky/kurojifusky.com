@@ -4,9 +4,15 @@ import { gsap } from "gsap"
 
 const sectionRef = ref(),
 	ctx = ref(),
-	artAuthor = "@MintyChipMocha"
+	artAuthor = "@MintyChipMocha",
+	changeArtworkHoverRef = ref(),
+	calcRectBounds = ref<{ x: number; y: number }>({
+		x: 0,
+		y: 0,
+	})
 
 onMounted(() => {
+	// GSAP stuff
 	const mm = gsap.matchMedia()
 
 	ctx.value = gsap.context((self) => {
@@ -17,15 +23,46 @@ onMounted(() => {
 			gsap.to(avatar, {
 				scrollTrigger: {
 					trigger: wrapper,
-					start: "13.5% 90%",
-					end: "+=1650",
+					start: "20% 96%",
+					end: "+=1999",
 					scrub: 0.45,
 				},
 				ease: "linear",
-				y: 190,
+				y: 210,
 			})
 		})
 	}, sectionRef.value)
+
+	// Avatar hover stuff
+	const picElement: HTMLDivElement = sectionRef.value.children[0].children[0]
+
+	const getDemRektsBaby = () => {
+		const rect = picElement.getBoundingClientRect()
+		calcRectBounds.value!.x = rect.left
+		calcRectBounds.value!.y = rect.top
+	}
+
+	getDemRektsBaby()
+
+	const rektEventListeners = ["resize", "scroll"]
+
+	rektEventListeners.map((ev) => {
+		window.addEventListener(ev, getDemRektsBaby)
+	})
+
+	picElement.onmousemove = (e) => {
+		const calcPosition = {
+			x: e.x - calcRectBounds.value.x - 144,
+			y: e.y - calcRectBounds.value.y - 25,
+		}
+
+		const hoverTooltip: HTMLDivElement = changeArtworkHoverRef.value
+
+		hoverTooltip.style.setProperty("--x", `${calcPosition.x}px`)
+		hoverTooltip.style.setProperty("--y", `${calcPosition.y}px`)
+
+		console.log(calcPosition)
+	}
 })
 
 onUnmounted(() => ctx.value.revert())
@@ -52,21 +89,28 @@ const gapAll = {
 				'gap-y': gapAll,
 			}"
 		>
-			<div bui-w-md="27" bui-w-lg="18.5" class="relative">
+			<div bui-w-md="27" bui-w-lg="18.5" class="relative group">
+				<div
+					id="hover-artwork-tooltip"
+					class="absolute px-5 py-3 transition-transform scale-0 rounded-md pointer-events-none select-none group-hover:scale-100 bg-kuro-lavender-800 w-max"
+					aria-hidden="true"
+					ref="changeArtworkHoverRef"
+				>
+					CLICC TO CHANGE ARTWORK
+				</div>
 				<NuxtImg
 					provider="cloudinary"
 					format="webp"
 					src="/fursonas/comms/MCM_headshot-comm.png"
-					sizes="md:200 lg:350 xl:420"
-					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*18.5)]"
-					quality="95"
+					sizes="md:300 lg:350 xl:600"
+					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*25)]"
+					quality="80"
 					:alt="`Artwork drawn by ${artAuthor}`"
 					draggable="false"
 					preload
 				/>
 			</div>
 			<BuiText tag="figcaption" overrides="sub-p">
-				<span class="opacity-50">{{ "Credits: " }}</span>
 				<BuiLink href="https://www.youtube.com/@MintyChipMocha" external>{{
 					artAuthor
 				}}</BuiLink>
@@ -132,7 +176,7 @@ const gapAll = {
 	color: hsla(0, 0%, 100%, 0.1);
 	background-clip: text;
 	background-size: 700% 700%;
-	animation: sds $dur infinite linear;
+	animation: gradient-scroll $dur infinite linear;
 
 	&::after {
 		content: "";
@@ -140,14 +184,19 @@ const gapAll = {
 		inset: 0;
 		background: $cool-gradient;
 		background-size: 700% 700%;
-		animation: sds $dur infinite linear;
+		animation: gradient-scroll $dur infinite linear;
 		opacity: 0.2;
 		filter: blur(25px);
 		z-index: -1;
 	}
 }
 
-@keyframes sds {
+#hover-artwork-tooltip {
+	top: calc(var(--y, 0));
+	left: calc(var(--x, 0));
+}
+
+@keyframes gradient-scroll {
 	from {
 		background-position: top left;
 	}
