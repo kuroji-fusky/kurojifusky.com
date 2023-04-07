@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 
 const artAuthor = "@MintyChipMocha",
@@ -14,13 +13,11 @@ const artAuthor = "@MintyChipMocha",
 
 onMounted(() => {
 	// GSAP stuff
-	const mm = gsap.matchMedia()
-
 	ctx.value = gsap.context((self) => {
 		const avatar = self.selector!(".avatar-stagnate"),
 			wrapper = self.selector!("section")
 
-		mm.add(MOBILE_SCREEN, () => {
+		useGsapMobileLimit(() => {
 			gsap.to(avatar, {
 				scrollTrigger: {
 					trigger: wrapper,
@@ -48,6 +45,7 @@ onMounted(() => {
 
 	getDemRektsBaby()
 
+	// TODO optimize this using IntersectionObserver
 	const rectEventListeners = ["resize", "scroll", "load"]
 	rectEventListeners.map((ev) => window.addEventListener(ev, getDemRektsBaby))
 
@@ -58,7 +56,7 @@ onMounted(() => {
 		hoverRectWidth = hoverRect.width,
 		hoverRectHeight = hoverRect.height
 
-	const coordEasings = { duration: 0.5, ease: "power2" },
+	const coordEasings = { duration: 0.33, ease: "power2" },
 		scaleEasings = { duration: 0.15, ease: "ease" }
 
 	let xSet = gsap.quickTo(hoverTooltip, "x", coordEasings),
@@ -108,7 +106,7 @@ const gapAll = {
 			aria-hidden="true"
 			ref="changeArtworkHoverRef"
 		>
-			Randomize artwork
+			Click for random artwork
 		</div>
 		<BuiRes
 			tag="figure"
@@ -125,7 +123,7 @@ const gapAll = {
 					format="webp"
 					src="/fursonas/comms/MCM_headshot-comm.png"
 					sizes="md:300 lg:350 xl:600"
-					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*25)]"
+					class="aspect-square rounded-md md:w-[calc(var(--vw)*27)] lg:w-[calc(var(--vw)*25)] hover:cursor-pointer"
 					quality="80"
 					:alt="`Artwork drawn by ${artAuthor}`"
 					draggable="false"

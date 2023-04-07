@@ -27,11 +27,10 @@ export const headingLinks: HeadingLinks[] = [
 		heading: "Projects",
 		contents: [
 			{ text: "MyFursona", link: "/projects/myfursona" },
+			{ text: "Searchpets!", link: "/projects/searchpets" },
 			{ text: "Biro UI", link: "/projects/biro-ui" },
 			{ text: "Panda Paco Drawing Stats", link: "/projects/pds" },
 			{ text: "Majira VS Code Theme", link: "/projects/majira-vscode" },
-			{ text: "Searchpets!", link: "/projects/searchpets" },
-			{ text: "Yet Another JSON Generator", link: "/projects/yajg" },
 			{ text: "The Foxington Vault", link: "/projects/foxington-vault" },
 		],
 		bypassListRender: false,
@@ -48,7 +47,7 @@ export const headingLinks: HeadingLinks[] = [
 	{ heading: "More", contents: [], bypassListRender: true },
 ]
 
-export const featuredProjects: ShowcaseItem[] = [
+export const featuredProjects: Partial<ShowcaseItem>[] = [
 	{
 		name: "MyFursona",
 		description:

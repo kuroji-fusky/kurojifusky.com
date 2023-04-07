@@ -16,7 +16,7 @@ onMounted(() => {
 		duration: 1.125,
 		orientation: "vertical",
 		smoothWheel: true,
-		wheelMultiplier: 1,
+		wheelMultiplier: 1.33,
 		smoothTouch: false,
 		infinite: false,
 	})

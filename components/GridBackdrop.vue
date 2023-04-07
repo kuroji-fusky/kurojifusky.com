@@ -1,18 +1,15 @@
 <script setup lang="ts">
 import { gsap } from "gsap"
-import { MOBILE_SCREEN } from "./Constants"
 
 const ctx = ref(),
 	gridRef = ref<HTMLDivElement>()
 
 onMounted(() => {
-	const mm = gsap.matchMedia()
-
 	ctx.value = gsap.context((self) => {
 		const wrapper = self.selector!("#grid-wrapper")
 		const grid = self.selector!("#vaporwave-grid")
 
-		mm.add(MOBILE_SCREEN, () => {
+		useGsapMobileLimit(() => {
 			gsap
 				.timeline({
 					scrollTrigger: {
@@ -24,10 +21,10 @@ onMounted(() => {
 				})
 				.fromTo(
 					wrapper,
-					{ translateX: "-51.75vw", translateY: "15.5rem" },
-					{ translateX: "-51.75vw", translateY: "20rem" }
+					{ translateX: "-51.75vw", translateY: "18rem" },
+					{ translateX: "-51.75vw", translateY: "26rem" }
 				)
-				.fromTo(grid, { rotateX: "68deg" }, { rotateX: "80deg" }, "<")
+				.fromTo(grid, { rotateX: "68deg" }, { rotateX: "92deg" }, "<")
 		})
 	}, gridRef.value)
 })
@@ -36,12 +33,8 @@ onUnmounted(() => ctx.value.revert())
 </script>
 
 <template>
-	<div ref="gridRef">
-		<div
-			aria-hidden="true"
-			id="grid-wrapper"
-			class="fixed top-0 w-[200vw] pointer-events-none"
-		>
+	<div ref="gridRef" aria-hidden="true">
+		<div id="grid-wrapper" class="fixed top-0 w-[200vw] pointer-events-none">
 			<div id="vaporwave-grid" class="w-[200vw] opacity-50">
 				<div class="absolute w-[200vw] grid h-screen gap-12">
 					<span
@@ -63,10 +56,10 @@ onUnmounted(() => ctx.value.revert())
 <style lang="scss">
 #grid-wrapper {
 	perspective: 1200px;
-	transform: translate3d(-51.75vw, 15.5rem, 0);
+	transform: translate3d(-51.75vw, 18rem, 0);
 }
 
 #vaporwave-grid {
-	transform: rotate3d(1, 0, 0, 60deg);
+	transform: rotate3d(1, 0, 0, 68deg);
 }
 </style>

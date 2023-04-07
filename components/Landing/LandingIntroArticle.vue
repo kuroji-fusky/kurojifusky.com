@@ -9,7 +9,6 @@
 			bui-mb-lg="3.5"
 			bui-mb-mobile="1.75rem"
 			aria-label="Just a nerd floof dreaming of big things"
-			class="mix-blend-difference"
 		>
 			<div class="hidden scale-125 md:block" aria-hidden="true">
 				Just a nerd floof

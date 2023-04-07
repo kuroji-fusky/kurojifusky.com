@@ -60,7 +60,7 @@ onUnmounted(() => ctx.value.revert())
 				class="max-w-[37ch] relative flex flex-col left-32 font-inter subheading"
 			>
 				An independent blue fox-husky floof on the interwebs that makes cool
-				things
+				things, like this stupid website
 			</BuiText>
 		</BuiRes>
 	</section>

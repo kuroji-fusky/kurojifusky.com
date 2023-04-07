@@ -9,7 +9,6 @@ const ctx = ref(),
 	navTl = ref(),
 	headerWrap = ref<HTMLElement>()
 
-const { isScrolled } = useNavbarScroll()
 const navStore = useNavbarOpenStore()
 
 const { isNavbarOpen } = storeToRefs(navStore)
@@ -163,7 +162,9 @@ onUnmounted(() => ctx.value.revert())
 									:key="index"
 									class="bui-text-p"
 								>
-									{{ listItem.text }}
+									<BuiLink :href="listItem.link" @click="toggleNavs">
+										{{ listItem.text }}
+									</BuiLink>
 								</li>
 							</ul>
 						</NavbarWrapperItem>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 import { AlertTriangle } from "lucide-vue-next"
 
@@ -18,7 +17,7 @@ onMounted(() => {
 	ctx.value = gsap.context((self) => {
 		const imgParallax = self.selector!(".gsap-latch")
 
-		mm.add(MOBILE_SCREEN, () => {
+		useGsapMobileLimit(() => {
 			gsap.to(imgParallax, {
 				scrollTrigger: {
 					trigger: imgParallax,
@@ -34,7 +33,7 @@ onMounted(() => {
 	ctx.value = gsap.context((self) => {
 		const articleEl = self.selector!("article")
 
-		mm.add(MOBILE_SCREEN, () => {
+		useGsapMobileLimit(() => {
 			gsap
 				.timeline({
 					scrollTrigger: {
