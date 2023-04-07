@@ -13,9 +13,22 @@ export default defineNuxtConfig({
 		],
 	],
 	css: ["~/assets/css/main.scss"],
+
+	// .env stuff
+	runtimeConfig: {
+		public: {
+			CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
+			CONTENTFUL_PREVIEW_TOKEN: process.env.CONTENTFUL_PREVIEW_TOKEN,
+			CONTENTFUL_DELIVERY_TOKEN: process.env.CONTENTFUL_DELIVERY_TOKEN,
+		},
+	},
+
+  // Transpile libraries for SSR
 	build: {
 		transpile: ["gsap"],
 	},
+
+  // Hardcoded metadata
 	app: {
 		head: {
 			htmlAttrs: {
@@ -31,9 +44,29 @@ export default defineNuxtConfig({
 	webpack: {
 		optimizeCSS: true,
 	},
+
 	typescript: {
 		strict: true,
 	},
+
+	// Tailwind stuff
+	postcss: {
+		plugins: {
+			tailwindcss: {},
+			autoprefixer: {},
+			...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
+		},
+	},
+
+	// @nuxt/image
+	image: {
+		cloudinary: {
+			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
+		},
+		domains: ["res.cloudinary.com"],
+	},
+
+	// nuxt/security
 	security: {
 		headers: {
 			hidePoweredBy: false,
@@ -48,19 +81,5 @@ export default defineNuxtConfig({
 			},
 			crossOriginEmbedderPolicy: "unsafe-none",
 		},
-	},
-	postcss: {
-		plugins: {
-			tailwindcss: {},
-			autoprefixer: {},
-			...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
-		},
-	},
-	// @nuxt/image
-	image: {
-		cloudinary: {
-			baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
-		},
-		domains: ["res.cloudinary.com"],
 	},
 })
