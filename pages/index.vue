@@ -9,10 +9,9 @@ usePageMeta({
 </script>
 
 <template>
-	<div>
-		<LandingHero />
-		<LandingIntro />
-	</div>
+	<GridBackdrop />
+	<LandingHero />
+	<LandingIntro />
 	<LandingShowcase />
 	<section class="flex justify-center">
 		<BuiText class="inline-flex items-center font-bold font-inter gap-x-2"

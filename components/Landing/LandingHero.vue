@@ -33,10 +33,10 @@ onUnmounted(() => ctx.value.revert())
 <template>
 	<section
 		ref="scrollDatShit"
-		class="grid content-center w-screen h-screen mb-32 overflow-x-hidden"
+		class="grid content-center w-screen h-[115vh] mb-32 overflow-x-hidden"
 	>
 		<BuiRes
-			class="grid"
+			class="grid -translate-y-3.5"
 			:options="{ 'gap-y': { xl: 1.25, lg: 1.25, md: '1rem' } }"
 		>
 			<div
@@ -59,7 +59,7 @@ onUnmounted(() => ctx.value.revert())
 			<BuiText
 				class="max-w-[37ch] relative flex flex-col left-32 font-inter subheading"
 			>
-				An independent blue fox-husky floof on the internet that makes cool
+				An independent blue fox-husky floof on the interwebs that makes cool
 				things
 			</BuiText>
 		</BuiRes>

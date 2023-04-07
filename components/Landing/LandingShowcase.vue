@@ -3,7 +3,11 @@ import { featuredProjects } from "../Constants"
 </script>
 
 <template>
-	<BuiRes BuiRes class="grid content-center" :options="{}">
+	<BuiRes
+		tag="section"
+		class="relative z-10 grid content-center border-t-2 border-kuro-lavender-300 bg-kuro-dark"
+		:options="{}"
+	>
 		<BuiHeading
 			tag="h2"
 			bui-h2

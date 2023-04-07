@@ -2,11 +2,11 @@
 import { MOBILE_SCREEN } from "../Constants"
 import { gsap } from "gsap"
 
-const sectionRef = ref(),
+const artAuthor = "@MintyChipMocha",
+	sectionRef = ref(),
 	changeArtworkHoverRef = ref(),
 	avatarRef = ref(),
 	ctx = ref(),
-	artAuthor = "@MintyChipMocha",
 	calcRectBounds = ref({
 		x: 0,
 		y: 0,
@@ -35,6 +35,7 @@ onMounted(() => {
 	}, sectionRef.value)
 
 	gsap.set("#aw-tooltip", { x: 0, y: 0 })
+
 	// Avatar hover stuff
 	const figureElement: HTMLDivElement = sectionRef.value
 
@@ -47,11 +48,8 @@ onMounted(() => {
 
 	getDemRektsBaby()
 
-	const rectEventListeners = ["resize", "scroll"]
-
-	rectEventListeners.map((ev) => {
-		window.addEventListener(ev, getDemRektsBaby)
-	})
+	const rectEventListeners = ["resize", "scroll", "load"]
+	rectEventListeners.map((ev) => window.addEventListener(ev, getDemRektsBaby))
 
 	const avatarElement: HTMLImageElement = avatarRef.value.$el,
 		hoverTooltip: HTMLDivElement = changeArtworkHoverRef.value
@@ -60,27 +58,31 @@ onMounted(() => {
 		hoverRectWidth = hoverRect.width,
 		hoverRectHeight = hoverRect.height
 
-	const coordEasings = { duration: 0.5, ease: "power3" },
-		scaleEasings = { duration: 0.25, ease: "power1" }
+	const coordEasings = { duration: 0.5, ease: "power2" },
+		scaleEasings = { duration: 0.15, ease: "ease" }
 
 	let xSet = gsap.quickTo(hoverTooltip, "x", coordEasings),
 		ySet = gsap.quickTo(hoverTooltip, "y", coordEasings),
 		scaleXSet = gsap.quickTo(hoverTooltip, "scaleX", scaleEasings),
 		scaleYSet = gsap.quickTo(hoverTooltip, "scaleY", scaleEasings)
 
-	figureElement.onmousemove = (e) => {
-		const isAvatarHovered = e.target === avatarElement
+	// Set initial value so it will reappear when hovered
+	scaleXSet(0)
+	scaleYSet(0)
 
-		const pp = {
-			x: e.x - calcRectBounds.value.x - hoverRectWidth / 2,
-			y: e.y - calcRectBounds.value.y - hoverRectHeight / 2,
-			scale: isAvatarHovered ? 1 : 0,
+	figureElement.onmousemove = (e) => {
+		const isAvatarHovered = e!.target === avatarElement
+
+		const tooltip = {
+			x: e!.x - calcRectBounds.value.x - hoverRectWidth / 2,
+			y: e!.y - calcRectBounds.value.y - hoverRectHeight / 2,
+			scale: !isAvatarHovered ? 0 : 1,
 		}
 
-		xSet(pp.x)
-		ySet(pp.y)
-		scaleXSet(pp.scale)
-		scaleYSet(pp.scale)
+		xSet(tooltip.x)
+		ySet(tooltip.y)
+		scaleXSet(tooltip.scale)
+		scaleYSet(tooltip.scale)
 	}
 })
 
@@ -102,7 +104,7 @@ const gapAll = {
 	>
 		<div
 			id="aw-tooltip"
-			class="absolute top-0 left-0 z-10 px-5 py-3 uppercase border-4 rounded-md pointer-events-none select-none bg-kuro-dark border-kuro-lavender-800 w-max"
+			class="absolute top-0 left-0 z-10 px-5 py-3 uppercase border-2 rounded-md pointer-events-none select-none bg-kuro-dark border-kuro-lavender-300 w-max"
 			aria-hidden="true"
 			ref="changeArtworkHoverRef"
 		>
@@ -136,43 +138,7 @@ const gapAll = {
 				}}</BuiLink>
 			</BuiText>
 		</BuiRes>
-		<BuiArticle
-			prose-p
-			class="grid text-center place-items-center prose-h2:uppercase prose-h2:font-unbounded prose-p:mb-4 md:prose-p:mb-[calc(var(--vw)*1.25)] md:prose-p:w-11/12 lg:prose-p:w-9/12"
-		>
-			<BuiHeading
-				:level="2"
-				bui-mb-xl="3.15"
-				bui-mb-lg="3.5"
-				bui-mb-mobile="1.75rem"
-				aria-label="Just a nerd floof dreaming of big things"
-				class="mix-blend-difference"
-			>
-				<div class="hidden scale-125 md:block" aria-hidden="true">
-					Just a nerd floof
-				</div>
-				<div class="hidden scale-125 md:block" aria-hidden="true">
-					dreaming of <span class="big-things-hl">big things</span>
-				</div>
-				<span class="block md:hidden">
-					Just a nerd floof dreaming of
-					<span class="big-things-hl">big things</span>
-				</span>
-			</BuiHeading>
-			<p>
-				I'm Kerby Keith Aquino, but I usually go by my alias <b>Kuroji</b> or
-				just <b>Kuro</b>. I'm a 21-year-old independent and self-taught
-				individual from the Philippines—I usually work and handle everything on
-				my own just for the fun of it; but sometimes, I work on external
-				projects for other people!
-			</p>
-			<p>
-				Despite currently not having a job, or work experience, or by no means
-				expert on the stuff I do whatsoever, I have an aptitude and passion for
-				wide range of skills entirely self-taught ranging from writing
-				<em>bad</em> code and making overedited videos on YouTube as a hobby!
-			</p>
-		</BuiArticle>
+		<LandingIntroArticle />
 	</section>
 </template>
 
