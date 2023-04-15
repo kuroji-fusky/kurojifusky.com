@@ -12,6 +12,7 @@ usePageMeta({
 	<GridBackdrop />
 	<LandingHero />
 	<LandingIntro />
+  <LandingSkills />
 	<LandingShowcase />
 	<section class="flex justify-center">
 		<BuiText class="inline-flex items-center font-bold font-inter gap-x-2"

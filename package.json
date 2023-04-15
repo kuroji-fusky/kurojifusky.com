@@ -15,7 +15,6 @@
     "@types/prismjs": "^1.26.0",
     "@vueuse/core": "^9.11.0",
     "autoprefixer": "^10.4.13",
-    "contentful": "^9.3.5",
     "cssnano": "^5.1.15",
     "nuxt": "^3.2.0",
     "nuxt-security": "^0.13.0",
