@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<{ heading?: string }>(), {
+withDefaults(defineProps<{ heading?: string }>(), {
 	heading: "Text",
 })
 </script>

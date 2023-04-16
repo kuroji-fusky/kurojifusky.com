@@ -75,7 +75,10 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 const styleParsed = ref<string[]>([])
 const classParsed = ref(Array.from(new Set(classListRaw)))
 
-console.log(Object.keys(props.options as BiroStyleAttributes))
+// @ts-ignore
+// if (process.env.NODE_ENV == "development") {
+// 	console.log(Object.keys(props.options as BiroStyleAttributes))
+// }
 
 for (const [id, fixedMedia] of Object.entries(
 	props.options as BiroStyleAttributes

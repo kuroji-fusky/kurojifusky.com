@@ -14,21 +14,12 @@ export default defineNuxtConfig({
 	],
 	css: ["~/assets/css/main.scss"],
 
-	// .env stuff
-	runtimeConfig: {
-		public: {
-			CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
-			CONTENTFUL_PREVIEW_TOKEN: process.env.CONTENTFUL_PREVIEW_TOKEN,
-			CONTENTFUL_DELIVERY_TOKEN: process.env.CONTENTFUL_DELIVERY_TOKEN,
-		},
-	},
-
-  // Transpile libraries for SSR
+	// Transpile libraries for SSR
 	build: {
 		transpile: ["gsap"],
 	},
 
-  // Hardcoded metadata
+	// Hardcoded metadata
 	app: {
 		head: {
 			htmlAttrs: {
@@ -56,6 +47,11 @@ export default defineNuxtConfig({
 			autoprefixer: {},
 			...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
 		},
+	},
+
+	// @nuxt/content
+	content: {
+		documentDriven: true,
 	},
 
 	// @nuxt/image
