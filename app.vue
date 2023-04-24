@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { storeToRefs } from "pinia"
 import { useNavbarOpenStore } from "./stores"
 
@@ -13,7 +12,7 @@ onMounted(() => {
 		duration: 1.125,
 		orientation: "vertical",
 		smoothWheel: true,
-		wheelMultiplier: 1.5,
+		wheelMultiplier: 1.6,
 		smoothTouch: false,
 		infinite: false,
 	})
@@ -31,8 +30,22 @@ onMounted(() => {
 		requestAnimationFrame(raf)
 	}
 	requestAnimationFrame(raf)
+})
 
-	lenis.on("scroll", ScrollTrigger.update)
+const config = useRuntimeConfig().public
+
+console.log(config)
+
+useHead({
+	script: [
+		!config.dev
+			? {
+					src: "https://analytics.umami.is/script.js",
+					async: true,
+					"data-website-id": config.umami,
+			  }
+			: {},
+	],
 })
 </script>
 
@@ -56,16 +69,13 @@ html {
 }
 
 // Biro UI stuff
-@include responsive-text("mb", "margin-bottom");
-@include responsive-text("mt", "margin-top");
-
 .bui {
 	&-padding {
 		@include shorthands("padding", "p");
 	}
 
 	&-margin {
-		@include shorthands("margin", "p");
+		@include shorthands("margin", "m");
 	}
 
 	&-sizes {
@@ -76,11 +86,11 @@ html {
 		@include gap-shorthands;
 	}
 
-	&-prose-text {
+	&-prose {
 		@include tw-rs-packed($prose: true);
 	}
 
-	&-text {
+	& {
 		@include tw-rs-packed($prose: false);
 	}
 }

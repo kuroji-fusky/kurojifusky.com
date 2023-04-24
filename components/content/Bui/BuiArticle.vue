@@ -12,10 +12,10 @@ const props = defineProps<{
 	<component
 		:is="tag ?? 'article'"
 		:class="[
-			props.proseH1 ? 'bui-prose-text-h1' : '',
-			props.proseH2 ? 'bui-prose-text-h2' : '',
-			props.proseH3 ? 'bui-prose-text-h3' : '',
-			props.proseP ? 'bui-prose-text-p' : '',
+			props.proseH1 ? 'bui-prose-h1' : '',
+			props.proseH2 ? 'bui-prose-h2' : '',
+			props.proseH3 ? 'bui-prose-h3' : '',
+			props.proseP ? 'bui-prose-p' : '',
 		]"
     data-biro-ui-component="article"
 	>

@@ -25,11 +25,8 @@ export default defineNuxtConfig({
 			htmlAttrs: {
 				lang: "en",
 			},
-			meta: [
-				{ name: "robots", content: "noindex,nofollow" },
-				{ property: "og:site_name", content: "Kuroji Fusky" },
-			],
-			link: [{ rel: "icon", href: "/favicon.png" }],
+			meta: [{ property: "og:site_name", content: "Kuroji Fusky" }],
+			link: [{ rel: "shortcut icon", href: "/favicon.png" }],
 		},
 	},
 	webpack: {
@@ -38,6 +35,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			dev: process.env.NODE_ENV !== "production",
+			umami: process.env.UMAMI_ID
 		},
 	},
 	typescript: {
@@ -69,7 +67,7 @@ export default defineNuxtConfig({
 	// nuxt/security
 	security: {
 		headers: {
-      // @ts-ignore
+			// @ts-ignore
 			hidePoweredBy: false,
 			xXSSProtection: "1",
 			contentSecurityPolicy: {

@@ -24,20 +24,6 @@ $_vw: var(--vw);
 	}
 }
 
-@mixin responsive-text($identifier, $rule) {
-	.bui-text-#{$identifier} {
-		#{$rule}: var(--bui-#{$identifier}-mobile, 0);
-
-		@include mq-lg {
-			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-lg, 0));
-		}
-
-		@include mq-xl {
-			#{$rule}: calc(var(--vw) * var(--bui-#{$identifier}-xl, 0));
-		}
-	}
-}
-
 // calc viewport width from something
 @mixin calc-vw-responsive($property, $variable, $fallback) {
 	@if ($fallback) {
@@ -56,37 +42,44 @@ $_vw: var(--vw);
 	$fb-x-xl: var(--bui-#{$letter}x-xl, 0);
 	$fb-y-xl: var(--bui-#{$letter}y-xl, 0);
 
-	#{$property}: var(--bui-#{$letter}t-md, $fb-y-md)
-		var(--bui-#{$letter}r-md, $fb-x-md) var(--bui-#{$letter}b-md, $fb-y-md)
-		var(--bui-#{$letter}l-md, $fb-x-md);
+	--#{$letter}t: var(--bui-#{$letter}t-md, #{$fb-y-md});
+	--#{$letter}r: var(--bui-#{$letter}r-md, #{$fb-x-md});
+	--#{$letter}b: var(--bui-#{$letter}b-md, #{$fb-y-md});
+	--#{$letter}l: var(--bui-#{$letter}l-md, #{$fb-x-md});
+
+	#{$property}: var(--#{$letter}t) var(--#{$letter}r) var(--#{$letter}b)
+		var(--#{$letter}l);
 
 	@include mq-lg {
-		#{$property}: calc(#{$_vw} * var(--bui-#{$letter}t-lg, #{$fb-y-lg}))
-			calc(#{$_vw} * var(--bui-#{$letter}r-lg, #{$fb-x-lg}))
-			calc(#{$_vw} * var(--bui-#{$letter}b-lg, #{$fb-y-lg}))
-			calc(#{$_vw} * var(--bui-#{$letter}l-lg, #{$fb-x-lg}));
+		--#{$letter}t: calc(#{$_vw} * var(--bui-#{$letter}t-lg, #{$fb-y-lg}));
+		--#{$letter}r: calc(#{$_vw} * var(--bui-#{$letter}r-lg, #{$fb-x-lg}));
+		--#{$letter}b: calc(#{$_vw} * var(--bui-#{$letter}b-lg, #{$fb-y-lg}));
+		--#{$letter}l: calc(#{$_vw} * var(--bui-#{$letter}l-lg, #{$fb-x-lg}));
 	}
 
 	@include mq-xl {
-		#{$property}: calc(#{$_vw} * var(--bui-#{$letter}t-xl, #{$fb-y-xl}))
-			calc(#{$_vw} * var(--bui-#{$letter}r-xl, #{$fb-x-xl}))
-			calc(#{$_vw} * var(--bui-#{$letter}b-xl, #{$fb-y-xl}))
-			calc(#{$_vw} * var(--bui-#{$letter}l-xl, #{$fb-x-xl}));
+		--#{$letter}t: calc(#{$_vw} * var(--bui-#{$letter}t-xl, #{$fb-y-xl}));
+		--#{$letter}r: calc(#{$_vw} * var(--bui-#{$letter}r-xl, #{$fb-x-xl}));
+		--#{$letter}b: calc(#{$_vw} * var(--bui-#{$letter}b-xl, #{$fb-y-xl}));
+		--#{$letter}l: calc(#{$_vw} * var(--bui-#{$letter}l-xl, #{$fb-x-xl}));
 	}
 }
 @mixin gap-shorthands {
-	gap: var(--bui-gap-y-md, 0) var(--bui-gap-x-md, 0);
+	--row: var(--bui-gap-y-md, var(--bui-gap-md, 0));
+	--column: var(--bui-gap-x-md, var(--bui-gap-md, 0));
+	gap: var(--row) var(--column);
 
 	@include mq-lg {
-		gap: calc(#{$_vw} * var(--bui-gap-y-lg, 0))
-			calc(#{$_vw} * var(--bui-gap-x-lg, 0));
+		--row: calc(#{$_vw} * var(--bui-gap-y-lg, var(--bui-gap-lg, 0)));
+		--column: calc(#{$_vw} * var(--bui-gap-x-lg, var(--bui-gap-lg, 0)));
 	}
 
 	@include mq-xl {
-		gap: calc(#{$_vw} * var(--bui-gap-y-xl, 0))
-			calc(#{$_vw} * var(--bui-gap-x-xl, 0));
+		--row: calc(#{$_vw} * var(--bui-gap-y-xl, var(--bui-gap-xl, 0)));
+		--column: calc(#{$_vw} * var(--bui-gap-x-xl, var(--bui-gap-xl, 0)));
 	}
 }
+
 @mixin size-shorthands {
 	$fallback-variable: var(--bui-fixed-size);
 
@@ -104,63 +97,29 @@ $_vw: var(--vw);
 	}
 }
 
+@mixin prose-packer($is-prose, $prose-type) {
+	@if $is-prose {
+		@if $prose-type == sub-p {
+			@apply prose-p:text-[calc(var(--mobile-#{$prose-type}))] 
+        md:prose-p:text-[calc(var(--vw)*var(--desktop-lg-#{$prose-type}))]
+        lg:prose-p:text-[calc(var(--vw)*var(--desktop-xl-#{$prose-type}))];
+		} @else {
+			@apply prose-#{$prose-type}:text-[calc(var(--mobile-#{$prose-type}))] 
+        md:prose-#{$prose-type}:text-[calc(var(--vw)*var(--desktop-lg-#{$prose-type}))]
+        lg:prose-#{$prose-type}:text-[calc(var(--vw)*var(--desktop-xl-#{$prose-type}))];
+		}
+	} @else {
+		@apply text-[calc(var(--mobile-#{$prose-type}))] 
+        md:text-[calc(var(--vw)*var(--desktop-lg-#{$prose-type}))]
+        lg:text-[calc(var(--vw)*var(--desktop-xl-#{$prose-type}))];
+	}
+}
+
 @mixin tw-rs-packed($prose: false) {
-	&-sub-p {
-		@if $prose {
-			@apply prose-p:text-[calc(var(--mobile-sub-p))] 
-        md:prose-p:text-[calc(var(--vw)*var(--desktop-lg-sub-p))]
-        lg:prose-p:text-[calc(var(--vw)*var(--desktop-xl-sub-p))];
-		} @else {
-			@apply text-[calc(var(--mobile-sub-p))] 
-        md:text-[calc(var(--vw)*var(--desktop-lg-sub-p))]
-        lg:text-[calc(var(--vw)*var(--desktop-xl-sub-p))];
-		}
-	}
-
-	&-p {
-		@if $prose {
-			@apply prose-p:text-[calc(var(--mobile-p))] 
-        md:prose-p:text-[calc(var(--vw)*var(--desktop-lg-p))]
-        lg:prose-p:text-[calc(var(--vw)*var(--desktop-xl-p))];
-		} @else {
-			@apply text-[calc(var(--mobile-p))] 
-        md:text-[calc(var(--vw)*var(--desktop-lg-p))]
-        lg:text-[calc(var(--vw)*var(--desktop-xl-p))];
-		}
-	}
-
-	&-h1 {
-		@if $prose {
-			@apply prose-h1:text-[calc(var(--mobile-h1))]
-        md:prose-h1:text-[calc(var(--vw)*var(--desktop-lg-h1))]
-        lg:prose-h1:text-[calc(var(--vw)*var(--desktop-xl-h1))];
-		} @else {
-			@apply text-[calc(var(--mobile-h1))]
-        md:text-[calc(var(--vw)*var(--desktop-lg-h1))]
-        lg:text-[calc(var(--vw)*var(--desktop-xl-h1))];
-		}
-	}
-	&-h2 {
-		@if $prose {
-			@apply prose-h2:text-[calc(var(--mobile-h2))]
-        md:prose-h2:text-[calc(var(--vw)*var(--desktop-lg-h2))]
-        lg:prose-h2:text-[calc(var(--vw)*var(--desktop-xl-h2))];
-		} @else {
-			@apply text-[calc(var(--mobile-h2))]
-        md:text-[calc(var(--vw)*var(--desktop-lg-h2))]
-        lg:text-[calc(var(--vw)*var(--desktop-xl-h2))];
-		}
-	}
-
-	&-h3 {
-		@if $prose {
-			@apply prose-h3:text-[calc(var(--mobile-h3))]
-        md:prose-h3:text-[calc(var(--vw)*var(--desktop-lg-h3))]
-        lg:prose-h3:text-[calc(var(--vw)*var(--desktop-xl-h3))];
-		} @else {
-			@apply text-[calc(var(--mobile-h3))]
-        md:text-[calc(var(--vw)*var(--desktop-lg-h3))]
-        lg:text-[calc(var(--vw)*var(--desktop-xl-h3))];
+	$article-tags: (h1, h2, h3, p, sub-p);
+	@each $tag in $article-tags {
+		&-#{$tag} {
+			@include prose-packer($prose, #{$tag});
 		}
 	}
 }

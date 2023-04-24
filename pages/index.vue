@@ -7,10 +7,17 @@ usePageMeta({
 </script>
 
 <template>
-	<div class="my-[5.5rem] text-center px-[8rem] grid gap-10">
+	<BuiLayout
+		class="grid text-center"
+		:options="{
+			my: { xl: 5, lg: 3.5, md: '1rem' },
+			px: { xl: 10, lg: 5, md: '1.5rem' },
+			'gap-y': { xl: 2, lg: 3, md: '2rem' },
+		}"
+	>
 		<BuiArticle prose-h2 prose-p tag="div">
 			<ContentDoc tag="article" class="prose-p:mb-4 prose-h2:mb-10" />
 		</BuiArticle>
 		<footer><BuiText sub-p>&copy; 2013-2023 Kuroji Fusky</BuiText></footer>
-	</div>
+	</BuiLayout>
 </template>

@@ -9,10 +9,6 @@ export function usePageMeta({ title, description }: PageMetaProps) {
 	const router = useRoute()
 	const fullUrl = `https://kurojifusky.com${router.fullPath}`
 
-	useHead({
-		link: [{ rel: "canonical", href: fullUrl }],
-	})
-
 	const SITE_NAME = "Kuroji Fusky"
 	const parseTitle = router.fullPath !== "/" ? title : `${title} | ${SITE_NAME}`
 
@@ -31,4 +27,8 @@ export function usePageMeta({ title, description }: PageMetaProps) {
 	}
 
 	useSeoMeta(metaTags)
+
+	useHead({
+		link: [{ rel: "canonical", href: fullUrl }],
+	})
 }

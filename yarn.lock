@@ -416,16 +416,6 @@
   resolved "https://registry.yarnpkg.com/@iconify-prerendered/vue-fa6-brands/-/vue-fa6-brands-0.21.1675839446.tgz#1400b3698e5512605b201be6147992c9de48248d"
   integrity sha512-OYd2zc2ET/bej9ZowDrPcidGu4fRIVea54QcL4Bb7vYufIkDq4A7EguIeJSgQUvk75TLtB59REyh/0NrD21NFw==
 
-"@iconify-prerendered/vue-fa6-regular@^0.21.1675839465":
-  version "0.21.1675839465"
-  resolved "https://registry.yarnpkg.com/@iconify-prerendered/vue-fa6-regular/-/vue-fa6-regular-0.21.1675839465.tgz#3a5c0802621d14150def5f53022b70f7415607ba"
-  integrity sha512-+ADQY0hngmlRSEjDNYbNb8rYT2y+56W1E5KDwQMXL1BLPlILakdxh30CwvtcBoQE+1uQB19t4Zytjg1UmuOyIw==
-
-"@iconify-prerendered/vue-fa6-solid@^0.21.1675839484":
-  version "0.21.1675839484"
-  resolved "https://registry.yarnpkg.com/@iconify-prerendered/vue-fa6-solid/-/vue-fa6-solid-0.21.1675839484.tgz#d32ac6fa2d9d48a0d7111ec9d70e5d4fe0eb1b54"
-  integrity sha512-SbN/wuW7UuiM8IgVAu2Xc4t/wcj/WDPLO/+po6GTVifOIPVGqZn2qAiLoOL08dqSK9om56D4F7pK5QB7wD4TsA==
-
 "@ioredis/commands@^1.1.1":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ioredis/commands/-/commands-1.2.0.tgz#6d61b3097470af1fdbbe622795b8921d42018e11"
@@ -889,6 +879,11 @@
   version "0.7.31"
   resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
+
+"@types/node@^18.16.0":
+  version "18.16.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.0.tgz#4668bc392bb6938637b47e98b1f2ed5426f33316"
+  integrity sha512-BsAaKhB+7X+H4GnSjGhJG9Qi8Tw+inU9nJDwmD5CgOmBLEI6ArdhikpLX7DjbjDRDTbqZzU2LSQNZg8WGPiSZQ==
 
 "@types/parse5@^6.0.0":
   version "6.0.3"

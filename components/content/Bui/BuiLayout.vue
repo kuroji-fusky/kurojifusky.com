@@ -45,6 +45,7 @@ let classListRaw: string[] = []
 for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 	const isGap =
 		keyProperty === "gap-x" || keyProperty === "gap-y" || keyProperty === "gap"
+
 	const isSizes =
 		keyProperty === "w" || keyProperty === "h" || keyProperty === "sizes"
 
@@ -77,8 +78,6 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 const styleParsed = ref<string[]>([])
 const classParsed = ref(Array.from(new Set(classListRaw)))
 
-
-// @ts-ignore
 if (config.public.dev) {
 	console.log(Object.keys(props.options as BiroStyleAttributes))
 }
@@ -93,9 +92,12 @@ for (const [id, fixedMedia] of Object.entries(
 </script>
 
 <template>
-	<component :is="tag ?? 'div'" :class="classParsed ?? ''" :style="styleParsed">
+	<component
+		:is="tag ?? 'div'"
+		:class="classParsed ?? ''"
+		:style="styleParsed"
+		data-biro-ui-component="layout"
+	>
 		<slot />
 	</component>
 </template>
-
-<style lang="scss"></style>
