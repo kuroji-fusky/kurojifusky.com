@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 			},
 			meta: [
 				{ name: "robots", content: "noindex,nofollow" },
-				{ property: "og:site_name", content: "Kuroji's Dump" },
+				{ property: "og:site_name", content: "Kuroji Fusky" },
 			],
 			link: [{ rel: "icon", href: "/favicon.png" }],
 		},
@@ -35,7 +35,11 @@ export default defineNuxtConfig({
 	webpack: {
 		optimizeCSS: true,
 	},
-
+	runtimeConfig: {
+		public: {
+			dev: process.env.NODE_ENV !== "production",
+		},
+	},
 	typescript: {
 		strict: true,
 	},
@@ -65,6 +69,7 @@ export default defineNuxtConfig({
 	// nuxt/security
 	security: {
 		headers: {
+      // @ts-ignore
 			hidePoweredBy: false,
 			xXSSProtection: "1",
 			contentSecurityPolicy: {

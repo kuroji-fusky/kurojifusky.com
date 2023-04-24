@@ -14,7 +14,7 @@ export function usePageMeta({ title, description }: PageMetaProps) {
 	})
 
 	const SITE_NAME = "Kuroji Fusky"
-	const parseTitle = router.fullPath === "/" ? title : `${title} - ${SITE_NAME}`
+	const parseTitle = router.fullPath !== "/" ? title : `${title} | ${SITE_NAME}`
 
 	const metaTags: UseSeoMetaInput = {
 		title: parseTitle,

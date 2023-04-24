@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis"
-import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { storeToRefs } from "pinia"
 import { useNavbarOpenStore } from "./stores"
-
-gsap.registerPlugin(ScrollTrigger)
 
 useHTMLViewport()
 
@@ -36,23 +33,13 @@ onMounted(() => {
 	requestAnimationFrame(raf)
 
 	lenis.on("scroll", ScrollTrigger.update)
-
-	gsap.ticker.add((t) => {
-		lenis.raf(t * 1000)
-	})
 })
 </script>
 
 <template>
-	<!-- <Preloader /> -->
-	<!-- <div id="page-transition"></div> -->
-	<div>
-		<TheBaseNavbar />
-		<main class="min-h-screen">
-			<NuxtPage />
-		</main>
-		<TheBaseFooter />
-	</div>
+	<main>
+		<NuxtPage />
+	</main>
 </template>
 
 <style lang="scss">

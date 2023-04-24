@@ -11,6 +11,7 @@ const props = defineProps<_Props>()
 	<component
 		:is="tag ?? 'p'"
 		:class="[!props.subP ? 'bui-text-p' : 'bui-text-sub-p']"
+    data-biro-ui-component="text-container"
 	>
 		<slot />
 	</component>

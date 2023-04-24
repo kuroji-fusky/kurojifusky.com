@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+
 interface FixedMedia {
 	xl: number
 	lg: number
@@ -75,10 +77,11 @@ for (const keyProperty of Object.keys(props.options as BiroStyleAttributes)) {
 const styleParsed = ref<string[]>([])
 const classParsed = ref(Array.from(new Set(classListRaw)))
 
+
 // @ts-ignore
-// if (process.env.NODE_ENV == "development") {
-// 	console.log(Object.keys(props.options as BiroStyleAttributes))
-// }
+if (config.public.dev) {
+	console.log(Object.keys(props.options as BiroStyleAttributes))
+}
 
 for (const [id, fixedMedia] of Object.entries(
 	props.options as BiroStyleAttributes

@@ -19,7 +19,8 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				"kuro-dark": "#110D17",
+				"kuro-dark1": "#110D17",
+				"kuro-dark2": "#07070b",
 				"kuro-royalblue": {
 					50: "#E4F0FB",
 					100: "#CEE4F8",
@@ -129,7 +130,7 @@ module.exports = {
 				},
 				body: {
 					fontFamily: theme("fontFamily.inter"),
-					backgroundColor: theme("colors.kuro-dark"),
+					backgroundColor: theme("colors.kuro-dark2"),
 					color: theme("colors.gray.50"),
 					minHeight: "100%",
 					height: "auto",

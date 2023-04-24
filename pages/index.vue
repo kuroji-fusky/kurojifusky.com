@@ -1,31 +1,16 @@
 <script setup lang="ts">
 usePageMeta({
-	title: "Kuroji Fusky: Building abominations since 2013",
+	title: "Kuroji Fusky - UNDER CONSTRUCTION",
 	description:
-		"Kuroji is a blue fox-husky guy on the internet that makes cool things lol",
+		"Kuroji is a curious blue fox-husky guy on the internet that makes cool things",
 })
-
-// definePageMeta({
-// 	pageTransition: {
-// 		name: "shutter",
-// 		mode: "out-in",
-// 	},
-// 	onBeforeEnter: (el: string) => {
-// 		console.log("before enter...", el)
-// 	},
-// 	onEnter: (el: string, done: string) => {
-// 		console.log("entered", el, done)
-// 	},
-// 	onAfterEnter: (el: string) => {
-// 		console.log("after enter fired", el)
-// 	},
-// })
 </script>
 
 <template>
-	<GridBackdrop />
-	<LandingHero />
-	<LandingIntro />
-	<LandingSkills />
-	<LandingShowcase />
+	<div class="my-[5.5rem] text-center px-[8rem] grid gap-10">
+		<BuiArticle prose-h2 prose-p tag="div">
+			<ContentDoc tag="article" class="prose-p:mb-4 prose-h2:mb-10" />
+		</BuiArticle>
+		<footer><BuiText sub-p>&copy; 2013-2023 Kuroji Fusky</BuiText></footer>
+	</div>
 </template>
