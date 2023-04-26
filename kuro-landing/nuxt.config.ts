@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			dev: process.env.NODE_ENV !== "production",
-			umami: process.env.UMAMI_ID
+			umami: process.env.UMAMI_ID,
 		},
 	},
 	typescript: {

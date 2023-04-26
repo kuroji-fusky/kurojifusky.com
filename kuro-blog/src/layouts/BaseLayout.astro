@@ -1,0 +1,37 @@
+---
+import "@fontsource/inter/400.css"
+import "@fontsource/inter/700.css"
+import "@fontsource/inter/900.css"
+import "@fontsource/jetbrains-mono/400.css"
+import "@fontsource/jetbrains-mono/700.css"
+import "@fontsource/unbounded/600.css"
+import "@fontsource/unbounded/800.css"
+import "@fontsource/open-sans/index.css"
+
+import Navbar from "../components/BaseNavbar.vue"
+import Footer from "../components/BaseFooter.vue"
+
+const { title } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<title>Kuro's shitty blog lol</title>
+		<script data-website-id="6969696969">
+			console.log("lmao")
+		</script>
+	</head>
+
+	<body class="font-open-sans">
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

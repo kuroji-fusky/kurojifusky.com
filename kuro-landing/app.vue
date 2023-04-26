@@ -34,8 +34,6 @@ onMounted(() => {
 
 const config = useRuntimeConfig().public
 
-console.log(config)
-
 useHead({
 	script: [
 		!config.dev

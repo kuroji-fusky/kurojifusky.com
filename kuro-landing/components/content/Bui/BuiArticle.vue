@@ -17,7 +17,7 @@ const props = defineProps<{
 			props.proseH3 ? 'bui-prose-h3' : '',
 			props.proseP ? 'bui-prose-p' : '',
 		]"
-    data-biro-ui-component="article"
+		data-biro-ui-component="article"
 	>
 		<slot />
 	</component>

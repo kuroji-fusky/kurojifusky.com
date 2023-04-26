@@ -62,11 +62,11 @@ export interface SizeResponsive {
 }
 
 interface TextProses {
-  proseH1?: boolean
-  proseH2?: boolean
-  proseH3?: boolean
-  proseP?: boolean
-  proseSubP?: boolean
+	proseH1?: boolean
+	proseH2?: boolean
+	proseH3?: boolean
+	proseP?: boolean
+	proseSubP?: boolean
 }
 
 // prettier-ignore

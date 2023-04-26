@@ -3,16 +3,9 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 const basePlugin = require("tailwindcss/plugin")
 
 module.exports = {
-	content: [
-		"./components/**/*.{js,vue,ts}",
-		"./layouts/**/*.vue",
-		"./pages/**/*.vue",
-		"./plugins/**/*.{js,ts}",
-		"./nuxt.config.{js,ts}",
-		"./app.vue",
-	],
 	theme: {
 		fontFamily: {
+			"open-sans": ["Open Sans"],
 			inter: ["Inter"],
 			unbounded: ["Unbounded"],
 			"jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
@@ -122,14 +115,13 @@ module.exports = {
 	},
 	plugins: [
 		require("@tailwindcss/typography"),
-		basePlugin(({ addBase, addComponents, theme }) => {
+		basePlugin(({ addBase, theme }) => {
 			addBase({
 				html: {
 					overflowX: "hidden",
 					scrollBehavior: "initial",
 				},
 				body: {
-					fontFamily: theme("fontFamily.inter"),
 					backgroundColor: theme("colors.kuro-dark2"),
 					color: theme("colors.gray.50"),
 					minHeight: "100%",
