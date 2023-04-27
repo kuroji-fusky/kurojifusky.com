@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
 	plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
 	modules: [
-		"nuxt-security",
 		"@nuxt/image-edge",
 		"@nuxt/content",
 		[
@@ -63,22 +62,7 @@ export default defineNuxtConfig({
 		},
 		domains: ["res.cloudinary.com"],
 	},
-
-	// nuxt/security
-	security: {
-		headers: {
-			// @ts-ignore
-			hidePoweredBy: false,
-			xXSSProtection: "1",
-			contentSecurityPolicy: {
-				"img-src": [
-					"'self'",
-					"data:",
-					"https://res.cloudinary.com",
-					"https://images.unsplash.com",
-				],
-			},
-			crossOriginEmbedderPolicy: "unsafe-none",
-		},
+	routeRules: {
+		"/*": { redirect: "/" },
 	},
 })
