@@ -62,7 +62,4 @@ export default defineNuxtConfig({
 		},
 		domains: ["res.cloudinary.com"],
 	},
-	routeRules: {
-		"/*": { redirect: "/" },
-	},
 })

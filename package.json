@@ -10,10 +10,14 @@
     "kuro-*"
   ],
   "scripts": {
-    "postinstall": "cd kuro-landing && nuxt prepare"
+    "postinstall": "cd kuro-portfolio && nuxt prepare",
+    "build": "turbo build",
+    "dev:portfolio": "dotenv -- turbo dev --filter=portfolio",
+    "dev:blog": "dotenv -- turbo dev --filter=blog"
   },
   "devDependencies": {
-    "turbo": "^1.9.3",
-    "prettier": "^2.8.8"
+    "dotenv-cli": "^7.2.1",
+    "prettier": "^2.8.8",
+    "turbo": "^1.9.3"
   }
 }

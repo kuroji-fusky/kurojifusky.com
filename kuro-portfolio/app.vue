@@ -66,6 +66,10 @@ html {
 	}
 }
 
+body {
+  @apply font-inter;
+}
+
 // Biro UI stuff
 .bui {
 	&-padding {

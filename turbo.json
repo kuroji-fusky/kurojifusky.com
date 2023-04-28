@@ -2,11 +2,13 @@
 	"$schema": "https://turbo.build/schema.json",
 	"pipeline": {
 		"build": {
-			"dependsOn": ["^build"]
+			"dependsOn": ["^build"],
+      "outputs": ["dist/**", ".output/**", ".vercel/output/**"],
+      "env": ["UMAMI_SITE_ID"]
 		},
-		"deploy": {
-			"dependsOn": ["build"]
-		},
+    "deploy": {
+      "dependsOn": ["build"]
+    },
 		"dev": {
 			"cache": false
 		}
