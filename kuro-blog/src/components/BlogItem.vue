@@ -24,7 +24,7 @@ interface BlogProps {
 withDefaults(defineProps<BlogProps>(), {
 	large: false,
 	title: "A blog title",
-	excerpt: "Eat my ass",
+	excerpt: "Gurl I'm your candy",
 	date: new Date("2020-01-01").toLocaleDateString(),
 })
 </script>

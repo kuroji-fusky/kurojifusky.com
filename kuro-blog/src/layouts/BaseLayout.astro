@@ -1,34 +1,50 @@
 ---
 import "@fontsource/inter/400.css"
 import "@fontsource/inter/700.css"
-import "@fontsource/inter/900.css"
 import "@fontsource/jetbrains-mono/400.css"
 import "@fontsource/jetbrains-mono/700.css"
-import "@fontsource/unbounded/600.css"
 import "@fontsource/unbounded/800.css"
-import "@fontsource/open-sans/index.css"
+import "@fontsource/open-sans"
 
 import Navbar from "../components/BaseNavbar.vue"
 import Footer from "../components/BaseFooter.vue"
 
-const { title } = Astro.props
+const { title, description } = Astro.props
+
+const route = Astro.url
+const _CUTIE = "@kurojifusky"
+
+const currentPath = `https://blog.kurojifusky.com${route.pathname}`
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<title>{title}</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
-		<title>Kuro's shitty blog lol</title>
-		<script data-website-id="6969696969">
-			console.log("lmao")
-		</script>
+		<meta property="og:site_name" content="The Foosky Blog" />
+		<meta property="og:title" content={title} />
+		<meta name="twitter:title" content={title} />
+		<meta name="description" content={description} />
+		<meta property="og:description" content={description} />
+		<meta name="twitter:description" content={description} />
+		<meta property="og:url" content={currentPath} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:url" content={currentPath} />
+		<meta name="twitter:site" content={_CUTIE} />
+		<meta name="twitter:creator" content={_CUTIE} />
+		<link rel="canonical" href={currentPath} />
+		<script data-website-id="6969696969"></script>
 	</head>
 
 	<body class="font-open-sans">
-		<Navbar />
+		<header>
+			<Navbar client:idle />
+		</header>
+		<div class="py-14" aria-hidden="true"></div>
 		<main>
 			<slot />
 		</main>
