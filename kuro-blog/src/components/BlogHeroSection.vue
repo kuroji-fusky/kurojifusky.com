@@ -1,14 +1,16 @@
-<template>
-	<section class="flex gap-5 px-8 mx-auto max-w-screen-2xl">
-		<BlogItem large class="w-1/2" />
-		<div class="flex flex-col w-1/2 gap-y-5">
-			<BlogItem />
-			<BlogItem />
-			<BlogItem />
-		</div>
-	</section>
-</template>
-
 <script setup lang="ts">
 import BlogItem from "./BlogItem.vue"
 </script>
+
+<template>
+  <section class="px-8 mx-auto max-w-screen-2xl">
+    <div class="flex gap-12">
+      <BlogItem large class="w-[60%]" title="Why I love BTS 💜" />
+      <div class="flex flex-col w-2/5 gap-y-5">
+        <BlogItem title='How I started to "love" myself 😏' />
+        <BlogItem title="I've done something incredibly DUMB 😳" />
+        <BlogItem title="Making egg fried rice with ONE FINGER 🤯" />
+      </div>
+    </div>
+  </section>
+</template>

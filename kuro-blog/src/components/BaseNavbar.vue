@@ -6,19 +6,17 @@ const isOpen = ref(false)
 
 const navLinks: { link?: string; text: string }[] = [
 	{ text: "Dream Journal" },
-	{ text: "Updates", link: "/project-updates" },
-	{ text: "The Archives", link: "/archives" },
-	{ text: "Others" },
+	{ text: "Updates", link: "/updates" },
 	{ text: "About Me", link: "https://kurojifusky.com/about" },
 ]
 </script>
 
 <template>
 	<div
-		class="border-0 border-b border-x-kuro-lavender-400 fixed inset-0 bottom-[unset] bg-kuro-dark1"
+		class="z-[5] border-0 border-b border-x-kuro-lavender-400 fixed inset-0 bottom-[unset] bg-kuro-dark1"
 	>
 		<div
-			class="flex items-center justify-between px-10 py-5 mx-auto max-w-screen-2xl"
+			class="flex items-center justify-between px-10 py-5 lg:py-3.5 mx-auto max-w-screen-2xl"
 		>
 			<div class="flex items-center gap-x-5" aria-label="Kuroji Fusky Blog">
 				<a
@@ -26,7 +24,9 @@ const navLinks: { link?: string; text: string }[] = [
 					class="text-5xl font-semibold font-unbounded"
 					>{{ "K" }}</a
 				>
-				<span class="text-3xl opacity-50 select-none">/</span>
+				<span class="text-3xl opacity-50 select-none" aria-hidden="true"
+					>/</span
+				>
 				<a href="/" class="text-4xl font-bold font-inter">Blog</a>
 			</div>
 			<nav class="relative flex">
