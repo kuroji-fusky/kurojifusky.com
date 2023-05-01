@@ -9,6 +9,8 @@ import "@fontsource/open-sans"
 import Navbar from "../components/BaseNavbar.vue"
 import Footer from "../components/BaseFooter.vue"
 
+import { AlertTriangleIcon } from "lucide-vue-next"
+
 const { title, description } = Astro.props
 
 const route = Astro.url
@@ -41,11 +43,20 @@ const currentPath = `https://blog.kurojifusky.com${route.pathname}`
 	</head>
 
 	<body class="font-open-sans">
-		<header>
+		<header
+			class="z-[5] border-0 border-b border-x-kuro-lavender-400 fixed inset-0 bottom-[unset] bg-kuro-dark1"
+		>
 			<Navbar client:idle />
 		</header>
 		<div class="py-14" aria-hidden="true"></div>
-		<main>
+		<main class="px-8 mx-auto max-w-screen-2xl">
+			<div
+				role="complementary"
+				class="flex px-6 py-4 mb-6 bg-yellow-700 bg-opacity-50 border border-yellow-600 rounded-md gap-x-3"
+			>
+				<AlertTriangleIcon />
+				<span>Blog website under construction lol</span>
+			</div>
 			<slot />
 		</main>
 		<Footer />
