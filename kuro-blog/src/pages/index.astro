@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro"
 import BlogHeroSection from "../components/BlogHeroSection.vue"
 import { contentfulClient } from "../lib/contentful"
 import type { BlogPost } from "../lib/contentful"
+import BlogItem from "../components/BlogItem.vue"
 
 type FixConstraints<T> = T & { fields: T; contentTypeId: string }
 
@@ -26,22 +27,23 @@ const posts = entries.items.map((bruh) => {
 	return {
 		title,
 		description,
-		img: (banner as unknown as ContentfulObject).fields.file.url,
+		img: `https:${(banner as unknown as ContentfulObject).fields.file.url}`,
 	}
 })
 ---
 
 <BaseLayout
-	title="Blog - Kuroji Fusky"
-	description="A blog where I complain things and catalog my sad, pathetic life on the internet"
+	title="Home | Kuroji Fusky Blog"
+	description="A personal blog site where I complain things and catalog my sad, pathetic life on the internet"
 >
 	<div id="testing-area">
 		{
 			posts.map((blog) => (
-				<div>
-					{blog.title}
-					<img src={blog.img} alt="" />
-				</div>
+				<BlogItem
+					img={blog.img}
+					title={blog.title}
+					excerpt={blog.description}
+				/>
 			))
 		}
 	</div>

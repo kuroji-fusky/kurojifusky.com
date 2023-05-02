@@ -6,8 +6,9 @@ import "@fontsource/jetbrains-mono/700.css"
 import "@fontsource/unbounded/800.css"
 import "@fontsource/open-sans"
 
-import Navbar from "../components/BaseNavbar.vue"
+import Navbar from "../components/BaseNavbar.astro"
 import Footer from "../components/BaseFooter.vue"
+import MetaTags from "../components/MetaTags.astro"
 
 import { inject } from "@vercel/analytics"
 inject()
@@ -15,52 +16,13 @@ inject()
 import { AlertTriangleIcon } from "lucide-vue-next"
 
 const { title, description } = Astro.props
-
-const route = Astro.url
-const _CUTIE = "@kurojifusky"
-
-const currentPath = `https://blog.kurojifusky.com${route.pathname}`
-
-const devOnly = import.meta.env.DEV
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta property="og:site_name" content="The Foosky Blog" />
-		<meta property="og:title" content={title} />
-		<meta name="twitter:title" content={title} />
-		<meta name="description" content={description} />
-		<meta property="og:description" content={description} />
-		<meta name="twitter:description" content={description} />
-		<meta property="og:url" content={currentPath} />
-		<meta property="og:type" content="website" />
-		<meta name="twitter:url" content={currentPath} />
-		<meta name="twitter:site" content={_CUTIE} />
-		<meta name="twitter:creator" content={_CUTIE} />
-		<title>{title}</title>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link rel="canonical" href={currentPath} />
-		<!-- Umami analytics -->
-		{
-			devOnly ? (
-				<script data-dev-only data-website-id="whatevers" async />
-			) : (
-				<script data-website-id="whatevers" async />
-			)
-		}
-	</head>
+	<MetaTags title={title} description={description} />
 
 	<body class="font-open-sans">
-		<header
-			class="z-[5] border-0 border-b border-x-kuro-lavender-400 fixed inset-0 bottom-[unset] bg-kuro-dark1"
-		>
-			<Navbar client:idle />
-		</header>
+		<Navbar />
 		<div class="py-14" aria-hidden="true"></div>
 		<main class="px-8 mx-auto max-w-screen-2xl">
 			<div
@@ -73,5 +35,10 @@ const devOnly = import.meta.env.DEV
 			<slot />
 		</main>
 		<Footer />
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "03624b4c45ea495789b226b311c74064"}'
+		></script>
 	</body>
 </html>

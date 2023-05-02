@@ -1,0 +1,37 @@
+---
+const umamiSiteId = import.meta.env.UMAMI_ID
+
+const { title, description } = Astro.props
+
+const [authorHandle, currentPath] = [
+	"@kurojifusky",
+	`https://blog.kurojifusky.com${Astro.url.pathname}`,
+]
+---
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width=1" />
+	<meta name="description" content={description} />
+	<meta name="generator" content={Astro.generator} />
+	<meta property="og:site_name" content="Kuroji Fusky Blog" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={currentPath} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:url" content={currentPath} />
+	<meta name="twitter:site" content={authorHandle} />
+	<meta name="twitter:creator" content={authorHandle} />
+	<title>{title}</title>
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="sitemap" href="/sitemap-index.xml" />
+	<link rel="canonical" href={currentPath} />
+	<script
+		src="https://analytics.umami.is/script.js"
+		data-website-id={umamiSiteId}
+		async
+	></script>
+</head>

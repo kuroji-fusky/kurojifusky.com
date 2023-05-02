@@ -2,6 +2,7 @@
 defineProps<{
 	text?: string
 	slug?: string
+	description?: string
 }>()
 </script>
 
@@ -10,6 +11,7 @@ defineProps<{
 		:href="!slug ? `/${text!.replace(' ', '-').toLowerCase()}` : `/${slug}`"
 		class="nav-link"
 	>
-		{{ text }}
+		<span>{{ text }}</span>
+		<span v-if="description">{{ description }}</span>
 	</a>
 </template>

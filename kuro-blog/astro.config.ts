@@ -9,7 +9,13 @@ import vercel from "@astrojs/vercel/serverless"
 export default defineConfig({
 	site: "https://blog.kurojfusky.com",
 	integrations: [
-		vue(),
+		vue({
+			template: {
+				compilerOptions: {
+					isCustomElement: (tag) => tag.startsWith("kfb-"),
+				},
+			},
+		}),
 		tailwind(),
 		sitemap({ customPages: ["https://blog.kurojifusky.com/"] }),
 	],

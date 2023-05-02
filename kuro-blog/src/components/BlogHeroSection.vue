@@ -11,7 +11,6 @@ import BlogItem from "./BlogItem.vue"
 					title="Why I love BTS 💜"
 					img="https://cdn.i-scmp.com/sites/default/files/d8/images/methode/2020/11/06/a08d1560-1f50-11eb-99d6-deeedd63f648_image_hires_151116.jpg"
 				/>
-				<BlogItem large title="A list of Seokjin's Dad Jokes" />
 			</div>
 			<div class="flex flex-col w-2/5 gap-y-5">
 				<BlogItem

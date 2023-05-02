@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import KuroImg from "../components/KuroImg.vue"
+
 interface BlogProps {
 	large?: boolean
 	img?: string
@@ -18,8 +20,7 @@ withDefaults(defineProps<BlogProps>(), {
 </script>
 
 <template>
-	<div
-		id="blog-posts"
+	<kfb-blog-post-item
 		class="flex gap-6"
 		:class="[large ? 'flex-col' : 'border-0 border-b pb-6 border-neutral-400']"
 	>
@@ -29,7 +30,7 @@ withDefaults(defineProps<BlogProps>(), {
 			class="flex-shrink-0 overflow-hidden rounded-md bg-kuro-lavender-900 aspect-video"
 			:class="[large ? 'h-[28rem]' : ' h-[10.5rem] w-[12rem]']"
 		>
-			<img
+			<KuroImg
 				:src="img"
 				:alt="`Image cover for ${title}`"
 				class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
@@ -38,7 +39,7 @@ withDefaults(defineProps<BlogProps>(), {
 		</a>
 		<article class="flex flex-col w-full" :class="[large ? 'gap-4' : 'gap-3']">
 			<div id="category-container" class="flex flex-wrap gap-2.5">
-				<span class="mr-auto font-bold text-kuro-royalblue-300 font-inter"
+				<span class="font-bold text-kuro-royalblue-300 font-inter"
 					>Category</span
 				>
 			</div>
@@ -53,5 +54,5 @@ withDefaults(defineProps<BlogProps>(), {
 			<p class="text-neutral-100">{{ excerpt }}</p>
 			<span class="text-sm font-jetbrains-mono">{{ date }}</span>
 		</article>
-	</div>
+	</kfb-blog-post-item>
 </template>
