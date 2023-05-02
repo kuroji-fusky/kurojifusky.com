@@ -9,6 +9,9 @@ import "@fontsource/open-sans"
 import Navbar from "../components/BaseNavbar.vue"
 import Footer from "../components/BaseFooter.vue"
 
+import { inject } from "@vercel/analytics"
+inject()
+
 import { AlertTriangleIcon } from "lucide-vue-next"
 
 const { title, description } = Astro.props
@@ -17,16 +20,16 @@ const route = Astro.url
 const _CUTIE = "@kurojifusky"
 
 const currentPath = `https://blog.kurojifusky.com${route.pathname}`
+
+const devOnly = import.meta.env.DEV
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>{title}</title>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta property="og:site_name" content="The Foosky Blog" />
 		<meta property="og:title" content={title} />
 		<meta name="twitter:title" content={title} />
@@ -38,8 +41,18 @@ const currentPath = `https://blog.kurojifusky.com${route.pathname}`
 		<meta name="twitter:url" content={currentPath} />
 		<meta name="twitter:site" content={_CUTIE} />
 		<meta name="twitter:creator" content={_CUTIE} />
+		<title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link rel="canonical" href={currentPath} />
-		<script data-website-id="6969696969"></script>
+		<!-- Umami analytics -->
+		{
+			devOnly ? (
+				<script data-dev-only data-website-id="whatevers" async />
+			) : (
+				<script data-website-id="whatevers" async />
+			)
+		}
 	</head>
 
 	<body class="font-open-sans">

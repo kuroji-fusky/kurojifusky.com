@@ -1,8 +1,49 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
 import BlogHeroSection from "../components/BlogHeroSection.vue"
+import { contentfulClient } from "../lib/contentful"
+import type { BlogPost } from "../lib/contentful"
+
+type FixConstraints<T> = T & { fields: T; contentTypeId: string }
+
+const entries = await contentfulClient.getEntries<FixConstraints<BlogPost>>({
+	content_type: "blogPost",
+})
+
+interface ContentfulObject {
+	fields: {
+		title: string
+		description: string
+		file: {
+			url: string
+		}
+	}
+}
+
+const posts = entries.items.map((bruh) => {
+	const { title, description, banner } = bruh.fields as BlogPost
+
+	return {
+		title,
+		description,
+		img: (banner as unknown as ContentfulObject).fields.file.url,
+	}
+})
 ---
 
-<BaseLayout title="Blog - Kuroji Fusky" description="My shitty blog lmao">
+<BaseLayout
+	title="Blog - Kuroji Fusky"
+	description="A blog where I complain things and catalog my sad, pathetic life on the internet"
+>
+	<div id="testing-area">
+		{
+			posts.map((blog) => (
+				<div>
+					{blog.title}
+					<img src={blog.img} alt="" />
+				</div>
+			))
+		}
+	</div>
 	<BlogHeroSection />
 </BaseLayout>
