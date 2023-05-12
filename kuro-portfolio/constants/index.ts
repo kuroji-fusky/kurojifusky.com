@@ -5,7 +5,6 @@ import {
 	IconLinkedin,
 } from "@iconify-prerendered/vue-fa6-brands"
 
-import { IconEllipsis } from "@iconify-prerendered/vue-fa6-solid"
 import { ShowcaseItem } from "./Interfaces"
 
 const currentYear = new Date().getFullYear()
@@ -83,10 +82,5 @@ export const socialLinks = [
 		text: "LinkedIn",
 		link: "https://www.linkedin.com/in/kerby-keith-aquino-434037238/",
 		icon: IconLinkedin,
-	},
-	{
-		button: true,
-		text: "More",
-		icon: IconEllipsis,
 	},
 ]

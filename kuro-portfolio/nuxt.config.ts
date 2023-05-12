@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			htmlAttrs: {
-				lang: "en",
+				lang: "en-PH",
 			},
 			meta: [{ property: "og:site_name", content: "Kuroji Fusky" }],
 			link: [{ rel: "shortcut icon", href: "/favicon.png" }],

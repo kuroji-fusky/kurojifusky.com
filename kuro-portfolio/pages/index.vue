@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { copyright } from "~/constants"
+
 usePageMeta({
-	title: "Kuroji Fusky - UNDER CONSTRUCTION",
+	title: "UNDER CONSTRUCTION",
 	description:
-		"Kuroji is a curious blue fox-husky guy on the internet that makes cool things",
+		"Kuroji is a curious blue fox-husky guy on the internet that makes cool things!",
 })
 </script>
 
@@ -18,6 +20,8 @@ usePageMeta({
 		<BuiArticle prose-h2 prose-p tag="div">
 			<ContentDoc tag="article" class="prose-p:mb-4 prose-h2:mb-10" />
 		</BuiArticle>
-		<footer><BuiText sub-p>&copy; 2013-2023 Kuroji Fusky</BuiText></footer>
+		<footer>
+			<BuiText sub-p>{{ copyright }}</BuiText>
+		</footer>
 	</BuiLayout>
 </template>

@@ -35,6 +35,7 @@ withDefaults(defineProps<BlogProps>(), {
 				:alt="`Image cover for ${title}`"
 				class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
 				draggable="false"
+        fetchpriority="high"
 			/>
 		</a>
 		<article class="flex flex-col w-full" :class="[large ? 'gap-4' : 'gap-3']">
