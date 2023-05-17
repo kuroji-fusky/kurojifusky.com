@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { copyright } from "~/constants"
-
 usePageMeta({
 	title: "UNDER CONSTRUCTION",
 	description:
@@ -12,7 +10,8 @@ usePageMeta({
 	<BuiLayout
 		class="grid text-center"
 		:options="{
-			my: { xl: 5, lg: 3.5, md: '1rem' },
+			mt: { xl: 5, lg: 3.5, md: '1rem' },
+			mb: { xl: 2, lg: 2.5, md: '0.6rem' },
 			px: { xl: 10, lg: 5, md: '1.5rem' },
 			'gap-y': { xl: 2, lg: 3, md: '2rem' },
 		}"
@@ -20,8 +19,5 @@ usePageMeta({
 		<BuiArticle prose-h2 prose-p tag="div">
 			<ContentDoc tag="article" class="prose-p:mb-4 prose-h2:mb-10" />
 		</BuiArticle>
-		<footer>
-			<BuiText sub-p>{{ copyright }}</BuiText>
-		</footer>
 	</BuiLayout>
 </template>

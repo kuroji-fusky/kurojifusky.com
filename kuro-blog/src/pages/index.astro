@@ -1,51 +1,51 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-import BlogHeroSection from "../components/BlogHeroSection.vue"
-import { contentfulClient } from "../lib/contentful"
-import type { BlogPost } from "../lib/contentful"
-import BlogItem from "../components/BlogItem.vue"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogHeroSection from "../components/BlogHeroSection.vue";
+import { contentfulClient } from "../lib/contentful";
+import type { BlogPost } from "../lib/contentful";
+import BlogItem from "../components/BlogItem.vue";
 
-type FixConstraints<T> = T & { fields: T; contentTypeId: string }
+type FixConstraints<T> = T & { fields: T; contentTypeId: string };
 
 const entries = await contentfulClient.getEntries<FixConstraints<BlogPost>>({
-	content_type: "blogPost",
-})
+  content_type: "blogPost",
+});
 
 interface ContentfulObject {
-	fields: {
-		title: string
-		description: string
-		file: {
-			url: string
-		}
-	}
+  fields: {
+    title: string | unknown;
+    description: string;
+    file: {
+      url: string;
+    };
+  };
 }
 
-const posts = entries.items.map((bruh) => {
-	const { title, description, banner } = bruh.fields as BlogPost
+const posts = entries.items.map((entry) => {
+  const { title, description, banner } = entry.fields as BlogPost;
 
-	return {
-		title,
-		description,
-		img: `https:${(banner as unknown as ContentfulObject).fields.file.url}`,
-	}
-})
+  return {
+    title,
+    description,
+    img: `https:${(banner as unknown as ContentfulObject).fields.file.url}`,
+  };
+});
 ---
 
 <BaseLayout
-	title="Home | Kuroji Fusky Blog"
-	description="A personal blog site where I complain things and catalog my sad, pathetic life on the internet"
+  title="Home | Kuroji Fusky Blog"
+  description="A personal blog site by Kuroji Fusky lol"
 >
-	<div id="testing-area">
-		{
-			posts.map((blog) => (
-				<BlogItem
-					img={blog.img}
-					title={blog.title}
-					excerpt={blog.description}
-				/>
-			))
-		}
-	</div>
-	<BlogHeroSection />
+  <div id="testing-area">
+    {
+      posts.map((blog) => (
+        <BlogItem
+          img={blog.img}
+          title={blog.title}
+          excerpt={blog.description}
+        />
+      ))
+    }
+  </div>
+  <BlogHeroSection />
 </BaseLayout>

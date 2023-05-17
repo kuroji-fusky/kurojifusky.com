@@ -1,44 +1,41 @@
 ---
-import "@fontsource/inter/400.css"
-import "@fontsource/inter/700.css"
-import "@fontsource/jetbrains-mono/400.css"
-import "@fontsource/jetbrains-mono/700.css"
-import "@fontsource/unbounded/800.css"
-import "@fontsource/open-sans"
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/700.css";
+import "@fontsource/unbounded/800.css";
+import "@fontsource/open-sans";
 
-import Navbar from "../components/BaseNavbar.astro"
-import Footer from "../components/BaseFooter.vue"
-import MetaTags from "../components/MetaTags.astro"
+import Navbar from "../components/BaseNavbar.astro";
+import Footer from "../components/BaseFooter.vue";
+import MetaTags from "../components/MetaTags.astro";
 
-import { inject } from "@vercel/analytics"
-inject()
+import { inject } from "@vercel/analytics";
+inject();
 
-import { AlertTriangleIcon } from "lucide-vue-next"
+import { AlertTriangle } from "lucide-vue-next";
 
-const { title, description } = Astro.props
+const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-	<MetaTags title={title} description={description} />
+  <MetaTags title={title} description={description} />
 
-	<body class="font-open-sans">
-		<Navbar />
-		<div class="py-14" aria-hidden="true"></div>
-		<main class="px-8 mx-auto max-w-screen-2xl">
-			<div
-				role="complementary"
-				class="flex px-6 py-4 mb-6 bg-yellow-700 bg-opacity-50 border border-yellow-600 rounded-md gap-x-3"
-			>
-				<AlertTriangleIcon />
-				<span>Blog website under construction lol</span>
-			</div>
-			<slot />
-		</main>
-		<Footer />
-		<script
-			defer
-			src="https://static.cloudflareinsights.com/beacon.min.js"
-			data-cf-beacon='{"token": "03624b4c45ea495789b226b311c74064"}'
-		></script>
-	</body>
+  <body class="font-open-sans">
+    <Navbar />
+    <main class="px-8 mx-auto max-w-screen-2xl">
+      <div
+        role="complementary"
+        class="flex items-center px-6 py-4 mb-6 bg-yellow-700 bg-opacity-50 border border-yellow-600 rounded-md gap-x-3"
+      >
+        <AlertTriangle />
+        <div class="inline-flex flex-col">
+          <h2 class="text-lg font-bold">Under Construction</h2>
+          <span>I only put this out there for testing crap lol</span>
+        </div>
+      </div>
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>

@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { copyright } from "~/constants"
 import Lenis from "@studio-freight/lenis"
 import { storeToRefs } from "pinia"
 import { useNavbarOpenStore } from "./stores"
+import { MailIcon } from "lucide-vue-next"
 
 useHTMLViewport()
 
@@ -51,4 +53,15 @@ useHead({
 	<main>
 		<NuxtPage />
 	</main>
+	<footer class="flex flex-col items-center gap-y-3">
+		<BuiText>
+			<BuiLink href="mailto:hello@kurojifusky.com">
+				<BuiText sub-p class="flex items-center gap-x-2">
+					<MailIcon class="w-[calc(var(--vw)*1.25)] h-[calc(var(--vw)*1.25)]" />
+					<span>hello@kurojifusky.com</span>
+				</BuiText>
+			</BuiLink>
+		</BuiText>
+		<BuiText sub-p>{{ copyright }}</BuiText>
+	</footer>
 </template>

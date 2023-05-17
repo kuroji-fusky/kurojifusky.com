@@ -5,14 +5,23 @@
 	>
 		<a
 			href="https://kurojifusky.com"
-			class="text-4xl lg:text-5xl font-bold font-unbounded"
+			class="text-4xl font-bold lg:text-5xl font-unbounded"
 			>{{ "K" }}</a
 		>
 		<span
-			class="text-2xl lg:text-3xl opacity-50 select-none"
+			class="text-2xl opacity-50 select-none lg:text-3xl"
 			aria-hidden="true"
 			>{{ "/" }}</span
 		>
-		<a href="/" class="text-3xl lg:text-4xl font-bold font-inter">Blog</a>
+		<a href="/" class="flex items-center gap-x-3.5">
+			<img
+				src="/icon_144x144.png"
+				class="w-8 rounded-full aspect-square"
+				alt="Me"
+				fetchpriority="high"
+				loading="lazy"
+			/>
+			<span class="text-3xl font-bold font-inter">Blog</span>
+		</a>
 	</div>
 </template>

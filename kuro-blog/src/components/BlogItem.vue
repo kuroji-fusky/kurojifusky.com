@@ -20,7 +20,8 @@ withDefaults(defineProps<BlogProps>(), {
 </script>
 
 <template>
-	<kfb-blog-post-item
+	<div
+		id="blog-post"
 		class="flex gap-6"
 		:class="[large ? 'flex-col' : 'border-0 border-b pb-6 border-neutral-400']"
 	>
@@ -35,7 +36,7 @@ withDefaults(defineProps<BlogProps>(), {
 				:alt="`Image cover for ${title}`"
 				class="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
 				draggable="false"
-        fetchpriority="high"
+				fetchpriority="high"
 			/>
 		</a>
 		<article class="flex flex-col w-full" :class="[large ? 'gap-4' : 'gap-3']">
@@ -55,5 +56,5 @@ withDefaults(defineProps<BlogProps>(), {
 			<p class="text-neutral-100">{{ excerpt }}</p>
 			<span class="text-sm font-jetbrains-mono">{{ date }}</span>
 		</article>
-	</kfb-blog-post-item>
+	</div>
 </template>

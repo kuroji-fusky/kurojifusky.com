@@ -9,13 +9,7 @@ import image from "@astrojs/image"
 export default defineConfig({
 	site: "https://blog.kurojfusky.com",
 	integrations: [
-		vue({
-			template: {
-				compilerOptions: {
-					isCustomElement: (tag) => tag.startsWith("kfb-"),
-				},
-			},
-		}),
+		vue(),
 		tailwind(),
 		sitemap({
 			customPages: ["https://blog.kurojifusky.com/"],

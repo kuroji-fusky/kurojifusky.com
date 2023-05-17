@@ -18,24 +18,7 @@ interface NavLinks {
 }
 
 const navLinks: NavLinks = {
-	root: [{ text: "Thoughts" }, { text: "Updates" }],
-	Engineering: [
-		{ text: "UI/UX Design", slug: "engineering/ui-ux-design" },
-		{ text: "Web development", slug: "engineering/web-dev" },
-	],
-	Tutorials: [
-		{
-			text: "Web Technologies",
-			slug: "tutorials/web-dev",
-			description: "Frameworks, and shit idk",
-		},
-		{ text: "Back-end and DevOps", description: "I'm too dumb for this lmao" },
-		{ text: "Music production", description: "Making unbearable music" },
-		{
-			text: "Film and VFX",
-			description: "Share that shit visually",
-		},
-	],
+	root: [{ text: "Thoughts" }, { text: "Updates" }, { text: "Engineering" }],
 	More: [
 		{ text: "Productivity" },
 		{ text: "Experiences" },
@@ -89,7 +72,7 @@ const lazy = () => {
 						{{ rootItems[0] }}
 					</span>
 					<div
-						class="absolute right-0 pt-4 opacity-0 pointer-events-none top-10 group-hover:pointer-events-auto group-hover:opacity-100 transition-all"
+						class="absolute right-0 pt-4 transition-all opacity-0 pointer-events-none top-10 group-hover:pointer-events-auto group-hover:opacity-100"
 					>
 						<ul
 							class="flex flex-col text-lg border rounded-md w-max bg-kuro-lavender-900 border-kuro-lavender-500"
