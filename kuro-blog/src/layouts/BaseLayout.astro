@@ -11,14 +11,13 @@ import Footer from "../components/BaseFooter.vue";
 import MetaTags from "../components/MetaTags.astro";
 
 import { inject } from "@vercel/analytics";
-inject();
-
 import { AlertTriangle } from "lucide-vue-next";
 
+inject();
 const { title, description } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en-PH" dir="ltr">
   <MetaTags title={title} description={description} />
 
   <body class="font-open-sans">

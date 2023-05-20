@@ -3,6 +3,8 @@ import type { Document } from "@contentful/rich-text-types"
 
 const viteEnv = import.meta.env
 
+export type FixConstraints<T> = T & { fields: T; contentTypeId: string }
+
 export interface BlogPost {
 	title: string
 	date: string

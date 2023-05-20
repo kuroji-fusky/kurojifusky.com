@@ -2,10 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogHeroSection from "../components/BlogHeroSection.vue";
 import { contentfulClient } from "../lib/contentful";
-import type { BlogPost } from "../lib/contentful";
+import type { BlogPost, FixConstraints } from "../lib/contentful";
 import BlogItem from "../components/BlogItem.vue";
-
-type FixConstraints<T> = T & { fields: T; contentTypeId: string };
 
 const entries = await contentfulClient.getEntries<FixConstraints<BlogPost>>({
   content_type: "blogPost",
