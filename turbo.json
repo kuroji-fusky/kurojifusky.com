@@ -1,16 +1,14 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"pipeline": {
-		"build": {
-			"dependsOn": ["^build"],
-      "outputs": ["dist/**", ".output/**", ".vercel/output/**"],
-      "env": ["UMAMI_SITE_ID"]
-		},
-    "deploy": {
-      "dependsOn": ["build"]
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".output/**", ".vercel/output/**"]
     },
-		"dev": {
-			"cache": false
-		}
-	}
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
 }

@@ -1,23 +1,21 @@
 {
   "private": true,
-  "name": "kuro-root",
-  "version": "0.0.1",
-  "repository": "https://github.com/kuroji-fusky/website.git",
-  "author": "Kerby Keith Aquino <hello@kurojifusky.com>",
-  "license": "MIT",
-  "workspaces": [
-    "design",
-    "kuro-*"
-  ],
+  "name": "kuro-stuff",
   "scripts": {
-    "postinstall": "cd kuro-portfolio && nuxt prepare",
-    "build": "turbo build",
-    "dev:portfolio": "dotenv -- turbo dev --filter=portfolio",
-    "dev:blog": "dotenv -- turbo dev --filter=blog"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,vue,md}\"",
+    "postinstall": "cd ./apps/portfolio && yarn nuxt prepare && cd ../blog && yarn nuxt prepare"
   },
   "devDependencies": {
-    "dotenv-cli": "^7.2.1",
-    "prettier": "^2.8.8",
-    "turbo": "^1.9.3"
-  }
+    "@turbo/gen": "^1.9.7",
+    "prettier": "^2.5.1",
+    "turbo": "^1.9.7"
+  },
+  "packageManager": "yarn@1.22.19",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

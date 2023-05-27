@@ -5,8 +5,8 @@
   <a href="https://kurojifusky.com">kurojifusky.com</a>
 </h1>
 
-The source code of my personal website using the Nuxt 3 and
-Tailwind CSS! Deployed in Vercel.
+The source code of both my portfolio and blog websites using
+Nuxt 3 and Tailwind CSS; deployed in Vercel!
 
 ## Tech stack
 
@@ -14,7 +14,7 @@ Tailwind CSS! Deployed in Vercel.
 - Tailwind CSS
 - GSAP
 - [Lenis](https://github.com/studio-freight/lenis)
-- Cloudinary
+- Contentful
 
 ## Running the abomination locally
 
@@ -26,19 +26,18 @@ Fork and clone the repo and install the bloated garbage
 yarn
 ```
 
-Clone the required environment variables
+Starting the dev server(s):
 
 ```console
-cp .env.local.example .env.local
-```
-
-Start the local server lmao
-
-```console
+# Starting both portfolio and blog dev environments
 yarn dev
+
+# Start individual dev environments
+yarn dev --filter=blog
+yarn dev --filter=portfolio
 ```
 
-BUILD THE ABOMINATION
+BUILD BOTH THE ABOMINATION
 
 ```console
 yarn build
