@@ -6,7 +6,7 @@ module.exports = {
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
-    "./app.vue",
+    "./app.vue"
   ],
-  presets: [require("@kuro/ui/kuro-tailwind.cjs")],
+  presets: [require("@kuro/ui/kuro-tailwind.cjs")]
 }

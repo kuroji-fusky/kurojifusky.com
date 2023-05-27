@@ -3,7 +3,7 @@
 Install and start dev server
 
 ```console
-yarn && yarn dev
+yarn && yarn nuxt prepare && yarn dev
 ```
 
 Build the thing
