@@ -1,17 +1,9 @@
 <script setup lang="ts">
 import { AlertTriangleIcon } from "lucide-vue-next"
 
-const t = "Under Construction"
-const d = "The site is temporarily down at the moment."
-
-useHead({
-  title: t,
-  meta: [
-    { property: "og:title", content: t },
-    { property: "og:description", content: d },
-    { name: "twtiter:title", content: t },
-    { name: "twtiter:description", content: d }
-  ]
+usePageMeta({
+  title: "Under construction",
+  description: "The site is temporarily down at the moment."
 })
 </script>
 
@@ -22,7 +14,7 @@ useHead({
         class="font-inter font-bold flex gap-x-2 text-2xl items-center text-kuro-yellow-600 prose-p:text-kuro-yellow-100"
       >
         <AlertTriangleIcon :size="32" />
-        Le Website Under Construction
+        Website Under Construction
       </h1>
       <p>
         It's no secret writing and maintaining a website entirely by code is
@@ -40,6 +32,7 @@ useHead({
         understand that I'm just a passionate individual that does all of this
         as a hobby, it will take ages to complete.
       </p>
+      <p>Something epic is coming soon...</p>
     </article>
   </div>
 </template>

@@ -1,5 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const GA_INJECT = `
+window.dataLayer=window.dataLayer||[];function __ga(){dataLayer.push(arguments)}
+__ga('js', new Date());__ga('config', '${process.env.GA_MEASUREMENT_ID}');
+`
+
 export default defineNuxtConfig({
+  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
   modules: [
     [
       "@pinia/nuxt",
@@ -9,6 +15,7 @@ export default defineNuxtConfig({
     ],
     "@nuxt/content",
     "@nuxt/image-edge",
+    "@nuxtjs/partytown",
     "nuxt-schema-org"
   ],
   typescript: {
@@ -25,10 +32,8 @@ export default defineNuxtConfig({
       ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {})
     }
   },
-  runtimeConfig: {
-    public: {
-      siteUrl: "https://kurojifusky.com"
-    }
+  partytown: {
+    forward: ["dataLayer.push"]
   },
   app: {
     head: {
@@ -49,7 +54,20 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: "shortcut icon", href: "./favicon.png", fetchpriority: "high" }
+      ],
+      script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`,
+          type: "text/partytown",
+          async: true
+        },
+        {
+          innerHTML: GA_INJECT
+        }
       ]
     }
+  },
+  build: {
+    transpile: ["gsap"]
   }
 })
