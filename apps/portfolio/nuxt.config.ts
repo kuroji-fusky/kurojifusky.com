@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const GA_INJECT = `
-window.dataLayer=window.dataLayer||[];function __ga(){dataLayer.push(arguments)}
-__ga('js', new Date());__ga('config', '${process.env.GA_MEASUREMENT_ID}');
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date());gtag('config', '${process.env.GA_MEASUREMENT_ID}');
 `
 
 export default defineNuxtConfig({
