@@ -30,7 +30,7 @@ const __socials = [
     icon: twt
   },
   {
-    link: "https://ko-fi.com/kurojifusky",
+    link: "https://ko-fi.com/kuroji_fusky",
     text: "Ko-fi",
     icon: kf
   }

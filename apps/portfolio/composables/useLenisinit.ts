@@ -3,6 +3,16 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 export default function useLenisInit() {
+  // Add responsive stuff
+  const handleResize = () => {
+    const Vw = window.innerWidth / 100
+    document.body.style.setProperty("--vw", `${Vw}px`)
+  }
+  onBeforeMount(() => handleResize())
+  onMounted(() => window.addEventListener("resize", handleResize))
+  onUnmounted(() => window.removeEventListener("resize", handleResize))
+
+  // Register GSAP and Lenis
   onMounted(() => {
     gsap.registerPlugin(ScrollTrigger)
 

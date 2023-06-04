@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const GA_INJECT = `
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-gtag('js', new Date());gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+window.dataLayer=window.dataLayer||[];
+window.gtag=function gtag(){dataLayer.push(arguments)};
+gtag('js', new Date());
+gtag('config', '${process.env.GA_MEASUREMENT_ID}',{ send_page_view: false });
 `
 
 export default defineNuxtConfig({
@@ -43,7 +45,7 @@ export default defineNuxtConfig({
         dir: "ltr"
       },
       bodyAttrs: {
-        class: "bg-kuro-dark2 text-kuro-lavender-50"
+        class: "bg-kuro-dark2 text-kuro-lavender-50 font-inter"
       },
       meta: [
         { "http-equiv": "X-UA-Compatible", "content": "IE=edge;chrome=1" },
