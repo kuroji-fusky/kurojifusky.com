@@ -1,8 +1,8 @@
 <script setup lang="ts">
 useLenisinit()
 
-const _I_LOVE_COBBLESTONE = useRoute()
-const _SITE_URL = `https://kurojifusky.com${_I_LOVE_COBBLESTONE.fullPath}`
+const _r = useRoute()
+const _SITE_URL = `https://kurojifusky.com${_r.fullPath}`
 
 useSeoMeta({
   ogUrl: _SITE_URL
@@ -11,10 +11,18 @@ useSeoMeta({
 useHeadSafe({
   link: [{ rel: "canonical", href: _SITE_URL }]
 })
+
+const isLoaded = ref(false)
+
+onMounted(() => {
+  if (document.readyState === "complete") isLoaded.value = true
+})
 </script>
 
 <template>
+  <TheBasePreloader :hide="isLoaded" />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
 </template>
+
