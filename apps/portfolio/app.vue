@@ -12,17 +12,25 @@ useHeadSafe({
   link: [{ rel: "canonical", href: _SITE_URL }]
 })
 
-const isLoaded = ref(false)
-
-onMounted(() => {
-  if (document.readyState === "complete") isLoaded.value = true
-})
+useSchemaOrg([
+  // @todo Select Identity: https://unhead-schema-org.harlanzw.com//guide/guides/identity
+  defineWebSite({
+    name: "Kuroji Fusky"
+  }),
+  defineWebPage()
+])
 </script>
 
 <template>
-  <TheBasePreloader :hide="isLoaded" />
+  <div id="cursor-placeholder" class="fixed top-0 left-0 z-[9999]"></div>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
 </template>
 
+<style>
+html {
+  scroll-behavior: initial;
+  overflow-x: hidden;
+}
+</style>

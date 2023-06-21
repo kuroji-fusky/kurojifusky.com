@@ -1,11 +1,12 @@
 <script setup lang="ts">
-type _ResponsiveShit = number | [number | undefined, number | undefined, string]
+type _ResponsiveShit =
+  | number
+  | [number | undefined, number | undefined, string | undefined]
 
 defineProps<{
   tag?: keyof HTMLElementTagNameMap
   wh?: _ResponsiveShit
-  resWidth?: _ResponsiveShit
-  resHeight?: _ResponsiveShit
+  size?: number
   px?: _ResponsiveShit
   py?: _ResponsiveShit
 }>()
@@ -14,8 +15,7 @@ defineProps<{
 <template>
   <component
     :is="tag ?? 'div'"
-    :class="[wh || (resWidth && resHeight) ? 'has-wh' : undefined]"
-    :style="[wh ? `--size: ${wh}` : undefined]"
+    :style="[size ? `--size: calc(var(--vw) * ${size})` : undefined]"
   >
     <slot />
   </component>

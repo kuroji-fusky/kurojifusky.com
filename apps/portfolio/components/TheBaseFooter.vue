@@ -25,11 +25,6 @@ const __socials = [
     icon: md
   },
   {
-    link: "https://twitter.com/kurojifusky",
-    text: "Twitter",
-    icon: twt
-  },
-  {
     link: "https://ko-fi.com/kuroji_fusky",
     text: "Ko-fi",
     icon: kf
@@ -38,7 +33,10 @@ const __socials = [
 </script>
 
 <template>
-  <footer class="mx-auto max-w-screen-xl px-12">
+  <footer class="mx-auto max-w-screen-xl px-12 py-10">
+    <div>
+      <h2>Wanna ask a question or ask how much of a cutie I am?</h2>
+    </div>
     <div role="list" class="flex gap-x-8 justify-center">
       <NuxtLink
         v-for="{ link, text, icon, rel } in __socials"

@@ -4,11 +4,13 @@ type PageMeta = Partial<{
 }>
 
 export default function usePageMeta({ title, description }: PageMeta) {
+  const r = useRoute()
+
   const _SITE_TITLE = "Kuroji Fusky"
   const _CREATOR = "@kurojifusky"
 
   useSeoMeta({
-    title: `${title} | ${_SITE_TITLE}`,
+    title: r.path === "/" ? title : `${title} | ${_SITE_TITLE}`,
     description: description,
     ogTitle: title,
     ogDescription: description,

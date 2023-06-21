@@ -1,7 +1,8 @@
 <script setup lang="ts">
 usePageMeta({
-  title: "Under construction",
-  description: "The site is temporarily down at the moment."
+  title: "Kuroji Fusky – sparking creativity through curiousity",
+  description:
+    "Kuroji Fusky is a blue fox-husky hybrid making cool stuff on the internet!"
 })
 
 definePageMeta({
@@ -11,5 +12,6 @@ definePageMeta({
 
 <template>
   <LandingHero />
-  <LandingAbout />
+  <LandingProjects />
+  <LandingVideos />
 </template>

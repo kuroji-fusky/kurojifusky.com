@@ -10,19 +10,16 @@ withDefaults(
 <template>
   <ResWrapper
     tag="header"
-    class="z-[4] flex justify-between items-center inset-0 bottom-[unset] fixed"
-    :px="[5, 4, 3]"
-    :py="2.125"
+    class="z-[4] flex justify-between items-center inset-0 bottom-[unset] fixed px-12 py-4"
+    :size="15.75"
   >
-    <ResWrapper extract-var>
-      <NuxtLink to="/" class="px-[var(--px-scoped)] py-[var(--py-scoped)]">
-        <KurojiFuskyIcon
-          class="w-[12rem]"
-          role="img"
-          aria-label="Kuroji Fusky"
-        />
-      </NuxtLink>
-    </ResWrapper>
+    <NuxtLink to="/">
+      <KurojiFuskyIcon
+        class="w-[var(--size)]"
+        role="img"
+        aria-label="Kuroji Fusky"
+      />
+    </NuxtLink>
     <ResWrapper
       tag="button"
       aria-label="Toggle menu"
@@ -31,6 +28,7 @@ withDefaults(
     >
       <div
         class="border-0 border-b-2 border-white w-full"
+        aria-hidden="true"
         v-for="_ in Array(2)"
       />
     </ResWrapper>
