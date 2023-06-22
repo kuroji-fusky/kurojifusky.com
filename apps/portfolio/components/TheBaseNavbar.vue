@@ -8,20 +8,16 @@ withDefaults(
 </script>
 
 <template>
-  <ResWrapper
-    tag="header"
+  <header
     class="z-[4] flex justify-between items-center inset-0 bottom-[unset] fixed px-12 py-4"
-    :size="15.75"
   >
     <NuxtLink to="/">
       <KurojiFuskyIcon
-        class="w-[var(--size)]"
         role="img"
         aria-label="Kuroji Fusky"
       />
     </NuxtLink>
-    <ResWrapper
-      tag="button"
+    <button
       aria-label="Toggle menu"
       :wh="20"
       class="w-10 h-10 flex flex-col justify-center gap-y-3"
@@ -31,6 +27,6 @@ withDefaults(
         aria-hidden="true"
         v-for="_ in Array(2)"
       />
-    </ResWrapper>
-  </ResWrapper>
+    </button>
+  </header>
 </template>

@@ -37,7 +37,8 @@ export default defineNuxtConfig({
         lang: "en"
       },
       bodyAttrs: {
-        class: "bg-kuro-dark2 text-kuro-lavender-50 font-inter"
+        class:
+          "bg-[var(--dynamic-bg)] text-[var(--dynamic-fg)] font-inter duration-300"
       },
       meta: [
         { "http-equiv": "X-UA-Compatible", "content": "IE=edge;chrome=1" },

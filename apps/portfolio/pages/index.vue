@@ -1,6 +1,6 @@
 <script setup lang="ts">
 usePageMeta({
-  title: "Kuroji Fusky – sparking creativity through curiousity",
+  title: "Kuroji Fusky – Sparking the Dreams Of Tomorrow",
   description:
     "Kuroji Fusky is a blue fox-husky hybrid making cool stuff on the internet!"
 })
@@ -12,6 +12,7 @@ definePageMeta({
 
 <template>
   <LandingHero />
+  <LandingIntro />
   <LandingProjects />
   <LandingVideos />
 </template>

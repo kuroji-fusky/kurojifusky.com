@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useDynamicColor } from "./composables/useDynamicColor"
+
 useLenisinit()
 
 const _r = useRoute()
@@ -13,7 +15,6 @@ useHeadSafe({
 })
 
 useSchemaOrg([
-  // @todo Select Identity: https://unhead-schema-org.harlanzw.com//guide/guides/identity
   defineWebSite({
     name: "Kuroji Fusky"
   }),
@@ -22,7 +23,10 @@ useSchemaOrg([
 </script>
 
 <template>
-  <div id="cursor-placeholder" class="fixed top-0 left-0 z-[9999]"></div>
+  <div
+    id="cursor-placeholder"
+    class="fixed top-0 left-0 z-[9999] pointer-events-none"
+  ></div>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -32,5 +36,14 @@ useSchemaOrg([
 html {
   scroll-behavior: initial;
   overflow-x: hidden;
+}
+
+body {
+  @apply transition-colors;
+}
+
+:root {
+  --dynamic-fg: theme("colors.kuro-lavender.50");
+  --dynamic-bg: theme("colors.kuro-dark2");
 }
 </style>
