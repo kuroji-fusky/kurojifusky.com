@@ -1,6 +1,6 @@
 <script setup lang="ts">
 usePageMeta({
-  title: "Kuroji Fusky – Sparking the Dreams Of Tomorrow",
+  title: "Kuroji Fusky – Sparking Dreams of Tomorrow",
   description:
     "Kuroji Fusky is a blue fox-husky hybrid making cool stuff on the internet!"
 })

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useDynamicColor } from "./composables/useDynamicColor"
-
 useLenisinit()
 
 const _r = useRoute()
@@ -39,7 +37,7 @@ html {
 }
 
 body {
-  @apply transition-colors;
+  @apply transition-colors bg-[var(--dynamic-bg)] text-[var(--dynamic-fg)] font-inter duration-[725ms];
 }
 
 :root {

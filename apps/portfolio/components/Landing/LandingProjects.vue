@@ -1,32 +1,7 @@
-<script setup lang="ts">
-import { useDynamicColor } from "~/composables/useDynamicColor"
-import { featuredProjects as projects } from "~~/constants"
-
-const projectRef = ref<HTMLDivElement | null>()
-
-onMounted(() => {
-  const io = new IntersectionObserver((entwies) => {
-    entwies.forEach((entwy) => {
-      const elIndex = parseInt(
-        Object.values((entwy.target as HTMLElement).dataset).toString()
-      )
-
-      if (entwy.isIntersecting) {
-        useDynamicColor({ bg: projects[elIndex].bg, fg: "white" })
-      }
-    })
-  })
-
-  toRaw(projectRef.value as unknown as HTMLElement[]).forEach((e) => {
-    io.observe(e)
-  })
-})
-</script>
-
 <template>
-  <div id="featured-projects" class="grid">
+  <div ref="wrapperRef" class="grid">
     <section
-      class="py-[4vw] px-32 h-[115dvh] flex items-center justify-between relative w-full"
+      class="py-[4vw] px-32 h-[100dvh] flex items-center justify-between relative w-full"
       v-for="(item, index) in projects"
       :key="index"
     >
@@ -38,7 +13,7 @@ onMounted(() => {
       </article>
       <div
         id="parallax-container"
-        class="bg-red-600 h-full w-full grid place-items-center"
+        class="h-full w-full grid place-items-center"
         role="presentation"
       >
         Temporary placeholder
@@ -46,3 +21,47 @@ onMounted(() => {
     </section>
   </div>
 </template>
+
+<script setup lang="ts">
+import { featuredProjects as projects } from "~~/constants"
+
+const projectRef = ref<HTMLElement>()
+const wrapperRef = ref<HTMLElement>()
+
+onMounted(() => {
+  const projectItemObserver = new IntersectionObserver(
+    (entwies) => {
+      entwies.forEach(({ target, isIntersecting }) => {
+        const elIndex = parseInt(
+          Object.values((target as HTMLElement).dataset).toString()
+        )
+
+        if (isIntersecting) {
+          useDynamicColor({
+            bg: projects[elIndex].bg,
+            fg: projects[elIndex].fg
+          })
+        }
+      })
+    },
+    { threshold: 0.33 }
+  )
+
+  toRaw(projectRef.value as unknown as HTMLElement[]).forEach((e) => {
+    projectItemObserver.observe(e)
+  })
+
+  const wrapperObserver = new IntersectionObserver(
+    (entwies) => {
+      entwies.forEach(({ isIntersecting }) => {
+        if (!isIntersecting) {
+          useDynamicColor({ bg: "", fg: "" })
+        }
+      })
+    },
+    { threshold: 0.15 }
+  )
+
+  wrapperObserver.observe(wrapperRef.value!)
+})
+</script>
