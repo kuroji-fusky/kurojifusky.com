@@ -2,17 +2,7 @@
 
 export default defineNuxtConfig({
   plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
-  modules: [
-    [
-      "@pinia/nuxt",
-      {
-        autoImports: ["defineStore", ["defineStore", "definePiniaStore"]]
-      }
-    ],
-    "@nuxt/content",
-    "@nuxt/image-edge",
-    "nuxt-schema-org"
-  ],
+  modules: ["@nuxt/content", "@nuxt/image-edge", "nuxt-schema-org"],
   typescript: {
     strict: true
   },
@@ -46,6 +36,11 @@ export default defineNuxtConfig({
       link: [
         { rel: "shortcut icon", href: "./favicon.png", fetchpriority: "high" }
       ]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      domainName: process.env.DOMAIN_NAME
     }
   },
   build: {

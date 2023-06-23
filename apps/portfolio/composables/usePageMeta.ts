@@ -3,7 +3,7 @@ type PageMeta = Partial<{
   description: string
 }>
 
-export default function usePageMeta({ title, description }: PageMeta) {
+export function usePageMeta({ title, description }: PageMeta) {
   const r = useRoute()
 
   const _SITE_TITLE = "Kuroji Fusky"

@@ -1,16 +1,15 @@
 <script setup lang="ts">
-useLenisinit()
+import Lenis from "@studio-freight/lenis"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const _r = useRoute()
-const _SITE_URL = `https://kurojifusky.com${_r.fullPath}`
+const config = useRuntimeConfig()
 
-useSeoMeta({
-  ogUrl: _SITE_URL
-})
+const _SITE_URL = `https://${config.public.domainName}${_r.fullPath}`
 
-useHeadSafe({
-  link: [{ rel: "canonical", href: _SITE_URL }]
-})
+useSeoMeta({ ogUrl: _SITE_URL })
+useHeadSafe({ link: [{ rel: "canonical", href: _SITE_URL }] })
 
 useSchemaOrg([
   defineWebSite({
@@ -18,13 +17,35 @@ useSchemaOrg([
   }),
   defineWebPage()
 ])
+
+onBeforeMount(() => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  const lenis = new Lenis({
+    duration: 1.125,
+    orientation: "vertical",
+    smoothWheel: true,
+    wheelMultiplier: 0.65,
+    smoothTouch: false,
+    infinite: false
+  })
+
+  const raf = (time: unknown) => {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+
+  lenis.on("scroll", ScrollTrigger.update)
+
+  gsap.ticker.add((t) => lenis.raf(t * 1000))
+})
 </script>
 
 <template>
-  <div
-    id="cursor-placeholder"
-    class="fixed top-0 left-0 z-[9999] pointer-events-none"
-  ></div>
+  <KuroTransition />
+  <Cursor />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

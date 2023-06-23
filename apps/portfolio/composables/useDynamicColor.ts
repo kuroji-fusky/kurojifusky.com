@@ -4,7 +4,7 @@ interface _DynamicColor {
   fg?: string
 }
 
-export function useDynamicColor({ bg, bgGradPoint, fg }: _DynamicColor) {
+export const useDynamicColor = ({ bg, bgGradPoint, fg }: _DynamicColor) => {
   const $body = document.body.style
 
   $body.setProperty("--dynamic-bg", bg ?? "")
