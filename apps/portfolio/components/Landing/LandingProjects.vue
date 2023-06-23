@@ -62,6 +62,11 @@ onMounted(() => {
         </h2>
         <h3 class="text-xl opacity-75 uppercase">
           {{ item.type }}
+          <NuxtLink
+            :to="`/projects/${useSluggy(item.name)}`"
+            class="underline"
+            >{{ item.name }}</NuxtLink
+          >
         </h3>
         <p class="text-2xl">
           {{ item.description }}
