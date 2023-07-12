@@ -1,13 +1,40 @@
 ---
+import Page from "../components/Base/Page.astro"
+
+import {
+  type BlogPost,
+  type FixConstraints,
+  contentfulClient
+} from "../lib/contentful"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
+
+const { items } = await contentfulClient.getEntries<FixConstraints<BlogPost>>({
+  content_type: "blogPost"
+})
+
+const posts = items.map(({ fields }) => {
+  const { title, description, banner, overridePublishDate, slug } =
+    fields as BlogPost
+
+  return {
+    title,
+    description,
+    img: !banner.fields ? undefined : `https:${banner.fields.file.url}`,
+    link: `/post/${slug}`
+  }
+})
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Page title="Balls">
+  {
+    posts.map((post) => {
+      return (
+        <a href={post.link} class="block p-5 border">
+          <h2>{post.title}</h2>
+          <h3>{post.description}</h3>
+          {post.img && <img src={post.img} class="w-96 h-96" />}
+        </a>
+      )
+    })
+  }
+</Page>
