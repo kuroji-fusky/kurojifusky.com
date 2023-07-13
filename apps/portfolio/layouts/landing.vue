@@ -1,5 +1,5 @@
 <template>
-  <TheBaseNavbar />
+  <TheBaseNavbar :landing="true" />
   <TheBaseNavMenu />
   <main>
     <slot />

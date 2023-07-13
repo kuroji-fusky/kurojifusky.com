@@ -1,21 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
-  modules: [
-    [
-      "@pinia/nuxt",
-      {
-        autoImports: ["defineStore", ["defineStore", "definePiniaStore"]]
-      }
-    ],
-    "@nuxt/content",
-    "@nuxt/image-edge",
-    "nuxt-schema-org"
-  ],
+  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
+  modules: ["@nuxt/content", "@nuxt/image-edge", "nuxt-schema-org"],
   typescript: {
     strict: true
   },
   webpack: {
     extractCSS: true
+  },
+  routeRules: {
+    "/blog": { redirect: "https://blog.kurojifusky.com" }
   },
   css: ["@kuro/ui/shared.scss", "~/assets/fonts.scss"],
   postcss: {
@@ -25,20 +20,11 @@ export default defineNuxtConfig({
       ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {})
     }
   },
-  runtimeConfig: {
-    public: {
-      siteUrl: "https://kurojifusky.com"
-    }
-  },
   app: {
     head: {
       htmlAttrs: {
-        style: "scroll-behavior: initial; overflow-x: hidden;",
-        lang: "en",
-        dir: "ltr"
-      },
-      bodyAttrs: {
-        class: "bg-kuro-dark2 text-kuro-lavender-50"
+        dir: "ltr",
+        lang: "en"
       },
       meta: [
         { "http-equiv": "X-UA-Compatible", "content": "IE=edge;chrome=1" },
@@ -51,5 +37,13 @@ export default defineNuxtConfig({
         { rel: "shortcut icon", href: "./favicon.png", fetchpriority: "high" }
       ]
     }
+  },
+  runtimeConfig: {
+    public: {
+      domainName: process.env.DOMAIN_NAME
+    }
+  },
+  build: {
+    transpile: ["gsap"]
   }
 })

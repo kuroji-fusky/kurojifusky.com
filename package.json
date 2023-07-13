@@ -6,7 +6,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,js,cjs,vue,md}\"",
-    "postinstall": "cd ./apps/portfolio && yarn nuxt prepare"
+    "postinstall": "cd ./apps/portfolio && nuxt prepare && cd ../blog && nuxt prepare"
   },
   "devDependencies": {
     "@turbo/gen": "^1.9.7",

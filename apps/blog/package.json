@@ -1,25 +1,30 @@
 {
   "name": "@kuro/blog",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "^5.0.3",
+    "@fontsource/open-sans": "^5.0.3",
+    "@nuxt/image-edge": "^1.0.0-rc.1-28105270.a3967a7",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^18",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "nuxt": "^3.5.3",
+    "postcss": "^8.4.24",
+    "sass": "^1.63.3",
+    "tailwindcss": "^3.3.2"
   },
   "dependencies": {
-    "@astrojs/image": "^0.16.9",
-    "@astrojs/prefetch": "^0.2.3",
-    "@astrojs/sitemap": "^1.3.1",
-    "@astrojs/tailwind": "^3.1.3",
-    "@astrojs/vercel": "^3.4.0",
-    "@astrojs/vue": "^2.2.0",
-    "@kuro/ui": "*",
-    "astro": "^2.5.0",
-    "tailwindcss": "^3.0.24",
-    "vue": "^3.2.30"
+    "@contentful/rich-text-types": "^16.2.0",
+    "@vercel/analytics": "^1.0.1",
+    "contentful": "^10.3.4",
+    "contentful-rich-text-vue-renderer": "^3.1.0"
   }
 }
