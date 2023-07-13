@@ -1,0 +1,18 @@
+@import "@fontsource/inter";
+@import "@fontsource/open-sans";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :is(h1, h2, h3, h4, h5) {
+    @apply font-inter;
+  }
+  body {
+    @apply font-open-sans;
+  }
+  html {
+    @apply overflow-x-hidden;
+  }
+}

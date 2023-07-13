@@ -1,13 +1,8 @@
-# @kuro/blog
+# Kuroji's Nuxt 3 Template
 
-Install and start dev server
+A default boilerplate that comes with:
 
-```console
-yarn && yarn dev
-```
-
-Build the thing
-
-```
-yarn build
-```
+- Pre-defined Tailwind CSS config + Tailwind Typography
+- Prettier
+- @nuxt/image
+- Fontsource's Open Sans and Inter

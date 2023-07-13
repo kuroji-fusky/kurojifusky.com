@@ -14,7 +14,6 @@
     "@pinia/nuxt": "^0.4.11",
     "@studio-freight/lenis": "^1.0.13",
     "@types/node": "^18",
-    "@types/prismjs": "^1.26.0",
     "@vueuse/core": "^10.1.2",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
