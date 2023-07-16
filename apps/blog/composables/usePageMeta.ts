@@ -1,21 +1,34 @@
-interface PageMetaProps {
+export function usePageMeta({
+  isBlogPost,
+  title,
+  description,
+}: {
+  isBlogPost?: boolean
   title?: string
   description?: string
-}
-
-export function usePageMeta({ title, description }: PageMetaProps) {
+}) {
   const router = useRoute()
-  const SITE_NAME = "Kuroji Fusky's Blog"
+  const SITE_NAME = "Kuroji Fusky Blog"
+  const CREATOR = "@kurojifusky"
 
   const parseTitle = router.fullPath !== "/" ? `${title} | ${SITE_NAME}` : title
+
+  const blogContents = !isBlogPost
+    ? {}
+    : {
+        author: "Kuroji Fusky",
+      }
 
   useSeoMeta({
     title: parseTitle,
     description: description,
+    ...blogContents,
     ogTitle: title,
     ogDescription: description,
-    ogType: "website",
+    ogType: !isBlogPost ? "website" : "article",
     twitterTitle: title,
     twitterDescription: description,
+    twitterCreator: CREATOR,
+    twitterSite: CREATOR,
   })
 }

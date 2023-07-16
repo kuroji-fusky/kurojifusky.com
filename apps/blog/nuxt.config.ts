@@ -9,6 +9,9 @@ export default defineNuxtConfig({
           content: "Kuroji Fusky's Blog",
         },
       ],
+      bodyAttrs: {
+        class: "text-white bg-kuro-dark2",
+      },
     },
   },
   runtimeConfig: {

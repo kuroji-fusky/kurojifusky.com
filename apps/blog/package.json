@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-types": "^16.2.0",
+    "@kuro/ui": "*",
     "@vercel/analytics": "^1.0.1",
     "contentful": "^10.3.4",
     "contentful-rich-text-vue-renderer": "^3.1.0"

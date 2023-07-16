@@ -23,4 +23,5 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
+  presets: [require("@kuro/ui/kuro-tailwind.cjs")],
 }
