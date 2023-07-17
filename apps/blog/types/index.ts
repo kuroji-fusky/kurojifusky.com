@@ -18,6 +18,7 @@ export type BlogPost = EntryConstraints<{
   slug: string
   overridePublishDate: string
   metaTags: string[]
+  category: string | string[]
   banner: FileMetadata & string
   description: string
   content: object

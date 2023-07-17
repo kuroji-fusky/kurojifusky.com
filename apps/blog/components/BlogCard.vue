@@ -5,6 +5,7 @@ defineProps<{
   slug: string
   tag?: string
   date?: string
+  category: string[]
 }>()
 </script>
 
@@ -26,12 +27,17 @@ defineProps<{
     </NuxtLink>
     <NuxtLink
       :to="`/post/${slug}`"
-      class="pt-2 text-[1.725rem] font-bold font-inter hover:text-violet-300 hover:underline"
+      class="pt-2 text-[1.725rem] leading-9 font-bold font-inter hover:text-violet-300 hover:underline"
     >
       {{ title }}
     </NuxtLink>
-    <div class="flex gap-x-3.5">
-      <p>tag</p>
+    <div class="flex items-center gap-x-1.5">
+      <NuxtLink
+        class="text-sm py-0.5 px-3 rounded-3xl bg-kuro-lavender-800 hover:bg-kuro-lavender-900"
+        v-for="name in category"
+        :to="`/category/${name.toLowerCase()}`"
+        >{{ name }}</NuxtLink
+      >
       <Timestamp :date="(date as string)" />
     </div>
   </div>

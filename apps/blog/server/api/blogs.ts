@@ -11,20 +11,24 @@ export default defineEventHandler(async () => {
       "fields.description",
       "fields.content",
       "fields.overridePublishDate",
+      "fields.category",
       "sys.createdAt",
       "sys.updatedAt",
     ],
+    limit: 20,
   })
 
-  return entries.items.map(({ sys, fields }) => {
+  return entries.items.map(({ sys, fields, metadata }) => {
     const bannerImg = `https:${(fields.banner as any).fields.file.url}`
 
     const overridePublishDate = fields.overridePublishDate
 
     return {
-      datePublished: overridePublishDate ? overridePublishDate : sys.createdAt,
+      datePublished: overridePublishDate
+        ? new Date(overridePublishDate).toISOString()
+        : sys.createdAt,
       dateModified: sys.updatedAt,
-      overridePublishDate: fields.overridePublishDate,
+      category: fields.category,
       title: fields.title,
       description: fields.description,
       banner: bannerImg,

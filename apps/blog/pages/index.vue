@@ -12,17 +12,20 @@ usePageMeta({
 </script>
 
 <template>
-  <div class="flex justify-center mt-20">
+  <div class="flex justify-center h-screen">
     <section class="mx-auto max-w-screen-2xl px-9">
-      <h1 class="my-3 text-3xl font-bold font-inter">Latest posts</h1>
+      <h1 class="my-5 text-4xl font-bold font-inter">Latest posts</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3.5">
         <BlogCard
-          v-for="({ title, banner, slug, datePublished }, index) of data"
+          v-for="(
+            { title, banner, slug, datePublished, category }, index
+          ) of data"
           :key="index"
           :title="title"
           :banner="banner"
           :slug="slug"
           :date="datePublished"
+          :category="(category as string[])"
         />
       </div>
     </section>

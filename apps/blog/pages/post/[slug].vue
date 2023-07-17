@@ -109,14 +109,29 @@ const parseDatBitch = () => {
 
 <template>
   <main>
-    <article itemscope itemtype="">
+    <article itemscope itemtype="" class="px-9">
       <meta itemprop="datePublished" :content="data?.datePublished" />
       <meta itemprop="dateModified" :content="data?.dateModified" />
       <meta itemprop="image" :content="data?.banner" />
       <meta itemprop="publisher" content="blog.kurojifusky.com" />
       <section class="flex flex-col max-w-screen-lg mx-auto py-9 gap-y-3">
-        <span>tag</span>
-        <h1 itemprop="name headline" class="text-[2.625rem] font-bold">
+        <div class="flex gap-2.5 items-center">
+          <NuxtLink
+            class="px-3.5 py-1 text-sm rounded-3xl bg-kuro-lavender-800 hover:bg-kuro-lavender-900"
+            v-for="name in data!.category"
+            :to="`/category/${name.toLowerCase()}`"
+            >{{ name }}</NuxtLink
+          >
+          <Timestamp
+            class="text-sm opacity-60"
+            prefix="Published on"
+            :date="(data?.datePublished as string)"
+          />
+        </div>
+        <h1
+          itemprop="name headline"
+          class="text-[2.625rem] font-extrabold font-inter"
+        >
           {{ data?.title }}
         </h1>
         <p class="text-xl">
@@ -132,16 +147,6 @@ const parseDatBitch = () => {
           loading="eager"
           fetchpriority="high"
         />
-        <p class="flex gap-4">
-          <Timestamp
-            prefix="Published on"
-            :date="(data?.datePublished as string)"
-          />
-          <Timestamp
-            prefix="Updated on"
-            :date="(data?.dateModified as string)"
-          />
-        </p>
       </section>
       <hr
         class="max-w-screen-xl mx-auto mt-4 border opacity-50 border-kuro-royalblue-400"
