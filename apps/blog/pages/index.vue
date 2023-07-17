@@ -13,35 +13,18 @@ usePageMeta({
 
 <template>
   <div class="flex justify-center mt-20">
-    <div class="max-w-screen-2xl grid grid-cols-3 gap-1.5">
-      <div
-        v-for="(item, index) of data"
-        :key="index"
-        class="flex flex-col px-5 py-6 border rounded-lg gap-y-2 border-kuro-lavender-700"
-      >
-        <NuxtLink :to="`/post/${item.slug}`">
-          <NuxtImg
-            :src="item.banner"
-            class="aspect-[16/8] w-full object-cover rounded-lg"
-            sizes="300px lg:500px"
-            format="webp"
-            decoding="async"
-            loading="eager"
-            quality="69"
-            preload
-          />
-        </NuxtLink>
-        <NuxtLink
-          :to="`/post/${item.slug}`"
-          class="py-1.5 text-[1.725rem] font-bold font-inter"
-        >
-          {{ item.title }}
-        </NuxtLink>
-        <div class="flex gap-x-3.5">
-          <p>tag</p>
-          <time class="opacity-75 line-clamp-3">date</time>
-        </div>
+    <section class="mx-auto max-w-screen-2xl px-9">
+      <h1 class="my-3 text-3xl font-bold font-inter">Latest posts</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3.5">
+        <BlogCard
+          v-for="({ title, banner, slug, datePublished }, index) of data"
+          :key="index"
+          :title="title"
+          :banner="banner"
+          :slug="slug"
+          :date="datePublished"
+        />
       </div>
-    </div>
+    </section>
   </div>
 </template>

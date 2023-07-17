@@ -23,9 +23,11 @@
   },
   "dependencies": {
     "@contentful/rich-text-types": "^16.2.0",
+    "@iconify-prerendered/vue-fa6-brands": "^0.22.1680070484",
     "@kuro/ui": "*",
     "@vercel/analytics": "^1.0.1",
     "contentful": "^10.3.4",
-    "contentful-rich-text-vue-renderer": "^3.1.0"
+    "contentful-rich-text-vue-renderer": "^3.1.0",
+    "lucide-vue-next": "^0.260.0"
   }
 }

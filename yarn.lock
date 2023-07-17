@@ -3790,6 +3790,11 @@ lucide-vue-next@^0.221.0:
   resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.221.0.tgz#a31146f427b5827a31b938fe743caaf48e9e8ddc"
   integrity sha512-G3e1va+u6Xb0uKYLyFHqy5mSxrqqZol4gQK7+RHgy32d0s9XU11MGSRb8DM7C1/Q/DCPis/kCDJnJP9m1GHD+A==
 
+lucide-vue-next@^0.260.0:
+  version "0.260.0"
+  resolved "https://registry.yarnpkg.com/lucide-vue-next/-/lucide-vue-next-0.260.0.tgz#d44beda3ff4442cd49b16865d8048392c53449f4"
+  integrity sha512-rGVJRbNVijt/h8y1CAvuNVZldz04sy05QbNoqtY9INKo9J9dxOXXrnQtbdF0JeeNy/isQWH+fxej8n0gxj9f5Q==
+
 magic-string-ast@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/magic-string-ast/-/magic-string-ast-0.1.3.tgz#7b2153651ff3e1e1cb0e46ac05a300defa542a2c"

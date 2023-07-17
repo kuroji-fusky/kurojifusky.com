@@ -4,9 +4,12 @@ import { BLOCKS } from "@contentful/rich-text-types"
 import { BlogPost } from "types"
 
 const { slug } = useRoute().params
-const { data } = await useFetch<BlogPost["fields"]>(`/api/blog/${slug}`, {
-  key: slug as string,
-})
+const { data } = await useFetch<Required<BlogPost["fields"]>>(
+  `/api/blog/${slug}`,
+  {
+    key: slug as string,
+  }
+)
 
 usePageMeta({
   isBlogPost: true,
@@ -25,7 +28,7 @@ const parseForAnchor = (input: string) => {
   return parseHash
 }
 
-const parseBlocks = () => {
+const parseDatBitch = () => {
   // This function is an absolute dumpster fire, it's bad lol
   return {
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
@@ -58,7 +61,7 @@ const parseBlocks = () => {
     [BLOCKS.PARAGRAPH]: (node: any) => {
       return h(
         "p",
-        (node as any).content.map((nodeItem: any) => {
+        node.content.map((nodeItem: any) => {
           if (nodeItem.nodeType == "text") {
             return nodeItem.value
           }
@@ -70,7 +73,7 @@ const parseBlocks = () => {
               return h(
                 "div",
                 {
-                  class: "grid place-items-center py-4",
+                  class: "grid place-items-center py-4 select-none",
                   "data-embed-id": videoId,
                 },
                 h("iframe", {
@@ -106,34 +109,53 @@ const parseBlocks = () => {
 
 <template>
   <main>
-    <section class="flex flex-col max-w-screen-xl px-12 mx-auto gap-y-3">
-      <span>tag</span>
-      <h1 class="text-[2.625rem] font-bold">
-        {{ data?.title }}
-      </h1>
-      <p class="text-xl">
-        {{ data?.description }}
-      </p>
-      <NuxtImg
-        class="aspect-[16/8] object-cover w-full rounded-md"
-        :src="data?.banner"
-        sizes="400px md:600px lg:800px"
-        :quality="75"
-        format="webp"
-        draggable="false"
-        loading="eager"
-        fetchpriority="high"
+    <article itemscope itemtype="">
+      <meta itemprop="datePublished" :content="data?.datePublished" />
+      <meta itemprop="dateModified" :content="data?.dateModified" />
+      <meta itemprop="image" :content="data?.banner" />
+      <meta itemprop="publisher" content="blog.kurojifusky.com" />
+      <section class="flex flex-col max-w-screen-lg mx-auto py-9 gap-y-3">
+        <span>tag</span>
+        <h1 itemprop="name headline" class="text-[2.625rem] font-bold">
+          {{ data?.title }}
+        </h1>
+        <p class="text-xl">
+          {{ data?.description }}
+        </p>
+        <NuxtImg
+          class="aspect-[16/8] object-cover w-full rounded-md"
+          :src="data?.banner"
+          sizes="400px md:600px lg:800px"
+          :quality="75"
+          format="webp"
+          draggable="false"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <p class="flex gap-4">
+          <Timestamp
+            prefix="Published on"
+            :date="(data?.datePublished as string)"
+          />
+          <Timestamp
+            prefix="Updated on"
+            :date="(data?.dateModified as string)"
+          />
+        </p>
+      </section>
+      <hr
+        class="max-w-screen-xl mx-auto mt-4 border opacity-50 border-kuro-royalblue-400"
       />
-      <p>Posted on date, updated on date</p>
-    </section>
-
-    <article
-      class="mx-auto px-9 py-12 max-w-screen-lg prose-p:leading-[1.65rem] prose-p:py-2.5 prose-li:list-disc prose-a:text-kuro-royalblue-400 hover:prose-a:text-kuro-royalblue-300 prose-headings:font-bold"
-    >
-      <RichTextRenderer
-        :document="data?.content"
-        :nodeRenderers="parseBlocks()"
-      />
+      <div class="pt-9">
+        <section
+          class="mx-auto pb-12 max-w-screen-md prose-p:leading-[1.65rem] prose-p:py-2.5 prose-li:list-disc prose-a:text-kuro-royalblue-400 hover:prose-a:text-kuro-royalblue-300 prose-headings:font-bold"
+        >
+          <RichTextRenderer
+            :document="data?.content"
+            :nodeRenderers="parseDatBitch()"
+          />
+        </section>
+      </div>
     </article>
   </main>
 </template>

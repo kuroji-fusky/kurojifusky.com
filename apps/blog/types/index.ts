@@ -16,7 +16,11 @@ interface FileMetadata {
 export type BlogPost = EntryConstraints<{
   title: string
   slug: string
+  overridePublishDate: string
+  metaTags: string[]
   banner: FileMetadata & string
   description: string
   content: object
+  datePublished?: string
+  dateModified?: string
 }>

@@ -9,11 +9,30 @@ export default defineEventHandler(async ({ context }) => {
     "fields.slug": slug,
   })
 
-  const { fields } = entries.items[0] as unknown as BlogPost
+  const { sys, fields, metadata } = entries.items[0] as unknown as BlogPost & {
+    sys: {
+      createdAt: string
+      updatedAt: string
+    }
+    metadata: {
+      tags: Array<{
+        sys: {
+          id: string
+        }
+      }>
+    }
+  }
+
+  const overridePublishDate = fields.overridePublishDate
+  const category = metadata.tags[0].sys.id
 
   return {
+    datePublished: overridePublishDate ? overridePublishDate : sys.createdAt,
+    dateModified: sys.updatedAt,
     title: fields.title,
     description: fields.description,
+    category: category,
+    tags: fields.metaTags,
     banner: `https:${fields.banner.fields.file.url}`,
     content: fields.content,
   }

@@ -2,7 +2,7 @@
   <NuxtLoadingIndicator color="var(--loading-indicator)" />
   <Navbar />
   <slot />
-  <footer>© Kuroji Fusky</footer>
+  <Footer />
 </template>
 
 <style>

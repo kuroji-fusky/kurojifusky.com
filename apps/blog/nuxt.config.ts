@@ -1,12 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en",
+        dir: "ltr",
+      },
+      link: [{ rel: "icon", href: "/favicon.png", fetchpriority: "high" }],
       meta: [
+        { name: "robots", content: "noai, noimageai" },
         { "http-equiv": "X-UA-Compatible", content: "IE=edge;chrome=1" },
         {
           property: "og:site_name",
-          content: "Kuroji Fusky's Blog",
+          content: "Kuroji Fusky Blog",
         },
       ],
       bodyAttrs: {
