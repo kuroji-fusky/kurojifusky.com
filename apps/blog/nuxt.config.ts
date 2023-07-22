@@ -16,6 +16,13 @@ export default defineNuxtConfig({
           content: "Kuroji Fusky Blog",
         },
       ],
+      script: [
+        {
+          async: true,
+          src: "https://analytics.umami.is/script.js",
+          "data-website-id": process.env.UMAMI_ID || "Dev Mode",
+        },
+      ],
       bodyAttrs: {
         class: "text-white bg-kuro-dark2",
       },

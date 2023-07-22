@@ -3,7 +3,7 @@ const props = defineProps<{ prefix?: string; date: string }>()
 
 const formatDate = new Intl.DateTimeFormat("en", {
   year: "numeric",
-  month: "short",
+  month: "long",
   day: "numeric",
 })
 
@@ -15,7 +15,7 @@ const parseDate = formatDate.format(new Date(props.date))
     <span v-if="prefix">
       {{ `${prefix} ` }}
     </span>
-    <time>
+    <time :datetime="new Date(date).toISOString()">
       {{ parseDate }}
     </time>
   </div>
