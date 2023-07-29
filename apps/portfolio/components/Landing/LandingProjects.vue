@@ -52,7 +52,7 @@ onMounted(() => {
   <div ref="wrapperRef" class="grid">
     <section
       ref="gsapSectionRef"
-      class="py-[4vw] px-32 h-[100dvh] flex items-center justify-between relative w-full"
+      class="py-[4vw] px-32 h-[102.5dvh] flex items-center justify-between relative w-full"
       v-for="(item, index) in projects"
       :key="index"
     >
@@ -60,7 +60,7 @@ onMounted(() => {
         <h2 class="text-6xl font-bold font-unbounded w-[12ch]">
           {{ item.name }}
         </h2>
-        <h3 class="text-xl opacity-75 uppercase">
+        <h3 class="text-xl uppercase opacity-75">
           {{ item.type }}
           <NuxtLink
             :to="`/projects/${useSluggy(item.name)}`"
@@ -74,7 +74,7 @@ onMounted(() => {
       </article>
       <div
         id="parallax-container"
-        class="h-full w-full grid place-items-center"
+        class="grid w-full h-full place-items-center"
         role="presentation"
       >
         <div id="cropper" class="desktop-lg">Parallax placeholder</div>

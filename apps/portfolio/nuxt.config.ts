@@ -33,6 +33,13 @@ export default defineNuxtConfig({
           name: "Kuroji Fusky"
         }
       ],
+      script: [
+        {
+          "async": true,
+          "src": "https://analytics.umami.is/script.js",
+          "data-website-id": process.env.UMAMI_ID || "Dev Mode"
+        }
+      ],
       link: [
         { rel: "shortcut icon", href: "./favicon.png", fetchpriority: "high" }
       ]

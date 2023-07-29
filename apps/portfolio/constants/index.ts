@@ -3,7 +3,7 @@ export const featuredProjects = [
     name: "MyFursona",
     type: "Website",
     description:
-      "A work-in-progress platform for managing your fursonas and keeping track of commissions from artists",
+      "A work-in-progress platform for managing your fursonas and keeping track of art trades, adoptables, commissions from artists",
     bg: "#0b0228",
     fg: "#d3ceda"
   },
@@ -19,9 +19,10 @@ export const featuredProjects = [
     name: "Paco Drawing Stats",
     type: "Website",
     description:
-      "A passion side project that collects, parses, and visualizes drawing data from a furry artist, Paco Panda - with standalone REST and GraphQL APIs",
+      "A passion side project that collects, parses, and visualizes drawing data from a furry artist, Paco Panda",
     bg: "green",
     fg: "black"
   }
 ]
+
 export const featuredVideos = []
