@@ -1,8 +1,8 @@
 <template>
   <NuxtLoadingIndicator color="var(--loading-indicator)" />
-  <Navbar />
+  <TheBaseNavbar />
   <slot />
-  <Footer />
+  <TheBaseFooter />
 </template>
 
 <style>

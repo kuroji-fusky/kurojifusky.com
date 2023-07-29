@@ -9,9 +9,9 @@
     "postinstall": "cd ./apps/portfolio && nuxt prepare && cd ../blog && nuxt prepare"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
+    "@turbo/gen": "^1.10.9",
     "prettier": "^2.5.1",
-    "turbo": "^1.9.7"
+    "turbo": "^1.10.9"
   },
   "packageManager": "yarn@1.22.19",
   "workspaces": [
