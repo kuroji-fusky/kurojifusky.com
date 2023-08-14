@@ -32,7 +32,7 @@ const notDoneYet = () => {
         <MenuIcon :size="21" />
       </button>
       <ul
-        class="absolute px-9 py-4 md:p-0 left-0 flex flex-col w-full gap-x-4 gap-y-0.5 md:static lg:gap-6 md:flex-row top-[4.5rem] md:top-0 bg-kuro-lavender-800 md:bg-transparent justify-end"
+        class="absolute px-9 py-4 md:p-0 left-0 flex flex-col w-full gap-y-0.5 md:static md:flex-row top-[4.5rem] md:top-0 bg-kuro-lavender-800 md:bg-transparent justify-end"
         :class="[
           !toggleBurger
             ? 'pointer-events-none md:pointer-events-auto opacity-0 md:opacity-100 transition-opacity'
@@ -46,7 +46,7 @@ const notDoneYet = () => {
         >
           <NuxtLink
             :to="`/category/${text.toLocaleLowerCase()}`"
-            class="block w-full py-2 md:w-fit hover:underline hover:text-kuro-lavender-200 md:p-0"
+            class="block w-full py-2 rounded-md md:w-fit hover:bg-kuro-lavender-700 hover:text-kuro-lavender-100 md:py-2 md:px-3"
           >
             {{ text }}
           </NuxtLink>

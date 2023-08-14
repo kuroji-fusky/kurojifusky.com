@@ -1,6 +1,10 @@
 {
   "private": true,
   "name": "kuro-stuff",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -11,11 +15,7 @@
   "devDependencies": {
     "@turbo/gen": "^1.10.9",
     "prettier": "^2.5.1",
-    "turbo": "^1.10.9"
+    "turbo": "^1.10.12"
   },
-  "packageManager": "yarn@1.22.19",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "packageManager": "yarn@1.22.19"
 }

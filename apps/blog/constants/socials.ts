@@ -1,6 +1,5 @@
 // !!! TODO - make this a shared component
 import {
-  IconTwitter,
   IconYoutube,
   IconInstagram,
   IconGithub,
@@ -8,6 +7,7 @@ import {
   IconTelegram,
   IconSpotify,
   IconSoundcloud,
+  IconXTwitter,
 } from "@iconify-prerendered/vue-fa6-brands"
 
 export const SOCIAL_LINKS = [
@@ -22,18 +22,17 @@ export const SOCIAL_LINKS = [
     icon: IconMastodon,
     link: "https://furry.engineer/@kurojifusky",
   },
-  { name: "Telegram", icon: IconTelegram, link: "https://t.me/kurojifusky" },
   {
     name: "Twitter",
-    icon: IconTwitter,
-    link: "https://twitter.com/kurojifusky",
+    icon: IconXTwitter,
+    link: "https://x.com/kurojifusky",
   },
   {
     name: "Instagram",
     icon: IconInstagram,
     link: "https://www.instagram.com/kuroji_fusky/",
   },
-
+  { name: "Telegram", icon: IconTelegram, link: "https://t.me/kurojifusky" },
   {
     name: "SoundCloud",
     icon: IconSoundcloud,

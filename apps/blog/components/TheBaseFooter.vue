@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { SOCIAL_LINKS } from "~/constants/socials"
 
-const currentYear = new Date().getFullYear()
-const copyright = `© 2013-${currentYear} Kerby Keith Aquino / Fusky Labs LLC`
+const copyright = `© 2013-present Kerby Keith Aquino / Fusky Labs LLC`
 
 const EXT_LINKS = [
   {
@@ -14,15 +13,19 @@ const EXT_LINKS = [
     link: "https://kurojifusky.com",
   },
   {
-    name: "Support me on Ko-fi",
+    name: "Feed me caffiene",
     link: "https://ko-fi.com/kuroji_fusky",
+  },
+  {
+    name: "Contact me via email",
+    link: "mailto:hello@kurojifusky.com",
   },
 ]
 </script>
 
 <template>
-  <footer class="flex flex-col items-center py-5 text-sm text-center px-9">
-    <div class="flex gap-8 mb-7">
+  <footer class="flex flex-col items-center py-5 my-4 text-sm text-center px-9">
+    <div class="flex mb-4 gap-7">
       <NuxtLink
         v-for="(item, index) in SOCIAL_LINKS"
         :key="index"
@@ -34,7 +37,7 @@ const EXT_LINKS = [
         <component :is="item.icon" width="19" height="19" />
       </NuxtLink>
     </div>
-    <ul class="flex gap-3 py-2.5">
+    <ul class="flex flex-wrap gap-5 py-1">
       <li v-for="(item, index) in EXT_LINKS" :key="index">
         <NuxtLink
           :to="item.link"
@@ -45,9 +48,6 @@ const EXT_LINKS = [
         >
       </li>
     </ul>
-    <p class="text-xs opacity-60">
-      Written in Nuxt 3, Tailwind CSS, and Contentful
-    </p>
-    <p id="copyright" class="pt-3 pb-3.5">{{ copyright }}</p>
+    <p id="copyright" class="pt-3 pb-3.5 opacity-50">{{ copyright }}</p>
   </footer>
 </template>

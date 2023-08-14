@@ -11,13 +11,14 @@ const { data } = await useFetch<Required<BlogPost["fields"]>>(
   }
 )
 
+const _img = useImage()
+
 usePageMeta({
   isBlogPost: true,
   title: data?.value?.title,
   description: data?.value?.description,
+  img: _img(data.value?.banner as string, { width: 1280, height: 630 }),
 })
-
-const _img = useImage()
 
 const parseForAnchor = (input: string) => {
   const parseHash = input
@@ -59,60 +60,66 @@ const parseDatBitch = () => {
       )
     },
     [BLOCKS.PARAGRAPH]: (node: any) => {
-      return h(
-        "p",
-        node.content.map((nodeItem: any) => {
-          if (nodeItem.nodeType == "text") {
-            return nodeItem.value
-          }
+      return [
+        node.content.map((block: any) => {
+          if (
+            block.nodeType === "hyperlink" &&
+            block.content[0].value === "[yt-embed]"
+          ) {
+            const videoId = block.data.uri.split("/").at(-1)
 
-          if (nodeItem.nodeType === "hyperlink") {
-            if (nodeItem.content[0].value === "[yt-embed]") {
-              const videoId = nodeItem.data.uri.split("/").at(-1)
-
-              return h(
-                "div",
-                {
-                  class: "grid place-items-center py-4 select-none",
-                  "data-embed-id": videoId,
-                },
-                h("iframe", {
-                  class: "aspect-video w-full rounded-md overflow-hidden",
-                  src: `https://www.youtube-nocookie.com/embed/${videoId}`,
-                  frameborder: 0,
-                  allow: "clipboard-write; encrypted-media; web-share",
-                })
-              )
-            }
-
-            // Normal anchor link
             return h(
-              "a",
-              { href: nodeItem.data.uri, target: "_blank" },
-              nodeItem.content[0].value
+              "div",
+              {
+                class: "grid place-items-center py-4 select-none",
+                "data-embed-id": videoId,
+              },
+              h("iframe", {
+                class: "aspect-video w-full rounded-md overflow-hidden",
+                src: `https://www.youtube-nocookie.com/embed/${videoId}`,
+                frameborder: 0,
+                allow: "clipboard-write; encrypted-media; web-share",
+                allowfullscreen: false,
+              })
             )
           }
-
-          return h(
-            "span",
-            {
-              "data-block-debug": JSON.stringify(nodeItem),
-            },
-            nodeItem.value
-          )
-        })
-      )
+        }),
+        h(
+          "p",
+          node.content.map((block: any) => {
+            if (block.nodeType == "text") {
+              return h(
+                "span",
+                {
+                  "data-block-debug": JSON.stringify(block),
+                },
+                block.value
+              )
+            }
+          })
+        ),
+      ]
     },
   }
 }
+
+const contentRef = ref()
+
+onMounted(() => {
+  const contentChildNodes = (contentRef.value as HTMLElement).childNodes
+  Array.from(contentChildNodes)
+    .filter((node) => node.nodeType === 8)
+    .forEach((commentNodes) => {
+      commentNodes.remove()
+    })
+})
 </script>
 
 <template>
   <main>
-    <article itemscope itemtype="" class="px-9">
+    <article itemscope itemtype="http://schema.org/Article" class="px-9">
       <meta itemprop="datePublished" :content="data?.datePublished" />
-      <meta itemprop="dateModified" :content="data?.dateModified" />
-      <meta itemprop="image" :content="data?.banner" />
+      <meta itemprop="thumbnailUrl" :content="data?.banner" />
       <meta itemprop="publisher" content="blog.kurojifusky.com" />
       <section class="flex flex-col max-w-screen-lg mx-auto py-9 gap-y-3">
         <div class="flex gap-2.5 items-center">
@@ -134,7 +141,7 @@ const parseDatBitch = () => {
         >
           {{ data?.title }}
         </h1>
-        <p class="text-xl">
+        <p class="text-xl" itemprop="description">
           {{ data?.description }}
         </p>
         <NuxtImg
@@ -151,15 +158,15 @@ const parseDatBitch = () => {
       <hr
         class="max-w-screen-xl mx-auto mt-4 border opacity-50 border-kuro-royalblue-400"
       />
-      <div class="pt-9">
-        <section
-          class="mx-auto pb-12 max-w-screen-md prose-p:leading-[1.65rem] prose-p:py-2.5 prose-li:list-disc prose-a:text-kuro-royalblue-400 hover:prose-a:text-kuro-royalblue-300 prose-headings:font-bold"
-        >
-          <RichTextRenderer
-            :document="data?.content"
-            :nodeRenderers="parseDatBitch()"
-          />
-        </section>
+      <div
+        ref="contentRef"
+        class="pt-9 mx-auto pb-12 max-w-screen-md prose-p:leading-[1.65rem] prose-p:py-2.5 prose-li:list-disc prose-a:text-kuro-violet-300 hover:prose-a:text-kuro-violet-400 prose-headings:font-bold prose-blockquote:rounded-md prose-blockquote:px-5 prose-blockquote:border-l-kuro-violet-300 prose-blockquote:border-l-4 prose-blockquote:border-0 prose-blockquote:bg-kuro-violet-700 prose-blockquote:bg-opacity-25"
+        itemprop="articleBody"
+      >
+        <RichTextRenderer
+          :document="data?.content"
+          :nodeRenderers="parseDatBitch()"
+        />
       </div>
     </article>
   </main>

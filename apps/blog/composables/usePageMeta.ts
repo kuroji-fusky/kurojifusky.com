@@ -2,10 +2,12 @@ export function usePageMeta({
   isBlogPost,
   title,
   description,
+  img,
 }: {
   isBlogPost?: boolean
   title?: string
   description?: string
+  img?: string
 }) {
   const router = useRoute()
   const SITE_NAME = "Kuroji Fusky Blog"
@@ -29,6 +31,9 @@ export function usePageMeta({
     ogDescription: description,
     ogUrl: currentUrl,
     ogType: !isBlogPost ? "website" : "article",
+    ogImage: img,
+    ogImageHeight: 1280,
+    ogImageWidth: 630,
     twitterTitle: title,
     twitterDescription: description,
     twitterCreator: CREATOR,

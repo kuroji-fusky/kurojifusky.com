@@ -12,7 +12,6 @@ export default defineEventHandler(async ({ context }) => {
   const { sys, fields } = entries.items[0] as unknown as BlogPost & {
     sys: {
       createdAt: string
-      updatedAt: string
     }
     metadata: {
       tags: Array<{
@@ -31,7 +30,6 @@ export default defineEventHandler(async ({ context }) => {
     datePublished: overridePublishDate
       ? new Date(overridePublishDate).toISOString()
       : sys.createdAt,
-    dateModified: sys.updatedAt,
     category: fields.category,
     tags: fields.metaTags,
     banner: `https:${fields.banner.fields.file.url}`,

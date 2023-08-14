@@ -9,8 +9,8 @@ export default defineNuxtConfig({
       },
       link: [{ rel: "icon", href: "/favicon.png", fetchpriority: "high" }],
       meta: [
-        { name: "robots", content: "noai, noimageai" },
-        { "http-equiv": "X-UA-Compatible", content: "IE=edge;chrome=1" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "robots", content: "index,follow,noai,noimageai" },
         {
           property: "og:site_name",
           content: "Kuroji Fusky Blog",
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
         },
       ],
       bodyAttrs: {
-        class: "text-white bg-kuro-dark2",
+        class: "text-white bg-kuro-dark2 font-open-sans",
       },
     },
   },
