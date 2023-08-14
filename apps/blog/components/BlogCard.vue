@@ -11,7 +11,7 @@ defineProps<{
 
 <template>
   <div
-    class="flex flex-col px-5 py-6 border rounded-lg gap-y-2 border-kuro-lavender-900"
+    class="flex flex-col px-0 py-6 pt-4 border-0 border-b-2 rounded-none md:rounded-lg md:border-2 md:pt-6 md:px-5 gap-y-2 border-kuro-lavender-800"
   >
     <NuxtLink
       :to="`/post/${slug}`"
@@ -20,7 +20,7 @@ defineProps<{
     >
       <NuxtImg
         :src="banner"
-        class="aspect-[16/8] w-full object-cover scale-[1.01] hover:scale-105 transition-transform duration-300 h-full"
+        class="aspect-[16/7.85] w-full object-cover scale-[1.01] md:hover:scale-105 transition-transform duration-300 h-full"
         sizes="400px lg:600px"
         format="webp"
         decoding="async"

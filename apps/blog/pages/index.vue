@@ -14,13 +14,12 @@ usePageMeta({
 <template>
   <main class="flex justify-center">
     <section class="mx-auto max-w-screen-2xl px-9">
-      <div class="my-5">
-        <h1 class="text-4xl my-1.5 font-bold font-inter">
+        <h1 class="my-5 text-4xl font-bold font-inter">
           Fresh from the source
         </h1>
-        <p>Here's my recent blog posts baby</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3.5">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-0.5 lg:gap-2.5"
+      >
         <BlogCard
           v-for="(
             { title, banner, slug, datePublished, category }, index
