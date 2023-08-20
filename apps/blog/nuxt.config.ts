@@ -19,11 +19,11 @@ export default defineNuxtConfig({
         {
           async: true,
           src: "https://analytics.umami.is/script.js",
-          "data-website-id": process.env.UMAMI_ID || "Dev Mode",
+          "data-website-id": process.env.UMAMI_ID || "",
         },
       ],
       bodyAttrs: {
-        class: "text-white bg-kuro-dark2 font-open-sans",
+        class: "text-white bg-kuro-dark2 font-inter",
       },
     },
   },
@@ -31,8 +31,12 @@ export default defineNuxtConfig({
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
     CONTENTFUL_DELIVERY_TOKEN: process.env.CONTENTFUL_DELIVERY_TOKEN,
     CONTENTFUL_PREVIEW_TOKEN: process.env.CONTENTFUL_PREVIEW_TOKEN,
+    public: {
+      siteUrl:
+        process.env.NUXT_PUBLIC_SITE_URL || "https://blog.kurojifusky.com",
+    },
   },
-  modules: ["@nuxt/image-edge"],
+  modules: ["@nuxt/image-edge", "nuxt-schema-org", "nuxt-simple-sitemap"],
   css: ["~/assets/css/main.scss"],
   typescript: {
     strict: true,
@@ -47,8 +51,14 @@ export default defineNuxtConfig({
   webpack: {
     extractCSS: true,
   },
+  nitro: {
+    baseUrl: "https://blog.kurojifusky.com",
+    prerender: {
+      crawlLinks: true,
+    },
+  },
   image: {
-    domains: ["images.ctfassets.net", "res.cloudinary.net"],
+    domains: ["images.ctfassets.net", "res.cloudinary.com"],
     contentful: {},
   },
 })

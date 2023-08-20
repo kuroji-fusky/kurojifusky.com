@@ -12,7 +12,6 @@ module.exports = {
     extend: {
       fontFamily: {
         inter: ["Inter"],
-        "open-sans": ["Open Sans"],
       },
       spacing: {
         unset: "unset",

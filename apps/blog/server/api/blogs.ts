@@ -25,30 +25,31 @@ export default defineEventHandler(async (event) => {
     const overridePublishDate = fields.overridePublishDate
 
     return {
-      _categoryLower: (fields.category as string[]).map((c) => c.toLowerCase()),
       datePublished: overridePublishDate
         ? new Date(overridePublishDate).toISOString()
         : sys.createdAt,
-      category: fields.category,
-      title: fields.title,
-      description: fields.description,
-      banner: bannerImg,
-      slug: fields.slug,
+      category: fields.category as string[],
+      title: fields.title as string,
+      description: fields.description as string,
+      banner: bannerImg as string,
+      slug: fields.slug as string,
     }
   })
 
-  // Filter entries
-  const entriesFilter = listedEntries.filter((blogItems) =>
-    blogItems._categoryLower.includes(categoryParam as string)
-  )
+  // Filter entries the entries if the `category` param is present
+  const entriesFilter = listedEntries.filter((blogItems) => {
+    const toLoweredBlogItems = blogItems.category.map((item) =>
+      item.toLowerCase()
+    )
 
-  // We'll filter the entries if the `category` param is present
-  const parsedEntries = categoryParam ? entriesFilter : listedEntries
+    return categoryParam
+      ? toLoweredBlogItems.includes(categoryParam as string)
+      : blogItems
+  })
 
   // Sort the posts by latest date
-  return parsedEntries.sort((a, b) => {
-    return (
+  return entriesFilter.sort(
+    (a, b) =>
       (new Date(b.datePublished) as any) - (new Date(a.datePublished) as any)
-    )
-  })
+  )
 })

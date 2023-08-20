@@ -19,7 +19,7 @@ const notDoneYet = () => {
     ]"
   >
     <nav class="flex items-center max-w-screen-xl py-3.5 mx-auto px-9">
-      <div class="w-full">
+      <div class="flex items-center w-full">
         <NuxtLink href="/" class="inline-flex items-center gap-x-3">
           <NuxtImg src="/favicon.png" width="40" alt="Site icon" />
           <span class="text-[1.65rem] font-bold font-inter">{{ "Blog" }}</span>

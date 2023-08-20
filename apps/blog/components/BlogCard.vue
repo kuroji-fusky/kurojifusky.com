@@ -11,13 +11,14 @@ defineProps<{
 
 <template>
   <div
-    class="flex flex-col px-0 py-6 pt-4 border-0 border-b-2 rounded-none md:rounded-lg md:border-2 md:pt-6 md:px-5 gap-y-2 border-kuro-lavender-800"
+    class="flex flex-col px-0 py-6 pt-4 border-0 border-b-2 rounded-none md:border-0 gap-y-2 border-kuro-lavender-800"
   >
     <NuxtLink
       :to="`/post/${slug}`"
-      class="mb-2 overflow-hidden rounded-md"
+      class="relative mb-2 overflow-hidden rounded-md"
       prefetch
     >
+      <div class="absolute inset-0" />
       <NuxtImg
         :src="banner"
         class="aspect-[16/7.85] w-full object-cover scale-[1.01] md:hover:scale-105 transition-transform duration-300 h-full"
@@ -25,7 +26,7 @@ defineProps<{
         format="webp"
         decoding="async"
         loading="eager"
-        quality="60"
+        quality="55"
         preload
       />
     </NuxtLink>

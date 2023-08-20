@@ -20,6 +20,8 @@ usePageMeta({
   title: categoryTitle,
   description: `from the ${categoryTitle} category`,
 })
+
+useSchemaOrg([defineWebSite(), defineWebPage()])
 </script>
 
 <template>

@@ -19,15 +19,16 @@ if (!data.value)
   })
 
 const _img = useImage()
+const headlineBanner = _img(data.value?.banner as string, {
+  height: 1280,
+  width: 630,
+})
 
 usePageMeta({
   isBlogPost: true,
   title: data?.value?.title,
   description: data?.value?.description,
-  img: _img(data.value?.banner as string, {
-    height: 1280,
-    width: 630,
-  }),
+  img: headlineBanner,
 })
 
 const parseForAnchor = (input: string) => {
@@ -171,6 +172,22 @@ onMounted(() => {
       commentNodes.remove()
     })
 })
+
+useSchemaOrg([
+  definePerson({
+    name: "Kuroji Fusky",
+    image: "/favicon.png",
+    sameAs: [
+      "https://github.com/kuroji-fusky",
+      "https://youtube.com/@kurojifusky",
+    ],
+  }),
+  defineArticle({
+    headline: data?.value?.title,
+    image: [headlineBanner],
+  }),
+  defineWebPage(),
+])
 </script>
 
 <template>
@@ -217,12 +234,12 @@ onMounted(() => {
         />
       </section>
       <hr
-        class="max-w-screen-xl mx-auto border opacity-50 border-kuro-royalblue-400 my-10"
+        class="max-w-screen-xl mx-auto my-10 border opacity-50 border-kuro-royalblue-400"
       />
       <div
         ref="contentRef"
         id="ctf-renderer"
-        class="max-w-screen-lg mx-auto px-4 md:px-8"
+        class="max-w-screen-lg px-4 mx-auto md:px-8"
       >
         <RichTextRenderer
           :document="data?.content"
@@ -235,8 +252,16 @@ onMounted(() => {
 
 <style lang="scss">
 #ctf-renderer {
+  p {
+    @apply leading-[1.66rem];
+  }
+
   > p {
     @apply py-2;
+  }
+
+  ul {
+    @apply grid gap-y-3;
   }
 
   li {
@@ -249,7 +274,12 @@ onMounted(() => {
   }
 
   blockquote {
-    @apply bg-kuro-lavender-800 bg-opacity-50 py-4 px-5 border-0 border-l-8 rounded-md border-kuro-lavender-500;
+    @apply my-4 bg-gradient-to-b bg-kuro-lavender-900 bg-opacity-50 py-3.5 pl-8 pr-5 relative overflow-hidden rounded-md;
+
+    &::after {
+      content: "";
+      @apply absolute top-0 bottom-0 left-0 w-2 bg-gradient-to-b from-kuro-pale-400 to-kuro-violet-600;
+    }
   }
 
   a {
