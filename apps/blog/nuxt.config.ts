@@ -51,12 +51,6 @@ export default defineNuxtConfig({
   webpack: {
     extractCSS: true,
   },
-  nitro: {
-    baseUrl: "https://blog.kurojifusky.com",
-    prerender: {
-      crawlLinks: true,
-    },
-  },
   image: {
     domains: ["images.ctfassets.net", "res.cloudinary.com"],
     contentful: {},
