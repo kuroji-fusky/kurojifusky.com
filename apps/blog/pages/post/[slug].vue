@@ -11,13 +11,23 @@ const { data } = await useFetch<Required<BlogPost["fields"]>>(
   }
 )
 
+if (!data.value)
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Your mom not found",
+    fatal: true,
+  })
+
 const _img = useImage()
 
 usePageMeta({
   isBlogPost: true,
   title: data?.value?.title,
   description: data?.value?.description,
-  img: _img(data.value?.banner as string, { width: 630, height: 1280 }),
+  img: _img(data.value?.banner as string, {
+    height: 1280,
+    width: 630,
+  }),
 })
 
 const parseForAnchor = (input: string) => {
@@ -30,26 +40,19 @@ const parseForAnchor = (input: string) => {
 }
 
 const parseDatBitch = () => {
+  const ytEmbedString = "[yt-embed]"
+  const tweetEmbedString = "[tweet-embed]"
+
   // This function is an absolute dumpster fire, it's bad lol
   return {
     [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
       const img = node.data.target
-
       if (img.fields) {
-        return h("img", {
-          src: _img(`https:${img.fields.file.url}`, {
-            quality: 75,
-            format: "webp",
-          }),
-          loading: "lazy",
-          decoding: "async",
-          draggable: false,
-        })
+        return h("img", { class: "py-8", src: `https:${img.fields.file.url}` })
       }
     },
     [BLOCKS.HEADING_2]: (node: any) => {
       const headingText: string = node.content[0].value
-
       return h(
         "h2",
         {
@@ -59,12 +62,23 @@ const parseDatBitch = () => {
         headingText
       )
     },
+    [BLOCKS.HEADING_3]: (node: any) => {
+      const headingText: string = node.content[0].value
+      return h(
+        "h3",
+        {
+          id: parseForAnchor(headingText),
+          class: "my-2 group flex text-2xl",
+        },
+        headingText
+      )
+    },
     [BLOCKS.PARAGRAPH]: (node: any) => {
       return [
         node.content.map((block: any) => {
           if (
             block.nodeType === "hyperlink" &&
-            block.content[0].value === "[yt-embed]"
+            block.content[0].value === ytEmbedString
           ) {
             const videoId = block.data.uri.split("/").at(-1)
 
@@ -83,11 +97,31 @@ const parseDatBitch = () => {
               })
             )
           }
+
+          if (
+            block.nodeType === "hyperlink" &&
+            block.content[0].value === tweetEmbedString
+          ) {
+            return [
+              h(
+                "div",
+                {
+                  class: "twitter-tweet",
+                  "data-dnt": "true",
+                  "data-theme": "dark",
+                },
+                h("a", { href: block.value })
+              ),
+            ]
+          }
         }),
         h(
           "p",
           node.content.map((block: any) => {
             if (block.nodeType === "hyperlink") {
+              if (block.content[0].value === ytEmbedString) return
+              if (block.content[0].value === tweetEmbedString) return
+
               return h(
                 "a",
                 { href: block.data.uri, target: "_blank" },
@@ -95,10 +129,27 @@ const parseDatBitch = () => {
               )
             }
             if (block.nodeType == "text") {
+              if (block.marks.length === 0) {
+                return block.value
+              }
+
+              if (
+                JSON.stringify(block.marks) ===
+                `[{"type":"bold"},{"type":"underline"}]`
+              ) {
+                return h("strong", { class: "underline" }, block.value)
+              }
+              if (JSON.stringify(block.marks) === `[{"type":"bold"}]`) {
+                return h("strong", {}, block.value)
+              }
+              if (JSON.stringify(block.marks) === `[{"type":"italic"}]`) {
+                return h("em", {}, block.value)
+              }
+
               return h(
                 "span",
                 {
-                  "data-block-debug": JSON.stringify(block),
+                  "data-block-debug": JSON.stringify(block.marks),
                 },
                 block.value
               )
@@ -124,16 +175,9 @@ onMounted(() => {
 
 <template>
   <main>
-    <article
-      itemscope
-      itemtype="http://schema.org/Article"
-      class="px-5 md:px-9"
-    >
-      <meta itemprop="datePublished" :content="data?.datePublished" />
-      <meta itemprop="thumbnailUrl" :content="data?.banner" />
-      <meta itemprop="publisher" content="blog.kurojifusky.com" />
+    <article class="px-5 md:px-9">
       <section
-        class="flex flex-col max-w-screen-lg mx-auto py-9 gap-y-3.5 md:gap-y-5"
+        class="flex flex-col max-w-screen-lg mx-auto pt-6 px-4 gap-y-3.5 md:gap-y-5"
       >
         <div
           class="flex gap-2.5 items-start md:items-center flex-col md:flex-row"
@@ -158,7 +202,7 @@ onMounted(() => {
         >
           {{ data?.title }}
         </h1>
-        <p class="text-base md:text-xl" itemprop="description">
+        <p class="text-base md:text-xl">
           {{ data?.description }}
         </p>
         <NuxtImg
@@ -173,12 +217,12 @@ onMounted(() => {
         />
       </section>
       <hr
-        class="max-w-screen-xl mx-auto mt-4 border opacity-50 border-kuro-royalblue-400"
+        class="max-w-screen-xl mx-auto border opacity-50 border-kuro-royalblue-400 my-10"
       />
       <div
         ref="contentRef"
-        class="pt-9 mx-auto max-w-screen-md prose-p:text-[0.96rem] prose-p:leading-[1.45rem] md:prose-p:leading-[1.65rem] prose-p:py-2.5 prose-li:list-disc prose-a:text-kuro-lavender-200 hover:md:prose-a:text-kuro-lavender-400 md:hover:prose-a:underline prose-headings:font-bold prose-blockquote:rounded-md prose-blockquote:px-6 prose-blockquote:border-l-kuro-violet-300 prose-blockquote:border-l-8 prose-blockquote:border-0 prose-blockquote:bg-kuro-violet-700 prose-blockquote:bg-opacity-25 prose-ul:ml-4"
-        itemprop="articleBody"
+        id="ctf-renderer"
+        class="max-w-screen-lg mx-auto px-4 md:px-8"
       >
         <RichTextRenderer
           :document="data?.content"
@@ -188,3 +232,28 @@ onMounted(() => {
     </article>
   </main>
 </template>
+
+<style lang="scss">
+#ctf-renderer {
+  > p {
+    @apply py-2;
+  }
+
+  li {
+    @apply ml-5 list-disc;
+  }
+
+  li p,
+  > blockquote p {
+    @apply py-1;
+  }
+
+  blockquote {
+    @apply bg-kuro-lavender-800 bg-opacity-50 py-4 px-5 border-0 border-l-8 rounded-md border-kuro-lavender-500;
+  }
+
+  a {
+    @apply text-kuro-lavender-200 hover:text-kuro-lavender-400 hover:underline hover:underline-offset-2;
+  }
+}
+</style>

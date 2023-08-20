@@ -3,7 +3,7 @@ type EntryConstraints<T extends Record<string, any>> = {
   fields: T
 }
 
-interface FileMetadata {
+export interface FileMetadata {
   fields: {
     title?: string
     description?: string
