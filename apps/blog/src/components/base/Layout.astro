@@ -1,0 +1,41 @@
+---
+import "@fontsource/inter";
+import "@fontsource/inter/700.css";
+
+import Footer from "./Footer.vue";
+import Navbar from "./Navbar.vue";
+
+const { title, description } = Astro.props;
+const umamiId = import.meta.env.PUBLIC_UMAMI_ID;
+
+const DOMAIN = "https://blog.kurojifusky.com";
+const { pathname } = Astro.url;
+
+const parsedUrl = `${DOMAIN}${pathname}`;
+---
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={parsedUrl} />
+    <meta name="twitter:url" content={parsedUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="canonical" href={parsedUrl} />
+    <script
+      src="https://analytics.umami.is/script.js"
+      defer
+      data-website-id={umamiId}></script>
+  </head>
+  <body class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif]">
+    <Navbar />
+    <main class="px-9">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,13 +1,15 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
+const liteFontDefaults = ["system-ui", "sans-serif"]
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
   theme: {
     fontFamily: {
-      "open-sans": ["Open Sans"],
-      "inter": ["Inter"],
-      "unbounded": ["Unbounded"],
+      "open-sans": ["Open Sans", ...liteFontDefaults],
+      "inter": ["Inter", ...liteFontDefaults],
+      "unbounded": ["Unbounded", ...liteFontDefaults],
       "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
     },
     extend: {
@@ -98,6 +100,12 @@ module.exports = {
           800: "#A800A8",
           900: "#570057"
         }
+      },
+      spacing: {
+        unset: "unset"
+      },
+      inset: {
+        unset: "unset"
       }
     }
   }

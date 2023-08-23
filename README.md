@@ -11,6 +11,7 @@ Nuxt 3 and Tailwind CSS; deployed in Vercel!
 ## Tech stack
 
 - Nuxt 3
+- Astro
 - Tailwind CSS
 - GSAP
 - [Lenis](https://github.com/studio-freight/lenis)
