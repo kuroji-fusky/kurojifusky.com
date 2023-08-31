@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
   modules: ["@nuxt/content", "@nuxt/image-edge", "nuxt-schema-org"],
   typescript: {
     strict: true
@@ -12,7 +11,7 @@ export default defineNuxtConfig({
   routeRules: {
     "/blog": { redirect: "https://blog.kurojifusky.com" }
   },
-  css: ["@kuro/ui/shared.scss", "~/assets/fonts.scss"],
+  css: ["@kuro/ui/shared.css", "~/assets/fonts.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -36,6 +35,7 @@ export default defineNuxtConfig({
       script: [
         {
           "async": true,
+          "defer": true,
           "src": "https://analytics.umami.is/script.js",
           "data-website-id": process.env.UMAMI_ID || "Dev Mode"
         }
