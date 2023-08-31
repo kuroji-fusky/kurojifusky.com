@@ -23,6 +23,7 @@
     "vue": "^3.2.30"
   },
   "devDependencies": {
+    "@iconify-prerendered/vue-fa6-brands": "^0.23.1691126983",
     "@types/lodash": "^4.14.197"
   }
 }

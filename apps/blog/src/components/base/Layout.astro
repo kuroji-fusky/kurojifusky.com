@@ -18,6 +18,7 @@ const parsedUrl = `${DOMAIN}${pathname}`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noai,noimageai,follow,index" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <meta property="og:title" content={title} />
@@ -27,12 +28,13 @@ const parsedUrl = `${DOMAIN}${pathname}`;
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="canonical" href={parsedUrl} />
     <script
-      src="https://analytics.umami.is/script.js"
       defer
+      async
+      src="https://analytics.umami.is/script.js"
       data-website-id={umamiId}></script>
   </head>
-  <body class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif]">
-    <Navbar />
+  <body class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif] bg-kuro-dark2 text-kuro-lavender-50">
+    <Navbar client:idle />
     <main class="px-9">
       <slot />
     </main>

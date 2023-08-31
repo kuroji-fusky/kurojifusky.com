@@ -1,13 +1,28 @@
 ---
 import Layout from "../components/base/Layout.astro";
+
+const lmao = [
+	{ name: "All", filter: ""  },
+	{ name: "Insights", filter: "insights"  },
+	{ name: "UI/UX and Design", filter: "design"  },
+	{ name: "Engineering", filter: "engineering"  },
+]
 ---
 
-<Layout title="lol" description="Shit I nerd about lmfao">
-	<section>
-		picked posts
-	</section>
-	<section>
-		<h1>Fresh from source</h1>
-		<p>Browse the latest and greatest</p>
+<Layout title="Kuroji Fusky Blog | A place where I nerd things" description="Shit I nerd about lmfao">
+	<section class="py-3">
+		<nav class="flex justify-center">
+			{lmao.map((item) => (
+				<button>{item.name}</button>
+			))}
+		</nav>
+	</section class="py-3">
+	<section class="flex w-full">
+		<div class="w-full">
+			picked posts
+		</div>
+		<main class="w-2/5 flex-shrink-0">
+			latest posts
+		</main>
 	</section>
 </Layout>

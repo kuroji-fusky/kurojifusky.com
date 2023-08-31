@@ -1,21 +1,22 @@
 {
   "private": true,
-  "name": "kuro-site-abomination",
+  "name": "a-goddamn-abomination",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
+    "dev:p": "turbo run dev --filter=portfolio",
+    "dev:b": "turbo run dev --filter=blog",
     "build": "turbo run build",
-    "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,js,cjs,vue,md}\"",
+    "format": "prettier --write \"**/*.{ts,js,cjs,vue,md,astro}\"",
     "postinstall": "cd ./apps/portfolio && nuxt prepare"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.10.9",
-    "prettier": "^2.5.1",
-    "turbo": "^1.10.12"
+    "@turbo/gen": "^1.10.13",
+    "prettier": "^3.0.3",
+    "turbo": "^1.10.13"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
