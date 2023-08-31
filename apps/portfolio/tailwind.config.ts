@@ -1,5 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss"
+
+import kuroTailwindCfg from "@kuro/ui/kuro-tailwind"
+
+const config: Config = {
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -8,5 +11,7 @@ module.exports = {
     "./nuxt.config.{js,ts}",
     "./app.vue"
   ],
-  presets: [require("@kuro/ui/kuro-tailwind.cjs")]
+  presets: [kuroTailwindCfg]
 }
+
+export default config

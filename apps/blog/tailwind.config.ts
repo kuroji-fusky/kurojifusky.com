@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss"
 import typePlugin from "@tailwindcss/typography"
 import customPlugin from "tailwindcss/plugin"
+import kuroTailwindCfg from "@kuro/ui/kuro-tailwind"
 
 const config: Config = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -30,7 +31,7 @@ const config: Config = {
       })
     })
   ],
-  presets: [require("@kuro/ui/kuro-tailwind.cjs")]
+  presets: [kuroTailwindCfg]
 }
 
 export default config
