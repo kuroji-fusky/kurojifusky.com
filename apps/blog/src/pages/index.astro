@@ -1,28 +1,44 @@
 ---
-import Layout from "../components/base/Layout.astro";
+import Layout from "../components/base/Layout.astro"
 
 const lmao = [
-	{ name: "All", filter: ""  },
-	{ name: "Insights", filter: "insights"  },
-	{ name: "UI/UX and Design", filter: "design"  },
-	{ name: "Engineering", filter: "engineering"  },
+  { name: "All", filter: "" },
+  { name: "Updates", filter: "updates" },
+  { name: "Insights", filter: "insights" },
+  { name: "UI/UX and Design", filter: "design" },
+  { name: "Engineering", filter: "engineering" },
+  { name: "Music", filter: "music" }
 ]
 ---
 
-<Layout title="Kuroji Fusky Blog | A place where I nerd things" description="Shit I nerd about lmfao">
-	<section class="py-3">
-		<nav class="flex justify-center">
-			{lmao.map((item) => (
-				<button>{item.name}</button>
-			))}
-		</nav>
-	</section class="py-3">
-	<section class="flex w-full">
-		<div class="w-full">
-			picked posts
-		</div>
-		<main class="w-2/5 flex-shrink-0">
-			latest posts
-		</main>
-	</section>
+<Layout
+  title="Kuroji Fusky Blog | A place where I nerd things"
+  description="Shit I nerd about lmfao"
+>
+  <section class="pb-4 pt-6">
+    <nav class="flex justify-center gap-x-2.5 select-none">
+      {
+        lmao.map((item) => (
+          <button class="px-4 py-1.5 rounded-2xl bg-kuro-dark2 relative before:content-[''] before:absolute before:-inset-[1px] before:rounded-2xl before:bg-gradient-to-t before:from-kuro-violet-600 before:to-kuro-lavender-700 before:-z-[1] before:opacity-50 hover:before:opacity-100 before:transition-opacity">
+            <span class="whitespace-nowrap">{item.name}</span>
+          </button>
+        ))
+      }
+    </nav>
+  </section>
+  <section class="py-3 flex w-full gap-3">
+    <div class="w-full">picked posts</div>
+    <aside class="w-2/6 flex-shrink-0">
+      <h2>Latest posts</h2>
+    </aside>
+  </section>
+  <section class="flex justify-center items-center py-3">
+    <div class="text-center">
+      <h2>This ain't a blog site without an RSS feed!</h2>
+      <p>
+        Still not availble... yet, I'm still working on things - it will be
+        available eventually!
+      </p>
+    </div>
+  </section>
 </Layout>

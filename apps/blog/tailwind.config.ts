@@ -10,6 +10,22 @@ const config: Config = {
       addBase({
         "::selection": {
           "background-color": theme("colors.kuro-lavender.500")
+        },
+        "h1": {
+          "font-size": "2.25rem",
+          "font-weight": "bold"
+        },
+        "h2": {
+          "font-size": "2rem",
+          "font-weight": "bold"
+        },
+        "h3": {
+          "font-size": "1.75rem",
+          "font-weight": "bold"
+        },
+        "h4": {
+          "font-size": "1.5rem",
+          "font-weight": "bold"
         }
       })
     })

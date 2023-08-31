@@ -1,33 +1,22 @@
 <script setup lang="ts">
 import kLogo from "../k-logo.vue"
-import { kebabCase } from "lodash-es"
 
-const items = [
-  {
-    name: "Categories",
-    sublinks: [
-      { name: "Insights" },
-      { name: "Updates" },
-      { name: "Design" },
-      { name: "Engineering" },
-      { name: "Music" },
-      { name: "Others" }
-    ]
-  },
-  {
-    name: "About me"
-  }
+const categories = [
+  "Insights",
+  "Updates",
+  "Design",
+  "Engineering",
+  "Others",
+  "Music"
 ]
 </script>
 
 <template>
   <header class="bg-kuro-dark1 sticky top-0">
-    <nav class="flex items-center max-w-screen-2xl py-5 px-9 mx-auto">
+    <nav class="flex items-center max-w-screen-2xl py-4 px-9 mx-auto">
       <div class="flex items-center w-full gap-x-3.5">
         <kLogo class="cursor-pointer" />
-        <span class="text-2xl opacity-50 select-none" aria-hidden="true"
-          >/</span
-        >
+        <span class="text-2xl opacity-50 select-none">/</span>
         <div class="relative flex items-center">
           <a
             id="shelf-blog"
@@ -44,29 +33,28 @@ const items = [
           </a>
         </div>
       </div>
-      <ul class="flex items-center w-full justify-end">
-        <li v-for="({ name, sublinks }, index) in items" :key="index">
-          <a
-            :href="`/${kebabCase(name)}`"
-            class="group px-3 py-2.5 block relative"
+      <div class="flex items-center w-full justify-end text-[1.025rem]">
+        <span class="group px-3.5 py-2.5 rounded-md relative select-none hover:bg-kuro-lavender-700 hover:bg-opacity-50">
+          Category
+          <div
+            class="py-3 group-hover:opacity-100 group-focus:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none absolute left-0 top-10"
           >
-            <span class="text-lg">
-              {{ name }}
-            </span>
-            <div
-              v-if="sublinks"
-              class="group-hover:opacity-100 group-focus:opacity-100 group-hover:pointer-events-auto opacity-0 pointer-events-none absolute top-10 grid"
-            >
+            <div class="bg-kuro-dark2 p-2 grid rounded-md border border-kuro-violet-600">
               <a
-                v-for="({ name }, index) in sublinks"
+                v-for="(item, index) in categories"
                 :key="index"
-                :href="`/category/${kebabCase(name)}`"
-                >{{ name }}</a
+                :href="`/category/${item.toLocaleLowerCase()}`"
+                class="px-3 py-2.5 hover:bg-kuro-lavender-600 hover:bg-opacity-75 rounded-md"
               >
+                {{ item }}
+              </a>
             </div>
-          </a>
-        </li>
-      </ul>
+          </div>
+        </span>
+        <a href="/about-me" class="px-3.5 py-2.5 rounded-md relative select-none hover:bg-kuro-lavender-700 hover:bg-opacity-50">
+          About me
+        </a>
+      </div>
     </nav>
   </header>
 </template>
