@@ -9,16 +9,13 @@ import sitemap from "@astrojs/sitemap"
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    vue({
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => tag.startsWith("kf")
-        }
-      }
-    }),
+    vue(),
     tailwind(),
     image(),
     prefetch(),
-    sitemap()
-  ]
+    sitemap({
+      changefreq: "hourly"
+    })
+  ],
+  site: "https://blog.kurojifusky.com/"
 })

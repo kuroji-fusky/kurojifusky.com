@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import kLogo from "../k-logo.vue"
-import { kebabCase } from "lodash"
+import { kebabCase } from "lodash-es"
 
 const items = [
   {
