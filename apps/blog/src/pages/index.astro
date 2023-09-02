@@ -1,44 +1,23 @@
 ---
+import BlogShelf from "../components/BlogShelf.vue";
 import Layout from "../components/base/Layout.astro"
-
-const lmao = [
-  { name: "All", filter: "" },
-  { name: "Updates", filter: "updates" },
-  { name: "Insights", filter: "insights" },
-  { name: "UI/UX and Design", filter: "design" },
-  { name: "Engineering", filter: "engineering" },
-  { name: "Music", filter: "music" }
-]
 ---
-
 <Layout
   title="Kuroji Fusky Blog | A place where I nerd things"
-  description="Shit I nerd about lmfao"
+  description="Shit I nerd about stuff no one cares"
 >
-  <section class="pb-4 pt-6">
-    <nav class="flex justify-center gap-x-2.5 select-none">
-      {
-        lmao.map((item) => (
-          <button class="px-4 py-1.5 rounded-2xl bg-kuro-dark2 relative before:content-[''] before:absolute before:-inset-[1px] before:rounded-2xl before:bg-gradient-to-t before:from-kuro-violet-600 before:to-kuro-lavender-700 before:-z-[1] before:opacity-50 hover:before:opacity-100 before:transition-opacity">
-            <span class="whitespace-nowrap">{item.name}</span>
-          </button>
-        ))
-      }
-    </nav>
-  </section>
-  <section class="py-3 flex w-full gap-3">
-    <div class="w-full">picked posts</div>
-    <aside class="w-2/6 flex-shrink-0">
-      <h2>Latest posts</h2>
-    </aside>
-  </section>
-  <section class="flex justify-center items-center py-3">
-    <div class="text-center">
-      <h2>This ain't a blog site without an RSS feed!</h2>
+  <BlogShelf client:idle />
+  <section id="latest-posts-shelf" class="flex py-3" style="display: none !important"></section>
+  <section class="flex justify-center items-center py-4">
+    <div class="text-center bg-kuro-dark2 relative rounded-lg p-8 w-full before:content-[''] before:rounded-lg before:bg-gradient-to-tr before:from-orange-600 before:to-orange-200 before:absolute before:-inset-[1px] before:-inset-x-[2px] before:-z-[1] before:block">
+      <h2 class="my-6">This ain't a blog site without an RSS feed!</h2>
       <p>
         Still not availble... yet, I'm still working on things - it will be
         available eventually!
       </p>
+      <div class="flex items-center justify-center">
+        <button>SOOBSCRIEB</button>
+      </div>
     </div>
   </section>
 </Layout>

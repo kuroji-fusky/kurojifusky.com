@@ -43,11 +43,13 @@ const otherLinks: IterableLinks = [
 </script>
 
 <template>
-  <footer class="px-9 max-w-screen-2xl mx-auto flex items-center gap-x-3 py-6">
-    <span id="copyright" class="opacity-50"
+  <footer
+    class="px-9 max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-x-3 py-6"
+  >
+    <span id="copyright" class="opacity-50 order-2 lg:order-none"
       >&copy; 2023 Kerby Keith Aquino / Fusky Labs LLC</span
     >
-    <div class="flex gap-x-5 ml-auto">
+    <div class="flex gap-x-5 mx-auto lg:ml-auto lg:my-0 lg:mr-unset my-4">
       <a
         v-for="({ name, icon, link }, i) in socialLinks"
         :key="i"
@@ -57,23 +59,20 @@ const otherLinks: IterableLinks = [
         target="_blank"
         class="hover:text-kuro-lavender-400 transition-colors"
       >
-        <component
-          :is="(icon as {})"
-          height="23px"
-          width="23px"
-          class="p-0.5"
-        />
+        <component :is="icon as {}" height="23px" width="23px" class="p-0.5" />
       </a>
     </div>
-    <hr class="h-6 border border-l-kuro-lavender-700 mx-2" />
-    <div class="flex gap-x-3.5">
+    <hr
+      class="w-12 order-1 lg:order-none lg:w-unset lg:h-6 border border-b-kuro-lavender-700 border-b lg:border-l-kuro-lavender-700 my-4 lg:my-unset lg:mx-2"
+    />
+    <div class="flex text-center flex-col lg:flex-row gap-y-4 my-3.5 lg:my-unset gap-x-3.5">
       <a
         v-for="({ name, link }, index) in otherLinks"
         :key="index"
         :href="link"
         target="_blank"
         rel="noreferrer"
-        class="hover:underline hover:text-kuro-lavender-400 transition-colors"
+        class="underline lg:no-underline lg:hover:underline lg:hover:text-kuro-lavender-400 transition-colors"
       >
         {{ name }}
       </a>

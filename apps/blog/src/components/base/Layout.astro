@@ -19,17 +19,16 @@ const parsedUrl = `${DOMAIN}${pathname}`
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="robots" content="noai,noimageai,follow,index" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={parsedUrl} />
     <meta name="twitter:url" content={parsedUrl} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <link rel="canonical" href={parsedUrl} />
     <script
       defer
-      async
       src="https://analytics.umami.is/script.js"
       data-website-id={umamiId}></script>
   </head>
