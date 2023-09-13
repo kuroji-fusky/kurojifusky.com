@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue"
 import kLogo from "../k-logo.vue"
 
 const categories = [
@@ -9,19 +10,35 @@ const categories = [
   "Others",
   "Music"
 ]
+
+const shelfToggle = ref(false)
+
+const kuroIconRef = ref<HTMLElement | null>(null)
+const shelfBlog = ref<HTMLElement | null>(null)
+const shelfKuro = ref<HTMLElement | null>(null)
+
+onMounted(() => {})
 </script>
 
 <template>
   <header class="bg-kuro-dark1 sticky top-0 z-[2]">
     <nav class="flex items-center max-w-screen-2xl py-4 px-9 mx-auto">
       <div class="flex items-center w-full gap-x-3.5">
-        <kLogo class="cursor-pointer" />
-        <span class="text-2xl opacity-50 select-none">/</span>
+        <button ref="kuroIconRef" class="cursor-pointer">
+          <kLogo />
+        </button>
+        <span class="mx-1 text-2xl opacity-50 select-none">/</span>
         <div class="relative flex items-center">
           <a
+            ref="shelfBlog"
             id="shelf-blog"
             href="/"
-            class="inline-flex gap-x-3.5 items-center font-bold text-3xl"
+            class="absolute -top-2 left-0 transition-[transform,opacity] duration-300 inline-flex gap-x-3.5 items-center font-bold text-3xl"
+            :class="[
+              shelfToggle
+                ? 'translate-y-6 opacity-0 scale-y-50 pointer-events-none'
+                : ''
+            ]"
           >
             <img
               src="/favicon.png"
@@ -31,6 +48,18 @@ const categories = [
             />
             Blog
           </a>
+          <div
+            ref="shelfKuro"
+            id="shelf-kuro"
+            class="transition-[transform,opacity] duration-300 inline-flex gap-x-3.5 items-center"
+            :class="[
+              !shelfToggle
+                ? '-translate-y-6 opacity-0 scale-y-50 pointer-events-none'
+                : ''
+            ]"
+          >
+            content
+          </div>
         </div>
       </div>
       <div class="flex items-center w-full justify-end text-[1.025rem]">
