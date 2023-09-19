@@ -2,7 +2,7 @@
   "private": true,
   "name": "a-goddamn-abomination",
   "workspaces": [
-    "apps/*",
+    "sites/*",
     "packages/*"
   ],
   "scripts": {
@@ -10,13 +10,13 @@
     "dev:b": "turbo run dev --filter=blog",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,js,cjs,vue,md,astro}\"",
-    "postinstall": "cd ./apps/portfolio && nuxt prepare"
+    "format": "prettier --write \"**/*.{ts,js,mjs,cjs,vue,md,astro}\"",
+    "postinstall": "cd ./sites/portfolio && nuxt prepare"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.10.13",
+    "@turbo/gen": "^1.10.14",
     "prettier": "^3.0.3",
-    "turbo": "^1.10.13"
+    "turbo": "^1.10.14"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {

@@ -65,7 +65,9 @@ const otherLinks: IterableLinks = [
     <hr
       class="w-12 order-1 lg:order-none lg:w-unset lg:h-6 border border-b-kuro-lavender-700 border-b lg:border-l-kuro-lavender-700 my-4 lg:my-unset lg:mx-2"
     />
-    <div class="flex text-center flex-col lg:flex-row gap-y-4 my-3.5 lg:my-unset gap-x-3.5">
+    <div
+      class="flex text-center flex-col lg:flex-row gap-y-4 my-3.5 lg:my-unset gap-x-3.5"
+    >
       <a
         v-for="({ name, link }, index) in otherLinks"
         :key="index"
