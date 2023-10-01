@@ -17,7 +17,7 @@ const parsedUrl = `${DOMAIN}${pathname}`
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="robots" content="noai,noimageai,follow,index" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
@@ -27,6 +27,7 @@ const parsedUrl = `${DOMAIN}${pathname}`
     <meta property="og:url" content={parsedUrl} />
     <meta name="twitter:url" content={parsedUrl} />
     <link rel="canonical" href={parsedUrl} />
+    <link rel="preconnect" href="https://images.ctfassets.net/" />
     <script
       defer
       src="https://analytics.umami.is/script.js"

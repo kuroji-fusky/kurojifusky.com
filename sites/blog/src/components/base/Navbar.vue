@@ -17,14 +17,22 @@ const kuroIconRef = ref<HTMLElement | null>(null)
 const shelfBlog = ref<HTMLElement | null>(null)
 const shelfKuro = ref<HTMLElement | null>(null)
 
-onMounted(() => {})
+const handleLogoClicc = () => {
+  shelfToggle.value = !shelfToggle.value
+
+  console.log(shelfToggle.value)
+}
 </script>
 
 <template>
   <header class="bg-kuro-dark1 sticky top-0 z-[2]">
     <nav class="flex items-center max-w-screen-2xl py-4 px-9 mx-auto">
       <div class="flex items-center w-full gap-x-3.5">
-        <button ref="kuroIconRef" class="cursor-pointer">
+        <button
+          ref="kuroIconRef"
+          @click="handleLogoClicc"
+          class="cursor-pointer"
+        >
           <kLogo />
         </button>
         <span class="mx-1 text-2xl opacity-50 select-none">/</span>
@@ -46,7 +54,7 @@ onMounted(() => {})
               width="33px"
               class="aspect-square"
             />
-            Blog
+            <span class="select-none"> Blog </span>
           </a>
           <div
             ref="shelfKuro"

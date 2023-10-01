@@ -28,19 +28,14 @@ defineProps<
         ]"
         :src="
           img ||
-          'https://images.ctfassets.net/1wy7cxqsia50/mAZvCqagMSGHRNBRCo6fG/50ad301404a132586b73b165f648a658/Untitled101_20230316135154.png'
+          'https://images.ctfassets.net/1wy7cxqsia50/1wvfvyUc8laRj36ZIvLbkF/104a4175ac0034b1d8907c51ebebed61/Origins_of_my_sona.png'
         "
         alt=""
         draggable="false"
       />
     </a>
     <div class="flex flex-col">
-      <div class="flex flex-wrap gap-4">
-        <span>Category</span>
-        <span>Category</span>
-        <span>Category</span>
-        <span>Category</span>
-      </div>
+      <div class="flex flex-wrap gap-4">Category</div>
       <h2 :class="['my-4', !big ? 'text-3xl' : 'text-5xl']">
         {{ title }}
       </h2>
