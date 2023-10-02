@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@kuro/ui": "*",
     "@studio-freight/lenis": "^1.0.25",
     "gsap": "^3.12.2",
     "lodash-es": "^4.17.21",

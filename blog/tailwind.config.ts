@@ -1,12 +1,11 @@
 import type { Config } from "tailwindcss"
-import typePlugin from "@tailwindcss/typography"
 import customPlugin from "tailwindcss/plugin"
-import kuroTailwindCfg from "@kuro/ui/kuro-tailwind"
+import kuroTailwindCfg from "@kuro/ui/tailwind.config"
 
 const config: Config = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
+  presets: [kuroTailwindCfg],
   plugins: [
-    typePlugin,
     customPlugin(({ addBase, theme }) => {
       addBase({
         "::selection": {
@@ -31,7 +30,6 @@ const config: Config = {
       })
     })
   ],
-  presets: [kuroTailwindCfg]
 }
 
 export default config

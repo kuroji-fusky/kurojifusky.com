@@ -1,13 +1,9 @@
 import type { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme"
-import typographyPlugin from "@tailwindcss/typography"
-import formsPlugins from "@tailwindcss/forms"
-
 const liteFontDefaults = ["system-ui", "sans-serif"]
 
 const config: Config = {
   content: [],
-  plugins: [typographyPlugin, formsPlugins],
   theme: {
     fontFamily: {
       "open-sans": ["Open Sans", ...liteFontDefaults],
