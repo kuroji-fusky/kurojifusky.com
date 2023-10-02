@@ -2,16 +2,16 @@
   "private": true,
   "name": "a-goddamn-abomination",
   "workspaces": [
-    "sites/*",
-    "packages/*"
+    "blog",
+    "portfolio",
+    "ui"
   ],
   "scripts": {
     "dev:p": "turbo run dev --filter=portfolio",
     "dev:b": "turbo run dev --filter=blog",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,js,mjs,cjs,vue,md,astro}\"",
-    "postinstall": "cd ./sites/portfolio && nuxt prepare"
+    "format": "prettier --write \"**/*.{ts,js,mjs,cjs,tsx,jsx,md,astro}\""
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.14",
@@ -20,7 +20,7 @@
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=19.0.0",
     "npm": ">=8.0.0"
   }
 }

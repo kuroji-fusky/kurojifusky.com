@@ -2,3 +2,7 @@ node_modules
 .nuxt
 .output
 .turbo
+
+*.png
+*.jpg
+*.ico
