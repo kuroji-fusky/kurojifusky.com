@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "a-goddamn-abomination",
+  "name": "kurowo",
   "workspaces": [
     "blog",
     "portfolio",
@@ -20,7 +20,7 @@
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
-    "node": ">=19.0.0",
+    "node": ">=18.0.0",
     "npm": ">=8.0.0"
   }
 }
