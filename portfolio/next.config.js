@@ -4,7 +4,13 @@ const nextConfig = {
   swcMinify: true,
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: "attachment"
+    contentDispositionType: "attachment",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com"
+      }
+    ]
   }
 }
 

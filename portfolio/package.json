@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@kuro/ui": "*",
-    "@studio-freight/lenis": "^1.0.25",
+    "@studio-freight/react-lenis": "^0.0.36",
     "gsap": "^3.12.2",
     "lodash-es": "^4.17.21",
+    "lucide-react": "^0.284.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"

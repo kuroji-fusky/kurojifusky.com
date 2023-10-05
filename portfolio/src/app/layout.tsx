@@ -1,12 +1,12 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter, Open_Sans } from "next/font/google"
-import clsx from "clsx"
+import { Inter } from "next/font/google"
+import LenisSmooth from "@/components/LenisSmooth"
+import { Navbar, Footer } from "@/components/Base"
 
 const inter = Inter({ subsets: ["latin"], variable: "--f-inter" })
-const openSans = Open_Sans({ subsets: ["latin"], variable: "--f-open-sans" })
 
-const title = "I wanna die"
+const title = "Kuroji Fusky - a silly talented dog on the internet"
 const desc = "lol"
 
 export const metadata: Metadata = {
@@ -30,22 +30,28 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="ltr">
+    <html lang="en" dir="ltr" className={inter.className}>
       <head>
-        <link rel="preconnect" href="https://res.cloudinary.com/" />
         <script
           async
           src="https://analytics.eu.umami.is/script.js"
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID || ""}
         />
+        <link rel="preconnect" href="https://res.cloudinary.com/" />
       </head>
-      <body className={clsx(inter.variable, openSans.variable)}>
-        <noscript>
-          <div className="fixed inset-0 z-[999]">
-            Please enable JavaScript you dingus
+      <body className="bg-kuro-dark1 text-kuro-lavender-50">
+        <LenisSmooth>
+          <noscript>
+            <div className="fixed inset-0 z-[999]">
+              Please enable JavaScript you dingus
+            </div>
+          </noscript>
+          <div id="__kuro">
+            <Navbar />
+            {children}
+            <Footer />
           </div>
-        </noscript>
-        {children}
+        </LenisSmooth>
       </body>
     </html>
   )
