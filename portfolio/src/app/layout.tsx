@@ -1,10 +1,12 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Unbounded } from "next/font/google"
 import LenisSmooth from "@/components/LenisSmooth"
 import { Navbar, Footer } from "@/components/Base"
+import clsx from "clsx"
 
-const inter = Inter({ subsets: ["latin"], variable: "--f-inter" })
+const inter = Inter({ subsets: ["latin-ext"] })
+const unbounded = Unbounded({ subsets: ["latin"], variable: "--k-header" })
 
 const title = "Kuroji Fusky - a silly talented dog on the internet"
 const desc = "lol"
@@ -34,7 +36,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" dir="ltr" className={inter.className}>
+    <html
+      lang="en"
+      dir="ltr"
+      className={clsx(inter.className, unbounded.variable)}
+    >
       <head>
         <script
           async
@@ -43,7 +49,7 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://res.cloudinary.com/" />
       </head>
-      <body className="bg-kuro-dark2 text-kuro-lavender-50">
+      <body className="bg-kuro-dark2 text-kuro-lavender-50 !overflow-x-hidden">
         <LenisSmooth>
           <noscript>
             <div className="fixed inset-0 z-[999]">

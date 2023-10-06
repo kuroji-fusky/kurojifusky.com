@@ -27,7 +27,8 @@ export default function LenisSmooth({
       autoRaf={false}
       root
       options={{
-        duration: 0.75
+        duration: 1.33,
+        wheelMultiplier: 0.85
       }}
     >
       {children}
