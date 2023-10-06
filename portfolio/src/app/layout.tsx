@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   description: desc,
   openGraph: {
     title,
-    description: desc
+    description: desc,
+    siteName: "Kuroji Fusky",
+    images: {
+      url: "/api/og"
+    }
   },
   // noindex stuff is temporary
   robots: "noai,noimageai,noindex,nofollow",
@@ -39,7 +43,7 @@ export default function RootLayout({
         />
         <link rel="preconnect" href="https://res.cloudinary.com/" />
       </head>
-      <body className="bg-kuro-dark1 text-kuro-lavender-50">
+      <body className="bg-kuro-dark2 text-kuro-lavender-50">
         <LenisSmooth>
           <noscript>
             <div className="fixed inset-0 z-[999]">
