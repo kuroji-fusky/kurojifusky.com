@@ -8,8 +8,8 @@ import clsx from "clsx"
 const inter = Inter({ subsets: ["latin-ext"] })
 const unbounded = Unbounded({ subsets: ["latin"], variable: "--k-header" })
 
-const title = "Kuroji Fusky - a silly talented dog on the internet"
-const desc = "lol"
+const title = "Kuroji Fusky - a silly talented fluffy boi on the internet"
+const desc = "A 21-year-old self-taught hobbyist from the Philippines"
 
 export const metadata: Metadata = {
   title,
@@ -18,12 +18,14 @@ export const metadata: Metadata = {
     title,
     description: desc,
     siteName: "Kuroji Fusky",
-    images: {
-      url: "/api/og"
-    }
+    images: [
+      {
+        url: "/api/og",
+        width: 1280,
+        height: 630
+      }
+    ]
   },
-  // noindex stuff is temporary
-  robots: "noai,noimageai,noindex,nofollow",
   generator: "Your mom",
   other: {
     copyright: "Kerby Keith Aquino"
@@ -56,11 +58,9 @@ export default function RootLayout({
               Please enable JavaScript you dingus
             </div>
           </noscript>
-          <div id="__kuro">
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
+          <Navbar />
+          {children}
+          <Footer />
         </LenisSmooth>
       </body>
     </html>

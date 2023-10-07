@@ -5,27 +5,31 @@ import Image from "next/image"
 import { gsap } from "gsap"
 import Link from "next/link"
 import { ScrollTrigger } from "gsap/all"
-import { useGsapEffect } from "@/hooks"
+import { MOBILE_BREAKPOINT } from "@/constants"
+import { useGsapMediaEffect } from "@/hooks"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Kuro() {
   const peekCutie = useRef<HTMLDivElement>(null)
 
-  useGsapEffect((self) => {
-    const cutie: HTMLImageElement = self.selector!("img")[0]
+  useGsapMediaEffect(
+    MOBILE_BREAKPOINT,
+    (self) => {
+      const cutie: HTMLImageElement = self.selector!("img")[0]
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: cutie,
-        scrub: 0.75,
-        end: "bottom"
-        // markers: true
-      }
-    })
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: cutie,
+          scrub: 0.75,
+          end: "bottom"
+        }
+      })
 
-    tl.fromTo(cutie, { y: "50%" }, { y: "-80%" })
-  }, peekCutie)
+      tl.fromTo(cutie, { y: "50%" }, { y: "-80%" })
+    },
+    peekCutie
+  )
 
   return (
     <>

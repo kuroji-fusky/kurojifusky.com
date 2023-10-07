@@ -1,13 +1,13 @@
 "use client"
 
-import { useLayoutEffect } from "react"
+import { useEffect } from "react"
 import { gsap } from "gsap"
 
 export default function useGsapEffect(
-  cb?: gsap.ContextFunc,
+  cb: gsap.ContextFunc,
   scope?: string | object | Element
 ): gsap.ContextFunc & void {
-  useLayoutEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(cb, scope)
 
     return () => ctx.revert()

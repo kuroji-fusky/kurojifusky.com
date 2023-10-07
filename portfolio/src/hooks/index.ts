@@ -1,4 +1,4 @@
 import useGsapEffect from "./useGsapEffect"
-import useGsapMediaQuery from "./useGsapMediaQuery"
+import useGsapMediaEffect from "./useGsapMediaEffect"
 
-export { useGsapEffect, useGsapMediaQuery }
+export { useGsapEffect, useGsapMediaEffect }
