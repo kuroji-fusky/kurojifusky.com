@@ -2,13 +2,14 @@
 
 import { useRef } from "react"
 import Image from "next/image"
-import { gsap } from "gsap"
+import gsap from "gsap"
 import Link from "next/link"
-import { ScrollTrigger } from "gsap/all"
 import { MOBILE_BREAKPOINT } from "@/constants"
 import { useGsapMediaEffect } from "@/hooks"
+import { registerScrollTrigger } from "@/utils/registerScrollTrigger"
+import KuroLink from "../KuroLink"
 
-gsap.registerPlugin(ScrollTrigger)
+registerScrollTrigger()
 
 export default function Kuro() {
   const peekCutie = useRef<HTMLDivElement>(null)
@@ -57,27 +58,33 @@ export default function Kuro() {
           </div>
         </div>
       </div>
-      <div className="relative overflow-hidden">
-        <span className="absolute left-12 bottom-8 select-none">
+      <div className="relative">
+        <div className="relative my-8 lg:my-0 text-center w-full lg:w-unset lg:text-left lg:absolute lg:left-12 lg:bottom-8 select-none z-10">
           {"Art by "}
-          <Link href="https://www.etsy.com/shop/DionDigitalArt" target="_blank">
+          <KuroLink href="https://www.etsy.com/shop/DionDigitalArt" external>
             DionDigitalArt
-          </Link>
-        </span>
-        <div
-          ref={peekCutie}
-          className="relative before:absolute before:inset-0 before:z-10 aspect-[9/13] h-[calc(8.3vw*2.5)] mx-auto"
-        >
-          <Image
-            className="rounded-lg overflow-hidden select-none"
-            draggable={false}
-            src="https://res.cloudinary.com/kuroji-fusky-s3/image/upload/fursonas/comms/dionart_fusky_062af1.png"
-            alt=""
-            fill
-            sizes="(max-width: 640px) 120px, (max-width: 991px) 200px, 640px"
-            quality="90"
-            fetchPriority="high"
-          />
+          </KuroLink>
+        </div>
+        <div className="relative">
+          <div className="absolute inset-0">
+            <div />
+          </div>
+          {/* Cutie peek */}
+          <div
+            ref={peekCutie}
+            className="overflow-hidden relative before:absolute before:inset-0 before:z-10 aspect-[9/13] h-[24rem] xl:h-[calc(8.3vw*2.5)] mx-auto"
+          >
+            <Image
+              className="rounded-lg overflow-hidden select-none"
+              draggable={false}
+              src="https://res.cloudinary.com/kuroji-fusky-s3/image/upload/fursonas/comms/dionart_fusky_062af1.png"
+              alt=""
+              fill
+              sizes="(max-width: 640px) 120px, (max-width: 991px) 240px, 720px"
+              quality="90"
+              fetchPriority="high"
+            />
+          </div>
         </div>
       </div>
     </>

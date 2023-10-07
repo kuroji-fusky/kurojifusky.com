@@ -1,14 +1,14 @@
 "use client"
 
 import { useRef } from "react"
-import { gsap } from "gsap"
+import gsap from "gsap"
 import { useGsapMediaEffect } from "@/hooks"
 import { MOBILE_BREAKPOINT, projects } from "@/constants"
-import { ScrollTrigger } from "gsap/all"
 import ProjectItem from "./ProjectItem"
 import clsx from "clsx"
+import { registerScrollTrigger } from "@/utils/registerScrollTrigger"
 
-gsap.registerPlugin(ScrollTrigger)
+registerScrollTrigger()
 
 export default function Projects() {
   const pictureParallaxRef = useRef<HTMLDivElement>(null)
@@ -18,8 +18,6 @@ export default function Projects() {
     (self) => {
       const productImgs: NodeListOf<HTMLImageElement> =
         self.selector!("#img-parallax")
-
-      console.log(productImgs)
 
       productImgs.forEach((el) => {
         const tl = gsap.timeline({

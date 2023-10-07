@@ -9,7 +9,12 @@ const config: Config = {
   ],
   presets: [kuroConfig],
   theme: {
-    extend: {}
+    extend: {
+      backgroundImage: {
+        // Adds `radial-gradient` funcionality
+        "gradient-round": "radial-gradient(var(--tw-gradient-stops))"
+      }
+    }
   }
 }
 
