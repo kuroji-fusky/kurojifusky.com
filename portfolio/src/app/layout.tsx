@@ -58,9 +58,11 @@ export default function RootLayout({
               Please enable JavaScript you dingus
             </div>
           </noscript>
-          <Navbar />
-          {children}
-          <Footer />
+          <div id="kuro-ui">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </LenisSmooth>
       </body>
     </html>
