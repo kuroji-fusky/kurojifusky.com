@@ -15,11 +15,13 @@
     "lodash-es": "^4.17.21",
     "lucide-react": "^0.284.0",
     "next": "latest",
+    "next-images": "^1.8.5",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/lodash-es": "^4.17.9",
     "@types/node": "latest",
     "@types/react": "latest",
