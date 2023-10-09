@@ -8,7 +8,7 @@ export default function HeroImg({
   artist: string
 }) {
   return (
-    <div className="inline-block absolute" draggable={false}>
+    <div className="inline-block absolute">
       <div className="relative before:absolute before:inset-0 before:z-10 h-[calc(1vw*var(--img-size))] aspect-square">
         <Image
           className="rounded-lg overflow-hidden select-none"
@@ -21,7 +21,7 @@ export default function HeroImg({
           fetchPriority="high"
         />
       </div>
-      <div className="py-1.5 text-white/75 pointer-events-none">
+      <div className="py-1.5 text-white/75 select-none">
         {"Art by "}
         <strong>{artist}</strong>
       </div>

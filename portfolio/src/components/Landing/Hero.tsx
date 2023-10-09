@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import gsap from "gsap"
 import HeroImg from "./HeroImg"
 import clsx from "clsx"
 
@@ -41,7 +42,7 @@ export default function Hero() {
   })
 
   const heroRootRef = useRef<HTMLDivElement>(null)
-  const testing = useRef<HTMLDivElement>(null)
+  const picScrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let _trottleState = 0
@@ -76,7 +77,7 @@ export default function Hero() {
 
   useEffect(() => {
     const heroSection = heroRootRef.current
-    const lol = testing.current
+    // const picScroll = picScrollRef.current
 
     const handleRelativePosition = ({ x: mouseX, y: mouseY }: MouseEvent) => {
       const windowWidth = window.innerWidth
@@ -105,7 +106,7 @@ export default function Hero() {
     return () => {
       heroSection!.removeEventListener("mousemove", handleRelativePosition)
     }
-  }, [])
+  }, [artworkPos.x, artworkPos.y])
 
   return (
     <div className="h-[calc(100dvh-4.75rem)]" ref={heroRootRef}>
@@ -121,7 +122,7 @@ export default function Hero() {
       >
         <div
           className="flex md:block relative left-[var(--computed-size)] top-[var(--computed-size)]"
-          ref={testing}
+          ref={picScrollRef}
           style={{
             transform: `translate3d(${artworkPos.x}px, ${artworkPos.y}px, 0px)`
           }}
