@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect } from "react"
 import { gsap } from "gsap"
 
@@ -10,7 +9,6 @@ export default function useGsapMediaEffect(
 ) {
   useEffect(() => {
     let mm = gsap.matchMedia()
-
     mm.add(breakpoint, cb, scope)
 
     return () => mm.revert()

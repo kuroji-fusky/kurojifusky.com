@@ -1,10 +1,12 @@
 export const MOBILE_BREAKPOINT = "(min-width: 1024px)"
 
+const cldBase = "https://res.cloudinary.com/kuroji-fusky-s3/image/upload"
+const fursonaUrl = `${cldBase}/c_scale,w_700/fursonas/comms`
+
 // TODO Temporary placeholders, replace these with the MDX sutff from the `showcase` route
 export const projects = [
   {
-    product:
-      "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/projects/myfursona-sept-banner.png",
+    product: `${cldBase}/projects/myfursona-sept-banner.png`,
     name: "MyFursona",
     slug: "myfursona",
     description:
@@ -13,8 +15,7 @@ export const projects = [
     year: 2022
   },
   {
-    product:
-      "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/sf-website/projects/searchpets_jl5uaf.png",
+    product: `${cldBase}/sf-website/projects/searchpets_jl5uaf.png`,
     name: "Searchpets!",
     description:
       "Search engine-type website you can filter and query comic entries from the Housepets! web comic by Rick Griffin.",
@@ -22,22 +23,38 @@ export const projects = [
     year: 2022
   },
   {
-    product:
-      "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/sf-website/projects/paco-drawing-stats_m0e91x.png",
+    product: `${cldBase}/sf-website/projects/paco-drawing-stats_m0e91x.png`,
     name: "Paco Drawing Stats",
     description:
       "A data analysis project and analytics website that collects and parses drawing data from a furry artist and illustrator, Paco Panda.",
     type: "Website",
     year: 2021
+  }
+]
+
+export const artworks = [
+  {
+    url: `${fursonaUrl}/MCM_headshot-comm.png`,
+    artist: "MintyChipMocha"
   },
   {
-    product:
-      "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/sf-website/projects/paco-drawing-stats_m0e91x.png",
-    name: "Paranoia",
-    overrideLink: "",
-    description:
-      "My sister's school project that we both filmed and edited together",
-    type: "Short Film",
-    year: 2021
+    url: `${fursonaUrl}/IMG_2094.png`,
+    artist: "Matcha"
+  },
+  {
+    url: `${fursonaUrl}/nepukamiArts_2000.jpg`,
+    artist: "nepukamiArts"
+  },
+  {
+    url: `${fursonaUrl}/IMG-20230728-WA0005.jpg`,
+    artist: "Lumyhuh"
+  },
+  {
+    url: `${fursonaUrl}/dougly_Icon2.png`,
+    artist: "sadcat16hrz"
+  },
+  {
+    url: `${fursonaUrl}/Icon_sunbaestudios.png`,
+    artist: "SamoyedRoseCreations"
   }
 ]

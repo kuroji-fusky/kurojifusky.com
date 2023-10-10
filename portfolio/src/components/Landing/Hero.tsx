@@ -5,38 +5,9 @@ import gsap from "gsap"
 import HeroImg from "./HeroImg"
 import clsx from "clsx"
 import { useGsapMediaEffect } from "@/hooks"
-import { MOBILE_BREAKPOINT } from "@/constants"
+import { MOBILE_BREAKPOINT, artworks } from "@/constants"
 
 export default function Hero() {
-  const cldBase =
-    "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/c_scale,w_700/fursonas/comms"
-  const artworks = [
-    {
-      url: `${cldBase}/MCM_headshot-comm.png`,
-      artist: "MintyChipMocha"
-    },
-    {
-      url: `${cldBase}/IMG_2094.png`,
-      artist: "Matcha"
-    },
-    {
-      url: `${cldBase}/nepukamiArts_2000.jpg`,
-      artist: "nepukamiArts"
-    },
-    {
-      url: `${cldBase}/IMG-20230728-WA0005.jpg`,
-      artist: "Lumyhuh"
-    },
-    {
-      url: `${cldBase}/dougly_Icon2.png`,
-      artist: "sadcat16hrz"
-    },
-    {
-      url: `${cldBase}/Icon_sunbaestudios.png`,
-      artist: "SamoyedRoseCreations"
-    }
-  ]
-
   const [artworkIndex, setArtworkIndex] = useState(4)
 
   const heroRootRef = useRef<HTMLDivElement>(null)
@@ -46,8 +17,8 @@ export default function Hero() {
     let _trottleState = 0
     const heroSection = heroRootRef.current
 
-    const handleMousePosIndex = ({ x: mouseX }: MouseEvent) => {
-      const mouseRelative = mouseX / window.innerWidth
+    const handleMousePosIndex = (e: MouseEvent) => {
+      const mouseRelative = e.x / window.innerWidth
       const computedIndex = Math.round(mouseRelative * (artworks.length - 1))
 
       if (_trottleState === computedIndex) return
@@ -68,20 +39,18 @@ export default function Hero() {
     MOBILE_BREAKPOINT,
     () => {
       const heroSection = heroRootRef.current
+      const picFrame = picScrollRef.current
+      const vars: gsap.TweenVars = { duration: 0.33, ease: "power2" }
 
-      const windowWidth = window.innerWidth
-      const windowHeight = window.innerHeight
+      const toX = gsap.quickTo(picFrame, "x", vars)
+      const toY = gsap.quickTo(picFrame, "y", vars)
 
-      const handleRelativePosition = ({ x: mouseX, y: mouseY }: MouseEvent) => {
-        const relX = -1 + (mouseX / windowWidth) * 2
-        const relY = -1 + (mouseY / windowHeight) * 2
-      }
+      heroSection!.addEventListener("mousemove", (e) => {
+        const relX = -1 + (e.x / window.innerWidth) * 2
+        const relY = -1 + (e.y / window.innerHeight) * 2
 
-      heroSection!.addEventListener("mousemove", handleRelativePosition)
-
-      gsap.ticker.add(() => {
-        const speed = 0.25
-        const delta = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio())
+        toX(relX * 420)
+        toY(relY * 125)
       })
     },
     picScrollRef
@@ -93,7 +62,7 @@ export default function Hero() {
         className="absolute inset-0 flex justify-center items-center"
         style={
           {
-            "--img-size": "18",
+            "--img-size": "15",
             "--computed-size":
               "calc(calc(calc(var(--img-size) / 2) * -1) * 1rem)"
           } as React.CSSProperties
