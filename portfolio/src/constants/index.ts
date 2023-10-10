@@ -29,5 +29,15 @@ export const projects = [
       "A data analysis project and analytics website that collects and parses drawing data from a furry artist and illustrator, Paco Panda.",
     type: "Website",
     year: 2021
+  },
+  {
+    product:
+      "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/sf-website/projects/paco-drawing-stats_m0e91x.png",
+    name: "Paranoia",
+    overrideLink: "",
+    description:
+      "My sister's school project that we both filmed and edited together",
+    type: "Short Film",
+    year: 2021
   }
 ]

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import HeroImg from "./HeroImg"
 import clsx from "clsx"
+import { useGsapMediaEffect } from "@/hooks"
+import { MOBILE_BREAKPOINT } from "@/constants"
 
 export default function Hero() {
   const cldBase =
@@ -36,10 +38,6 @@ export default function Hero() {
   ]
 
   const [artworkIndex, setArtworkIndex] = useState(4)
-  const [artworkPos, setArtworkPos] = useState({
-    x: 0,
-    y: 0
-  })
 
   const heroRootRef = useRef<HTMLDivElement>(null)
   const picScrollRef = useRef<HTMLDivElement>(null)
@@ -59,59 +57,40 @@ export default function Hero() {
       return
     }
 
-    const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        heroSection!.addEventListener("mousemove", handleMousePosIndex)
-        return
-      }
-      heroSection!.removeEventListener("mousemove", handleMousePosIndex)
-      return
-    })
-
-    io.observe(heroSection!)
+    heroSection!.addEventListener("mousemove", handleMousePosIndex)
 
     return () => {
       heroSection!.removeEventListener("mousemove", handleMousePosIndex)
     }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    const heroSection = heroRootRef.current
-    // const picScroll = picScrollRef.current
+  useGsapMediaEffect(
+    MOBILE_BREAKPOINT,
+    () => {
+      const heroSection = heroRootRef.current
 
-    const handleRelativePosition = ({ x: mouseX, y: mouseY }: MouseEvent) => {
       const windowWidth = window.innerWidth
       const windowHeight = window.innerHeight
 
-      const relX = -1 + (mouseX / windowWidth) * 2
-      const relY = -1 + (mouseY / windowHeight) * 2
-
-      setArtworkPos({
-        x: relX * 320,
-        y: relY * 150
-      })
-    }
-
-    const io = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        heroSection!.addEventListener("mousemove", handleRelativePosition)
-        return
+      const handleRelativePosition = ({ x: mouseX, y: mouseY }: MouseEvent) => {
+        const relX = -1 + (mouseX / windowWidth) * 2
+        const relY = -1 + (mouseY / windowHeight) * 2
       }
-      heroSection!.removeEventListener("mousemove", handleRelativePosition)
-      return
-    })
 
-    io.observe(heroSection!)
+      heroSection!.addEventListener("mousemove", handleRelativePosition)
 
-    return () => {
-      heroSection!.removeEventListener("mousemove", handleRelativePosition)
-    }
-  }, [artworkPos.x, artworkPos.y])
+      gsap.ticker.add(() => {
+        const speed = 0.25
+        const delta = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio())
+      })
+    },
+    picScrollRef
+  )
 
   return (
     <div className="h-[calc(100dvh-4.75rem)]" ref={heroRootRef}>
       <div
-        className="grid absolute inset-0 place-items-center"
+        className="absolute inset-0 flex justify-center items-center"
         style={
           {
             "--img-size": "18",
@@ -123,9 +102,6 @@ export default function Hero() {
         <div
           className="flex md:block relative left-[var(--computed-size)] top-[var(--computed-size)]"
           ref={picScrollRef}
-          style={{
-            transform: `translate3d(${artworkPos.x}px, ${artworkPos.y}px, 0px)`
-          }}
         >
           {artworks.map((item, index) => (
             <span
