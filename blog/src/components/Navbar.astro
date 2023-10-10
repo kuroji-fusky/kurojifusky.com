@@ -1,0 +1,28 @@
+---
+import { kebabCase } from "lodash-es"
+
+const navItems = [
+  { name: "Category" },
+  { name: "Dream Journal" },
+  { name: "About me", link: "https://kurojifusky.com/about-us" }
+]
+---
+
+<header>
+  <nav class="flex items-center justify-between">
+    <div>k logo svg only</div>
+    <div role="list">
+      {
+        navItems.map((item) => (
+          <a
+            role="listitem"
+            href={!item.link ? kebabCase(item.name) : item.link}
+            target={!item.link ? undefined : "_blank"}
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
