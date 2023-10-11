@@ -1,9 +1,9 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter, Unbounded } from "next/font/google"
+import clsx from "clsx"
 import LenisSmooth from "@/components/LenisSmooth"
 import { Navbar, Footer } from "@/components/Base"
-import clsx from "clsx"
 
 const inter = Inter({ subsets: ["latin-ext"] })
 const unbounded = Unbounded({ subsets: ["latin"], variable: "--k-header" })

@@ -21,7 +21,7 @@ export default function HeroImg({
           fetchPriority="high"
         />
       </div>
-      <div className="py-1.5 text-white/75 select-none">
+      <div className="py-1.5 text-white/75 select-none text-center">
         {"Art by "}
         <strong>{artist}</strong>
       </div>

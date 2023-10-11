@@ -5,8 +5,8 @@ import KuroWordmark from "./kuro_wm.svg"
 
 export default function Navbar() {
   return (
-    <header className="contents">
-      <nav className="bg-kuro-dark2 bg-opacity-80 backdrop-blur-sm sticky inset-0 bottom-unset py-4 px-8 z-10 h-20 flex items-center border-b border-kuro-lavender-200">
+    <header>
+      <nav className="z-20 bg-kuro-dark2 bg-opacity-80 backdrop-blur-sm fixed inset-0 bottom-unset py-4 px-8 h-20 flex items-center border-b border-kuro-lavender-200">
         <div>
           <KuroWordmark role="img" className="w-2/4" />
         </div>

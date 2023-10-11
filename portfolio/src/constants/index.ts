@@ -1,7 +1,34 @@
 export const MOBILE_BREAKPOINT = "(min-width: 1024px)"
 
 const cldBase = "https://res.cloudinary.com/kuroji-fusky-s3/image/upload"
-const fursonaUrl = `${cldBase}/c_scale,w_700/fursonas/comms`
+const fursonaUrl = `${cldBase}/c_scale,w_640/fursonas/comms`
+
+export const artworks = [
+  {
+    url: `${fursonaUrl}/MCM_headshot-comm.png`,
+    artist: "MintyChipMocha"
+  },
+  {
+    url: `${fursonaUrl}/IMG_2094.png`,
+    artist: "Matcha"
+  },
+  {
+    url: `${fursonaUrl}/nepukamiArts_2000.jpg`,
+    artist: "nepukamiArts"
+  },
+  {
+    url: `${fursonaUrl}/IMG-20230728-WA0005.jpg`,
+    artist: "Lumyhuh"
+  },
+  {
+    url: `${fursonaUrl}/dougly_Icon2.png`,
+    artist: "sadcat16hrz"
+  },
+  {
+    url: `${fursonaUrl}/Icon_sunbaestudios.png`,
+    artist: "SamoyedRoseCreations"
+  }
+]
 
 // TODO Temporary placeholders, replace these with the MDX sutff from the `showcase` route
 export const projects = [
@@ -29,32 +56,5 @@ export const projects = [
       "A data analysis project and analytics website that collects and parses drawing data from a furry artist and illustrator, Paco Panda.",
     type: "Website",
     year: 2021
-  }
-]
-
-export const artworks = [
-  {
-    url: `${fursonaUrl}/MCM_headshot-comm.png`,
-    artist: "MintyChipMocha"
-  },
-  {
-    url: `${fursonaUrl}/IMG_2094.png`,
-    artist: "Matcha"
-  },
-  {
-    url: `${fursonaUrl}/nepukamiArts_2000.jpg`,
-    artist: "nepukamiArts"
-  },
-  {
-    url: `${fursonaUrl}/IMG-20230728-WA0005.jpg`,
-    artist: "Lumyhuh"
-  },
-  {
-    url: `${fursonaUrl}/dougly_Icon2.png`,
-    artist: "sadcat16hrz"
-  },
-  {
-    url: `${fursonaUrl}/Icon_sunbaestudios.png`,
-    artist: "SamoyedRoseCreations"
   }
 ]
