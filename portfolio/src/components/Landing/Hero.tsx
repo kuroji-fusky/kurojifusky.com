@@ -32,7 +32,12 @@ export default function Hero() {
       imgWrapper[artIndexInitial].style.visibility = "visible"
 
       heroSection!.addEventListener("mousemove", (e) => {
-        const mouseRelative = e.x / window.innerWidth
+        const mouseX = e.x
+        const mouseY = e.y
+        const windowWidth = window.innerWidth
+        const windowHeight = window.innerHeight
+
+        const mouseRelative = mouseX / windowWidth
         const computedIndex = Math.round(mouseRelative * (artworks.length - 1))
 
         imgWrapper.forEach((image, index) => {
@@ -45,11 +50,14 @@ export default function Hero() {
           return
         })
 
-        const relX = -1 + (e.x / window.innerWidth) * 2
-        const relY = -1 + (e.y / window.innerHeight) * 2
+        const relX = -1 + (mouseX / windowWidth) * 2
+        const relY = -1 + (mouseY / windowHeight) * 2
 
-        toX(relX * 300)
-        toY(relY * 125)
+        const multiplierX = 300
+        const multiplierY = 150
+
+        toX(relX * multiplierX)
+        toY(relY * multiplierY)
       })
     },
     picFrameRef
