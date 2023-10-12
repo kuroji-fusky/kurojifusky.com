@@ -60,7 +60,7 @@ export default function RootLayout({
           </noscript>
           <div id="kuro-ui">
             <Navbar />
-            {children}
+            <div className="min-h-[100dvh]">{children}</div>
             <Footer />
           </div>
         </LenisSmooth>

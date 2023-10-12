@@ -1,9 +1,13 @@
-const withMDX = require("@next/mdx")()
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/
+})
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // MDX
-  // Other shit
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  experimental: {
+    mdxRs: true
+  },
   poweredByHeader: false,
   swcMinify: true,
   images: {
@@ -21,6 +25,16 @@ const nextConfig = {
       {
         source: "/about",
         destination: "/about-me",
+        permanent: true
+      },
+      {
+        source: "/showcases",
+        destination: "/showcase",
+        permanent: true
+      },
+      {
+        source: "/showcases/:path*",
+        destination: "/showcase/:path*",
         permanent: true
       }
     ]
@@ -56,7 +70,4 @@ const nextConfig = {
   }
 }
 
-module.exports = withMDX({
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  ...nextConfig
-})
+module.exports = withMDX(nextConfig)
