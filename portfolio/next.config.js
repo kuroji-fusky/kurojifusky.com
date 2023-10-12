@@ -3,7 +3,6 @@ const withMDX = require("@next/mdx")()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // MDX
-  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   // Other shit
   poweredByHeader: false,
   swcMinify: true,
@@ -14,6 +13,15 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "res.cloudinary.com"
+      }
+    ]
+  },
+  async redirects() {
+    return [
+      {
+        source: "/about",
+        destination: "/about-me",
+        permanent: true
       }
     ]
   },
@@ -48,4 +56,7 @@ const nextConfig = {
   }
 }
 
-module.exports = withMDX(nextConfig)
+module.exports = withMDX({
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  ...nextConfig
+})

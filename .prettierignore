@@ -1,7 +1,16 @@
 node_modules
-.nuxt
-.output
+
+# turbo
 .turbo
+
+# Astro
+.astro/
+dist/
+
+# Next.js
+.next/
+out/
+build
 
 *.png
 *.jpg

@@ -1,10 +1,21 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-node_modules
+# Global .gitignore
+node_modules/
 .pnp
 .pnp.js
 .DS_Store
+*.pem
+
+# Astro
+.astro/
+dist/
+
+# Next.js
+.next/
+out/
+build
+
+# typescript
+*.tsbuildinfo
 
 # testing
 coverage
@@ -13,9 +24,12 @@ coverage
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # local env files
 *.env*
+.env
+.env.production
 !.env.example
 
 # turbo

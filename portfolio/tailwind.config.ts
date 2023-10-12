@@ -1,4 +1,4 @@
-import kuroConfig from "@kuro/ui/tailwind.config"
+import kurowo from "@kuro/ui/tailwind.config"
 import type { Config } from "tailwindcss"
 
 export default {
@@ -7,7 +7,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
-  presets: [kuroConfig],
+  presets: [kurowo],
   theme: {
     extend: {
       backgroundImage: {
