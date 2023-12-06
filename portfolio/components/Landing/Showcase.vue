@@ -5,7 +5,7 @@ const sillies = [
     description: "Your mom",
     repo: "kuroji-fusky/betsy",
   },
-];
+]
 </script>
 
 <template>

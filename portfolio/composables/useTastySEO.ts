@@ -2,15 +2,15 @@ export const useTastySEO = ({
   title,
   description,
 }: {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }) => {
-  const route = useRoute();
-  const shokoy = useRuntimeConfig().public.siteUrl;
+  const route = useRoute()
+  const shokoy = useRuntimeConfig().public.siteUrl
 
-  const creator = "@kurojifusky";
+  const creator = "@kurojifusky"
 
-  const _url = `${shokoy}${route.fullPath}`;
+  const _url = `${shokoy}${route.fullPath}`
 
   useSeoMeta({
     title,
@@ -22,9 +22,9 @@ export const useTastySEO = ({
     twitterDescription: description,
     twitterSite: creator,
     twitterCreator: creator,
-  });
+  })
 
   useHead({
     link: [{ rel: "canonical", href: _url }],
-  });
-};
+  })
+}

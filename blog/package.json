@@ -1,7 +1,8 @@
 {
   "name": "@kuro/blog",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -12,13 +13,12 @@
   "dependencies": {
     "@astrojs/image": "^0.17.3",
     "@astrojs/prefetch": "^0.3.0",
-    "@astrojs/react": "^3.0.3",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^4.0.0",
     "@astrojs/vue": "^4.0.2",
     "@contentful/rich-text-html-renderer": "^16.1.1",
     "@fontsource/inter": "^5.0.8",
-    "@tailwindcss/typography": "^0.5.9",
+    "@kuro/shared": "*",
     "astro": "^2.10.13",
     "contentful": "^10.5.1",
     "lodash-es": "^4.17.21",

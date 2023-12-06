@@ -13,8 +13,8 @@ export default defineConfig({
     image(),
     prefetch(),
     sitemap({
-      changefreq: "hourly"
-    })
+      changefreq: "hourly",
+    }),
   ],
-  site: "https://blog.kurojifusky.com/"
+  site: "https://blog.kurojifusky.com/",
 })

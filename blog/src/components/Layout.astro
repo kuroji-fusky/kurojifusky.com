@@ -1,11 +1,13 @@
 ---
+import { baseUrls } from "@kuro/shared"
+
 import "@fontsource/inter"
 import "@fontsource/inter/700.css"
 
 const { title, description } = Astro.props
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID
 
-const DOMAIN = "https://blog.kurojifusky.com"
+const DOMAIN = baseUrls.blog
 const { pathname } = Astro.url
 
 const parsedUrl = `${DOMAIN}${pathname}`
@@ -25,11 +27,9 @@ const parsedUrl = `${DOMAIN}${pathname}`
     <meta name="twitter:url" content={parsedUrl} />
     <link rel="canonical" href={parsedUrl} />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <link rel="dns-prefetch" href="https://images.ctfassets.net/" /><script
-      defer
-      src="https://eu.umami.is/script.js"
-      data-website-id={umamiId}></script></head
-  >
+    <link rel="dns-prefetch" href="https://images.ctfassets.net/" />
+    <script async src={baseUrls.umami} data-website-id={umamiId}></script>
+  </head>
   <body
     class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif] bg-kuro-dark2 text-kuro-lavender-50"
   >

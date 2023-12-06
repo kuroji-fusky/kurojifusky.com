@@ -1,8 +1,8 @@
 {
   "name": "@kuro/portfolio",
-  "version": "0.1.0",
-  "private": true,
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -28,7 +28,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@kuro/ui": "*",
+    "@kuro/shared": "*",
     "@studio-freight/lenis": "^1.0.28",
     "gsap": "^3.12.2"
   }

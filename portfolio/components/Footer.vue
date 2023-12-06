@@ -16,7 +16,7 @@ const footLinks = [
     name: "Source code",
     path: "https://github.com/kuroji-fusky/kurojifusky.com/",
   },
-];
+]
 </script>
 
 <template>

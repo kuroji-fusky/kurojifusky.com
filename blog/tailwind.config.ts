@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
-import kurowo from "@kuro/ui/tailwind.config"
+import kurowo from "@kuro/shared/tailwind.config"
 
 export default {
   content: ["./src/**/*.{astro,html,js,ts,vue}"],
-  presets: [kurowo]
+  presets: [kurowo],
 } as Config

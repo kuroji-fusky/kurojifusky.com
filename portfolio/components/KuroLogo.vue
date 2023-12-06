@@ -1,7 +1,7 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ width?: number }>(), {
   width: 140,
-});
+})
 </script>
 
 <template>

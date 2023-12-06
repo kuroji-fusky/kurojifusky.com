@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import Lenis from "@studio-freight/lenis"
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
   // const lenis = new Lenis({
   //   duration: 1.125,
   //   orientation: "vertical",
@@ -20,7 +20,7 @@ onMounted(() => {
   // requestAnimationFrame(raf);
   // lenis.on("scroll", ScrollTrigger.update);
   // gsap.ticker.add((t) => lenis.raf(t * 1000));
-});
+})
 </script>
 
 <template>

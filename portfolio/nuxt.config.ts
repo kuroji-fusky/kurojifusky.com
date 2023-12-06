@@ -1,3 +1,5 @@
+import { baseUrls } from "@kuro/shared"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
@@ -26,7 +28,7 @@ export default defineNuxtConfig({
       script: [
         {
           async: true,
-          src: "https://eu.umami.is",
+          src: baseUrls.umami,
           "data-website-id":
             process.env.NUXT_PUBLIC_UMAMI_ID || "No ID specified",
         },
@@ -49,6 +51,10 @@ export default defineNuxtConfig({
           sizes: "192x192",
           type: "image/png",
           href: "/apple-icon-192.png",
+        },
+        {
+          rel: "dns-prefetch",
+          href: "https://res.cloudinary.com/",
         },
       ],
       bodyAttrs: {
@@ -81,4 +87,4 @@ export default defineNuxtConfig({
   nitro: {
     preset: "vercel",
   },
-});
+})

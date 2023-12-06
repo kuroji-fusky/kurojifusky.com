@@ -1,4 +1,4 @@
-import kurowo from "@kuro/ui/tailwind.config"
+import kurowo from "@kuro/shared/tailwind.config"
 import type { Config } from "tailwindcss"
 
 export default {
@@ -9,7 +9,7 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
-    "./nuxt.config.ts"
+    "./nuxt.config.ts",
   ],
-  presets: [kurowo]
+  presets: [kurowo],
 } as Config

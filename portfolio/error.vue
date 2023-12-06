@@ -1,13 +1,13 @@
 <script setup lang="ts">
 defineProps({
   error: Object,
-});
+})
 
-const handleError = () => clearError({ redirect: "/" });
+const handleError = () => clearError({ redirect: "/" })
 
 useSeoMeta({
   title: "You just got 404'd lol",
-});
+})
 
 const shitQuotes = [
   {
@@ -43,9 +43,9 @@ const shitQuotes = [
       "I'll throw an ender pearl so hard at your face, it'll teleport to your nose to your butt... smell that crap!",
     reference: "Derp SSundee",
   },
-];
+]
 
-const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)];
+const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)]
 </script>
 
 <template>

@@ -4,7 +4,7 @@
   "workspaces": [
     "blog",
     "portfolio",
-    "ui"
+    "shared"
   ],
   "scripts": {
     "dev:p": "turbo run dev --filter=portfolio",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "@turbo/gen": "^1.10.14",
     "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.2",
     "turbo": "^1.10.14"
   },
   "engines": {
