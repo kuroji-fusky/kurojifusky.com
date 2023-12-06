@@ -1,7 +1,6 @@
 - [ ] Migrate Contentful contents to Sanity
 - [ ] Add preloader
 - [ ] Add animated transition routes via GSAP
-- [ ] Make MDX work
 
 ## Routes
 

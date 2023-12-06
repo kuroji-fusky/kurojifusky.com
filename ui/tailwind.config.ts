@@ -1,8 +1,13 @@
 import type { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme"
-const liteFontDefaults = ["system-ui", "sans-serif"]
+import typographyPlugin from "@tailwindcss/typography"
 
-const config: Config = {
+const liteFontDefaults = ["system-ui", "sans-serif"]
+const extendUnsets = {
+  unset: "unset"
+}
+
+export default {
   content: [],
   theme: {
     fontFamily: {
@@ -12,6 +17,13 @@ const config: Config = {
       "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
     },
     extend: {
+      backgroundImage: {
+        // Adds `radial-gradient` funcionality
+        "gradient-round": "radial-gradient(var(--tw-gradient-stops))"
+      },
+      spacing: extendUnsets,
+      inset: extendUnsets,
+      margin: extendUnsets,
       colors: {
         "kuro-dark1": "#110D17",
         "kuro-dark2": "#07070b",
@@ -99,18 +111,8 @@ const config: Config = {
           800: "#A800A8",
           900: "#570057"
         }
-      },
-      spacing: {
-        unset: "unset"
-      },
-      inset: {
-        unset: "unset"
-      },
-      margin: {
-        unset: "unset"
       }
     }
-  }
-}
-
-export default config
+  },
+  plugins: [typographyPlugin]
+} as Config

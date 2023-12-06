@@ -4,15 +4,24 @@ node_modules/
 .pnp.js
 .DS_Store
 *.pem
+.fleet
+.idea
 
 # Astro
 .astro/
 dist/
 
-# Next.js
-.next/
-out/
-build
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Logs
+logs
+*.log
 
 # typescript
 *.tsbuildinfo

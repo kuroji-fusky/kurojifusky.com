@@ -6,7 +6,7 @@
 </h1>
 
 The source code of both my portfolio and blog websites using
-Next.js, Astro, and Tailwind CSS; deployed in Vercel!
+Nuxt 3, Astro, and Tailwind CSS; deployed in Vercel!
 
 ## Running the abomination locally
 

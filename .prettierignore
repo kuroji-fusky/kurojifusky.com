@@ -8,9 +8,8 @@ node_modules
 dist/
 
 # Next.js
-.next/
-out/
-build
+.nuxt/
+.output/
 
 *.png
 *.jpg

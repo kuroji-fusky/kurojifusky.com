@@ -3,17 +3,13 @@ import type { Config } from "tailwindcss"
 
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
+    "./error.vue",
+    "./nuxt.config.ts"
   ],
-  presets: [kurowo],
-  theme: {
-    extend: {
-      backgroundImage: {
-        // Adds `radial-gradient` funcionality
-        "gradient-round": "radial-gradient(var(--tw-gradient-stops))"
-      }
-    }
-  }
+  presets: [kurowo]
 } as Config
