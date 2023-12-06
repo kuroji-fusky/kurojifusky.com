@@ -1,5 +1,6 @@
 {
   "github": {
-    "slient": true
+    "slient": true,
+    "autoJobCancelation": true
   }
 }

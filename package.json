@@ -11,11 +11,19 @@
     "dev:b": "turbo run dev --filter=blog",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,js,mjs,cjs,vue,md,astro}\"",
-    "postinstall": "cd portfolio && nuxt prepare"
+    "format": "prettier --write \"**/*.{ts,js,mjs,vue,md,astro}\"",
+    "postinstall": "cd portfolio && nuxt prepare",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "blog/**": "prettier --write .",
+    "portfolio/**": "prettier --write .",
+    "shared/**": "prettier --write ."
   },
   "devDependencies": {
     "@turbo/gen": "^1.10.14",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.2",
     "turbo": "^1.10.14"
