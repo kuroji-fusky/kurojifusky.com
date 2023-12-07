@@ -8,10 +8,11 @@ useTastySEO({
 </script>
 
 <template>
-  <LandingHero />
-  <LandingIntro />
-  <LandingWhatIDo />
-  <LandingShowcase />
-  <LandingBriefHistory />
-  <LandingSuppowt />
+  <main>
+    <!-- <LandingHero /> -->
+    <LandingIntro />
+    <LandingShowcase />
+    <LandingBriefHistory />
+    <LandingSuppowt />
+  </main>
 </template>

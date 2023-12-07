@@ -1,30 +1,32 @@
 <script setup lang="ts">
+import { baseUrls } from "@kuro/shared"
+
 const footLinks = [
   {
     name: "Branding",
     path: "/branding",
   },
   {
-    name: "Contact",
-    path: "/contact",
+    name: "Blog",
+    path: baseUrls.blog,
   },
   {
     name: "Linktree",
     path: "https://linktr.ee/kurojifusky",
   },
   {
-    name: "Source code",
-    path: "https://github.com/kuroji-fusky/kurojifusky.com/",
+    name: "Contact",
+    path: "/contact",
   },
 ]
 </script>
 
 <template>
-  <footer class="flex flex-col py-12 px-8 items-center text-sm gap-y-4">
+  <footer class="flex flex-col py-12 px-8 items-center text-sm gap-y-6">
     <NuxtLink to="/" aria-label="Home" title="Home">
       <KuroLogo :width="120" />
     </NuxtLink>
-    <div class="flex flex-wrap gap-x-3">
+    <div class="flex flex-wrap gap-x-8">
       <KuroLink
         v-for="(link, index) in footLinks"
         :key="index"
