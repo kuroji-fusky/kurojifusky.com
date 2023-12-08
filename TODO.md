@@ -6,7 +6,7 @@
 
 - Portfolio
   - [ ] Music Stems
-  - [ ] Showcase Pages
+  - [x] Showcase Pages
   - [ ] About me
 - Blog
 

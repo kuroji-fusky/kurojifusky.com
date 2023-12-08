@@ -12,11 +12,4 @@ export default {
     "./nuxt.config.ts",
   ],
   presets: [kurowo],
-  theme: {
-    extend: {
-      fontFamily: {
-        unbounded: ["Unbounded", "sans-serif"],
-      },
-    },
-  },
 } as Config

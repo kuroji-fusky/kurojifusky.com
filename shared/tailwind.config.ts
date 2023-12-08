@@ -12,6 +12,7 @@ export default {
   theme: {
     fontFamily: {
       inter: ["Inter", ...liteFontDefaults],
+      unbounded: ["Unbounded", ...liteFontDefaults],
       "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {
