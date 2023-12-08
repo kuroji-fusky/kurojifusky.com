@@ -22,9 +22,9 @@ const footLinks = [
 </script>
 
 <template>
-  <footer class="flex flex-col py-12 px-8 items-center text-sm gap-y-6">
+  <footer class="flex flex-col py-12 px-8 items-center text-base gap-y-6">
     <NuxtLink to="/" aria-label="Home" title="Home">
-      <KuroLogo :width="120" />
+      <KuroLogo :width="160" ref="succ" />
     </NuxtLink>
     <div class="flex flex-wrap gap-x-8">
       <KuroLink

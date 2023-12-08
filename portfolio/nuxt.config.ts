@@ -21,6 +21,7 @@ export default defineNuxtConfig({
   },
   // Root dir
   app: {
+    // SEO stuff
     head: {
       htmlAttrs: {
         lang: "en",
@@ -59,7 +60,7 @@ export default defineNuxtConfig({
       ],
       bodyAttrs: {
         class:
-          "bg-kuro-dark2 text-kuro-violet-50 text-sm md:text-base xl:text-lg font-inter selection:bg-purple-600 selection:text-white",
+          "bg-kuro-dark2 text-kuro-violet-50 text-sm md:text-base xl:text-xl font-inter selection:bg-purple-600 selection:text-white",
       },
     },
   },

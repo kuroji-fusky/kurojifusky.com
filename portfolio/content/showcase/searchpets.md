@@ -4,6 +4,7 @@ description: Searchpets! is a search engine-like app where you query and filter 
 site: searchpets.xyz
 banner: img
 date: March 2022
+type: Website
 ---
 
 **Searchpets!** is a search engine-like app where you query and filter chapters and comics from the [_Housepets!_](https://housepetscomic.com) web comic.

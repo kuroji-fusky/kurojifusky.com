@@ -24,9 +24,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <Navbar />
-  <div class="min-h-[calc(100dvh-1.25rem)]">
-    <slot />
+  <div>
+    <div
+      id="transition"
+      class="fixed inset-0 bottom-unset z-[999] h-screen pointer-events-none"
+    ></div>
+    <Navbar />
+    <div class="min-h-[calc(100dvh-1.25rem)]">
+      <slot />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>

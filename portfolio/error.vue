@@ -16,7 +16,7 @@ const shitQuotes = [
   },
   {
     message: "MEATPOLES! YAAAAAAY!",
-    reference: "Crainer, SSundee's SkyFactory S2E21",
+    reference: "Crainer, SSundee's SkyFactory",
   },
   {
     message: "Why was there bacon in the soap?!",
@@ -50,23 +50,27 @@ const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)]
 
 <template>
   <NuxtLayout>
-    <h1 class="text-6xl font-bold">{{ error!.statusCode }}</h1>
-    <blockquote class="flex flex-col gap-y-1.5 items-end">
-      <em class="text-xl">
-        {{ randomQuote.message }}
-      </em>
-      <p class="before:content-['—']">
-        {{ randomQuote.reference }}
-      </p>
-    </blockquote>
-    <div>
-      <p>{{ error!.statusMessage }}</p>
+    <div class="grid place-items-center h-screen">
+      <div class="flex flex-col items-center gap-y-2">
+        <h1 class="text-6xl font-bold">{{ error!.statusCode }}</h1>
+        <blockquote class="flex flex-col gap-y-1.5">
+          <em class="text-xl">
+            {{ randomQuote.message }}
+          </em>
+          <p class="before:content-['—']">
+            {{ randomQuote.reference }}
+          </p>
+        </blockquote>
+        <div>
+          <p>{{ error!.statusMessage }}</p>
+        </div>
+        <button
+          @click="handleError"
+          class="px-5 py-3 rounded-md bg-kuro-lavender-800 hover:bg-kuro-lavender-700 transition-colors"
+        >
+          Return to Home
+        </button>
+      </div>
     </div>
-    <button
-      @click="handleError"
-      class="px-4 py-2 rounded-md bg-kuro-lavender-800"
-    >
-      GTFO
-    </button>
   </NuxtLayout>
 </template>

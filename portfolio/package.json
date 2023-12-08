@@ -12,6 +12,7 @@
   "devDependencies": {
     "@fontsource/inter": "^5.0.15",
     "@fontsource/jetbrains-mono": "^5.0.17",
+    "@fontsource/unbounded": "^5.0.18",
     "@iconify-prerendered/vue-fa6-brands": "^0.23.1691126983",
     "@nuxt/content": "^2.9.0",
     "@nuxt/devtools": "latest",

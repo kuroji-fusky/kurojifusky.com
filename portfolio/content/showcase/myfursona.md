@@ -3,12 +3,11 @@ title: MyFursona
 description: MyFursona is an art platform that caters to artists to manage and automate their commission workflow and a way for users to store their characters or "fursonas".
 site: myfursona.art
 banner: img
+type: Platform
 date: March 2022
 ---
 
-**MyFursona** is an art platform that caters to artists to manage and automate their commission workflow and a way for users to store their characters or "fursonas".
-
-MyFursona aims to combine select features from platforms such as FurAffinity, Weasyl, Toyhouse, and Trello; while having a modern UI inspired with the likes of Vercel and Discord.
+An ambious project with a big goal in mind to simplify artists workflow with ease.
 
 ## The Problem
 
@@ -20,4 +19,6 @@ This is what MyFursona aims to solve. Eliminating all the manual work from manag
 
 With the help of passionate developers around the world, we're making this product a reality!
 
-## Features
+## History
+
+[Jason](https://github.com/VulpoTheDev) initially started the project as _Artistically_ in mid-2021 along with another developer of his. It was shelved after a few months into development as he lacked the motivation to continue the project. That is on March 2022, where he revived the project and was aptly renamed to MyFursona.

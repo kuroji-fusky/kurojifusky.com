@@ -2,10 +2,17 @@
 withDefaults(defineProps<{ width?: number }>(), {
   width: 140,
 })
+
+const svgLogo = ref(null)
+
+defineExpose({
+  svgLogo,
+})
 </script>
 
 <template>
   <svg
+    ref="svgLogo"
     :width="width"
     viewBox="0 0 420 75"
     fill="none"
