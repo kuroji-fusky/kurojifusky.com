@@ -3,6 +3,8 @@ import { baseUrls } from "@kuro/shared"
 
 import "@fontsource/inter"
 import "@fontsource/inter/700.css"
+import Navbar from "./Navbar.astro"
+import Footer from "./Footer.vue"
 
 const { title, description } = Astro.props
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID
@@ -33,8 +35,10 @@ const parsedUrl = `${DOMAIN}${pathname}`
   <body
     class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif] bg-kuro-dark2 text-kuro-lavender-50"
   >
+    <Navbar />
     <main class="px-9 max-w-screen-2xl mx-auto">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

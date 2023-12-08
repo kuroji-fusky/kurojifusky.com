@@ -8,10 +8,18 @@ const navItems = [
 ]
 ---
 
-<header>
-  <nav class="flex items-center justify-between">
-    <div>k logo svg only</div>
-    <div role="list">
+<header class="mx-auto max-w-screen-2xl text-lg">
+  <div class="flex items-center justify-between px-8 py-4">
+    <a href="/" class="flex items-center gap-x-4">
+      <span>K</span>
+      <div
+        class="before:content-['/'] before:font-light before:text-kuro-violet-100 before:text-opacity-50 text-2xl font-bold flex items-center gap-x-3"
+      >
+        <img src="/favicon.png" width="40" />
+         Blog
+      </div>
+    </a>
+    <nav role="list">
       {
         navItems.map((item) => (
           <a
@@ -23,6 +31,6 @@ const navItems = [
           </a>
         ))
       }
-    </div>
-  </nav>
+    </nav>
+  </div>
 </header>
