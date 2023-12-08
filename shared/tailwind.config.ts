@@ -11,9 +11,7 @@ export default {
   content: [],
   theme: {
     fontFamily: {
-      "open-sans": ["Open Sans", ...liteFontDefaults],
       inter: ["Inter", ...liteFontDefaults],
-      unbounded: ["Unbounded", ...liteFontDefaults],
       "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
     },
     extend: {

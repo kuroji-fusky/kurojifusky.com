@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     strictNuxtContentPaths: true,
   },
   // Tailwind CSS
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/global.css"],
   postcss: {
     plugins: {
       tailwindcss: {},

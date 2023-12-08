@@ -4,6 +4,7 @@
 @import "@fontsource/inter/800.css";
 @import "@fontsource/inter/900.css";
 @import "@fontsource/jetbrains-mono";
+@import "@fontsource/unbounded";
 
 @tailwind base;
 @tailwind components;
