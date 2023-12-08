@@ -1,7 +1,6 @@
+import { baseUrls } from "@kuro/shared"
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
-import image from "@astrojs/image"
-import prefetch from "@astrojs/prefetch"
 import sitemap from "@astrojs/sitemap"
 import vue from "@astrojs/vue"
 
@@ -10,11 +9,10 @@ export default defineConfig({
   integrations: [
     vue(),
     tailwind(),
-    image(),
-    prefetch(),
     sitemap({
       changefreq: "hourly",
     }),
   ],
-  site: "https://blog.kurojifusky.com/",
+  prefetch: true,
+  site: baseUrls.blog,
 })
