@@ -1,13 +1,16 @@
 ---
 title: MyFursona
-description: MyFursona is an art platform that caters to artists to manage and automate their commission workflow and a way for users to store their characters or "fursonas".
-site: myfursona.art
+description:
 banner: img
 type: Platform
 date: March 2022
 ---
 
-An ambious project with a big goal in mind to simplify artists workflow with ease.
+MyFursona is an art platform that caters to artists to manage and automate their commission workflow and a way for users to store their characters or "fursonas".
+
+## Automating an artist's workflow a breeze
+
+A platform that aims to improve and keep track of commissions; it's more than just storing your characters and call it a day. No, MyFursona's different.
 
 ## The Problem
 

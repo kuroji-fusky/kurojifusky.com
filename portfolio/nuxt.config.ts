@@ -56,6 +56,7 @@ export default defineNuxtConfig({
         {
           rel: "dns-prefetch",
           href: "https://res.cloudinary.com/",
+          fetchpriority: "high",
         },
       ],
       bodyAttrs: {

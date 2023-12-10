@@ -25,6 +25,7 @@ const sillies = [
             provider="cloudinary"
             src="/sf-website/irl/yeseu.png"
             class="absolute inset-0 h-full w-full object-cover"
+            fetchpriority="high"
           />
         </NuxtLink>
         <div class="flex flex-col gap-y-1.5">
