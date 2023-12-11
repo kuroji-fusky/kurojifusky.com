@@ -10,7 +10,11 @@ const sillies = [
 
 <template>
   <div class="flex flex-col items-center px-8">
-    <ContentList path="/showcase" v-slot="{ list }">
+    <ContentList
+      path="/showcase"
+      v-slot="{ list }"
+      :query="{ sort: [{ date: -1 }] }"
+    >
       <div
         v-for="item in list"
         :key="item._path"
