@@ -1,0 +1,24 @@
+---
+const { title, image, date, tags, slug } = Astro.props
+---
+
+<div class="flex flex-col w-full p-2">
+  <a href={`/post/${slug}`}>
+    <img
+      src={image}
+      alt={`Banner for ${title}`}
+      decoding="async"
+      fetchpriority="auto"
+      draggable="false"
+      class="aspect-video w-full object-cover block rounded-lg"
+    />
+  </a>
+  <h2 class="font-bold text-2xl my-3">
+    <a href={`/post/${slug}`}>
+      {title}
+    </a>
+  </h2>
+  <time datetime={date}>
+    {new Date(date).toLocaleDateString()}
+  </time>
+</div>

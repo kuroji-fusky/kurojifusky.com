@@ -14,4 +14,7 @@ export default defineConfig({
   ],
   prefetch: true,
   site: "https://blog.kurojifusky.com/",
+  image: {
+    domains: ["images.ctfassets.net"],
+  },
 })

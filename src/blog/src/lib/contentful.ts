@@ -1,13 +1,22 @@
 import contentful, { type EntryFieldTypes } from "contentful"
 
+type CoerceAssetUrl = {
+  fields: {
+    file: {
+      url: string
+    }
+  }
+}
+
 export interface BlogPost {
   contentTypeId: "blogPost"
   fields: {
     title: EntryFieldTypes.Text
     content: EntryFieldTypes.RichText
-    date: EntryFieldTypes.Date
+    overridePublishDate: EntryFieldTypes.Date
     description: EntryFieldTypes.Text
     slug: EntryFieldTypes.Text
+    banner: EntryFieldTypes.Object<CoerceAssetUrl>
   }
 }
 

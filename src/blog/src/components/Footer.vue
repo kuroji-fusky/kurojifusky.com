@@ -5,7 +5,7 @@ import { socials } from "@kuro/shared"
 <template>
   <footer class="px-8 mx-auto max-w-screen-2xl">
     <div class="flex justify-between">
-      <div class="flex items-center gap-x-2">
+      <div class="flex items-center gap-x-3.5">
         <a
           v-for="(social, index) in socials"
           :key="index"
@@ -14,7 +14,7 @@ import { socials } from "@kuro/shared"
           rel="nofollower me"
           target="_blank"
         >
-          <component :is="social.icon" width="1.6rem" height="1.25rem" />
+          <component :is="social.icon" width="1.6rem" height="1.15rem" />
         </a>
       </div>
       <span>Version 1.1</span>
