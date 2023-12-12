@@ -1,16 +1,16 @@
 ---
 import BlogPost from "../components/BlogPost.astro"
 import Layout from "../components/Layout.astro"
-import { contentfulClient, type BlogPost as _BlogPost } from "../lib/contentful"
+import RSSNotice from "../components/RSSNotice.astro"
+import { contentfulClient, type BlogPost as IBlogPost } from "../lib/contentful"
 
-const entries = await contentfulClient.getEntries<_BlogPost>({
+const entries = await contentfulClient.getEntries<IBlogPost>({
   content_type: "blogPost",
   limit: 10,
 })
 
 const posts = entries.items.map((item) => {
   const { title, description, overridePublishDate, slug, banner } = item.fields
-
   const image = `https:${banner.fields.file.url}`
 
   const datePublished = overridePublishDate
@@ -35,33 +35,22 @@ const filteredPosts = posts.sort(
   title="Kuroji Fusky Blog"
   description="A place I nerd stuff just for hecks"
 >
-  <section>
-    <h1 class="text-4xl font-bold my-3.5">Latest posts</h1>
-    <div class="grid grid-cols-3 justify-center gap-1">
-      {
-        filteredPosts.map((post) => (
-          <BlogPost
-            title={post.title}
-            image={post.banner}
-            date={post.date}
-            slug={post.slug}
-          />
-        ))
-      }
-    </div>
-  </section>
-  <section class="flex justify-center items-center py-4">
-    <div
-      class="text-center bg-kuro-dark2 relative rounded-lg p-8 w-full before:content-[''] before:rounded-lg before:bg-gradient-to-tr before:from-orange-600 before:to-orange-200 before:absolute before:-inset-[1px] before:-inset-x-[2px] before:-z-[1] before:block"
-    >
-      <h2 class="my-6">This ain't a blog site without an RSS feed!</h2>
-      <p>
-        Still not availble... yet, I'm still working on things - it will be
-        available eventually!
-      </p>
-      <div class="flex items-center justify-center">
-        <button>SOOBSCRIEB</button>
+  <main>
+    <section>
+      <h1 class="text-4xl font-bold my-3.5">Latest posts</h1>
+      <div class="grid grid-cols-3 justify-center gap-1">
+        {
+          filteredPosts.map((post) => (
+            <BlogPost
+              title={post.title}
+              image={post.banner}
+              date={post.date}
+              slug={post.slug}
+            />
+          ))
+        }
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
+  <RSSNotice />
 </Layout>

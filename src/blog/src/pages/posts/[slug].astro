@@ -1,0 +1,14 @@
+---
+import Layout from "../../components/Layout.astro"
+import { contentfulClient, type BlogPost } from "../../lib/contentful"
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<BlogPost>({
+    content_type: "blogPost",
+  })
+}
+---
+
+<Layout title="" description="" isArticle>
+  <div></div>
+</Layout>

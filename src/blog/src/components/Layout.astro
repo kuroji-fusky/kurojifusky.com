@@ -1,6 +1,5 @@
 ---
 import { baseUrls } from "@kuro/shared"
-
 import "@fontsource/inter"
 import "@fontsource/inter/700.css"
 import "@fontsource/unbounded"
@@ -9,13 +8,16 @@ import "@fontsource/unbounded/800.css"
 import Navbar from "./Navbar.astro"
 import Footer from "./Footer.vue"
 
-const { title, description } = Astro.props
+const { title, description, image, keywords, isArticle } = Astro.props
 const umamiId = import.meta.env.PUBLIC_UMAMI_ID
 
-const DOMAIN = baseUrls.blog
+const creator = baseUrls.twitterAuthor
+const domain = baseUrls.blog
 const { pathname } = Astro.url
 
-const parsedUrl = `${DOMAIN}${pathname}`
+const parsedUrl = `${domain}${pathname}`
+
+// TODO convert the meta tags mess into iterable objects
 ---
 
 <html lang="en" dir="ltr">
@@ -23,25 +25,35 @@ const parsedUrl = `${DOMAIN}${pathname}`
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{title}</title>
-    <meta name="robots" content="noai,noimageai,follow,index" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    {description && <meta name="description" content={description} />}
-    <meta property="og:title" content={title} />
-    {description && <meta property="og:description" content={description} />}
-    <meta property="og:url" content={parsedUrl} />
-    <meta name="twitter:url" content={parsedUrl} />
-    <link rel="canonical" href={parsedUrl} />
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://images.ctfassets.net/" />
+    <!-- <meta name="robots" content="noai,noimageai,follow,index" /> -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    {isArticle && <meta name="author" content="Kuroji Fusky" />}
+    {description && <meta name="description" content={description} />}
+    {keywords && <meta name="keywords" content={keywords.join(", ")} />}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    {image && <meta property="og:image" content={image} />}
+    <meta property="og:type" content={!isArticle ? "website" : "article"} />
+    <meta property="og:url" content={parsedUrl} />
+
+    <meta name="twitter:card" content="summary" />
+    {image && <meta name="twitter:image" content={image} />}
+    <meta name="twitter:site" content={creator} />
+    <meta name="twitter:creator" content={creator} />
+
+    <link rel="canonical" href={parsedUrl} />
     <script async src={baseUrls.umami} data-website-id={umamiId}></script>
   </head>
   <body
-    class="text-sm !overflow-x-hidden font-[Inter,system-ui,sans-serif] bg-kuro-dark2 text-kuro-lavender-50"
+    class="text-sm overflow-x-hidden font-inter bg-kuro-dark2 text-kuro-lavender-50"
   >
     <Navbar />
-    <main class="px-9 max-w-screen-2xl mx-auto">
+    <div class="px-9 max-w-screen-2xl mx-auto">
       <slot />
-    </main>
+    </div>
     <Footer />
   </body>
 </html>

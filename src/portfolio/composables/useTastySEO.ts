@@ -1,3 +1,5 @@
+import { baseUrls } from "@kuro/shared"
+
 export const useTastySEO = ({
   title,
   description,
@@ -8,7 +10,7 @@ export const useTastySEO = ({
   const route = useRoute()
   const shokoy = useRuntimeConfig().public.siteUrl
 
-  const creator = "@kurojifusky"
+  const creator = baseUrls.twitterAuthor
 
   const _url = `${shokoy}${route.fullPath}`
 
