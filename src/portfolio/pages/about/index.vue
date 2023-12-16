@@ -1,12 +1,12 @@
 <script setup lang="ts">
 const { path } = useRoute()
 const { data } = await useAsyncData("page-data", () =>
-  queryContent(path).findOne(),
+  queryContent(path).findOne()
 )
 
 useTastySEO({
   title: `${data.value?.title} | Kuroji Fusky`,
-  description: data.value?.description,
+  description: data.value?.description
 })
 </script>
 

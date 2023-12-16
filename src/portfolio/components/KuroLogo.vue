@@ -1,12 +1,12 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ width?: number }>(), {
-  width: 140,
+  width: 140
 })
 
 const svgLogo = ref(null)
 
 defineExpose({
-  svgLogo,
+  svgLogo
 })
 </script>
 

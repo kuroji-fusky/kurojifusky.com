@@ -4,20 +4,20 @@ import { baseUrls } from "@kuro/shared"
 const footLinks = [
   {
     name: "Branding",
-    path: "/branding",
+    path: "/branding"
   },
   {
     name: "Blog",
-    path: baseUrls.blog,
+    path: baseUrls.blog
   },
   {
     name: "Linktree",
-    path: "https://linktr.ee/kurojifusky",
+    path: "https://linktr.ee/kurojifusky"
   },
   {
     name: "Contact",
-    path: "/contact",
-  },
+    path: "/contact"
+  }
 ]
 </script>
 

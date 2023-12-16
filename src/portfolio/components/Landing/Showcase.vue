@@ -3,8 +3,8 @@ const sillies = [
   {
     name: "BEtsy",
     description: "Your mom",
-    repo: "kuroji-fusky/betsy",
-  },
+    repo: "kuroji-fusky/betsy"
+  }
 ]
 </script>
 

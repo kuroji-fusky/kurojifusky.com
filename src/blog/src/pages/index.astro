@@ -6,7 +6,7 @@ import { contentfulClient, type BlogPost as IBlogPost } from "../lib/contentful"
 
 const entries = await contentfulClient.getEntries<IBlogPost>({
   content_type: "blogPost",
-  limit: 10,
+  limit: 10
 })
 
 const posts = entries.items.map((item) => {
@@ -22,12 +22,12 @@ const posts = entries.items.map((item) => {
     slug,
     description,
     banner: image,
-    date: datePublished,
+    date: datePublished
   }
 })
 
 const filteredPosts = posts.sort(
-  (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any),
+  (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any)
 )
 ---
 

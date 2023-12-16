@@ -9,12 +9,12 @@ export default defineConfig({
     vue(),
     tailwind(),
     sitemap({
-      changefreq: "hourly",
-    }),
+      changefreq: "hourly"
+    })
   ],
   prefetch: true,
   site: "https://blog.kurojifusky.com/",
   image: {
-    domains: ["images.ctfassets.net"],
-  },
+    domains: ["images.ctfassets.net"]
+  }
 })

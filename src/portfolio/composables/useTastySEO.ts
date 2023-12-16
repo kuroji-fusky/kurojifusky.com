@@ -2,7 +2,7 @@ import { baseUrls } from "@kuro/shared"
 
 export const useTastySEO = ({
   title,
-  description,
+  description
 }: {
   title: string
   description: string
@@ -23,10 +23,10 @@ export const useTastySEO = ({
     twitterTitle: title,
     twitterDescription: description,
     twitterSite: creator,
-    twitterCreator: creator,
+    twitterCreator: creator
   })
 
   useHead({
-    link: [{ rel: "canonical", href: _url }],
+    link: [{ rel: "canonical", href: _url }]
   })
 }

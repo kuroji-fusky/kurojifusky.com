@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useTastySEO({
   title: "Showcases",
-  description: "Here's all of my amazing creations or idfk lol",
+  description: "Here's all of my amazing creations or idfk lol"
 })
 </script>
 

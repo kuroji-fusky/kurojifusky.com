@@ -3,17 +3,17 @@ import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types"
 
 const { path } = useRoute()
 const { data } = await useAsyncData("page-data", () =>
-  queryContent(path).findOne(),
+  queryContent(path).findOne()
 )
 
 const query: QueryBuilderParams = {
   where: [{ _path: { $not: path } }],
-  sort: [{ date: 1 }],
+  sort: [{ date: 1 }]
 }
 
 useTastySEO({
   title: `${data.value?.title} | Kuroji Fusky`,
-  description: data.value?.description,
+  description: data.value?.description
 })
 </script>
 

@@ -2,7 +2,7 @@ import { gsap } from "gsap"
 
 export const useGsapContext = (
   cb: gsap.ContextFunc,
-  scope?: string | Object | Element,
+  scope?: string | Object | Element
 ) => {
   const ctx = ref<gsap.Context>()
 

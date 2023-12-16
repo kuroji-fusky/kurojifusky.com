@@ -7,86 +7,86 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "nuxt-lucide-icons",
     "nuxt-simple-sitemap",
-    "@nuxt/image",
+    "@nuxt/image"
   ],
   // Transpile modules
   build: {
-    transpile: ["gsap"],
+    transpile: ["gsap"]
   },
   // .env
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "",
-    },
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || ""
+    }
   },
   // Root dir
   app: {
     // SEO stuff
     head: {
       htmlAttrs: {
-        lang: "en",
+        lang: "en"
       },
       script: [
         {
           async: true,
           src: baseUrls.umami,
           "data-website-id":
-            process.env.NUXT_PUBLIC_UMAMI_ID || "No ID specified",
-        },
+            process.env.NUXT_PUBLIC_UMAMI_ID || "No ID specified"
+        }
       ],
       link: [
         {
           rel: "shortcut icon",
           sizes: "64x64",
           type: "image/x-icon",
-          href: "/favicon.ico",
+          href: "/favicon.ico"
         },
         {
           rel: "apple-touch-icon",
           sizes: "128x128",
           type: "image/png",
-          href: "/apple-icon-128.png",
+          href: "/apple-icon-128.png"
         },
         {
           rel: "apple-touch-icon",
           sizes: "192x192",
           type: "image/png",
-          href: "/apple-icon-192.png",
+          href: "/apple-icon-192.png"
         },
         {
           rel: "dns-prefetch",
           href: "https://res.cloudinary.com/",
-          fetchpriority: "high",
-        },
+          fetchpriority: "high"
+        }
       ],
       bodyAttrs: {
         class:
-          "bg-kuro-dark2 text-kuro-violet-50 text-sm md:text-base xl:text-xl font-inter selection:bg-purple-600 selection:text-white",
-      },
-    },
+          "bg-kuro-dark2 text-kuro-violet-50 text-sm md:text-base xl:text-xl font-inter selection:bg-purple-600 selection:text-white"
+      }
+    }
   },
   // nuxt-image
   image: {
     quality: 85,
     cloudinary: {
-      baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/",
+      baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/"
     },
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com"]
   },
   // Sitemap
   sitemap: {
-    strictNuxtContentPaths: true,
+    strictNuxtContentPaths: true
   },
   // Tailwind CSS
   css: ["~/assets/global.css"],
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {},
-    },
+      autoprefixer: {}
+    }
   },
   // Misc.
   nitro: {
-    preset: "vercel",
-  },
+    preset: "vercel"
+  }
 })

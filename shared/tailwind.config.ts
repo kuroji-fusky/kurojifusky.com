@@ -4,7 +4,7 @@ import typographyPlugin from "@tailwindcss/typography"
 
 const liteFontDefaults = ["system-ui", "sans-serif"]
 const extendUnsets = {
-  unset: "unset",
+  unset: "unset"
 }
 
 export default {
@@ -13,12 +13,12 @@ export default {
     fontFamily: {
       inter: ["Inter", ...liteFontDefaults],
       unbounded: ["Unbounded", ...liteFontDefaults],
-      "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
+      "jetbrains-mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono]
     },
     extend: {
       backgroundImage: {
         // Adds `radial-gradient` funcionality
-        "gradient-round": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-round": "radial-gradient(var(--tw-gradient-stops))"
       },
       spacing: extendUnsets,
       inset: extendUnsets,
@@ -36,7 +36,7 @@ export default {
           600: "#195E9F",
           700: "#124778",
           800: "#0D3254",
-          900: "#061A2D",
+          900: "#061A2D"
         },
         "kuro-skycyan": {
           50: "#EBFCFE",
@@ -48,7 +48,7 @@ export default {
           600: "#09D2F6",
           700: "#06A0BC",
           800: "#046E80",
-          900: "#023741",
+          900: "#023741"
         },
         "kuro-pale": {
           50: "#FFFBF5",
@@ -60,7 +60,7 @@ export default {
           600: "#FBC941",
           700: "#E29F04",
           800: "#916203",
-          900: "#3C2701",
+          900: "#3C2701"
         },
         "kuro-yellow": {
           50: "#FFFBE6",
@@ -72,7 +72,7 @@ export default {
           600: "#D1B205",
           700: "#A08803",
           800: "#695A02",
-          900: "#372F01",
+          900: "#372F01"
         },
         "kuro-violet": {
           50: "#F9ECFE",
@@ -84,7 +84,7 @@ export default {
           600: "#A313DC",
           700: "#7A0DA5",
           800: "#50096C",
-          900: "#2A0439",
+          900: "#2A0439"
         },
         "kuro-lavender": {
           50: "#F8F1FE",
@@ -96,7 +96,7 @@ export default {
           600: "#9427E7",
           700: "#7113B9",
           800: "#4C0D7D",
-          900: "#25063C",
+          900: "#25063C"
         },
         "kuro-magenta": {
           50: "#FFF5FF",
@@ -108,10 +108,10 @@ export default {
           600: "#FF57FF",
           700: "#FF00FF",
           800: "#A800A8",
-          900: "#570057",
-        },
-      },
-    },
+          900: "#570057"
+        }
+      }
+    }
   },
-  plugins: [typographyPlugin],
+  plugins: [typographyPlugin]
 } as Config

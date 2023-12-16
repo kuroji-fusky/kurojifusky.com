@@ -3,7 +3,7 @@
   "name": "kurowo",
   "workspaces": [
     "src/**",
-    "shared"
+    "shared/**"
   ],
   "scripts": {
     "dev:p": "turbo run dev --filter=portfolio",
@@ -15,8 +15,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "blog/**": "prettier --write .",
-    "portfolio/**": "prettier --write .",
+    "src/**": "prettier --write .",
     "shared/**": "prettier --write ."
   },
   "devDependencies": {
@@ -33,6 +32,7 @@
   },
   "prettier": {
     "semi": false,
+    "trailingComma": "none",
     "plugins": [
       "prettier-plugin-astro"
     ],

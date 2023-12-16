@@ -9,7 +9,7 @@ export default {
     "./plugins/**/*.{js,ts}",
     "./app.vue",
     "./error.vue",
-    "./nuxt.config.ts",
+    "./nuxt.config.ts"
   ],
-  presets: [kurowo],
+  presets: [kurowo]
 } as Config
