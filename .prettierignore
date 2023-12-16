@@ -16,3 +16,6 @@ dist/
 *.ico
 
 yarn.lock
+
+# Ignore README.md on these dirs since they're symlinks
+src/**/README.md
