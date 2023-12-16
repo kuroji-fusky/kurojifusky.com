@@ -5,7 +5,7 @@ import "@fontsource/inter/700.css"
 import "@fontsource/unbounded"
 import "@fontsource/unbounded/800.css"
 
-import Navbar from "./Navbar.astro"
+import Navbar from "./Navbar.vue"
 import Footer from "./Footer.vue"
 
 const { title, description, image, keywords, isArticle } = Astro.props
@@ -27,7 +27,6 @@ const parsedUrl = `${domain}${pathname}`
     <title>{title}</title>
     <link rel="dns-prefetch" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://images.ctfassets.net/" />
-    <!-- <meta name="robots" content="noai,noimageai,follow,index" /> -->
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     {isArticle && <meta name="author" content="Kuroji Fusky" />}
@@ -48,12 +47,14 @@ const parsedUrl = `${domain}${pathname}`
     <script async src={baseUrls.umami} data-website-id={umamiId}></script>
   </head>
   <body
-    class="text-sm overflow-x-hidden font-inter bg-kuro-dark2 text-kuro-lavender-50"
+    class="text-sm overflow-x-hidden font-inter bg-kuro-dark2 text-kuro-lavender-50 selection:bg-kuro-lavender-700"
   >
-    <Navbar />
-    <div class="px-9 max-w-screen-2xl mx-auto">
-      <slot />
+    <div>
+      <Navbar client:load />
+      <div class="px-9 max-w-screen-2xl mx-auto">
+        <slot />
+      </div>
+      <Footer />
     </div>
-    <Footer />
   </body>
 </html>

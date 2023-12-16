@@ -2,7 +2,8 @@
   "private": true,
   "name": "kurowo",
   "workspaces": [
-    "src/**",
+    "src/blog",
+    "src/portfolio",
     "shared/**"
   ],
   "scripts": {

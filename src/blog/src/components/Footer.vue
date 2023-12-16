@@ -3,8 +3,8 @@ import { socials } from "@kuro/shared"
 </script>
 
 <template>
-  <footer class="px-8 mx-auto max-w-screen-2xl">
-    <div class="flex justify-between">
+  <div class="px-10 py-9 mx-auto max-w-screen-2xl">
+    <footer class="flex justify-between">
       <div class="flex items-center gap-x-3.5">
         <a
           v-for="(social, index) in socials"
@@ -18,6 +18,6 @@ import { socials } from "@kuro/shared"
         </a>
       </div>
       <span>Version 1.1</span>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>

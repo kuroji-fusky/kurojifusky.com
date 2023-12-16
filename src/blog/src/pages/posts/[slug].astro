@@ -14,8 +14,8 @@ export async function getStaticPaths() {
     props: {
       title: item.fields.title,
       description: item.fields.description,
-      banner: item.fields.banner.fields.file.url,
-      content: documentToHtmlString(item.fields.content, rendererOptions),
+      banner: `https:${item.fields.banner.fields.file.url}?fm=webp&q=80`,
+      content: documentToHtmlString(item.fields.content),
       date: item.fields.overridePublishDate
         ? item.fields.overridePublishDate
         : item.sys.createdAt
@@ -24,27 +24,71 @@ export async function getStaticPaths() {
 }
 
 const { title, description, banner, content, date } = Astro.props
+
+const blogThumbnail = `https:${banner}&fit=fill&w=1280&h=630`
+
+const AUTHOR_IMG =
+  "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/w_48,ar_1:1,c_fill/fursonas/comms/toboshiro_icon.png"
 ---
 
-<Layout title={`${title} | Kuroji Fusky Blog`} {description} isArticle>
-  <div>
-    <div>
-      <div>tag stuff</div>
-      <time datetime={date}>
-        {`Published on ${new Date(date).toDateString()}`}
-      </time>
-    </div>
-    <h1 class="text-4xl font-inter font-bold">
-      {title}
-    </h1>
-    <img
-      src={banner}
-      alt=""
-      decoding="async"
-      class="rounded-lg aspect-video"
-      fetchpriority="high"
-      draggable="false"
-    />
-  </div>
-  <article set:html={content} />
+<Layout
+  title={`${title} | Kuroji Fusky Blog`}
+  {description}
+  image={blogThumbnail}
+  isArticle
+>
+  <main
+    class="max-w-screen-xl mx-auto"
+    itemtype="http://schema.org/Blog"
+    itemscope
+  >
+    <meta itemprop="thumbnailUrl" content={blogThumbnail} />
+    <section class="flex flex-col gap-y-4 mt-5">
+      <div class="flex gap-x-3">
+        <div>tag stuff</div>
+      </div>
+      <h1 class="text-4xl font-inter font-bold leading-tight" itemprop="name">
+        {title}
+      </h1>
+      <div itemprop="abstract" class="text-xl opacity-80">{description}</div>
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span
+          class="inline-flex items-center gap-x-2"
+          itemprop="author"
+          itemscope
+          itemtype="https://schema.org/Person"
+        >
+          <img
+            src={AUTHOR_IMG}
+            alt="Author"
+            fetchpriority="high"
+            draggable="false"
+            width="32"
+            height="32"
+            class="rounded-full"
+            itemprop="image"
+          />
+          <span itemprop="name">Kuroji Fusky</span>
+        </span>
+        <span>
+          Published on
+          <time datetime={date} itemprop="datePublished">
+            {new Date(date).toDateString()}
+          </time>
+        </span>
+      </div>
+      <img
+        src={banner}
+        alt=""
+        decoding="async"
+        class="rounded-xl aspect-video"
+        fetchpriority="high"
+        draggable="false"
+        itemprop="image"
+      />
+    </section>
+    <section class="my-5 text-lg">
+      <article set:html={content} itemprop="articleBody" />
+    </section>
+  </main>
 </Layout>

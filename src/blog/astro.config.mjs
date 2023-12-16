@@ -12,9 +12,17 @@ export default defineConfig({
       changefreq: "hourly"
     })
   ],
-  prefetch: true,
+  prefetch: {
+    prefetchAll: true
+  },
   site: "https://blog.kurojifusky.com/",
   image: {
     domains: ["images.ctfassets.net"]
+  },
+  redirects: {
+    "/post/[slug]": "/posts/[slug]",
+    "/blog/[slug]": "/posts/[slug]",
+    "/article/[slug]": "/posts/[slug]",
+    "/articles/[slug]": "/posts/[slug]"
   }
 })
