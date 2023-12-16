@@ -1,14 +1,50 @@
 ---
 import Layout from "../../components/Layout.astro"
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { contentfulClient, type BlogPost } from "../../lib/contentful"
+import rendererOptions from "../../lib/rendererOptions"
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<BlogPost>({
     content_type: "blogPost"
   })
+
+  return entries.items.map((item) => ({
+    params: { slug: item.fields.slug },
+    props: {
+      title: item.fields.title,
+      description: item.fields.description,
+      banner: item.fields.banner.fields.file.url,
+      content: documentToHtmlString(item.fields.content, rendererOptions),
+      date: item.fields.overridePublishDate
+        ? item.fields.overridePublishDate
+        : item.sys.createdAt
+    }
+  }))
 }
+
+const { title, description, banner, content, date } = Astro.props
 ---
 
-<Layout title="" description="" isArticle>
-  <div></div>
+<Layout title={`${title} | Kuroji Fusky Blog`} {description} isArticle>
+  <div>
+    <div>
+      <div>tag stuff</div>
+      <time datetime={date}>
+        {`Published on ${new Date(date).toDateString()}`}
+      </time>
+    </div>
+    <h1 class="text-4xl font-inter font-bold">
+      {title}
+    </h1>
+    <img
+      src={banner}
+      alt=""
+      decoding="async"
+      class="rounded-lg aspect-video"
+      fetchpriority="high"
+      draggable="false"
+    />
+  </div>
+  <article set:html={content} />
 </Layout>
