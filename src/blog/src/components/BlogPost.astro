@@ -1,11 +1,19 @@
 ---
-const { title, image, date, tags, slug } = Astro.props
+import readableDate from "../lib/readableDate"
+
+const { title, description, banner, date, tags, slug } = Astro.props
+const slugLink = `/posts/${slug}`
 ---
 
-<div class="flex flex-col w-full p-2">
-  <a href={`/post/${slug}`}>
+<div
+  class="flex flex-col w-full p-2"
+  itemtype="https://schema.org/Blog"
+  itemscope
+>
+  <a href={slugLink} itemprop="url">
     <img
-      src={image}
+      itemprop="image"
+      src={banner}
       alt={`Banner for ${title}`}
       decoding="async"
       fetchpriority="auto"
@@ -14,11 +22,14 @@ const { title, image, date, tags, slug } = Astro.props
     />
   </a>
   <h2 class="font-bold text-2xl my-3">
-    <a href={`/post/${slug}`}>
+    <a href={slugLink} itemprop="title">
       {title}
     </a>
   </h2>
-  <time datetime={date}>
-    {new Date(date).toLocaleDateString()}
+  <p itemprop="abstract">
+    {description}
+  </p>
+  <time datetime={date} itemprop="datePublished">
+    {readableDate(date)}
   </time>
 </div>

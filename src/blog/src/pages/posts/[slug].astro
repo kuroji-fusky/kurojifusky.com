@@ -3,6 +3,7 @@ import Layout from "../../components/Layout.astro"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer"
 import { contentfulClient, type BlogPost } from "../../lib/contentful"
 import rendererOptions from "../../lib/rendererOptions"
+import readableDate from "../../lib/readableDate"
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<BlogPost>({
@@ -73,7 +74,7 @@ const AUTHOR_IMG =
         <span>
           Published on
           <time datetime={date} itemprop="datePublished">
-            {new Date(date).toDateString()}
+            {readableDate(date as unknown as Date)}
           </time>
         </span>
       </div>

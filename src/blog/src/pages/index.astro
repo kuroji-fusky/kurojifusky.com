@@ -1,7 +1,6 @@
 ---
 import BlogPost from "../components/BlogPost.astro"
 import Layout from "../components/Layout.astro"
-import RSSNotice from "../components/RSSNotice.astro"
 import { contentfulClient, type BlogPost as IBlogPost } from "../lib/contentful"
 
 const entries = await contentfulClient.getEntries<IBlogPost>({
@@ -43,7 +42,8 @@ const filteredPosts = posts.sort(
           filteredPosts.map((post) => (
             <BlogPost
               title={post.title}
-              image={post.banner}
+              banner={post.banner}
+              description={post.description}
               date={post.date}
               slug={post.slug}
             />
@@ -52,5 +52,4 @@ const filteredPosts = posts.sort(
       </div>
     </section>
   </main>
-  <RSSNotice />
 </Layout>
