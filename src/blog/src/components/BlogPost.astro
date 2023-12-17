@@ -7,7 +7,7 @@ const slugLink = `/posts/${slug}`
 
 <div
   class="flex flex-col w-full p-2"
-  itemtype="https://schema.org/Blog"
+  itemtype="https://schema.org/BlogPost"
   itemscope
 >
   <a href={slugLink} itemprop="url">
@@ -18,18 +18,20 @@ const slugLink = `/posts/${slug}`
       decoding="async"
       fetchpriority="auto"
       draggable="false"
-      class="aspect-video w-full object-cover block rounded-lg"
+      class="aspect-video w-full object-cover block rounded-xl"
     />
   </a>
-  <h2 class="font-bold text-2xl my-3">
-    <a href={slugLink} itemprop="title">
-      {title}
-    </a>
-  </h2>
-  <p itemprop="abstract">
-    {description}
-  </p>
-  <time datetime={date} itemprop="datePublished">
-    {readableDate(date)}
-  </time>
+  <div class="flex flex-col gap-y-3 mt-4 text-base">
+    <h2 class="font-bold text-3xl">
+      <a href={slugLink} itemprop="title">
+        {title}
+      </a>
+    </h2>
+    <p itemprop="abstract">
+      {description}
+    </p>
+    <time datetime={date} itemprop="datePublished">
+      {readableDate(date)}
+    </time>
+  </div>
 </div>

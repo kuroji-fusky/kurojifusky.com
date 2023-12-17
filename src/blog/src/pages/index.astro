@@ -10,7 +10,7 @@ const entries = await contentfulClient.getEntries<IBlogPost>({
 
 const posts = entries.items.map((item) => {
   const { title, description, overridePublishDate, slug, banner } = item.fields
-  const image = `${banner.fields.file.url}?fm=webp&q=75`
+  const image = `https:${banner.fields.file.url}?fm=webp&q=75&w=854&h=480`
 
   const datePublished = overridePublishDate
     ? overridePublishDate
@@ -21,7 +21,8 @@ const posts = entries.items.map((item) => {
     slug,
     description,
     banner: image,
-    date: datePublished
+    date: datePublished,
+    _tags: item.metadata.tags
   }
 })
 
@@ -37,7 +38,7 @@ const filteredPosts = posts.sort(
   <main>
     <section>
       <h1 class="text-4xl font-bold my-3.5">Latest posts</h1>
-      <div class="grid grid-cols-3 justify-center gap-1">
+      <div class="grid grid-cols-3 justify-center gap-3">
         {
           filteredPosts.map((post) => (
             <BlogPost

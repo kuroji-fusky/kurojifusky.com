@@ -34,7 +34,6 @@ onMounted(() => {
       <nav class="flex gap-x-3 text-base">
         <a
           v-for="item in navItems"
-          role="listitem"
           :href="!item.link ? kebabCase(item.name) : item.link"
           :target="!item.link ? undefined : '_blank'"
         >
@@ -45,7 +44,6 @@ onMounted(() => {
   </div>
   <div
     ref="titleOnIntersectRef"
-    data-route-enable="false"
-    class="h-56 absolute inset-0 bottom-unset"
+    class="h-56 absolute inset-0 bottom-unset -z-[1]"
   />
 </template>
