@@ -10,7 +10,7 @@
   - [ ] About me
 - Blog
 
-  - [ ] Blog article page
+  - [x] Blog article page
   - [ ] Category page
 
 - [ ] Implement RSS stuff in blog site
