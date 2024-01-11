@@ -1,0 +1,4 @@
+* text=lf
+
+sites/labs/**/content/**/*.md linguist-language=MDX
+sites/portfolio/**/content/**/*.md linguist-language=MDX
