@@ -1,0 +1,27 @@
+{
+  "name": "@kuro/labs",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "@iconify-prerendered/vue-fa6-brands": "^0.23.1691126983",
+    "@nuxt/content": "^2.9.0",
+    "@kuro/shared": "*",
+    "@studio-freight/lenis": "^1.0.28",
+    "autoprefixer": "^10.4.16",
+    "nuxt": "^3.9.0",
+    "nuxt-lodash": "^2.5.3",
+    "nuxt-lucide-icons": "^1.0.3",
+    "nuxt-simple-sitemap": "^4.1.7",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.6",
+    "vue": "^3.4.6",
+    "vue-router": "^4.2.5"
+  }
+}

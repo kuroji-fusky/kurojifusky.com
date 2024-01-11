@@ -7,7 +7,7 @@ node_modules
 .astro/
 dist/
 
-# Next.js
+# Nuxt
 .nuxt/
 .output/
 
@@ -17,5 +17,5 @@ dist/
 
 yarn.lock
 
-# Ignore README.md on these dirs since they're symlinks
-src/**/README.md
+# Sanity CLI
+.sanity

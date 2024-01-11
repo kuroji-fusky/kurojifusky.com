@@ -1,19 +1,21 @@
 {
-  "private": true,
   "name": "kurowo",
+  "type": "module",
+  "private": true,
   "workspaces": [
-    "src/blog",
-    "src/portfolio",
+    "sites/*",
     "shared/**"
   ],
   "scripts": {
-    "dev:p": "turbo run dev --filter=portfolio",
-    "dev:b": "turbo run dev --filter=blog",
+    "dev:portfolio": "turbo run dev --filter=portfolio",
+    "dev:labs": "turbo run dev --filter=labs",
+    "dev:blog": "turbo run dev --filter=blog",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,js,mjs,vue,md,astro}\"",
-    "postinstall": "cd src/portfolio && nuxt prepare",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "nuxt:prepare": "",
+    "postinstall": "cd sites/portfolio && npx nuxt prepare && cd ../labs && npx nuxt prepare"
   },
   "lint-staged": {
     "src/**": "prettier --write .",

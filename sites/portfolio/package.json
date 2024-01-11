@@ -18,7 +18,7 @@
     "@nuxt/content": "^2.9.0",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
-    "@tailwindcss/typography": "^0.5.10",
+    "@studio-freight/lenis": "^1.0.28",
     "autoprefixer": "^10.4.16",
     "nuxt": "^3.8.2",
     "nuxt-lodash": "^2.5.3",
@@ -30,7 +30,6 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.28",
     "gsap": "^3.12.2"
   }
 }

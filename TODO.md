@@ -2,6 +2,12 @@
 - [ ] Add preloader
 - [ ] Add animated transition routes via GSAP
 
+## Codebase
+
+- [ ] Use shared tsconfig
+- [ ] Share @fontsource stuff in `shared`
+- [ ] Add small node script to exec `nuxt prepare
+
 ## Routes
 
 - Portfolio

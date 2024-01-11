@@ -2,6 +2,9 @@ import { baseUrls } from "@kuro/shared"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devServer: {
+    port: 3000
+  },
   devtools: { enabled: false },
   modules: [
     "@nuxt/content",
