@@ -26,16 +26,6 @@ const currentYear = new Date().getFullYear()
     <NuxtLink to="/" aria-label="Home" title="Home">
       <KuroLogo :width="160" ref="succ" />
     </NuxtLink>
-    <div class="flex flex-wrap gap-x-8">
-      <KuroLink
-        v-for="(link, index) in footLinks"
-        :key="index"
-        :href="link.path"
-        :external="link.path.startsWith('https:')"
-      >
-        {{ link.name }}
-      </KuroLink>
-    </div>
     <div class="opacity-50 flex flex-col items-center gap-y-2">
       Version 9.0
       <span id="copyright">

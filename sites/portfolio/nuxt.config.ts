@@ -7,19 +7,47 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: false },
   modules: [
-    "@nuxt/content",
+    [
+      "@nuxt/content",
+      {
+        markdown: {
+          tags: {
+            // I've lost my sleep for this for registering custom components
+            // to be rendered to markdown, good lord
+            pwrapper: "PWrapper"
+          }
+        }
+      }
+    ],
     "nuxt-lucide-icons",
-    "nuxt-simple-sitemap",
-    "@nuxt/image"
+    [
+      "nuxt-simple-sitemap",
+      {
+        strictNuxtContentPaths: true
+      }
+    ],
+    [
+      "@nuxt/image",
+      {
+        quality: 85,
+        cloudinary: {
+          baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/"
+        },
+        domains: ["res.cloudinary.com"]
+      }
+    ]
   ],
   // Transpile modules
   build: {
     transpile: ["gsap"]
   },
+  site: {
+    url: baseUrls.main
+  },
   // .env
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || ""
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "http://localhost:3000"
     }
   },
   // Root dir
@@ -68,18 +96,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  // nuxt-image
-  image: {
-    quality: 85,
-    cloudinary: {
-      baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/"
-    },
-    domains: ["res.cloudinary.com"]
-  },
-  // Sitemap
-  sitemap: {
-    strictNuxtContentPaths: true
-  },
   // Tailwind CSS
   css: ["~/assets/global.css"],
   postcss: {
@@ -90,6 +106,8 @@ export default defineNuxtConfig({
   },
   // Misc.
   nitro: {
-    preset: "vercel"
+    future: {
+      nativeSWR: true
+    }
   }
 })

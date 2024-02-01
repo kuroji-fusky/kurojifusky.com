@@ -12,7 +12,7 @@
             fetchpriority="high"
             draggable="false"
             alt="A goddamn cutie"
-            class="rounded-2xl"
+            class="rounded-2xl aspect-square"
           />
         </div>
         <div

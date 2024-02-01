@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { baseUrls } from "@kuro/shared"
+</script>
 
 <template>
   <div class="sticky inset-0 bottom-0 z-10">
@@ -7,13 +9,11 @@
         <NuxtLink to="/" aria-label="Home" title="Home">
           <KuroLogo :width="150" />
         </NuxtLink>
-        <nav class="inline-flex gap-5">
-          <KuroLink href="/about">About me</KuroLink>
-          <KuroLink href="https://blog.kurojifusky.com" external>
-            Blog
-          </KuroLink>
-          <KuroLink href="https://www.youtube.com/@kurojifusky" external>
-            YouToob
+        <nav class="inline-flex gap-6 select-none">
+          <KuroLink href="/projects">Projects</KuroLink>
+          <KuroLink href="/about">About Me</KuroLink>
+          <KuroLink :href="baseUrls.blog" external>
+            <span class="mr-1">Blog</span>
           </KuroLink>
         </nav>
       </header>

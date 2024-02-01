@@ -6,10 +6,8 @@ useTastySEO({
 </script>
 
 <template>
-  <div>
-    <LazyLandingBaseGrid />
-    <LandingHero />
-    <LandingWhatIDo />
-    <LandingShowcase />
-  </div>
+  <LazyLandingBaseGrid />
+  <LandingHero />
+  <LazyLandingWhatIDo />
+  <LazyLandingShowcase />
 </template>
