@@ -11,19 +11,19 @@ useSeoMeta({
 
 const shitQuotes = [
   {
-    message: "The plug thing! It's not plugged!",
-    reference: "GIR, from Megadoomer, Invader Zim"
+    message: "That was nuts!",
+    reference: "Daggett, The Angry Beavers"
   },
   {
-    message: "MEATPOLES! YAAAAAAY!",
-    reference: "Crainer, SSundee's SkyFactory"
+    message: "The plug thing! It's not plugged!",
+    reference: "GIR, from Megadoomer, Invader Zim"
   },
   {
     message: "Why was there bacon in the soap?!",
     reference: "Rise of the Zitboy, Invader Zim"
   },
   {
-    message: "I'm gonna roll around the floor for a little bit. 'Kay?'",
+    message: "I'm gonna roll around the floor for a little bit. 'Kay?",
     reference: "GIR, from Germs, Invader Zim"
   },
   {
@@ -31,17 +31,8 @@ const shitQuotes = [
     reference: "GIR, Invader Zim"
   },
   {
-    message: "LIIIIES! THE FILTHY EARTH BOY LIIIIES!!",
-    reference: "Zim, Invader Zim"
-  },
-  {
     message: "Invite Dib over? That's insane! Even for YOU!",
     reference: "Return of Keef, Invader Zim"
-  },
-  {
-    message:
-      "I'll throw an ender pearl so hard at your face, it'll teleport to your nose to your butt... smell that crap!",
-    reference: "Derp SSundee"
   }
 ]
 
@@ -53,13 +44,13 @@ const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)]
     <div class="grid place-items-center h-screen">
       <div class="flex flex-col items-center gap-y-2">
         <h1 class="text-6xl font-bold">{{ error!.statusCode }}</h1>
-        <blockquote class="flex flex-col gap-y-1.5">
+        <blockquote class="flex flex-col gap-y-1.5 items-center">
           <em class="text-xl">
             {{ randomQuote.message }}
           </em>
-          <p class="before:content-['—']">
-            {{ randomQuote.reference }}
-          </p>
+          <span class="opacity-70">
+            {{ `— ${randomQuote.reference}` }}
+          </span>
         </blockquote>
         <div>
           <p>{{ error!.statusMessage }}</p>

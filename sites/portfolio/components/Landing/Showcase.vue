@@ -9,43 +9,50 @@ const sillies = [
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-8">
-    <ContentList
-      path="/showcase"
-      v-slot="{ list }"
-      :query="{ sort: [{ date: -1 }] }"
+  <div class="py-12">
+    <h2 class="font-unbounded text-5xl uppercase block text-center mb-9">
+      {{ "Showcase" }}
+    </h2>
+    <div
+      class="grid grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] items-start gap-5 px-8 w-fit mx-auto"
     >
-      <div
-        v-for="item in list"
-        :key="item._path"
-        class="p-4 flex flex-col gap-y-6 w-[60rem]"
+      <ContentList
+        path="/showcase"
+        v-slot="{ list }"
+        :query="{ sort: [{ date: -1 }] }"
       >
-        <NuxtLink
-          :to="item._path"
-          draggable="false"
-          class="aspect-[16/8] relative w-full overflow-hidden rounded-xl"
+        <div
+          v-for="item in list"
+          :key="item._path"
+          class="p-4 flex flex-col gap-y-6 w-full"
         >
-          <NuxtImg
-            provider="cloudinary"
-            src="/sf-website/irl/yeseu.png"
-            class="absolute inset-0 h-full w-full object-cover"
-            fetchpriority="high"
-          />
-        </NuxtLink>
-        <div class="flex flex-col gap-y-1.5">
-          <h2 class="text-5xl font-bold">
-            <NuxtLink :to="item._path">
-              {{ item.title }}
-            </NuxtLink>
-          </h2>
-          <p>
-            {{ item.description }}
-          </p>
-          <span>
-            {{ item.date }}
-          </span>
+          <NuxtLink
+            :to="item._path"
+            draggable="false"
+            class="aspect-[16/8] relative w-full overflow-hidden rounded-xl"
+          >
+            <NuxtImg
+              provider="cloudinary"
+              src="/sf-website/irl/yeseu.png"
+              class="absolute inset-0 h-full w-full object-cover"
+              fetchpriority="high"
+            />
+          </NuxtLink>
+          <div class="flex flex-col gap-y-1.5">
+            <h2 class="text-4xl font-bold text-kuro-lavender-200">
+              <NuxtLink :to="item._path">
+                {{ item.title }}
+              </NuxtLink>
+            </h2>
+            <p>
+              {{ item.description }}
+            </p>
+            <span>
+              {{ item.date }}
+            </span>
+          </div>
         </div>
-      </div>
-    </ContentList>
+      </ContentList>
+    </div>
   </div>
 </template>

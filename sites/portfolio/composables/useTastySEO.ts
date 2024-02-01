@@ -8,7 +8,7 @@ export const useTastySEO = ({
   description: string
 }) => {
   const route = useRoute()
-  const shokoy = useRuntimeConfig().public.siteUrl
+  const shokoy = useRuntimeConfig().public.siteUrl ?? "http://localhost:3000"
 
   const creator = baseUrls.twitterAuthor
 
@@ -20,8 +20,6 @@ export const useTastySEO = ({
     ogTitle: title,
     ogDescription: description,
     ogUrl: _url,
-    twitterTitle: title,
-    twitterDescription: description,
     twitterSite: creator,
     twitterCreator: creator
   })
