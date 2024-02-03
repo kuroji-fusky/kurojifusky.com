@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useTastySEO({
   title: "Kuroji Fusky",
-  description: "I make awesome silly stuff on da interwebz"
+  description: "I make awesome silly and cool stuff"
 })
 </script>
 
