@@ -13,13 +13,17 @@ onMounted(() => {
     smoothTouch: false,
     infinite: false
   })
+  
   const raf = (time: unknown) => {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
   requestAnimationFrame(raf)
+
   lenis.on("scroll", ScrollTrigger.update)
   gsap.ticker.add((t) => lenis.raf(t * 1000))
+
+  console.log("Now this bitch hydrated")
 })
 </script>
 

@@ -39,15 +39,15 @@ const sillies = [
             />
           </NuxtLink>
           <div class="flex flex-col gap-y-1.5">
-            <h2 class="text-4xl font-bold text-kuro-lavender-200">
+            <h2 class="text-4xl font-bold text-kuro-lavender-100">
               <NuxtLink :to="item._path">
                 {{ item.title }}
               </NuxtLink>
             </h2>
-            <p>
+            <p class="opacity-75">
               {{ item.description }}
             </p>
-            <span>
+            <span class="opacity-75">
               {{ item.date }}
             </span>
           </div>

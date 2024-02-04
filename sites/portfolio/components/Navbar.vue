@@ -10,7 +10,7 @@ import { baseUrls } from "@kuro/shared"
           <KuroLogo :width="150" />
         </NuxtLink>
         <nav class="inline-flex gap-6 select-none">
-          <KuroLink href="/projects">Projects</KuroLink>
+          <KuroLink href="/showcase">Showcase</KuroLink>
           <KuroLink href="/about">About Me</KuroLink>
           <KuroLink :href="baseUrls.blog" external>
             <span class="mr-1">Blog</span>
