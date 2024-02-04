@@ -1,4 +1,30 @@
+import type { Head } from "../../node_modules/@unhead/schema/dist"
 import { baseUrls } from "@kuro/shared"
+import cuties from "./constants/cuties"
+
+const CLOUDINARY_BASE_URL =
+  "https://res.cloudinary.com/kuroji-fusky-s3/image/upload"
+
+const preloadImgCDNUrls: Head["link"] = [
+  "res.cloudinary.com",
+  "cdn.sanity.io"
+].map((url) => {
+  return {
+    rel: "preconnect",
+    href: `https://${url}/`,
+    crossorigin: "",
+    fetchpriority: "high"
+  }
+})
+
+const preloadCuties: Head["link"] = cuties.map(({ file }) => {
+  return {
+    rel: "preload",
+    as: "image",
+    content: `${CLOUDINARY_BASE_URL}/f_auto,q_85,w_280/fursonas/comms/${file}`,
+    fetchpriority: "high"
+  }
+})
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -31,7 +57,7 @@ export default defineNuxtConfig({
       {
         quality: 85,
         cloudinary: {
-          baseURL: "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/"
+          baseURL: CLOUDINARY_BASE_URL
         },
         domains: ["res.cloudinary.com"]
       }
@@ -84,16 +110,8 @@ export default defineNuxtConfig({
           type: "image/png",
           href: "/apple-icon-192.png"
         },
-        {
-          rel: "dns-prefetch",
-          href: "https://res.cloudinary.com/",
-          fetchpriority: "high"
-        },
-        {
-          rel: "dns-prefetch",
-          href: "https://cdn.sanity.io/",
-          fetchpriority: "high"
-        }
+        ...preloadImgCDNUrls,
+        ...preloadCuties
       ],
       bodyAttrs: {
         class:

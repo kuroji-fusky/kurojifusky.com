@@ -6,36 +6,41 @@ const endevorList = [
     icon: "WIP",
     text: "VFX & Film",
     description: "Me make shit video",
+    color: ["247 90 79", "227 145 64"],
     examples: []
   },
   {
     icon: "WIP",
     text: "Engineering",
     description: "I like to code lmao",
+    color: ["blue", "green"],
     examples: []
   },
   {
     icon: "WIP",
     text: "UI/UX Design",
     description: "I've been designing stuff lol",
+    color: ["green", "yellow"],
     examples: []
   },
   {
     icon: "WIP",
     text: "Music",
     description: "I make instrumental trash",
+    color: ["purple", "brown"],
     examples: []
   }
 ]
 </script>
 
 <template>
-  <div class="px-6 py-12">
-    <h2 class="font-unbounded text-5xl uppercase block text-center mb-9">
-      {{ "What I Do" }}
-    </h2>
+  <LandingWrapper heading="What I Do">
     <div
-      class="rounded-md shadow-lg shadow-kuro-royalblue-200 px-5 py-3 max-w-screen-2xl mx-auto flex flex-col gap-5 h-[40rem]"
+      class="relative border border-[rgb(var(--wid-primary))] transition-[border-color] rounded-md shadow-lg px-5 py-3 max-w-screen-2xl mx-auto flex flex-col gap-5 h-[40rem]"
+      :style="{
+        '--wid-primary': endevorList[endevorIndex].color[0],
+        '--wid-secondary': endevorList[endevorIndex].color[1]
+      }"
     >
       <div class="flex justify-center w-full gap-3 flex-wrap">
         <button
@@ -43,8 +48,10 @@ const endevorList = [
           :key="index"
           :aria-selected="index == endevorIndex"
           :class="[
-            'px-4 rounded-3xl py-1.5',
-            index == endevorIndex ? 'bg-red-700' : 'bg-gray-700'
+            'px-4 rounded-3xl py-1.5 bg-[rgb(var(--wid-primary)/var(--tw-bg-opacity))] transition-colors',
+            index == endevorIndex
+              ? 'bg-opacity-100'
+              : 'bg-opacity-50 hover:bg-opacity-75'
           ]"
           @click="() => (endevorIndex = index)"
         >
@@ -66,5 +73,5 @@ const endevorList = [
         </div>
       </div>
     </div>
-  </div>
+  </LandingWrapper>
 </template>

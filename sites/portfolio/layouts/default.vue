@@ -13,7 +13,7 @@ onMounted(() => {
     smoothTouch: false,
     infinite: false
   })
-  
+
   const raf = (time: unknown) => {
     lenis.raf(time)
     requestAnimationFrame(raf)
@@ -28,15 +28,13 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
-    <div
-      id="transition"
-      class="fixed inset-0 bottom-unset z-[999] h-screen pointer-events-none"
-    ></div>
-    <Navbar />
-    <div class="min-h-[calc(100dvh-1.25rem)]">
-      <slot />
-    </div>
-    <Footer />
-  </div>
+  <div
+    id="transition"
+    class="fixed inset-0 bottom-unset z-[999] h-screen pointer-events-none"
+  ></div>
+  <Navbar />
+  <main class="min-h-[calc(100dvh-1.25rem)]">
+    <slot />
+  </main>
+  <Footer />
 </template>

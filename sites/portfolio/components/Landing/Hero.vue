@@ -1,82 +1,107 @@
 <script setup lang="ts">
-const preloadBaseUrl =
-  "https://res.cloudinary.com/kuroji-fusky-s3/image/upload/f_auto,q_85,w_280/fursonas/comms/"
-
-const cuties = [
-  {
-    file: "toboshiro_icon.png",
-    artist: "Tobo Shiro",
-    link: "https://www.etsy.com/shop/toboshirosworkshop"
-  },
-  {
-    file: "dougly_Icon2.png",
-    artist: "sadcat16hrz",
-    link: "https://twitter.com/sadcat16hrz"
-  },
-  {
-    file: "MCM_headshot-comm.png",
-    artist: "MintyChipMocha",
-    link: "https://www.youtube.com/@MintyChipMocha"
-  },
-  {
-    file: "Icon_sunbaestudios.png",
-    artist: "SamoyedRoseCreations",
-    link: "https://www.etsy.com/shop/SamoyedRoseCreations"
-  },
-  {
-    file: "IMG_2094.png",
-    artist: "TheMysticalMango",
-    link: "https://www.etsy.com/shop/TheMysticalMango"
-  },
-  {
-    file: "IMG-20230728-WA0005.jpg",
-    artist: "Lumyhuh",
-    link: "https://www.etsy.com/shop/Moonbats"
-  },
-  {
-    file: "nepukamiArts_2000.jpg",
-    artist: "nepukami",
-    link: "https://www.etsy.com/shop/nepukamiArts"
-  }
-]
+import gsap from "gsap"
+import cuties from "../../constants/cuties"
 
 const cutieImg = ref<HTMLDivElement>()
 const currentCutieIndex = ref(1)
 
 const changeCutie = () => {
-  console.log("*moans*")
+  let randomCutie: number
 
-  currentCutieIndex.value = Math.floor(Math.random() * cuties.length)
+  do {
+    randomCutie = Math.floor(Math.random() * cuties.length)
+  } while (randomCutie === currentCutieIndex.value)
+
+  currentCutieIndex.value = randomCutie
 }
+
+const picWrapper = ref<HTMLDivElement>()
+const artistCredit = ref<HTMLDivElement>()
+
+useGsapContext(() => {
+  const wrappies = picWrapper.value
+  const creditText = artistCredit.value as gsap.TweenTarget
+
+  const options = {
+    duration: 0.5,
+    ease: "power2"
+  }
+
+  const rotSetterX = gsap.quickTo(
+    wrappies as gsap.TweenTarget,
+    "rotationX",
+    options
+  )
+  const rotSetterY = gsap.quickTo(
+    wrappies as gsap.TweenTarget,
+    "rotationY",
+    options
+  )
+
+  const cardScaleSetterW = gsap.quickTo(
+    wrappies as gsap.TweenTarget,
+    "scaleX",
+    options
+  )
+  const cardScaleSetterH = gsap.quickTo(
+    wrappies as gsap.TweenTarget,
+    "scaleY",
+    options
+  )
+
+  window.addEventListener("mousemove", (e) => {
+    const dimH = window.innerHeight / 2 - e.y
+    const dimW = window.innerWidth / 2 - e.x
+
+    rotSetterX(dimH / 26)
+    rotSetterY(dimW / (32 * -1))
+  })
+
+  const handleScale = (aydol: number) => {
+    cardScaleSetterW(aydol)
+    cardScaleSetterH(aydol)
+  }
+
+  wrappies!.addEventListener("mouseenter", () => handleScale(1.12))
+  wrappies!.addEventListener("mouseleave", () => handleScale(1))
+}, picWrapper.value!)
 </script>
 
 <template>
-  <div class="h-[100dvh] grid place-items-center relative -top-12">
+  <section class="h-[100dvh] grid place-items-center relative -top-12">
     <div class="flex flex-col gap-y-5 items-center justify-center">
       <div class="relative">
         <button
+          ref="picWrapper"
           @click="changeCutie"
           class="before:absolute before:block before:inset-0"
         >
           <NuxtImg
+            v-for="(cutie, i) in cuties"
+            :key="i"
+            format="webp"
             ref="cutieImg"
             provider="cloudinary"
             width="280"
-            :src="`/fursonas/comms/${cuties[currentCutieIndex].file}`"
+            :src="`/fursonas/comms/${cutie.file}`"
             fetchpriority="high"
             draggable="false"
             alt="A goddamn cutie"
-            class="rounded-2xl aspect-square"
+            :class="[
+              'rounded-2xl aspect-square',
+              i === currentCutieIndex ? '' : 'hidden'
+            ]"
           />
         </button>
       </div>
-      <div class="text-base">
+      <div ref="artistCredit" class="text-base">
         <span class="opacity-50">{{ "Art by " }}</span>
         <KuroLink :href="cuties[currentCutieIndex].link" external>{{
           cuties[currentCutieIndex].artist
         }}</KuroLink>
       </div>
       <article class="w-2/3 xl:w-4/6 text-center flex flex-col gap-y-5 mt-8">
+        <h1 class="sr-only">Introduction</h1>
         <p>
           Hello! I'm a random floof on the internet making cool things mostly
           for the fun of it! I go by a blue-yellow fox-husky hybrid fluffy
@@ -89,5 +114,5 @@ const changeCutie = () => {
         </p>
       </article>
     </div>
-  </div>
+  </section>
 </template>

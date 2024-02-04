@@ -9,10 +9,7 @@ const sillies = [
 </script>
 
 <template>
-  <div class="py-12">
-    <h2 class="font-unbounded text-5xl uppercase block text-center mb-9">
-      {{ "Showcase" }}
-    </h2>
+  <LandingWrapper heading="Showcase">
     <div
       class="grid grid-cols-[repeat(auto-fill,minmax(30rem,1fr))] items-start gap-5 px-8 w-fit mx-auto"
     >
@@ -54,5 +51,5 @@ const sillies = [
         </div>
       </ContentList>
     </div>
-  </div>
+  </LandingWrapper>
 </template>
