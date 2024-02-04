@@ -88,6 +88,11 @@ export default defineNuxtConfig({
           rel: "dns-prefetch",
           href: "https://res.cloudinary.com/",
           fetchpriority: "high"
+        },
+        {
+          rel: "dns-prefetch",
+          href: "https://cdn.sanity.io/",
+          fetchpriority: "high"
         }
       ],
       bodyAttrs: {
@@ -101,7 +106,8 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
+      autoprefixer: {},
+      ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {})
     }
   },
   // Misc.

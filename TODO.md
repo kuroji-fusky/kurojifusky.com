@@ -6,14 +6,13 @@
 
 - [ ] Use shared tsconfig
 - [ ] Share @fontsource stuff in `shared`
-- [ ] Add small node script to exec `nuxt prepare
 
 ## Routes
 
 - Portfolio
   - [ ] Music Stems
   - [x] Showcase Pages
-  - [ ] About me
+  - [x] About me
 - Blog
 
   - [x] Blog article page
