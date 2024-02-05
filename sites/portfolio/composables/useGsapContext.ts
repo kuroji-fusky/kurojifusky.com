@@ -1,8 +1,8 @@
 import { gsap } from "gsap"
 
 export const useGsapContext = (
-  cb: gsap.ContextFunc,
-  scope?: string | Object | Element
+  scope: string | Object | Element,
+  cb: gsap.ContextFunc
 ) => {
   const ctx = ref<gsap.Context>()
 

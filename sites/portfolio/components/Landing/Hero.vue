@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import gsap from "gsap"
-import cuties from "../../constants/cuties"
+import { cuties } from "~/constants"
 
 const cutieImg = ref<HTMLDivElement>()
 const currentCutieIndex = ref(1)
@@ -15,39 +15,24 @@ const changeCutie = () => {
   currentCutieIndex.value = randomCutie
 }
 
+const ctx = ref<gsap.Context>()
+
 const picWrapper = ref<HTMLDivElement>()
 const artistCredit = ref<HTMLDivElement>()
 
-useGsapContext(() => {
+useGsapContext(picWrapper.value!, () => {
   const wrappies = picWrapper.value
-  const creditText = artistCredit.value as gsap.TweenTarget
+  const creditText = artistCredit.value
 
-  const options = {
+  const options: gsap.TweenVars = {
     duration: 0.5,
     ease: "power2"
   }
 
-  const rotSetterX = gsap.quickTo(
-    wrappies as gsap.TweenTarget,
-    "rotationX",
-    options
-  )
-  const rotSetterY = gsap.quickTo(
-    wrappies as gsap.TweenTarget,
-    "rotationY",
-    options
-  )
-
-  const cardScaleSetterW = gsap.quickTo(
-    wrappies as gsap.TweenTarget,
-    "scaleX",
-    options
-  )
-  const cardScaleSetterH = gsap.quickTo(
-    wrappies as gsap.TweenTarget,
-    "scaleY",
-    options
-  )
+  const rotSetterX = gsap.quickTo(wrappies as gsap.TweenTarget, "rotationX", options)
+  const rotSetterY = gsap.quickTo(wrappies as gsap.TweenTarget, "rotationY", options)
+  const cardScaleSetterW = gsap.quickTo(wrappies as gsap.TweenTarget, "scaleX", options)
+  const cardScaleSetterH = gsap.quickTo(wrappies as gsap.TweenTarget, "scaleY", options)
 
   window.addEventListener("mousemove", (e) => {
     const dimH = window.innerHeight / 2 - e.y
@@ -57,25 +42,21 @@ useGsapContext(() => {
     rotSetterY(dimW / (32 * -1))
   })
 
-  const handleScale = (aydol: number) => {
-    cardScaleSetterW(aydol)
-    cardScaleSetterH(aydol)
+  const changeWrapperScale = (scale: number) => {
+    cardScaleSetterW(scale)
+    cardScaleSetterH(scale)
   }
 
-  wrappies!.addEventListener("mouseenter", () => handleScale(1.12))
-  wrappies!.addEventListener("mouseleave", () => handleScale(1))
-}, picWrapper.value!)
+  wrappies!.addEventListener("mouseenter", () => changeWrapperScale(1.12))
+  wrappies!.addEventListener("mouseleave", () => changeWrapperScale(1))
+})
 </script>
 
 <template>
   <section class="h-[100dvh] grid place-items-center relative -top-12">
     <div class="flex flex-col gap-y-5 items-center justify-center">
       <div class="relative">
-        <button
-          ref="picWrapper"
-          @click="changeCutie"
-          class="before:absolute before:block before:inset-0"
-        >
+        <button ref="picWrapper" @click="changeCutie" class="before:absolute before:block before:inset-0">
           <NuxtImg
             v-for="(cutie, i) in cuties"
             :key="i"
@@ -87,30 +68,23 @@ useGsapContext(() => {
             fetchpriority="high"
             draggable="false"
             alt="A goddamn cutie"
-            :class="[
-              'rounded-2xl aspect-square',
-              i === currentCutieIndex ? '' : 'hidden'
-            ]"
+            :class="['rounded-2xl aspect-square', i === currentCutieIndex ? '' : 'hidden']"
           />
         </button>
       </div>
       <div ref="artistCredit" class="text-base">
         <span class="opacity-50">{{ "Art by " }}</span>
-        <KuroLink :href="cuties[currentCutieIndex].link" external>{{
-          cuties[currentCutieIndex].artist
-        }}</KuroLink>
+        <KuroLink :href="cuties[currentCutieIndex].link" external>{{ cuties[currentCutieIndex].artist }}</KuroLink>
       </div>
       <article class="w-2/3 xl:w-4/6 text-center flex flex-col gap-y-5 mt-8">
         <h1 class="sr-only">Introduction</h1>
         <p>
-          Hello! I'm a random floof on the internet making cool things mostly
-          for the fun of it! I go by a blue-yellow fox-husky hybrid fluffy
-          animal named "Kuroji" (koo-ROW-jee).
+          Hello! I'm a random floof on the internet making cool things mostly for the fun of it! I go by a blue-yellow
+          fox-husky hybrid fluffy animal named "Kuroji" (koo-ROW-jee).
         </p>
         <p>
-          As a self-taught individual, I strive to inspire future generations
-          through my unique vision and delivering high-quality products whilst
-          incorporating my weird and self-deprecating humor.
+          As a self-taught individual, I strive to inspire future generations through my unique vision and delivering
+          high-quality products whilst incorporating my weird and self-deprecating humor.
         </p>
       </article>
     </div>

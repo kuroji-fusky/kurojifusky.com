@@ -24,6 +24,7 @@
     "nuxt": "^3.8.2",
     "nuxt-lodash": "^2.5.3",
     "nuxt-lucide-icons": "^1.0.3",
+    "nuxt-og-image": "^3.0.0-rc.38",
     "nuxt-simple-sitemap": "^4.1.7",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.6",

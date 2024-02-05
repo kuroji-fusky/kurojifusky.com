@@ -1,6 +1,7 @@
 import { baseUrls } from "@kuro/shared"
+import { SITE_TITLE } from "~/constants"
 
-export const useTastySEO = ({
+export const useSEO = ({
   title,
   description
 }: {
@@ -8,23 +9,24 @@ export const useTastySEO = ({
   description: string
 }) => {
   const route = useRoute()
-  const shokoy = useRuntimeConfig().public.siteUrl ?? "http://localhost:3000"
+  const baseUrl = useRuntimeConfig().public.siteUrl ?? "http://localhost:3000"
 
   const creator = baseUrls.twitterAuthor
 
-  const _url = `${shokoy}${route.fullPath}`
+  const fullUrlPath = `${baseUrl}${route.fullPath}`
 
   useSeoMeta({
     title,
     description,
     ogTitle: title,
     ogDescription: description,
-    ogUrl: _url,
+    ogUrl: fullUrlPath,
+    ogSiteName: SITE_TITLE,
     twitterSite: creator,
     twitterCreator: creator
   })
 
   useHead({
-    link: [{ rel: "canonical", href: _url }]
+    link: [{ rel: "canonical", href: fullUrlPath }]
   })
 }

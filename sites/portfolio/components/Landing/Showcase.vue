@@ -1,12 +1,4 @@
-<script setup lang="ts">
-const sillies = [
-  {
-    name: "BEtsy",
-    description: "Your mom",
-    repo: "kuroji-fusky/betsy"
-  }
-]
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <LandingWrapper heading="Showcase">

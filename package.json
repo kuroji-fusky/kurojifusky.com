@@ -15,7 +15,7 @@
     "format": "prettier --write \"**/*.{ts,js,mjs,vue,md,astro}\"",
     "prepare": "husky install",
     "nuxt:prepare": "",
-    "postinstall": "cd sites/portfolio && npx nuxt prepare && cd ../labs && npx nuxt prepare"
+    "postinstall": "cd sites/portfolio && npx nuxt prepare"
   },
   "lint-staged": {
     "src/**": "prettier --write .",
@@ -39,6 +39,7 @@
     "plugins": [
       "prettier-plugin-astro"
     ],
+    "printWidth": 120,
     "overrides": [
       {
         "files": "*.astro",

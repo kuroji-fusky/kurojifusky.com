@@ -1,6 +1,8 @@
 <script setup lang="ts">
-useTastySEO({
-  title: "Kuroji Fusky",
+import { SITE_TITLE } from "~/constants"
+
+useSEO({
+  title: SITE_TITLE,
   description: "I make awesome silly and cool stuff"
 })
 </script>

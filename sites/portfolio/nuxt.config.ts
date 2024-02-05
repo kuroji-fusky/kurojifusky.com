@@ -1,30 +1,22 @@
-import type { Head } from "../../node_modules/@unhead/schema/dist"
 import { baseUrls } from "@kuro/shared"
-import cuties from "./constants/cuties"
+import { CLOUDINARY_BASE_URL, cuties } from "./constants"
+import type { Head } from "../../node_modules/@unhead/schema/dist"
 
-const CLOUDINARY_BASE_URL =
-  "https://res.cloudinary.com/kuroji-fusky-s3/image/upload"
+const CDNUrls = ["res.cloudinary.com", "cdn.sanity.io"]
 
-const preloadImgCDNUrls: Head["link"] = [
-  "res.cloudinary.com",
-  "cdn.sanity.io"
-].map((url) => {
-  return {
-    rel: "preconnect",
-    href: `https://${url}/`,
-    crossorigin: "",
-    fetchpriority: "high"
-  }
-})
+const preloadImgCDNUrls: Head["link"] = CDNUrls.map((url) => ({
+  rel: "preconnect",
+  href: `https://${url}/`,
+  crossorigin: "",
+  fetchpriority: "high"
+}))
 
-const preloadCuties: Head["link"] = cuties.map(({ file }) => {
-  return {
-    rel: "preload",
-    as: "image",
-    content: `${CLOUDINARY_BASE_URL}/f_auto,q_85,w_280/fursonas/comms/${file}`,
-    fetchpriority: "high"
-  }
-})
+const preloadCuties: Head["link"] = cuties.map(({ file }) => ({
+  rel: "preload",
+  as: "image",
+  content: `${CLOUDINARY_BASE_URL}/f_auto,q_85,w_280/fursonas/comms/${file}`,
+  fetchpriority: "high"
+}))
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -61,7 +53,8 @@ export default defineNuxtConfig({
         },
         domains: ["res.cloudinary.com"]
       }
-    ]
+    ],
+    "nuxt-og-image"
   ],
   // Transpile modules
   build: {
@@ -87,8 +80,7 @@ export default defineNuxtConfig({
         {
           async: true,
           src: baseUrls.umami,
-          "data-website-id":
-            process.env.NUXT_PUBLIC_UMAMI_ID || "No ID specified"
+          "data-website-id": process.env.NUXT_PUBLIC_UMAMI_ID || "No ID specified"
         }
       ],
       link: [

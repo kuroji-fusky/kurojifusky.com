@@ -11,7 +11,7 @@ const { data } = await useAsyncData("page-data", () =>
   queryContent<MarkdownMetadata>(path).findOne()
 )
 
-useTastySEO({
+useSEO({
   title: `${data.value!.title} | Kuroji Fusky`,
   description: data.value!.description
 })
