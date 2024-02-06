@@ -45,11 +45,11 @@ const parsedUrl = `${domain}${pathname}`
     <script async src={baseUrls.umami} data-website-id={umamiId}></script>
   </head>
   <body
-    class="text-sm overflow-x-hidden font-inter bg-kuro-dark2 text-kuro-lavender-50 selection:bg-kuro-lavender-700"
+    class="font-inter bg-kuro-dark2 text-kuro-lavender-50 selection:bg-kuro-lavender-700 overflow-x-hidden text-sm"
   >
     <div>
       <Navbar client:load />
-      <div class="px-9 max-w-screen-2xl mx-auto">
+      <div class="mx-auto max-w-screen-2xl px-9">
         <slot />
       </div>
       <Footer />

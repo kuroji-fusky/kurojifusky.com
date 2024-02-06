@@ -16,9 +16,9 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="flex flex-col py-12 px-8 items-center gap-y-6 text-sm">
+  <footer class="flex flex-col items-center gap-y-6 px-8 py-12 text-sm">
     <div
-      class="px-3.5 py-2 rounded-md flex items-center bg-kuro-yellow-800 bg-opacity-75 gap-x-2 border-2 border-kuro-yellow-800"
+      class="bg-kuro-yellow-800 border-kuro-yellow-800 flex items-center gap-x-2 rounded-md border-2 bg-opacity-75 px-3.5 py-2"
     >
       <LucideAlertTriangle />
       <span>Website is still work-in-progress; no mobile support just yet</span>
@@ -26,12 +26,10 @@ const currentYear = new Date().getFullYear()
     <NuxtLink to="/" aria-label="Home" title="Home">
       <KuroLogo :width="160" ref="succ" />
     </NuxtLink>
-    <div class="opacity-50 flex flex-col items-center gap-y-2">
+    <div class="flex flex-col items-center gap-y-2 opacity-50">
       Version 9.0
       <span id="copyright">
-        {{
-          `© 2012-${currentYear} Kerby Keith Aquino dba Kuroji Fusky, LLC & Fusky Labs, LLC`
-        }}
+        {{ `© 2012-${currentYear} Kerby Keith Aquino dba Kuroji Fusky, LLC & Fusky Labs, LLC` }}
       </span>
     </div>
   </footer>

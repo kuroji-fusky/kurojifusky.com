@@ -8,13 +8,11 @@
   ],
   "scripts": {
     "dev:portfolio": "turbo run dev --filter=portfolio",
-    "dev:labs": "turbo run dev --filter=labs",
     "dev:blog": "turbo run dev --filter=blog",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,js,mjs,vue,md,astro}\"",
-    "prepare": "husky install",
-    "nuxt:prepare": "",
+    "prepare": "husky",
     "postinstall": "cd sites/portfolio && npx nuxt prepare"
   },
   "lint-staged": {
@@ -22,31 +20,17 @@
     "shared/**": "prettier --write ."
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@turbo/gen": "^1.10.14",
-    "husky": "^8.0.0",
+    "husky": "^9.0.0",
     "lint-staged": "^15.2.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "turbo": "^1.10.14"
   },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
-  },
-  "prettier": {
-    "semi": false,
-    "trailingComma": "none",
-    "plugins": [
-      "prettier-plugin-astro"
-    ],
-    "printWidth": 120,
-    "overrides": [
-      {
-        "files": "*.astro",
-        "options": {
-          "parser": "astro"
-        }
-      }
-    ]
   }
 }

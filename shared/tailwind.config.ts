@@ -1,6 +1,6 @@
+import typographyPlugin from "@tailwindcss/typography"
 import type { Config } from "tailwindcss"
 import defaultTheme from "tailwindcss/defaultTheme"
-import typographyPlugin from "@tailwindcss/typography"
 
 const liteFontDefaults = ["system-ui", "sans-serif"]
 const extendUnsets = {

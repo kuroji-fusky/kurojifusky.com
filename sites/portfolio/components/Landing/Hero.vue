@@ -3,24 +3,24 @@ import gsap from "gsap"
 import { cuties } from "~/constants"
 
 const cutieImg = ref<HTMLDivElement>()
-const currentCutieIndex = ref(1)
+const cutieIndex = ref(1)
 
 const changeCutie = () => {
   let randomCutie: number
 
-  do {
-    randomCutie = Math.floor(Math.random() * cuties.length)
-  } while (randomCutie === currentCutieIndex.value)
+  setTimeout(() => {
+    do {
+      randomCutie = Math.floor(Math.random() * cuties.length)
+    } while (randomCutie === cutieIndex.value)
 
-  currentCutieIndex.value = randomCutie
+    cutieIndex.value = randomCutie
+  }, 200)
 }
-
-const ctx = ref<gsap.Context>()
 
 const picWrapper = ref<HTMLDivElement>()
 const artistCredit = ref<HTMLDivElement>()
 
-useGsapContext(picWrapper.value!, () => {
+useGsapContext(picWrapper.value, () => {
   const wrappies = picWrapper.value
   const creditText = artistCredit.value
 
@@ -53,10 +53,14 @@ useGsapContext(picWrapper.value!, () => {
 </script>
 
 <template>
-  <section class="h-[100dvh] grid place-items-center relative -top-12">
-    <div class="flex flex-col gap-y-5 items-center justify-center">
+  <section class="relative -top-12 grid h-[100dvh] place-items-center">
+    <div class="flex flex-col items-center justify-center gap-y-5">
       <div class="relative">
-        <button ref="picWrapper" @click="changeCutie" class="before:absolute before:block before:inset-0">
+        <button
+          ref="picWrapper"
+          @click="changeCutie"
+          class="before:absolute before:inset-0 before:block"
+        >
           <NuxtImg
             v-for="(cutie, i) in cuties"
             :key="i"
@@ -68,23 +72,26 @@ useGsapContext(picWrapper.value!, () => {
             fetchpriority="high"
             draggable="false"
             alt="A goddamn cutie"
-            :class="['rounded-2xl aspect-square', i === currentCutieIndex ? '' : 'hidden']"
+            :class="['aspect-square rounded-2xl', i === cutieIndex ? '' : 'hidden']"
           />
         </button>
       </div>
       <div ref="artistCredit" class="text-base">
         <span class="opacity-50">{{ "Art by " }}</span>
-        <KuroLink :href="cuties[currentCutieIndex].link" external>{{ cuties[currentCutieIndex].artist }}</KuroLink>
+        <KuroLink :href="cuties[cutieIndex].link" external>{{
+          cuties[cutieIndex].artist
+        }}</KuroLink>
       </div>
-      <article class="w-2/3 xl:w-4/6 text-center flex flex-col gap-y-5 mt-8">
+      <article class="mt-8 flex w-2/3 flex-col gap-y-5 text-center xl:w-4/6">
         <h1 class="sr-only">Introduction</h1>
         <p>
-          Hello! I'm a random floof on the internet making cool things mostly for the fun of it! I go by a blue-yellow
-          fox-husky hybrid fluffy animal named "Kuroji" (koo-ROW-jee).
+          Hello! I make cool things mostly for the fun of it! I go by a blue-yellow fox-husky hybrid
+          fluffy animal named "Kuroji" (koo-ROW-jee).
         </p>
         <p>
-          As a self-taught individual, I strive to inspire future generations through my unique vision and delivering
-          high-quality products whilst incorporating my weird and self-deprecating humor.
+          As a self-taught individual, I strive to inspire future generations through my unique
+          vision and delivering high-quality end products whilst incorporating my strange humor to
+          the mix.
         </p>
       </article>
     </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import Lenis from "@studio-freight/lenis"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Lenis from "@studio-freight/lenis"
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
@@ -30,7 +30,7 @@ onMounted(() => {
 <template>
   <div
     id="transition"
-    class="fixed inset-0 bottom-unset z-[999] h-screen pointer-events-none"
+    class="bottom-unset pointer-events-none fixed inset-0 z-[999] h-screen"
   ></div>
   <Navbar />
   <main class="min-h-[calc(100dvh-1.25rem)]">

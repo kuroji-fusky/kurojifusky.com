@@ -23,11 +23,7 @@ export async function getStaticPaths() {
         // ) {
         //   return `<div>CUM</div>`
         // } else {
-        return [
-          `<p data-stuff="" >`,
-          ..._content.map((lol) => (lol as any).value),
-          `</p>`
-        ].join("")
+        return [`<p data-stuff="" >`, ..._content.map((lol) => (lol as any).value), `</p>`].join("")
         // }
       },
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -50,9 +46,7 @@ export async function getStaticPaths() {
       description: item.fields.description,
       banner: item.fields.banner.fields.file.url,
       content: documentToHtmlString(item.fields.content, options),
-      date: item.fields.overridePublishDate
-        ? item.fields.overridePublishDate
-        : item.sys.createdAt
+      date: item.fields.overridePublishDate ? item.fields.overridePublishDate : item.sys.createdAt
     }
   }))
 }
@@ -63,19 +57,10 @@ const fullBanner = `https:${banner}?fm=webp&w=1280&h=720`
 const blogThumbnail = `https:${banner}?fm=webp&q=66&fit=fill&w=1200&h=630`
 ---
 
-<Layout
-  title={`${title} | Kuroji Fusky Blog`}
-  {description}
-  image={blogThumbnail}
-  isArticle
->
-  <main
-    class="max-w-screen-lg mx-auto"
-    itemtype="http://schema.org/Blog"
-    itemscope
-  >
+<Layout title={`${title} | Kuroji Fusky Blog`} {description} image={blogThumbnail} isArticle>
+  <main class="mx-auto max-w-screen-lg" itemtype="http://schema.org/Blog" itemscope>
     <meta itemprop="thumbnailUrl" content={blogThumbnail} />
-    <section class="flex flex-col gap-y-4 mt-5">
+    <section class="mt-5 flex flex-col gap-y-4">
       <div class="flex gap-x-3">
         <div>tag stuff</div>
         <span>
@@ -85,7 +70,7 @@ const blogThumbnail = `https:${banner}?fm=webp&q=66&fit=fill&w=1200&h=630`
           </time>
         </span>
       </div>
-      <h1 class="text-4xl font-inter font-bold leading-tight" itemprop="name">
+      <h1 class="font-inter text-4xl font-bold leading-tight" itemprop="name">
         {title}
       </h1>
       <div itemprop="abstract" class="text-xl opacity-80">{description}</div>
@@ -93,7 +78,7 @@ const blogThumbnail = `https:${banner}?fm=webp&q=66&fit=fill&w=1200&h=630`
         src={fullBanner}
         alt=""
         decoding="async"
-        class="rounded-xl aspect-video object-cover"
+        class="aspect-video rounded-xl object-cover"
         fetchpriority="high"
         draggable="false"
         itemprop="image"

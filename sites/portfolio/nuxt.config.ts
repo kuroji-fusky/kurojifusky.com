@@ -1,6 +1,6 @@
-import { baseUrls } from "@kuro/shared"
-import { CLOUDINARY_BASE_URL, cuties } from "./constants"
 import type { Head } from "../../node_modules/@unhead/schema/dist"
+import { CLOUDINARY_BASE_URL, cuties } from "./constants"
+import { baseUrls } from "@kuro/shared"
 
 const CDNUrls = ["res.cloudinary.com", "cdn.sanity.io"]
 

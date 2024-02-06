@@ -3,7 +3,7 @@ import { socials } from "@kuro/shared"
 </script>
 
 <template>
-  <div class="px-10 py-9 mx-auto max-w-screen-2xl">
+  <div class="mx-auto max-w-screen-2xl px-10 py-9">
     <footer class="flex justify-between">
       <div class="flex items-center gap-x-3.5">
         <a

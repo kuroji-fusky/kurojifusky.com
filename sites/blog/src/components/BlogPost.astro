@@ -5,11 +5,7 @@ const { title, description, banner, date, tags, slug } = Astro.props
 const slugLink = `/posts/${slug}`
 ---
 
-<div
-  class="flex flex-col w-full p-2"
-  itemtype="https://schema.org/BlogPost"
-  itemscope
->
+<div class="flex w-full flex-col p-2" itemtype="https://schema.org/BlogPost" itemscope>
   <a href={slugLink} itemprop="url">
     <img
       itemprop="image"
@@ -18,11 +14,11 @@ const slugLink = `/posts/${slug}`
       decoding="async"
       fetchpriority="auto"
       draggable="false"
-      class="aspect-video w-full object-cover block rounded-xl"
+      class="block aspect-video w-full rounded-xl object-cover"
     />
   </a>
-  <div class="flex flex-col gap-y-3 mt-4 text-base">
-    <h2 class="font-bold text-3xl">
+  <div class="mt-4 flex flex-col gap-y-3 text-base">
+    <h2 class="text-3xl font-bold">
       <a href={slugLink} itemprop="title">
         {title}
       </a>

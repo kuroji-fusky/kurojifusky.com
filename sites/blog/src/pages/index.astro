@@ -12,9 +12,7 @@ const posts = entries.items.map((item) => {
   const { title, description, overridePublishDate, slug, banner } = item.fields
   const image = `https:${banner.fields.file.url}?fm=webp&q=75&w=854&h=480`
 
-  const datePublished = overridePublishDate
-    ? overridePublishDate
-    : item.sys.createdAt
+  const datePublished = overridePublishDate ? overridePublishDate : item.sys.createdAt
 
   return {
     title,
@@ -26,18 +24,13 @@ const posts = entries.items.map((item) => {
   }
 })
 
-const filteredPosts = posts.sort(
-  (a, b) => (new Date(b.date) as any) - (new Date(a.date) as any)
-)
+const filteredPosts = posts.sort((a, b) => (new Date(b.date) as any) - (new Date(a.date) as any))
 ---
 
-<Layout
-  title="Kuroji Fusky Blog"
-  description="A place I nerd stuff just for hecks"
->
+<Layout title="Kuroji Fusky Blog" description="A place I nerd stuff just for hecks">
   <main>
     <section>
-      <h1 class="text-4xl font-bold my-3.5">Latest posts</h1>
+      <h1 class="my-3.5 text-4xl font-bold">Latest posts</h1>
       <div class="grid grid-cols-3 justify-center gap-3">
         {
           filteredPosts.map((post) => (

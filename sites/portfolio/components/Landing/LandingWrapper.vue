@@ -4,7 +4,7 @@ defineProps<{ heading: string }>()
 
 <template>
   <section class="py-12">
-    <h1 class="font-unbounded text-5xl uppercase block text-center mb-9">
+    <h1 class="font-unbounded mb-9 block text-center text-5xl uppercase">
       {{ heading }}
     </h1>
     <div>

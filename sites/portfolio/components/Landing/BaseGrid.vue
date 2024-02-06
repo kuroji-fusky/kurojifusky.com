@@ -9,10 +9,7 @@ onMounted(() => {
     const gridDimsVal = gridDims.value
     const gridRootDomVal = gridRoot.value
 
-    const [ww, wh] = [
-      Math.round(window.innerWidth / CHOKE),
-      Math.round(window.innerHeight / CHOKE)
-    ]
+    const [ww, wh] = [Math.round(window.innerWidth / CHOKE), Math.round(window.innerHeight / CHOKE)]
 
     gridDimsVal.h = wh
     gridDimsVal.w = ww
@@ -32,7 +29,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="h-screen top-0 left-0 right-0 absolute pointer-events-none -z-[1] before:absolute before:inset-0 before:top-unset before:h-32 before:block overflow-hidden before:bg-gradient-to-t before:from-kuro-dark2"
+    class="before:top-unset before:from-kuro-dark2 pointer-events-none absolute left-0 right-0 top-0 -z-[1] h-screen overflow-hidden before:absolute before:inset-0 before:block before:h-32 before:bg-gradient-to-t"
     :style="{ '--ww': gridDims.w, '--wh': gridDims.h }"
   >
     <div class="bg-kuro-dark1 h-full"></div>

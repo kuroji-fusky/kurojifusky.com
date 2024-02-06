@@ -41,10 +41,10 @@ const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)]
 
 <template>
   <NuxtLayout>
-    <div class="grid place-items-center h-screen">
+    <div class="grid h-screen place-items-center">
       <div class="flex flex-col items-center gap-y-2">
         <h1 class="text-6xl font-bold">{{ error!.statusCode }}</h1>
-        <blockquote class="flex flex-col gap-y-1.5 items-center">
+        <blockquote class="flex flex-col items-center gap-y-1.5">
           <em class="text-xl">
             {{ randomQuote.message }}
           </em>
@@ -57,7 +57,7 @@ const randomQuote = shitQuotes[Math.floor(Math.random() * shitQuotes.length)]
         </div>
         <button
           @click="handleError"
-          class="px-5 py-3 rounded-md bg-kuro-lavender-800 hover:bg-kuro-lavender-700 transition-colors"
+          class="bg-kuro-lavender-800 hover:bg-kuro-lavender-700 rounded-md px-5 py-3 transition-colors"
         >
           Return to Home
         </button>

@@ -1,5 +1,5 @@
-import { baseUrls } from "@kuro/shared"
 import { serverQueryContent } from "#content/server"
+import { baseUrls } from "@kuro/shared"
 import { SitemapStream, streamToPromise } from "sitemap"
 
 export default defineEventHandler(async (event) => {

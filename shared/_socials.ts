@@ -1,8 +1,4 @@
-import {
-  IconYoutube,
-  IconGithub,
-  IconMastodon
-} from "@iconify-prerendered/vue-fa6-brands"
+import { IconYoutube, IconGithub, IconMastodon } from "@iconify-prerendered/vue-fa6-brands"
 
 export default [
   {
