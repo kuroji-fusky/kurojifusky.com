@@ -105,6 +105,7 @@ export default defineNuxtConfig({
         ...preloadImgCDNUrls,
         ...preloadCuties
       ],
+      meta: [{ name: "darkreader-lock" }],
       bodyAttrs: {
         class:
           "bg-kuro-dark2 text-kuro-violet-50 text-sm md:text-base xl:text-xl font-inter selection:bg-purple-600 selection:text-white"
