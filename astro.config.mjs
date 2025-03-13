@@ -1,16 +1,18 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config"
 
-import tailwind from "@astrojs/tailwind"
+import tailwind from "@tailwindcss/vite"
 import sitemap from "@astrojs/sitemap"
 import mdx from "@astrojs/mdx"
+
 import vercel from "@astrojs/vercel/serverless"
-import lit from "@astrojs/lit"
-import svelte from "@astrojs/svelte"
 
 import autoprefixer from "autoprefixer"
 import Icons from "unplugin-icons/vite"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
+import tailwindcss from "@tailwindcss/vite"
+
+import svelte from "@astrojs/svelte";
 
 export default defineConfig({
   output: "server",
@@ -29,9 +31,10 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true
   },
-  integrations: [lit(), sitemap(), svelte(), tailwind(), mdx()],
+  integrations: [svelte(), sitemap(), mdx()],
   vite: {
     plugins: [
+      tailwindcss(),
       Icons({
         compiler: "astro",
         customCollections: {

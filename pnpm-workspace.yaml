@@ -1,4 +1,0 @@
-packages:
-  - apps/**
-  - packages/shared/
-  - packages/kuro-utils/js/

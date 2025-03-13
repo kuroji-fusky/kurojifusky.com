@@ -9,6 +9,7 @@
       "$stores/*": ["stores/*"]
     },
     "types": ["unplugin-icons/types/astro"],
+    
     // For Lit components
     "experimentalDecorators": true,
     "useDefineForClassFields": false

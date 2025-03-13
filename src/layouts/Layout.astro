@@ -7,6 +7,8 @@ import "@fontsource/inter/700.css"
 import "@fontsource/jetbrains-mono"
 import "@fontsource/unbounded/latin-700.css"
 
+import "../styles/global.css"
+
 import Footer from "$components/Footer.astro"
 import Navbar from "$components/Navbar"
 
@@ -64,27 +66,14 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
     <slot name="other-meta" />
   </head>
   <body
-    class="font-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
+    class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
+  <div class="contents">
     <Navbar />
-    <main id="skip-to-content" class="min-h-[calc(100dvh-10rem)]">
-      <div class="padding-width-responsive max-w-screen-2xl mx-auto">
-        <slot />
-      </div>
+    <main id="skip-to-content">
+      <slot />
     </main>
     <Footer />
+  </div>
   </body>
-
-  <style is:global>
-    @tailwind base;
-    @tailwind components;
-
-    @layer components {
-      .padding-width-responsive {
-        @apply px-5 md:px-8;
-      }
-    }
-
-    @tailwind utilities;
-  </style>
 </html>
