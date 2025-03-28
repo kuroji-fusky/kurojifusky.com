@@ -2,11 +2,7 @@
   <a href="https://kurojifusky.com">kurojifusky.com</a>
 </h1>
 
-The source code of `kurojifusky.com` and `fusky.pet`, written in Astro and Svelte.
-
-## APIs used
-
-- YouTube Data v3 API
+The source code of `kurojifusky.com` written in Astro.
 
 ## Running the abominations locally
 
@@ -26,9 +22,10 @@ pnpm install # or pnpm i
 Run the dev server
 
 ```
-# Dev server
 pnpm run dev
 ```
+
+Some housekeeping
 
 ```console
 # Linting
