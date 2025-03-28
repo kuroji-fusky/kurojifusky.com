@@ -1,13 +1,12 @@
-// @ts-check
-import { defineConfig, passthroughImageService } from "astro/config"
-import sitemap from "@astrojs/sitemap"
-import mdx from "@astrojs/mdx"
-import autoprefixer from "autoprefixer"
-import Icons from "unplugin-icons/vite"
-import { FileSystemIconLoader } from "unplugin-icons/loaders"
-import tailwindcss from "@tailwindcss/vite"
-import svelte from "@astrojs/svelte"
 import cloudflare from "@astrojs/cloudflare"
+import mdx from "@astrojs/mdx"
+import sitemap from "@astrojs/sitemap"
+import svelte from "@astrojs/svelte"
+import tailwindcss from "@tailwindcss/vite"
+import { defineConfig, passthroughImageService } from "astro/config"
+import autoprefixer from "autoprefixer"
+import { FileSystemIconLoader } from "unplugin-icons/loaders"
+import Icons from "unplugin-icons/vite"
 
 export default defineConfig({
   output: "server",

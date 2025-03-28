@@ -50,8 +50,20 @@ export const GET: APIRoute = async () => {
   const commissionSheeshData = await getSheeshData("Commissions!A2:X20")
 
   commissionSheeshData.forEach((item) => {
-    // prettier-ignore
-    const [type, status, chars, url, artistName, artistLink, platform, pricePHP, priceUSD, purchaseDate, completeDate, notes] = item
+    const [
+      type,
+      status,
+      chars,
+      url,
+      artistName,
+      artistLink,
+      platform,
+      pricePHP,
+      priceUSD,
+      purchaseDate,
+      completeDate,
+      notes
+    ] = item
 
     collectedArtworks.push({
       type,
