@@ -8,8 +8,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "prettier --check . && eslint \"./**/*.{js,mjs,cjs,astro,svelte}\"",
-    "lint:fix": "prettier --write . && eslint --quiet --fix \"./**/*.{js,mjs,cjs,astro,svelte}\""
+    "lint:check": "biome check",
+    "lint:fix": "biome check --fix"
   },
   "dependencies": {
     "@astrojs/check": "0.9.3",
@@ -17,7 +17,6 @@
     "@astrojs/mdx": "4.1.1",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "3.2.1",
-    "@astrojs/svelte": "^7.0.6",
     "@astrojs/tailwind": "^6.0.0",
     "@fontsource/inter": "^5.0.18",
     "@fontsource/jetbrains-mono": "^5.0.20",
@@ -29,9 +28,7 @@
     "astro": "^5.2.0",
     "astro-icon": "^1.1.0",
     "astro-seo-schema": "^4.0.2",
-    "autoprefixer": "^10.4.19",
     "googleapis": "^137.1.0",
-    "lit": "^3.2.1",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.4",
     "svelte": "^5.23.0",
