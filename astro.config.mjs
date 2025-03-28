@@ -1,24 +1,17 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config"
-
-import tailwind from "@tailwindcss/vite"
 import sitemap from "@astrojs/sitemap"
 import mdx from "@astrojs/mdx"
-
-import vercel from "@astrojs/vercel/serverless"
-
 import autoprefixer from "autoprefixer"
 import Icons from "unplugin-icons/vite"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import tailwindcss from "@tailwindcss/vite"
-
-import svelte from "@astrojs/svelte";
+import svelte from "@astrojs/svelte"
+import cloudflare from "@astrojs/cloudflare"
 
 export default defineConfig({
   output: "server",
-  adapter: vercel({
-    isr: true
-  }),
+  adapter: cloudflare(),
   redirects: {
     "/blog/category": "/blog",
     "/blog/author": "/blog",
