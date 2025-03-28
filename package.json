@@ -19,7 +19,6 @@
     "@astrojs/svelte": "^7.0.6",
     "@astrojs/tailwind": "^6.0.0",
     "@astrojs/vercel": "7.8.1",
-    "@contentful/rich-text-html-renderer": "^17.0.0",
     "@fontsource/inter": "^5.0.18",
     "@fontsource/jetbrains-mono": "^5.0.20",
     "@fontsource/unbounded": "^5.0.20",
@@ -41,17 +40,10 @@
     "unplugin-icons": "^0.19.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@types/lodash-es": "^4.17.12",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
     "clsx": "^2.1.1",
-    "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^1.2.3",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-svelte": "^2.43.0",
     "lodash-es": "^4.17.21",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.2",
     "tailwind-merge": "^2.5.2"
   },
   "packageManager": "pnpm@9.15.0"
