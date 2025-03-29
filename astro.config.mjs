@@ -1,10 +1,8 @@
 import cloudflare from "@astrojs/cloudflare"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
-import svelte from "@astrojs/svelte"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, passthroughImageService } from "astro/config"
-import autoprefixer from "autoprefixer"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
@@ -23,7 +21,7 @@ export default defineConfig({
   prefetch: {
     prefetchAll: true
   },
-  integrations: [svelte(), sitemap(), mdx()],
+  integrations: [sitemap(), mdx()],
   vite: {
     plugins: [
       tailwindcss(),
@@ -35,11 +33,6 @@ export default defineConfig({
         }
       })
     ],
-    css: {
-      postcss: {
-        plugins: [autoprefixer({})]
-      }
-    }
   },
   site: "https://kurojifusky.com",
   image: {
