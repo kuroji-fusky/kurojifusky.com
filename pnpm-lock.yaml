@@ -26,11 +26,11 @@ importers:
       '@astrojs/tailwind':
         specifier: ^6.0.0
         version: 6.0.0(astro@5.4.3(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(typescript@5.8.2)(yaml@2.7.0))(tailwindcss@4.0.17)
+      '@fontsource-variable/azeret-mono':
+        specifier: ^5.2.6
+        version: 5.2.6
       '@fontsource/inter':
         specifier: ^5.0.18
-        version: 5.2.5
-      '@fontsource/jetbrains-mono':
-        specifier: ^5.0.20
         version: 5.2.5
       '@fontsource/unbounded':
         specifier: ^5.0.20
@@ -627,11 +627,11 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
+  '@fontsource-variable/azeret-mono@5.2.6':
+    resolution: {integrity: sha512-c6aOA2m9W3HhQIEHBhJK/wjm3aAuvWn143x1COnlRO5d980TUcJNsxg+ba9xycpzf6irdKgWgQdbUHkxLXxZDQ==}
+
   '@fontsource/inter@5.2.5':
     resolution: {integrity: sha512-kbsPKj0S4p44JdYRFiW78Td8Ge2sBVxi/PIBwmih+RpSXUdvS9nbs1HIiuUSPtRMi14CqLEZ/fbk7dj7vni1Sg==}
-
-  '@fontsource/jetbrains-mono@5.2.5':
-    resolution: {integrity: sha512-TPZ9b/uq38RMdrlZZkl0RwN8Ju9JxuqMETrw76pUQFbGtE1QbwQaNsLlnUrACNNBNbd0NZRXiJJSkC8ajPgbew==}
 
   '@fontsource/unbounded@5.2.5':
     resolution: {integrity: sha512-bQeBkk3k5i6wvKaL3Wa3q7juvVj9afTA6478y1jdO9zyC77S3MxpZa3DMnEXC40wdvkszwIonY5DoMPVw/iVGQ==}
@@ -3654,9 +3654,9 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@fontsource/inter@5.2.5': {}
+  '@fontsource-variable/azeret-mono@5.2.6': {}
 
-  '@fontsource/jetbrains-mono@5.2.5': {}
+  '@fontsource/inter@5.2.5': {}
 
   '@fontsource/unbounded@5.2.5': {}
 

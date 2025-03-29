@@ -3,7 +3,7 @@
 @theme {
   --font-kuro-hero-heading: "Unbounded", var(--default-font-family);
   --font-kuro-body: "Inter", var(--default-font-family);
-  --font-kuro-mono: "JetBrains Mono", var(--default-mono-font-family);
+  --font-kuro-mono: "Azeret Mono Variable", var(--default-mono-font-family);
 
   --color-kuro-dark1: #110d17;
   --color-kuro-dark2: #07070b;
