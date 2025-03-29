@@ -4,7 +4,7 @@ import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
 import "@fontsource/inter/400.css"
 import "@fontsource/inter/600.css"
 import "@fontsource/inter/700.css"
-import "@fontsource/jetbrains-mono"
+import "@fontsource-variable/azeret-mono"
 import "@fontsource/unbounded/latin-700.css"
 
 import "../styles/global.css"
@@ -68,12 +68,12 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
-  <div class="contents">
-    <Navbar />
-    <main id="skip-to-content">
-      <slot />
-    </main>
-    <Footer />
-  </div>
+    <div class="contents">
+      <Navbar />
+      <main id="skip-to-content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

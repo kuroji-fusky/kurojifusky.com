@@ -32,7 +32,7 @@ export default defineConfig({
           brands: FileSystemIconLoader("./src/lib/icons/brands")
         }
       })
-    ],
+    ]
   },
   site: "https://kurojifusky.com",
   image: {
