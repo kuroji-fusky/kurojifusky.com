@@ -1,23 +1,19 @@
 ---
-import { kebabCase } from "lodash-es";
+import SectionBase from "./_SectionBase.astro";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-const kebabTitle = kebabCase(title);
 ---
 
-<section class="mx-6" id={kebabTitle}>
+<SectionBase class="mx-6" heading={title}>
   <h1
+    slot="heading"
     class="flex justify-center mb-5 font-semibold text-3xl lg:text-4xl text-white"
   >
     {title}
   </h1>
-
-  <div data-sec-contents="">
-    <slot />
-  </div>
-</section>
+  <slot />
+</SectionBase>

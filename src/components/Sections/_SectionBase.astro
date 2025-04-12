@@ -1,0 +1,21 @@
+---
+import { kebabCase } from "lodash-es";
+
+interface Props {
+  class?: string;
+  heading: string;
+  action?: {
+    l: string;
+    t: string;
+  };
+}
+
+const { heading, class: cn } = Astro.props;
+---
+
+<section id={kebabCase(heading)} class={cn}>
+  <slot name="heading" />
+  <div>
+    <slot />
+  </div>
+</section>

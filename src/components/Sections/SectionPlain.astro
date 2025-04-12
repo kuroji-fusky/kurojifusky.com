@@ -1,0 +1,42 @@
+---
+import Link from "$components/Link.astro";
+import SectionBase from "./_SectionBase.astro";
+
+interface Props {
+  heading: string;
+  level: 1 | 2
+  potentalAction?: {
+    l: string;
+    t: string;
+  };
+}
+
+const { heading, potentalAction, level } = Astro.props;
+---
+
+<SectionBase {heading} class="@container mx-6">
+  <div
+    slot="heading"
+    class:list={[
+      "flex items-center gap-x-3 mb-5",
+      potentalAction ? "justify-between" : "",
+    ]}
+  >
+    {
+      level === 1 ? (
+        <h1 class="font-semibold text-3xl lg:text-4xl">{heading}</h1>
+      ) : (
+        <h2 class="font-semibold text-3xl lg:text-4xl">{heading}</h2>
+      )
+    }
+    {
+      potentalAction ? (
+        <Link href={potentalAction.l}>{potentalAction.t}</Link>
+      ) : (
+        <!-- potentialAction -->
+      )
+    }
+  </div>
+
+  <slot />
+</SectionBase>

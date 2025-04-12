@@ -22,12 +22,10 @@ const { alt, class: className, infer, ...others } = Astro.props
 
 <div class="relative [&_img]:z-[1] [&_img]:relative select-none">
   <div class="absolute inset-0 z-[2]" aria-hidden></div>
-  {/* @ts-ignore */}
-  <Image
+  <img
     alt={alt || ""}
     class={className}
     draggable="false"
-    inferSize={infer}
     {...others}
   />
 </div>

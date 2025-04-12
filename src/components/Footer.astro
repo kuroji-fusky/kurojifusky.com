@@ -1,5 +1,6 @@
 ---
-const currentYear = new Date().getFullYear();
+import Link from "./Link.astro";
+
 const sourceRepoUrl = "https://github.com/kurojifusky/kurojifusky.com";
 
 const links = [
@@ -12,11 +13,20 @@ const links = [
 
 <div class="py-6 relative flex gap-y-2.5 px-6 max-w-screen-xl mx-auto">
   <footer class="flex flex-col gap-y-8 text-sm flex-1">
+    <span
+      id="technology-disclosure"
+      class="font-kuro-mono text-sm [&_a]:underline"
+    >
+      Content powered by
+      <Link noReferrer href="https://pages.cloudflare.com/">Cloudflare Pages</Link>,
+      <Link noReferrer href="https://www.cloudflare.com/developer-platform/products/r2/">R2</Link>, and 
+      <Link noReferrer href="https://www.imgix.com/">Imgix</Link>
+    </span>
     <div
       class="flex flex-col-reverse md:flex-row gap-y-6 justify-between font-light"
     >
       <span class="opacity-50"
-        >{`Copyright © ${currentYear} `}
+        >{`© `}
         <span translate="no">Fusky Labs LLC</span>
       </span>
       <div
@@ -26,7 +36,7 @@ const links = [
           links.map((i) => (
             <a
               href={i.href}
-              class="opacity-45 hover:opacity-100 transition-opacity mx-2.5"
+              class="opacity-45 hover:opacity-100 transition-opacity md:mx-2.5"
               target={i.href.startsWith("https") ? "_blank" : undefined}
               rel={
                 i.href.startsWith("https") ? "noopenner noreferer" : undefined
