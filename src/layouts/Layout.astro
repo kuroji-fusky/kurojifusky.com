@@ -1,29 +1,30 @@
 ---
-import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
+import { siteAuthorHandle as me, siteTitle } from "$lib/utils";
 
-import "@fontsource/inter/400.css"
-import "@fontsource/inter/600.css"
-import "@fontsource/inter/700.css"
-import "@fontsource-variable/azeret-mono"
-import "@fontsource/unbounded/latin-700.css"
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/unbounded/latin-700.css";
 
-import "../styles/global.css"
+import "@fontsource/ibm-plex-mono";
 
-import Footer from "$components/Footer.astro"
-import Navbar from "$components/Navbar"
+import "../styles/global.css";
+
+import Footer from "$components/Footer.astro";
+import Navbar from "$components/Navbar";
 
 interface Props {
-  title: string
-  description?: string
-  webpageType?: "website" | "article"
+  title: string;
+  description?: string;
+  webpageType?: "website" | "article";
 }
 
-const { title, description, webpageType = "website" } = Astro.props
+const { title, description, webpageType = "website" } = Astro.props;
 
-const { pathname } = Astro.url
+const { pathname } = Astro.url;
 
-const canonicalUrl = new URL(pathname, Astro.site)
-const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
+const canonicalUrl = new URL(pathname, Astro.site);
+const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
 ---
 
 <html lang="en" class="scroll-pt-20 scroll-smooth">
@@ -55,13 +56,6 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
 
     {/* Sitemap */}
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    {/* Tracking */}
-    <script
-      defer
-      is:inline
-      src="https://cloud.umami.is/script.js"
-      data-website-id={import.meta.env.UMAMI_SITE_ID ?? "Not set"}></script>
 
     <slot name="other-meta" />
   </head>

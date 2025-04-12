@@ -1,34 +1,41 @@
 ---
-import ExtLinkIcon from "~icons/lucide/external-link"
+const currentYear = new Date().getFullYear();
+const sourceRepoUrl = "https://github.com/kurojifusky/kurojifusky.com";
 
-const currentYear = new Date().getFullYear()
-const sourceRepoUrl = "https://github.com/kurojifusky/kurojifusky.com"
+const links = [
+  { href: "/sitemap", text: "Sitemap" },
+  { href: "/links", text: "Socials" },
+  { href: "/links", text: "Contact" },
+  { href: sourceRepoUrl, text: "Sauce" },
+];
 ---
 
-<div
-  class="py-8 relative flex gap-y-2.5 max-w-screen-xl mx-auto"
->
+<div class="py-6 relative flex gap-y-2.5 px-6 max-w-screen-xl mx-auto">
   <footer class="flex flex-col gap-y-8 text-sm flex-1">
     <div
-      class="flex flex-col-reverse md:flex-row gap-y-6 justify-between "
+      class="flex flex-col-reverse md:flex-row gap-y-6 justify-between font-light"
     >
-      <span class="font-normal opacity-50"
-        >{`© ${currentYear} `}
-        <span translate="no">Fusky Labs, LLC</span>
+      <span class="opacity-50"
+        >{`Copyright © ${currentYear} `}
+        <span translate="no">Fusky Labs LLC</span>
       </span>
       <div
-        class="flex gap-x-5 items-start md:items-center gap-y-4 flex-col md:flex-row "
+        class="font-kuro-mono flex gap-x-1 items-start md:items-center gap-y-4 flex-col md:flex-row"
       >
-        <a href="/links" class="underline hover:no-underline text-kuro-lavender-200 hover:text-kuro-lavender-300">Links</a>
-        <a
-          href={sourceRepoUrl}
-          target="_blank"
-          class="inline-flex gap-x-1 items-center underline hover:no-underline text-kuro-lavender-200 hover:text-kuro-lavender-300"
-          rel="noopenner noreferer"
-        >
-          <span>Sauce code</span>
-          <ExtLinkIcon />
-        </a>
+        {
+          links.map((i) => (
+            <a
+              href={i.href}
+              class="opacity-45 hover:opacity-100 transition-opacity mx-2.5"
+              target={i.href.startsWith("https") ? "_blank" : undefined}
+              rel={
+                i.href.startsWith("https") ? "noopenner noreferer" : undefined
+              }
+            >
+              {i.text}
+            </a>
+          ))
+        }
       </div>
     </div>
   </footer>
