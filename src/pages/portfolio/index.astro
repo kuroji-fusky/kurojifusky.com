@@ -1,0 +1,52 @@
+---
+import Clamp from "$components/Clamp.astro";
+import ItemPlate from "$components/ItemPlate.astro";
+import Section from "$components/Section.astro";
+import Layout from "$layouts/Layout.astro";
+import ExtLinkIcon from "~icons/lucide/arrow-up-right";
+---
+
+<Layout title="Portfolio">
+  <Clamp class="space-y-20 mt-12 mb-24">
+    <section class="py-16 flex flex-col items-center gap-y-12">
+      <h1 class="font-kuro-hero-heading font-extrabold text-6xl text-white">
+        Portfolio
+      </h1>
+      <a href="/portfolio/all" class="text-lg px-4 py-2 rounded-xl border">
+        <div class="inline-flex items-center gap-x-2.5 select-none">
+          <span> Browse all </span>
+          <ExtLinkIcon />
+        </div>
+      </a>
+    </section>
+
+    <Section title="Dev">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ItemPlate>item1</ItemPlate>
+        <ItemPlate>item2</ItemPlate>
+        <ItemPlate>item3</ItemPlate>
+      </div>
+    </Section>
+    <Section title="Video work">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ItemPlate>item1</ItemPlate>
+        <ItemPlate>item2</ItemPlate>
+        <ItemPlate>item3</ItemPlate>
+      </div>
+    </Section>
+    <Section title="Legacy">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ItemPlate>item1</ItemPlate>
+        <ItemPlate>item2</ItemPlate>
+        <ItemPlate>item3</ItemPlate>
+      </div>
+    </Section>
+    <Section title="Others">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <ItemPlate>characters</ItemPlate>
+        <ItemPlate>blogs</ItemPlate>
+        <ItemPlate>about me</ItemPlate>
+      </div>
+    </Section>
+  </Clamp>
+</Layout>
