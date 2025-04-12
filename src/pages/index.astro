@@ -1,11 +1,39 @@
 ---
-import Hero from "$components/landing/Hero.astro"
-import Layout from "$layouts/Layout.astro"
-import { Schema } from "astro-seo-schema"
+import Clamp from "$components/Clamp.astro";
+import Hero from "$components/landing/Hero.astro";
+import SectionPlain from "$components/Sections/SectionPlain.astro";
+import Layout from "$layouts/Layout.astro";
+import { Schema } from "astro-seo-schema";
+
+const { site } = Astro;
 ---
 
-<Layout title="Home">
+<Layout title="kuro homepage">
   <Hero />
+  <Clamp class="my-12 space-y-20">
+    <SectionPlain
+      level={2}
+      heading="Featured projects"
+      potentalAction={{ t: "View all", l: "/portfolio" }}
+    >
+      Placeholder
+    </SectionPlain>
+    <SectionPlain
+      level={2}
+      heading="Latest updates"
+      potentalAction={{ t: "View all", l: "/blog" }}
+    >
+      Placeholder
+    </SectionPlain>
+    <SectionPlain
+      level={2}
+      heading="Latest videos"
+      potentalAction={{ t: "View all", l: "/portfolio/video-work" }}
+    >
+      Placeholder
+    </SectionPlain>
+    <SectionPlain level={2} heading="About me">Placeholder</SectionPlain>
+  </Clamp>
 </Layout>
 
 <Schema
@@ -13,10 +41,6 @@ import { Schema } from "astro-seo-schema"
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Kuroji Fusky",
-    url: Astro.site!.toString(),
-    potentialAction: {
-      "@type": "SearchAction",
-      target: new URL("search", Astro.site).toString()
-    }
+    url: site!.toString(),
   }}
 />

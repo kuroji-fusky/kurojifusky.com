@@ -6,9 +6,13 @@ import { defineConfig, passthroughImageService } from "astro/config"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
+import svelte from "@astrojs/svelte";
+
 export default defineConfig({
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "passthrough"
+  }),
   redirects: {
     "/blog/category": "/blog",
     "/blog/author": "/blog",
@@ -18,10 +22,11 @@ export default defineConfig({
     "/posts/[slug]": "/blog/[slug]",
     "/post/[slug]": "/blog/[slug]"
   },
+  compressHTML: false,
   prefetch: {
     prefetchAll: true
   },
-  integrations: [sitemap(), mdx()],
+  integrations: [sitemap(), mdx(), svelte()],
   vite: {
     plugins: [
       tailwindcss(),

@@ -1,3 +1,6 @@
+@import "@fontsource/inter";
+@import "@fontsource/unbounded/latin-700.css";
+@import "@fontsource/ibm-plex-mono";
 @import "tailwindcss";
 
 @theme {
