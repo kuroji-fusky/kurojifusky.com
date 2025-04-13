@@ -1,7 +1,10 @@
 @import "@fontsource/inter";
+@import "@fontsource/inter/700.css";
 @import "@fontsource/unbounded/latin-700.css";
 @import "@fontsource/ibm-plex-mono";
 @import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-kuro-hero-heading: "Unbounded", var(--default-font-family);

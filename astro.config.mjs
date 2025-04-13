@@ -22,7 +22,6 @@ export default defineConfig({
     "/posts/[slug]": "/blog/[slug]",
     "/post/[slug]": "/blog/[slug]"
   },
-  compressHTML: false,
   prefetch: {
     prefetchAll: true
   },
