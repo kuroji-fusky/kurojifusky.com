@@ -3,6 +3,7 @@ import { kebabCase } from "lodash-es";
 
 interface Props {
   class?: string;
+  containerClass?: string[] | string;
   heading: string;
   action?: {
     l: string;
@@ -10,12 +11,12 @@ interface Props {
   };
 }
 
-const { heading, class: cn } = Astro.props;
+const { heading, class: cn, containerClass } = Astro.props;
 ---
 
-<section id={kebabCase(heading)} class={cn}>
+<section id={kebabCase(heading)} class:list={containerClass}>
   <slot name="heading" />
-  <div>
+  <div class={cn}>
     <slot />
   </div>
 </section>

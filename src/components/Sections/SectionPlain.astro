@@ -9,24 +9,26 @@ interface Props {
     l: string;
     t: string;
   };
+  class?: string
 }
 
-const { heading, potentalAction, level } = Astro.props;
+const { heading, potentalAction, level, class:cn } = Astro.props;
 ---
 
-<SectionBase {heading} class="@container mx-6">
+<SectionBase {heading} containerClass="@container mx-6" class={cn}>
   <div
     slot="heading"
     class:list={[
       "flex items-center gap-x-3 mb-5",
       potentalAction ? "justify-between" : "",
+      cn
     ]}
   >
     {
       level === 1 ? (
-        <h1 class="font-semibold text-3xl lg:text-4xl">{heading}</h1>
+        <h1 class="font-bold text-3xl lg:text-4xl">{heading}</h1>
       ) : (
-        <h2 class="font-semibold text-3xl lg:text-4xl">{heading}</h2>
+        <h2 class="font-bold text-3xl lg:text-4xl">{heading}</h2>
       )
     }
     {
@@ -37,6 +39,5 @@ const { heading, potentalAction, level } = Astro.props;
       )
     }
   </div>
-
   <slot />
 </SectionBase>
