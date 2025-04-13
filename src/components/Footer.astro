@@ -6,7 +6,7 @@ const sourceRepoUrl = "https://github.com/kurojifusky/kurojifusky.com";
 const links = [
   { href: "/sitemap", text: "Sitemap" },
   { href: "/links", text: "Socials" },
-  { href: "/links", text: "Contact" },
+  { href: "/about-me#contact", text: "Contact" },
   { href: sourceRepoUrl, text: "Sauce" },
 ];
 ---
@@ -17,10 +17,11 @@ const links = [
       id="technology-disclosure"
       class="font-kuro-mono text-sm [&_a]:underline"
     >
-      Content powered by
-      <Link noReferrer href="https://pages.cloudflare.com/">Cloudflare Pages</Link>,
-      <Link noReferrer href="https://www.cloudflare.com/developer-platform/products/r2/">R2</Link>, and 
-      <Link noReferrer href="https://www.imgix.com/">Imgix</Link>
+      {"Content powered by "}
+      <Link noReferrer href="https://pages.cloudflare.com/">Cloudflare Pages</Link>{", "}
+      <Link noReferrer href="https://www.cloudflare.com/developer-platform/products/r2/">R2</Link>{", and "}
+      <Link noReferrer href="https://www.imgix.com/">Imgix</Link>{". Build"}
+      <span>{"<COMMIT_HASH>"}</span>
     </span>
     <div
       class="flex flex-col-reverse md:flex-row gap-y-6 justify-between font-light"
