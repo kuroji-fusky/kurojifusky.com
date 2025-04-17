@@ -9,6 +9,10 @@ interface Props {
   title: string;
   description?: string;
   webpageType?: "website" | "article";
+  crumbs?: {
+    text: string;
+    link: string;
+  }[];
 }
 
 const { title, description, webpageType = "website" } = Astro.props;
@@ -19,7 +23,7 @@ const canonicalUrl = new URL(pathname, Astro.site);
 const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
 ---
 
-<html lang="en" class="scroll-pt-20 scroll-smooth">
+<html lang="en" class="scroll-pt-20">
   <head>
     <meta charset="utf-8" />
     <title>{_title}</title>
@@ -50,6 +54,7 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
     <meta name="twitter:site" content={me} />
     <meta name="twitter:url" content={canonicalUrl} />
 
+    {/* Privacy-respecting trackers */}
     <link rel="canonical" href={canonicalUrl} />
 
     {/* Sitemap */}
@@ -60,12 +65,13 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
-    <div class="contents">
-      <Navbar client:load />
-      <main id="skip-to-content">
-        <slot />
-      </main>
-      <Footer />
-    </div>
+    <h1 class="sr-only">{_title}</h1>
+    <Navbar client:load>
+      <span slot="crumbs">crumbs</span>
+    </Navbar>
+    <main id="skip-to-content">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

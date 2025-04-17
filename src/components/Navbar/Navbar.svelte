@@ -1,12 +1,43 @@
 <script lang="ts">
   import LogoBrand from "~icons/kuro/logo-brand?raw";
   import SearchIcon from "~icons/lucide/search?raw";
+  import MenuIcon from "~icons/lucide/menu?raw";
+  import { onMount, type Snippet } from "svelte";
+
+  interface Props {
+    crumbs?: Snippet;
+  }
+
+  const { crumbs }: Props = $props();
 
   const navLinks = [
-    { href: "/portfolio", text: "Portfolio" },
-    { href: "/blog", text: "Blog" },
-    { href: "/about", text: "About" },
+    { href: "/portfolio", text: "Portfolio", contents: [] },
+    { href: "/blog", text: "Blog", contents: [] },
+    { href: "/about", text: "About", contents: [] },
   ];
+
+  let menuState = $state(false);
+
+  const toggleMobileMenu = () => (menuState = !menuState);
+
+  onMount(() => {
+    const navbarController = new AbortController();
+    const { signal } = navbarController;
+
+    window.addEventListener(
+      "keydown",
+      (e) => {
+        if (menuState && e.key === "Escape") {
+          menuState = false;
+        }
+      },
+      { signal },
+    );
+
+    return () => {
+      navbarController.abort();
+    };
+  });
 </script>
 
 <a
@@ -15,7 +46,9 @@
   data-astro-prefetch="false">Skip to content?</a
 >
 <div class="z-20 sticky top-0 bg-kuro-dark2">
-  <nav class="py-1.5 flex justify-between px-6 max-w-screen-xl mx-auto">
+  <nav
+    class="py-1.5 flex items-center justify-between px-6 max-w-screen-xl 2xl:max-w-screen-2xl mx-auto"
+  >
     <a
       href="/"
       title="Home page"
@@ -23,18 +56,46 @@
     >
       {@html LogoBrand}
     </a>
+
+    <div class="grow pl-1.5">
+      {@render crumbs?.()}
+    </div>
+
     <div
       id="global-nav"
-      class="w-full justify-end my-auto flex items-center gap-x-1 font-kuro-mono text-sm"
+      class="
+      flex
+
+      md:relative md:bg-transparent md:flex-row md:top-0 md:items-center
+
+      absolute flex-col top-14 items-start
+
+      w-max justify-end my-auto gap-x-1 font-kuro-mono text-sm
+      "
     >
       {#each navLinks as { href, text }}
         <a {href} class="px-3 py-1.5">
           {text}
         </a>
+        <div data-content-expandable=""></div>
       {/each}
     </div>
-    <button class="px-3 py-2 cursor-pointer">
-      {@html SearchIcon}
-    </button>
+    <div
+      class="md:contents flex items-center gap-x-0.5 *:cursor-pointer *:px-3 *:py-2"
+    >
+      <button>
+        {@html SearchIcon}
+      </button>
+      <button class="md:hidden block" onclick={toggleMobileMenu}>
+        {@html MenuIcon}
+      </button>
+    </div>
   </nav>
 </div>
+<div
+  data-screener=""
+  class={[
+    "fixed inset-0 transition-all",
+    menuState ? "bg-black/60 backdrop-blur-sm" : "pointer-events-none",
+  ]}
+></div>

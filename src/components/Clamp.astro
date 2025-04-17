@@ -6,6 +6,9 @@ interface Props {
 const { class: cn } = Astro.props;
 ---
 
-<div data-margin-clamp="" class:list={["mx-auto max-w-screen-xl", cn]}>
+<div
+  data-margin-clamp=""
+  class:list={["mx-auto max-w-screen-xl 2xl:max-w-screen-2xl", cn]}
+>
   <slot />
 </div>

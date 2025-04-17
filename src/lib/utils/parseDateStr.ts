@@ -12,7 +12,7 @@ export const parseDateStr = (dateStr: string | Date, options?: ParseDateStrOptio
     month: "long",
     day: "numeric",
     year: "numeric"
-  } as Intl.DateTimeFormatOptions
+  } satisfies Intl.DateTimeFormatOptions
 
   const readableDate = !options?.includeTime
     ? d.toLocaleDateString(localeLocation, localeOptions)
