@@ -1,0 +1,25 @@
+---
+import Tag from "$components/Tag.astro";
+
+// import type { BlogProps } from "./BlogSchema";
+// type Props = BlogProps & { image: string };
+
+// const {} = Astro.props;
+---
+
+<article class="group space-y-4">
+  <div
+    class="aspect-video w-full rounded-xl border-2 transition-colors border-kuro-lavender-700 group-hover:border-kuro-lavender-600"
+  >
+  </div>
+  <section class="space-y-2">
+    <div class="flex items-center justify-between">
+      <Tag />
+      <time class="text-xs opacity-65 font-kuro-mono" datetime="NaN">Date</time>
+    </div>
+    <h2 class="font-bold leading-snug text-xl md:text-2xl my-1">Title</h2>
+    <p class="opacity-65 group-hover:opacity-100 transition-opacity">
+      Description
+    </p>
+  </section>
+</article>

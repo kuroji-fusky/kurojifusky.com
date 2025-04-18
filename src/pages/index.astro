@@ -2,6 +2,7 @@
 import Clamp from "$components/Clamp.astro";
 import Hero from "$components/landing/Hero.astro";
 import SectionPlain from "$components/Sections/SectionPlain.astro";
+import Tag from "$components/Tag.astro";
 import Layout from "$layouts/Layout.astro";
 import { Schema } from "astro-seo-schema";
 
@@ -51,9 +52,7 @@ const { site } = Astro;
           [...Array(3)].map((_, i) => (
             <div class="space-y-1">
               <div class="mb-0 bg-gradient-to-tl from-kuro-lavender-600 to-kuro-royalblue-300 h-max aspect-video rounded-lg" />
-              <span class="my-0 inline-block mt-3 text-xs px-2.5 py-0.5 rounded-2xl border">
-                Tag
-              </span>
+              <Tag  />
               <h2 class="font-bold text-2xl mt-1 mb-0.5 leading-relaxed">
                 Title
               </h2>
