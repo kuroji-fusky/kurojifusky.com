@@ -1,23 +1,30 @@
 ---
 import Clamp from "$components/Clamp.astro";
-import SectionPlain from "$components/Sections/SectionPlain.astro";
 import BlogBeeg from "$components/Blog/BlogBeeg.astro";
 import BlogCompact from "$components/Blog/BlogCompact.astro";
+import BlogMoreUpdates from "$components/Blog/BlogMoreUpdates.astro";
 import Layout from "$layouts/Layout.astro";
+import SectionCentered from "$components/Sections/SectionCentered.astro";
 ---
 
 <Layout title="Blog">
-  <Clamp class="space-y-12 mt-10">
-    <SectionPlain level={1} heading="Featured" class="grid grid-cols-3 gap-6">
-      {[...Array(3)].map(() => <BlogBeeg />)}
-    </SectionPlain>
-    <SectionPlain level={1} heading="Latest posts" class="space-y-8">
+  <Clamp class="space-y-16 mt-10">
+    <section class="px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
+        {[...Array(3)].map(() => <BlogBeeg />)}
+      </div>
+    </section>
+    <SectionCentered heading="Latest posts" class="space-y-8">
       <div
         class="rounded-xl grid grid-cols-1 md:grid-cols-2 border-2 border-dashed border-kuro-lavender-300/25 *:nth-last-[2]:border-b-0 *:last:border-b-0 *:odd:border-r-2"
+        role="list"
       >
         {
           [...Array(8)].map(() => (
-            <div class="px-6 py-5 border-kuro-lavender-300/25 border-dashed border-b-2">
+            <div
+              class="px-6 py-5 border-kuro-lavender-300/25 border-dashed border-b-2"
+              role="listitem"
+            >
               <BlogCompact />
             </div>
           ))
@@ -26,6 +33,7 @@ import Layout from "$layouts/Layout.astro";
       <div class="grid place-items-center">
         <button class="rounded-4xl px-6 border py-2">Load moar blogs</button>
       </div>
-    </SectionPlain>
+    </SectionCentered>
+    <BlogMoreUpdates />
   </Clamp>
 </Layout>

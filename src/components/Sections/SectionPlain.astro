@@ -1,6 +1,6 @@
 ---
 import Link from "$components/Link.astro";
-import SectionBase from "./_SectionBase.astro";
+import SectionBase from "./SectionBase.astro";
 
 interface Props {
   heading: string;
@@ -15,7 +15,8 @@ interface Props {
 const { heading, potentalAction, level, class:cn } = Astro.props;
 ---
 
-<SectionBase {heading} containerClass="@container mx-6" class={cn}>
+<SectionBase {heading} containerClass="mx-6" class={cn}>
+  <!-- section:plain -->
   <div
     slot="heading"
     class:list={[

@@ -3,12 +3,14 @@
   import SearchIcon from "~icons/lucide/search?raw";
   import MenuIcon from "~icons/lucide/menu?raw";
   import { onMount, type Snippet } from "svelte";
+  import Portal from "$components/shared/Portal.svelte";
 
   interface Props {
     crumbs?: Snippet;
+    activeRoute: string;
   }
 
-  const { crumbs }: Props = $props();
+  const { crumbs, activeRoute }: Props = $props();
 
   const navLinks = [
     { href: "/portfolio", text: "Portfolio", contents: [] },
@@ -74,7 +76,14 @@
       "
     >
       {#each navLinks as { href, text }}
-        <a {href} class="px-3 py-1.5">
+        <a
+          {href}
+          class={[
+            "px-3 py-1.5",
+            activeRoute.startsWith(href) ? "text-kuro-lavender-200" : null,
+          ]}
+          aria-current={activeRoute.startsWith(href) ? "page" : null}
+        >
           {text}
         </a>
         <div data-content-expandable=""></div>
@@ -92,10 +101,12 @@
     </div>
   </nav>
 </div>
-<div
-  data-screener=""
-  class={[
-    "fixed inset-0 transition-all",
-    menuState ? "bg-black/60 backdrop-blur-sm" : "pointer-events-none",
-  ]}
-></div>
+<Portal target="body">
+  <div
+    data-kuro-backdrop-container=""
+    class={[
+      "fixed inset-0 transition-all",
+      menuState ? "bg-black/60 backdrop-blur-sm" : "pointer-events-none",
+    ]}
+  ></div>
+</Portal>

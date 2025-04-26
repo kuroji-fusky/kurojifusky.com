@@ -1,19 +1,20 @@
 ---
-import SectionBase from "./_SectionBase.astro";
+import SectionBase from "./SectionBase.astro";
 
 interface Props {
-  title: string;
+  heading: string;
+  class?: string;
 }
 
-const { title } = Astro.props;
+const { heading, class: cn } = Astro.props;
 ---
 
-<SectionBase containerClass="mx-6" heading={title}>
+<SectionBase containerClass="mx-6" class={cn} heading={heading}>
   <h1
     slot="heading"
     class="flex justify-center mb-5 font-semibold text-3xl lg:text-4xl text-white"
   >
-    {title}
+    {heading}
   </h1>
   <slot />
 </SectionBase>

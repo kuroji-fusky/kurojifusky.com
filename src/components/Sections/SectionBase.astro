@@ -15,8 +15,10 @@ const { heading, class: cn, containerClass } = Astro.props;
 ---
 
 <section id={kebabCase(heading)} class:list={containerClass}>
+  <!-- section:base -->
   <slot name="heading" />
   <div class={cn}>
     <slot />
   </div>
+  <!-- section:base end -->
 </section>

@@ -1,4 +1,5 @@
 ---
+import BlogBeeg from "$components/Blog/BlogBeeg.astro";
 import Clamp from "$components/Clamp.astro";
 import Hero from "$components/landing/Hero.astro";
 import SectionPlain from "$components/Sections/SectionPlain.astro";
@@ -28,7 +29,7 @@ const { site } = Astro;
           </p>
         </div>
       </div>
-      <div class="grid gap-y-8 shrink-0 w-96 *:w-full prose-p:text-sm">
+      <div class="grid gap-y-8 shrink-0 w-96 *:w-full">
         {
           [...Array(2)].map((_, i) => (
             <div>
@@ -47,26 +48,18 @@ const { site } = Astro;
       heading="Latest updates"
       potentalAction={{ t: "View all", l: "/blog" }}
     >
-      <div class="flex w-full gap-4 *:w-full prose-p:text-sm">
-        {
-          [...Array(3)].map((_, i) => (
-            <div class="space-y-1">
-              <div class="mb-0 bg-gradient-to-tl from-kuro-lavender-600 to-kuro-royalblue-300 h-max aspect-video rounded-lg" />
-              <Tag  />
-              <h2 class="font-bold text-2xl mt-1 mb-0.5 leading-relaxed">
-                Title
-              </h2>
-              <p>Description / excerpt</p>
-              <time class="text-sm opacity-65 font-kuro-mono">Date</time>
-            </div>
-          ))
-        }
+      <div class="flex w-full gap-4 *:w-full">
+        {[...Array(3)].map((_) => <BlogBeeg />)}
       </div>
       <div class="mt-12 space-y-4">
-        <h2 class="text-center font-bold text-3xl">Browse more what's cookin'</h2>
-        <div class="mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5 ">
+        <h2 class="text-center font-bold text-3xl">
+          Browse more what's cookin'
+        </h2>
+        <div
+          class="mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5"
+        >
           {
-            [...Array(7)].map((_, i) => (
+            [...Array(7)].map((_) => (
               <span class="inline-block text-base mt-3 px-3.5 py-1 rounded-full border-2">
                 Tag
               </span>

@@ -66,9 +66,10 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
     <h1 class="sr-only">{_title}</h1>
-    <Navbar client:load>
-      <span slot="crumbs">crumbs</span>
+    <Navbar client:load activeRoute={pathname}>
+      <slot name="infer-breadcrumbs" />
     </Navbar>
+    <h1 class="sr-only">{title}</h1>
     <main id="skip-to-content">
       <slot />
     </main>
