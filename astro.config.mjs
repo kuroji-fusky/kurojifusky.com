@@ -6,7 +6,7 @@ import { defineConfig, passthroughImageService } from "astro/config"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
-import svelte from "@astrojs/svelte";
+import svelte from "@astrojs/svelte"
 
 export default defineConfig({
   output: "server",
