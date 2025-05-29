@@ -30,6 +30,7 @@
     "astro-icon": "^1.1.0",
     "astro-seo-schema": "^4.0.2",
     "googleapis": "^137.1.0",
+    "gsap": "^3.13.0",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.4",
     "svelte": "^5.26.2",
