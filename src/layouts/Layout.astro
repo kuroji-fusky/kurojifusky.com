@@ -65,14 +65,21 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
-    <h1 class="sr-only">{_title}</h1>
-    <Navbar client:load activeRoute={pathname}>
-      <slot name="infer-breadcrumbs" />
-    </Navbar>
-    <h1 class="sr-only">{title}</h1>
-    <main id="skip-to-content">
-      <slot />
-    </main>
-    <Footer />
+    <div class="contents">
+      <a
+        href="#skip-to-content"
+        class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
+        data-astro-prefetch="false">Skip to content?</a
+      >
+      <Navbar client:load activeRoute={pathname}>
+        <slot name="infer-breadcrumbs" />
+      </Navbar>
+      <h1 class="sr-only">{title}</h1>
+      <main id="skip-to-content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    {/*<QuiccSearch client:idle /> */}
   </body>
 </html>
