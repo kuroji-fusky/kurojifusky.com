@@ -1,8 +1,7 @@
 ---
 import Clamp from "./Clamp.astro";
-import Link from "./Link.astro";
 
-const sourceRepoUrl = "https://github.com/kurojifusky/kurojifusky.com";
+const sourceRepoUrl = "https://github.com/kuroji-fusky/kurojifusky.com";
 
 interface Links {
   href: string;
@@ -16,14 +15,6 @@ const links = [
   { href: sourceRepoUrl, text: "Sauce" },
 ] satisfies Links[];
 
-const technologies = [
-  { href: "https://pages.cloudflare.com/", text: "Cloudflare Pages" },
-  {
-    href: "https://www.cloudflare.com/developer-platform/products/r2/",
-    text: "R2",
-  },
-  { href: "https://www.imgix.com/", text: "Imgix" },
-] satisfies Links[];
 ---
 
 <Clamp class="py-6 relative flex gap-y-2.5 px-6">
