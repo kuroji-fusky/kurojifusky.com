@@ -28,33 +28,10 @@ const technologies = [
 
 <Clamp class="py-6 relative flex gap-y-2.5 px-6">
   <footer class="flex flex-col gap-y-8 text-sm flex-1">
-    <span
-      id="technology-disclosure"
-      class="font-kuro-mono text-sm [&_a]:underline"
-    >
-      {/* This is cursed lol */}
-      {
-        technologies.map(({ href, text }, i) => {
-          if (i === 0) {
-            return (
-              <Fragment>{"Content powered by "}<Link {href}>{text}</Link></Fragment>
-            );
-          } else if (i === technologies.length - 1) {
-            return (
-              <Fragment>{", and "}<Link {href}>{text}</Link>{"."}</Fragment>
-            );
-          } else {
-            return (
-              <Fragment>{", "}<Link {href}>{text}</Link></Fragment>
-            );
-          }
-        })
-      }
-    </span>
     <div
       class="flex flex-col-reverse md:flex-row gap-y-6 justify-between font-light"
     >
-      <span class="opacity-50" translate="no">{`© Fusky Labs LLC`} </span>
+      <span class="opacity-50" translate="no">{`© Fusky Labs LLC`}</span>
       <div
         class="font-kuro-mono flex gap-x-1 items-start md:items-center gap-y-4 flex-col md:flex-row"
       >
