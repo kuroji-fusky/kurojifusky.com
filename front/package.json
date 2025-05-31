@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "name": "@kuroji-fusky/front",
+  "type": "module",
+  "version": "9.3.0",
+  "scripts": {
+    "astro": "astro",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.4",
+    "@astrojs/cloudflare": "^12.5.3",
+    "@astrojs/mdx": "4.3.0",
+    "@astrojs/node": "^9.2.2",
+    "@astrojs/rss": "^4.0.11",
+    "@astrojs/sitemap": "3.4.0",
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/ibm-plex-mono": "^5.2.5",
+    "@fontsource/inter": "^5.0.18",
+    "@fontsource/unbounded": "^5.0.20",
+    "@iconify-json/fa-brands": "^1.1.8",
+    "@iconify-json/lucide": "^1.1.200",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.0.17",
+    "astro": "^5.8.0",
+    "astro-icon": "^1.1.0",
+    "astro-seo-schema": "^4.0.2",
+    "googleapis": "^137.1.0",
+    "gsap": "^3.13.0",
+    "schema-dts": "^1.1.2",
+    "sharp": "^0.33.4",
+    "svelte": "^5.26.2",
+    "tailwindcss": "^4.0.17",
+    "typescript": "^5.8.3",
+    "unplugin-icons": "^0.19.0"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "clsx": "^2.1.1",
+    "lodash-es": "^4.17.21",
+    "tailwind-merge": "^2.5.2"
+  }
+}
