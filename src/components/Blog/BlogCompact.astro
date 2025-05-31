@@ -5,16 +5,16 @@
 // const { title, excerpt, date, tag } = Astro.props;
 ---
 
-<a href="#" class="cursor-default hover:cursor-pointer">
-  <article class="group">
-    <h2 class="font-bold text-2xl/snug text-white group-hover:underline">
+<a href="/blog/ss" class="cursor-default hover:cursor-pointer">
+  <article class="group px-8 py-9">
+    <h2
+      class="inline font-bold text-2xl/snug text-white before:inset-x-0 before:bottom-0 before:h-3 before:-z-10 before:absolute group-hover:before:bg-kuro-lavender-200/70 p-0.5 relative"
+    >
       Title
     </h2>
-    <p class="my-1 opacity-65 group-hover:opacity-100 transition-opacity">
-      Description
-    </p>
+    <p class="my-1 opacity-65 group-hover:opacity-100">Description</p>
     <time
-      class="font-kuro-mono text-sm opacity-65 group-hover:opacity-75 transition-opacity"
+      class="font-kuro-mono text-sm opacity-65 group-hover:opacity-75"
       datetime="NaN">Date</time
     >
   </article>

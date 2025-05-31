@@ -1,28 +1,30 @@
 ---
 import Clamp from "$components/Clamp.astro";
-import BlogBeeg from "$components/Blog/BlogBeeg.astro";
 import BlogCompact from "$components/Blog/BlogCompact.astro";
-import BlogMoreUpdates from "$components/Blog/BlogMoreUpdates.astro";
 import Layout from "$layouts/Layout.astro";
-import SectionCentered from "$components/Sections/SectionCentered.astro";
+import RssIcon from "~icons/lucide/rss";
 ---
 
 <Layout title="Blog">
-  <Clamp class="space-y-16 mt-10">
-    <section class="px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
-        {[...Array(3)].map(() => <BlogBeeg />)}
+  <Clamp class="space-y-8 px-6 mt-10">
+    <header class="flex justify-between items-center">
+      <div class="space-x-3 text-sm font-kuro-mono">
+        <span>Latest</span>
+        <span>Design</span>
+        <span>Engineering</span>
+        <span>Others/Personal</span>
       </div>
-    </section>
-    <SectionCentered heading="Latest posts" class="space-y-8">
+      <a href="/atom"><RssIcon width="1em" height="1em" /></a>
+    </header>
+    <section class="space-y-8">
       <div
-        class="rounded-xl grid grid-cols-1 md:grid-cols-2 border-2 border-dashed border-kuro-lavender-300/25 *:nth-last-[2]:border-b-0 *:last:border-b-0 *:odd:border-r-2"
+        class="grid grid-cols-1 border-2 border-b-0 border-dashed border-kuro-lavender-300/25"
         role="list"
       >
         {
           [...Array(8)].map(() => (
             <div
-              class="px-6 py-5 border-kuro-lavender-300/25 border-dashed border-b-2"
+              class="border-kuro-lavender-300/25 border-dashed border-b-2"
               role="listitem"
             >
               <BlogCompact />
@@ -33,7 +35,7 @@ import SectionCentered from "$components/Sections/SectionCentered.astro";
       <div class="grid place-items-center">
         <button class="rounded-4xl px-6 border py-2">Load moar blogs</button>
       </div>
-    </SectionCentered>
-    <BlogMoreUpdates />
+    </section>
+    <!-- <BlogMoreUpdates /> -->
   </Clamp>
 </Layout>

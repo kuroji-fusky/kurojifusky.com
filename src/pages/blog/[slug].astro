@@ -1,0 +1,41 @@
+---
+import Clamp from "$components/Clamp.astro";
+import Layout from "$layouts/Layout.astro";
+---
+
+<Layout title="Blog slug placeholder">
+  <Clamp>
+    <header class="text-center mt-12 space-y-6 mb-9">
+      <div>
+        <a href="/blog">Design</a>
+      </div>
+      <h1 class="leading-tight text-4xl lg:text-5xl font-bold my-9">
+        DRINKING POTION SHEIIIILDS
+      </h1>
+      <div class="inline-block text-kuro-lavender-100/80">
+        <span>2 min read</span>
+        <div
+          class="inline-block align-middle my-auto size-1 mx-4 rounded-full bg-kuro-lavender-200/50"
+        >
+        </div>
+        <time datetime="NaN">May 25, 2025</time>
+      </div>
+      <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-12">
+        <div class="aspect-video w-full bg-kuro-lavender-700"></div>
+      </div>
+    </header>
+    <div
+      class="border-x-0 xl:border-x-2 border-dashed border-kuro-lavender-200/50"
+    >
+      <article
+        class:list={[
+          "mx-auto max-w-screen-lg py-3 px-3 lg:px-12",
+          "xl:prose-p:text-lg prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0",
+          "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
+        ]}
+      >
+        <p>Hi</p>
+      </article>
+    </div>
+  </Clamp>
+</Layout>
