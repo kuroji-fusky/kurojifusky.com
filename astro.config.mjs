@@ -7,16 +7,16 @@ import { defineConfig, passthroughImageService } from "astro/config"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
-import node from "@astrojs/node";
+import node from "@astrojs/node"
 
 export default defineConfig({
   output: "server",
-  adapter: cloudflare({
-    imageService: "passthrough"
-  }),
-  // adapter: node({
-  //   mode: "standalone"
+  // adapter: cloudflare({
+  //   imageService: "passthrough"
   // }),
+  adapter: node({
+    mode: "standalone"
+  }),
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",
@@ -47,5 +47,5 @@ export default defineConfig({
 
   image: {
     service: passthroughImageService()
-  },
+  }
 })

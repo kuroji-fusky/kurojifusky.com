@@ -1,9 +1,12 @@
 ---
 import Clamp from "$components/Clamp.astro";
-import ItemPlate from "$components/ItemPlate.astro";
-import SectionCentered from "$components/Sections/SectionCentered.astro";
+// import ItemPlate from "$components/ItemPlate.astro";
+// import SectionCentered from "$components/Sections/SectionCentered.astro";
 import Layout from "$layouts/Layout.astro";
 import ExtLinkIcon from "~icons/lucide/arrow-up-right";
+import { getCollection } from "astro:content";
+
+const showcaseItem = await getCollection("portfolio");
 ---
 
 <Layout title="Portfolio">
@@ -19,34 +22,16 @@ import ExtLinkIcon from "~icons/lucide/arrow-up-right";
         </div>
       </a>
     </header>
-
-    <SectionCentered heading="Software">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <ItemPlate>item1</ItemPlate>
-        <ItemPlate>item2</ItemPlate>
-        <ItemPlate>item3</ItemPlate>
-      </div>
-    </SectionCentered>
-    <SectionCentered heading="Video work">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <ItemPlate>item1</ItemPlate>
-        <ItemPlate>item2</ItemPlate>
-        <ItemPlate>item3</ItemPlate>
-      </div>
-    </SectionCentered>
-    <SectionCentered heading="Legacy">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <ItemPlate>item1</ItemPlate>
-        <ItemPlate>item2</ItemPlate>
-        <ItemPlate>item3</ItemPlate>
-      </div>
-    </SectionCentered>
-    <SectionCentered heading="Others">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <ItemPlate>characters</ItemPlate>
-        <ItemPlate>blogs</ItemPlate>
-        <ItemPlate>about me</ItemPlate>
-      </div>
-    </SectionCentered>
+    <section>
+      {
+        showcaseItem.map((mm) => (
+          <a class="block" href={`/portfolio/${mm.id}`}>
+            <h3>{mm.data.title}</h3>
+            <span>{mm.data.year}</span>
+            <span>{mm.data.type}</span>
+          </a>
+        ))
+      }
+    </section>
   </Clamp>
 </Layout>

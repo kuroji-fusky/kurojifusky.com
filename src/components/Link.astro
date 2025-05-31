@@ -16,9 +16,7 @@ const isUrlHasHttp = href.startsWith("http");
   rel={noReferrer ? "noreferrer noopener" : undefined}
   target={isUrlHasHttp ? "_blank" : undefined}
   class:list={[
-    "transition-opacity opacity-50 hover:opacity-100 hover:underline",
+    "hover:underline text-kuro-lavender-200/75 hover:text-kuro-lavender-200",
     cn,
-  ]}
+  ]}><slot /></a
 >
-  <slot />
-</a>
