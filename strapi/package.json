@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "@kuroji-fusky/strapi",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "yarn @strapi/upgrade latest",
+    "upgrade:dry": "yarn @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.14.0",
+    "@strapi/plugin-users-permissions": "5.14.0",
+    "@strapi/strapi": "5.14.0",
+    "better-sqlite3": "11.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "408e1e59-fd66-4233-a419-0d37ed23637e",
+    "installId": "0fa45adef35ee1cbf841d50c8fbf9210d6a7154327fbdadd68a798466d10b48d"
+  }
+}

@@ -9,30 +9,20 @@ The source code of `kurojifusky.com` written in Astro.
 ### Prerequisties
 
 - Node.js v22 or higher (LTS recommended)
-- pnpm
+- yarn
 
 ### Setup and installation
 
-After cloning, install dependencies with `pnpm`:
+After cloning, install dependencies with `yarn`:
 
 ```console
-pnpm install # or pnpm i
+yarn install
 ```
 
 Run the dev server
 
 ```
-pnpm run dev
-```
-
-Some housekeeping
-
-```console
-# Linting
-pnpm run lint
-
-# Format and fix code conventions
-pnpm run lint:fix
+yarn dev
 ```
 
 ## Copyright

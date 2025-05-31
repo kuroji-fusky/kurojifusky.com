@@ -3,6 +3,10 @@
   "name": "kurojifusky.com",
   "type": "module",
   "version": "0.0.1",
+  "workspaces": [
+    "front",
+    "strapi"
+  ],
   "scripts": {
     "lint:check": "biome check",
     "lint:fix": "biome check --fix"
@@ -10,5 +14,5 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "yarn@1.22.22"
 }
