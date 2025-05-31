@@ -3,10 +3,7 @@
   "name": "kurojifusky.com",
   "type": "module",
   "version": "0.0.1",
-  "workspaces": [
-    "front",
-    "strapi"
-  ],
+  "workspaces": ["front", "strapi"],
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "lint:check": "biome check",
@@ -14,6 +11,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "concurrently": "^9.1.2",
     "only-allow": "^1.2.1"
   },
   "packageManager": "yarn@1.22.22"

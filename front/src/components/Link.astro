@@ -5,10 +5,10 @@ interface Props {
   href: string;
   class?: string;
   noReferrer?: true;
-  explicitIcon?: true;
+  explicitIcon?: boolean;
 }
 
-const { href, class: cn, noReferrer, explicitIcon } = Astro.props;
+const { href, class: cn, noReferrer, explicitIcon = true } = Astro.props;
 
 const isUrlHasHttp = href.startsWith("http");
 ---
