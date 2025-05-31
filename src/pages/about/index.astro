@@ -1,5 +1,18 @@
 ---
-import Layout from "$layouts/Layout.astro"
+import Layout from "$layouts/Layout.astro";
+import { Content, components } from "../../content/about.mdx";
+import Link from "$components/Link.astro";
 ---
 
-<Layout title="HEE HEE" />
+<Layout title="About me">
+  <header>header placeholder</header>
+  <article
+    class:list={[
+      "my-12 px-5 max-w-screen-lg mx-auto prose-headings:font-bold prose-headings:my-4 prose-h2:text-3xl",
+      "xl:prose-p:text-lg prose-p:leading-8 prose-p:my-2.5",
+      "xl:prose-li:text-lg prose-ul:list-disc prose-li:list-inside",
+    ]}
+  >
+    <Content components={{ ...components, a: Link }} />
+  </article>
+</Layout>
