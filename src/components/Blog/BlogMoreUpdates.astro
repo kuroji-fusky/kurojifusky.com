@@ -15,7 +15,7 @@ const socials = [
     logo: "",
     subtext:
       "Occasionally, I post updates on my community tab on my channel, probably some random stuff like I usually do in Bluesky too",
-    linkAction: "It's Ain't TikTok",
+    linkAction: "It Ain't TikTok",
     linkText: "www.youtube.com/@kurojifusky/community",
   },
   {
@@ -45,16 +45,22 @@ const socials = [
     {
       socials.map((item) => (
         <div class="group text-sm lg:text-base mx-9">
-          <a href={`https://${item.linkText}`} target="_blank" class="transition-transform group-hover:scale-110">
+          <a
+            href={`https://${item.linkText}`}
+            target="_blank"
+            class="transition-transform group-hover:scale-110"
+          >
             <div class="size-28 bg-red-100 rounded-full" />
           </a>
-          <p class="pt-4 pb-2.5 lg:pt-6 lg:pb-4 text-center cursor-default">{item.subtext}</p>
+          <p class="pt-4 pb-2.5 lg:pt-6 lg:pb-4 text-center cursor-default">
+            {item.subtext}
+          </p>
           <Link
             href={`https://${item.linkText}`}
             class="group-hover:opacity-100 group-hover:underline inline-flex items-center"
+            explicitIcon
           >
             {item.linkAction}
-            <ExtLinkIcon />
           </Link>
         </div>
       ))

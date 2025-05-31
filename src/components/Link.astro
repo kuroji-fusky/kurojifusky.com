@@ -1,4 +1,6 @@
 ---
+import ExtLinkIcon from "~icons/lucide/arrow-up-right";
+
 interface Props {
   href: string;
   class?: string;
@@ -16,7 +18,10 @@ const isUrlHasHttp = href.startsWith("http");
   rel={noReferrer ? "noreferrer noopener" : undefined}
   target={isUrlHasHttp ? "_blank" : undefined}
   class:list={[
-    "hover:underline text-kuro-lavender-200/75 hover:text-kuro-lavender-200",
+    "inline-block hover:underline text-kuro-lavender-200/75 hover:text-kuro-lavender-200",
     cn,
-  ]}><slot /></a
+  ]}
+>
+  <span><slot /></span>
+  {explicitIcon && isUrlHasHttp && <ExtLinkIcon class="float-right ml-1" />}</a
 >

@@ -3,11 +3,7 @@ import BlogBeeg from "$components/Blog/BlogBeeg.astro";
 import Clamp from "$components/Clamp.astro";
 import Hero from "$components/landing/Hero.astro";
 import SectionPlain from "$components/Sections/SectionPlain.astro";
-import Tag from "$components/Tag.astro";
 import Layout from "$layouts/Layout.astro";
-import { Schema } from "astro-seo-schema";
-
-const { site } = Astro;
 ---
 
 <Layout title="kuro homepage">
@@ -72,12 +68,3 @@ const { site } = Astro;
     <SectionPlain level={2} heading="More">Placeholder</SectionPlain>
   </Clamp>
 </Layout>
-
-<Schema
-  item={{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Kuroji Fusky",
-    url: site!.toString(),
-  }}
-/>
