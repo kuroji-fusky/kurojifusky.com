@@ -10391,6 +10391,13 @@ oniguruma-to-es@^4.3.3:
     regex "^6.0.1"
     regex-recursion "^6.0.2"
 
+only-allow@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/only-allow/-/only-allow-1.2.1.tgz#8f18abd72bf531bc0e59fcfcfca590c425a5ad29"
+  integrity sha512-M7CJbmv7UCopc0neRKdzfoGWaVZC+xC1925GitKH9EAqYFzX9//25Q7oX4+jw0tiCCj+t5l6VZh8UPH23NZkMA==
+  dependencies:
+    which-pm-runs "^1.1.0"
+
 only@~0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/only/-/only-0.0.2.tgz#2afde84d03e50b9a8edc444e30610a70295edfb4"

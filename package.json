@@ -8,11 +8,13 @@
     "strapi"
   ],
   "scripts": {
+    "preinstall": "npx only-allow yarn",
     "lint:check": "biome check",
     "lint:fix": "biome check --fix"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@biomejs/biome": "1.9.4",
+    "only-allow": "^1.2.1"
   },
   "packageManager": "yarn@1.22.22"
 }
