@@ -23,11 +23,11 @@ const links = [
     >
       <span class="opacity-50" translate="no">{`© 2025 Fusky Labs LLC`}</span>
       <div
-        class="font-kuro-mono flex gap-x-1 items-start md:items-center gap-y-4 flex-col md:flex-row"
+        class="font-kuro-mono flex gap-x-6 items-start md:items-center gap-y-4 flex-col md:flex-row"
       >
         {
           links.map((i) => (
-            <Link href={i.href} class="md:mx-2.5" explicitIcon>
+            <Link href={i.href}>
               {i.text}
             </Link>
           ))
