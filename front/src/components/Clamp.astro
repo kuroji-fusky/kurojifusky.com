@@ -1,14 +1,23 @@
 ---
+import { cn } from "$lib/utils"
+
 interface Props {
-  class?: string;
+  class?: string
 }
 
-const { class: cn } = Astro.props;
+const { class: cls } = Astro.props
 ---
 
-<div
-  data-kuro-container-clamp=""
-  class:list={["mx-auto max-w-screen-xl px-6", cn]}
->
+<script>
+  customElements.define("kuro-clamp-container", 
+  class extends HTMLElement {
+    constructor() {
+      super()
+    }
+  }
+)
+</script>
+
+<kuro-clamp-container class={cn(["not-[.flex,.inline-block]:block mx-auto max-w-screen-xl px-6", cls])}>
   <slot />
-</div>
+</kuro-clamp-container>

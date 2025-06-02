@@ -1,13 +1,13 @@
 ---
-import BlogBeeg from "$components/Blog/BlogBeeg.astro";
-import Clamp from "$components/Clamp.astro";
-import Hero from "$components/landing/Hero.astro";
-import SectionPlain from "$components/Sections/SectionPlain.astro";
-import Layout from "$layouts/Layout.astro";
+import BlogBeeg from "$components/Blog/BlogBeeg.astro"
+import Clamp from "$components/Clamp.astro"
+import Hero from "$components/landing/Hero.svelte"
+import SectionPlain from "$components/Sections/SectionPlain.astro"
+import Layout from "$layouts/Layout.astro"
 ---
 
 <Layout title="kuro homepage">
-  <Hero />
+  <Hero client:load />
   <Clamp class="my-12 space-y-40 prose-p:leading-relaxed">
     <SectionPlain
       level={1}
