@@ -1,7 +1,7 @@
 ---
-import ImageWrapper from "$components/ImageWrapper.astro";
-import Layout from "$layouts/Layout.astro";
-import oops from "../../public/oops.jpg";
+import ImageWrapper from "$components/ImageWrapper.svelte"
+import Layout from "$layouts/Layout.astro"
+import oops from "../../public/oops.jpg"
 ---
 
 <Layout title="Page not found">
@@ -9,10 +9,10 @@ import oops from "../../public/oops.jpg";
     <div class="flex flex-col items-center">
       <ImageWrapper src={oops.src} alt="" class="rounded-lg w-60" />
       <h1 class="font-bold font-kuro-hero-heading text-7xl leading-none my-5"
-        >404</h1
+        >OOP</h1
       >
       <span class="text-xl text-center"
-        >Where you looking for somethin'? Looks like you went to the wrong pile.</span
+        >Where you looking for somethin'? Looks like you went to the wrong side of the road buddy.</span
       >
       <div class="mt-8">
         <a

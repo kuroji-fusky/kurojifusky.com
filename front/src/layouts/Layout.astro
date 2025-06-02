@@ -1,41 +1,82 @@
 ---
-import { siteAuthorHandle as me, siteTitle } from "$lib/utils";
-import "../styles/global.css";
+import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
+import "../styles/global.css"
 
-import Footer from "$components/Footer.astro";
-import Navbar from "$components/Navbar";
-import { Schema } from "astro-seo-schema";
+import Footer from "$components/Footer.astro"
+import Navbar from "$components/Navbar"
+import { Schema } from "astro-seo-schema"
+import { getCollection } from "astro:content"
 
 interface Props {
-  title: string;
-  description?: string;
-  webpageType?: "website" | "article";
+  title: string
+  description?: string
+  webpageType?: "website" | "article"
   crumbs?: {
-    text: string;
-    link: string;
-  }[];
+    text: string
+    link: string
+  }[]
 }
 
-const { site } = Astro;
+const { site } = Astro
 
-const { title, description, webpageType = "website" } = Astro.props;
+const { title, description, webpageType = "website" } = Astro.props
 
-const { pathname } = Astro.url;
+const { pathname } = Astro.url
 
-const canonicalUrl = new URL(pathname, Astro.site);
-const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
+const canonicalUrl = new URL(pathname, Astro.site)
+const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
+
+// Content to be spoon-fed in the cilent navbar
+const portaPotty = await getCollection("portfolio")
+const featuredPorty = portaPotty
+  .filter((i) => i.data.isFeatured)
+  .map(({ id, data }) => ({
+    text: data.title,
+    href: id
+  }))
+
+const NAV_ITEMS = [
+  {
+    text: "Portfolio",
+    href: "/portfolio",
+    rowSpan: 2,
+    subitems: featuredPorty
+  },
+  {
+    href: "/blog",
+    text: "Blog",
+    subitems: [
+      { href: "/blog/engineering", text: "Engineering" },
+      { href: "/blog/ui-and-design", text: "Design" },
+      { href: "/blog/others", text: "Others" }
+    ]
+  },
+  {
+    href: "/artworks",
+    text: "Artworks",
+    subitems: [
+      { href: "/artworks/kuro", text: "Kuro" },
+      { href: "/artworks/kinter", text: "Kinter" },
+      { href: "/artworks/ref-sheets", text: "Reference sheets" }
+    ]
+  },
+  {
+    text: "About",
+    href: "/about",
+    rowSpan: 2,
+    subitems: [
+      { text: "Branding", href: "/about/branding" },
+      { text: "Thanks", href: "/about/thanks" },
+      { text: "Contact", href: "/contact" }
+    ]
+  }
+]
 ---
 
 <html lang="en" class="scroll-pt-20">
   <head>
     <meta charset="utf-8" />
     <title>{_title}</title>
-
-    <link
-      rel="dns-prefetch"
-      href="https://fuskylabs-cdn.imgix.net"
-      fetchpriority="high"
-    />
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" href="/icon_128.png" sizes="128x128" />
@@ -77,21 +118,16 @@ const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title;
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
-    <div class="contents">
-      <a
-        href="#skip-to-content"
-        class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
-        data-astro-prefetch="false">Skip to content?</a
-      >
-      <Navbar client:load activeRoute={pathname}>
-        <slot name="infer-breadcrumbs" />
-      </Navbar>
-      <h1 class="sr-only">{title}</h1>
-      <main id="skip-to-content">
-        <slot />
-      </main>
-      <Footer />
-    </div>
+    <a
+      href="#skip-to-content"
+      class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
+      data-astro-prefetch="false">Skip to content?</a
+    >
+    <Navbar client:idle activeRoute={pathname} inlineNavItems={NAV_ITEMS} />
+    <main id="skip-to-content">
+      <slot />
+    </main>
+    <Footer />
     {/*<QuiccSearch client:idle /> */}
   </body>
 </html>

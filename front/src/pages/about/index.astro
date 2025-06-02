@@ -1,6 +1,6 @@
 ---
 import Layout from "$layouts/Layout.astro";
-import { Content, components } from "../../content/about.mdx";
+import { Content } from "../../content/about.mdx";
 import Link from "$components/Link.astro";
 ---
 
@@ -13,6 +13,6 @@ import Link from "$components/Link.astro";
       "xl:prose-li:text-lg prose-ul:list-disc prose-li:list-inside",
     ]}
   >
-    <Content components={{ ...components, a: Link }} />
+    <Content components={{ a: Link }} />
   </article>
 </Layout>
