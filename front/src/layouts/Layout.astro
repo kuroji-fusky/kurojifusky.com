@@ -4,6 +4,7 @@ import "../styles/global.css"
 
 import Footer from "$components/Footer.astro"
 import Navbar from "$components/Navbar"
+import NavList from "$components/Navbar/NavList.svelte"
 import { Schema } from "astro-seo-schema"
 import { getCollection } from "astro:content"
 
@@ -165,16 +166,13 @@ const NAV_ITEMS = [
                 : undefined
             }
           >
-            <div class="mb-4 opacity-65">
-              <a href={hrefHeading} class="font-kuro-mono uppercase">
-                {textHeading}
-              </a>
-            </div>
-            {subitems.map(({ href, text }) => (
-              <a {href} class="block text-lg">
-                {text}
-              </a>
-            ))}
+            <NavList {hrefHeading} {textHeading} client:media="(width <= 64rem)">
+              {subitems.map(({ href, text }) => (
+                <a {href} class="block text-lg">
+                  {text}
+                </a>
+              ))}
+            </NavList>
           </div>
         ),
       )}

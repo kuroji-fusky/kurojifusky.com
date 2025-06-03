@@ -190,9 +190,9 @@ this my code not urs fuk u
     class="select-none z-40 fixed inset-x-0 top-0 bg-kuro-dark1 overflow-hidden"
     style="height: 0%; pointer-events:none"
   >
-    <div class="mx-auto max-w-screen-lg px-6 *:px-6 pt-20 space-y-6">
+    <div class="mx-auto max-w-screen-lg px-3 lg:px-6 *:px-6 pt-20 space-y-6">
       <div
-        class="flex justify-between items-center pb-4 border-b border-b-kuro-lavender-200/30"
+        class="hidden lg:flex justify-between items-center pb-4 border-b border-b-kuro-lavender-200/30"
       >
         <span class="font-bold text-2xl">Explore</span>
 
