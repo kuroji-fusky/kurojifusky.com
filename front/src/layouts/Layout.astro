@@ -32,7 +32,7 @@ const featuredPorty = portaPotty
   .filter((i) => i.data.isFeatured)
   .map(({ id, data }) => ({
     text: data.title,
-    href: id
+    href: `/portfolio/${id}`
   }))
 
 const NAV_ITEMS = [
@@ -73,7 +73,7 @@ const NAV_ITEMS = [
 ]
 ---
 
-<html lang="en" class="scroll-pt-20">
+<html lang="en" class="scroll-pt-20 scheme-dark">
   <head>
     <meta charset="utf-8" />
     <title>{_title}</title>
@@ -118,16 +118,78 @@ const NAV_ITEMS = [
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600"
   >
+    <script>
+      customElements.define(
+        "kuro-clamp-container",
+        class extends HTMLElement {
+          constructor() {
+            super();
+          }
+        },
+      );
+    </script>
     <a
       href="#skip-to-content"
       class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
       data-astro-prefetch="false">Skip to content?</a
     >
-    <Navbar client:idle activeRoute={pathname} inlineNavItems={NAV_ITEMS} />
-    <main id="skip-to-content">
+    <Navbar client:idle>
+      {
+        NAV_ITEMS.map(({ href, text }) => (
+          <a
+            slot="shortNav"
+            {href}
+            class:list={[
+              "squishy-button before:hidden lg:before:block",
+              "px-3 py-1.5",
+              pathname.startsWith(href) ? "text-kuro-lavender-200" : null,
+            ]}
+            aria-current={pathname === href ? "page" : null}
+            data-current-root-route={
+              pathname.startsWith(href) ? "" : undefined
+            }
+          >
+            {text}
+          </a>
+        ))
+      }
+      {
+        NAV_ITEMS.map(({ href: hrefHeading, text: textHeading, subitems, rowSpan }) => (
+          <div
+            slot="longNav"
+            role="listbox"
+            class="space-y-2"
+            style={
+              rowSpan
+                ? `grid-row: span ${rowSpan}/span ${rowSpan}`
+                : undefined
+            }
+          >
+            <div class="mb-4 opacity-65">
+              <a href={hrefHeading} class="font-kuro-mono uppercase">
+                {textHeading}
+              </a>
+            </div>
+            {subitems.map(({ href, text }) => (
+              <a {href} class="block text-lg">
+                {text}
+              </a>
+            ))}
+          </div>
+        ),
+      )}
+    </Navbar>
+    <div id="skip-to-content">
       <slot />
-    </main>
+    </div>
     <Footer />
-    {/*<QuiccSearch client:idle /> */}
   </body>
 </html>
+
+<style is:global lang="postcss">
+  @reference "../styles/global.css";
+
+  .squishy-button {
+    @apply relative before:duration-[250ms] before:pointer-events-none before:absolute before:-z-10 before:rounded-sm before:size-full before:inset-0 before:transition-all hover:before:bg-kuro-lavender-200/20 before:scale-[0.96] hover:before:scale-100;
+  }
+</style>

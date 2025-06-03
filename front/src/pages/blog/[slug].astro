@@ -1,13 +1,13 @@
 ---
-import Clamp from "$components/Clamp.astro"
+import Clamp from "$components/Clamp.svelte"
 import Layout from "$layouts/Layout.astro"
 import TimeIcon from "~icons/lucide/clock-fading"
 ---
 
 <Layout title="Blog slug placeholder">
   <Clamp>
-    <div class="xl:border-2 mt-8 border-dashed border-kuro-lavender-300/25">
-      <header class="text-center lg:mt-12 space-y-6 mb-9">
+    <article class="xl:border-2 mt-8 border-dashed border-kuro-lavender-300/25">
+      <section class="text-center lg:mt-12 space-y-6 mb-9">
         <div>
           <a href="/blog">Design</a>
         </div>
@@ -15,24 +15,22 @@ import TimeIcon from "~icons/lucide/clock-fading"
           Top 10 paw pics of 2025
         </h1>
         <div class="inline-block">
-          <span>
-            <TimeIcon class="inline-block align-middle opacity-65" width="1em" />
-            <span>2 min</span>
-          </span>
+          <TimeIcon class="inline-block align-middle opacity-65" width="1em" />
+          <span>2 min</span>
           <div
             class="inline-block align-middle my-auto size-1 mx-1.5 rounded-full bg-kuro-lavender-200/50"
           >
           </div>
           <time datetime="NaN">May 25, 2025</time>
         </div>
-        <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-12">
+        <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-8">
           <div class="aspect-video w-full bg-kuro-lavender-700"></div>
         </div>
-      </header>
-      <article
+      </section>
+      <section
         class:list={[
           "pb-14",
-          "mx-auto max-w-screen-lg py-3 px-3 lg:px-12",
+          "mx-auto max-w-screen-lg p-3 lg:px-12",
           "xl:prose-p:text-lg prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0",
           "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
           "prose-code:font-kuro-mono prose-code:text-balance",
@@ -40,7 +38,7 @@ import TimeIcon from "~icons/lucide/clock-fading"
         ]}
       >
         <p>hi</p>
-      </article>
-    </div>
+      </section>
+    </article>
   </Clamp>
 </Layout>

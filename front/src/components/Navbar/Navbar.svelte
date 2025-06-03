@@ -4,31 +4,33 @@
   import MenuIcon from "~icons/lucide/menu?raw";
   import CloseIcon from "~icons/lucide/x?raw";
   import ChevronDownIcon from "~icons/lucide/chevron-down?raw";
-  import { onMount } from "svelte";
+  import ChevronRightIcon from "~icons/lucide/chevron-down?raw";
+  import { onMount, type Snippet } from "svelte";
 
   import { gsap } from "gsap";
 
   interface Props {
-    activeRoute: string;
-    inlineNavItems: object;
+    shortNav: Snippet;
+    longNav: Snippet;
   }
 
-  const { activeRoute, inlineNavItems }: Props = $props();
+  const { shortNav, longNav }: Props = $props();
 
   let isOpen = $state(false);
 
   let navRootScope: HTMLDivElement;
 
-  let navContainer: HTMLDivElement;
+  let navLinks: HTMLDivElement;
   let navButton: HTMLButtonElement;
   let navClose: HTMLButtonElement;
 
-  let navLinksCurtain: HTMLElement;
+  let desktopLinksCurtain: HTMLElement;
 
   onMount(() => {
     const gsapCtx = gsap.context(() => {
       const navAnimTree = gsap.timeline().reversed(true);
-      navAnimTree.to(navContainer, {
+
+      navAnimTree.to(navLinks, {
         y: 6,
         opacity: 0,
         filter: "blur(2px)",
@@ -38,7 +40,7 @@
       });
 
       navAnimTree.fromTo(
-        navLinksCurtain,
+        desktopLinksCurtain,
         {
           height: "0%",
           pointerEvents: "none",
@@ -51,16 +53,31 @@
           duration: 0.48,
           display: "block",
         },
-        "-=0.35",
+        "-=0.25",
+      );
+
+      // navline blur
+      const navContainer = navLinks.parentElement!.parentElement;
+      navAnimTree.fromTo(
+        navContainer,
+        {
+          "--bg-opacity": "80%",
+          backdropFilter: "blur(12px)",
+        },
+        {
+          "--bg-opacity": "0%",
+          backdropFilter: "blur(0px)",
+        },
+        "-=0.4",
       );
 
       // descendant to navLinksCurtainEl
       navAnimTree.fromTo(
-        navLinksCurtain.querySelector("& > div"),
+        desktopLinksCurtain.querySelector("& > div"),
         {
           y: -33,
           pointerEvents: "none",
-          filter: "blur(2px)",
+          filter: "blur(12px)",
           opacity: 0.15,
         },
         {
@@ -123,8 +140,11 @@ I'm aware the code or this is a mess, leave me alone
 this my code not urs fuk u
 -->
 <div bind:this={navRootScope} class="contents">
-  <div class="z-50 fixed inset-x-0 top-0 bg-kuro-dark2/80 backdrop-blur-md">
-    <nav
+  <nav
+    class="z-50 fixed inset-x-0 top-0"
+    style="background-color: color-mix(in oklab, var(--color-kuro-dark2) var(--bg-opacity, 80%), transparent); backdrop-filter: blur(12px);"
+  >
+    <div
       class="py-1.5 flex items-center justify-between px-6 max-w-screen-xl mx-auto"
     >
       <a
@@ -136,22 +156,10 @@ this my code not urs fuk u
       </a>
 
       <div
-        bind:this={navContainer}
-        class="flex lg:relative lg:bg-transparent lg:flex-row lg:top-0 lg:items-center absolute flex-col top-14 items-start w-max justify-end my-auto gap-x-1 font-kuro-mono text-sm"
+        bind:this={navLinks}
+        class="hidden lg:flex lg:relative lg:bg-transparent lg:flex-row lg:top-0 lg:items-center absolute flex-col top-14 items-start w-max justify-end my-auto gap-x-1 font-kuro-mono text-sm"
       >
-        {#each inlineNavItems as { href, text }}
-          <a
-            {href}
-            class={[
-              "squishy-button",
-              "px-3 py-1.5",
-              activeRoute.startsWith(href) ? "text-kuro-lavender-200" : null,
-            ]}
-            aria-current={activeRoute.startsWith(href) ? "page" : null}
-          >
-            {text}
-          </a>
-        {/each}
+        {@render shortNav()}
         <div class="absolute flex items-center -right-[3.25rem]">
           <span class="hidden lg:inline-block h-5 border-l opacity-40 mx-2"
           ></span>
@@ -173,23 +181,23 @@ this my code not urs fuk u
           {@html MenuIcon}
         </button>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
-  <!-- Desktop navigation lol -->
+  <!-- Navigation -->
   <aside
-    bind:this={navLinksCurtain}
+    bind:this={desktopLinksCurtain}
     class="select-none z-40 fixed inset-x-0 top-0 bg-kuro-dark1 overflow-hidden"
     style="height: 0%; pointer-events:none"
   >
-    <div class="mx-auto max-w-screen-lg px-6 pt-20 *:px-6 space-y-6">
+    <div class="mx-auto max-w-screen-lg px-6 *:px-6 pt-20 space-y-6">
       <div
         class="flex justify-between items-center pb-4 border-b border-b-kuro-lavender-200/30"
       >
         <span class="font-bold text-2xl">Explore</span>
 
         <div class="inline-flex items-center gap-x-1">
-          <kbd class="bg-kuro-lavender-100/20 px-1 py-1 rounded-md text-xs"
+          <kbd class="text-kuro-lavender-100/50 mr-1 rounded-md text-xs"
             >&lbrack;ESC&rbrack;</kbd
           >
           <button
@@ -200,35 +208,12 @@ this my code not urs fuk u
           </button>
         </div>
       </div>
-      <section class="grid grid-flow-col grid-cols-3 grid-rows-2 gap-12">
-        {#each inlineNavItems as { href: hrefHeading, text: textHeading, subitems, rowSpan }}
-          <div
-            role="listbox"
-            class="space-y-2"
-            style={rowSpan
-              ? `grid-row: span ${rowSpan}/span ${rowSpan}`
-              : undefined}
-          >
-            <div class="mb-4 opacity-65">
-              <a href={hrefHeading} class="font-kuro-mono uppercase"
-                >{textHeading}</a
-              >
-            </div>
-            {#each subitems as { href, text }}
-              <a {href} class="block text-lg">{text}</a>
-            {/each}
-          </div>
-        {/each}
-      </section>
+      <nav
+        class="grid lg:grid-flow-col lg:grid-cols-3 lg:grid-rows-2 gap-6 lg:gap-12"
+      >
+        {@render longNav()}
+      </nav>
     </div>
   </aside>
 </div>
 <div class="h-12"></div>
-
-<style lang="postcss">
-  @reference "../../styles/global.css";
-
-  .squishy-button {
-    @apply relative before:duration-[250ms] before:pointer-events-none before:absolute before:-z-10 before:rounded-sm before:size-full before:inset-0 before:transition-all hover:before:bg-kuro-lavender-200/20 before:scale-[0.96] hover:before:scale-100;
-  }
-</style>
