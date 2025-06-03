@@ -8,6 +8,7 @@
   import { onMount, type Snippet } from "svelte";
 
   import { gsap } from "gsap";
+  import AccessibilityPanel from "$components/a11y/AccessibilityPanel.svelte";
 
   interface Props {
     shortNav: Snippet;
@@ -165,15 +166,16 @@ this my code not urs fuk u
           ></span>
           <button
             bind:this={navButton}
-            class="cursor-pointer hidden lg:block px-2 py-1 flex-shrink-0 [&_svg]:!h-[1.5rem] squishy-button"
+            class="hidden lg:block px-2 py-1 flex-shrink-0 [&_svg]:!h-[1.5rem] squishy-button"
           >
             {@html ChevronDownIcon}
           </button>
         </div>
       </div>
       <div
-        class="lg:contents flex items-center gap-x-0.5 *:cursor-pointer *:p-2"
+        class="flex items-center gap-x-0.5 *:p-2"
       >
+        <AccessibilityPanel />
         <button>
           {@html SearchIcon}
         </button>
@@ -202,7 +204,7 @@ this my code not urs fuk u
           >
           <button
             bind:this={navClose}
-            class="p-2 rounded-md cursor-pointer squishy-button"
+            class="p-2 rounded-md squishy-button"
           >
             {@html CloseIcon}
           </button>

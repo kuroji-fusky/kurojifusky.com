@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
+  import { type Snippet } from "svelte";
 
   interface Props {
     children: Snippet;
@@ -13,6 +13,6 @@
   };
 </script>
 
-<div use:moveDom={target} data-kuro-portal="" style="display: contents;">
+<kuro-ui-portal use:moveDom={target} style="display: contents;">
   {@render children()}
-</div>
+</kuro-ui-portal>
