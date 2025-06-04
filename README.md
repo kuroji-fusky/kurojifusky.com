@@ -4,26 +4,37 @@
 
 The source code of `kurojifusky.com` written in Astro.
 
+> [!CAUTION]
+> This codebase is a dumpster fire, proceed carefully before you get a panic attack.
+
 ## Running the abominations locally
 
 ### Prerequisties
 
 - Node.js v22 or higher (LTS recommended)
-- yarn
+- Yarn package manager
 
-### Setup and installation
+### Setup
 
 After cloning, install dependencies with `yarn`:
 
-```console
+```bash
 yarn install
 ```
 
-Run the dev server
+#### Website
+
+Start the a dev server with:
 
 ```
 yarn dev
 ```
+
+Which exposes <http://localhost:4321>.
+
+#### Strapi
+
+WIP
 
 ## Copyright
 
