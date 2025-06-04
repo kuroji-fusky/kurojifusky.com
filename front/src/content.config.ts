@@ -11,7 +11,8 @@ const portfolio = defineCollection({
     year: z.number(),
     sourceUrl: z.string().optional(),
     repo: z.string().optional(),
-    category: z.array(z.string())
+    category: z.array(z.string()),
+    redirects: z.array(z.string()).optional()
   })
 })
 
