@@ -3,24 +3,11 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "$lib/*": [
-        "lib/*"
-      ],
-      "$components/*": [
-        "components/*"
-      ],
-      "$layouts/*": [
-        "layouts/*"
-      ],
-      "$stores/*": [
-        "stores/*"
-      ]
+      "$lib/*": ["lib/*"],
+      "$components/*": ["components/*"],
+      "$layouts/*": ["layouts/*"],
+      "$stores/*": ["stores/*"]
     },
-    "types": [
-      "unplugin-icons/types/astro"
-    ]
-  },
-  "files": [
-    "node_modules/gsap/types/index.d.ts"
-  ]
+    "types": ["unplugin-icons/types/astro"]
+  }
 }
