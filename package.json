@@ -8,11 +8,13 @@
     "preinstall": "npx only-allow yarn",
     "lint:check": "biome check",
     "lint:fix": "biome check --fix",
-    "dev": "yarn workspaces run dev"
+    "dev": "yarn workspaces run dev",
+    "knip": "knip"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "concurrently": "^9.1.2",
+    "knip": "^5.60.0",
     "only-allow": "^1.2.1"
   },
   "packageManager": "yarn@1.22.22"
