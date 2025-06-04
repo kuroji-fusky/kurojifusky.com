@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": []
+    "ignore": ["node_modules/", ".astro/", ".svelte-kit/", "dist/"]
   },
   "formatter": {
     "enabled": true,
@@ -18,8 +18,7 @@
     "lineEnding": "lf",
     "lineWidth": 110,
     "attributePosition": "auto",
-    "bracketSpacing": true,
-    "ignore": ["**/node_modules", "**/.astro/**", "**/dist/"]
+    "bracketSpacing": true
   },
   "organizeImports": {
     "enabled": true
@@ -31,8 +30,7 @@
       "correctness": {
         "noUndeclaredVariables": "off"
       }
-    },
-    "ignore": ["/node_modules/", "**/.astro/**", ".env"]
+    }
   },
   "javascript": {
     "formatter": {

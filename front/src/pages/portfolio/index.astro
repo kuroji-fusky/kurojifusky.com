@@ -1,37 +1,23 @@
 ---
-import Clamp from "$components/Clamp.svelte";
-// import ItemPlate from "$components/ItemPlate.astro";
-// import SectionCentered from "$components/Sections/SectionCentered.astro";
-import Layout from "$layouts/Layout.astro";
-import ExtLinkIcon from "~icons/lucide/arrow-up-right";
-import { getCollection } from "astro:content";
+import Clamp from "$components/Clamp.svelte"
+import Layout from "$layouts/Layout.astro"
+import { getCollection } from "astro:content"
 
-const showcaseItem = await getCollection("portfolio");
+const showcaseItem = await getCollection("portfolio")
+const sortedShowcaseItem = showcaseItem.sort((a, b) => b.data.year - a.data.year)
 ---
 
 <Layout title="Portfolio">
+  <h1 class="sr-only">Portfolio</h1>
   <Clamp class="space-y-20 mt-12 mb-24">
-    <header class="py-16 flex flex-col items-center gap-y-12">
-      <h1 class="font-kuro-hero-heading font-extrabold text-6xl text-white">
-        Portfolio
-      </h1>
-      <a href="/portfolio/all" class="text-lg px-4 py-2 rounded-xl border">
-        <div class="inline-flex items-center gap-x-2.5 select-none">
-          <span>Browse all</span>
-          <ExtLinkIcon />
-        </div>
-      </a>
-    </header>
-    <section>
       {
-        showcaseItem.map((mm) => (
+        sortedShowcaseItem.map((mm) => (
           <a class="block" href={`/portfolio/${mm.id}`}>
-            <h3>{mm.data.title}</h3>
+            <h2>{mm.data.title}</h2>
             <span>{mm.data.year}</span>
             <span>{mm.data.type}</span>
           </a>
         ))
       }
-    </section>
   </Clamp>
 </Layout>
