@@ -107,7 +107,8 @@ const NAV_ITEMS = [
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: title,
-        url: site!.toString(),
+        description,
+        url: canonicalUrl.toString(),
       }}
     />
 
@@ -167,9 +168,9 @@ const NAV_ITEMS = [
                 : undefined
             }
           >
-            <NavList {hrefHeading} {textHeading} client:media="(width <= 64rem)">
+            <NavList {hrefHeading} {textHeading} client:idle>
               {subitems.map(({ href, text }) => (
-                <a {href} class="block text-lg">
+                <a {href} class="block text-lg mb-1 last:mb-0">
                   {text}
                 </a>
               ))}
