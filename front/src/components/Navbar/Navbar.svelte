@@ -22,7 +22,8 @@
   let navRootScope: HTMLDivElement;
 
   let navLinks: HTMLDivElement;
-  let navButton: HTMLButtonElement;
+  let navButtonDesktop: HTMLButtonElement;
+  let navButtonMobile: HTMLButtonElement;
   let navClose: HTMLButtonElement;
 
   let desktopLinksCurtain: HTMLElement;
@@ -104,6 +105,17 @@
         return;
       };
 
+      const handleOpenMenu = () => {
+        if (isOpen && !navAnimTree.reversed()) return;
+
+        // Listen for ESC key presses
+        window.addEventListener("keydown", handleEscKey);
+
+        navAnimTree.play();
+        _h.classList.add("overflow-y-hidden");
+        isOpen = true;
+      };
+
       const handleEscKey = ({ key }: KeyboardEvent) => {
         if (key === "Escape" && isOpen) {
           handleCloseMenu();
@@ -115,19 +127,21 @@
       };
 
       // Opening menu
-      navButton.addEventListener("click", () => {
-        if (isOpen && !navAnimTree.reversed()) return;
-
-        // Listen for ESC key presses
-        window.addEventListener("keydown", handleEscKey);
-
-        navAnimTree.play();
-        _h.classList.add("overflow-y-hidden");
-        isOpen = true;
-      });
+      navButtonDesktop.addEventListener("click", handleOpenMenu);
 
       // Closing menu
       navClose.addEventListener("click", handleCloseMenu);
+
+      // Open/close menu on mobile
+      navButtonMobile.addEventListener("click", () => {
+        if (isOpen) {
+          handleCloseMenu();
+          return;
+        }
+
+        handleOpenMenu();
+        return;
+      });
     }, navRootScope);
 
     return () => gsapCtx.revert();
@@ -159,27 +173,33 @@ this my code not urs fuk u
       <div
         bind:this={navLinks}
         class="hidden lg:flex lg:relative lg:bg-transparent lg:flex-row lg:top-0 lg:items-center absolute flex-col top-14 items-start w-max justify-end my-auto gap-x-1 font-kuro-mono text-sm"
+        role="menubar"
       >
         {@render shortNav()}
         <div class="absolute flex items-center -right-[3.25rem]">
           <span class="hidden lg:inline-block h-5 border-l opacity-40 mx-2"
           ></span>
           <button
-            bind:this={navButton}
+            bind:this={navButtonDesktop}
             class="hidden lg:block px-2 py-1 flex-shrink-0 [&_svg]:!h-[1.5rem] squishy-button"
+            aria-label="Expand menu"
+            aria-controls="global-navmenu"
           >
             {@html ChevronDownIcon}
           </button>
         </div>
       </div>
-      <div
-        class="flex items-center gap-x-0.5 *:p-2"
-      >
+      <div class="flex items-center gap-x-0.5">
         <AccessibilityPanel />
-        <button>
+        <button class="p-2" aria-label="Search">
           {@html SearchIcon}
         </button>
-        <button class="lg:hidden block">
+        <button
+          bind:this={navButtonMobile}
+          class="p-2 lg:hidden block"
+          aria-label="Toggle menu"
+          aria-controls="global-navmenu"
+        >
           {@html MenuIcon}
         </button>
       </div>
@@ -190,9 +210,12 @@ this my code not urs fuk u
   <aside
     bind:this={desktopLinksCurtain}
     class="select-none z-40 fixed inset-x-0 top-0 bg-kuro-dark1 overflow-hidden"
-    style="height: 0%; pointer-events:none"
+    style="height: 0%; pointer-events:none; display: none;"
   >
-    <div class="mx-auto max-w-screen-lg px-3 lg:px-6 *:px-6 pt-20 space-y-6">
+    <div
+      class="mx-auto max-w-screen-lg px-3 lg:px-6 *:px-6 pt-20 space-y-6"
+      id="global-navmenu"
+    >
       <div
         class="hidden lg:flex justify-between items-center pb-4 border-b border-b-kuro-lavender-200/30"
       >
@@ -202,10 +225,7 @@ this my code not urs fuk u
           <kbd class="text-kuro-lavender-100/50 mr-1 rounded-md text-xs"
             >&lbrack;ESC&rbrack;</kbd
           >
-          <button
-            bind:this={navClose}
-            class="p-2 rounded-md squishy-button"
-          >
+          <button bind:this={navClose} class="p-2 rounded-md squishy-button">
             {@html CloseIcon}
           </button>
         </div>

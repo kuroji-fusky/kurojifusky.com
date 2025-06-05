@@ -139,6 +139,7 @@ const NAV_ITEMS = [
         NAV_ITEMS.map(({ href, text }) => (
           <a
             slot="shortNav"
+            role="menuitem"
             {href}
             class:list={[
               "squishy-button before:hidden lg:before:block",

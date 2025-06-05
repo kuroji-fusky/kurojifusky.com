@@ -6,7 +6,7 @@
 
 <div class="relative">
   <button
-    class="hidden md:block"
+    class="p-2 hidden md:block"
     aria-label="Accessibility options"
     onclick={() => (isPanelOpen = !isPanelOpen)}
   >
