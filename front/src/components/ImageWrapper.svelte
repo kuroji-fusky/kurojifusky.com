@@ -19,6 +19,6 @@
 </script>
 
 <div class="relative [&_img]:z-[1] [&_img]:relative select-none">
-  <div class="absolute inset-0 z-[2]"></div>
+  <div class="absolute inset-0 z-[5]"></div>
   <img alt={alt || ""} class={className} draggable="false" {...others} />
 </div>

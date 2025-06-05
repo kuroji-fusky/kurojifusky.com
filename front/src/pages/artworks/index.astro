@@ -1,0 +1,48 @@
+---
+import { ArtworkLightbox } from "$components/artworks"
+import Clamp from "$components/Clamp.svelte"
+import ImageWrapper from "$components/ImageWrapper.svelte"
+import Layout from "$layouts/Layout.astro"
+
+const TEST = [
+  { artist: "sadcat16hrz", img: "commissions/25/Kinter_full_dougly.PNG" },
+  {
+    artist: "MintyNebula",
+    img: "commissions/24/MintyNebula_Kuro.png"
+  },
+  { artist: "MintyNebula", img: "commissions/24/MintyNebula_Kinter.png" },
+  {
+    artist: "sadcat16hrz",
+    img: "commissions/23/Kuro_dougly.png"
+  },
+  { artist: "MysticSwirlCreation", img: "commissions/24/Kinter_YCH_MysticSwirlCreation_Vibe.png" },
+  { artist: "NyxieDraws", img: "commissions/23/Kuro_YCH_NyxieDraws.png" },
+  { artist: "MintyChipMocha", img: "commissions/23/Kuro_MintyChipMocha.png" },
+  { artist: "MintyChipMocha", img: "commissions/23/Kuro_MintyChipMocha_edit_prize.png" }
+]
+---
+
+<Layout title="Artworks" description="Look at all of these cuties, goddamn">
+  <Clamp class="py-4 inline-flex font-kuro-mono text-sm">
+    <span class="bg-kuro-lavender-700 text-white">All</span>
+    <span>Kuro</span>
+    <span>Kinter</span>
+  </Clamp>
+  <div class="px-3">
+    <section class="grid grid-cols-[repeat(auto-fill,minmax(28rem,1fr))] gap-4">
+      {
+        TEST.map((item) => (
+          <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+            <div class="col-span-2 aspect-square w-full bg-kuro-lavender-500 mb-2">
+              <ImageWrapper src={`https://fuskylabs-cdn.imgix.net/${item.img}?w=1280&h=1280&fm=webp`} class="aspect-square object-cover w-full" alt="" />
+            </div>
+            <span>{item.artist}</span>
+            <span class="text-sm font-kuro-mono text-right">Price</span>
+            <span class="text-sm font-kuro-mono">Type</span>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+</Layout>
+<ArtworkLightbox client:idle />
