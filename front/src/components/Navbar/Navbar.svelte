@@ -63,8 +63,8 @@
       navAnimTree.fromTo(
         navContainer,
         {
-          "--bg-opacity": "80%",
-          backdropFilter: "blur(12px)",
+          "--bg-opacity": "69%",
+          backdropFilter: "blur(32px)",
         },
         {
           "--bg-opacity": "0%",
@@ -157,7 +157,7 @@ this my code not urs fuk u
 <div bind:this={navRootScope} class="contents">
   <nav
     class="z-50 fixed inset-x-0 top-0"
-    style="background-color: color-mix(in oklab, var(--color-kuro-dark2) var(--bg-opacity, 80%), transparent); backdrop-filter: blur(12px);"
+    style="background-color: color-mix(in oklab, var(--color-kuro-dark2) var(--bg-opacity, 69%), transparent); backdrop-filter: blur(32px);"
   >
     <div
       class="py-1.5 flex items-center justify-between px-6 max-w-screen-xl mx-auto"
