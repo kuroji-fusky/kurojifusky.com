@@ -8,7 +8,9 @@
     "preinstall": "npx only-allow yarn",
     "lint:check": "biome check",
     "lint:fix": "biome check --fix",
-    "dev": "yarn workspaces run dev",
+    "dev": "yarn workspace @kuroji-fusky/front dev",
+    "build": "yarn workspace @kuroji-fusky/front build",
+    "preview": "yarn workspace @kuroji-fusky/front preview",
     "knip": "knip"
   },
   "devDependencies": {

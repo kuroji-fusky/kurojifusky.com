@@ -7,7 +7,12 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["node_modules/", ".astro/", ".svelte-kit/", "dist/"]
+    "ignore": [
+      "node_modules/",
+      ".astro/",
+      ".svelte-kit/",
+      "dist/"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -16,7 +21,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 110,
+    "lineWidth": 60,
     "attributePosition": "auto",
     "bracketSpacing": true
   },
@@ -29,6 +34,10 @@
       "recommended": false,
       "correctness": {
         "noUndeclaredVariables": "off"
+      },
+      "style": {
+        "useConst": "warn",
+        "useConsistentArrayType": "error"
       }
     }
   },
