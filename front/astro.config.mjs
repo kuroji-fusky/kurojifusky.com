@@ -10,13 +10,13 @@ import Icons from "unplugin-icons/vite"
 import node from "@astrojs/node"
 
 export default defineConfig({
-  output: "server",
-  // adapter: cloudflare({
-  //   imageService: "passthrough"
-  // }),
-  adapter: node({
-    mode: "standalone"
+  output: "static",
+  adapter: cloudflare({
+    imageService: "passthrough"
   }),
+  // adapter: node({
+  //   mode: "standalone"
+  // }),
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",
