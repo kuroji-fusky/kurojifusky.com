@@ -1,70 +1,55 @@
 ---
-import BlogBeeg from "$components/Blog/BlogBeeg.astro"
-import Clamp from "$components/Clamp.svelte"
 import Hero from "$components/landing/Hero.svelte"
-import SectionPlain from "$components/Sections/SectionPlain.astro"
 import Layout from "$layouts/Layout.astro"
+import ImageWrapper from "$components/ImageWrapper.svelte"
+import ShuffleIcon from "~icons/lucide/shuffle"
+import Link from "$components/Link.astro"
 ---
 
-<Layout title="kuro homepage">
-  <Hero client:load />
-  <Clamp class="my-12 space-y-40 prose-p:leading-relaxed">
-    <SectionPlain
-      level={1}
-      heading="Featured projects"
-      potentalAction={{ t: "View all", l: "/portfolio" }}
-      class="flex gap-8 items-start"
-    >
-      <div class="flex-1 sticky top-16 self-start">
-        <div class="p-6 rounded-md bg-kuro-lavender-900">
-          <h2 class="font-bold text-2xl mb-3">Title</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed
-            distinctio quae neque voluptatem laudantium ut harum illum assumenda
-            veritatis fuga nulla cum
-          </p>
-        </div>
+<Layout title="Under construction | Kuro">
+  <div class="flex flex-col justify-center items-center h-screen">
+    <section id="__interstitial" class="flex flex-col gap-y-3 px-6 [&_img]:w-[380px] *:first:h-[380px]">
+      <ImageWrapper
+        src="https://fuskylabs-cdn.imgix.net/commissions/24/MintyNebula_Kuro.png?w=380&h=380&fm=webp"
+      />
+      <div class="flex">
+        <span id="artist" class="flex-1">
+          <span>by</span>
+          <Link href="https://www.etsy.com/shop/MintyNebula">
+            MintyNebula
+          </Link>
+        </span>
+        <button class="shrink-0">
+          <ShuffleIcon />
+        </button>
       </div>
-      <div class="grid gap-y-8 shrink-0 w-96 *:w-full">
-        {
-          [...Array(2)].map(() => (
-            <div>
-              <div class="bg-gradient-to-tl from-kuro-lavender-600 to-kuro-royalblue-300 h-max aspect-video rounded-lg" />
-              <h2 class="font-bold text-xl mt-3 mb-0.5 leading-relaxed">
-                Title
-              </h2>
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
-            </div>
-          ))
-        }
-      </div>
-    </SectionPlain>
-    <SectionPlain
-      level={1}
-      heading="Latest updates"
-      potentalAction={{ t: "View all", l: "/blog" }}
-    >
-      <div class="flex w-full gap-4 *:w-full">
-        {[...Array(3)].map((_) => <BlogBeeg />)}
-      </div>
-      <div class="mt-12 space-y-4">
-        <h2 class="text-center font-bold text-3xl">
-          Browse more what's cookin'
-        </h2>
-        <div
-          class="mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5"
-        >
-          {
-            [...Array(7)].map((_) => (
-              <span class="inline-block text-base mt-3 px-3.5 py-1 rounded-full border-2">
-                Tag
-              </span>
-            ))
-          }
-        </div>
-      </div>
-    </SectionPlain>
-    <SectionPlain level={1} heading="About me">Placeholder</SectionPlain>
-    <SectionPlain level={2} heading="More">Placeholder</SectionPlain>
-  </Clamp>
+    </section>
+    <section class="mt-10 text-center">
+      <h1 class="font-kuro-hero-heading text-3xl md:text-4xl lg:text-5xl leading-none">Under construction</h1>
+      <p class="mt-6">This site so trashy it's basically a biohazard at this point lol</p>
+    </section>
+  </div>
 </Layout>
+<script>
+  const CUTIES_BASE_URL = "https://fuskylabs-cdn.imgix.net/commissions";
+
+  const commissionsMap = [
+    [3, "Kuro_MintyChipMocha.png", "MintyChipMocha", "www.youtube.com/@MintyChipMocha"],
+    [3, "Kuro_dougly.png", "sadcat16hrz", "x.com/sadcat16hrz"],
+    [3, "Kuro_toboshiro.png", "toboshiro", "www.etsy.com/shop/toboshirosworkshop"],
+    [3, "Kuro_YCH_NyxieDraws.png", "NyxieDraws", "www.etsy.com/shop/NyxieDraws"],
+    [4, "Kinter_ForestLeap-W.png", "ForestLeap", "www.etsy.com/shop/ForestLeapCommission"],
+    [4, "MintyNebula_Kinter.png", "MintyNebula", "www.etsy.com/shop/MintyNebula"],
+    [4, "MintyNebula_Kuro.png", "MintyNebula", "www.etsy.com/shop/MintyNebula"],
+  ];
+
+  const c = document.getElementById("__interstitial")!;
+
+  c.getElementsByTagName("button")[0].addEventListener("click", () => {
+    const rnd = commissionsMap[Math.floor(Math.random() * commissionsMap.length)]
+
+    c.getElementsByTagName("img")[0].src = CUTIES_BASE_URL.concat("/2", rnd[0].toString(), "/", rnd[1].toString(), "?w=380&h=380&fm=webp")
+    c.querySelector("#artist > a > span")!.textContent = rnd[2].toString()
+    c.querySelector("#artist > a")!.href = "https://".concat(rnd[3].toString())
+  })
+</script>

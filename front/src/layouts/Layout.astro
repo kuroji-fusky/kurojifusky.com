@@ -1,10 +1,10 @@
 ---
-import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
+import {
+  siteAuthorHandle as me,
+  siteTitle
+} from "$lib/utils"
 import "../styles/global.css"
 
-import Footer from "$components/Footer.astro"
-import Navbar from "$components/Navbar"
-import NavList from "$components/Navbar/NavList.svelte"
 import { Schema } from "astro-seo-schema"
 import { getCollection } from "astro:content"
 
@@ -18,14 +18,17 @@ interface Props {
   }[]
 }
 
-const { site } = Astro
-
-const { title, description, webpageType = "website" } = Astro.props
+const {
+  title,
+  description,
+  webpageType = "website"
+} = Astro.props
 
 const { pathname } = Astro.url
 
 const canonicalUrl = new URL(pathname, Astro.site)
-const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
+const _title =
+  pathname !== "/" ? `${title} | ${siteTitle}` : title
 
 // Content to be spoon-fed in the cilent navbar
 const portaPotty = await getCollection("portfolio")
@@ -58,7 +61,10 @@ const NAV_ITEMS = [
     subitems: [
       { href: "/artworks/kuro", text: "Kuro" },
       { href: "/artworks/kinter", text: "Kinter" },
-      { href: "/artworks/ref-sheets", text: "Reference sheets" }
+      {
+        href: "/artworks/ref-sheets",
+        text: "Reference sheets"
+      }
     ]
   },
   {
@@ -120,21 +126,12 @@ const NAV_ITEMS = [
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
   >
-    <script>
-      customElements.define(
-        "kuro-clamp-container",
-        class extends HTMLElement {
-          constructor() {
-            super();
-          }
-        },
-      );
-    </script>
     <a
       href="#skip-to-content"
       class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
       data-astro-prefetch="false">Skip to content?</a
     >
+    {/*
     <Navbar client:idle>
       {
         NAV_ITEMS.map(({ href, text }) => (
@@ -179,17 +176,21 @@ const NAV_ITEMS = [
         ),
       )}
     </Navbar>
+    */}
     <div id="skip-to-content">
       <slot />
     </div>
-    <Footer />
+    {/*
+   <Footer />
+    */}
   </body>
 </html>
 
+{/*
 <style is:global lang="postcss">
   @reference "../styles/global.css";
-
   .squishy-button {
     @apply relative before:duration-[250ms] before:pointer-events-none before:absolute before:-z-10 before:rounded-sm before:size-full before:inset-0 before:transition-all hover:before:bg-kuro-lavender-200/20 before:scale-[0.96] hover:before:scale-100;
   }
 </style>
+    */}
