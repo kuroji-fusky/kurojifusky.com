@@ -1,22 +1,22 @@
+import node from "@astrojs/node"
 import cloudflare from "@astrojs/cloudflare"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
-import tailwindcss from "@tailwindcss/vite"
 import svelte from "@astrojs/svelte"
 import { defineConfig, passthroughImageService } from "astro/config"
+import tailwindcss from "@tailwindcss/vite"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
-import node from "@astrojs/node"
-
 export default defineConfig({
   output: "server",
-  // adapter: cloudflare({
-  //   imageService: "passthrough"
-  // }),
-  adapter: node({
-    mode: "standalone"
-  }),
+  adapter: !!process.env.CF_MODE
+    ? cloudflare({
+        imageService: "passthrough"
+      })
+    : node({
+        mode: "standalone"
+      }),
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",

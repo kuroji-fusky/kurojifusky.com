@@ -10,6 +10,7 @@
     "lint:fix": "biome check --fix",
     "dev": "yarn workspace @kuroji-fusky/front dev",
     "build": "yarn workspace @kuroji-fusky/front build",
+    "build:cf": "yarn workspace @kuroji-fusky/front build:cf",
     "preview": "yarn workspace @kuroji-fusky/front preview",
     "knip": "knip"
   },

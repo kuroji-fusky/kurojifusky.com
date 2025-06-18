@@ -7,6 +7,7 @@
     "astro": "astro",
     "dev": "astro dev",
     "build": "astro build",
+    "build:cf": "cross-env CF_MODE=1 && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "clsx": "^2.1.1",
+    "cross-env": "^7.0.3",
     "lodash-es": "^4.17.21",
     "tailwind-merge": "^2.5.2"
   }
