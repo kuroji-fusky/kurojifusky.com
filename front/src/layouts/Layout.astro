@@ -7,6 +7,7 @@ import Navbar from "$components/Navbar"
 import NavList from "$components/Navbar/NavList.svelte"
 import { Schema } from "astro-seo-schema"
 import { getCollection } from "astro:content"
+import { ClientRouter } from "astro:transitions"
 
 interface Props {
   title: string
@@ -114,6 +115,8 @@ const NAV_ITEMS = [
 
     {/* Sitemap */}
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <ClientRouter />
 
     <slot name="other-meta" />
   </head>
