@@ -1,16 +1,21 @@
 ---
-import ExtLinkIcon from "~icons/lucide/arrow-up-right";
+import { ExtLinkIcon } from "./icons"
 
 interface Props {
-  href: string;
-  class?: string;
-  noReferrer?: true;
-  explicitIcon?: boolean;
+  href: string
+  class?: string
+  noReferrer?: true
+  explicitIcon?: boolean
 }
 
-const { href, class: cn, noReferrer, explicitIcon = true } = Astro.props;
+const {
+  href,
+  class: cn,
+  noReferrer,
+  explicitIcon = true
+} = Astro.props
 
-const isUrlHasHttp = href.startsWith("http");
+const isUrlHasHttp = href.startsWith("http")
 ---
 
 <a

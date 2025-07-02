@@ -1,14 +1,13 @@
 <script lang="ts">
-  import LogoBrand from "~icons/kuro/logo-brand?raw";
   import SearchIcon from "~icons/lucide/search?raw";
   import MenuIcon from "~icons/lucide/menu?raw";
   import CloseIcon from "~icons/lucide/x?raw";
   import ChevronDownIcon from "~icons/lucide/chevron-down?raw";
-  import ChevronRightIcon from "~icons/lucide/chevron-down?raw";
   import { onMount, type Snippet } from "svelte";
 
   import { gsap } from "gsap";
   import AccessibilityPanel from "$components/a11y/AccessibilityPanel.svelte";
+  import { KuroLogoBrandRaw } from "$components/icons";
 
   interface Props {
     shortNav: Snippet;
@@ -167,7 +166,7 @@ this my code not urs fuk u
         title="Home page"
         class="py-2 pr-1 flex-shrink-0 [&_svg]:!h-[1.33rem]"
       >
-        {@html LogoBrand}
+        {@html KuroLogoBrandRaw}
       </a>
 
       <div

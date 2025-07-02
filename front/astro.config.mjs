@@ -36,8 +36,7 @@ export default defineConfig({
       Icons({
         compiler: "astro",
         customCollections: {
-          kuro: FileSystemIconLoader("./src/lib/icons/kuro"),
-          brands: FileSystemIconLoader("./src/lib/icons/brands")
+          kuro: FileSystemIconLoader("./src/lib/icons/kuro")
         }
       })
     ]

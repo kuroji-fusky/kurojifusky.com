@@ -1,6 +1,7 @@
 <script lang="ts">
   import A11yIcon from "~icons/lucide/person-standing?raw";
 
+  // biome-ignore lint/style/useConst:
   let isPanelOpen = $state(false);
 </script>
 
@@ -14,6 +15,12 @@
   </button>
 
   {#if isPanelOpen}
-    <div class="absolute top-10 mt-2 p-2 rounded-sm border right-0">nice</div>
+    <div
+      class="absolute top-10 mt-2 p-2 rounded-sm border right-0 bg-kuro-dark2 w-fit"
+    >
+      <div>squish content</div>
+      <div>reduced motion</div>
+      <div>menace mode</div>
+    </div>
   {/if}
 </div>
