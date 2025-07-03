@@ -1,0 +1,20 @@
+---
+interface Props {
+  urls: string[]
+}
+
+const { urls } = Astro.props
+---
+
+{
+  urls.map((l) => (
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={l}
+      crossorigin="anonymous"
+      fetchpriority="high"
+    />
+  ))
+}

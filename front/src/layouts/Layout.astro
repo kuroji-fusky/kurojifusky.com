@@ -5,9 +5,18 @@ import "../styles/global.css"
 import Footer from "$components/Footer.astro"
 import Navbar from "$components/Navbar"
 import NavList from "$components/Navbar/NavList.svelte"
+import PreloadFont from "$components/PreloadFont.astro"
+
 import { Schema } from "astro-seo-schema"
 import { getCollection } from "astro:content"
 import { ClientRouter } from "astro:transitions"
+
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url"
+import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url"
+import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url"
+import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url"
+
+import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url"
 
 interface Props {
   title: string
@@ -19,13 +28,16 @@ interface Props {
   }[]
 }
 
-const { site } = Astro
+const { props, url, site } = Astro
 
-const { title, description, webpageType = "website" } = Astro.props
+const {
+  title,
+  description,
+  webpageType = "website"
+} = props
+const { pathname } = url
 
-const { pathname } = Astro.url
-
-const canonicalUrl = new URL(pathname, Astro.site)
+const canonicalUrl = new URL(pathname, site)
 const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
 
 // Content to be spoon-fed in the cilent navbar
@@ -102,7 +114,10 @@ const NAV_ITEMS = [
 
     <link rel="canonical" href={canonicalUrl} />
 
-    {/* Sitemap */}
+    {/* Preload stuff */}
+    <PreloadFont urls={[inter400, inter400italic, inter700, unbounded400, ibmPlex400]} />
+
+    {/* Schema */}
     <Schema
       item={{
         "@context": "https://schema.org",
