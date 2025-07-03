@@ -4,8 +4,8 @@ import RssIcon from "~icons/lucide/rss"
 
 import KuroLogoBrandRaw from "~icons/kuro/logo-brand?raw"
 import KuroLogoBrand from "~icons/kuro/logo-brand"
-import KuroWordmarkRaw from "~icons/kuro/logo-workmark?raw"
-import KuroWordmark from "~icons/kuro/logo-workmark"
+import KuroWordmarkRaw from "~icons/kuro/logo-wordmark?raw"
+import KuroWordmark from "~icons/kuro/logo-wordmark"
 
 export {
   ExtLinkIcon,
