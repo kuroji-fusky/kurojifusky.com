@@ -1,0 +1,52 @@
+---
+import {
+  KuroLogoBrand,
+  SearchIcon,
+  MonitorIcon,
+  MenuIcon,
+} from "$components/icons";
+---
+
+<header class="relative mb-10">
+  <div class="fixed z-20 inset-x-0 top-0 bg-kuro-dark2">
+    <nav
+      class="mx-auto max-w-screen-xl px-6 py-1.5 flex justify-between top-0 inset-x-0"
+    >
+      {/* Logo */}
+      <div class="my-auto flex flex-row-reverse relative">
+        <a
+          href="#skip-to-content"
+          class="whitespace-nowrap text-sm max-w-fit absolute ml-8 -top-1 left-0 pointer-events-none focus:pointer-events-auto focus:opacity-100 opacity-0 bg-kuro-lavender-700 z-50 px-3 py-1 rounded-md"
+          data-astro-prefetch="false">Skip to content?</a
+        >
+        <a href="/" class="relative -left-1 p-1.5">
+          <KuroLogoBrand width="1.2rem" height="1.2rem" />
+        </a>
+      </div>
+      {/* Nav items */}
+      <div class="flex items-center">
+        <button class="p-1.5 mx-3" aria-label="Toggle menu">
+          <MenuIcon width="1.1em" height="1.1em" />
+        </button>
+        <div class="flex items-center gap-x-0.5 text-sm font-kuro-mono select-none">
+          <a href="/portfolio" class="px-3 py-1 rounded-md">Portfolio</a>
+          <a href="/artworks" class="px-3 py-1 rounded-md">Artworks</a>
+          <a href="/blog" class="px-3 py-1 rounded-md">Blog</a>
+          <a href="/about" class="px-3 py-1 rounded-md">About</a>
+        </div>
+      </div>
+      <div class="flex items-center gap-x-3">
+        <button class="p-1.5" aria-label="Search" title="Search">
+          <SearchIcon width="1.1em" height="1.1em" />
+        </button>
+        <button
+          class="p-1.5 md:block hidden"
+          aria-label="Site theme and accessibility"
+          title="Options"
+        >
+          <MonitorIcon width="1.1em" height="1.1em" />
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

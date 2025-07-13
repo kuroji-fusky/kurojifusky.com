@@ -10,11 +10,11 @@
   const { class: cls, children }: Props = $props();
 </script>
 
-<kuro-clamp-container
+<div
   class={cn([
-    "not-[.flex,.inline-block]:block mx-auto max-w-screen-xl px-6",
+    "not-[.flex,.inline-flex,.inline-block]:block mx-auto max-w-screen-xl px-6",
     cls,
   ])}
 >
   {@render children()}
-</kuro-clamp-container>
+</div>

@@ -3,7 +3,7 @@ import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
 import "../styles/global.css"
 
 import Footer from "$components/Footer.astro"
-import Navbar from "$components/Navbar"
+import Navbar from "$components/Navbar/Navbar.astro"
 import NavList from "$components/Navbar/NavList.svelte"
 import PreloadFont from "$components/PreloadFont.astro"
 
@@ -58,12 +58,7 @@ const NAV_ITEMS = [
   },
   {
     href: "/blog",
-    text: "Blog",
-    subitems: [
-      { href: "/blog/engineering", text: "Engineering" },
-      { href: "/blog/ui-and-design", text: "Design" },
-      { href: "/blog/others", text: "Others" }
-    ]
+    text: "Blog"
   },
   {
     href: "/artworks",
@@ -115,7 +110,9 @@ const NAV_ITEMS = [
     <link rel="canonical" href={canonicalUrl} />
 
     {/* Preload stuff */}
-    <PreloadFont urls={[inter400, inter400italic, inter700, unbounded400, ibmPlex400]} />
+    <PreloadFont
+      urls={[inter400, inter400italic, inter700, unbounded400, ibmPlex400]}
+    />
 
     {/* Schema */}
     <Schema
@@ -137,77 +134,14 @@ const NAV_ITEMS = [
   </head>
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
+    transition:animate="none"
   >
-    <script>
-      customElements.define(
-        "kuro-clamp-container",
-        class extends HTMLElement {
-          constructor() {
-            super();
-          }
-        },
-      );
-    </script>
-    <a
-      href="#skip-to-content"
-      class="fixed top-2 left-2 pointer-events-none focus:pointer-events-auto focus:opacity-100 focus:translate-x-0 translate-x-full opacity-0 bg-kuro-lavender-700 z-50 px-4 py-2.5 rounded-md"
-      data-astro-prefetch="false">Skip to content?</a
-    >
-    <Navbar client:idle>
-      {
-        NAV_ITEMS.map(({ href, text }) => (
-          <a
-            slot="shortNav"
-            role="menuitem"
-            {href}
-            class:list={[
-              "squishy-button before:hidden lg:before:block",
-              "px-3 py-1.5",
-              pathname.startsWith(href) ? "text-kuro-lavender-200" : null,
-            ]}
-            aria-current={pathname === href ? "page" : null}
-            data-current-root-route={
-              pathname.startsWith(href) ? "" : undefined
-            }
-          >
-            {text}
-          </a>
-        ))
-      }
-      {
-        NAV_ITEMS.map(({ href: hrefHeading, text: textHeading, subitems, rowSpan }) => (
-          <div
-            slot="longNav"
-            role="listbox"
-            class="space-y-2"
-            style={
-              rowSpan
-                ? `grid-row: span ${rowSpan}/span ${rowSpan}`
-                : undefined
-            }
-          >
-            <NavList {hrefHeading} {textHeading} client:idle>
-              {subitems.map(({ href, text }) => (
-                <a {href} class="block text-lg mb-1 last:mb-0">
-                  {text}
-                </a>
-              ))}
-            </NavList>
-          </div>
-        ),
-      )}
-    </Navbar>
-    <div id="skip-to-content">
-      <slot />
+    <div class="">
+    <Navbar />
+      <div id="skip-to-content">
+        <slot />
+      </div>
+      <Footer />
     </div>
-    <Footer />
   </body>
 </html>
-
-<style is:global lang="postcss">
-  @reference "../styles/global.css";
-
-  .squishy-button {
-    @apply relative before:duration-[250ms] before:pointer-events-none before:absolute before:-z-10 before:rounded-sm before:size-full before:inset-0 before:transition-all hover:before:bg-kuro-lavender-200/20 before:scale-[0.96] hover:before:scale-100;
-  }
-</style>
