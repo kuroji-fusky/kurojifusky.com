@@ -13,6 +13,6 @@
   };
 </script>
 
-<kuro-ui-portal use:moveDom={target} style="display: contents;">
+<div data-kuro-portal="" use:moveDom={target} style="display: contents;">
   {@render children()}
-</kuro-ui-portal>
+</div>
