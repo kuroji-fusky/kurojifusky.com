@@ -1,21 +1,19 @@
 ---
-import Clamp from "$components/Clamp.svelte"
-import BlogCompact from "$components/Blog/BlogCompact.astro"
-import Layout from "$layouts/Layout.astro"
-import { RssIcon } from "$components/icons"
+import Clamp from "$components/Clamp.astro";
+import BlogCompact from "$components/blog/BlogCompact.astro";
+import Layout from "$layouts/Layout.astro";
 ---
 
 <Layout title="Blog">
   <Clamp class="space-y-8 px-6 mt-10">
-    <header class="flex justify-between items-center">
+    <nav class="flex justify-between items-center">
       <div class="space-x-3 text-sm font-kuro-mono">
         <span>Latest</span>
         <span>Design</span>
         <span>Engineering</span>
         <span>Others/Personal</span>
       </div>
-      <a href="/atom"><RssIcon width="1em" height="1em" /></a>
-    </header>
+    </nav>
     <section class="space-y-8">
       <div
         class="grid grid-cols-1 border-2 border-b-0 border-dashed border-kuro-lavender-300/25"

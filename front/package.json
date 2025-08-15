@@ -25,24 +25,24 @@
     "@iconify-json/fa-brands": "^1.1.8",
     "@iconify-json/lucide": "^1.1.200",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.17",
+    "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.8.0",
     "astro-icon": "^1.1.0",
     "astro-seo-schema": "^4.0.2",
     "googleapis": "^137.1.0",
-    "gsap": "^3.13.0",
+    "lit": "^3.2.0",
+    "lodash-es": "^4.17.21",
+    "nanostores": "^1.0.1",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.4",
     "svelte": "^5.26.2",
-    "tailwindcss": "^4.0.17",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "unplugin-icons": "^0.19.0"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
-    "clsx": "^2.1.1",
-    "cross-env": "^7.0.3",
-    "lodash-es": "^4.17.21",
-    "tailwind-merge": "^2.5.2"
+    "cross-env": "^7.0.3"
   }
 }

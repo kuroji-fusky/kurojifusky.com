@@ -1,0 +1,14 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  class?: string;
+}
+
+const { class: cls } = Astro.props;
+const mergedClasses = twMerge("block", "mx-auto max-w-screen-xl", cls);
+---
+
+<div data-clamp-container="" class={mergedClasses}>
+  <slot />
+</div>

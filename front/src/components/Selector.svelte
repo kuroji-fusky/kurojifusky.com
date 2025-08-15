@@ -20,7 +20,6 @@
 </script>
 
 <div>
-  <!-- <div>{options.find((x) => x.key === defaultVal)!.label}</div> -->
   <div
     class="font-kuro-mono flex flex-col lg:flex-row lg:items-center gap-y-0.5 gap-x-2 select-none"
   >

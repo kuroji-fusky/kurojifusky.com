@@ -12,16 +12,20 @@ export default defineConfig({
   output: "server",
   adapter: !!process.env.CF_MODE
     ? cloudflare({
-        imageService: "passthrough"
-      })
+      imageService: "passthrough"
+    })
     : node({
-        mode: "standalone"
-      }),
+      mode: "standalone"
+    }),
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",
     "/posts/[slug]": "/blog/[slug]",
     "/post/[slug]": "/blog/[slug]"
+  },
+
+  build: {
+    assets: "_k"
   },
 
   prefetch: {
@@ -39,7 +43,7 @@ export default defineConfig({
           kuro: FileSystemIconLoader("./src/lib/icons/kuro")
         }
       })
-    ]
+    ],
   },
 
   site: "https://kurojifusky.com",

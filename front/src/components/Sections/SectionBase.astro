@@ -11,14 +11,12 @@ interface Props {
   };
 }
 
-const { heading, class: cn, containerClass } = Astro.props;
+const { heading, class: cn, containerClass, action, ...others } = Astro.props;
 ---
 
-<section id={kebabCase(heading)} class:list={containerClass}>
-  <!-- section:base -->
+<section id={kebabCase(heading)} class:list={containerClass} {...others}>
   <slot name="heading" />
   <div class={cn}>
     <slot />
   </div>
-  <!-- section:base end -->
 </section>

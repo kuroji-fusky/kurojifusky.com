@@ -1,18 +1,22 @@
 ---
-import ImageWrapper from "$components/ImageWrapper.svelte"
-import Layout from "$layouts/Layout.astro"
-import oops from "../../public/oops.jpg"
+import ImageWrapper from "$components/ImageWrapper.astro";
+import Layout from "$layouts/Layout.astro";
+import oops from "../../public/oops.jpg";
 ---
 
+{/* @ts-ignore: description not needed for a 404 page lol */}
 <Layout title="Page not found">
   <div class="m-auto grid place-items-center px-6 h-[calc(100dvh-11rem)]">
     <div class="flex flex-col items-center">
       <ImageWrapper src={oops.src} alt="" class="rounded-lg w-60" />
-      <h1 class="font-bold font-kuro-hero-heading text-7xl leading-none my-5"
-        >OOP</h1
+      <h1
+        class="font-bold font-kuro-hero-heading text-6xl lg:text-7xl leading-none my-5"
       >
-      <span class="text-xl text-center"
-        >Where you looking for somethin'? Looks like you went to the wrong side of the road buddy.</span
+        OOP
+      </h1>
+      <span class="text-lg lg:text-xl text-center"
+        >Where you looking for somethin'? Looks like you went to the wrong side
+        of the road buddy.</span
       >
       <div class="mt-8">
         <a
