@@ -1,0 +1,22 @@
+---
+import { navLinks } from "./links";
+---
+
+<script>
+  import { debounce } from "lodash-es";
+
+  document.addEventListener("astro:page-load", () => {});
+</script>
+
+<div class="flex justify-center">
+  <div class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono">
+    {
+      navLinks.map(({ href, text }) => (
+        <a {href} class="py-1.5 px-2 rounded-md">
+          {text}
+        </a>
+      ))
+    }
+  </div>
+  <div id="breadcrumb" style="display: none"></div>
+</div>

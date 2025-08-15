@@ -1,112 +1,43 @@
 ---
-import { siteAuthorHandle as me, siteTitle } from "$lib/utils"
-import "../styles/global.css"
+import "../styles/global.css";
 
-import Footer from "$components/Footer.astro"
-import Navbar from "$components/Navbar"
-import PreloadFont from "$components/PreloadFont.astro"
+import { siteTitle } from "$lib/utils";
+import { Navbar, Footer } from "$components/base";
+import PreloadFont from "$components/PreloadFont.astro";
+import Meta from "$components/base/Meta.astro";
+import { Schema } from "astro-seo-schema";
+import { ClientRouter } from "astro:transitions";
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url";
+import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
+import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url";
+import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url";
+import SearchPalette from "$components/SearchPalette.astro";
 
-import { Schema } from "astro-seo-schema"
-import { getCollection } from "astro:content"
-import { ClientRouter } from "astro:transitions"
+type MetaProps = Omit<Parameters<typeof Meta>[0], "canonicalUrl">;
+interface Props extends MetaProps {}
 
-import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url"
-import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url"
-import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url"
-import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url"
+const { props, url, site } = Astro;
 
-import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url"
+const { title: titeProp, description, webpageType = "website" } = props;
+const { pathname } = url;
 
-interface Props {
-  title: string
-  description?: string
-  webpageType?: "website" | "article"
-  crumbs?: {
-    text: string
-    link: string
-  }[]
-}
-
-const { props, url, site } = Astro
-
-const {
-  title,
-  description,
-  webpageType = "website"
-} = props
-const { pathname } = url
-
-const canonicalUrl = new URL(pathname, site)
-const _title = pathname !== "/" ? `${title} | ${siteTitle}` : title
-
-// Content to be spoon-fed in the cilent navbar
-const portaPotty = await getCollection("portfolio")
-const featuredPorty = portaPotty
-  .filter((i) => i.data.isFeatured)
-  .map(({ id, data }) => ({
-    text: data.title,
-    href: `/portfolio/${id}`
-  }))
-
-const NAV_ITEMS = [
-  {
-    text: "Portfolio",
-    href: "/portfolio",
-    rowSpan: 2,
-    subitems: featuredPorty
-  },
-  {
-    href: "/blog",
-    text: "Blog"
-  },
-  {
-    href: "/artworks",
-    text: "Artworks",
-    subitems: [
-      { href: "/artworks/kuro", text: "Kuro" },
-      { href: "/artworks/kinter", text: "Kinter" },
-      { href: "/artworks/ref-sheets", text: "Reference sheets" }
-    ]
-  },
-  {
-    text: "About",
-    href: "/about",
-    rowSpan: 2,
-    subitems: [
-      { text: "Branding", href: "/about/branding" },
-      { text: "Thanks", href: "/about/thanks" },
-      { text: "Contact", href: "/contact" }
-    ]
-  }
-]
+const canonicalUrl = new URL(pathname, site).toString();
+const title = pathname !== "/" ? `${titeProp} | ${siteTitle}` : titeProp;
 ---
 
-<html lang="en" class="scroll-pt-20 scheme-dark">
+<html lang="en" class="scroll-pt-20 dark:scheme-dark">
   <head>
     <meta charset="utf-8" />
-    <title>{_title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" href="/icon_128.png" sizes="128x128" />
+    <script>
+      import("$components/FocusLock");
+    </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-
-    {/* OG tags */}
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:site_title" content={siteTitle} />
-    <meta property="og:type" content={webpageType} />
-    <meta property="og:url" content={canonicalUrl} />
-
-    {
-      /* Twitter tags, won't include "twitter:title" since it falls back to "og:*" meta tags */
-    }
-    <meta name="twitter:creator" content={me} />
-    <meta name="twitter:site" content={me} />
-    <meta name="twitter:url" content={canonicalUrl} />
-
-    <link rel="canonical" href={canonicalUrl} />
+    <Meta {title} {description} {webpageType} {canonicalUrl} />
 
     {/* Preload stuff */}
     <PreloadFont
@@ -124,23 +55,38 @@ const NAV_ITEMS = [
       }}
     />
 
-    {/* Sitemap */}
+    {/* Sitemap and RSS */}
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      href={new URL("rss.xml", site).toString()}
+      type="application/rss+xml"
+    />
+
+    {/* Analytics */}
+    <script
+      is:inline
+      defer
+      src="https://plausible.io/js/script.js"
+      data-domain={site?.hostname}></script>
 
     <ClientRouter />
-
-    <slot name="other-meta" />
   </head>
   <body
     class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
     transition:animate="none"
   >
-    <div class="">
+    <style is:global>
+      focus-lock-region {
+        display: contents;
+      }
+    </style>
     <Navbar />
-      <div id="skip-to-content">
-        <slot />
-      </div>
-      <Footer />
-    </div>
+    <main id="skip-to-content">
+      <slot />
+      <kuro-cutie-assistant state="idle"> </kuro-cutie-assistant>
+    </main>
+    <Footer />
+    <SearchPalette />
   </body>
 </html>

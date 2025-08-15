@@ -1,0 +1,69 @@
+---
+import { MenuIcon } from "$components/icons";
+import { KuroLogoBrand, SearchIcon, MonitorIcon } from "$components/icons";
+import NavbarDrawer from "./NavbarDrawer.astro";
+import NavbarDynamic from "./NavbarDynamic.astro";
+---
+
+<header class="relative mb-10">
+  <div
+    class="fixed z-20 inset-x-0 top-0 bg-kuro-dark2/(--nav-header-opacity,75%) backdrop-blur-(--nav-header-opacity,theme(blur.2xl))"
+  >
+    <nav
+      class="relative mx-auto max-w-screen-xl px-6 py-1.5 top-0 inset-x-0 h-10"
+    >
+      {/* Logo */}
+      <div
+        class="absolute left-6 inset-y-0 my-auto flex flex-row-reverse items-center"
+      >
+        <a
+          href="#skip-to-content"
+          class="whitespace-nowrap text-sm max-w-fit absolute ml-8 left-0 pointer-events-none focus:pointer-events-auto focus:opacity-100 opacity-0 bg-kuro-lavender-700 z-50 px-3 py-2 rounded-md"
+          data-astro-prefetch="false">Skip content</a
+        >
+        <a href="/" class="p-1.5 -translate-x-1" title="Home :3">
+          <KuroLogoBrand width="1em" height="1em" aria-label="Kuro logo" />
+        </a>
+      </div>
+      {/* Nav items */}
+      <NavbarDynamic />
+      {/* Actions */}
+      <div class="absolute right-6 inset-y-0 flex items-center gap-x-1">
+        <button
+          class="py-1.5 px-2 md:block hidden rounded-sm"
+          aria-label="Site theme and accessibility"
+          title="Options"
+        >
+          <MonitorIcon width="1em" height="1em" />
+        </button>
+        <hr class="h-2.5 border border-slate-500 hidden lg:block" />
+        <button
+          class="py-1.5 pl-2 pr-2 rounded-sm inline-flex items-center"
+          aria-label="Search or press Control or Command K to start search"
+          title="Search"
+        >
+          <div
+            class="text-xs pr-2 select-none opacity-80 hidden lg:block space-x-1"
+            aria-hidden="true"
+          >
+            <kbd class="inline-block">Ctrl</kbd>
+            <kbd class="inline-block">K</kbd>
+          </div>
+          <SearchIcon width="1em" height="1em" />
+        </button>
+        <button
+          class="p-1.5 mr-1 md:hidden block"
+          aria-label="Toggle menu"
+          aria-controls="nav-mobile"
+        >
+          <MenuIcon width="1em" height="1em" />
+        </button>
+      </div>
+    </nav>
+    {/* Nav expanded list: desktop */}
+    <focus-lock-region has-lock-focus="false">
+      <div id="nav-expanded-list"></div>
+    </focus-lock-region>
+    <NavbarDrawer />
+  </div>
+</header>
