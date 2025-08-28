@@ -33,9 +33,6 @@ const title = pathname !== "/" ? `${titeProp} | ${siteTitle}` : titeProp;
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" href="/icon_128.png" sizes="128x128" />
-    <script>
-      import("$components/FocusLock");
-    </script>
 
     <Meta {title} {description} {webpageType} {canonicalUrl} />
 
@@ -70,6 +67,11 @@ const title = pathname !== "/" ? `${titeProp} | ${siteTitle}` : titeProp;
       src="https://plausible.io/js/script.js"
       data-domain={site?.hostname}></script>
 
+    {/* Client stuff */}
+    <script>
+      import("$components/FocusLock");
+    </script>
+
     <ClientRouter />
   </head>
   <body
@@ -87,6 +89,6 @@ const title = pathname !== "/" ? `${titeProp} | ${siteTitle}` : titeProp;
       <kuro-cutie-assistant state="idle"> </kuro-cutie-assistant>
     </main>
     <Footer />
-    <SearchPalette />
+    <!-- <SearchPalette /> -->
   </body>
 </html>
