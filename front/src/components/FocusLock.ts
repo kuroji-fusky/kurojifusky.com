@@ -6,12 +6,6 @@ export class FocusLock extends LitElement {
   @property({ type: Boolean, attribute: "has-lock-focus" })
   haslockFocus?: boolean
 
-  // static properties = {
-  //   hasLockFocus: {
-  //     type: Boolean
-  //   }
-  // }
-
   static styles = css`
     #focus-lock-region {
       position: absolute;
