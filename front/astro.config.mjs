@@ -2,7 +2,6 @@ import node from "@astrojs/node"
 import cloudflare from "@astrojs/cloudflare"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
-import svelte from "@astrojs/svelte"
 import { defineConfig, passthroughImageService } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
@@ -32,7 +31,7 @@ export default defineConfig({
     prefetchAll: true
   },
 
-  integrations: [sitemap(), mdx(), svelte()],
+  integrations: [sitemap(), mdx()],
 
   vite: {
     plugins: [

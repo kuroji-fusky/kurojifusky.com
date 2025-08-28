@@ -1,1 +1,0 @@
-# frickin gsap like timeline feature except it's done with svelte animations yipppppeeeeee

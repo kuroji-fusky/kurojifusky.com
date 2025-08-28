@@ -3,7 +3,7 @@
   "name": "kurojifusky.com",
   "type": "module",
   "version": "0.0.1",
-  "workspaces": ["front", "strapi", "packages/svelte-timeline"],
+  "workspaces": ["front", "strapi"],
   "scripts": {
     "preinstall": "npx only-allow yarn",
     "lint:check": "biome check",
