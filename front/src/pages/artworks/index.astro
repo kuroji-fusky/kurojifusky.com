@@ -1,73 +1,9 @@
 ---
-import { ArtworkLightbox } from "$components/artworks"
-import Clamp from "$components/Clamp.astro"
-import Selector from "$components/Selector.svelte"
-import ImageWrapper from "$components/ImageWrapper.astro"
-import Layout from "$layouts/Layout.astro"
-import { ExtLinkIcon } from "$components/icons"
-
-const TEST = [
-  {
-    artist: "sadcat16hrz",
-    img: "commissions/25/Kinter_full_dougly.PNG",
-    type: "Commission"
-  },
-  {
-    artist: "MintyNebula",
-    img: "commissions/24/MintyNebula_Kuro.png",
-    type: "Commission"
-  },
-  {
-    artist: "MintyNebula",
-    img: "commissions/24/MintyNebula_Kinter.png",
-    type: "Commission"
-  },
-  {
-    artist: "MysticSwirlCreation",
-    img: "commissions/24/Kinter_YCH_MysticSwirlCreation_Vibe.png",
-    type: "YCH"
-  },
-  {
-    artist: "ForestLeap",
-    img: "commissions/24/Kinter_ForestLeap-W.png",
-    type: "Commission"
-  },
-  {
-    artist: "NyxieDraws",
-    img: "commissions/23/Kuro_YCH_NyxieDraws.png",
-    type: "YCH"
-  },
-  {
-    artist: "toboshiro",
-    img: "commissions/23/Kuro_toboshiro.png",
-    type: "Commission"
-  },
-  {
-    artist: "sadcat16hrz",
-    img: "commissions/23/Kuro_dougly.png",
-    type: "Commission"
-  },
-  {
-    artist: "MintyChipMocha",
-    img: "commissions/23/Kuro_MintyChipMocha.png",
-    type: "Commission"
-  },
-  {
-    artist: "MintyChipMocha",
-    img: "commissions/23/Kuro_MintyChipMocha_edit_prize.png",
-    type: "Special / Prize winner"
-  },
-  {
-    artist: "JAKEmegaSNAKE",
-    img: "commissions/22/Kuro_Full_Cursor_JAKEmegaSNAKE.png",
-    type: "Free/Gift Art"
-  },
-  {
-    artist: "JAKEmegaSNAKE",
-    img: "commissions/21/Kuro_RV_Concept.png",
-    type: "Free/Gift Art"
-  }
-]
+import Clamp from "$components/Clamp.astro";
+import ImageWrapper from "$components/ImageWrapper.astro";
+import Layout from "$layouts/Layout.astro";
+import { ExtLinkIcon } from "$components/icons";
+import test_items from "./cuties.json"
 
 const SonaOptions = [
   { key: "all", label: "All", href: "/artworks" },
@@ -86,9 +22,8 @@ const SonaOptions = [
 
 <Layout title="Artworks" description="Look at all of these cuties, goddamn">
   <Clamp class="py-4 flex justify-between text-sm gap-x-2">
-    {/* @ts-expect-error: Some complicated shit on typings */}
-    <Selector client:idle options={SonaOptions} defaultVal="all" />
-    <div class="inline-flex items-center gap-x-2.5">
+    <div class="flex items-center gap-x-2.5">
+      <div class="flex-1"></div>
       <label for="art-type" class="space-x-1">
         <span>Type</span>
         <select name="art-type" id="art-type" class="bg-kuro-dark2 border border-kuro-lavender-100/50 text-sm py-1 px-1.5 rounded-sm">
@@ -114,21 +49,28 @@ const SonaOptions = [
   <div class="px-3">
     <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
       {
-        TEST.map((item) => (
+        test_items.map((item) => (
           <div class="grid grid-cols-[1fr,auto] gap-x-2 gap-y-1 group">
             <div class="col-span-2 w-full bg-kuro-dark1 mb-2 relative overflow-hidden rounded-sm">
               <button class="hidden group-hover:block absolute top-3 right-3 z-10 backdrop-blur-2xl p-2 rounded-sm bg-kuro-lavender-900/30">
                 <ExtLinkIcon />
               </button>
-              <ImageWrapper src={`https://fuskylabs-cdn.imgix.net/${item.img}?w=1280&h=1280&fm=webp`} class="aspect-auto sm:aspect-square object-cover w-full" alt="" />
+              <ImageWrapper
+                src={`https://fuskylabs-cdn.imgix.net/${item.img}?w=1280&h=1280&fm=webp`}
+                class="aspect-auto sm:aspect-square object-cover w-full"
+                alt=""
+              />
             </div>
             <span class="text-white">{item.artist}</span>
-            <span class="text-white text-sm font-kuro-mono text-right">$0.00</span>
-            <span class="text-sm font-kuro-mono text-kuro-violet-50/65">{item.type}</span>
+            <span class="text-white text-sm font-kuro-mono text-right">
+              $0.00
+            </span>
+            <span class="text-sm font-kuro-mono text-kuro-violet-50/65">
+              {item.type}
+            </span>
           </div>
         ))
       }
     </section>
   </div>
 </Layout>
-<ArtworkLightbox client:idle />
