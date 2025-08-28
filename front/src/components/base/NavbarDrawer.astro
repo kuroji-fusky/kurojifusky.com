@@ -17,34 +17,21 @@ const newNavvies = navLinks.map((items) => {
 });
 ---
 
-<script>
-  // This event listener will retrigger all the events after a full transition
-  document.addEventListener("astro:page-load", () => {
-    const container = document.querySelector(
-      "#nav-drawer > div",
-    ) as HTMLElement;
-    const subItems = Array.from(
-      document.querySelectorAll<HTMLButtonElement>("[data-subitem]"),
-    );
+<style is:global>
+  /* Initial styles to prevent from showing content on page load, will automatically add inline styles on client */
+  mobile-drawer[transition-direction="left"]:not([open]) {
+    transform: translate3d(-100%, 0, 0);
+  }
+</style>
 
-    for (const subItemButton of subItems) {
-      subItemButton.addEventListener("click", () => {
-        const selectedSubmenu = container.parentElement!.querySelector(
-          `[data-submenu="${subItemButton.dataset.subitem}"]`,
-        );
-
-        selectedSubmenu?.removeAttribute("inert");
-
-        // Add an active marker if it doesn't exist, mainly on page load
-        if (!!container.dataset.submenuActive) return;
-        container.setAttribute("data-submenu-active", "");
-      });
-    }
-  });
-</script>
-<mobile-drawer class="block md:hidden overflow-x-hidden" aria-expanded="false">
+<mobile-drawer
+  id="global-nav-mobile"
+  role="navigation"
+  class="block md:hidden overflow-x-hidden fixed top-10 inset-x-0 z-10 h-full"
+  transition-direction="left"
+>
   <div
-    class="p-3.5 grid gap-x-0.5 text-sm select-none bg-black fixed top-10 inset-x-0 z-10 transition-transform duration-200 data-[submenu-active]:-translate-x-full"
+    class="p-3.5 grid gap-x-0.5 text-sm select-none bg-black absolute top-0 w-full z-10"
   >
     {
       newNavvies.map(({ text, subitems, id }) => (
@@ -90,7 +77,7 @@ const newNavvies = navLinks.map((items) => {
           <focus-lock-region>
             <ul
               data-submenu={id}
-              class="p-3.5 grid fixed top-10 left-0 translate-x-full opacity-0 transition-transform duration-200 not-[[inert]]:translate-x-0 not-[[inert]]:opacity-100 w-full z-10"
+              class="p-3.5 grid absolute top-0 left-0 translate-x-full opacity-0 not-[[inert]]:translate-x-0 not-[[inert]]:opacity-100 w-full z-10"
               inert=""
             >
               {subitems.map(({ href, text }) => (
@@ -109,3 +96,31 @@ const newNavvies = navLinks.map((items) => {
     )
   }
 </mobile-drawer>
+
+<script>
+  await import("$components/MobileDrawer");
+
+  // This event listener will retrigger all the events after a full transition
+  document.addEventListener("astro:page-load", () => {
+    const container = document.querySelector(
+      "#nav-drawer > div",
+    ) as HTMLElement;
+    const subItems = Array.from(
+      document.querySelectorAll<HTMLButtonElement>("[data-subitem]"),
+    );
+
+    for (const subItemButton of subItems) {
+      subItemButton.addEventListener("click", () => {
+        const selectedSubmenu = container.parentElement!.querySelector(
+          `[data-submenu="${subItemButton.dataset.subitem}"]`,
+        );
+
+        selectedSubmenu?.removeAttribute("inert");
+
+        // Add an active marker if it doesn't exist, mainly on page load
+        if (!!container.dataset.submenuActive) return;
+        container.setAttribute("data-submenu-active", "");
+      });
+    }
+  });
+</script>

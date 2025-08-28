@@ -6,10 +6,10 @@ import NavbarDynamic from "./NavbarDynamic.astro";
 ---
 
 <header class="relative mb-10">
-  <div
+  <nav
     class="fixed z-20 inset-x-0 top-0 bg-kuro-dark2/(--nav-header-opacity,75%) backdrop-blur-(--nav-header-opacity,theme(blur.2xl))"
   >
-    <nav
+    <div
       class="relative mx-auto max-w-screen-xl px-6 py-1.5 top-0 inset-x-0 h-10"
     >
       {/* Logo */}
@@ -54,16 +54,16 @@ import NavbarDynamic from "./NavbarDynamic.astro";
         <button
           class="p-1.5 mr-1 md:hidden block"
           aria-label="Toggle menu"
-          aria-controls="nav-mobile"
+          aria-controls="mobile-drawer#global-nav-mobile"
         >
           <MenuIcon width="1em" height="1em" />
         </button>
       </div>
-    </nav>
+    </div>
     {/* Nav expanded list: desktop */}
     <focus-lock-region has-lock-focus="false">
       <div id="nav-expanded-list"></div>
     </focus-lock-region>
-    <NavbarDrawer />
-  </div>
+  </nav>
+  <NavbarDrawer />
 </header>
