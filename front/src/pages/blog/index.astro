@@ -1,10 +1,10 @@
 ---
 import Clamp from "$components/Clamp.astro";
 import BlogCompact from "$components/blog/BlogCompact.astro";
-import Layout from "$layouts/Layout.astro";
+import MainLayout from "$layouts/MainLayout.astro";
 ---
 
-<Layout title="Blog">
+<MainLayout title="Blog">
   <Clamp class="space-y-8 px-6 mt-10">
     <nav class="flex justify-between items-center">
       <div class="space-x-3 text-sm font-kuro-mono">
@@ -34,6 +34,5 @@ import Layout from "$layouts/Layout.astro";
         <button class="rounded-4xl px-6 border py-2">Load moar blogs</button>
       </div>
     </section>
-    <!-- <BlogMoreUpdates /> -->
   </Clamp>
 </Layout>

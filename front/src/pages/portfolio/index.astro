@@ -2,7 +2,7 @@
 import Clamp from "$components/Clamp.astro";
 import Link from "$components/Link.astro";
 import SectionPlain from "$components/Sections/SectionPlain.astro";
-import Layout from "$layouts/Layout.astro";
+import MainLayout from "$layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 
 const showcaseItem = await getCollection("portfolio");
@@ -11,7 +11,7 @@ const sortedShowcaseItem = showcaseItem
   .filter((c) => c.data.isFeatured === true);
 ---
 
-<Layout title="Portfolio" description="A shit">
+<MainLayout title="Portfolio" description="A shit">
   <Clamp class="space-y-16 pt-8 my-12">
     <div class="px-6">the yawa</div>
     <SectionPlain level={2} heading="Development" class="contents">

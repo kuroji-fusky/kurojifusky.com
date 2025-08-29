@@ -1,7 +1,7 @@
 ---
 import Clamp from "$components/Clamp.astro";
 import ImageWrapper from "$components/ImageWrapper.astro";
-import Layout from "$layouts/Layout.astro";
+import MainLayout from "$layouts/MainLayout.astro";
 import { ExtLinkIcon } from "$components/icons";
 import test_items from "./cuties.json"
 
@@ -20,7 +20,7 @@ const SonaOptions = [
 ] as const
 ---
 
-<Layout title="Artworks" description="Look at all of these cuties, goddamn">
+<MainLayout title="Artworks" description="Look at all of these cuties, goddamn">
   <Clamp class="py-4 flex justify-between text-sm gap-x-2">
     <!-- <Selector client:idle options={SonaOptions} defaultVal="all" /> -->
     <div class="inline-flex items-center gap-x-2.5">
