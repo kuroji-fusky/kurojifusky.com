@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import type { ExtractAstroProps } from "./shared";
+import { siteTitle } from "$lib/utils";
+
+type Props = ExtractAstroProps<typeof BaseLayout, "canonicalUrl">;
+
+const { props, site, url } = Astro;
+
+const { pathname } = url;
+const canonicalUrl = new URL(pathname, site).toString();
+
+const { title: propTitle, description } = props;
+const title = `${propTitle} | ${siteTitle}`;
+---
+
+<BaseLayout {title} {description} {canonicalUrl}>
+  <slot />
+</BaseLayout>

@@ -1,0 +1,69 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Meta from "$components/base/Meta.astro";
+
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url";
+import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
+import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url";
+import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url";
+
+import PreloadFont from "$components/PreloadFont.astro";
+
+import type { ExtractAstroProps } from "./shared";
+
+type Props = Partial<ExtractAstroProps<typeof Meta>>;
+
+// Parse site metadata
+const { props, site } = Astro;
+
+const { title, description, webpageType = "website", canonicalUrl } = props;
+---
+
+<html lang="en" class="scroll-pt-20 dark:scheme-dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" href="/icon_128.png" sizes="128x128" />
+
+    <Meta
+      title={title as string}
+      canonicalUrl={canonicalUrl as string}
+      {description}
+      {webpageType}
+    />
+
+    {/* Preload stuff */}
+    <PreloadFont
+      urls={[inter400, inter400italic, inter700, unbounded400, ibmPlex400]}
+    />
+
+    {/* Sitemap and RSS */}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      href={new URL("rss.xml", site).toString()}
+      type="application/rss+xml"
+    />
+    <ClientRouter />
+
+    <style is:global>
+      focus-lock-region {
+        display: contents;
+      }
+    </style>
+    <script>
+      import("$components/FocusLock");
+    </script>
+
+    <slot name="other-head" />
+  </head>
+  <body
+    class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
+    transition:animate="none"
+  >
+    <slot />
+  </body>
+</html>
