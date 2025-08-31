@@ -1,18 +1,45 @@
 ---
-import Clamp from "$components/Clamp.astro"
-import { TimeIcon } from "$components/icons"
-import MainLayout from "$layouts/MainLayout.astro"
+import Clamp from "$components/Clamp.astro";
+import { ExpandIcon, TimeIcon, TocIcon } from "$components/icons";
+import YTPlayer from "$components/YTPlayer.astro";
+import MainLayout from "$layouts/MainLayout.astro";
+
+const blogTitle = "YUDI POWTA";
 ---
 
-<MainLayout title="Blog slug placeholder">
+<script>
+  import { animate } from "motion";
+
+  const toolLabel = document.getElementById("tools-label")!;
+  const toolTitle = document.getElementById("tools-title")!;
+
+  const headerObserver = new IntersectionObserver(([e]) => {
+    const headerBGone = !e.isIntersecting;
+
+    if (headerBGone) {
+      animate(toolLabel, { y: -40, opacity: 0, display: "none" });
+      animate(toolTitle, { y: 0, opacity: 1, display: "block" });
+    } else {
+      animate(toolLabel, { y: 0, opacity: 0.5, display: "block" });
+      animate(toolTitle, { y: 40, opacity: 0, display: "none" });
+    }
+  });
+
+  const articleHeader = document.getElementsByTagName("header")[0];
+  headerObserver.observe(articleHeader);
+</script>
+
+<MainLayout title={blogTitle}>
   <Clamp>
-    <article class="xl:border-2 mt-8 border-dashed border-kuro-lavender-300/25">
-      <div class="text-center lg:mt-12 space-y-6 mb-9">
+    <article class="pt-12">
+      <header class="text-center lg:mt-12 space-y-6 mb-9">
         <div>
           <a href="/blog">Design</a>
         </div>
-        <h1 class="text-white leading-tight text-4xl lg:text-5xl font-bold mb-10 mt-7">
-          Top 10 paw pics of 2025
+        <h1
+          class="text-white leading-tight text-4xl lg:text-5xl font-bold mb-10 mt-7"
+        >
+          {blogTitle}
         </h1>
         <div class="inline-block">
           <TimeIcon class="inline-block align-middle opacity-65" width="1em" />
@@ -23,22 +50,58 @@ import MainLayout from "$layouts/MainLayout.astro"
           </div>
           <time datetime="NaN">May 25, 2025</time>
         </div>
-        <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-8">
+        <!-- <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-8">
           <div class="aspect-video w-full bg-kuro-lavender-700"></div>
+        </div> -->
+      </header>
+      <main class="space-y-4">
+        <div
+          class="overflow-hidden mx-auto max-w-screen-lg rounded-md px-2.5 py-1.5 lg:px-12 bg-kuro-dark2 sticky top-10 backdrop-blur-md flex items-center justify-between"
+        >
+          <div class="flex-1 relative h-[2ch]">
+            <span
+              id="tools-label"
+              class="absolute left-0 opacity-50 select-none">Readability</span
+            >
+            <span id="tools-title" class="absolute left-0 hidden"
+              >{blogTitle}</span
+            >
+          </div>
+          <div class="flex items-center gap-x-0.5">
+            <button
+              class="p-1.5 rounded-md bg-red-300/40"
+              title="Expand contents"
+            >
+              <ExpandIcon width="20" height="20" />
+            </button>
+            <button
+              class="p-1.5 rounded-md bg-red-300/40"
+              title="Table of contents"
+            >
+              <TocIcon width="20" height="20" />
+            </button>
+          </div>
         </div>
-      </div>
-      <section
-        class:list={[
-          "pb-14",
-          "mx-auto max-w-screen-lg p-3 lg:px-12",
-          "xl:prose-p:text-lg prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0",
-          "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
-          "prose-code:font-kuro-mono prose-code:text-balance",
-          "prose-pre:*:border-none prose-pre:*:p-0 prose-pre:*:bg-transparent prose-code:p-1 prose-code:bg-kuro-lavender-900 prose-code:rounded-md"
-        ]}
-      >
-        <p>hi</p>
-      </section>
+        <div
+          class:list={[
+            "p-3 lg:px-12 mx-auto max-w-screen-lg",
+            "pb-14",
+            "xl:prose-p:text-lg prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0",
+            "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
+            "prose-code:font-kuro-mono prose-code:text-balance",
+            "prose-pre:*:border-none prose-pre:*:p-0 prose-pre:*:bg-transparent prose-code:p-1 prose-code:bg-kuro-lavender-900 prose-code:rounded-md",
+          ]}
+        >
+          <p>hi</p>
+          <YTPlayer id="Bh7DNS5NIQ8" />
+          <p>Here's Chris being a poosi ass biatch</p>
+          <YTPlayer id="LyNPl-CdCjw" />
+
+          <h2>Heading</h2>
+          <p>Lorem ipsum</p>
+        </div>
+      </main>
     </article>
+    <section>lmao</section>
   </Clamp>
-</Layout>
+</MainLayout>

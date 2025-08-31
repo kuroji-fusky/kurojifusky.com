@@ -1,0 +1,37 @@
+---
+interface Props {
+  id: string;
+  isShorts?: boolean;
+}
+
+const { id: videoId } = Astro.props;
+---
+
+<script>
+  import { LitElement } from "lit";
+  import { customElement } from "lit/decorators.js";
+
+  @customElement("yt-player-client-wrapper")
+  class _ extends LitElement {
+    protected createRenderRoot() {
+      return this;
+    }
+  }
+</script>
+
+<yt-player-client-wrapper
+  class="block aspect-video overflow-hidden"
+  video-id={videoId}
+  draggable="false"
+  multi-instance-allowed=""
+>
+  {
+    /* The <iframe> is provided as a fallback so search engines can find them, this will be replaced with the embed client-side to provide functionality */
+  }
+  <iframe
+    aria-hidden="false"
+    src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+    frameborder="0"
+    allow="accelerometer; clipboard-write; encrypted-media; web-share"
+    class="w-full h-full"></iframe>
+</yt-player-client-wrapper>

@@ -1,20 +1,6 @@
 ---
 import { navLinks } from "./links";
 ---
-<div class="flex justify-center">
-  <div
-    class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono"
-  >
-    {
-      navLinks.map(({ href, text }) => (
-        <a id="global-link" {href} class="py-1.5 px-2 rounded-md">
-          {text}
-        </a>
-      ))
-    }
-  </div>
-  <div id="breadcrumb" style="display: none"></div> 
-</div>
 
 <script>
   import { debounce } from "lodash-es";
@@ -30,3 +16,18 @@ import { navLinks } from "./links";
     });
   });
 </script>
+
+<div class="flex justify-center">
+  <div
+    class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono"
+  >
+    {
+      navLinks.map(({ href, text }) => (
+        <a id="global-link" {href} class="py-1.5 px-2 rounded-md">
+          {text}
+        </a>
+      ))
+    }
+  </div>
+  <div id="breadcrumb" style="display: none"></div>
+</div>

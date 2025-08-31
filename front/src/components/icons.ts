@@ -8,7 +8,12 @@ import MonitorIcon from "~icons/lucide/monitor"
 import ChevronRightIcon from "~icons/lucide/chevron-right"
 import XIcon from "~icons/lucide/x"
 import ShareIcon from "~icons/lucide/share-2"
-import A11yIcon from "~icons/lucide/person-standing";
+import A11yIcon from "~icons/lucide/person-standing"
+
+import TocIcon from "~icons/lucide/table-of-contents"
+
+import ExpandIcon from "~icons/lucide/chevrons-left-right"
+import ShrinkIcon from "~icons/lucide/chevrons-right-left"
 
 import GithubIcon from "~icons/fa-brands/github"
 
@@ -18,6 +23,9 @@ import KuroWordmarkRaw from "~icons/kuro/logo-wordmark?raw"
 import KuroWordmark from "~icons/kuro/logo-wordmark"
 
 export {
+  TocIcon,
+  ExpandIcon,
+  ShrinkIcon,
   ExtLinkIcon,
   A11yIcon,
   TimeIcon,

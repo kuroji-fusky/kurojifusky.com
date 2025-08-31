@@ -5,12 +5,15 @@ import NavbarDrawer from "./NavbarDrawer.astro";
 import NavbarDynamic from "./NavbarDynamic.astro";
 ---
 
-<header class="relative mb-10">
+<div class="relative mb-10">
   <nav
-    class="fixed z-20 inset-x-0 top-0 bg-kuro-dark2/(--nav-header-opacity,75%) backdrop-blur-(--nav-header-opacity,theme(blur.2xl))"
+    class:list={[
+      "fixed z-20 h-10 inset-x-0 top-0 bg-kuro-dark2/(--nav-header-opacity,100%)",
+      // "backdrop-blur-(--nav-header-opacity,theme(blur.2xl))",
+    ]}
   >
     <div
-      class="relative mx-auto max-w-screen-xl px-6 py-1.5 top-0 inset-x-0 h-10"
+      class="relative mx-auto max-w-screen-xl px-6 top-0 inset-x-0 h-10 grid place-items-center"
     >
       {/* Logo */}
       <div
@@ -47,6 +50,7 @@ import NavbarDynamic from "./NavbarDynamic.astro";
             aria-hidden="true"
           >
             <kbd class="inline-block">Ctrl</kbd>
+            <span>+</span>
             <kbd class="inline-block">K</kbd>
           </div>
           <SearchIcon width="1em" height="1em" />
@@ -66,4 +70,4 @@ import NavbarDynamic from "./NavbarDynamic.astro";
     </focus-lock-region>
   </nav>
   <NavbarDrawer />
-</header>
+</div>

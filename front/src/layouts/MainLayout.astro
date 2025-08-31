@@ -42,10 +42,10 @@ const title = pathname !== "/" ? `${propTitle} | ${siteTitle}` : propTitle;
     data-domain={site?.hostname}></script>
 
   <Navbar />
-  <main id="skip-to-content">
+  <div id="skip-to-content">
     <slot />
     <kuro-cutie-assistant state="idle"> </kuro-cutie-assistant>
-  </main>
+  </div>
   <Footer />
   <!-- <SearchPalette /> -->
 </BaseLayout>
