@@ -57,13 +57,13 @@ const { title, description, webpageType = "website", canonicalUrl } = props;
       }
     </style>
     <script>
-      import("$components/FocusLock");
+      import "$components/FocusLock";
     </script>
 
     <slot name="other-head" />
   </head>
   <body
-    class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
+    class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-lavender-50 dark:bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-400 dark:selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
     transition:animate="none"
   >
     <slot />
