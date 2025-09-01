@@ -8,19 +8,11 @@ const { id: videoId } = Astro.props;
 ---
 
 <script>
-  import { LitElement } from "lit";
-  import { customElement } from "lit/decorators.js";
-
-  @customElement("yt-player-client-wrapper")
-  class _ extends LitElement {
-    protected createRenderRoot() {
-      return this;
-    }
-  }
+  import "./YTPlayerClientWrapper"
 </script>
 
 <yt-player-client-wrapper
-  class="block aspect-video overflow-hidden"
+  class="block aspect-video overflow-hidden rounded-md"
   video-id={videoId}
   draggable="false"
   multi-instance-allowed=""
@@ -33,5 +25,5 @@ const { id: videoId } = Astro.props;
     src={`https://www.youtube-nocookie.com/embed/${videoId}`}
     frameborder="0"
     allow="accelerometer; clipboard-write; encrypted-media; web-share"
-    class="w-full h-full"></iframe>
+    class="size-full"></iframe>
 </yt-player-client-wrapper>
