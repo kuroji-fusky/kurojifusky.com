@@ -7,23 +7,22 @@ interface Props {
 const { id: videoId } = Astro.props;
 ---
 
-<script>
-  import "./YTPlayerClientWrapper"
-</script>
-
 <yt-player-client-wrapper
   class="block aspect-video overflow-hidden rounded-md"
   video-id={videoId}
-  draggable="false"
-  multi-instance-allowed=""
 >
   {
-    /* The <iframe> is provided as a fallback so search engines can find them, this will be replaced with the embed client-side to provide functionality */
+    /*
+   <iframe
+   src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+   frameborder="0"
+   allow="accelerometer; clipboard-write; encrypted-media; web-share"
+   class="size-full"></iframe> 
+   */
   }
-  <iframe
-    aria-hidden="false"
-    src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-    frameborder="0"
-    allow="accelerometer; clipboard-write; encrypted-media; web-share"
-    class="size-full"></iframe>
 </yt-player-client-wrapper>
+<p class="sr-only">
+  <a aria-hidden="true" href={`https://www.youtube.com/watch?v=${videoId}`}>
+    <img src={`https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`} alt="" />
+  </a>
+</p>
