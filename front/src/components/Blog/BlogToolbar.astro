@@ -15,19 +15,17 @@ const { blogTitle } = Astro.props;
     <span id="tools-label" class="absolute left-0 opacity-50 select-none"
       >Readability</span
     >
-    <ul id="tools-title" class="absolute left-0 hidden gap-x-2 items-center">
-      <li class="inline-flex items-center gap-x-1">
-        <span class="opacity-40">H1</span>
-        <ChevronRightIcon width="16" height="16" />
+    <ul id="tools-title" class="absolute left-0 hidden gap-x-2 items-center font-normal">
+      <li class="inline-flex items-center gap-x-1.5">
+        <span class="opacity-75">Stuff</span>
+        <ChevronRightIcon width="12" height="12" />
       </li>
-      <li class="inline-flex items-center gap-x-1">
-        <span class="opacity-40">h2</span>
-        <ChevronRightIcon width="16" height="16" />
+      <li class="inline-flex items-center gap-x-1.5">
+        <span class="opacity-75">Stuff</span>
+        <ChevronRightIcon width="12" height="12" />
       </li>
       <li>
-        <strong>
-          {blogTitle}
-        </strong>
+        {blogTitle}
       </li>
     </ul>
   </div>

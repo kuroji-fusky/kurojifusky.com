@@ -1,9 +1,9 @@
 import { LitElement, html, render } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-class YouToobSingleton {
-  #_debug(...msg: any[]) {
-    console.debug("[kuro-yt-client]", `Init process ${this.videoId} =>`, ...msg)
+class DynamicYTPlayer {
+  protected __debug(...msg: any[]) {
+    console.debug("[kuro-yt-client]", `${this.videoId} =>`, ...msg)
   }
 
   constructor(protected mountEl: string, protected videoId: string, protected playerEvents: YT.Events) {
@@ -14,15 +14,15 @@ class YouToobSingleton {
     // to prevent any duplicates *then* it is safe to load the player
     const ytIframeLoaderScripts = Array.from(document.getElementsByTagName("script")).filter((e) => e.src === iframeAPIUrl)
     if (ytIframeLoaderScripts.length >= 1) {
-      this.#_debug("iframe script exists")
+      this.__debug("iframe script exists")
 
       if (window.YT) {
-        this.#_debug("has script and yt globals, loading player")
+        this.__debug("has script and yt globals, loading player")
         this.loadPlayer()
         return
       }
     } else {
-      this.#_debug("No iframe script, inserted script to <head>")
+      this.__debug("No iframe script, inserted script to <head>")
       const iframeTag = Object.assign(document.createElement("script"), {
         src: iframeAPIUrl,
       });
@@ -43,23 +43,23 @@ class YouToobSingleton {
 
         if (!hasWidgetAPI) {
           if (window.YT) {
-            this.#_debug("No widget API but YT globals are found, loading player")
+            this.__debug("No widget API but YT globals are found, loading player")
             this.loadPlayer();
-            
+
             __headTagDisconnect();
           }
 
-          this.#_debug("No widget API found")
+          this.__debug("No widget API found")
           return
         }
 
         const checkYT = setInterval(() => {
           if (!YT.Player) {
-            this.#_debug("No window.YT global object, retrying")
+            this.__debug("No window.YT global object, retrying")
             return
           }
 
-          this.#_debug("Found window.YT global object, loading player")
+          this.__debug("Found window.YT global object, loading player")
           clearInterval(checkYT);
           this.loadPlayer();
           __headTagDisconnect();
@@ -72,9 +72,10 @@ class YouToobSingleton {
     const __headTagDisconnect = () => {
       // Unmount observer after 2 secs
       const disconnect_observer_delay = 6
+      this.__debug(`Disconnecting MutObserver after ${disconnect_observer_delay} seconds`);
 
       setTimeout(() => {
-        this.#_debug(`Disconnected MutObserver after ${disconnect_observer_delay} seconds`);
+        this.__debug("Disconnected");
         headTags.disconnect();
       }, 1e3 * disconnect_observer_delay);
     }
@@ -105,6 +106,8 @@ export class YTPlayerClient extends LitElement {
   @property({ attribute: "video-id", type: String })
   videoId?: string;
 
+  // No need to wrap it in shadow DOM, all it does is create an iframe,
+  // no difference even with shadow DOM
   protected createRenderRoot() {
     return this;
   }
@@ -133,8 +136,7 @@ export class YTPlayerClient extends LitElement {
 
     render(html`<span id="${uid}"></span>`, this)
 
-
-    new YouToobSingleton(uid, this.videoId, {
+    new DynamicYTPlayer(uid, this.videoId, {
       onReady: (e) => {
         Object.assign(this, { ytEvents: e.target })
         this.setAttribute("is-ready", "")
@@ -148,7 +150,7 @@ export class YTPlayerClient extends LitElement {
         this.reflectPlayerState(e.data)
       },
       onError: (e) => {
-        console.error("YT Client error:", e)
+        console.error("YT cient error:", e)
       }
     })
   }
