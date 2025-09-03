@@ -68,6 +68,7 @@ const sourceRepoUrl =
   "https://github.com/kuroji-fusky/kurojifusky.com"
 
 export const footerLinks = [
+  { href: "/credits", text: "Credits", icon: TimeIcon },
   { href: "/sitemap", text: "Sitemap", icon: TimeIcon },
   { href: sourceRepoUrl, text: "Sauce", icon: GithubIcon }
 ] satisfies TruncateForFooterLinks[]

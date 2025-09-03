@@ -10,24 +10,21 @@ import { navLinks } from "./links";
     const globalLinks = document.querySelectorAll("#global-link");
 
     hover(globalLinks, (el) => {
-      animate(el, { y: -2 });
+      animate(el, { y: -1.75 });
 
       return () => animate(el, { y: 0 });
     });
   });
 </script>
 
-<div class="flex justify-center">
-  <div
-    class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono"
-  >
-    {
-      navLinks.map(({ href, text }) => (
-        <a id="global-link" {href} class="py-1.5 px-2 rounded-md">
-          {text}
-        </a>
-      ))
-    }
-  </div>
-  <div id="breadcrumb" style="display: none"></div>
+<div
+  class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono"
+>
+  {
+    navLinks.map(({ href, text }) => (
+      <a id="global-link" {href} class="p-1.5">
+        {text}
+      </a>
+    ))
+  }
 </div>
