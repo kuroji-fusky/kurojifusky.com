@@ -16,13 +16,13 @@ import MainLayout from "$layouts/MainLayout.astro";
     </nav>
     <section class="space-y-8">
       <div
-        class="grid grid-cols-1 border-2 border-b-0 border-dashed border-kuro-lavender-300/25"
+        class="grid grid-cols-1"
         role="list"
       >
         {
           [...Array(8)].map(() => (
             <div
-              class="border-kuro-lavender-300/25 border-dashed border-b-2"
+              class="border-kuro-lavender-400/75 dark:border-kuro-lavender-300/25 border-dashed border-b-2"
               role="listitem"
             >
               <BlogCompact />
@@ -35,4 +35,4 @@ import MainLayout from "$layouts/MainLayout.astro";
       </div>
     </section>
   </Clamp>
-</Layout>
+</MainLayout>

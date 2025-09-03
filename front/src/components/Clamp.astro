@@ -3,12 +3,13 @@ import { twMerge } from "tailwind-merge";
 
 interface Props {
   class?: string;
+  as?: keyof HTMLElementTagNameMap;
 }
 
-const { class: cls } = Astro.props;
-const mergedClasses = twMerge("block", "mx-auto max-w-screen-xl", cls);
+const { class: cls, as: Element = "div" } = Astro.props;
+const mergedClasses = twMerge("block mx-auto max-w-screen-xl", cls);
 ---
 
-<div data-clamp-container="" class={mergedClasses}>
+<Element data-clamp-container="" class={mergedClasses}>
   <slot />
-</div>
+</Element>

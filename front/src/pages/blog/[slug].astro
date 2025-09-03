@@ -1,4 +1,5 @@
 ---
+import BlogTOC from "$components/blog/BlogTOC.astro";
 import BlogToolbar from "$components/blog/BlogToolbar.astro";
 import Clamp from "$components/Clamp.astro";
 import { TimeIcon } from "$components/icons";
@@ -11,29 +12,31 @@ const blogTitle = "YUDI POWTA";
 <script>
   import { animate } from "motion";
 
-  const toolLabel = document.getElementById("tools-label")!;
-  const toolTitle = document.getElementById("tools-title")!;
+  document.addEventListener("astro:page-load", () => {
+    const toolLabel = document.getElementById("tools-label")!;
+    const toolTitle = document.getElementById("tools-title")!;
 
-  const headerObserver = new IntersectionObserver(([e]) => {
-    const headerBGone = !e.isIntersecting;
+    const headerObserver = new IntersectionObserver(([e]) => {
+      const headerBGone = !e.isIntersecting;
 
-    if (headerBGone) {
-      animate(toolLabel, { y: 24, opacity: 0, display: "none" });
-      animate(toolTitle, { y: 0, opacity: 1, display: "block" });
-    } else {
-      animate(toolLabel, { y: 0, opacity: 0.5, display: "block" });
-      animate(toolTitle, { y: -24, opacity: 0, display: "none" });
-    }
+      if (headerBGone) {
+        animate(toolLabel, { y: 24, opacity: 0, display: "none" });
+        animate(toolTitle, { y: 0, opacity: 1, display: "inline-flex" });
+      } else {
+        animate(toolLabel, { y: 0, opacity: 0.5, display: "block" });
+        animate(toolTitle, { y: -24, opacity: 0, display: "none" });
+      }
+    });
+
+    const articleHeader = document.getElementById("blog-header")!;
+    headerObserver.observe(articleHeader);
   });
-
-  const articleHeader = document.getElementsByTagName("header")[0];
-  headerObserver.observe(articleHeader);
 </script>
 
 <MainLayout title={blogTitle}>
-  <Clamp>
-    <article class="pt-12">
-      <header class="text-center lg:mt-12 space-y-6 mb-9">
+  <Clamp as="section">
+    <div class="pt-12">
+      <header id="blog-header" class="text-center lg:mt-12 mb-9">
         <div>
           <a href="/blog">Design</a>
         </div>
@@ -42,38 +45,44 @@ const blogTitle = "YUDI POWTA";
         >
           {blogTitle}
         </h1>
-        <div class="inline-block">
+        <span>
           <TimeIcon class="inline-block align-middle opacity-65" width="1em" />
           <span>2 min</span>
-          <span>•</span>
-        </div>
+          <span class="opacity-50 mx-2">·</span>
+        </span>
         <time datetime="NaN">May 25, 2025</time>
       </header>
-      <!-- <div class="mx-auto max-w-screen-lg px-3 lg:px-12 mt-8">
-          <div class="aspect-video w-full bg-kuro-lavender-700"></div>
-        </div> -->
-    </article>
-    <main class="space-y-4">
-      <BlogToolbar {blogTitle} />
-      <div
+      <div class="mx-auto max-w-screen-lg px-3 lg:px-12 my-9">
+        <div class="aspect-video w-full bg-kuro-lavender-700"></div>
+      </div>
+    </div>
+    <BlogToolbar {blogTitle} />
+    <div
+      class="relative pt-3 lg:pt-6 grid grid-cols-[1fr_auto] mx-auto max-w-screen-lg"
+    >
+      <main
         class:list={[
-          "p-3 lg:px-12 mx-auto max-w-screen-lg",
-          "pb-14",
-          "xl:prose-p:text-lg prose-p:my-2.5 prose-p:first:mt-0 prose-p:last:mb-0",
+          "flex-1 px-6",
+          "[&_yt-player-client-wrapper]:my-6",
+          "pb-2 md:prose-p:leading-7 prose-p:leading-6 prose-p:font-light",
+          "md:prose-p:text-base prose-p:my-3 prose-p:first:mt-0 prose-p:last:mb-0",
           "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
           "prose-code:font-kuro-mono prose-code:text-balance",
           "prose-pre:*:border-none prose-pre:*:p-0 prose-pre:*:bg-transparent prose-code:p-1 prose-code:bg-kuro-lavender-900 prose-code:rounded-md",
         ]}
       >
-        <p>hi</p>
-        <YTPlayer id="uH3zanZYSeo" />
-        <YTPlayer id="5olMuFOMWGQ" />
-
-        <h2>Heading</h2>
-        <p>Lorem ipsum</p>
-        <YTPlayer id="BSuht8GVZAI" />
-      </div>
-    </main>
+        <p>Cool me down your so hawt</p>
+        <YTPlayer id="-CuGMjwhdCk" />
+        <YTPlayer id="iMgyLlPnxoM" />
+      </main>
+      <BlogTOC />
+    </div>
   </Clamp>
-  <section>lmao</section>
+  <Clamp as="section">
+    <div class="mx-auto max-w-screen-lg px-6">
+      <hr class="my-8 opacity-40" />
+      <div>Tags and shit</div>
+    </div>
+    <p>lmao</p>
+  </Clamp>
 </MainLayout>

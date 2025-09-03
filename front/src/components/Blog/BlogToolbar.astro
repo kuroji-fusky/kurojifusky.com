@@ -1,5 +1,5 @@
 ---
-import { ExpandIcon, TocIcon } from "../icons";
+import { ChevronRightIcon, ExpandIcon, TocIcon } from "../icons";
 
 interface Props {
   blogTitle: string;
@@ -9,13 +9,27 @@ const { blogTitle } = Astro.props;
 ---
 
 <div
-  class="overflow-hidden mx-auto max-w-screen-lg rounded-md px-2.5 py-1.5 lg:px-12 bg-kuro-lavender-50 dark:bg-kuro-dark2 sticky top-10 backdrop-blur-md flex items-center justify-between"
+  class="z-10 overflow-hidden mx-auto max-w-screen-lg rounded-md py-3 px-6 bg-kuro-lavender-50 dark:bg-kuro-dark2 sticky top-10 flex items-center justify-between"
 >
   <div class="flex-1 relative h-[2ch]">
     <span id="tools-label" class="absolute left-0 opacity-50 select-none"
       >Readability</span
     >
-    <span id="tools-title" class="absolute left-0 hidden">{blogTitle}</span>
+    <ul id="tools-title" class="absolute left-0 hidden gap-x-2 items-center">
+      <li class="inline-flex items-center gap-x-1">
+        <span class="opacity-40">H1</span>
+        <ChevronRightIcon width="16" height="16" />
+      </li>
+      <li class="inline-flex items-center gap-x-1">
+        <span class="opacity-40">h2</span>
+        <ChevronRightIcon width="16" height="16" />
+      </li>
+      <li>
+        <strong>
+          {blogTitle}
+        </strong>
+      </li>
+    </ul>
   </div>
   <div class="flex items-center gap-x-0.5">
     <button class="p-1.5 rounded-md bg-red-300/40" title="Expand contents">

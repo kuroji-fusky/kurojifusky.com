@@ -6,6 +6,7 @@ import Meta from "$components/base/Meta.astro";
 
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
 import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url";
+import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2?url";
 import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
 import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url";
 import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url";
@@ -39,7 +40,14 @@ const { title, description, webpageType = "website", canonicalUrl } = props;
 
     {/* Preload stuff */}
     <PreloadFont
-      urls={[inter400, inter400italic, inter700, unbounded400, ibmPlex400]}
+      urls={[
+        inter400,
+        inter400italic,
+        inter600,
+        inter700,
+        unbounded400,
+        ibmPlex400,
+      ]}
     />
 
     {/* Sitemap and RSS */}
@@ -58,6 +66,8 @@ const { title, description, webpageType = "website", canonicalUrl } = props;
     </style>
     <script>
       import "$components/FocusLock";
+      import "$components/YTPlayerClientWrapper";
+      import "$components/YTTimestampMarker";
     </script>
 
     <slot name="other-head" />

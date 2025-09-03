@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
+    "@types/youtube": "^0.1.2",
     "cross-env": "^7.0.3"
   }
 }
