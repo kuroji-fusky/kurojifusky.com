@@ -7,7 +7,7 @@ The source code of `kurojifusky.com` is written in Astro with Lit components.
 ## Project structure
 
 > [!CAUTION]
-> This codebase is HOT GARBAGE. Proceed carefully before you get a panic attack and potentially suffer from too much cringe.
+> This codebase is **HOT GARBAGE.** Proceed carefully before you get a panic attack and potentially suffer from too much cringe.
 
 This is a monorepo setup with Yarn workspaces; uses [Biome](https://biomejs.dev) and [Knip](https://knip.dev) for codebase upkeep
 
