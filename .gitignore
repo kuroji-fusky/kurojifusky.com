@@ -5,5 +5,4 @@ node_modules/
 .DS_Store
 
 # For testing things, actual content will be served via Strapi
-front/src/content/portfolio
-front/src/content/archives
+front/src/content/*

@@ -1,9 +1,11 @@
 ---
-import MainLayout from "$layouts/MainLayout.astro";
+import SkeletonLayout from "$layouts/SkeletonLayout.astro";
 ---
 
-<MainLayout title="KuroTerminal" description="Hacker mode">
+<SkeletonLayout title="KuroTerminal" description="Hacker mode">
   <focus-lock-region>
-    <div id="term-focus"></div>
+    <div id="term-focus" class="h-screen p-3.5 text-base font-kuro-mono">
+      <input type="text">
+    </div>
   </focus-lock-region>
-</Layout>
+</SkeletonLayout>
