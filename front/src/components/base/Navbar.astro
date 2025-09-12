@@ -24,8 +24,8 @@ import NavbarDynamic from "./NavbarDynamic.astro";
           class="whitespace-nowrap text-sm max-w-fit absolute ml-8 left-0 pointer-events-none focus:pointer-events-auto focus:opacity-100 opacity-0 bg-kuro-lavender-700 z-50 px-3 py-2 rounded-md"
           data-astro-prefetch="false">Skip content</a
         >
-        <a href="/" class="p-1.5 -translate-x-1" title="Home :3">
-          <KuroLogoBrand width="1em" height="1em" aria-label="Kuro logo" />
+        <a href="/" class="p-1.5 shrink-0 -translate-x-1" title="Home :3">
+          <KuroLogoBrand width="16px" height="16px" aria-label="Kuro logo" />
         </a>
       </div>
       {/* Nav items */}
@@ -39,20 +39,11 @@ import NavbarDynamic from "./NavbarDynamic.astro";
         >
           <MonitorIcon width="1em" height="1em" />
         </button>
-        <hr class="h-2.5 border border-slate-500 hidden lg:block" />
         <button
           class="py-1.5 pl-2 pr-2 rounded-sm inline-flex items-center"
           aria-label="Search or press Control or Command K to start search"
           title="Search"
         >
-          <div
-            class="text-xs pr-2 select-none opacity-80 hidden lg:block space-x-1"
-            aria-hidden="true"
-          >
-            <kbd class="inline-block">Ctrl</kbd>
-            <span>+</span>
-            <kbd class="inline-block">K</kbd>
-          </div>
           <SearchIcon width="1em" height="1em" />
         </button>
         <button

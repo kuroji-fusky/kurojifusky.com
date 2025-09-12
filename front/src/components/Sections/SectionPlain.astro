@@ -5,7 +5,7 @@ import SectionBase from "./SectionBase.astro";
 
 interface Props {
   heading: string;
-  level: 1 | 2;
+  level?: 1 | 2;
   potentalAction?: {
     l: string;
     t: string;
@@ -14,7 +14,7 @@ interface Props {
   noHeading?: boolean;
 }
 
-const { heading, noHeading, potentalAction, level, class: cn } = Astro.props;
+const { heading, noHeading, potentalAction, level = 2, class: cn } = Astro.props;
 
 const kebabedHeading = kebabCase(heading);
 const k_labelledby = `${kebabedHeading}-${crypto.randomUUID().split("-")[0]}`;

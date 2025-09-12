@@ -4,9 +4,13 @@ import { customElement, property } from "lit/decorators.js"
 @customElement("focus-lock-region")
 export class FocusLock extends LitElement {
   @property({ type: Boolean, attribute: "has-lock-focus" })
-  haslockFocus?: boolean
+  haslockFocus?: boolean = false
 
   static styles = css`
+    :host {
+      display: contents;
+    }
+    
     #focus-lock-region {
       position: absolute;
       top: 0;
