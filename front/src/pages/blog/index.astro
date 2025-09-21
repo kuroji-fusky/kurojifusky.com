@@ -1,24 +1,42 @@
 ---
 import Clamp from "$components/Clamp.astro";
 import BlogCompact from "$components/blog/BlogCompact.astro";
+import { TocIcon } from "$components/icons";
 import MainLayout from "$layouts/MainLayout.astro";
 ---
 
 <MainLayout title="Blog">
-  <Clamp class="space-y-8 px-6 mt-10">
-    <nav class="flex justify-between items-center">
-      <div class="space-x-3 text-sm font-kuro-mono">
-        <span>Latest</span>
-        <span>Design</span>
-        <span>Engineering</span>
-        <span>Others/Personal</span>
+  <Clamp class="px-6">
+    <header class="pt-16 pb-12">
+      <h1 class="font-kuro-hero-heading text-5xl select-none">Blog posts</h1>
+      <p>A place for personal yapping</p>
+    </header>
+    <nav
+      class="bg-kuro-dark2 sticky top-10 z-10 flex justify-between items-center"
+    >
+      <div class="flex gap-x-2 text-sm font-kuro-mono py-3">
+        <button class="px-3 py-1 rounded-md bg-kuro-lavender-800">Latest</button
+        >
+        <button class="px-3 py-1 rounded-md bg-kuro-lavender-800">Design</button
+        >
+        <button class="px-3 py-1 rounded-md bg-kuro-lavender-800"
+          >Engineering</button
+        >
+        <button class="px-3 py-1 rounded-md bg-kuro-lavender-800"
+          >Others/Personal</button
+        >
+      </div>
+      <div class="inline-flex gap-x-1">
+        <button class="p-1.5 bg-purple-800 rounded-md">
+          <TocIcon />
+        </button>
+        <button class="p-1.5 bg-purple-800 rounded-md">
+          <TocIcon />
+        </button>
       </div>
     </nav>
     <section class="space-y-8">
-      <div
-        class="grid grid-cols-1"
-        role="list"
-      >
+      <div class="grid grid-cols-1" role="list">
         {
           [...Array(8)].map(() => (
             <div

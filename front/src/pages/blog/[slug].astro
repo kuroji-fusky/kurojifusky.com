@@ -35,8 +35,8 @@ const blogTitle = "YUDI POWTA";
 
 <MainLayout title={blogTitle}>
   <Clamp as="section">
-    <div class="pt-12">
-      <header id="blog-header" class="text-center lg:mt-12 mb-9">
+    <div class="lg:space-y-12 space-y-6 pt-12 pb-3">
+      <header id="blog-header" class="text-center">
         <div>
           <a href="/blog">Design</a>
         </div>
@@ -52,7 +52,7 @@ const blogTitle = "YUDI POWTA";
         </span>
         <time datetime="NaN">May 25, 2025</time>
       </header>
-      <div class="mx-auto max-w-screen-lg px-3 lg:px-12 my-9">
+      <div class="mx-auto max-w-screen-lg px-6">
         <div class="aspect-video w-full bg-kuro-lavender-700"></div>
       </div>
     </div>
@@ -64,7 +64,7 @@ const blogTitle = "YUDI POWTA";
         class:list={[
           "flex-1 px-6",
           "[&_yt-player-client-wrapper]:my-6",
-          "pb-2 md:prose-p:leading-7 prose-p:leading-6 prose-p:font-light",
+          "pb-2 md:prose-p:leading-7 prose-p:leading-6 prose-p:font-normal",
           "md:prose-p:text-base prose-p:my-3 prose-p:first:mt-0 prose-p:last:mb-0",
           "prose-headings:font-bold prose-headings:my-6 prose-h2:text-3xl prose-h3:text-2xl",
           "prose-code:font-kuro-mono prose-code:text-balance",

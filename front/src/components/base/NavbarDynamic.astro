@@ -3,22 +3,22 @@ import { navLinks } from "./links";
 ---
 
 <script>
-  import { debounce } from "lodash-es";
-  import { animate, hover } from "motion";
+  // import { debounce } from "lodash-es";
+  // import { animate, hover } from "motion";
 
-  document.addEventListener("astro:page-load", () => {
-    const globalLinks = document.querySelectorAll("#global-link");
+  // document.addEventListener("astro:page-load", () => {
+  //   const globalLinks = document.querySelectorAll("#global-link");
 
-    hover(globalLinks, (el) => {
-      animate(el, { y: -1.75 });
+  //   hover(globalLinks, (el) => {
+  //     animate(el, { y: -1.75 });
 
-      return () => animate(el, { y: 0 });
-    });
-  });
+  //     return () => animate(el, { y: 0 });
+  //   });
+  // });
 </script>
 
 <div
-  class="hidden md:flex items-center gap-x-3 text-sm select-none font-kuro-mono"
+  class="hidden md:flex items-center gap-x-5 text-sm select-none font-kuro-mono"
 >
   {
     navLinks.map(({ href, text }) => (
