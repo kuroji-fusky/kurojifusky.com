@@ -1,5 +1,6 @@
 ---
 import Clamp from "$components/Clamp.astro";
+import PageHeading from "$components/PageHeading.astro";
 import BlogCompact from "$components/blog/BlogCompact.astro";
 import { TocIcon } from "$components/icons";
 import MainLayout from "$layouts/MainLayout.astro";
@@ -7,10 +8,7 @@ import MainLayout from "$layouts/MainLayout.astro";
 
 <MainLayout title="Blog">
   <Clamp class="px-6">
-    <header class="pt-16 pb-12">
-      <h1 class="font-kuro-hero-heading text-5xl select-none">Blog posts</h1>
-      <p>A place for personal yapping</p>
-    </header>
+    <PageHeading title="Blog posts" />
     <nav
       class="bg-kuro-dark2 sticky top-10 z-10 flex justify-between items-center"
     >

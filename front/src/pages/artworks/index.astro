@@ -1,62 +1,92 @@
 ---
 import Clamp from "$components/Clamp.astro";
 import ImageWrapper from "$components/ImageWrapper.astro";
+import Checkbox from "$components/Checkbox.astro";
 import MainLayout from "$layouts/MainLayout.astro";
 import { ExtLinkIcon } from "$components/icons";
-import test_items from "./cuties.json"
+import test_items from "./cuties.json";
 
 const SonaOptions = [
-  { key: "all", label: "All", href: "/artworks" },
   {
     key: "kuro",
     label: "Kuro",
-    href: "/artworks/character/kuro"
   },
   {
     key: "kinter",
     label: "Kinter",
-    href: "/artworks/character/kinter"
-  }
-] as const
+  },
+] as const;
 ---
 
 <MainLayout title="Artworks" description="Look at all of these cuties, goddamn">
   <Clamp class="py-4 flex justify-between text-sm gap-x-2">
-    <!-- <Selector client:idle options={SonaOptions} defaultVal="all" /> -->
-    <div class="inline-flex items-center gap-x-2.5 px-3">
-      <label for="art-category" class="space-x-1">
-        <span>Category</span>
-        <select name="art-category" id="art-category" class="bg-kuro-dark2 border border-kuro-lavender-100/50 text-sm py-1 px-1.5 rounded-sm">
-          <option value="all">All</option>
-          <option value="all">Icon</option>
-          <option value="all">Mid</option>
-          <option value="comms">Fullbody</option>
-        </select>
-      </label>
-      <label for="art-type" class="space-x-1">
-        <span>Type</span>
-        <select name="art-type" id="art-type" class="bg-kuro-dark2 border border-kuro-lavender-100/50 text-sm py-1 px-1.5 rounded-sm">
-          <option value="all">All</option>
-          <option value="comms">Commission</option>
-          <option value="ych">YCH</option>
-          <option value="free-gift-art">Free/Gift Art</option>
-          <optgroup label="Special">
-            <option value="">Prize winner</option>
-          </optgroup>
-        </select>
-      </label>
-
-      <label for="price-currency" class="space-x-1">
-        <span>Currency</span>
-        <select name="price-currency" id="price-currency" class="bg-kuro-dark2 border border-kuro-lavender-100/50 text-sm py-1 px-1.5 rounded-sm">
-          <option value="usd">USD</option>
-          <option value="php">PHP</option>
-        </select>
-      </label>
-    </div>
+    <button> Filters </button>
   </Clamp>
-  <div class="px-3">
-    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+  <div class="px-3 flex gap-x-6">
+    <aside
+      class="w-48 shrink-0 sticky top-12 self-start grid space-y-3 text-sm"
+    >
+      <div role="group" id="art-characters" class="grid space-y-1">
+        <h2 class="mb-1.5 opacity-75">Character</h2>
+        <Checkbox name="art-characters" queryValue="kuro" labelName="Kuro" />
+        <Checkbox
+          name="art-characters"
+          queryValue="kinter"
+          labelName="Kinter"
+        />
+      </div>
+      <div role="group" id="art-category" class="grid space-y-1">
+        <h2 class="mb-1.5 opacity-75">Category</h2>
+        <Checkbox
+          name="art-category"
+          queryValue="icon"
+          labelName="Icon/Headshot"
+        />
+        <Checkbox name="art-category" queryValue="mid" labelName="Mid" />
+        <Checkbox name="art-category" queryValue="full" labelName="Fullbody" />
+      </div>
+      <div role="group" id="art-type" class="grid space-y-1">
+        <h2 class="mb-1.5 opacity-75">Type</h2>
+        <Checkbox
+          name="art-type"
+          queryValue="commission"
+          labelName="Commission"
+        />
+        <Checkbox name="art-type" queryValue="ych" labelName="YCH" />
+        <Checkbox name="art-type" queryValue="gift" labelName="Free/Gift Art" />
+        <Checkbox
+          name="art-type"
+          queryValue="prize-winner"
+          labelName="Prize winner"
+        />
+      </div>
+      <div role="group" id="price-currency" class="grid space-y-1">
+        <h2 class="mb-1.5 opacity-75">Currency</h2>
+        <label for="cur-usd">
+          <input type="radio" name="currency" id="cur-usd" checked />
+          <span>USD</span>
+        </label>
+        <label for="cur-php">
+          <input type="radio" name="currency" id="cur-php" />
+          <span>PHP</span>
+        </label>
+      </div>
+      <div>
+        <script>
+          const cb = Array.from(
+            document.querySelectorAll("cool-checkbox-thats-not-cringe input"),
+          );
+
+          document.getElementById("clear-filters")?.addEventListener("click", () => {
+            console.log("BEEECH")
+          })
+        </script>
+        <button id="clear-filters" class="block border py-2 px-3 rounded-md">Clear filters</button>
+      </div>
+    </aside>
+    <section
+      class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+    >
       {
         test_items.map((item) => (
           <div class="grid grid-cols-[1fr,auto] gap-x-2 gap-y-1 group">
@@ -82,4 +112,4 @@ const SonaOptions = [
       }
     </section>
   </div>
-</Layout>
+</MainLayout>

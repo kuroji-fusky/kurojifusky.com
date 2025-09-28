@@ -11,7 +11,7 @@ type TruncateForFooterLinks = Links & {
 
 type NavTree = Links & {
   subitems?: Links[]
-}
+} | Links
 
 export const navLinks = [
   {
@@ -40,28 +40,26 @@ export const navLinks = [
     href: "/artworks",
     text: "Artworks",
     subitems: [
-      { href: "/artworks/kuro", text: "Kuro" },
-      { href: "/artworks/kinter", text: "Kinter" },
       {
         href: "/artworks/ref-sheets",
         text: "Reference sheets"
-      }
+      },
+      { href: "/artworks/kuro", text: "Kuro" },
+      { href: "/artworks/kinter", text: "Kinter" },
     ]
   },
 
   {
     href: "/about",
     text: "About",
-    subitems: [
-      { href: "/credits", text: "Credits" },
-      { href: "/about/branding", text: "Branding" },
-      {
-        href: "/contact",
-        text: "Contact",
-      },
-      { href: "/links", text: "Socials" },
-    ]
-  }
+  },
+  { href: "/credits", text: "Credits" },
+  { href: "/branding", text: "Branding" },
+  {
+    href: "/contact",
+    text: "Contact",
+  },
+  { href: "/links", text: "Socials" },
 ] satisfies NavTree[]
 
 const sourceRepoUrl =

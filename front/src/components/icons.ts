@@ -6,6 +6,7 @@ import MenuIcon from "~icons/lucide/menu"
 import SettingsIcon from "~icons/lucide/settings-2"
 import MonitorIcon from "~icons/lucide/monitor"
 import ChevronRightIcon from "~icons/lucide/chevron-right"
+import ChevronDownIcon from "~icons/lucide/chevron-down"
 import XIcon from "~icons/lucide/x"
 import ShareIcon from "~icons/lucide/share-2"
 import A11yIcon from "~icons/lucide/person-standing"
@@ -37,6 +38,7 @@ export {
   ChevronRightIcon,
   XIcon,
   ShareIcon,
+  ChevronDownIcon,
   //
   // Font Awesome Brands
   GithubIcon,
