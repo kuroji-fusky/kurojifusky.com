@@ -1,9 +1,9 @@
 ---
-import Clamp from "$components/Clamp.astro";
-import ImageWrapper from "$components/ImageWrapper.astro";
-import Checkbox from "$components/Checkbox.astro";
-import MainLayout from "$layouts/MainLayout.astro";
-import { ExtLinkIcon } from "$components/icons";
+import Clamp from "$lib/components/Clamp.astro";
+import ImageWrapper from "$lib/components/ImageWrapper.astro";
+import Checkbox from "$lib/components/Checkbox.astro";
+import Layout from "$layouts/BaseLayout.astro";
+import { ExtLinkIcon } from "$lib/components/icons";
 import test_items from "./cuties.json";
 
 const SonaOptions = [
@@ -18,7 +18,7 @@ const SonaOptions = [
 ] as const;
 ---
 
-<MainLayout title="Artworks" description="Look at all of these cuties, goddamn">
+<Layout title="Artworks" description="Look at all of these cuties, goddamn">
   <Clamp class="py-4 flex justify-between text-sm gap-x-2">
     <button> Filters </button>
   </Clamp>
@@ -77,11 +77,15 @@ const SonaOptions = [
             document.querySelectorAll("cool-checkbox-thats-not-cringe input"),
           );
 
-          document.getElementById("clear-filters")?.addEventListener("click", () => {
-            console.log("BEEECH")
-          })
+          document
+            .getElementById("clear-filters")
+            ?.addEventListener("click", () => {
+              console.log("BEEECH");
+            });
         </script>
-        <button id="clear-filters" class="block border py-2 px-3 rounded-md">Clear filters</button>
+        <button id="clear-filters" class="block border py-2 px-3 rounded-md"
+          >Clear filters</button
+        >
       </div>
     </aside>
     <section
@@ -112,4 +116,4 @@ const SonaOptions = [
       }
     </section>
   </div>
-</MainLayout>
+</Layout>

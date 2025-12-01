@@ -2,13 +2,20 @@ import node from "@astrojs/node"
 import cloudflare from "@astrojs/cloudflare"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
+import svelte from '@astrojs/svelte'
+
 import { defineConfig, passthroughImageService } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
 import { FileSystemIconLoader } from "unplugin-icons/loaders"
 import Icons from "unplugin-icons/vite"
 
 export default defineConfig({
+  devToolbar: {
+    enabled: false
+  },
+
   output: "server",
+
   adapter: !!process.env.CF_MODE
     ? cloudflare({
       imageService: "passthrough"
@@ -16,6 +23,7 @@ export default defineConfig({
     : node({
       mode: "standalone"
     }),
+
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",
@@ -31,12 +39,13 @@ export default defineConfig({
     prefetchAll: true
   },
 
-  integrations: [sitemap(), mdx()],
+  integrations: [sitemap(), svelte(), mdx()],
 
   vite: {
     plugins: [
       tailwindcss(),
       Icons({
+        autoInstall: true,
         compiler: "astro",
         customCollections: {
           kuro: FileSystemIconLoader("./src/lib/icons/kuro")

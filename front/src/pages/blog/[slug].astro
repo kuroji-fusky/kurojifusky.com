@@ -1,39 +1,15 @@
 ---
-import BlogTOC from "$components/blog/BlogTOC.astro";
-import BlogToolbar from "$components/blog/BlogToolbar.astro";
-import Clamp from "$components/Clamp.astro";
-import { TimeIcon } from "$components/icons";
-import YTPlayer from "$components/YTPlayer.astro";
-import MainLayout from "$layouts/MainLayout.astro";
+import BlogTOC from "$lib/components/blog/BlogTOC.astro";
+import BlogToolbar from "$lib/components/blog/BlogToolbar.astro";
+import Clamp from "$lib/components/Clamp.astro";
+import { TimeIcon } from "$lib/components/icons";
+import YTPlayer from "$lib/components/YTPlayer.astro";
+import Layout from "$layouts/BaseLayout.astro";
 
 const blogTitle = "YUDI POWTA";
 ---
 
-<script>
-  import { animate } from "motion";
-
-  document.addEventListener("astro:page-load", () => {
-    const toolLabel = document.getElementById("tools-label")!;
-    const toolTitle = document.getElementById("tools-title")!;
-
-    const headerObserver = new IntersectionObserver(([e]) => {
-      const headerBGone = !e.isIntersecting;
-
-      if (headerBGone) {
-        animate(toolLabel, { y: 24, opacity: 0, display: "none" });
-        animate(toolTitle, { y: 0, opacity: 1, display: "inline-flex" });
-      } else {
-        animate(toolLabel, { y: 0, opacity: 0.5, display: "block" });
-        animate(toolTitle, { y: -24, opacity: 0, display: "none" });
-      }
-    });
-
-    const articleHeader = document.getElementById("blog-header")!;
-    headerObserver.observe(articleHeader);
-  });
-</script>
-
-<MainLayout title={blogTitle}>
+<Layout title={blogTitle}>
   <Clamp as="section">
     <div class="lg:space-y-12 space-y-6 pt-12 pb-3">
       <header id="blog-header" class="text-center">
@@ -52,13 +28,13 @@ const blogTitle = "YUDI POWTA";
         </span>
         <time datetime="NaN">May 25, 2025</time>
       </header>
-      <div class="mx-auto max-w-screen-lg px-6">
+      <div class="mx-auto max-w-5xl px-6">
         <div class="aspect-video w-full bg-kuro-lavender-700"></div>
       </div>
     </div>
     <BlogToolbar {blogTitle} />
     <div
-      class="relative pt-3 lg:pt-6 grid grid-cols-[1fr_auto] mx-auto max-w-screen-lg"
+      class="relative pt-3 lg:pt-6 grid grid-cols-[1fr_auto] mx-auto max-w-5xl"
     >
       <main
         class:list={[
@@ -71,18 +47,16 @@ const blogTitle = "YUDI POWTA";
           "prose-pre:*:border-none prose-pre:*:p-0 prose-pre:*:bg-transparent prose-code:p-1 prose-code:bg-kuro-lavender-900 prose-code:rounded-md",
         ]}
       >
-        <p>Cool me down your so hawt</p>
-        <YTPlayer id="-CuGMjwhdCk" />
-        <YTPlayer id="iMgyLlPnxoM" />
+        <p>test</p>
       </main>
       <BlogTOC />
     </div>
   </Clamp>
   <Clamp as="section">
-    <div class="mx-auto max-w-screen-lg px-6">
+    <div class="mx-auto max-w-5xl px-6">
       <hr class="my-8 opacity-40" />
       <div>Tags and shit</div>
     </div>
     <p>lmao</p>
   </Clamp>
-</MainLayout>
+</Layout>

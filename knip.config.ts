@@ -11,7 +11,6 @@ const config: KnipConfig = {
     "@tailwindcss/typography",
     "@iconify-json/*",
     "better-sqlite3",
-    "astro-icon",
     "tailwindcss"
   ]
 }

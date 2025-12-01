@@ -1,6 +1,6 @@
 ---
-import Clamp from "$components/Clamp.astro";
-import MainLayout from "$layouts/MainLayout.astro";
+import Clamp from "$lib/components/Clamp.astro";
+import Layout from "$layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
 
 const { protocol, hostname, href } = Astro.url;
@@ -18,7 +18,7 @@ if (showcaseItem === undefined) {
 }
 ---
 
-<MainLayout title={showcaseItem.data.title}>
+<Layout title={showcaseItem.data.title}>
   <Clamp>
     <span>
       {JSON.stringify(showcaseItem)}

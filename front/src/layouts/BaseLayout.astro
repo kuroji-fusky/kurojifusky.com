@@ -1,81 +1,66 @@
 ---
 import "../styles/global.css";
-
+import MetaTags from "./MetaTags.astro";
+import { footerNav } from "./navMap";
+import Navbar from "./Navbar.svelte";
+import Sidebar from "./Sidebar.svelte";
+import Link from "$lib/components/Link.svelte";
 import { ClientRouter } from "astro:transitions";
-import Meta from "$components/base/Meta.astro";
-
-import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
-import inter400italic from "@fontsource/inter/files/inter-latin-400-italic.woff2?url";
-import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2?url";
-import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
-import unbounded400 from "@fontsource/unbounded/files/unbounded-latin-400-normal.woff2?url";
-import ibmPlex400 from "@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url";
-
-import PreloadFont from "$components/PreloadFont.astro";
-
 import type { ExtractAstroProps } from "./shared";
 
-type Props = Partial<ExtractAstroProps<typeof Meta>>;
+interface Props extends ExtractAstroProps<typeof MetaTags, "canonicalUrl"> {
+  contentPadding?: boolean;
+}
 
-// Parse site metadata
-const { props, site } = Astro;
+const {
+  site,
+  url: { pathname },
+} = Astro;
 
-const { title, description, webpageType = "website", canonicalUrl } = props;
+const canonicalUrl = new URL(pathname, site).toString();
+
+const { contentPadding, title, description } = Astro.props;
 ---
 
-<html lang="en" class="scroll-pt-20 dark:scheme-dark">
+<!-- oh hey~ -->
+<html lang="en" dir="ltr" transition:animate="none">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" href="/icon_128.png" sizes="128x128" />
-
-    <Meta
-      title={title as string}
-      canonicalUrl={canonicalUrl as string}
-      {description}
-      {webpageType}
-    />
-
-    {/* Preload stuff */}
-    <PreloadFont
-      urls={[
-        inter400,
-        inter400italic,
-        inter600,
-        inter700,
-        unbounded400,
-        ibmPlex400,
-      ]}
-    />
-
-    {/* Sitemap and RSS */}
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      href={new URL("rss.xml", site).toString()}
-      type="application/rss+xml"
-    />
+    <MetaTags {title} {description} {canonicalUrl} />
     <ClientRouter />
-
-    <style is:global>
-      focus-lock-region {
-        display: contents;
-      }
-    </style>
-    <script>
-      import "$components/FocusLock";
-      import "$components/YTPlayerClientWrapper";
-      import "$components/YTTimestampMarker";
-    </script>
-
-    <slot name="other-head" />
   </head>
   <body
-    class="font-kuro-body font-medium text-sm lg:text-base bg-kuro-lavender-50 dark:bg-kuro-dark2 text-kuro-violet-50 overflow-x-hidden selection:bg-kuro-lavender-400 dark:selection:bg-kuro-lavender-600 hover:[&_button]:cursor-pointer"
-    transition:animate="none"
+    class="antialiased font-body dark:bg-neutral-950 dark:text-white text-sm overflow-x-hidden"
   >
-    <slot />
+    <div
+      class="grid grid-rows-[1fr_auto] h-dvh *:ml-(--sidebar-width)"
+      style="--sidebar-width: 200px"
+    >
+      <Navbar client:load />
+      <Sidebar client:idle ssr_currentPath={pathname} transition:persist />
+      <div
+        data-root-content=""
+        class:list={["relative", !contentPadding ? "mt-14" : ""]}
+      >
+        <slot />
+      </div>
+      <footer>
+        <div class="px-4 pt-10 pb-6 text-xs justify-center flex">
+          <span class="opacity-40 mr-6">© 2025 Kuroji Fusky LLC</span>
+          <ul class="inline-flex space-x-3">
+            {
+              footerNav?.map((item) => (
+                <li>
+                  <Link href={item.link}>{item.text}</Link>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

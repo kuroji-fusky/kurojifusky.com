@@ -1,11 +1,11 @@
 ---
-import ImageWrapper from "$components/ImageWrapper.astro";
-import MainLayout from "$layouts/MainLayout.astro";
+import ImageWrapper from "$lib/components/ImageWrapper.astro";
+import Layout from "$layouts/BaseLayout.astro";
 import oops from "../../public/oops.jpg";
 ---
 
 {/* @ts-ignore: description not needed for a 404 page lol */}
-<MainLayout title="Page not found">
+<Layout title="Page not found">
   <div class="m-auto grid place-items-center px-6 h-[calc(100dvh-11rem)]">
     <div class="flex flex-col items-center">
       <ImageWrapper src={oops.src} alt="" class="rounded-lg w-60" />

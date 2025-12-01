@@ -1,0 +1,56 @@
+---
+import { siteAuthorHandle as me } from "$lib/utils";
+
+interface Props {
+  title: string;
+  description?: string;
+  webpageType?: "website" | "article";
+  canonicalUrl: string;
+}
+
+const {
+  props: { title, description, canonicalUrl, webpageType },
+  url: { pathname },
+} = Astro;
+
+const siteTitle = "Kuroji Fusky";
+
+const dynamicTitle = pathname === "/" ? title : `${title} | ${siteTitle}`;
+const SITE_TITLE = "The Fusky Corner";
+---
+
+<title>{dynamicTitle}</title>
+{description && <meta name="description" content={description} />}
+
+{/* OG tags */}
+<meta property="og:title" content={dynamicTitle} />
+{description && <meta property="og:description" content={description} />}
+<meta property="og:site_title" content={SITE_TITLE} />
+<meta property="og:type" content={webpageType} />
+<meta property="og:url" content={canonicalUrl} />
+
+{
+  /* Twitter tags, won't include "twitter:title" since it falls back to "og:*" meta tags */
+}
+<meta name="twitter:title" content={dynamicTitle} />
+{description && <meta name="twitter:description" content={description} />}
+<meta name="twitter:creator" content={me} />
+<meta name="twitter:site" content={me} />
+<meta name="twitter:url" content={canonicalUrl} />
+
+<link rel="canonical" href={canonicalUrl} />
+
+{/* RSS feeds */}
+<link
+  rel="alternate"
+  href="https://kurojifusky.com/rss.xml"
+  type="application/rss+xml"
+/>
+
+{/* Transparent tracking */}
+<script
+  is:inline
+  defer
+  src="https://cloud.umami.is/script.js"
+  data-website-id=""
+  fetchpriority="high"></script>
