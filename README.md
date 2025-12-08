@@ -2,7 +2,7 @@
   <a href="https://kurojifusky.com">kurojifusky.com</a>
 </h1>
 
-The source code of `kurojifusky.com` is written in Astro with Lit components.
+The source code of `kurojifusky.com` is written in Astro + Svelte.
 
 ## Project structure
 
@@ -11,10 +11,8 @@ The source code of `kurojifusky.com` is written in Astro with Lit components.
 
 This is a monorepo setup with Yarn workspaces; uses [Biome](https://biomejs.dev) and [Knip](https://knip.dev) for codebase upkeep
 
-- `front`: An abomination of a site
-- `packages`
-  - `kuro-time`: A small util library for parsing and formatting time and dates
-- `strapi`: CMS that'll give me the ability to post Nick Wilde fanfics
+- `front`: An abomination of an omni-site
+- `sanity-studio`: CMS that'll give me the ability to post Nick Wilde fanfics
 
 ## Running the abominations locally
 
@@ -31,8 +29,6 @@ After cloning, install dependencies with `yarn`:
 yarn install
 ```
 
-#### Website
-
 Start the dev server with:
 
 ```console
@@ -40,10 +36,6 @@ yarn dev
 ```
 
 Which exposes <http://localhost:4321>.
-
-#### Strapi
-
-WIP
 
 ## Copyright
 
