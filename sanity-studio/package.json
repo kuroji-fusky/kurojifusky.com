@@ -26,7 +26,8 @@
     "dotenv": "^17.2.3",
     "eslint": "^9.28",
     "prettier": "^3.5",
-    "typescript": "^5.8"
+    "typescript": "^5.8",
+    "vite-plugin-vercel": "^9.0.8"
   },
   "prettier": {
     "semi": false,
