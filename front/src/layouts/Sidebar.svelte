@@ -112,6 +112,8 @@
 
   <div class="px-3.5 pb-4 w-full hidden">
     <hr class="mb-2 mx-2 dark:border-neutral-600 border-neutral-400" />
-    <SidebarItem link="https://github.com/kuroji-fusky/kurojifusky.com">Sauce code</SidebarItem>
+    <SidebarItem link="https://github.com/kuroji-fusky/kurojifusky.com"
+      >Sauce code</SidebarItem
+    >
   </div>
 </aside>

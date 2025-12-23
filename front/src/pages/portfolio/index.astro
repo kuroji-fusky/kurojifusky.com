@@ -8,7 +8,7 @@ import { getCollection } from "astro:content";
 const showcaseItem = await getCollection("portfolio");
 const sortedShowcaseItem = showcaseItem
   .sort((a, b) => b.data.year - a.data.year)
-  .filter((c) => c.data.isFeatured === true);
+  .filter((i) => i.data.isFeatured)
 ---
 
 <Layout title="Portfolio" description="A shit">
@@ -31,7 +31,7 @@ const sortedShowcaseItem = showcaseItem
                   <span class="font-kuro-mono">{mm.data.year}</span>
                   {/* <span>{mm.data.type}</span> */}
                 </div>
-                <div class="text-sm">
+                <div class="text-sm inline-flex gap-x-2.5">
                   <Link href="https://example.com">View site</Link>
                   <Link href="https://github.com/f/f">Source code</Link>
                 </div>

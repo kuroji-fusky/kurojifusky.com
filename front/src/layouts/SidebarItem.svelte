@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
-  import { ChevronRight, ExtLink } from "../lib/components/icons";
+  import { ChevronRightIcon, ExtLinkIcon } from "$lib/components/icons";
 
   interface Props {
     link: string;
@@ -33,13 +33,13 @@
   {#if hasSubitem}
     <span
       class="transition-all opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100"
-      >{@html ChevronRight}</span
+      >{@html ChevronRightIcon}</span
     >
   {/if}
   {#if isLinkHttps}
     <span
       class="transition-all opacity-50 group-hover:opacity-100 group-focus-visible:opacity-100"
-      >{@html ExtLink}</span
+      >{@html ExtLinkIcon}</span
     >
   {/if}
 </a>

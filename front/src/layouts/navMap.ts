@@ -1,19 +1,19 @@
-import GalleryVertIcon from "~icons/lucide/gallery-vertical-end?raw";
-import BookTextIcon from "~icons/lucide/book-text?raw";
-import BookImageIcon from "~icons/lucide/book-image?raw";
-import PawPrintIcon from "~icons/lucide/cat?raw";
-import ShareIcon from "~icons/lucide/share-2?raw";
+import GalleryVertIcon from "~icons/lucide/gallery-vertical-end?raw"
+import BookTextIcon from "~icons/lucide/book-text?raw"
+import BookImageIcon from "~icons/lucide/book-image?raw"
+import PawPrintIcon from "~icons/lucide/cat?raw"
+import ShareIcon from "~icons/lucide/share-2?raw"
 
 interface NavMap {
-  heading: string;
-  link: string;
-  icon: astroHTML.JSX.Element;
+  heading: string
+  link: string
+  icon: astroHTML.JSX.Element
   subitems?: ({
-    link?: string;
-    text?: string;
+    link?: string
+    text?: string
   } & {
-    heading?: string;
-  })[];
+    heading?: string
+  })[]
 }
 
 export const topNav: NavMap[] = [
@@ -22,14 +22,12 @@ export const topNav: NavMap[] = [
     link: "/portfolio",
     icon: GalleryVertIcon,
     subitems: [
+      { link: "/portfolio", text: "Featured" },
+      { heading: "Categories" },
       { link: "/portfolio/category/software", text: "Software" },
       { link: "/portfolio/category/videos", text: "Videos" },
-      { link: "/portfolio/category/others", text: "Others" },
-      { heading: "Featured" },
-      { link: "/portfolio/woah", text: "Flinky" },
-      { link: "/portfolio/woah", text: "SponsorExplorer" },
-      { link: "/portfolio/woah", text: "Kitstory" },
-    ],
+      { link: "/portfolio/category/others", text: "Others" }
+    ]
   },
   {
     heading: "Blog",
@@ -50,20 +48,20 @@ export const topNav: NavMap[] = [
     subitems: [
       { link: "/#", text: "Filters" },
       { link: "/artworks/character/kuro", text: "Kuro" },
-      { link: "/artworks/character/kinter", text: "Kinter" },
-    ],
+      { link: "/artworks/character/kinter", text: "Kinter" }
+    ]
   },
   {
     heading: "About me",
     icon: PawPrintIcon,
-    link: "/about",
+    link: "/about"
   },
   {
     heading: "Socials",
     icon: ShareIcon,
-    link: "/socials",
-  },
-];
+    link: "/socials"
+  }
+]
 
 export const footerNav: NavMap["subitems"] = [
   { text: "Sitemap", link: "/#" },

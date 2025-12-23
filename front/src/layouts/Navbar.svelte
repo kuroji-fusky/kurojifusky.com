@@ -9,10 +9,18 @@
     DropdownContent,
   } from "$lib/components/Dropdown";
   import Button from "$lib/components/Button.svelte";
+  import type { Snippet } from "svelte";
 
   let themeDropdownShow = $state(false);
 
   const themeDropdownToggle = () => (themeDropdownShow = !themeDropdownShow);
+
+  interface Props {
+    branding: Snippet;
+    menuIcon: Snippet;
+  }
+
+  const { branding, menuIcon }: Partial<Props> = $props();
 </script>
 
 <header class="z-10 fixed top-0 inset-x-0 h-14">
@@ -21,12 +29,12 @@
   >
     <div class="inline-flex items-center flex-1 gap-x-2">
       <a href="/" class="pl-1.5">
-        <KuroLogoBrand width="16px" height="16px" aria-label="Kuro logo" />
+        {@render branding?.()}
       </a>
     </div>
     <!-- Desktop toggle -->
     <Button aria-label="Toggle menu">
-      {@html MenuIcon}
+      {@render menuIcon?.()}
     </Button>
   </div>
   <div
@@ -37,7 +45,7 @@
       class="md:hidden block p-2 rounded-md dark:hover:bg-neutral-600/30 hover:bg-neutral-400/30 dark:focus:bg-neutral-600/30 transition-colors duration-100 cursor-pointer"
       aria-label="Toggle menu"
     >
-      {@html MenuIcon}
+      {@render menuIcon?.()}
     </button>
     <Dropdown>
       <DropdownButton

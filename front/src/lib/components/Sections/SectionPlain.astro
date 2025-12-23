@@ -1,5 +1,5 @@
 ---
-import Link from "$components/Link.astro";
+import Link from "../Link.svelte";
 import { kebabCase } from "lodash-es";
 import SectionBase from "./SectionBase.astro";
 
@@ -14,7 +14,13 @@ interface Props {
   noHeading?: boolean;
 }
 
-const { heading, noHeading, potentalAction, level = 2, class: cn } = Astro.props;
+const {
+  heading,
+  noHeading,
+  potentalAction,
+  level = 2,
+  class: cn,
+} = Astro.props;
 
 const kebabedHeading = kebabCase(heading);
 const k_labelledby = `${kebabedHeading}-${crypto.randomUUID().split("-")[0]}`;
