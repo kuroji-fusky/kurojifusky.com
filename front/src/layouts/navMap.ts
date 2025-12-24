@@ -2,7 +2,7 @@ import GalleryVertIcon from "~icons/lucide/gallery-vertical-end?raw"
 import BookTextIcon from "~icons/lucide/book-text?raw"
 import BookImageIcon from "~icons/lucide/book-image?raw"
 import PawPrintIcon from "~icons/lucide/cat?raw"
-import ShareIcon from "~icons/lucide/share-2?raw"
+import ShareIcon from "~icons/lucide/globe?raw"
 
 interface NavMap {
   heading: string
@@ -11,9 +11,9 @@ interface NavMap {
   subitems?: ({
     link?: string
     text?: string
-  } & {
+  } | {
     heading?: string
-  })[]
+  } & { props?: Partial<{ notranslate: boolean }> })[]
 }
 
 export const topNav: NavMap[] = [
@@ -22,11 +22,10 @@ export const topNav: NavMap[] = [
     link: "/portfolio",
     icon: GalleryVertIcon,
     subitems: [
-      { link: "/portfolio", text: "Featured" },
       { heading: "Categories" },
       { link: "/portfolio/category/software", text: "Software" },
       { link: "/portfolio/category/videos", text: "Videos" },
-      { link: "/portfolio/category/others", text: "Others" }
+      { link: "/portfolio/category/legacy", text: "Legacy" },
     ]
   },
   {
@@ -37,7 +36,7 @@ export const topNav: NavMap[] = [
       { link: "/blog/case-studies", text: "Case Studies" },
       { heading: "Category" },
       { link: "/blog/category/engineering", text: "Engineering" },
-      { link: "/blog/category/ui-ux-design", text: "UI and Design" },
+      { link: "/blog/category/ux-design", text: "UX and Design" },
       { link: "/blog/category/others", text: "Yapping" },
     ],
   },
@@ -46,7 +45,7 @@ export const topNav: NavMap[] = [
     link: "/artworks",
     icon: BookImageIcon,
     subitems: [
-      { link: "/#", text: "Filters" },
+      { heading: "Characters" },
       { link: "/artworks/character/kuro", text: "Kuro" },
       { link: "/artworks/character/kinter", text: "Kinter" }
     ]
@@ -54,7 +53,14 @@ export const topNav: NavMap[] = [
   {
     heading: "About me",
     icon: PawPrintIcon,
-    link: "/about"
+    link: "/about",
+    subitems: [
+      { link: "/about", text: "Index" },
+      { link: "/what-is-a-fusky", text: "What's A Fusky?" },
+      { heading: "Lore" },
+      { link: "/about/timeline", text: "Timeline" },
+      { link: "/in-the-making", text: "In The Making" },
+    ]
   },
   {
     heading: "Socials",
@@ -64,7 +70,7 @@ export const topNav: NavMap[] = [
 ]
 
 export const footerNav: NavMap["subitems"] = [
-  { text: "Sitemap", link: "/#" },
+  { text: "sitemap.xml", link: "/sitemap.xml" },
   { text: "Contact", link: "/#" },
   { text: "View sauce code", link: "https://github.com/kuroji-fusky/kurojifusky.com" },
   { text: "View site analytics", link: "/#" },

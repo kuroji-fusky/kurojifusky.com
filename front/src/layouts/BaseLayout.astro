@@ -37,7 +37,7 @@ const { contentPadding, title, description } = Astro.props;
     class="antialiased font-kuro-body dark:bg-neutral-950 dark:text-white text-sm overflow-x-hidden"
   >
     <div
-      class="grid grid-rows-[1fr_auto] h-dvh *:ml-(--sidebar-width)"
+      class="grid grid-rows-[1fr_auto] h-dvh lg:*:ml-(--sidebar-width)"
       style="--sidebar-width: 230px"
     >
       <Navbar client:load>
@@ -57,13 +57,13 @@ const { contentPadding, title, description } = Astro.props;
         <slot />
       </div>
       <footer>
-        <div class="px-4 pt-10 pb-6 text-xs justify-center flex">
+        <div class="px-4 pt-10 pb-6 justify-center flex">
           <span class="opacity-40 mr-6">© 2025 Kuroji Fusky LLC</span>
           <ul class="inline-flex space-x-3">
             {
               footerNav?.map((item) => (
                 <li>
-                  <Link href={item.link}>{item.text}</Link>
+                  <Link href={item.link} class="whitespace-nowrap">{item.text}</Link>
                 </li>
               ))
             }

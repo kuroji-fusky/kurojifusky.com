@@ -1,7 +1,6 @@
 <script lang="ts">
   import SidebarItem from "./SidebarItem.svelte";
   import ArrowLeftIcon from "~icons/lucide/arrow-left?raw";
-  import { navToggle } from "$lib/stores";
 
   import { fly } from "svelte/transition";
   import { onMount } from "svelte";
@@ -57,7 +56,7 @@
 
 <aside
   id="context-switcher"
-  class="row-span-2 fixed inset-y-0 left-0 w-(--sidebar-width) pt-24 h-full flex flex-col justify-between overflow-x-hidden border-r border-r-neutral-700 rounded-lg"
+  class="lg:row-span-2 fixed inset-y-0 left-0 w-(--sidebar-width) pt-24 h-full hidden lg:flex flex-col justify-between overflow-x-hidden border-r border-r-neutral-700 rounded-lg"
 >
   <div class="relative *:absolute *:top-0 *:inset-x-0 w-full">
     {#if !navGate}
@@ -108,12 +107,5 @@
         {/each}
       </nav>
     {/if}
-  </div>
-
-  <div class="px-3.5 pb-4 w-full hidden">
-    <hr class="mb-2 mx-2 dark:border-neutral-600 border-neutral-400" />
-    <SidebarItem link="https://github.com/kuroji-fusky/kurojifusky.com"
-      >Sauce code</SidebarItem
-    >
   </div>
 </aside>
