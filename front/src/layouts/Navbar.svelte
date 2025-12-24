@@ -13,6 +13,7 @@
   import { writable } from "svelte/store";
   import Portal from "$lib/components/Portal.svelte";
   import NavbarItemCollapsible from "./NavbarItemCollapsible.svelte";
+  import { isModalTriggered } from "$lib/stores";
 
   let themeDropdownShow = $state(false);
 
@@ -21,23 +22,23 @@
   let desktopSidebarToggle = writable(true);
   setContext("DESKTOP-TOGGLE", desktopSidebarToggle);
 
-  let mobileSidebar = $state(false);
+  let mobileNavbarOpen = $state(false);
 
   const TABLET_VW = 1024;
 
   function mobileResize() {
     const isTabletVw = window.innerWidth <= TABLET_VW;
 
-    if (mobileSidebar && !isTabletVw) {
-      mobileSidebar = false;
+    if (mobileNavbarOpen && !isTabletVw) {
+      mobileNavbarOpen = false;
       return;
     }
   }
 
   function handleKeyDown(e: KeyboardEvent) {
-    if (!(mobileSidebar && e.key === "Escape")) return;
+    if (!($isModalTriggered && mobileNavbarOpen && e.key === "Escape")) return;
 
-    mobileSidebar = false;
+    mobileNavbarOpen = false;
     return;
   }
 
@@ -50,7 +51,9 @@
   $effect(() => {
     const docBody = document.body.classList;
 
-    mobileSidebar ? docBody.add(docClasses) : docBody.remove(docClasses);
+    isModalTriggered.set(mobileNavbarOpen);
+
+    $isModalTriggered ? docBody.add(docClasses) : docBody.remove(docClasses);
   });
 </script>
 
@@ -101,9 +104,9 @@
     <button
       class="lg:hidden block p-2 rounded-md dark:hover:bg-neutral-600/30 hover:bg-neutral-400/30 dark:focus:bg-neutral-600/30 transition-colors duration-100 cursor-pointer"
       aria-label="Toggle menu"
-      onclick={() => (mobileSidebar = !mobileSidebar)}
+      onclick={() => (mobileNavbarOpen = !mobileNavbarOpen)}
     >
-      {#if !mobileSidebar}
+      {#if !mobileNavbarOpen}
         {@html MenuIcon}
       {:else}
         {@html XIcon}
@@ -113,12 +116,14 @@
 </header>
 
 <Portal focusGuard={false}>
-  {#if mobileSidebar}
+  {#if mobileNavbarOpen}
     <nav
       id="nav-mobile"
       class="lg:hidden grid grid-rows-[1fr_auto] fixed top-16 inset-0 z-20 dark:bg-neutral-950 *:px-6"
     >
-      <section class="h-full overflow-y-auto overflow-x-hidden scheme-light-dark">
+      <section
+        class="h-full overflow-y-auto overflow-x-hidden scheme-light-dark"
+      >
         {#each topNav as { heading, icon, link, subitems }}
           <NavbarItemCollapsible {heading} {icon} {link} {subitems} />
         {/each}
