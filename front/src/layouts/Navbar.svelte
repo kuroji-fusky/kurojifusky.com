@@ -14,6 +14,7 @@
   import Portal from "$lib/components/Portal.svelte";
   import NavbarItemCollapsible from "./NavbarItemCollapsible.svelte";
   import { isModalTriggered } from "$lib/stores";
+  import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
 
   let themeDropdownShow = $state(false);
 
@@ -94,8 +95,10 @@
         anchor="top right"
         heading="Themes baby"
         state={themeDropdownShow}
-        eventToggler={themeDropdownToggle}>lmao</DropdownContent
+        eventToggler={themeDropdownToggle}
       >
+        <ThemeSwitcher theme="system" ui="radiobox" />
+      </DropdownContent>
     </Dropdown>
     <Button aria-label="Search">
       {@html SearchIcon}
@@ -128,7 +131,10 @@
           <NavbarItemCollapsible {heading} {icon} {link} {subitems} />
         {/each}
       </section>
-      <section class="py-6 border-t border-t-neutral-600">Theme stuff</section>
+      <section class="py-6 border-t border-t-neutral-600 flex justify-between">
+        <span>Device theme</span>
+        <ThemeSwitcher theme="system" ui="radiobox" />
+      </section>
     </nav>
   {/if}
 </Portal>

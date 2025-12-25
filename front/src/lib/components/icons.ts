@@ -4,12 +4,15 @@ import RssIcon from "~icons/lucide/rss"
 import SearchIcon from "~icons/lucide/search"
 import MenuIcon from "~icons/lucide/menu?raw"
 import SettingsIcon from "~icons/lucide/settings-2"
-import MonitorIcon from "~icons/lucide/monitor"
+import MonitorIcon from "~icons/lucide/monitor?raw"
 import ChevronRightIcon from "~icons/lucide/chevron-right?raw"
 import ChevronDownIcon from "~icons/lucide/chevron-down?raw"
 import XIcon from "~icons/lucide/x?raw"
 import ShareIcon from "~icons/lucide/share-2"
 import A11yIcon from "~icons/lucide/person-standing"
+
+import DarkIcon from "~icons/lucide/moon?raw"
+import LightIcon from "~icons/lucide/sun?raw"
 
 import TocIcon from "~icons/lucide/table-of-contents"
 
@@ -24,6 +27,8 @@ import KuroWordmarkRaw from "~icons/kuro/logo-wordmark?raw"
 import KuroWordmark from "~icons/kuro/logo-wordmark"
 
 export {
+  DarkIcon,
+  LightIcon,
   TocIcon,
   ExpandIcon,
   ShrinkIcon,

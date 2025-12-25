@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { class: cls, as: Element = "div" } = Astro.props;
-const mergedClasses = twMerge("block mx-auto max-w-screen-xl", cls);
+const mergedClasses = twMerge("block mx-auto max-w-7xl", cls);
 ---
 
 <Element data-clamp-container="" class={mergedClasses}>

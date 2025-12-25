@@ -1,19 +1,25 @@
 ---
-import Clamp from "$lib/components/Clamp.astro";
 import BaseLayout from "$layouts/BaseLayout.astro";
+import Clamp from "$lib/components/Clamp.astro";
+import Link from "$lib/components/Link.svelte";
+import SkillIssue from "$lib/components/SkillIssue.svelte";
 ---
 
 <BaseLayout title="kuro homepage">
   <section>
-    <span>Some hero content</span>
+    <div class="h-[80dvh]">Some hero content</div>
     <h1>Kuro</h1>
-    <p>A cute fusky on the interwebz</p>
-  </section>
-  <section>
-    <h2>Stuff I do</h2>
-    <p>
-      A jack-of-all-trades, master of "I don't know what the hell I'm doing"
+    <p class="opacity-75 text-lg">
+      A cute <Link href="/what-is-a-fusky">fusky</Link> on the interwebz
     </p>
   </section>
-
+  <Clamp as="section" class="px-6">
+    <div class="text-center contents">
+      <h2 class="my-2.5 font-bold text-4xl">Stuff I do</h2>
+      <p class="opacity-75 text-lg">
+        A jack-of-all-trades, master of "I don't know what the hell I'm doing"
+      </p>
+    </div>
+    <SkillIssue client:visible />
+  </Clamp>
 </BaseLayout>
