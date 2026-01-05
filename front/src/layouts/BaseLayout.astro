@@ -52,7 +52,7 @@ const { contentPadding, title, description } = Astro.props;
       <Sidebar client:idle ssr_currentPath={pathname} transition:persist />
       <div
         data-root-content=""
-        class:list={["relative", !contentPadding ? "mt-14" : ""]}
+        class:list={["relative", !contentPadding ? "mt-16" : ""]}
       >
         <slot />
       </div>

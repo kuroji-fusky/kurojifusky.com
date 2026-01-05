@@ -11,6 +11,9 @@
       "@types/youtube"
     ]
   },
+  "typeAcquisition": {
+    "enable": true
+  },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
 }

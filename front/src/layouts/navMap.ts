@@ -23,9 +23,9 @@ export const topNav: NavMap[] = [
     icon: GalleryVertIcon,
     subitems: [
       { heading: "Categories" },
-      { link: "/portfolio/category/software", text: "Software" },
-      { link: "/portfolio/category/videos", text: "Videos" },
-      { link: "/portfolio/category/legacy", text: "Legacy" },
+      { link: "/portfolio/software", text: "Software" },
+      { link: "/portfolio/videos", text: "Videos" },
+      { link: "/portfolio/legacy", text: "Legacy" },
     ]
   },
   {
@@ -38,6 +38,8 @@ export const topNav: NavMap[] = [
       { link: "/blog/category/engineering", text: "Engineering" },
       { link: "/blog/category/ux-design", text: "UX and Design" },
       { link: "/blog/category/others", text: "Yapping" },
+      { heading: "More" },
+      { link: "/dream-journal", text: "Dream Journal" },
     ],
   },
   {
@@ -46,12 +48,12 @@ export const topNav: NavMap[] = [
     icon: BookImageIcon,
     subitems: [
       { heading: "Characters" },
-      { link: "/artworks/character/kuro", text: "Kuro" },
-      { link: "/artworks/character/kinter", text: "Kinter" }
+      { link: "/character/kuro", text: "Kuro" },
+      { link: "/character/kinter", text: "Kinter" }
     ]
   },
   {
-    heading: "About me",
+    heading: "About Me",
     icon: PawPrintIcon,
     link: "/about",
     subitems: [

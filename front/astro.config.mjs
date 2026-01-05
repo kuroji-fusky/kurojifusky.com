@@ -2,7 +2,7 @@ import node from "@astrojs/node"
 import cloudflare from "@astrojs/cloudflare"
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
-import svelte from '@astrojs/svelte'
+import svelte from "@astrojs/svelte"
 
 import { defineConfig, passthroughImageService } from "astro/config"
 import tailwindcss from "@tailwindcss/vite"
@@ -16,13 +16,19 @@ export default defineConfig({
 
   output: "server",
 
+  server: {
+    headers: {
+      "X-Clacks-Overhead": "GNU Terry Pratchett"
+    }
+  },
+
   adapter: !!process.env.CF_MODE
     ? cloudflare({
-      imageService: "passthrough"
-    })
+        imageService: "passthrough"
+      })
     : node({
-      mode: "standalone"
-    }),
+        mode: "standalone"
+      }),
 
   redirects: {
     "/blog/posts/[slug]": "/blog/[slug]",
@@ -51,7 +57,7 @@ export default defineConfig({
           kuro: FileSystemIconLoader("./src/lib/icons/kuro")
         }
       })
-    ],
+    ]
   },
 
   site: "https://kurojifusky.com",

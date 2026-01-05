@@ -15,6 +15,7 @@
   import NavbarItemCollapsible from "./NavbarItemCollapsible.svelte";
   import { isModalTriggered } from "$lib/stores";
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+  import { fly } from "svelte/transition";
 
   let themeDropdownShow = $state(false);
 
@@ -61,7 +62,7 @@
 <svelte:window onresize={mobileResize} onkeydown={handleKeyDown} />
 
 <header
-  class="z-20 fixed top-0 inset-x-0 h-16 dark:bg-neutral-950 lg:bg-transparent!"
+  class="z-20 fixed top-0 inset-x-0 h-16 bg-neutral-100 dark:bg-neutral-950 lg:bg-transparent!"
 >
   <div
     class="w-(--sidebar-width) pl-5 pr-3 absolute inline-flex items-center top-0 left-0 py-4"
@@ -121,8 +122,9 @@
 <Portal focusGuard={false}>
   {#if mobileNavbarOpen}
     <nav
+      transition:fly={{ duration: 350, x: "100%" }}
       id="nav-mobile"
-      class="lg:hidden grid grid-rows-[1fr_auto] fixed top-16 inset-0 z-20 dark:bg-neutral-950 *:px-6"
+      class="lg:hidden grid grid-rows-[1fr_auto] fixed top-16 inset-0 z-20 bg-white dark:bg-neutral-950 *:px-3"
     >
       <section
         class="h-full overflow-y-auto overflow-x-hidden scheme-light-dark"

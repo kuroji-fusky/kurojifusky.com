@@ -56,7 +56,7 @@
 
 <aside
   id="context-switcher"
-  class="lg:row-span-2 fixed inset-y-0 left-0 w-(--sidebar-width) pt-24 h-full hidden lg:flex flex-col justify-between overflow-x-hidden border-r border-r-neutral-700 rounded-lg"
+  class="lg:row-span-2 fixed inset-y-0 left-0 w-(--sidebar-width) pt-24 h-full hidden lg:flex flex-col justify-between overflow-x-hidden border-r border-r-neutral-700 bg-neutral-100 dark:bg-neutral-950 rounded-lg"
 >
   <div class="relative *:absolute *:top-0 *:inset-x-0 w-full">
     {#if !navGate}
