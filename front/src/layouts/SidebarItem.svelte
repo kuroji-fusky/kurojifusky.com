@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { ChevronRightIcon, ExtLinkIcon } from "$lib/components/icons";
+  import { onMount } from "svelte";
 
   interface Props {
     link: string;
@@ -13,14 +14,26 @@
 
   const { children, link, hasSubitem, currentPath }: Props = $props();
 
-  const trueCurrentPath = currentPath === link;
+  let localCurrentPath = $state(currentPath);
+
+  $effect(() => {
+    localCurrentPath = currentPath;
+  });
+
+  const trueCurrentPath = $derived(localCurrentPath === link);
 
   const isLinkHttps = link.startsWith("https");
+
+  onMount(() => {
+    document.addEventListener("astro:page-load", () => {
+      localCurrentPath = location.pathname;
+    });
+  });
 </script>
 
 <a
   aria-current={trueCurrentPath ? "page" : undefined}
-  class="aria-[current]:bg-amber-900 relative group p-2.5 flex items-center justify-between cursor-pointer before:pointer-events-none before:absolute before:inset-0 before:rounded-md before:dark:bg-white/10 before:bg-black/10 before:transition-[opacity,scale] before:opacity-0 before:scale-95 hover:before:opacity-100 focus-visible:before:opacity-100 hover:before:scale-100 focus-visible:before:scale-100"
+  class="rounded-md aria-[current]:bg-kuro-lavender-800 relative group p-2.5 flex items-center justify-between cursor-pointer before:pointer-events-none before:absolute before:inset-0 before:rounded-md before:dark:bg-white/10 before:bg-black/10 before:transition-[opacity,scale] before:opacity-0 before:scale-95 not-aria-[current]:hover:before:opacity-100 focus-visible:before:opacity-100 hover:before:scale-100 focus-visible:before:scale-100"
   href={link}
   target={isLinkHttps ? "_blank" : undefined}
   rel={isLinkHttps ? "noreferrer noopener" : undefined}

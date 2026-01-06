@@ -8,12 +8,10 @@ interface NavMap {
   heading: string
   link: string
   icon: astroHTML.JSX.Element
-  subitems?: ({
-    link?: string
-    text?: string
-  } | {
-    heading?: string
-  } & { props?: Partial<{ notranslate: boolean }> })[]
+  subitems?: Array<
+    | { link: string; text: string; props?: Partial<{ notranslate: boolean }> }
+    | { heading?: string }
+  >
 }
 
 export const topNav: NavMap[] = [
@@ -33,7 +31,7 @@ export const topNav: NavMap[] = [
     link: "/blog",
     icon: BookTextIcon,
     subitems: [
-      { link: "/blog/case-studies", text: "Case Studies" },
+      { link: "/case-studies", text: "Case Studies" },
       { heading: "Category" },
       { link: "/blog/category/engineering", text: "Engineering" },
       { link: "/blog/category/ux-design", text: "UX and Design" },
@@ -57,7 +55,6 @@ export const topNav: NavMap[] = [
     icon: PawPrintIcon,
     link: "/about",
     subitems: [
-      { link: "/about", text: "Index" },
       { link: "/what-is-a-fusky", text: "What's A Fusky?" },
       { heading: "Lore" },
       { link: "/about/timeline", text: "Timeline" },

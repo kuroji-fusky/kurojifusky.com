@@ -15,14 +15,28 @@
   let currentPath = $state(ssr_currentPath);
   const rootPath = $derived(currentPath === "/");
 
+  // Helper function to find parent nav item based on current path
+  const findActiveParent = (path: string) => {
+    return topNav.find(({ link, subitems }) => {
+      // Check if current path matches the nav item's link
+      if (link === path) return true;
+
+      // Check if current path is a subitem of this nav item
+      if (subitems) {
+        return subitems.some((subitem) => {
+          return "link" in subitem && subitem.link === path;
+        });
+      }
+
+      // Check if current path starts with the nav item's link (for nested routes)
+      if (link !== "/" && path.startsWith(link)) return true;
+
+      return false;
+    });
+  };
+
   // Track the last active parent nav item for subroutes
-  let activeParent = $state<(typeof topNav)[number] | undefined>(
-    topNav.find(
-      (x) =>
-        x.link === currentPath ||
-        (x.link !== "/" && currentPath.startsWith(x.link)),
-    ),
-  );
+  let activeParent = $state(findActiveParent(ssr_currentPath));
 
   const navGate = $derived(
     !rootPath && !!activeParent && !!activeParent.subitems,
@@ -41,14 +55,8 @@
       if (currentPath === "/") {
         activeParent = undefined;
       } else {
-        // Try to find a topNav parent for the current path
-        const parent = topNav.find(
-          (x) => x.link !== "/" && currentPath.startsWith(x.link),
-        );
-        // If not found, keep previous activeParent (for deep dynamic routes), otherwise, keep previous activeParent
-        if (parent) {
-          activeParent = parent;
-        }
+        // Find the parent nav based on the current path
+        activeParent = findActiveParent(currentPath);
       }
     });
   });
@@ -85,21 +93,18 @@
           >
             {@html ArrowLeftIcon}
           </span>
-          <div
-            class="h-2.5 border ml-1 mr-2 transition-[margin] rotate-18 opacity-50"
-          ></div>
-
-          <span
-            >{topNav?.find((x) => x.link.startsWith(currentPath!))
-              ?.heading}</span
-          >
+          <span>Back</span>
         </a>
-        {#each filteredItems?.subitems as item}
-          {#if item.link && item.text}
-            <SidebarItem hasSubitem={false} {currentPath} link={item.link}
-              >{item.text}</SidebarItem
-            >
-          {:else if item.heading}
+        <!-- Root item -->
+        <SidebarItem hasSubitem={false} {currentPath} link={activeParent!.link}>
+          {activeParent!.heading}
+        </SidebarItem>
+        {#each filteredItems!.subitems as item}
+          {#if "text" in item}
+            <SidebarItem hasSubitem={false} {currentPath} link={item.link}>
+              {item.text}
+            </SidebarItem>
+          {:else if "heading" in item}
             <h2 class="opacity-35 px-2.5 pb-1.5 pt-5 select-none">
               {item.heading}
             </h2>
