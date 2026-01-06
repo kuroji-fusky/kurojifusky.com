@@ -1,9 +1,6 @@
 import type { KnipConfig } from "knip"
 
 const config: KnipConfig = {
-  entry: ["front/**/*.{ts,mjs,js,svelte,astro}", "packages/**"],
-  project: ["**/*.{mjs,js,ts,svelte,astro}!"],
-  ignore: ["strapi/config/**", "strapi/src/admin/**"],
   ignoreDependencies: [
     "@astrojs/*",
     "@fontsource/*",
