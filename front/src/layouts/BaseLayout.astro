@@ -27,8 +27,8 @@ const { contentPadding, title, description } = Astro.props;
 <html lang="en" dir="ltr" transition:animate="none">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <MetaTags {title} {description} {canonicalUrl} />
     <ClientRouter />
@@ -63,7 +63,9 @@ const { contentPadding, title, description } = Astro.props;
             {
               footerNav?.map((item) => (
                 <li>
-                  <Link href={item.link} class="whitespace-nowrap">{item.text}</Link>
+                  <Link href={item.link} class="whitespace-nowrap">
+                    {item.text}
+                  </Link>
                 </li>
               ))
             }
