@@ -34,7 +34,9 @@ export default defineConfig({
     "/blog/posts/[slug]": "/blog/[slug]",
     "/blog/post/[slug]": "/blog/[slug]",
     "/posts/[slug]": "/blog/[slug]",
-    "/post/[slug]": "/blog/[slug]"
+    "/post/[slug]": "/blog/[slug]",
+
+    "/fusky": "/what-is-a-fusky",
   },
 
   build: {

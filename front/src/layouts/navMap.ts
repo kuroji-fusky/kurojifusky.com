@@ -20,8 +20,8 @@ export const topNav: NavMap[] = [
     link: "/portfolio",
     icon: GalleryVertIcon,
     subitems: [
-      { heading: "Categories" },
-      { link: "/portfolio/software", text: "Software" },
+      { heading: "Category" },
+      { link: "/portfolio/dev", text: "Dev" },
       { link: "/portfolio/videos", text: "Videos" },
       { link: "/portfolio/legacy", text: "Legacy" },
     ]
@@ -35,7 +35,7 @@ export const topNav: NavMap[] = [
       { heading: "Category" },
       { link: "/blog/category/engineering", text: "Engineering" },
       { link: "/blog/category/ux-design", text: "UX and Design" },
-      { link: "/blog/category/others", text: "Yapping" },
+      { link: "/blog/category/others", text: "Others" },
       { heading: "More" },
       { link: "/dream-journal", text: "Dream Journal" },
     ],
@@ -55,7 +55,8 @@ export const topNav: NavMap[] = [
     icon: PawPrintIcon,
     link: "/about",
     subitems: [
-      { link: "/what-is-a-fusky", text: "What's A Fusky?" },
+      { link: "/branding", text: "Branding" },
+      { link: "/what-is-a-fusky", text: "What Is A Fusky?" },
       { heading: "Lore" },
       { link: "/about/timeline", text: "Timeline" },
       { link: "/in-the-making", text: "In The Making" },
@@ -68,9 +69,9 @@ export const topNav: NavMap[] = [
   }
 ]
 
-export const footerNav: NavMap["subitems"] = [
+export const footerNav = [
   { text: "sitemap.xml", link: "/sitemap.xml" },
   { text: "Contact", link: "/#" },
   { text: "View sauce code", link: "https://github.com/kuroji-fusky/kurojifusky.com" },
   { text: "View site analytics", link: "/#" },
-];
+] satisfies NavMap["subitems"];

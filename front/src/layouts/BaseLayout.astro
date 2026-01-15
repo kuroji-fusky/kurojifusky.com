@@ -61,13 +61,15 @@ const { contentPadding, title, description } = Astro.props;
           <span class="opacity-40 mr-6">© 2025 Kuroji Fusky LLC</span>
           <ul class="inline-flex space-x-3">
             {
-              footerNav?.map((item) => (
-                <li>
-                  <Link href={item.link} class="whitespace-nowrap">
-                    {item.text}
-                  </Link>
-                </li>
-              ))
+              footerNav?.map((item) =>
+                "link" in item ? (
+                  <li>
+                    <Link href={item.link} class="whitespace-nowrap">
+                      {item.text}
+                    </Link>
+                  </li>
+                ) : null,
+              )
             }
           </ul>
         </div>

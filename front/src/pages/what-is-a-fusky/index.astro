@@ -1,0 +1,15 @@
+---
+import BaseLayout from "$layouts/BaseLayout.astro";
+import Clamp from "$lib/components/Clamp.astro";
+import { getEntry, render } from "astro:content";
+
+const lol = await getEntry("about", "what-is-a-fusky");
+
+const { Content } = await render(lol);
+---
+
+<BaseLayout title={lol?.data.title}>
+  <Clamp>
+    <Content />
+  </Clamp>
+</BaseLayout>

@@ -2,7 +2,10 @@ import { glob } from "astro/loaders"
 import { z, defineCollection } from "astro:content"
 
 const portfolio = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/portfolio" }),
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/portfolio"
+  }),
   schema: z.object({
     title: z.string(),
     type: z.enum(["development", "videos"]),
@@ -16,4 +19,15 @@ const portfolio = defineCollection({
   })
 })
 
-export const collections = { portfolio }
+const about = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/about"
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional()
+  })
+})
+
+export const collections = { portfolio, about }
