@@ -1,16 +1,12 @@
 ---
 import "../styles/global.css";
 import MetaTags from "./MetaTags.astro";
-import { footerNav } from "./navMap";
-import Navbar from "./Navbar.svelte";
-import Sidebar from "./Sidebar.svelte";
-import Link from "$lib/components/Link.svelte";
 import { ClientRouter } from "astro:transitions";
 import type { ExtractAstroProps } from "./shared";
-import { KuroLogoBrand, MenuIcon } from "$lib/components/icons";
 
 interface Props extends ExtractAstroProps<typeof MetaTags, "canonicalUrl"> {
   contentPadding?: boolean;
+  class?: boolean;
 }
 
 const {
@@ -20,7 +16,7 @@ const {
 
 const canonicalUrl = new URL(pathname, site).toString();
 
-const { contentPadding, title, description } = Astro.props;
+const { contentPadding, title, description, class: _class } = Astro.props;
 ---
 
 <!-- oh hey~ -->
@@ -34,29 +30,15 @@ const { contentPadding, title, description } = Astro.props;
     <ClientRouter />
   </head>
   <body
-    class="antialiased font-kuro-body dark:bg-neutral-950 dark:text-white text-sm overflow-x-hidden"
+    class:list={[
+      "font-xp-body dark:bg-(--global-bg,var(--color-neutral-950)) dark:text-white text-sm overflow-x-hidden",
+      _class,
+    ]}
   >
-    <div
-      class="grid grid-rows-[1fr_auto] h-dvh lg:*:ml-(--sidebar-width)"
-      style="--sidebar-width: 230px"
-    >
-      <Navbar client:load>
-        <KuroLogoBrand
-          slot="branding"
-          width="16px"
-          height="16px"
-          aria-label="Kuro logo"
-        />
-        <MenuIcon slot="menuIcon" />
-      </Navbar>
-      <Sidebar client:idle ssr_currentPath={pathname} transition:persist />
-      <div
-        data-root-content=""
-        class:list={["relative", !contentPadding ? "mt-16" : ""]}
-      >
-        <slot />
-      </div>
-      <footer>
+    <slot />
+    {
+      /*
+    <!-- <footer>
         <div class="px-4 pt-10 pb-6 justify-center flex">
           <span class="opacity-40 mr-6">© 2025 Kuroji Fusky LLC</span>
           <ul class="inline-flex space-x-3">
@@ -73,7 +55,8 @@ const { contentPadding, title, description } = Astro.props;
             }
           </ul>
         </div>
-      </footer>
-    </div>
+      </footer> -->
+ */
+    }
   </body>
 </html>

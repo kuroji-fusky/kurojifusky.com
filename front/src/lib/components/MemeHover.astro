@@ -1,0 +1,16 @@
+<script>
+  const MEMEIO = "funni-hover";
+
+  class Memes extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+
+  if (!customElements.get(MEMEIO)) {
+    customElements.define(MEMEIO, Memes);
+  }
+</script>
+<memeio-hover class="relative">
+  <slot />
+</memeio-hover>

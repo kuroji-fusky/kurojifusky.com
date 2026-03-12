@@ -5,26 +5,28 @@ import oops from "../../public/oops.jpg";
 ---
 
 {/* @ts-ignore: description not needed for a 404 page lol */}
-<Layout title="Page not found">
-  <div class="m-auto grid place-items-center px-6 h-[calc(100dvh-11rem)]">
-    <div class="flex flex-col items-center">
-      <ImageWrapper src={oops.src} alt="" class="rounded-lg w-60" />
-      <h1
-        class="font-bold font-kuro-hero-heading text-6xl lg:text-7xl leading-none my-5"
-      >
-        OOP
-      </h1>
-      <span class="text-lg lg:text-xl text-center"
-        >Where you looking for somethin'? Looks like you went to the wrong side
-        of the road buddy.</span
-      >
-      <div class="mt-8">
-        <a
-          href="/"
-          class="py-2 px-3.5 bg-kuro-lavender-800 hover:bg-kuro-lavender-700 rounded-md select-none"
-          >Take me home</a
-        >
-      </div>
+<Layout
+  title="Page not found"
+  class="[--global-bg:#003eff] selection:bg-white selection:text-blue-500"
+>
+  <div class="font-kuro-mono text-base p-4 sm:p-8 space-y-4 font-semibold">
+    <p>
+      A problem has been detected and has crashed because... idk what are you
+      doing here?
+    </p>
+
+    <p>PAGE_NOT_FOUND</p>
+
+    <p>If you keep finding 404'ing yourself:</p>
+    <div>
+      <p>
+        - If the URL isn't misspelled or you're delibrately misspelling URLs on
+        purpose (because that's what I'd do lol)
+      </p>
+      <p>
+        - You're mis-remembering things and go check the sitemap for this site
+      </p>
+      <p>- Try searching for something</p>
     </div>
   </div>
 </Layout>

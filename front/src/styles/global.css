@@ -1,3 +1,4 @@
+@import "./wine-tahoma.css";
 @import "@fontsource/inter";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
@@ -11,6 +12,8 @@
   --font-kuro-hero-heading: "Unbounded", var(--default-font-family);
   --font-kuro-body: "Inter", var(--default-font-family);
   --font-kuro-mono: "IBM Plex Mono", var(--default-mono-font-family);
+
+  --font-xp-body: "Tahoma", "Wine Tahoma", "Wine Tahoma Bold", var(--default-font-family);
 
   --color-kuro-dark1: #110d17;
   --color-kuro-dark2: #07070b;

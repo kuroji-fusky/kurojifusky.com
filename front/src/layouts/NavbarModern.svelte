@@ -12,7 +12,7 @@
   import { onMount, setContext, type Snippet } from "svelte";
   import { writable } from "svelte/store";
   import Portal from "$lib/components/Portal.svelte";
-  import NavbarItemCollapsible from "./NavbarItemCollapsible.svelte";
+  import NavbarItemCollapsible from "./NavbarModernItemCollapsible.svelte";
   import { isModalTriggered } from "$lib/stores";
   import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
   import { fly } from "svelte/transition";
@@ -122,12 +122,17 @@
 <Portal focusGuard={false}>
   {#if mobileNavbarOpen}
     <nav
-      transition:fly={{ duration: 350, x: "100%" }}
+      transition:fly={{ duration: 250, x: "100%", opacity: 1 }}
       id="nav-mobile"
       class="lg:hidden grid grid-rows-[1fr_auto] fixed top-16 inset-0 z-20 bg-white dark:bg-neutral-950 *:px-3"
     >
       <section
-        class="h-full overflow-y-auto overflow-x-hidden scheme-light-dark"
+        class="sm:block hidden h-full overflow-y-auto overflow-x-hidden scheme-light-dark"
+      >
+        YEET
+      </section>
+      <section
+        class="sm:hidden block h-full overflow-y-auto overflow-x-hidden scheme-light-dark"
       >
         {#each topNav as { heading, icon, link, subitems }}
           <NavbarItemCollapsible {heading} {icon} {link} {subitems} />
