@@ -1,19 +1,16 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "$lib/*": ["lib/*"],
-      "$layouts/*": ["layouts/*"]
-    },
+  "include": [
+    ".astro/types.d.ts",
+    "**/*",
+    "./worker-configuration.d.ts"
+  ],
+  "exclude": [
+    "dist"
+],
+"compilerOptions": {
     "types": [
-      "unplugin-icons/types/astro",
-      "@types/youtube"
+        "./worker-configuration.d.ts"
     ]
-  },
-  "typeAcquisition": {
-    "enable": true
-  },
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+}
 }

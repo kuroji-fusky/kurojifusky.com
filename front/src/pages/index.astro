@@ -1,11 +1,10 @@
 ---
-import BaseLayout from "$layouts/BaseLayout.astro";
-import XPWindow from "$lib/components/XPWindow.svelte";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import XPWindow from "../lib/components/XPWindow.svelte";
 
 const links = [
-  { href: "www.youtube.com/@kuroji_fusky", text: "YouTube" },
   { href: "www.youtube.com/@kinter_atwood", text: "YouTube 2nd Channel" },
-  { href: "github.com/@kuroji-fusky", text: "GitHub" },
+  { href: "github.com/kuroji-fusky", text: "GitHub" },
   { href: "furry.engineer/@kurojifusky", text: "Mastodon" },
   { href: "ko-fi.com/kuroji_fusky", text: "Ko-fi" },
   {
@@ -13,51 +12,93 @@ const links = [
     text: "DeviantArt (don't ask why I still have this)",
   },
 ];
+
+const hardcodedVideos = [
+  {
+    id: "nO67ZieoQV8",
+    title: "What It Sounds Like - Nick & Judy (Zootopia AMV)",
+  },
+  { id: "GnSgzut_T5I", title: "Plainrock124 YTP Supercut + Extras: THE MOVIE" },
+  {
+    id: "SRkuMd8du9I",
+    title: "[YTP] BringGuG SouSios comes out of the closet",
+  },
+];
 ---
 
-<BaseLayout title="kuro homepage">
-  <section class="mx-auto max-w-7xl px-4 mt-20 cursor-default">
-    <XPWindow title="Under construction" class="bg-neutral-200 text-black">
-      <div class="p-6 space-y-3">
-        <article>
-          <p class="mb-2">
-            Currently restructuring my portfolio to have that XP-seque nostalgia
-            baby~
+<BaseLayout title="kurowo" description="a trash website for a trash furry">
+  <div class="max-w-4xl mx-auto px-3.5 mt-16">
+    <XPWindow
+      title="welcome to mah personal site :3"
+      class="bg-neutral-300 text-black px-5 py-4 prose-headings:font-bold prose-h2:text-xl prose-h2:my-2 space-y-4"
+    >
+      <section>
+        <article class="space-y-1.5">
+          <h2 class="mt-0! mb-2!">about me</h2>
+          <p>
+            I'm a 24-year-old hobbyist from the Philippines; mainly focused on
+            software development and video/VFX work.
           </p>
           <p>
-            And before you ask - nope, it's not dead! It just needs... <strong
-              >some work.</strong
-            > In the meantime, here are some social links and my latest videos. I'll
-            periodically update new pages when they become available.
+            Been doing this since 2013, and I go by a fox-husky (or a fusky) hybrid on the
+            interwebz.
           </p>
+          <p>He/him, secretly a femboy, or not, idk, nick wilde is my daddy 4lyfe</p>
         </article>
-        <section>
-          <ul>
+      </section>
+
+      <section>
+        <article>
+          <h2 class="mb-3!">latest videos on teh youtubes</h2>
+          <div class="flex sm:flex-row flex-col gap-3 mb-4">
             {
-              links.map(({ href, text }) => (
-                <li class="list-inside list-disc">
-                  <a
-                    href={`https://${href}`}
-                    target="_blank"
-                    class="underline text-blue-600"
-                  >
-                    {text}
-                  </a>
-                </li>
+              hardcodedVideos.map(({ id, title }) => (
+                <a
+                  href={`https://www.youtube.com/watch?v=${id}`}
+                  target="_blank"
+                  class="group"
+                >
+                  <img
+                    src={`https://i.ytimg.com/vi/${id}/mqdefault.jpg`}
+                    alt="no"
+                    class="mb-1.5 aspect-video w-full object-cover border-2 border-black group-hover:border-blue-800"
+                  />
+                  <span class="underline text-blue-600 group-hover:text-blue-800 text-base">
+                    {title}
+                  </span>
+                </a>
               ))
             }
-          </ul>
-        </section>
-      </div>
-
-      <footer
-        class="text-xs px-6 py-4 opacity-70 flex bg-white shadow-inner shadow-neutral-300 border-t"
-      >
-        <p class="flex-1">
-          This site doesn't track you. &copy; 2026 Kuroji Fusky LLC
-        </p>
-        <p>Build v10.1</p>
-      </footer>
+          </div>
+        </article>
+      </section>
+      <section>
+        <h2>s0me linkies</h2>
+        <ul class="*:list-inside *:list-disc">
+          {
+            links.map(({ href, text }) => (
+              <li>
+                <a
+                  href={`https://${href}`}
+                  target="_blank"
+                  class="underline text-blue-600 hover:text-blue-800"
+                >
+                  {text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      <section>
+        <h2>Stuff coming soon !!!11!</h2>
+        <ul class="*:list-inside *:list-disc">
+          <li>projects</li>
+          <li>blogs</li>
+          <li>nostalgia journal</li>
+          <li>detailed about me</li>
+        </ul>
+      </section>
     </XPWindow>
-  </section>
+  </div>
 </BaseLayout>

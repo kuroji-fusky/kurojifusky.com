@@ -18,10 +18,10 @@
   }: Props = $props();
 </script>
 
-<div class={["border border-violet-600 rounded-sm overflow-hidden", cc]}>
+<div class={["border-2 border-violet-600 rounded-sm overflow-hidden", cc]}>
   <div
     id="kuroxp-title"
-    class="flex py-1 pl-2 pr-2.5 bg-linear-180 from-violet-500 via-violet-700 via-70% to-violet-800"
+    class="flex py-1 pl-2 pr-2.5 bg-linear-180 from-violet-500 via-kuro-lavender-700 via-70% to-violet-800"
   >
     {#if customTitle}
       {@render customTitle?.()}

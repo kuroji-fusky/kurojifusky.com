@@ -1,0 +1,19 @@
+---
+const stamps = [
+  {
+    alt: "Sopv's Website",
+    img: "https://SopvWasTaken.github.io/Textures/Sopv.gif",
+    href: "https://sopv.space/",
+  },
+] satisfies Record<"alt" | "img" | "href", string>[];
+---
+
+  <div class="flex flex-wrap max-w-65">
+    {
+      stamps.map(({ alt, href, img }) => (
+        <a {href} target="_blank">
+          <img src={img} {alt} />
+        </a>
+      ))
+    }
+  </div>

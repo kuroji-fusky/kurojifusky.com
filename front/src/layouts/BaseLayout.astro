@@ -3,6 +3,8 @@ import "../styles/global.css";
 import MetaTags from "./MetaTags.astro";
 import { ClientRouter } from "astro:transitions";
 import type { ExtractAstroProps } from "./shared";
+import Navbar from "../lib/navbar.svelte";
+import Stamps from "./Stamps.astro";
 
 interface Props extends ExtractAstroProps<typeof MetaTags, "canonicalUrl"> {
   contentPadding?: boolean;
@@ -36,27 +38,11 @@ const { contentPadding, title, description, class: _class } = Astro.props;
     ]}
   >
     <slot />
-    {
-      /*
-    <!-- <footer>
-        <div class="px-4 pt-10 pb-6 justify-center flex">
-          <span class="opacity-40 mr-6">© 2025 Kuroji Fusky LLC</span>
-          <ul class="inline-flex space-x-3">
-            {
-              footerNav?.map((item) =>
-                "link" in item ? (
-                  <li>
-                    <Link href={item.link} class="whitespace-nowrap">
-                      {item.text}
-                    </Link>
-                  </li>
-                ) : null,
-              )
-            }
-          </ul>
-        </div>
-      </footer> -->
- */
-    }
+    <footer class="flex flex-col justify-center items-center mb-18">
+      <div class="px-4 pt-10 pb-6">
+        <span class="opacity-40 mr-6">© 2026 Kuroji Fusky LLC</span>
+      </div>
+      <Stamps />
+    </footer>
   </body>
 </html>
