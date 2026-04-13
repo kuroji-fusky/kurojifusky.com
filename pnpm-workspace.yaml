@@ -1,0 +1,8 @@
+packages:
+  - front
+  - studio
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd

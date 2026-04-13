@@ -14,10 +14,10 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^4.20.3",
+    "@sanity/vision": "^5.20.0",
     "react": "^19.1",
     "react-dom": "^19.1",
-    "sanity": "^4.20.3",
+    "sanity": "^5.20.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
@@ -26,8 +26,7 @@
     "dotenv": "^17.2.3",
     "eslint": "^9.28",
     "prettier": "^3.5",
-    "typescript": "^5.8",
-    "vite-plugin-vercel": "^9.0.8"
+    "typescript": "^5.8"
   },
   "prettier": {
     "semi": false,

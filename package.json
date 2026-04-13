@@ -3,7 +3,6 @@
   "name": "kurojifusky.com",
   "type": "module",
   "version": "0.0.1",
-  "workspaces": ["front", "studio"],
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "lint:check": "biome check",
