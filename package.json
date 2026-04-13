@@ -3,9 +3,9 @@
   "name": "kurojifusky.com",
   "type": "module",
   "version": "0.0.1",
-  "workspaces": ["front", "sanity-studio"],
+  "workspaces": ["front", "studio"],
   "scripts": {
-    "preinstall": "npx only-allow yarn",
+    "preinstall": "npx only-allow pnpm",
     "lint:check": "biome check",
     "lint:fix": "biome check --fix",
     "dev": "yarn workspace @kuroji-fusky/front dev",
@@ -15,10 +15,9 @@
     "knip": "knip"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.0",
     "concurrently": "^9.1.2",
     "knip": "^5.60.0",
     "only-allow": "^1.2.1"
-  },
-  "packageManager": "yarn@1.22.22"
+  }
 }
