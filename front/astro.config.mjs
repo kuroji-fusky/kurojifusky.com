@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap"
 import Icons from "unplugin-icons/vite"
 import cloudflare from '@astrojs/cloudflare';
 
+import sanity from "@sanity/astro";
+
 export default defineConfig({
   output: "server",
   adapter: cloudflare({
@@ -14,7 +16,14 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
-  integrations: [sitemap(), svelte()],
+  integrations: [
+    sitemap(),
+    svelte(),
+    sanity({
+      projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+      dataset: process.env.SANITY_STUDIO_DATASET
+    }),
+  ],
   vite: {
     plugins: [
       tailwindcss(),

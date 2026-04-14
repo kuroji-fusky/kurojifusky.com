@@ -5,7 +5,7 @@ import { schemaTypes } from "./schemaTypes"
 
 export default defineConfig({
   name: "default",
-  title: "An abomination",
+  title: "Blog and shit",
 
   projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
   dataset: process.env.SANITY_STUDIO_DATASET!,

@@ -11,6 +11,7 @@
   "compilerOptions": {
     "types": [
       "unplugin-icons/types/astro",
+      "@sanity/astro/module",
       "./worker-configuration.d.ts"
     ]
   }
