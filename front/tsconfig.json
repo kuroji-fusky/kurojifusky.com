@@ -7,10 +7,11 @@
   ],
   "exclude": [
     "dist"
-],
-"compilerOptions": {
+  ],
+  "compilerOptions": {
     "types": [
-        "./worker-configuration.d.ts"
+      "unplugin-icons/types/astro",
+      "./worker-configuration.d.ts"
     ]
-}
+  }
 }

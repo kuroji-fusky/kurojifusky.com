@@ -18,22 +18,20 @@ const {
 
 const canonicalUrl = new URL(pathname, site).toString();
 
-const { contentPadding, title, description, class: _class } = Astro.props;
+const { title, description, class: _class } = Astro.props;
 ---
 
-<!-- oh hey~ -->
-<html lang="en" dir="ltr" transition:animate="none">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <MetaTags {title} {description} {canonicalUrl} />
-    <ClientRouter />
   </head>
   <body
     class:list={[
-      "font-xp-body dark:bg-(--global-bg,var(--color-neutral-950)) dark:text-white text-sm overflow-x-hidden",
+      "font-xp-body dark:bg-(--global-bg,var(--color-neutral-800)) dark:text-white text-sm overflow-x-hidden",
       _class,
     ]}
   >

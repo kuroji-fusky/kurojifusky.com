@@ -7,31 +7,26 @@ import Icons from "unplugin-icons/vite"
 import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
-  adapter: cloudflare(),
-
+  output: "server",
+  adapter: cloudflare({
+    prerenderEnvironment: 'node',
+  }),
   devToolbar: {
     enabled: false
   },
-
-  output: "server",
-
   integrations: [sitemap(), svelte()],
-
-
   vite: {
     plugins: [
       tailwindcss(),
       Icons({
-        autoInstall: true,
         compiler: "astro",
         customCollections: {
-          kuro: FileSystemIconLoader("./src/lib/icons/kuro")
+          kuro: FileSystemIconLoader("./src/lib/icons/kuro"),
+          xp: FileSystemIconLoader("./src/lib/icons/xp"),
         }
       })
     ]
   },
 
   site: "https://kurojifusky.com",
-
-
 });

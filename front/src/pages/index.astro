@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import XPWindow from "../lib/components/XPWindow.svelte";
+import XPWindowButton from "../lib/components/XPWindowButton.svelte";
 
 const links = [
   { href: "www.youtube.com/@kinter_atwood", text: "YouTube 2nd Channel" },
@@ -26,12 +27,15 @@ const hardcodedVideos = [
 ];
 ---
 
-<BaseLayout title="kurowo" description="a trash website for a trash furry">
+<BaseLayout title="Kuro's Corner" description="a trash website for a trash furry">
   <div class="max-w-4xl mx-auto px-3.5 mt-16">
     <XPWindow
-      title="welcome to mah personal site :3"
+      title="welcome to my shitty website"
       class="bg-neutral-300 text-black px-5 py-4 prose-headings:font-bold prose-h2:text-xl prose-h2:my-2 space-y-4"
     >
+      <div slot="windowActions" class="flex gap-x-0.5 items-center">
+        <XPWindowButton disabled  />
+      </div>
       <section>
         <article class="space-y-1.5">
           <h2 class="mt-0! mb-2!">about me</h2>
@@ -40,10 +44,12 @@ const hardcodedVideos = [
             software development and video/VFX work.
           </p>
           <p>
-            Been doing this since 2013, and I go by a fox-husky (or a fusky) hybrid on the
-            interwebz.
+            Been doing this since 2013, and I go by a fox-husky (or a fusky)
+            hybrid on the interwebz.
           </p>
-          <p>He/him, secretly a femboy, or not, idk, nick wilde is my daddy 4lyfe</p>
+          <p>
+            He/him, secretly a femboy, or not, idk, nick wilde is my daddy 4lyfe
+          </p>
         </article>
       </section>
 
