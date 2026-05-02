@@ -1,19 +1,17 @@
-@import "./wine-tahoma.css";
+@import "@fontsource/instrument-sans";
+@import "@fontsource/instrument-sans/700.css";
 @import "@fontsource/inter";
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
-@import "@fontsource/unbounded/latin-700.css";
 @import "@fontsource/ibm-plex-mono";
 @import "tailwindcss";
 
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --font-kuro-hero-heading: "Unbounded", var(--default-font-family);
+  --font-kuro-hero-heading: "Instrument Sans", var(--default-font-family);
   --font-kuro-body: "Inter", var(--default-font-family);
   --font-kuro-mono: "IBM Plex Mono", var(--default-mono-font-family);
-
-  --font-xp-body: "Tahoma", "Wine Tahoma", "Wine Tahoma Bold", var(--default-font-family);
 
   --color-kuro-dark1: #110d17;
   --color-kuro-dark2: #07070b;
@@ -39,10 +37,4 @@
   --color-kuro-lavender-700: #7113b9;
   --color-kuro-lavender-800: #4c0d7d;
   --color-kuro-lavender-900: #25063c;
-}
-
-@layer base {
-  :is(a:not(.reset-link), .mock-link) {
-    @apply underline text-blue-700 hover:text-blue-950 text-base
-  }
 }

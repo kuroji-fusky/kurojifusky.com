@@ -46,15 +46,15 @@ importers:
         version: 7.2.5(@types/node@25.6.0)(astro@6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3))(jiti@2.6.1)(lightningcss@1.32.0)(svelte@5.55.3(@typescript-eslint/types@8.58.2))(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)
       '@astrojs/tailwind':
         specifier: ^6.0.2
-        version: 6.0.2(astro@6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3))(tailwindcss@4.2.2)
+        version: 6.0.2(astro@6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3))(tailwindcss@4.2.4)
       '@fontsource/ibm-plex-mono':
         specifier: ^5.2.7
         version: 5.2.7
-      '@fontsource/inter':
+      '@fontsource/instrument-sans':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource/unbounded':
-        specifier: ^5.0.20
+      '@fontsource/inter':
+        specifier: ^5.2.8
         version: 5.2.8
       '@iconify-json/fa-brands':
         specifier: ^1.1.8
@@ -70,7 +70,7 @@ importers:
         version: 7.21.0
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.19(tailwindcss@4.2.2)
+        version: 0.5.19(tailwindcss@4.2.4)
       '@tailwindcss/vite':
         specifier: ^4.1.11
         version: 4.2.2(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))
@@ -114,8 +114,8 @@ importers:
         specifier: ^3.4.0
         version: 3.5.0
       tailwindcss:
-        specifier: ^4.1.14
-        version: 4.2.2
+        specifier: ^4.2.4
+        version: 4.2.4
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1726,11 +1726,11 @@ packages:
   '@fontsource/ibm-plex-mono@5.2.7':
     resolution: {integrity: sha512-MKAb8qV+CaiMQn2B0dIi1OV3565NYzp3WN5b4oT6LTkk+F0jR6j0ZN+5BKJiIhffDC3rtBULsYZE65+0018z9w==}
 
+  '@fontsource/instrument-sans@5.2.8':
+    resolution: {integrity: sha512-TJRYVbjZPx4DGMMU5lb5eFKrP3iLe9h7rz8Pk+dP958IZKiyHjYGXXwQZapVbBXcQN+YOiviVhAWxrjv8g6Z6g==}
+
   '@fontsource/inter@5.2.8':
     resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
-
-  '@fontsource/unbounded@5.2.8':
-    resolution: {integrity: sha512-tBHtKB+s5tKvQXEWy5h86sDY5hzVLsEbW6TGphSjUY9b/gawUPvXv5vFS4ZdPbGDcvSqMMy6eXkqdcsKI29dig==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -6970,6 +6970,9 @@ packages:
   tailwindcss@4.2.2:
     resolution: {integrity: sha512-KWBIxs1Xb6NoLdMVqhbhgwZf2PGBpPEiwOqgI4pFIYbNTfBXiKYyWoTsXgBQ9WFg/OlhnvHaY+AEpW7wSmFo2Q==}
 
+  tailwindcss@4.2.4:
+    resolution: {integrity: sha512-HhKppgO81FQof5m6TEnuBWCZGgfRAWbaeOaGT00KOy/Pf/j6oUihdvBpA7ltCeAvZpFhW3j0PTclkxsd4IXYDA==}
+
   tapable@2.3.2:
     resolution: {integrity: sha512-1MOpMXuhGzGL5TTCZFItxCc0AARf1EZFQkGqMm7ERKj8+Hgr5oLvJOVFcC+lRmR8hCe2S3jC4T5D7Vg/d7/fhA==}
     engines: {node: '>=6'}
@@ -8217,13 +8220,13 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/tailwind@6.0.2(astro@6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3))(tailwindcss@4.2.2)':
+  '@astrojs/tailwind@6.0.2(astro@6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3))(tailwindcss@4.2.4)':
     dependencies:
       astro: 6.1.6(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(rollup@4.60.1)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.3)
       autoprefixer: 10.5.0(postcss@8.5.9)
       postcss: 8.5.9
       postcss-load-config: 4.0.2(postcss@8.5.9)
-      tailwindcss: 4.2.2
+      tailwindcss: 4.2.4
     transitivePeerDependencies:
       - ts-node
 
@@ -9589,9 +9592,9 @@ snapshots:
 
   '@fontsource/ibm-plex-mono@5.2.7': {}
 
-  '@fontsource/inter@5.2.8': {}
+  '@fontsource/instrument-sans@5.2.8': {}
 
-  '@fontsource/unbounded@5.2.8': {}
+  '@fontsource/inter@5.2.8': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -11409,10 +11412,10 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.2.2
       '@tailwindcss/oxide-win32-x64-msvc': 4.2.2
 
-  '@tailwindcss/typography@0.5.19(tailwindcss@4.2.2)':
+  '@tailwindcss/typography@0.5.19(tailwindcss@4.2.4)':
     dependencies:
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.2.2
+      tailwindcss: 4.2.4
 
   '@tailwindcss/vite@4.2.2(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.21.0)(yaml@2.8.3))':
     dependencies:
@@ -16093,6 +16096,8 @@ snapshots:
   tailwind-merge@3.5.0: {}
 
   tailwindcss@4.2.2: {}
+
+  tailwindcss@4.2.4: {}
 
   tapable@2.3.2: {}
 

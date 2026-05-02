@@ -1,32 +1,18 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import XPWindow from "../../lib/components/XPWindow.svelte";
-import XPWindowButton from "../../lib/components/XPWindowButton.svelte";
 ---
 
 <BaseLayout title="Portfolio" description="projects and stuff I worked with">
-  <div class="max-w-(--the-widening) mx-auto px-3.5 mt-8">
-    <XPWindow title="Fayl Exploder" class="bg-white text-black">
-      <div slot="customTitle" class="inline-flex gap-x-1">
-        <img
-          src="./icon_128.png"
-          class="size-5 pointer-events-none"
-          alt=""
-          draggable="false"
-        />
-        <span class="text-sm font-semibold text-shadow-sm text-shadow-black"
-          >Fayl Exploder</span
-        >
-      </div>
-      <div slot="windowActions" class="flex gap-x-0.5 items-center">
-        <XPWindowButton disabled />
-      </div>
-      <div id="fe-actions" class="bg-neutral-300">Stuff</div>
-      <div
-        class="px-5 py-4 prose-headings:font-bold prose-h2:text-xl prose-h2:my-2 space-y-4"
+  <div class="max-w-5xl mx-auto px-5">
+    <header>
+      <h1
+        class="font-kuro-hero-heading text-5xl font-black leading-none mt-9 mb-4"
       >
-        YOIY
-      </div>
-    </XPWindow>
+        Portfolio
+      </h1>
+      <p class="font-kuro-mono text-lg opacity-66">
+        projects and stuff I worked with
+      </p>
+    </header>
   </div>
 </BaseLayout>

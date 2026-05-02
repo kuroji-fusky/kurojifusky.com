@@ -3,7 +3,6 @@ import "../styles/global.css";
 import MetaTags from "./MetaTags.astro";
 import type { ExtractAstroProps } from "./shared";
 import Navbar from "./Navbar.astro";
-import Stamps from "./Stamps.astro";
 
 interface Props extends ExtractAstroProps<typeof MetaTags, "canonicalUrl"> {
   contentPadding?: boolean;
@@ -30,10 +29,9 @@ const { title, description, class: _class } = Astro.props;
   </head>
   <body
     class:list={[
-      "font-xp-body dark:bg-(--global-bg,var(--color-neutral-800)) dark:text-white text-sm overflow-x-hidden",
+      "font-kuro-body bg-neutral-950 dark:text-white text-sm overflow-x-hidden",
       _class,
     ]}
-    style="--the-widening: var(--container-5xl)"
   >
     <Navbar />
     <slot />
@@ -41,7 +39,6 @@ const { title, description, class: _class } = Astro.props;
       <div class="px-4 pt-10 pb-6">
         <span class="opacity-40 mr-6">© 2026 Kuroji Fusky LLC</span>
       </div>
-      <Stamps />
     </footer>
   </body>
 </html>

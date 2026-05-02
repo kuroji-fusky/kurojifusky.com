@@ -1,16 +1,104 @@
 ---
-import Link from "../lib/components/Link.svelte";
-import XPWindow from "../lib/components/XPWindow.svelte";
+import Link from "../lib/components/Link.astro";
+import KuroLogo from "../lib/icons/kuro/logo-brand.svg?raw";
+import SidebarMenuIcon from "../lib/icons/lucide/sidebar-menu.svg?raw";
+import SearchIcon from "../lib/icons/lucide/search.svg?raw";
+import DownIcon from "../lib/icons/lucide/chev-down.svg?raw";
+import ExtLinkIcon from "../lib/icons/lucide/ext-link.svg?raw";
+
+const navItems = [
+  {
+    text: "Portfolio",
+    href: "/portfolio",
+    sublinks: [
+      { text: "Apps", href: "/software" },
+      { text: "Videos", href: "/videos" },
+      { text: "Archives", href: "/archives" },
+    ],
+  },
+  {
+    text: "Blog",
+    href: "/blog",
+    sublinks: [
+      { text: "UX & Design", href: "/blog?tag=ux-design" },
+      { text: "Engineering", href: "/blog?tag=engineering" },
+      { text: "Updates", href: "/blog?tag=updates" },
+      { text: "---" },
+      {
+        text: "The Foxington Vault",
+        href: "https://foxingtonvault.com/?ref=kuro",
+      },
+    ],
+  },
+  {
+    text: "About",
+    href: "/about",
+    sublinks: [
+      { text: "Artworks", href: "/artworks" },
+      { text: "Stats", href: "/stats" },
+      { text: "---" },
+      { text: "YouTube", href: "https://youtube.com/@kuroji_fusky" },
+      { text: "GitHub", href: "https://github.com/kuroji-fusky" },
+      { text: "Mastodon", href: "https://furry.engineer/@kurojifusky" },
+      { text: "More links", href: "/links" },
+    ],
+  },
+];
 ---
 
-<div class="mx-auto max-w-(--the-widening) px-3.5 pt-6">
-  <XPWindow title="Navigation" class="p-3 bg-neutral-200">
-    <div class="flex gap-x-3 *:text-sm">
-      <Link href="/">Home</Link>
-      <Link href="/portfolio">Portfolio</Link>
-      <Link href="/blog">Blog</Link>
-      <Link href="/about">About</Link>
-      <span class="mock-link cursor-pointer">Socials</span>
-    </div>
-  </XPWindow>
-</div>
+<nav class="py-3 sticky top-0 inset-x-0 z-50">
+  <div class="mx-auto max-w-5xl px-3.5 flex items-center">
+    <a href="/" class="p-1.5 *:size-4.5">
+      <Fragment set:html={KuroLogo} />
+    </a>
+    <span class="flex-1"></span>
+
+    <ul class="md:flex hidden gap-x-1 text-sm">
+      {
+        navItems.map(({ href, text, sublinks }) => (
+          <li class="group relative">
+            <Link {href} class="px-2.5 py-1 inline-flex items-center gap-x-1.5">
+              <span>{text}</span>
+              <span class="contents *:size-3.5 *:transition-[opacity,translate] *:duration-150 *:opacity-50 group-hover:*:opacity-100 group-hover:*:translate-y-0.5 group-focus-within:*:opacity-100 group-focus-within:*:translate-y-0.5">
+                <Fragment set:html={DownIcon} />
+              </span>
+            </Link>
+            <div class="transition-opacity duration-150 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 absolute top-6 p-3.5 right-0 h-fit">
+              <div
+                role="menu"
+                class="bg-neutral-800/50 p-1.5 rounded-md whitespace-nowrap min-w-36"
+              >
+                {sublinks.map(({ href, text }) =>
+                  text !== "---" ? (
+                    <div role="menuitem">
+                      <Link
+                        {href}
+                        class="flex items-center gap-x-1 px-2.5 py-1.5 rounded-sm transition-colors duration-100 hover:bg-kuro-lavender-700 focus:bg-kuro-lavender-700"
+                      >
+                        <span class="flex-1 mr-1">{text}</span>
+                        <span
+                          slot="ext-link-icon"
+                          class="*:size-3.5 *:opacity-50"
+                        >
+                          <Fragment set:html={ExtLinkIcon} />
+                        </span>
+                      </Link>
+                    </div>
+                  ) : (
+                    <hr class="my-1.5 mx-3 opacity-60" />
+                  ),
+                )}
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+    <button class="md:block hidden py-2 px-2.5 *:size-4.5">
+      <Fragment set:html={SearchIcon} />
+    </button>
+    <button class="md:hidden py-2 px-2.5 *:size-5">
+      <Fragment set:html={SidebarMenuIcon} />
+    </button>
+  </div>
+</nav>

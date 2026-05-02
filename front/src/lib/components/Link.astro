@@ -1,0 +1,23 @@
+---
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  class?: string;
+  href?: string;
+  [x: string]: unknown;
+}
+
+const { href, class: classN, ...others } = Astro.props;
+
+const isHttp = href?.startsWith("http");
+---
+
+<a
+  {href}
+  target={isHttp ? "_blank" : undefined}
+  class={twMerge("inline-flex", classN as string)}
+  {...others}
+>
+  <slot />
+  {isHttp && <slot name="ext-link-icon" />}
+</a>
