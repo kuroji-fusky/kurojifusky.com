@@ -16,7 +16,7 @@
   {href}
   target={isHttp ? "_blank" : undefined}
   class={twMerge(
-    "inline-flex opacity-60 hover:opacity-100 transition-opacity",
+    "inline-flex",
     classN as string,
   )}
   {...others}

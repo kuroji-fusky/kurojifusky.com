@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import XPWindow from "../../lib/components/XPWindow.svelte";
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+
+const posts = await sanityClient.fetch<SanityDocument[]>(`*[_type == "blog"]{title,slug,publishDate}`);
+---
+
+<BaseLayout title="Posts" description="a trash website for a trash furry">
+  <div class="max-w-4xl mx-auto px-3.5 mt-4">
+    <XPWindow
+      title="posts"
+      class="bg-neutral-300 text-black px-5 py-4 prose-headings:font-bold prose-h2:text-xl prose-h2:my-2 space-y-4"
+    >
+      <span>{JSON.stringify(posts)}</span>
+    </XPWindow>
+  </div>
+</BaseLayout>

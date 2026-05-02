@@ -120,6 +120,9 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
     devDependencies:
+      dotenv:
+        specifier: ^17.4.2
+        version: 17.4.2
       unplugin-icons:
         specifier: ^23.0.1
         version: 23.0.1(svelte@5.55.3(@typescript-eslint/types@8.58.2))

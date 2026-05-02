@@ -10,6 +10,5 @@ export default defineCliConfig({
   },
   deployment: {
     appId: process.env.SANITY_STUDIO_APPID!,
-    autoUpdates: true
   }
 })

@@ -1,9 +1,8 @@
 ---
 import "../styles/global.css";
 import MetaTags from "./MetaTags.astro";
-import { ClientRouter } from "astro:transitions";
 import type { ExtractAstroProps } from "./shared";
-import Navbar from "../lib/navbar.svelte";
+import Navbar from "./Navbar.astro";
 import Stamps from "./Stamps.astro";
 
 interface Props extends ExtractAstroProps<typeof MetaTags, "canonicalUrl"> {
@@ -34,7 +33,9 @@ const { title, description, class: _class } = Astro.props;
       "font-xp-body dark:bg-(--global-bg,var(--color-neutral-800)) dark:text-white text-sm overflow-x-hidden",
       _class,
     ]}
+    style="--the-widening: var(--container-5xl)"
   >
+    <Navbar />
     <slot />
     <footer class="flex flex-col justify-center items-center mb-18">
       <div class="px-4 pt-10 pb-6">

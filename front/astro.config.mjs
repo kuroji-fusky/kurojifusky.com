@@ -5,8 +5,10 @@ import svelte from "@astrojs/svelte"
 import sitemap from "@astrojs/sitemap"
 import Icons from "unplugin-icons/vite"
 import cloudflare from '@astrojs/cloudflare';
-
 import sanity from "@sanity/astro";
+import { loadEnv } from "vite";
+
+const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
 export default defineConfig({
   output: "server",
@@ -20,8 +22,9 @@ export default defineConfig({
     sitemap(),
     svelte(),
     sanity({
-      projectId: process.env.SANITY_STUDIO_PROJECT_ID,
-      dataset: process.env.SANITY_STUDIO_DATASET
+      projectId: env.SANITY_STUDIO_PROJECT_ID,
+      dataset: env.SANITY_STUDIO_DATASET,
+      useCdn: false
     }),
   ],
   vite: {

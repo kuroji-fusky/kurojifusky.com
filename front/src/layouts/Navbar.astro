@@ -1,0 +1,16 @@
+---
+import Link from "../lib/components/Link.svelte";
+import XPWindow from "../lib/components/XPWindow.svelte";
+---
+
+<div class="mx-auto max-w-(--the-widening) px-3.5 pt-6">
+  <XPWindow title="Navigation" class="p-3 bg-neutral-200">
+    <div class="flex gap-x-3 *:text-sm">
+      <Link href="/">Home</Link>
+      <Link href="/portfolio">Portfolio</Link>
+      <Link href="/blog">Blog</Link>
+      <Link href="/about">About</Link>
+      <span class="mock-link cursor-pointer">Socials</span>
+    </div>
+  </XPWindow>
+</div>

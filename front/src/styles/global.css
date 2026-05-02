@@ -40,3 +40,9 @@
   --color-kuro-lavender-800: #4c0d7d;
   --color-kuro-lavender-900: #25063c;
 }
+
+@layer base {
+  :is(a:not(.reset-link), .mock-link) {
+    @apply underline text-blue-700 hover:text-blue-950 text-base
+  }
+}
